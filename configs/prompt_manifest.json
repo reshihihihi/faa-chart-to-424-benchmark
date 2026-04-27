@@ -1,7 +1,105 @@
 {
-  "manifest_version": "0.1.0",
-  "status": "pending_freeze",
-  "prompts": [],
+  "manifest_version": "0.2.0",
+  "status": "candidate_record_not_formal_prompt_freeze",
+  "last_updated_utc": "2026-04-27T08:45:00Z",
+  "decision": "B1 and C3 prompt hashes are recorded from the strict-json-prefill pilot as candidate evidence only. Formal prompt freeze is deferred until the user explicitly approves final prompt text and broader method set alignment.",
+  "strict_output_control": {
+    "status": "frozen_strict_raw_json_v1",
+    "assistant_prefill_json": true,
+    "assistant_prefill_value": "{",
+    "parser_policy_path": "configs/parser_repair_policy.md"
+  },
+  "prompts": [
+    {
+      "method_id": "B1",
+      "method_boundary_status": "frozen",
+      "prompt_freeze_status": "candidate_not_frozen",
+      "prompt_path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "prompt_path_status": "external_pilot_package_path_not_yet_formal_repo_artifact",
+      "prompt_version": "pilot10.zh_v1_candidate.strict_json_protocol",
+      "sha256": "f2a2c27b534f93bb33d90834cc9fdde4726e8ae267bb3d1134679827d1e2f2e3",
+      "allowed_input_fields": [
+        "chart_id",
+        "airport",
+        "approach_ident",
+        "chart_name",
+        "full_chart_ocr_text"
+      ],
+      "forbidden_input_fields": [
+        "chart_image_pixels",
+        "ocr_bbox",
+        "roi",
+        "automatic_field_candidates",
+        "field_to_leg_candidates",
+        "gold_ma_prose",
+        "gold_observable_evidence",
+        "canonical_target",
+        "field_targets_jsonl",
+        "evidence_provenance_jsonl",
+        "challenge_tags_jsonl",
+        "scorer_outputs",
+        "CIFP_or_ARINC_424_records",
+        "human_annotation",
+        "historical_model_output_for_same_chart"
+      ],
+      "includes_domain_rules": false,
+      "includes_unknown_or_not_observable_instruction": true,
+      "final_output_schema": "schemas/missed_approach_leg.schema.json",
+      "pilot_evidence_run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+      "pilot_evidence": {
+        "strict_json": "10/10",
+        "schema_valid": "10/10",
+        "parser_repair_count_non_strict_json": 0,
+        "score": "94/220",
+        "accuracy": 0.42727272727272725
+      }
+    },
+    {
+      "method_id": "C3",
+      "method_boundary_status": "frozen",
+      "prompt_freeze_status": "candidate_not_frozen",
+      "prompt_path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+      "prompt_path_status": "external_pilot_package_path_not_yet_formal_repo_artifact",
+      "prompt_version": "pilot10.zh_v1_candidate.strict_json_protocol",
+      "sha256": "49e2ba9134e9c7737d98374786963424546123129c6faa7d648de8224e468e4e",
+      "allowed_input_fields": [
+        "chart_id",
+        "airport",
+        "approach_ident",
+        "chart_name",
+        "full_chart_image"
+      ],
+      "forbidden_input_fields": [
+        "external_ocr_text",
+        "ocr_bbox",
+        "roi",
+        "automatic_field_candidates",
+        "field_to_leg_candidates",
+        "gold_ma_prose",
+        "gold_observable_evidence",
+        "canonical_target",
+        "field_targets_jsonl",
+        "evidence_provenance_jsonl",
+        "challenge_tags_jsonl",
+        "scorer_outputs",
+        "CIFP_or_ARINC_424_records",
+        "human_annotation",
+        "historical_model_output_for_same_chart"
+      ],
+      "includes_domain_rules": false,
+      "includes_unknown_or_not_observable_instruction": true,
+      "intermediate_output_type": "questionnaire_json",
+      "final_output_schema": "schemas/missed_approach_leg.schema.json",
+      "pilot_evidence_run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+      "pilot_evidence": {
+        "strict_json": "10/10",
+        "schema_valid": "10/10",
+        "parser_repair_count_non_strict_json": 0,
+        "score": "66/220",
+        "accuracy": 0.3
+      }
+    }
+  ],
   "required_fields_per_prompt": [
     "method_id",
     "prompt_path",
@@ -13,4 +111,3 @@
     "includes_unknown_or_not_observable_instruction"
   ]
 }
-
