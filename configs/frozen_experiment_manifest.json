@@ -1,57 +1,142 @@
 {
-  "manifest_version": "0.1.0",
-  "status": "scaffold_not_frozen",
+  "manifest_version": "0.2.0",
+  "status": "partial_pre_freeze_not_formal_eval_ready",
   "created_for": "NeurIPS 2026 Evaluations and Datasets paper-v2",
+  "last_updated_utc": "2026-04-27T08:45:00Z",
+  "freeze_scope": {
+    "formal_evaluation_ready": false,
+    "frozen_now": [
+      "canonical_json_schema_contract_v1",
+      "B1_method_boundary_and_allowed_forbidden_inputs",
+      "C3_method_boundary_and_allowed_forbidden_inputs",
+      "strict_raw_json_output_policy_v1",
+      "parser_repair_policy_v1_no_semantic_repair",
+      "assistant_prefill_json_output_control_v1",
+      "pilot10_external_excluded_from_formal_evaluation",
+      "B1_C3_run_artifact_layout"
+    ],
+    "candidate_not_frozen": [
+      "B1_prompt_text_and_hash",
+      "C3_prompt_text_and_hash",
+      "model_provider_and_model_name",
+      "max_tokens_and_other_call_parameters",
+      "OCR_artifact_policy_for_formal_B1"
+    ],
+    "not_frozen": [
+      "formal300_sample_manifest_and_split",
+      "canonical_proxy_targets_for_formal300",
+      "field_targets_jsonl",
+      "evidence_provenance_jsonl",
+      "challenge_tags_jsonl",
+      "formal_scorer_and_validator_implementation",
+      "rerun_policy_final_details",
+      "all_non_B1_C3_method_prompts_and_runners"
+    ]
+  },
   "schema": {
-    "status": "imported_candidate_not_formal_frozen",
+    "status": "frozen_canonical_json_contract_v1",
     "path": "schemas/missed_approach_leg.schema.json",
     "upstream_reference": "reshihihihi/faa-missed-approach-experiment#28",
-    "upstream_pr_state": "draft_open",
+    "upstream_pr_state_at_import": "draft_open",
     "source_commit": "d2c54172b31184f8c0deb74415f37c239d3e3eca",
     "sha256": "7ccb2cb9dcc73e67167d7ae5a8874e73dc201f56ad243615009db620494482d9",
-    "formal_freeze_blockers": [
-      "upstream PR #28 is draft/open",
-      "schema review must be accepted",
-      "target projection and scorer must be aligned before formal evaluation"
+    "freeze_decision": "This schema is frozen as the canonical JSON contract for extraction outputs. Formal targets and scorer still need separate freeze before formal evaluation.",
+    "applies_to_final_outputs": [
+      "A1",
+      "A2",
+      "B1",
+      "B1_prime",
+      "B1_link_diagnostic",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "D_SFT",
+      "A3",
+      "B2a",
+      "B2b",
+      "B3",
+      "B4",
+      "G"
+    ],
+    "formal_evaluation_blockers_remaining": [
+      "target projection/export must be aligned to this schema",
+      "formal scorer/validator implementation must be frozen",
+      "field_targets.jsonl expansion must be derived from schema-compatible canonical targets"
     ]
   },
   "data": {
-    "status": "pending_export",
+    "status": "pending_export_not_frozen",
     "manifest_path": "benchmark_exports/derived/v2/MANIFEST.json",
     "sample_manifest_path": "benchmark_exports/derived/v2/sample_manifest.jsonl",
     "splits_path": "benchmark_exports/derived/v2/splits.json",
     "checksums_path": "benchmark_exports/derived/v2/checksums.sha256",
-    "formal_evaluation_split_locked": false
+    "formal_evaluation_split_locked": false,
+    "pilot10_external_role": "pilot_only_excluded_from_formal_evaluation"
   },
   "methods": {
-    "status": "pending_freeze",
+    "status": "partially_frozen_B1_C3_only",
     "registry_path": "docs/method_registry.md",
-    "allowed_method_ids": []
+    "frozen_method_ids": [
+      "B1",
+      "C3"
+    ],
+    "allowed_method_ids_not_yet_frozen": [],
+    "notes": "Only B1 and C3 boundaries are frozen in this manifest update. Other methods require later registry completion."
   },
   "models": {
-    "status": "pending_freeze",
-    "manifest_path": "configs/model_config_manifest.json"
+    "status": "candidate_not_frozen",
+    "manifest_path": "configs/model_config_manifest.json",
+    "decision": "Do not freeze model/provider/max_tokens yet because call parameters may change before formal evaluation."
   },
   "prompts": {
-    "status": "pending_freeze",
-    "manifest_path": "configs/prompt_manifest.json"
+    "status": "candidate_record_not_formal_prompt_freeze",
+    "manifest_path": "configs/prompt_manifest.json",
+    "decision": "B1 and C3 prompt hashes are recorded as pilot evidence only. Formal prompt freeze is deferred."
   },
   "parser_repair": {
-    "status": "draft_policy",
+    "status": "frozen_strict_raw_json_v1",
     "path": "configs/parser_repair_policy.md",
-    "semantic_repair_allowed": false
+    "semantic_repair_allowed": false,
+    "code_fence_stripping_allowed": false,
+    "first_json_object_extraction_allowed": false,
+    "assistant_prefill_json": true,
+    "assistant_prefill_value": "{"
+  },
+  "pilot_evidence": {
+    "B1_C3_strict_json_prefill": {
+      "run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+      "sample_role": "pilot10_external_excluded_from_formal_evaluation",
+      "B1": {
+        "strict_json": "10/10",
+        "schema_valid": "10/10",
+        "parser_repair_count_non_strict_json": 0,
+        "score": "94/220",
+        "accuracy": 0.42727272727272725
+      },
+      "C3": {
+        "strict_json": "10/10",
+        "schema_valid": "10/10",
+        "parser_repair_count_non_strict_json": 0,
+        "score": "66/220",
+        "accuracy": 0.3
+      },
+      "failures": 0
+    }
   },
   "scorer": {
-    "status": "pending_import_or_implementation",
+    "status": "pending_import_or_implementation_not_frozen",
     "path": "scripts/scorers/",
     "sha256": null
   },
   "rerun_policy": {
-    "status": "draft_policy",
+    "status": "draft_policy_not_frozen",
     "path": "docs/rerun_policy.md"
   },
   "output_roots": {
     "predictions": "predictions/",
-    "reports": "reports/"
+    "reports": "reports/",
+    "raw_outputs": "raw_outputs/",
+    "run_manifests": "run_manifests/"
   }
 }
