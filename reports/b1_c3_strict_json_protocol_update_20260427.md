@@ -1,46 +1,49 @@
-# B1 / C3 strict JSON protocol update - 2026-04-27
+# B1/C3 Strict JSON Protocol Update - 2026-04-27
 
-## 目的
+Status: pilot protocol update, not formal freeze.
 
-本次变更只处理 pilot 中发现的统一格式问题：B1 和 C3 的 raw model output 均被模型包在 markdown code fence 中，导致正式实验中不满足“裸 JSON 输出”要求。
+## Purpose
 
-本次变更不根据分数调 prompt，不修改 B1 / C3 的方法边界，不引入 target、CIFP、annotation、field matching、ROI 或人工修复信息。
+This update addresses one pilot-only format problem: B1 and C3 raw model
+outputs were wrapped in markdown JSON code fences during the first pilot runs.
+Formal-style evaluation requires raw model output to be one bare JSON object.
 
-## 变更内容
+This change does not tune prompts based on score, does not change B1 or C3
+method boundaries, and does not add target, CIFP, annotation, field matching,
+ROI, or manual repair information.
 
-1. B1 prompt 删除实际 markdown code fence 行，并追加严格原始输出协议。
-2. C3 prompt 删除实际 markdown code fence 行，并追加严格原始输出协议。
-3. prompt 中不再保留实际的三个反引号序列，避免模型模仿输出 code fence。
-4. `scripts/run_b1_c3_pilot10_current.py` 默认改为 strict JSON only。
-5. 正式风格运行中，raw response 必须直接通过 `json.loads(raw.strip())`。
-6. markdown code fence、前后解释文字、从长文本中截取第一个 JSON 对象，均不再作为默认可接受解析策略。
-7. 保留 `--allow-non-strict-json` 作为 pilot-only 兼容开关，但正式风格运行不应使用。
+## Changes
 
-## 当前文件 hash
+1. B1 and C3 prompts no longer contain literal markdown code-fence sequences.
+2. B1 and C3 prompts state a strict raw-output contract.
+3. `scripts/run_b1_c3_pilot10_current.py` defaults to strict JSON only.
+4. Markdown code fences, explanatory prefixes/suffixes, and first-object
+   extraction are not accepted in formal-style runs.
+5. `--allow-non-strict-json` remains available only as a pilot compatibility
+   switch.
+6. The successful pilot run uses assistant prefill with `{` to discourage
+   markdown wrappers.
 
-| 文件 | SHA256 |
+## Repository-Normalized Hashes
+
+The hashes below are LF-normalized repository hashes for future reruns.
+
+| File | SHA256 |
 |---|---|
-| `prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md` | `F2A2C27B534F93BB33D90834CC9FDDE4726E8AE267BB3D1134679827D1E2F2E3` |
-| `prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md` | `49E2BA9134E9C7737D98374786963424546123129C6FAA7D648DE8224E468E4E` |
-| `scripts/run_b1_c3_pilot10_current.py` | `84B9ED0C10E1A78DB63D484F514F4EE6A07DF6C004E28E87C41336F41DE447D7` |
+| `prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md` | `75BA4289068B8FE8B3C450C7C611F34E09736C4017BEB03814C9E3348D6F7CF0` |
+| `prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md` | `6491F5BA621EC5A91256503234CD2A4C87142C32E4D735234E571B84D70DB294` |
+| `prompts/paper_v2/ocr_full_chart_text.zh_v1_candidate.md` | `35C82663B4F1E6A1F38A9DF9538ED27076A224F935FC74E6955F84E097075AF7` |
+| `scripts/run_b1_c3_pilot10_current.py` | `5F6A927E5DB445C613899B9A8ADA0AA3390EA58202F23CEC1B13D2EA8E9ADD59` |
+| `scripts/test_anthropic_strict_json_prefill.py` | `528EA38AE3217AA640BB628DC30748A6EF8C09E59D9767C3358D8F32A05A8BD7` |
 
-## 校验
+The stored pilot `run_manifest.json` preserves the local run-time prompt hashes
+from the machine that produced the pilot outputs. The content is semantically
+the same, but repository line-ending normalization changes the file hash.
 
-- 脚本语法检查：通过。
-- B1 prompt 中实际 code fence 序列：无。
-- C3 prompt 中实际 code fence 序列：无。
+## Validation
 
-## 下一步建议
-
-使用新的 strict JSON 协议重跑 pilot10：
-
-```text
-run_id: pilot10_exp1_b1_c3_strict_json_20260427_r1
-```
-
-重跑后重点检查：
-
-1. `strict_json` 是否达到 10/10。
-2. `single_fenced_json_block` 是否降为 0/10。
-3. B1 / C3 是否仍能 schema-valid。
-4. 如果 strict parse 失败，失败应记录为 format violation，而不是自动修复。
+- Local repository integrity check passed.
+- B1 prompt contains no literal markdown code-fence sequence.
+- C3 prompt contains no literal markdown code-fence sequence.
+- `pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1` produced strict JSON
+  for all B1 and C3 raw outputs.

@@ -30,7 +30,7 @@
       "method_id": "B1",
       "prompt_path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
       "prompt_version": "zh_v1_candidate_strict_json_prefill",
-      "sha256": "f2a2c27b534f93bb33d90834cc9fdde4726e8ae267bb3d1134679827d1e2f2e3",
+      "sha256": "75ba4289068b8fe8b3c450c7c611f34e09736c4017beb03814c9e3348d6f7cf0",
       "allowed_input_fields": [
         "chart_id",
         "airport",
@@ -63,7 +63,7 @@
       "method_id": "C3",
       "prompt_path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
       "prompt_version": "zh_v1_candidate_strict_json_prefill",
-      "sha256": "49e2ba9134e9c7737d98374786963424546123129c6faa7d648de8224e468e4e",
+      "sha256": "6491f5ba621ec5a91256503234cd2a4c87142c32e4d735234e571b84d70db294",
       "allowed_input_fields": [
         "chart_id",
         "airport",

@@ -32,6 +32,10 @@ The run intentionally tested a strict raw-output protocol:
 - no semantic repair is accepted;
 - targets are used only after validation for scoring.
 
+Prompt hashes in `configs/prompt_manifest.json` are repository-normalized LF
+hashes for future reruns. The stored pilot `run_manifest.json` preserves the
+local run-time prompt hashes from the machine that produced the pilot outputs.
+
 ## Why Prefill Was Added
 
 A strict parser-only rerun without assistant prefill completed all model calls,

@@ -1,4 +1,4 @@
-﻿# B1 Pilot Prompt v1 中文候选版：完整航图 OCR 到 Canonical JSON
+# B1 Pilot Prompt v1 中文候选版：完整航图 OCR 到 Canonical JSON
 
 ## 实验定位
 
