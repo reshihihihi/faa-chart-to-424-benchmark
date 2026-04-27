@@ -1,0 +1,300 @@
+{
+  "created_at": "2026-04-27T08:38:49.177823+00:00",
+  "run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+  "parameter_status": "temporary_pilot_use_only_not_final_freeze",
+  "methods": {
+    "B1": {
+      "samples_total": 10,
+      "schema_valid": 10,
+      "samples_scored": 10,
+      "json_extraction_policy_counts": {
+        "strict_json": 10
+      },
+      "parser_repair_count_non_strict_json": 0,
+      "score": {
+        "correct": 94,
+        "total": 220,
+        "accuracy": 0.42727272727272725
+      },
+      "results": [
+        {
+          "method": "B1",
+          "sample_id": "pilot10_external_01",
+          "chart_id": "KDAB_I07L",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 15,
+            "total": 25,
+            "accuracy": 0.6
+          }
+        },
+        {
+          "method": "B1",
+          "sample_id": "pilot10_external_02",
+          "chart_id": "KDAB_R07L",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 5,
+            "total": 19,
+            "accuracy": 0.2631578947368421
+          }
+        },
+        {
+          "method": "B1",
+          "sample_id": "pilot10_external_03",
+          "chart_id": "KDBQ_L31",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 2,
+            "total": 13,
+            "accuracy": 0.15384615384615385
+          }
+        },
+        {
+          "method": "B1",
+          "sample_id": "pilot10_external_04",
+          "chart_id": "KDIJ_RNV-A",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 17,
+            "total": 31,
+            "accuracy": 0.5483870967741935
+          }
+        },
+        {
+          "method": "B1",
+          "sample_id": "pilot10_external_05",
+          "chart_id": "KFKL_V21",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 13,
+            "total": 19,
+            "accuracy": 0.6842105263157895
+          }
+        },
+        {
+          "method": "B1",
+          "sample_id": "pilot10_external_06",
+          "chart_id": "KDAF_R36",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 2,
+            "total": 19,
+            "accuracy": 0.10526315789473684
+          }
+        },
+        {
+          "method": "B1",
+          "sample_id": "pilot10_external_07",
+          "chart_id": "KDAL_I13L",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 8,
+            "total": 25,
+            "accuracy": 0.32
+          }
+        },
+        {
+          "method": "B1",
+          "sample_id": "pilot10_external_08",
+          "chart_id": "KDKK_RNV-A",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 13,
+            "total": 19,
+            "accuracy": 0.6842105263157895
+          }
+        },
+        {
+          "method": "B1",
+          "sample_id": "pilot10_external_09",
+          "chart_id": "KDKX_L26",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 10,
+            "total": 19,
+            "accuracy": 0.5263157894736842
+          }
+        },
+        {
+          "method": "B1",
+          "sample_id": "pilot10_external_10",
+          "chart_id": "KDAG_R22",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 9,
+            "total": 31,
+            "accuracy": 0.2903225806451613
+          }
+        }
+      ]
+    },
+    "C3": {
+      "samples_total": 10,
+      "schema_valid": 10,
+      "samples_scored": 10,
+      "json_extraction_policy_counts": {
+        "strict_json": 10
+      },
+      "parser_repair_count_non_strict_json": 0,
+      "score": {
+        "correct": 66,
+        "total": 220,
+        "accuracy": 0.3
+      },
+      "results": [
+        {
+          "method": "C3",
+          "sample_id": "pilot10_external_01",
+          "chart_id": "KDAB_I07L",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 9,
+            "total": 25,
+            "accuracy": 0.36
+          }
+        },
+        {
+          "method": "C3",
+          "sample_id": "pilot10_external_02",
+          "chart_id": "KDAB_R07L",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 4,
+            "total": 19,
+            "accuracy": 0.21052631578947367
+          }
+        },
+        {
+          "method": "C3",
+          "sample_id": "pilot10_external_03",
+          "chart_id": "KDBQ_L31",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 6,
+            "total": 13,
+            "accuracy": 0.46153846153846156
+          }
+        },
+        {
+          "method": "C3",
+          "sample_id": "pilot10_external_04",
+          "chart_id": "KDIJ_RNV-A",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 5,
+            "total": 31,
+            "accuracy": 0.16129032258064516
+          }
+        },
+        {
+          "method": "C3",
+          "sample_id": "pilot10_external_05",
+          "chart_id": "KFKL_V21",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 7,
+            "total": 19,
+            "accuracy": 0.3684210526315789
+          }
+        },
+        {
+          "method": "C3",
+          "sample_id": "pilot10_external_06",
+          "chart_id": "KDAF_R36",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 6,
+            "total": 19,
+            "accuracy": 0.3157894736842105
+          }
+        },
+        {
+          "method": "C3",
+          "sample_id": "pilot10_external_07",
+          "chart_id": "KDAL_I13L",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 11,
+            "total": 25,
+            "accuracy": 0.44
+          }
+        },
+        {
+          "method": "C3",
+          "sample_id": "pilot10_external_08",
+          "chart_id": "KDKK_RNV-A",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 4,
+            "total": 19,
+            "accuracy": 0.21052631578947367
+          }
+        },
+        {
+          "method": "C3",
+          "sample_id": "pilot10_external_09",
+          "chart_id": "KDKX_L26",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 7,
+            "total": 19,
+            "accuracy": 0.3684210526315789
+          }
+        },
+        {
+          "method": "C3",
+          "sample_id": "pilot10_external_10",
+          "chart_id": "KDAG_R22",
+          "json_extraction_policy": "strict_json",
+          "validation_error_count": 0,
+          "validation_errors": [],
+          "score": {
+            "correct": 7,
+            "total": 31,
+            "accuracy": 0.22580645161290322
+          }
+        }
+      ]
+    }
+  },
+  "failures": []
+}

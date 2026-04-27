@@ -1,0 +1,242 @@
+[
+  {
+    "chart_id": "KDAB_I07L",
+    "icao": "KDAB",
+    "apt_ident": "DAB",
+    "airport_name": "DAYTONA BEACH INTL",
+    "city": "DAYTONA BEACH",
+    "state": "FL",
+    "volume": "SE-3",
+    "alnum": "110",
+    "chart_name": "ILS OR LOC RWY 07L",
+    "proc_ident": "I07L",
+    "type": "ILS_OR_LOC",
+    "pdf_name": "00110IL7L.PDF",
+    "pdf_base": "00110IL7L",
+    "procuid": "513",
+    "amdtdate": "2/28/2019",
+    "amdtnum": "32A",
+    "missed_groups": [
+      [
+        "",
+        4
+      ]
+    ]
+  },
+  {
+    "chart_id": "KDAB_R07L",
+    "icao": "KDAB",
+    "apt_ident": "DAB",
+    "airport_name": "DAYTONA BEACH INTL",
+    "city": "DAYTONA BEACH",
+    "state": "FL",
+    "volume": "SE-3",
+    "alnum": "110",
+    "chart_name": "RNAV (GPS) RWY 07L",
+    "proc_ident": "R07L",
+    "type": "RNAV_RWY",
+    "pdf_name": "00110R7L.PDF",
+    "pdf_base": "00110R7L",
+    "procuid": "19818",
+    "amdtdate": "4/23/2020",
+    "amdtnum": "1C",
+    "missed_groups": [
+      [
+        "",
+        3
+      ]
+    ]
+  },
+  {
+    "chart_id": "KDBQ_L31",
+    "icao": "KDBQ",
+    "apt_ident": "DBQ",
+    "airport_name": "DUBUQUE RGNL",
+    "city": "DUBUQUE",
+    "state": "IA",
+    "volume": "NC-3",
+    "alnum": "923",
+    "chart_name": "LOC RWY 31",
+    "proc_ident": "L31",
+    "type": "LOC",
+    "pdf_name": "00923L31.PDF",
+    "pdf_base": "00923L31",
+    "procuid": "16227",
+    "amdtdate": "1/27/2022",
+    "amdtnum": "2A",
+    "missed_groups": [
+      [
+        "",
+        2
+      ]
+    ]
+  },
+  {
+    "chart_id": "KDIJ_RNV-A",
+    "icao": "KDIJ",
+    "apt_ident": "DIJ",
+    "airport_name": "DRIGGS/REED MEML",
+    "city": "DRIGGS",
+    "state": "ID",
+    "volume": "NW-1",
+    "alnum": "9117",
+    "chart_name": "RNAV (GPS)-A",
+    "proc_ident": "RNV-A",
+    "type": "RNAV_CIRCLING",
+    "pdf_name": "09117RA.PDF",
+    "pdf_base": "09117RA",
+    "procuid": "31913",
+    "amdtdate": "10/2/2025",
+    "amdtnum": "2",
+    "missed_groups": [
+      [
+        "",
+        5
+      ]
+    ]
+  },
+  {
+    "chart_id": "KFKL_V21",
+    "icao": "KFKL",
+    "apt_ident": "FKL",
+    "airport_name": "VENANGO RGNL",
+    "city": "FRANKLIN",
+    "state": "PA",
+    "volume": "NE-4",
+    "alnum": "5007",
+    "chart_name": "VOR RWY 21",
+    "proc_ident": "V21",
+    "type": "VOR",
+    "pdf_name": "05007V21.PDF",
+    "pdf_base": "05007V21",
+    "procuid": "4537",
+    "amdtdate": "11/4/2021",
+    "amdtnum": "8C",
+    "missed_groups": [
+      [
+        "",
+        3
+      ]
+    ]
+  },
+  {
+    "chart_id": "KDAF_R36",
+    "icao": "KDAF",
+    "apt_ident": "DAF",
+    "airport_name": "NECEDAH",
+    "city": "NECEDAH",
+    "state": "WI",
+    "volume": "EC-3",
+    "alnum": "9007",
+    "chart_name": "RNAV (GPS) RWY 36",
+    "proc_ident": "R36",
+    "type": "RNAV_RWY",
+    "pdf_name": "09007R36.PDF",
+    "pdf_base": "09007R36",
+    "procuid": "19022",
+    "amdtdate": "12/30/2021",
+    "amdtnum": "0E",
+    "missed_groups": [
+      [
+        "",
+        3
+      ]
+    ]
+  },
+  {
+    "chart_id": "KDAL_I13L",
+    "icao": "KDAL",
+    "apt_ident": "DAL",
+    "airport_name": "DALLAS LOVE FLD",
+    "city": "DALLAS",
+    "state": "TX",
+    "volume": "SC-2",
+    "alnum": "106",
+    "chart_name": "ILS OR LOC RWY 13L",
+    "proc_ident": "I13L",
+    "type": "ILS_OR_LOC",
+    "pdf_name": "00106IL13L.PDF",
+    "pdf_base": "00106IL13L",
+    "procuid": "485",
+    "amdtdate": "12/26/2024",
+    "amdtnum": "34A",
+    "missed_groups": [
+      [
+        "",
+        4
+      ]
+    ]
+  },
+  {
+    "chart_id": "KDKK_RNV-A",
+    "icao": "KDKK",
+    "apt_ident": "DKK",
+    "airport_name": "CHAUTAUQUA COUNTY/DUNKIRK",
+    "city": "DUNKIRK",
+    "state": "NY",
+    "volume": "NE-2",
+    "alnum": "880",
+    "chart_name": "RNAV (GPS)-A",
+    "proc_ident": "RNV-A",
+    "type": "RNAV_CIRCLING",
+    "pdf_name": "00880RA.PDF",
+    "pdf_base": "00880RA",
+    "procuid": "37385",
+    "amdtdate": "1/27/2022",
+    "amdtnum": "0B",
+    "missed_groups": [
+      [
+        "",
+        3
+      ]
+    ]
+  },
+  {
+    "chart_id": "KDKX_L26",
+    "icao": "KDKX",
+    "apt_ident": "DKX",
+    "airport_name": "KNOXVILLE DOWNTOWN ISLAND",
+    "city": "KNOXVILLE",
+    "state": "TN",
+    "volume": "SE-1",
+    "alnum": "6102",
+    "chart_name": "LOC RWY 26",
+    "proc_ident": "L26",
+    "type": "LOC",
+    "pdf_name": "06102L26.PDF",
+    "pdf_base": "06102L26",
+    "procuid": "7536",
+    "amdtdate": "5/19/2022",
+    "amdtnum": "5",
+    "missed_groups": [
+      [
+        "",
+        3
+      ]
+    ]
+  },
+  {
+    "chart_id": "KDAG_R22",
+    "icao": "KDAG",
+    "apt_ident": "DAG",
+    "airport_name": "BARSTOW-DAGGETT",
+    "city": "DAGGETT",
+    "state": "CA",
+    "volume": "SW-3",
+    "alnum": "104",
+    "chart_name": "RNAV (GPS) RWY 22",
+    "proc_ident": "R22",
+    "type": "RNAV_RWY",
+    "pdf_name": "00104R22.PDF",
+    "pdf_base": "00104R22",
+    "procuid": "17641",
+    "amdtdate": "7/18/2019",
+    "amdtnum": "2C",
+    "missed_groups": [
+      [
+        "",
+        5
+      ]
+    ]
+  }
+]

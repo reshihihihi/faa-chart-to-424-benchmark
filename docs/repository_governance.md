@@ -1,14 +1,13 @@
 # Repository Governance
 
-This repository is private during active paper-v2 preparation. Because GitHub
-currently does not allow branch protection on this private repository without a
-paid plan or making the repository public, governance is enforced through a
-combination of CI, PR templates, CODEOWNERS, issue gates, and manual discipline.
+This repository is intended to be public during paper-v2 artifact preparation.
+Governance is enforced through a combination of CI, PR templates, CODEOWNERS,
+issue gates, and manual discipline.
 
-GitHub secret scanning is also unavailable for this private repository under
-the current account settings. The repository integrity CI therefore includes a
-basic secret-pattern scan, but this is not a substitute for full GitHub secret
-scanning.
+The repository integrity CI includes a basic secret-pattern scan. If GitHub
+secret scanning and push protection are available for the public repository,
+they should also be enabled, but they are not a substitute for reviewing files
+before publication.
 
 ## Required Workflow
 
@@ -72,15 +71,13 @@ Before formal evaluation, confirm:
 - formal freeze checklist is complete
 - no evaluation split sample has been used for prompt tuning
 - branch protection is enabled if the repository has been made public or if the
-  account supports private branch protection
-- GitHub secret scanning is enabled if repository visibility or account features
-  make it available
+  account supports branch protection
+- GitHub secret scanning and push protection are enabled if repository settings
+  make them available
 
 ## Current Known Governance Limitations
 
-- Branch protection could not be enabled while the repository is private under
-  the current account settings.
-- GitHub secret scanning and push protection could not be enabled while the
-  repository is private under the current account settings.
-- Until those features become available, do not treat `main` as mechanically
+- Branch protection and secret scanning settings must be checked after the
+  visibility transition.
+- Until those features are confirmed, do not treat `main` as mechanically
   protected. Use PRs and run `repository-integrity` before merging or pushing.

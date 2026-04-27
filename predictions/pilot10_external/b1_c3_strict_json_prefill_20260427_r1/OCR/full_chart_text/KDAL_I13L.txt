@@ -1,0 +1,205 @@
+# OCR Transcription of FAA Approach Chart
+
+## Header Section
+DALLAS, TEXAS
+LOC/DME I-DAL
+111.5
+Chan 52
+
+AL-106 (FAA)
+APP CRS 133°
+Rwy Ldg 7352
+TDZE 485
+Apt Elev 487
+
+25331
+
+ILS or LOC RWY 13L
+DALLAS LOVE FLD (DAL)
+
+RADAR required for procedure entry.
+
+Simultaneous approach authorized.
+
+## Navigation Fixes and Altitudes
+
+D-ATIS
+120.15
+
+LONE STAR APP CON
+124.3 282.275 (N)
+125.2 343.65 (S)
+
+LOVE TOWER
+123.7 239.3
+
+GND CON
+121.75 348.6
+
+## Missed Approach Instructions
+
+MALSR
+A5
+
+MISSED APPROACH: Climb to 1000 then climbing left turn
+to 3000 on heading 060° and CVE VOR/DME R-087 to
+SOLDO INT/CVE 28.9 DME and hold.
+
+## Plan View Details
+
+ALTERNATE MISSED
+APCH FIX
+SOLDO
+(IF)
+WADES INT
+I-DAL 14.4
+
+NNATE INT
+I-DAL 5.7
+
+Dallas-Fort Worth
+VORTAC
+
+R-335
+
+MAVERICK
+113.1 TTT
+Chan 78
+
+MSA CVE 25 NM
+2700
+090° 270°
+3600
+
+Chan 109
+116.2 CVE
+R-087
+
+TTT 35.8
+R-084
+113.1 TTT
+Chan 78
+
+264°
+
+Chan 109
+116.2 CVE
+R-087
+
+CVE 28.9
+R-084
+113.1 TTT
+Chan 78
+
+267°
+
+MISSED APCH FIX
+SOLDO
+
+COWBOY
+116.2 CVE
+Chan 109
+
+R-064
+R-082
+
+666
+562
+
+LOCALIZER 111.5
+I-DAL
+Chan 52
+
+R-087
+
+TSKED INT
+I-DAL 2.8
+
+## Profile View
+
+WADES INT
+I-DAL 14.4
+2500
+
+133°
+
+NNATE INT
+I-DAL 5.7
+1900
+
+TSKED INT
+I-DAL 2.8
+I-DAL
+
+GS 3.00°
+TCH 55
+
+1900
+
+920
+
+1000
+hdg
+060°
+
+3000
+CVE
+R-087
+
+SOLDO
+
+ELEV 487
+
+TDZE 485
+
+133°
+
+I-DAL
+1.4
+
+8.7 NM 2.9 NM 0.5 0.9
+
+## Minimums Table
+
+CATEGORY A B C D
+
+S-ILS 13L 685/18 200 (200-½)
+
+S-LOC 13L 920/24 435 (500-½) 920/40 435 (500-¾)
+
+CIRCLING
+1000-1 513 (600-1)
+1140-1 653 (700-1)
+1220-2 733 (800-2)
+1520-3 1033 (1100-3)
+
+TSKED FIX MINIMUMS (DUAL VOR RECEIVERS OR DME REQUIRED)
+
+S-LOC 13L 820/24 335 (400-½) 820/26 335 (400-½)
+
+CIRCLING
+1000-1
+513 (600-1)
+1140-1
+653 (700-1)
+1220-2
+733 (800-2)
+1520-3
+1033 (1100-3)
+
+TDZE/RCLS Rwys 13L and 31L
+HIRL Rwys 13L-31R, and 13R-31L
+FAF to MAP 4.3 NM
+
+Knots 60 90 120 150 180
+Min:Sec 4:18 2:52 2:09 1:43 1:26
+
+## Footer
+
+DALLAS, TEXAS
+Amdt 34A 26DEC24
+
+32°51'N-96°51'W
+
+DALLAS LOVE FLD (DAL)
+ILS or LOC RWY 13L

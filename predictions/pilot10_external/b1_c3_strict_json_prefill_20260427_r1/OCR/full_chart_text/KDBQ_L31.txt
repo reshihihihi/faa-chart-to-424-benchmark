@@ -1,0 +1,220 @@
+# OCR Transcription
+
+DUBUQUE, IOWA
+AL-923 (FAA)
+25275
+
+LOC/DME I-DBQ
+108.7
+Chan 24
+
+APP CRS
+311°
+
+Rwy Idg
+TDZE
+Apt Elev
+
+6502
+1062
+1076
+
+LOC RWY 31
+DUBUQUE RGNL (DBQ)
+
+DME required.
+
+MALSR
+
+For inop ALS, increase S-31 Cat C/D visibility to 1⅜ SM.
+
+A5
+
+MISSED APPROACH: Climb to 3500
+on DBQ VORTAC R-322 to CASSY
+INT/DBQ 25 DME and hold.
+
+ATIS
+127.25
+
+CHICAGO CENTER
+133.95 281.4
+
+DUBUQUE TOWER
+119.5 (CTAF) L 254.4
+
+GND CON
+121.8
+
+UNICOM
+122.95
+
+MISSED APCH FIX
+
+R-322
+
+CASSY
+DBQ 25
+
+LOCALIZER
+I-DBQ
+Chan 24
+
+108.7
+
+311°
+R-340
+DBQ 15.8
+Chan 105
+
+I-DBQ 8.8
+Chan 24
+
+DUBUQUE
+115.8 DBQ
+Chan 105
+
+NC-3, 16 APR 2026 to 14 MAY 2026
+
+Procedure NA for arrival on DBQ VORTAC
+airway radials 112 CW 162.
+
+(IAF)
+ZILOM
+I-DBQ 7.5
+DBQ 6.8
+
+3100 to ZILOM
+130° (6.8)
+
+311°
+
+(CFBSZ)
+
+086°
+266°
+
+131°
+
+MSA DBQ 25 NM
+
+2900
+ELEV 1076
+
+D
+
+TDZE 1062
+
+A4
+
+8L
+P
+
+TWR
+980
+
+3500
+
+CASSY
+
+ZILOM
+I-DBQ (7.5)
+
+DBQ R-322
+
+VGSI and descent angles not coincident
+(VGSI Angle 3.00/TCH 57).
+Remain
+within 10 NM
+
+131°
+I-DBQ
+2.7
+
+8270 X 150
+
+311°
+
+3100
+
+311°
+
+3100
+
+I-DBQ
+1.2
+
+Use I-DBQ DME when
+on the localizer course.
+
+3.00°
+TCH 45
+
+P
+
+36
+A5
+
+1.4 NM
+
+REIL Rwy 18 L
+
+CATEGORY
+
+HIRL Rwys 13-31 and 18-36 L
+FAF to MAP 6.3 NM
+Knots
+
+60
+
+90
+
+120
+
+150
+
+180
+
+Min:Sec 6:18
+
+4:12
+
+3:09
+
+2:31
+
+2:06
+
+S-31
+CIRCLING
+
+4.8 NM
+A
+
+B
+
+1580-½ 518 (600-½)
+1580-1
+504 (600-1)
+
+1600-1
+524 (600-1)
+
+C
+
+D
+
+1580-1 518 (600-1)
+1600-1½
+524 (600-1½)
+
+1800-2¼
+724 (800-2¼)
+
+DUBUQUE, IOWA
+Amdt 2A 27JAN22
+
+DUBUQUE RGNL (DBQ)
+42°24'N-90°43'W
+
+LOC RWY 31

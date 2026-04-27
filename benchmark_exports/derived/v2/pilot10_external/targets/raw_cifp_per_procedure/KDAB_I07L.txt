@@ -1,0 +1,7 @@
+SUSAP KDABK7FI07L  I      010TIGAEK7PC0E  I    IF IDABK7      25020142        PI  J 016000160018000                 0 NS   626431310
+SUSAP KDABK7FI07L  I      020FOLIGK7PC0E  F    CF IDABK7      2502006607000077PI  H 0160001600            OMN   K7D 0 NS   626442105
+SUSAP KDABK7FI07L  I      030RW07LK7PG0GY M    CF IDABK7      2502001807000048PI    00086             -300          0 NS   626451410
+SUSAP KDABK7FI07L  I      040         0  M     CA                     0702        + 00700                           0 NS   626461410
+SUSAP KDABK7FI07L  I      050         0    R   VIY                    1750                                          0 NS   626471410
+SUSAP KDABK7FI07L  I      060SMYRAK7EA0EY      CF ORL K7      0330033021300040D   + 03000                           0 NS   626481410
+SUSAP KDABK7FI07L  I      070SMYRAK7EA0EE  R   HM                     0330T010    + 03000                           0 NS   626491410

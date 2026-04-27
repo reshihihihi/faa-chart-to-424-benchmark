@@ -1,0 +1,7 @@
+SUSAP KDALK4FI13L  I      010WADESK4PC0E  I    IF IDALK4      31260145        PI  J 025000190018000                 0 NS   643622413
+SUSAP KDALK4FI13L  I      020NNATEK4PC0E  F    CF IDALK4      3126005713300087PI  H 0190001900            CVE   K4D 0 NS   643632413
+SUSAP KDALK4FI13L  I      030RW13LK4PG0GY M    CF IDALK4      3126001413300043PI    00535             -300          0 NS   643642413
+SUSAP KDALK4FI13L  I      040         0  M     CA                     1326        + 01000                           0 NS   643652413
+SUSAP KDALK4FI13L  I      050         0        VI                     0600                                          0 NS   643662413
+SUSAP KDALK4FI13L  I      060SOLDOK4EA0EY      CF CVE K4      0868028908680250D   + 03000                           0 NS   643672413
+SUSAP KDALK4FI13L  I      070SOLDOK4EA0EE  R   HM                     0868T010    + 03000                           0 NS   643682413

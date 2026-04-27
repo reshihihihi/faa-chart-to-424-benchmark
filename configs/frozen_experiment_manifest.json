@@ -24,9 +24,17 @@
     "formal_evaluation_split_locked": false
   },
   "methods": {
-    "status": "pending_freeze",
+    "status": "pilot_candidates_not_formal_frozen",
     "registry_path": "docs/method_registry.md",
-    "allowed_method_ids": []
+    "allowed_method_ids": [
+      "B1",
+      "C3"
+    ],
+    "formal_freeze_blockers": [
+      "pilot10 only; final method set must be frozen jointly",
+      "B1 OCR artifact policy must be frozen before formal evaluation",
+      "C3 questionnaire prompt and parser must be frozen before formal evaluation"
+    ]
   },
   "models": {
     "status": "pending_freeze",

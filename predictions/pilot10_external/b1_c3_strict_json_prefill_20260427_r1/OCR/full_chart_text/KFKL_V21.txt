@@ -1,0 +1,152 @@
+# OCR Transcription - KFKL VOR RWY 21
+
+FRANKLIN, PENNSYLVANIA
+AL-5007 (FAA)
+23278
+
+VOR FKL
+109.6
+APP CRS
+187°
+Rwy Idg 5200
+TDZE 1540
+Apt Elev 1540
+
+VOR RWY 21
+VENANGO RGNL (FKL)
+
+Inop table does not apply. When local altimeter setting not received,
+use Port Meadville altimeter setting and increase all MDA 80 feet and
+S-21 Cats C/D visibility ⅜ mile. Circling Rwy 12 NA at night. Rwy 12
+helicopter visibility reduction below 1 SM NA.
+
+MALSR
+A5
+
+MISSED APPROACH: Climb to
+2200, then climbing right turn to
+3300 direct FKL VOR and hold.
+
+AWOS-3PT
+118.175
+
+YOUNGSTOWN APP CON
+126.25 322.3
+
+CLNC DEL
+126.25
+
+UNICOM
+122.7 (CTAF) L
+
+2018
+
+1000
+
+187°
+
+007°
+
+1982
+
+IAF
+FRANKLIN
+109.6 FKL
+
+1000
+
+1861
+
+1670
+1621
+1733
+
+1651
+
+M SA FKL 25 NM
+
+3300
+
+ELEV 1540
+D
+TDZE 1540
+
+187°
+
+12
+A5
+
+1596
+
+30
+
+3294 X 100
+
+P
+
+2200
+3300
+FKL
+FKL
+VOR
+Remain
+within 10 NM
+
+007°
+
+3200
+
+187°
+
+3
+
+2700
+
+3.13°
+TCH 57
+
+MIRL Rwy 12-30 L
+HIRL Rwy 3-21 L
+
+3.3 NM
+
+CATEGORY
+A
+B
+C
+D
+
+S-21
+1920-1 380 (400-1)
+
+FAF to MAP 3.3 NM
+
+Knots
+60
+90
+120
+150
+180
+Min:Sec 3:18 2:12 1:39 1:19 1:06
+
+CIRCLING
+1960-1
+420 (500-1)
+2000-1
+460 (500-1)
+2040-1½
+500 (500-1½)
+2100-2
+560 (600-2)
+
+FRANKLIN, PENNSYLVANIA
+Amdt 8C 04NOV21
+
+VENANGO RGNL (FKL)
+41°23'N-79°52'W
+
+VOR RWY 21
+
+NE-4, 16 APR 2026 to 14 MAY 2026
+
+NE-4, 16 APR 2026 to 14 MAY 2026

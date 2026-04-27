@@ -1,0 +1,302 @@
+{
+  "KDAB_I07L": {
+    "KDAB_I07L__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "",
+      "leg_type": "CA",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAB_I07L.json",
+      "raw_record": "SUSAP KDABK7FI07L  I      040         0  M     CA                     0702        + 00700                           0 NS   626461410"
+    },
+    "KDAB_I07L__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "",
+      "leg_type": "VI",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAB_I07L.json",
+      "raw_record": "SUSAP KDABK7FI07L  I      050         0    R   VIY                    1750                                          0 NS   626471410"
+    },
+    "KDAB_I07L__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "",
+      "leg_type": "CF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAB_I07L.json",
+      "raw_record": "SUSAP KDABK7FI07L  I      060SMYRAK7EA0EY      CF ORL K7      0330033021300040D   + 03000                           0 NS   626481410"
+    },
+    "KDAB_I07L__ma4": {
+      "canonical_leg_index": 4,
+      "source_seq_no": "070",
+      "source_trans_ident": "",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAB_I07L.json",
+      "raw_record": "SUSAP KDABK7FI07L  I      070SMYRAK7EA0EE  R   HM                     0330T010    + 03000                           0 NS   626491410"
+    }
+  },
+  "KDAB_R07L": {
+    "KDAB_R07L__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "",
+      "leg_type": "CA",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAB_R07L.json",
+      "raw_record": "SUSAP KDABK7FR07L  R      040         0  M     CA                     0702        + 00230                           A JS   627071406"
+    },
+    "KDAB_R07L__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "",
+      "leg_type": "DF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAB_R07L.json",
+      "raw_record": "SUSAP KDABK7FR07L  R      050GILNEK7PC0EY   010DF                                 + 01600                           A JS   627082101"
+    },
+    "KDAB_R07L__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAB_R07L.json",
+      "raw_record": "SUSAP KDABK7FR07L  R      060GILNEK7PC0EE  L   HM                     25030040    + 01600                           A JS   627091310"
+    }
+  },
+  "KDBQ_L31": {
+    "KDBQ_L31__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "",
+      "leg_type": "CF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDBQ_L31.json",
+      "raw_record": "SUSAP KDBQK3FL31   L      040CASSYK5PC0EYM     CF DBQ K3      3215025032150255D   + 03500                           0 DS   650042201"
+    },
+    "KDBQ_L31__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDBQ_L31.json",
+      "raw_record": "SUSAP KDBQK3FL31   L      050CASSYK5PC0EE  R   HM                     3215T010    + 03500                           0 DS   650052201"
+    }
+  },
+  "KDIJ_RNV-A": {
+    "KDIJ_RNV-A__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "",
+      "leg_type": "CA",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDIJ_RNV-A.json",
+      "raw_record": "SUSAP KDIJK1FRNV-A R      040         0  M     CA                     1652        + 07500                           B PC   723622510"
+    },
+    "KDIJ_RNV-A__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "",
+      "leg_type": "DF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDIJ_RNV-A.json",
+      "raw_record": "SUSAP KDIJK1FRNV-A R      050TOGREK1PC0E   R010DF                                                  185              B-PC   723632510"
+    },
+    "KDIJ_RNV-A__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "",
+      "leg_type": "TF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDIJ_RNV-A.json",
+      "raw_record": "SUSAP KDIJK1FRNV-A R      060BRELDK1PC0E    010TF                                                                   B PC   723642510"
+    },
+    "KDIJ_RNV-A__ma4": {
+      "canonical_leg_index": 4,
+      "source_seq_no": "070",
+      "source_trans_ident": "",
+      "leg_type": "TF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDIJ_RNV-A.json",
+      "raw_record": "SUSAP KDIJK1FRNV-A R      070PIKEQK1PC0EY   010TF                                                                   B PC   723652510"
+    },
+    "KDIJ_RNV-A__ma5": {
+      "canonical_leg_index": 5,
+      "source_seq_no": "080",
+      "source_trans_ident": "",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDIJ_RNV-A.json",
+      "raw_record": "SUSAP KDIJK1FRNV-A R      080PIKEQK1PC0EE  R   HM                     15260070    + 10000                           B PC   723662510"
+    }
+  },
+  "KFKL_V21": {
+    "KFKL_V21__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "",
+      "leg_type": "CA",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KFKL_V21.json",
+      "raw_record": "SUSAP KFKLK6FV21   V      040         0  M     CA                     1870        + 02200                           0 NS   902951706"
+    },
+    "KFKL_V21__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "",
+      "leg_type": "DF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KFKL_V21.json",
+      "raw_record": "SUSAP KFKLK6FV21   V      050FKL  K6D 0VY  R   DF                                 + 03300                           0 NS   902961706"
+    },
+    "KFKL_V21__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KFKL_V21.json",
+      "raw_record": "SUSAP KFKLK6FV21   V      060FKL  K6D 0VE  R   HM                     1860T010    + 03300                           0 NS   902971706"
+    }
+  },
+  "KDAF_R36": {
+    "KDAF_R36__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "",
+      "leg_type": "CA",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAF_R36.json",
+      "raw_record": "SUSAP KDAFK5FR36   R      040         0  M     CA                     0005        + 01319                           B PS   628032113"
+    },
+    "KDAF_R36__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "",
+      "leg_type": "DF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAF_R36.json",
+      "raw_record": "SUSAP KDAFK5FR36   R      050AJEPOK5PC0EY  R010DF                                 + 02800                           B PS   628042113"
+    },
+    "KDAF_R36__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAF_R36.json",
+      "raw_record": "SUSAP KDAFK5FR36   R      060AJEPOK5PC0EE  R   HM                     00050040    + 02800                           B PS   628052113"
+    }
+  },
+  "KDAL_I13L": {
+    "KDAL_I13L__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "",
+      "leg_type": "CA",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAL_I13L.json",
+      "raw_record": "SUSAP KDALK4FI13L  I      040         0  M     CA                     1326        + 01000                           0 NS   643652413"
+    },
+    "KDAL_I13L__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "",
+      "leg_type": "VI",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAL_I13L.json",
+      "raw_record": "SUSAP KDALK4FI13L  I      050         0        VI                     0600                                          0 NS   643662413"
+    },
+    "KDAL_I13L__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "",
+      "leg_type": "CF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAL_I13L.json",
+      "raw_record": "SUSAP KDALK4FI13L  I      060SOLDOK4EA0EY      CF CVE K4      0868028908680250D   + 03000                           0 NS   643672413"
+    },
+    "KDAL_I13L__ma4": {
+      "canonical_leg_index": 4,
+      "source_seq_no": "070",
+      "source_trans_ident": "",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAL_I13L.json",
+      "raw_record": "SUSAP KDALK4FI13L  I      070SOLDOK4EA0EE  R   HM                     0868T010    + 03000                           0 NS   643682413"
+    }
+  },
+  "KDKK_RNV-A": {
+    "KDKK_RNV-A__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "",
+      "leg_type": "CA",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDKK_RNV-A.json",
+      "raw_record": "SUSAP KDKKK6FRNV-A R      040         0  M     CA                     2394        + 01900                           B PC   726591911"
+    },
+    "KDKK_RNV-A__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "",
+      "leg_type": "DF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDKK_RNV-A.json",
+      "raw_record": "SUSAP KDKKK6FRNV-A R      050TRUNTK6PC0EY  R010DF                                 + 03200                           B PC   726601911"
+    },
+    "KDKK_RNV-A__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDKK_RNV-A.json",
+      "raw_record": "SUSAP KDKKK6FRNV-A R      060TRUNTK6PC0EE  R   HM                     23940040    + 03200                           B PC   726611911"
+    }
+  },
+  "KDKX_L26": {
+    "KDKX_L26__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "",
+      "leg_type": "VI",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDKX_L26.json",
+      "raw_record": "SUSAP KDKXK7FL26   L      040         0  M     VI                     2500                                          0 DS   727412205"
+    },
+    "KDKX_L26__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "",
+      "leg_type": "CF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDKX_L26.json",
+      "raw_record": "SUSAP KDKXK7FL26   L      050SWASOK7EA0EY      CF VXV K7      2653018026530085D   + 04000                           0 DS   727422205"
+    },
+    "KDKX_L26__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDKX_L26.json",
+      "raw_record": "SUSAP KDKXK7FL26   L      060SWASOK7EA0EE  L   HM                     0853T010    + 04000                           0 DS   727432205"
+    }
+  },
+  "KDAG_R22": {
+    "KDAG_R22__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "",
+      "leg_type": "CA",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAG_R22.json",
+      "raw_record": "SUSAP KDAGK2FR22   R      040         0  M     CA                     2156        + 02330                           B PS   628432406"
+    },
+    "KDAG_R22__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "",
+      "leg_type": "DF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAG_R22.json",
+      "raw_record": "SUSAP KDAGK2FR22   R      050CIKVIK2PC0E    010DF                                                                   B PS   628442406"
+    },
+    "KDAG_R22__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "",
+      "leg_type": "TF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAG_R22.json",
+      "raw_record": "SUSAP KDAGK2FR22   R      060BINTEK2PC0E    010TF                                                                   B PS   628452406"
+    },
+    "KDAG_R22__ma4": {
+      "canonical_leg_index": 4,
+      "source_seq_no": "070",
+      "source_trans_ident": "",
+      "leg_type": "TF",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAG_R22.json",
+      "raw_record": "SUSAP KDAGK2FR22   R      070NULMNK2EA0EY   010TF                                 + 08000                           B PS   628462406"
+    },
+    "KDAG_R22__ma5": {
+      "canonical_leg_index": 5,
+      "source_seq_no": "080",
+      "source_trans_ident": "",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "benchmark_exports/derived/v2/pilot10_external/targets/canonical_proxy_gt/KDAG_R22.json",
+      "raw_record": "SUSAP KDAGK2FR22   R      080NULMNK2EA0EE  R   HM                     06740070    + 08000                           B PS   628472406"
+    }
+  }
+}

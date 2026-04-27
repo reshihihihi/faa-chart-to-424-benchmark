@@ -1,0 +1,141 @@
+# OCR Transcription of RNAV (GPS) RWY 36 Approach Chart
+
+NECEDAH, WISCONSIN
+AL-9007 (FAA)
+24025
+
+APP CRS  Rwy Idg  2721
+001°     TDZE    919
+         Apt Elev 919
+
+RNAV (GPS) RWY 36
+NECEDAH (DAF)
+
+▼ Rwy 36 helicopter visibility reduction below 1 SM NA.
+A NA  DME/DME-0.3 NM Auth. Procedure NA.
+     Wisconsin Rapids altimeter setting.
+
+MISSED APPROACH: Climbing right turn
+to 2800 direct AJEPO and hold.
+
+ISW ASOS        VOLK APP CON ★        UNICOM
+126.575         135.25  244.875       122.7 (CTAF) L
+
+R-6904B
+
+R-6904A
+
+1322
+
+RW36
+1209
+1099
+
+(FAF)
+EYLAR
+
+Procedure NA for arrival at
+bearings from CMY NDb
+018 CW 198 .
+
+MCCOY
+CMY
+
+3200
+106°
+(4.3)
+
+2170
+ELEV  919      TDZE  919
+
+2700
+001°
+(6)
+
+2800 NoPT
+084°
+(5)
+
+(IAF)
+CAKIM
+
+2800 NoPT
+277°
+(5)
+
+(IF/IAF)
+AJEPO
+
+001°
+
+(IAF)
+DULVE
+
+Procedure NA for arrivals on
+DLL VORTAC radials
+284 CW 011.
+
+M
+SA
+RW36 25 N
+M
+
+3200
+
+4 NM
+
+2800 NoPT
+322° (22.2)
+
+(IAF)
+FRELS
+DLL
+
+18
+2721 X 60
+
+4 NM
+Holding Pattern
+
+181°
+2800        001°
+
+AJEPO
+
+2800
+
+AJEPO
+
+EYLAR
+
+001°
+
+2700
+
+RW36
+
+3.05°
+TCH 40
+
+36
+
+6 NM
+
+5.4 NM
+
+001°
+
+CATEGORY        A           B           C           D
+LNAV  MDA      1540-1  621 (700-1)              NA
+                1580-1      1700-1
+CIRCLING       661 (700-1)  781 (800-1)          NA
+
+LIRL Rwy 18-36 L
+
+NECEDAH, WISCONSIN
+Orig-E  30DEC21
+
+NECEDAH (DAF)
+44°02'N-90°05'W
+
+RNAV (GPS) RWY 36

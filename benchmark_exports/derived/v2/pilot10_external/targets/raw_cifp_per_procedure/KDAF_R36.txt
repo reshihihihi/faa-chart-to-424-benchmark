@@ -1,0 +1,5 @@
+SUSAP KDAFK5FR36   R      010AJEPOK5PC0E  I    IF                                 + 02800     18000                 B PS   627992113
+SUSAP KDAFK5FR36   R      030RW36 K5PG0GY M 031TF                                   00959             -305          B PS   628022113
+SUSAP KDAFK5FR36   R      040         0  M     CA                     0005        + 01319                           B PS   628032113
+SUSAP KDAFK5FR36   R      050AJEPOK5PC0EY  R010DF                                 + 02800                           B PS   628042113
+SUSAP KDAFK5FR36   R      060AJEPOK5PC0EE  R   HM                     00050040    + 02800                           B PS   628052113

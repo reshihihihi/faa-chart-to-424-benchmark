@@ -1,7 +1,98 @@
 {
   "manifest_version": "0.1.0",
-  "status": "pending_freeze",
-  "prompts": [],
+  "status": "pilot_candidate_not_formal_frozen",
+  "prompts": [
+    {
+      "method_id": "OCR_full_chart_text_pilot10",
+      "prompt_path": "prompts/paper_v2/ocr_full_chart_text.zh_v1_candidate.md",
+      "prompt_version": "zh_v1_candidate",
+      "sha256": "35c82663b4f1e6a1f38a9df9538ed27076a224f935fc74e6955f84e097075af7",
+      "allowed_input_fields": [
+        "chart_id",
+        "airport",
+        "approach_ident",
+        "chart_name",
+        "full_chart_image"
+      ],
+      "forbidden_input_fields": [
+        "canonical_proxy_target",
+        "CIFP_or_ARINC_424_record",
+        "manual_annotation",
+        "prelabel_bbox",
+        "scorer_output",
+        "historical_model_output"
+      ],
+      "includes_domain_rules": false,
+      "includes_unknown_or_not_observable_instruction": true,
+      "formal_freeze_status": "not_frozen_pilot_only"
+    },
+    {
+      "method_id": "B1",
+      "prompt_path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "prompt_version": "zh_v1_candidate_strict_json_prefill",
+      "sha256": "f2a2c27b534f93bb33d90834cc9fdde4726e8ae267bb3d1134679827d1e2f2e3",
+      "allowed_input_fields": [
+        "chart_id",
+        "airport",
+        "approach_ident",
+        "chart_name",
+        "full_chart_ocr_text",
+        "canonical_schema_contract"
+      ],
+      "forbidden_input_fields": [
+        "full_chart_image_pixels",
+        "OCR_bbox",
+        "ROI_or_region_label",
+        "automatic_field_candidates",
+        "gold_observable_evidence",
+        "CIFP_or_ARINC_424_record",
+        "canonical_proxy_target",
+        "answer_key",
+        "scorer_output",
+        "manual_annotation",
+        "manual_corrected_text",
+        "manual_field_to_leg_mapping",
+        "historical_model_output",
+        "external_airnav_database_or_web_search"
+      ],
+      "includes_domain_rules": false,
+      "includes_unknown_or_not_observable_instruction": true,
+      "formal_freeze_status": "not_frozen_pilot_only"
+    },
+    {
+      "method_id": "C3",
+      "prompt_path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+      "prompt_version": "zh_v1_candidate_strict_json_prefill",
+      "sha256": "49e2ba9134e9c7737d98374786963424546123129c6faa7d648de8224e468e4e",
+      "allowed_input_fields": [
+        "chart_id",
+        "airport",
+        "approach_ident",
+        "chart_name",
+        "full_chart_image",
+        "questionnaire_schema_contract"
+      ],
+      "forbidden_input_fields": [
+        "external_OCR_text",
+        "OCR_bbox",
+        "ROI_or_region_label",
+        "automatic_field_candidates",
+        "gold_observable_evidence",
+        "CIFP_or_ARINC_424_record",
+        "canonical_proxy_target",
+        "answer_key",
+        "scorer_output",
+        "manual_annotation",
+        "manual_corrected_text",
+        "manual_field_to_leg_mapping",
+        "historical_model_output",
+        "external_airnav_database_or_web_search"
+      ],
+      "includes_domain_rules": false,
+      "includes_unknown_or_not_observable_instruction": true,
+      "formal_freeze_status": "not_frozen_pilot_only"
+    }
+  ],
   "required_fields_per_prompt": [
     "method_id",
     "prompt_path",
@@ -13,4 +104,3 @@
     "includes_unknown_or_not_observable_instruction"
   ]
 }
-

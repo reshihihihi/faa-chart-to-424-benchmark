@@ -1,0 +1,53 @@
+{
+  "chart_id": "KDAB_R07L",
+  "image_path": "benchmark_exports/derived/v2/pilot10_external/images/002__KDAB_R07L__00110R7L_p0.png",
+  "image_dimensions": {
+    "width": 775,
+    "height": 1188
+  },
+  "prelabel_version": "pilot10_external_v0_generic",
+  "generated_at": "2026-04-26T14:26:59.618103+00:00",
+  "generation_policy": {
+    "final_ground_truth": false,
+    "human_calibration_required": true,
+    "candidate_mappings_are_cifp424_targets_not_independent_predictions": true
+  },
+  "regions": [
+    {
+      "region_id": "KDAB_R07L_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "bbox": {
+        "x_center": 0.805,
+        "y_center": 0.142,
+        "width": 0.33,
+        "height": 0.07
+      },
+      "ocr_text": "",
+      "confidence": 0.35
+    },
+    {
+      "region_id": "KDAB_R07L_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "bbox": {
+        "x_center": 0.5,
+        "y_center": 0.43,
+        "width": 0.94,
+        "height": 0.48
+      },
+      "ocr_text": "",
+      "confidence": 0.3
+    },
+    {
+      "region_id": "KDAB_R07L_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "bbox": {
+        "x_center": 0.52,
+        "y_center": 0.705,
+        "width": 0.42,
+        "height": 0.105
+      },
+      "ocr_text": "",
+      "confidence": 0.25
+    }
+  ]
+}

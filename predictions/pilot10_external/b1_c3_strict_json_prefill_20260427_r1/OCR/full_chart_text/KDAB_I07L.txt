@@ -1,0 +1,198 @@
+# OCR Transcription of FAA Approach Chart
+
+## Header Area
+DAYTONA BEACH, FLORIDA
+AL-110 (FAA)
+25275
+
+LOC I-DAB APP CRS 070° Rwy Idg 9810 TDZE 30 Apt Elev 34
+
+ILS or LOC RWY 7L
+DAYTONA BEACH INTL (DAB)
+
+## Notes/Symbols Area
+T Inoperative table does not apply to S-ILS 07L. Helicopter visibility reduction below RVR 4000 NA. For inop MALSR, increase S-LOC 07L Cat A and B and ZOPRI fix minimums S-LOC 07L all Cats visibility to RVR 5500. Autopilot coupled approach NA below 535.
+
+MALSR
+A5
+
+MISSED APPROACH: Climb to 700 then climbing right turn to 3000 on heading 175° and ORL VORTAC R-033 to SMYRA/ORL 33.1 DME and hold.
+
+## Frequency Boxes
+ATIS 132.875
+DAYTONA APP CON 125.8 269.075
+DAYTONA TOWER 120.7 257.8
+GND CON 121.9 348.6
+
+## Plan View
+(IAF)
+HANAV
+OMN 16
+
+R-260
+
+1600
+260°
+(10)
+
+ORMOND BEACH
+112.6 OMN
+Chan 73
+
+MSA OMN 25 NM
+2800
+
+R-260
+
+R-293
+
+R-221
+
+R-196
+
+R-149
+
+1600
+070°
+(10)
+
+115
+ZOPRI INT
+
+LOCALIZER 109.7
+I-DAB
+
+WAMAL
+OMN 18.9
+
+(IF)
+FOLIG INT
+RADAR
+TIGAE INT
+OMN 16
+
+380
+
+R-293
+
+R-221
+
+Deland Muni-
+Sidney H Taylor
+Fld
+
+2500
+
+1600
+070° (3.3)
+
+(IAF)
+SMYRA
+OMN 18.9
+
+ORL 33.1
+
+1900 to WAMAL
+OMN 18.9 Arc
+
+R-150
+
+ALTERNATE MISSED
+APCH FIX
+
+R-213
+Chan 70
+
+R-120
+
+3000
+
+YUBUL
+OMN 14.3
+
+DME or RADAR REQUIRED
+
+ELEV 34 D TDZE 30
+
+## Profile View
+WAMAL
+OMN 18.9
+
+TIGAE INT
+OMN 16
+
+FOLIG INT
+RADAR
+
+700 3000
+hdg
+175°
+
+ORL
+R-033
+
+SMYRA
+INT
+
+*LOC only.
+
+1900 070°
+
+1600
+
+1600
+
+ZOPRI
+INT
+1600
+
+680
+
+GS 3.00°
+TCH 57
+
+3.3 NM 7.7 NM 2.9 NM 1.9 NM
+
+## Minimums Table
+CATEGORY A B C D
+
+S-ILS 07L 230/40 200 (200-½)
+
+S-LOC 07L 680/40 650 (700-¾) 680-1⅛ 650 (700-1⅛)
+
+CIRCLING 680-1 646 (700-1) 680-1⅜ 700-2
+646 (700-1⅜) 666 (700-2)
+
+ZOPRI FIX MINIMUMS (DUAL VOR RECEIVERS REQUIRED)
+
+S-LOC 07L 380/40 350 (400-½)
+
+CIRCLING 540-1 506 (600-1) 680-1⅜ 700-2
+646 (700-1⅜) 666 (700-2)
+
+## Airport Diagram
+070°
+TWR
+3195
+100
+
+A5
+A5
+
+TDZ/CL Rwy 7L
+HIRL Rwy 7L-25R
+MIRL Rwys 7R-25L and 16-34
+REIL Rwys 7R, 16, 25L and 34
+
+FAF to MAP 4.8 NM
+Knots 60 90 120 150 180
+Min:Sec 4:48 3:12 2:24 1:55 1:36
+
+## Footer
+DAYTONA BEACH, FLORIDA
+Amdt 32A 28FEB19
+
+29°11'N-81°03'W
+
+DAYTONA BEACH INTL (DAB)
+ILS or LOC RWY 7L

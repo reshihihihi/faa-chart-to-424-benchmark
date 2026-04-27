@@ -1,0 +1,82 @@
+# OCR Transcription
+
+DUNKIRK, NEW YORK                    AL-880 (FAA)                    25219
+
+APP CRS  Rwy Idg   N/A
+239°     TDZE      N/A                           RNAV (GPS)-A
+         Apt Elev   692
+                                    CHAUTAUQUA COUNTY/DUNKIRK (DKK)
+
+RNP APCH - GPS.
+
+T        Circling Cat D NA southeast of Rwy 6 and southwest of Rwy 33.        MISSED APPROACH: Climb to
+                                                                                1900 then climbing right turn to
+A        Circling Rwy 6, 24, 33 NA at night.                                  3200 direct TRUNT and hold.
+         Rwy 6, 24, 33 helicopter visibility reduction below 1 SM NA.
+-21°C
+
+         ASOS              BUFFALO APP CON           UNICOM
+         119.275           126.5  317.6             123.075(CTAF) L
+
+
+                    CANADA
+                    UNITED STATES
+                                                    4 NM
+                                                    239°
+                                                    (IF)
+                                        2300        TRUNT        3200
+                                        239°                     288°
+                                        (4.1)                    (10)
+                                        (FAF)                            (IAF)
+                                        NOKAA                            LANGS
+
+                            CUVBA
+                            2.9 NM to
+                            RW24
+                                        822±
+
+                    RW24
+                                        798±
+
+
+NE-2, 16 APR 2026 to 14 MAY 2026                                    NE-2, 16 APR 2026 to 14 MAY 2026
+
+
+ELEV  692
+
+                                                                    MSA RW24 25 NM
+                    239°
+                                                                    3900
+
+
+         6200 X 100
+         15
+                    X 100
+         6200
+                    24
+         X 100
+         6200
+         33
+
+         1900      3200      TRUNT      Visual Segment - Obstacles.
+                                                                    TRUNT
+
+                             CUVBA                  NOKAA
+                             2.9 NM to
+                             RW24                                  3200
+                                                                   239°
+                             RW24
+                                        2300        1440
+                             2.9 NM     2.1 NM      4.8 NM
+
+         CATEGORY           A           B           C              D
+         CIRCLING           1200-1      1320-1      1640-2¾        2148-3
+                            508 (600-1) 628 (700-1) 948 (1000-2¾)  1448 (1500-3)
+
+MIRL Rwy 15-33  L
+REIL Rwys 6 and 24  L
+HIRL Rwy 6-24  L
+
+DUNKIRK, NEW YORK                      CHAUTAUQUA COUNTY/DUNKIRK (DKK)
+Orig-B  27JAN22
+42°30'N-79°16'W                        RNAV (GPS)-A
