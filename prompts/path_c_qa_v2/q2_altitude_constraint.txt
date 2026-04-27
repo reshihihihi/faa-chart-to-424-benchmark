@@ -1,0 +1,36 @@
+TASK: For missed-approach leg <LEG_INDEX>, identify its altitude constraint (composite answer).
+
+Descriptors (exactly one):
+
+  AT           — cross the altitude exactly (rare on climbing legs)
+  AT_OR_ABOVE  — at or above altitude (typical for climb-to-altitude segments)
+  AT_OR_BELOW  — at or below altitude
+  BETWEEN      — between altitude_ft (upper bound) and altitude_2_ft (lower bound)
+
+Chart typography cues:
+- "Climb to N" or "to N" → typically AT_OR_ABOVE N
+- "at N" or explicit single line → AT N
+- "N / M" stacked (upper / lower) → BETWEEN with upper=N, lower=M
+- Number with a crossbar ABOVE → AT_OR_ABOVE
+- Number with a crossbar BELOW → AT_OR_BELOW
+- Number with crossbars both above and below → AT (exact)
+
+OUTPUT (single JSON object):
+
+{
+  "status": "<present|not_applicable|not_observable|unknown>",
+  "value": {
+    "desc": "<AT|AT_OR_ABOVE|AT_OR_BELOW|BETWEEN>",
+    "altitude_ft": <int>,
+    "altitude_2_ft": <int | null>
+  } | null
+}
+
+Scoring note: this is a COMPOSITE field. desc, altitude_ft, and altitude_2_ft are
+all compared as one atom — any one wrong makes the whole answer contradicted.
+
+Rules:
+- altitude_2_ft is non-null ONLY for BETWEEN; null otherwise.
+- Leg has no altitude constraint at all (rare; check carefully) → status=not_applicable, value=null.
+- All visible and readable → status=present.
+- You see a constraint but cannot read a number → status=unknown, value=null.

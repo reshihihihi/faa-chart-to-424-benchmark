@@ -1,0 +1,46 @@
+TASK: For missed-approach leg <LEG_INDEX>, if it is a hold leg (HA / HF / HM), identify
+the hold parameters (composite answer).
+
+Four sub-fields:
+
+  inbound_course_deg  : magnetic course flown TOWARDS the hold fix (0.0 .. 359.9)
+  leg_time_min        : time on each racetrack leg (typical: 1.0 min below 14000 ft,
+                        1.5 min above). Mutually exclusive with leg_distance_nm.
+  leg_distance_nm     : distance-based hold (RNAV); null if time-based.
+  turn                : "LEFT" or "RIGHT" — direction of racetrack turns
+
+Exactly ONE of leg_time_min / leg_distance_nm is non-null.
+
+Chart cues:
+- Racetrack (stadium) symbol near the hold fix on the plan view
+- "and hold" / "hold at <fix>" phrase in MISSED APPROACH text
+- Course labeled along the racetrack's inbound leg
+- Time / distance labeled near the racetrack (e.g., "1 min" or "4 NM")
+- Turn direction from the racetrack's curve orientation OR text
+  "left turns" / "right turns"
+
+Standard inferences (use when chart does not explicitly state — these are valid PRESENT
+answers, not not_observable):
+- Time-based hold: 1.0 min below 14000 ft, 1.5 min at or above
+- Turn direction: right turns unless chart shows otherwise
+
+OUTPUT (single JSON object):
+
+{
+  "status": "<present|not_applicable|not_observable|unknown>",
+  "value": {
+    "inbound_course_deg": <float | null>,
+    "leg_time_min": <float | null>,
+    "leg_distance_nm": <float | null>,
+    "turn": "<LEFT|RIGHT|null>"
+  } | null
+}
+
+Scoring note: COMPOSITE field. All four sub-fields compared as one atom.
+
+Rules:
+- Non-hold leg (CA/CF/DF/TF/FA/VI/etc.) → status=not_applicable, value=null.
+- Hold leg with explicit + inferable parameters → status=present, value populated.
+- Hold leg but a parameter cannot be determined even from standard conventions
+  → set that sub-field to null; keep status=present if other parameters resolved,
+  or status=unknown if too many are null.

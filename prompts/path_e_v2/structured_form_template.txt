@@ -1,0 +1,68 @@
+=== Missed Approach Questionnaire ===
+
+Chart ID: ____________________
+
+Q0. Missed approach leg count:
+    value = _______
+    status = [ ] present  [ ] not_observable  [ ] unknown
+
+[For each leg i = 1..leg_count, fill in the block below once]
+
+=== Leg <i> ===
+
+Q_terminator  (ARINC 2-letter code, or "unknown"):
+  [ ] CA   [ ] CF   [ ] CI   [ ] CR   [ ] DF   [ ] FA   [ ] FM
+  [ ] HA   [ ] HF   [ ] HM   [ ] IF   [ ] RF   [ ] TF
+  [ ] VA   [ ] VD   [ ] VI   [ ] VM   [ ] VR
+  [ ] AF   [ ] CD   [ ] FC   [ ] FD   [ ] VC   [ ] PI
+  [ ] unknown
+  status = [ ] present  [ ] not_observable  [ ] unknown
+
+Q1. Fix ident (the fix this leg references):
+  [ ] not_applicable  (CA/VA/VI/VD/VM/VR/CD/CI/CR/VC/RF legs)
+  [ ] value: ident = _______________
+  [ ] not_observable
+  [ ] unknown
+
+Q2. Altitude constraint  (COMPOSITE — fill entire row):
+  [ ] not_applicable  (leg has no altitude constraint)
+  [ ] AT            _________ ft
+  [ ] AT_OR_ABOVE   _________ ft
+  [ ] AT_OR_BELOW   _________ ft
+  [ ] BETWEEN       upper _________ ft  AND  lower _________ ft
+  [ ] not_observable
+  [ ] unknown
+
+Q3. Turn direction during this leg:
+  [ ] not_applicable  (straight leg, or hold leg — hold turn lives in Q5)
+  [ ] LEFT
+  [ ] RIGHT
+  [ ] not_observable
+  [ ] unknown
+
+Q4. Course / radial reference  (COMPOSITE — pick one variant):
+  [ ] not_applicable  (hold leg; no course reference)
+  [ ] Variant A — course_deg = _________ (magnetic, 0.0-359.9)
+  [ ] Variant B — navaid_radial:
+        navaid    = _______________
+        radial_deg = _________
+        direction  = [ ] outbound  [ ] inbound
+  [ ] Variant C — direct  (DF legs; terminator fix fully determines geometry)
+  [ ] not_observable
+  [ ] unknown
+
+Q5. Hold parameters  (COMPOSITE — fill only for HA / HF / HM):
+  [ ] not_applicable  (non-hold leg)
+  [ ] hold leg:
+        inbound_course_deg = _________
+        leg_time_min       = _________  (mutually exclusive with leg_distance_nm)
+        leg_distance_nm    = _________
+        turn               = [ ] LEFT  [ ] RIGHT
+  [ ] not_observable
+  [ ] unknown
+
+=== End of Leg <i> ===
+
+[Repeat Leg block for each subsequent leg, up to leg_count]
+
+=== End of Questionnaire ===

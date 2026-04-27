@@ -1,0 +1,43 @@
+TASK: For missed-approach leg <LEG_INDEX>, identify the course / heading / radial that
+governs the ground track of this leg.
+
+Three answer variants (discriminated by "type"):
+
+VARIANT A — magnetic course (CA / VA / TF / CF without explicit radial reference):
+  { "type": "course_deg", "course_deg": <0.0 .. 359.9> }
+
+VARIANT B — navaid radial (FA / CF when text says "on <navaid> R-NNN outbound/inbound"):
+  {
+    "type": "navaid_radial",
+    "navaid": "<ident>",
+    "radial_deg": <0.0 .. 359.9>,
+    "direction": "outbound" | "inbound"
+  }
+
+VARIANT C — direct (DF legs where no course is specified):
+  { "type": "direct" }
+
+Chart cues:
+- "Climb to N on heading <deg>" → course_deg (record the heading value)
+- "Climb to N, course <deg>" → course_deg
+- "On <navaid> R-NNN outbound/inbound to <fix>" → navaid_radial
+- "Direct <fix>" → direct
+- Hold legs do NOT populate Q4; their inbound course lives in Q5_hold_params
+
+OUTPUT (single JSON object):
+
+{
+  "status": "<present|not_applicable|not_observable|unknown>",
+  "value": <variant object | null>
+}
+
+Scoring note: COMPOSITE field. All sub-fields for the chosen variant compared as one atom.
+
+Rules:
+- Hold leg (HA/HF/HM) → not_applicable.
+- No course reference (very rare on non-hold legs) → not_applicable.
+- All visible → present, value=variant object.
+- Variant clear but a number unreadable → unknown, value=null.
+
+Units: all degrees are MAGNETIC by default. The schema does not carry a true-course flag;
+if the chart prints "T" suffix on a bearing, still record the numeric value here.

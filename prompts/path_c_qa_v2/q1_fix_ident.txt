@@ -1,0 +1,34 @@
+TASK: For missed-approach leg <LEG_INDEX>, identify the fix this leg references.
+
+The role of the fix depends on the leg's path terminator:
+
+  Terminator  | Fix role
+  ------------+-----------------------------
+  CF DF TF AF | Terminator fix (leg ends here)
+  FA FC FD FM | Origin fix (leg starts here)
+  HA HF HM    | Hold fix (aircraft holds here)
+  IF          | Initial fix
+  CA VA VI    | No fix reference
+  VM VR VD    | No fix reference
+  CD CI CR VC | No fix reference
+  RF PI       | Special (see radius-to-fix / procedure-intercept semantics)
+
+Read the fix identifier (waypoint or navaid ident) from:
+- MISSED APPROACH text block (e.g., "direct COE", "hold at MUDRE")
+- Profile strip labels (e.g., COE, TIYOS, RW06)
+- Plan-view waypoint labels
+
+OUTPUT (single JSON object):
+
+{
+  "status": "<present|not_applicable|not_observable|unknown>",
+  "value": "<ident|null>"
+}
+
+Rules:
+- Leg type has a fix (per above table) and chart shows it → status=present, value=ident.
+- Leg type has NO fix → status=not_applicable, value=null.
+- Leg type should have a fix but chart omits a required ident → status=not_observable, value=null.
+- You see something but cannot read it → status=unknown, value=null.
+
+Idents are typically 5 characters or fewer (e.g., "COE", "MUDRE", "RW06", "BRA").

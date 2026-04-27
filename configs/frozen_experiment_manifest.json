@@ -3,10 +3,17 @@
   "status": "scaffold_not_frozen",
   "created_for": "NeurIPS 2026 Evaluations and Datasets paper-v2",
   "schema": {
-    "status": "pending_import",
+    "status": "imported_candidate_not_formal_frozen",
     "path": "schemas/missed_approach_leg.schema.json",
     "upstream_reference": "reshihihihi/faa-missed-approach-experiment#28",
-    "sha256": null
+    "upstream_pr_state": "draft_open",
+    "source_commit": "d2c54172b31184f8c0deb74415f37c239d3e3eca",
+    "sha256": "7ccb2cb9dcc73e67167d7ae5a8874e73dc201f56ad243615009db620494482d9",
+    "formal_freeze_blockers": [
+      "upstream PR #28 is draft/open",
+      "schema review must be accepted",
+      "target projection and scorer must be aligned before formal evaluation"
+    ]
   },
   "data": {
     "status": "pending_export",
@@ -48,4 +55,3 @@
     "reports": "reports/"
   }
 }
-

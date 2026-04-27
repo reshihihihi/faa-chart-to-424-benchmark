@@ -1,0 +1,25 @@
+TASK: From this instrument approach chart, count the number of missed-approach legs.
+
+Inspect the MISSED APPROACH text block and the profile-strip icons. Missed approach
+is the part AFTER the missed approach point (MAP), typically at the runway threshold
+or a specific fix flagged with "M" in ARINC coding. A leg is one "phase" of the
+climb / turn / navigate / hold sequence a pilot flies after executing missed approach.
+
+Example text:
+  "Climb to 2900 then climbing left turn to 6000 on COE R-350 outbound then
+   climbing left turn to 6500 on COE R-350 inbound to COE VOR/DME and hold."
+
+Legs here (count = 4):
+  1. Straight climb to 2900
+  2. Climbing left turn on R-350 outbound to 6000
+  3. Climbing left turn on R-350 inbound to COE at 6500
+  4. Hold at COE
+
+OUTPUT (single JSON object):
+
+{ "status": "<present|not_observable|unknown>", "value": <integer | null> }
+
+Rules:
+- If you can count legs from the chart → status=present, value=count.
+- If the chart gives no missed-approach instructions at all (rare) → status=not_observable, value=null.
+- If uncertain → status=unknown, value=null. "unknown" is a valid answer; do not guess.
