@@ -63,3 +63,14 @@ This initial commit creates the clean workspace and audit guardrails only. It
 does not yet import large data assets, formal targets, model predictions, or
 final paper-v2 results.
 
+## Governance Status
+
+The repository is currently private. GitHub branch protection for this private
+repository is not available under the current account settings, so PR discipline
+is enforced by repository policy, CODEOWNERS, pull request templates, issue
+gates, and the `repository-integrity` GitHub Actions check. See
+`docs/repository_governance.md`.
+
+Before formal evaluation, complete `docs/formal_freeze_checklist.md`.
+
+Current bootstrap audit: `docs/bootstrap_audit_20260427.md`.

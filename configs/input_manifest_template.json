@@ -1,0 +1,17 @@
+{
+  "run_id": "REPLACE_WITH_RUN_ID",
+  "method_id": null,
+  "chart_id": null,
+  "case_id": null,
+  "split": null,
+  "allowed_input_files": [],
+  "allowed_input_fields": [],
+  "forbidden_input_fields": [],
+  "target_access_allowed": false,
+  "target_paths_checked": [],
+  "forbidden_fields_detected": [],
+  "source_view_type": null,
+  "ocr_artifact_source": null,
+  "checker_result": "pending"
+}
+

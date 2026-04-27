@@ -1,0 +1,44 @@
+{
+  "run_id": "REPLACE_WITH_UNIQUE_RUN_ID",
+  "run_type": "pilot_or_formal",
+  "created_at_utc": null,
+  "git_commit": null,
+  "benchmark_manifest_sha256": null,
+  "method_id": null,
+  "split": null,
+  "sample_ids_path": null,
+  "schema": {
+    "path": "schemas/missed_approach_leg.schema.json",
+    "sha256": null
+  },
+  "model_config": {
+    "manifest_path": "configs/model_config_manifest.json",
+    "model_entry_id": null,
+    "sha256": null
+  },
+  "prompt": {
+    "manifest_path": "configs/prompt_manifest.json",
+    "prompt_entry_id": null,
+    "sha256": null
+  },
+  "parser_repair_policy": {
+    "path": "configs/parser_repair_policy.md",
+    "sha256": null
+  },
+  "input_manifest_path": null,
+  "output_root": null,
+  "rerun": {
+    "is_rerun": false,
+    "previous_run_id": null,
+    "reason": null
+  },
+  "counts": {
+    "samples_requested": null,
+    "samples_completed": null,
+    "api_failures": null,
+    "invalid_json": null,
+    "parser_repairs": null,
+    "schema_failures": null
+  }
+}
+
