@@ -1,0 +1,51 @@
+{
+  "manifest_version": "0.1.0",
+  "status": "scaffold_not_frozen",
+  "created_for": "NeurIPS 2026 Evaluations and Datasets paper-v2",
+  "schema": {
+    "status": "pending_import",
+    "path": "schemas/missed_approach_leg.schema.json",
+    "upstream_reference": "reshihihihi/faa-missed-approach-experiment#28",
+    "sha256": null
+  },
+  "data": {
+    "status": "pending_export",
+    "manifest_path": "benchmark_exports/derived/v2/MANIFEST.json",
+    "sample_manifest_path": "benchmark_exports/derived/v2/sample_manifest.jsonl",
+    "splits_path": "benchmark_exports/derived/v2/splits.json",
+    "checksums_path": "benchmark_exports/derived/v2/checksums.sha256",
+    "formal_evaluation_split_locked": false
+  },
+  "methods": {
+    "status": "pending_freeze",
+    "registry_path": "docs/method_registry.md",
+    "allowed_method_ids": []
+  },
+  "models": {
+    "status": "pending_freeze",
+    "manifest_path": "configs/model_config_manifest.json"
+  },
+  "prompts": {
+    "status": "pending_freeze",
+    "manifest_path": "configs/prompt_manifest.json"
+  },
+  "parser_repair": {
+    "status": "draft_policy",
+    "path": "configs/parser_repair_policy.md",
+    "semantic_repair_allowed": false
+  },
+  "scorer": {
+    "status": "pending_import_or_implementation",
+    "path": "scripts/scorers/",
+    "sha256": null
+  },
+  "rerun_policy": {
+    "status": "draft_policy",
+    "path": "docs/rerun_policy.md"
+  },
+  "output_roots": {
+    "predictions": "predictions/",
+    "reports": "reports/"
+  }
+}
+

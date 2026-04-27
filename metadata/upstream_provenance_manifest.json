@@ -1,0 +1,85 @@
+{
+  "manifest_version": "0.1.0",
+  "source_repo": "reshihihihi/faa-missed-approach-experiment",
+  "source_repo_url": "https://github.com/reshihihihi/faa-missed-approach-experiment",
+  "created_for": "clean paper-v2 repository scaffold",
+  "imports": [
+    {
+      "object": "canonical schema and questionnaire templates",
+      "status": "planned",
+      "source_pr": 28,
+      "source_commit": "d2c54172b31184f8c0deb74415f37c239d3e3eca",
+      "source_paths": [
+        "schemas/missed_approach_leg.schema.json",
+        "docs/schemas/missed_approach_leg_v1.md",
+        "prompts/path_c_qa_v2/",
+        "prompts/path_e_v2/structured_form_template.txt"
+      ],
+      "destination_paths": [
+        "schemas/",
+        "docs/",
+        "prompts/"
+      ],
+      "sha256": null,
+      "frozen_for_formal_evaluation": false
+    },
+    {
+      "object": "CIFP to canonical proxy target pipeline",
+      "status": "planned",
+      "source_pr": 29,
+      "source_commit": "1930aa381955ed1c2001d62dd9dae797d2fddc68",
+      "source_paths": [
+        "scripts/extract_missed_approach.py",
+        "scripts/project_canonical.py",
+        "scripts/dump_cifp_raw_per_procedure.py",
+        "scripts/build_manifest.py"
+      ],
+      "destination_paths": [
+        "scripts/export_builders/"
+      ],
+      "sha256": null,
+      "frozen_for_formal_evaluation": false
+    },
+    {
+      "object": "formal300 chart images, prelabels, and canonical proxy targets",
+      "status": "planned",
+      "source_pr": 32,
+      "source_commit": "d606b747a1cda86a013df1f145de2a1fa17e176d",
+      "source_paths": [
+        "tools/shujuji_annotation/"
+      ],
+      "destination_paths": [
+        "benchmark_exports/derived/v2/"
+      ],
+      "sha256": null,
+      "frozen_for_formal_evaluation": false
+    },
+    {
+      "object": "paper-v2 scaffold and issue plan",
+      "status": "planned",
+      "source_pr": 52,
+      "source_commit": "7cc866ac03dba2eb7ce95f8270fb06708d23bff4",
+      "source_paths": [
+        "docs/paper_v2/",
+        "configs/paper_v2/",
+        "scripts/paper_v2/",
+        "benchmark_exports/derived/v2/",
+        "predictions/paper_v2/",
+        "reports/paper_v2/",
+        "metadata/paper_v2/"
+      ],
+      "destination_paths": [
+        "docs/",
+        "configs/",
+        "scripts/",
+        "benchmark_exports/derived/v2/",
+        "predictions/",
+        "reports/",
+        "metadata/"
+      ],
+      "sha256": null,
+      "frozen_for_formal_evaluation": false
+    }
+  ]
+}
+

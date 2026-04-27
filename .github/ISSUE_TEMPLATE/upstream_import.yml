@@ -1,0 +1,42 @@
+name: Upstream Import
+description: Request import of a frozen asset from the upstream experiment repository.
+title: "[import] "
+labels: ["upstream-import", "provenance"]
+body:
+  - type: input
+    id: source_repo
+    attributes:
+      label: Source repository
+      value: reshihihihi/faa-missed-approach-experiment
+    validations:
+      required: true
+  - type: input
+    id: source_ref
+    attributes:
+      label: Source commit / branch / tag
+    validations:
+      required: true
+  - type: textarea
+    id: source_paths
+    attributes:
+      label: Source paths
+      description: Exact upstream paths to import.
+    validations:
+      required: true
+  - type: textarea
+    id: destination_paths
+    attributes:
+      label: Destination paths
+      description: Exact paths in this repository.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Import checklist
+      options:
+        - label: Import is necessary for paper-v2.
+        - label: Upstream source commit is fixed.
+        - label: sha256 will be recorded.
+        - label: Import does not include secrets, local paths, or unregistered pilot outputs.
+

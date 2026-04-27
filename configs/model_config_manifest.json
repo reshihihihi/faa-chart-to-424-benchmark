@@ -1,0 +1,10 @@
+{
+  "manifest_version": "0.1.0",
+  "status": "pending_freeze",
+  "models": [],
+  "notes": [
+    "Do not record API tokens or secrets here.",
+    "Each formal model entry must include provider, model name, date/version when available, temperature, max_tokens, image settings, retry policy, and output parser version."
+  ]
+}
+

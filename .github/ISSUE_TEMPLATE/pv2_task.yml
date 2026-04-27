@@ -1,0 +1,40 @@
+name: Paper-v2 Task
+description: Track a clean paper-v2 task in this dedicated repository.
+title: "[paper-v2] "
+labels: ["paper-v2"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should this task freeze, build, run, or report?
+    validations:
+      required: true
+  - type: textarea
+    id: upstream
+    attributes:
+      label: Upstream references
+      description: Link old-repo issues, pull requests, commits, or local package paths.
+      placeholder: |
+        - old repo issue:
+        - old repo PR:
+        - source commit:
+    validations:
+      required: true
+  - type: textarea
+    id: outputs
+    attributes:
+      label: Expected outputs
+      description: List exact paths this task should create or update.
+    validations:
+      required: true
+  - type: checkboxes
+    id: bias
+    attributes:
+      label: Bias controls
+      options:
+        - label: Does not use evaluation split for prompt or parser tuning.
+        - label: Does not expose targets, CIFP, or scorer outputs to method inputs.
+        - label: Records hashes, run ids, and provenance for imported assets.
+        - label: Preserves failed and invalid outputs if experiments run.
+

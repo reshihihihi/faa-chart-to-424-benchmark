@@ -1,0 +1,16 @@
+{
+  "manifest_version": "0.1.0",
+  "status": "pending_freeze",
+  "prompts": [],
+  "required_fields_per_prompt": [
+    "method_id",
+    "prompt_path",
+    "prompt_version",
+    "sha256",
+    "allowed_input_fields",
+    "forbidden_input_fields",
+    "includes_domain_rules",
+    "includes_unknown_or_not_observable_instruction"
+  ]
+}
+

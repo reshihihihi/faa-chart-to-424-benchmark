@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Local secrets and environment
+.env
+.env.*
+*.pem
+*.key
+*.token
+secrets/
+
+# Local caches and large generated material
+cache/
+tmp/
+downloads/
+*.log
+
+# Do not commit ad hoc local runs unless explicitly registered.
+local_runs/
+
