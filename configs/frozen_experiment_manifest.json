@@ -18,6 +18,10 @@
     "candidate_not_frozen": [
       "B1_prompt_text_and_hash",
       "C3_prompt_text_and_hash",
+      "B1_prime_prompt_text_and_hash",
+      "C4_prompt_text_and_hash",
+      "B1_prime_field_candidates_schema_and_matcher",
+      "B1_prime_C4_run_artifact_layout",
       "model_provider_and_model_name",
       "max_tokens_and_other_call_parameters",
       "OCR_artifact_policy_for_formal_B1"
@@ -30,7 +34,7 @@
       "challenge_tags_jsonl",
       "formal_scorer_and_validator_implementation",
       "rerun_policy_final_details",
-      "all_non_B1_C3_method_prompts_and_runners"
+      "all_non_B1_C3_method_prompts_and_runners_except_B1_prime_C4_candidate_pilot_artifacts"
     ]
   },
   "schema": {
@@ -81,8 +85,11 @@
       "B1",
       "C3"
     ],
-    "allowed_method_ids_not_yet_frozen": [],
-    "notes": "Only B1 and C3 boundaries are frozen in this manifest update. Other methods require later registry completion."
+    "allowed_method_ids_not_yet_frozen": [
+      "B1_prime",
+      "C4"
+    ],
+    "notes": "Only B1 and C3 boundaries are formally frozen in this manifest update. B1_prime and C4 are recorded as candidate prefreeze pilot artifacts and still need final prompt/model/rerun/OCR policy decisions."
   },
   "models": {
     "status": "candidate_not_frozen",
@@ -120,6 +127,26 @@
         "parser_repair_count_non_strict_json": 0,
         "score": "66/220",
         "accuracy": 0.3
+      },
+      "failures": 0
+    },
+    "B1_prime_C4_semantic_matcher_v2": {
+      "run_id": "pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3",
+      "sample_role": "pilot10_external_excluded_from_formal_evaluation",
+      "B1_prime": {
+        "strict_json": "10/10",
+        "schema_valid": "10/10",
+        "parser_repair_count_non_strict_json": 0,
+        "score": "111/220",
+        "accuracy": 0.5045454545454545,
+        "important_note": "This score used matcher v2. The committed runner contains matcher v3 for the next candidate rerun."
+      },
+      "C4": {
+        "strict_json": "10/10",
+        "schema_valid": "10/10",
+        "parser_repair_count_non_strict_json": 0,
+        "score": "132/220",
+        "accuracy": 0.6
       },
       "failures": 0
     }

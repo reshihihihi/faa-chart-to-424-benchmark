@@ -10,7 +10,9 @@
       "max_tokens": {
         "ocr": 4096,
         "b1": 4096,
-        "c3": 4096
+        "c3": 4096,
+        "b1_prime": 4096,
+        "c4": 4096
       },
       "assistant_prefill_json": true,
       "assistant_prefill_value": "{",

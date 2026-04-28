@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/faa-chart-to-424/field_candidates.schema.candidate.json",
+  "title": "B1_prime flat field candidates schema v1 candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "chart_id",
+    "candidate_source",
+    "source_contract",
+    "leakage_policy",
+    "field_candidates"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "field_candidates_schema_v1_candidate"
+    },
+    "chart_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "allows_ocr_bbox",
+        "allows_chart_image_pixels"
+      ],
+      "properties": {
+        "source": {
+          "const": "same_chart_full_chart_ocr_text"
+        },
+        "allows_ocr_bbox": {
+          "const": false
+        },
+        "allows_chart_image_pixels": {
+          "const": false
+        }
+      }
+    },
+    "leakage_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "uses_canonical_target",
+        "uses_expected_value",
+        "uses_gold_field_to_leg_mapping",
+        "uses_human_evidence_provenance",
+        "uses_gold_observable_evidence",
+        "uses_cifp_or_arinc_424",
+        "uses_scorer_output"
+      ],
+      "properties": {
+        "uses_canonical_target": {
+          "const": false
+        },
+        "uses_expected_value": {
+          "const": false
+        },
+        "uses_gold_field_to_leg_mapping": {
+          "const": false
+        },
+        "uses_human_evidence_provenance": {
+          "const": false
+        },
+        "uses_gold_observable_evidence": {
+          "const": false
+        },
+        "uses_cifp_or_arinc_424": {
+          "const": false
+        },
+        "uses_scorer_output": {
+          "const": false
+        }
+      }
+    },
+    "field_candidates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fix_candidates",
+        "altitude_candidates",
+        "turn_candidates",
+        "course_candidates",
+        "hold_candidates",
+        "direct_phrase_snippets",
+        "climb_phrase_snippets"
+      ],
+      "properties": {
+        "fix_candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        },
+        "altitude_candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        },
+        "turn_candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        },
+        "course_candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        },
+        "hold_candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        },
+        "direct_phrase_snippets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        },
+        "climb_phrase_snippets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "field_type",
+        "source",
+        "source_section",
+        "source_snippet",
+        "source_start_char",
+        "source_end_char",
+        "rule_id",
+        "confidence",
+        "notes"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "string",
+            "integer",
+            "number",
+            "boolean"
+          ]
+        },
+        "field_type": {
+          "enum": [
+            "fix_ident",
+            "runway_ident",
+            "navaid_ident",
+            "altitude_ft",
+            "turn_direction",
+            "course_deg",
+            "radial_deg",
+            "heading_deg",
+            "hold_phrase",
+            "direct_phrase",
+            "climb_phrase",
+            "other_ocr_candidate"
+          ]
+        },
+        "source": {
+          "const": "ocr_text"
+        },
+        "source_section": {
+          "enum": [
+            "missed_approach_text",
+            "plan_view",
+            "profile_view",
+            "briefing_strip",
+            "full_chart_unknown",
+            "unknown"
+          ]
+        },
+        "source_snippet": {
+          "type": "string"
+        },
+        "source_start_char": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "source_end_char": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "rule_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "not": {
+        "anyOf": [
+          {
+            "required": [
+              "leg_index"
+            ]
+          },
+          {
+            "required": [
+              "candidate_leg_id"
+            ]
+          },
+          {
+            "required": [
+              "source_seq_no"
+            ]
+          },
+          {
+            "required": [
+              "schema_field"
+            ]
+          },
+          {
+            "required": [
+              "expected_value"
+            ]
+          },
+          {
+            "required": [
+              "target_value"
+            ]
+          },
+          {
+            "required": [
+              "q_terminator"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

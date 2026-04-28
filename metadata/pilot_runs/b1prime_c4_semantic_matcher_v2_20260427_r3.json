@@ -1,0 +1,30 @@
+{
+  "manifest_version": "0.1.0",
+  "status": "pilot_only_not_formal_freeze",
+  "run_id": "pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3",
+  "methods": [
+    "B1_prime",
+    "C4"
+  ],
+  "sample_role": "pilot10_external_excluded_from_formal_evaluation",
+  "prediction_root": "predictions/pilot10_external/pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3",
+  "summary_report": "predictions/pilot10_external/pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3/summary_report.json",
+  "reports": [
+    "reports/pilot/b1prime_c4_semantic_matcher_v2_r3_20260427.md",
+    "reports/pilot/b1prime_c4_freeze_decisions_20260428.md",
+    "reports/pilot/b1prime_field_matcher_v3_review_20260428.md"
+  ],
+  "results": {
+    "B1_prime": {
+      "correct": 111,
+      "total": 220,
+      "accuracy": 0.5045454545454545
+    },
+    "C4": {
+      "correct": 132,
+      "total": 220,
+      "accuracy": 0.6
+    }
+  },
+  "important_note": "B1_prime r3 used matcher v2. The committed runner now contains matcher v3 for the next run; v3 has dry validation only."
+}

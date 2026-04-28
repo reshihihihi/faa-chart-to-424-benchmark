@@ -105,6 +105,41 @@
       ],
       "sha256": null,
       "frozen_for_formal_evaluation": false
+    },
+    {
+      "object": "pilot10 B1_prime and C4 candidate pilot package",
+      "status": "imported",
+      "source_pr": null,
+      "source_commit": null,
+      "imported_at_utc": "2026-04-28T03:45:00Z",
+      "import_reason": "Record the pilot-only B1_prime/C4 prompts, field-candidate schema, runner, OCR artifact manifest, r3 predictions, validation outputs, scores, and review reports in the clean paper-v2 repository. These artifacts are excluded from formal evaluation and are used only to decide later freeze surfaces.",
+      "source_paths": [
+        "experiment3/add-2 local pilot package generated from paper-v2 pilot workflow"
+      ],
+      "destination_paths": [
+        "configs/b1prime_c4_prefreeze_candidate_20260428.json",
+        "docs/field_candidates_schema_v1_candidate.md",
+        "metadata/checksums_b1prime_c4_pilot_20260428.sha256",
+        "metadata/ocr_artifacts",
+        "metadata/pilot_runs/b1prime_c4_semantic_matcher_v2_20260427_r3.json",
+        "predictions/pilot10_external/pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3",
+        "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+        "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+        "reports/pilot/b1prime_c4_freeze_decisions_20260428.md",
+        "reports/pilot/b1prime_c4_freeze_readiness_after_r3_20260427.md",
+        "reports/pilot/b1prime_c4_ocr_artifact_manifest_review_20260427.md",
+        "reports/pilot/b1prime_c4_semantic_matcher_v2_r3_20260427.md",
+        "reports/pilot/b1prime_field_candidates_schema_upgrade_20260427.md",
+        "reports/pilot/b1prime_field_matcher_v3_review_20260428.md",
+        "reports/pilot/b1prime_field_matcher_v3_stats_20260428.json",
+        "reports/pilot/c4_semantic_regression_review_20260427.md",
+        "schemas/field_candidates.schema.candidate.json",
+        "scripts/run_b1prime_c4_pilot10.py"
+      ],
+      "sha256": "c418972c4a80d28eab2dde55d11492fbab9e38dff56cdec6b75fee06b516d70b",
+      "sha256_semantics": "sha256 over sorted lines of '<relative_path>\\0<file_sha256>\\n' for the imported B1_prime/C4 pilot file set; see metadata/checksums_b1prime_c4_pilot_20260428.sha256 for per-file hashes",
+      "checksums_file": "metadata/checksums_b1prime_c4_pilot_20260428.sha256",
+      "frozen_for_formal_evaluation": false
     }
   ]
 }

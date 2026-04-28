@@ -1,0 +1,229 @@
+{
+  "matcher": "ocr_text_only_regex_field_matcher_pilot_v3",
+  "script_path": "scripts/run_b1prime_c4_pilot10.py",
+  "runner_sha256": "38f485934fcef9cf720bf32e16d807aca1639943aeec7490fe0e027603976a68",
+  "schema_path": "schemas/field_candidates.schema.candidate.json",
+  "schema_sha256": "babd288dd754989813b872f84d232cbcf6bde7ae250532b74c7a6286a7aef4df",
+  "validation_scope": "pilot10_external OCR text artifacts only; no model calls; no target/scorer/CIFP reads",
+  "schema_error_files": [],
+  "leakage_error_files": [],
+  "forbidden_key_files": [],
+  "counts": {
+    "fix_candidates": 341,
+    "altitude_candidates": 194,
+    "turn_candidates": 6,
+    "course_candidates": 51,
+    "hold_candidates": 15,
+    "direct_phrase_snippets": 6,
+    "climb_phrase_snippets": 10
+  },
+  "source_sections": {
+    "missed_approach_text": 425,
+    "full_chart_unknown": 186,
+    "profile_view": 12
+  },
+  "known_noise_total": 2,
+  "known_noise_top": [
+    [
+      "MDA",
+      2
+    ]
+  ],
+  "by_chart": {
+    "KDAB_I07L": {
+      "counts": {
+        "fix_candidates": 40,
+        "altitude_candidates": 28,
+        "turn_candidates": 1,
+        "course_candidates": 13,
+        "hold_candidates": 1,
+        "direct_phrase_snippets": 0,
+        "climb_phrase_snippets": 1
+      },
+      "source_sections": {
+        "missed_approach_text": 65,
+        "full_chart_unknown": 19
+      },
+      "known_noise": {},
+      "max_fix_candidates_allowed": 40,
+      "max_altitude_candidates_allowed": 30,
+      "max_course_candidates_allowed": 30
+    },
+    "KDAB_R07L": {
+      "counts": {
+        "fix_candidates": 38,
+        "altitude_candidates": 15,
+        "turn_candidates": 0,
+        "course_candidates": 2,
+        "hold_candidates": 2,
+        "direct_phrase_snippets": 1,
+        "climb_phrase_snippets": 1
+      },
+      "source_sections": {
+        "missed_approach_text": 38,
+        "full_chart_unknown": 21
+      },
+      "known_noise": {},
+      "max_fix_candidates_allowed": 40,
+      "max_altitude_candidates_allowed": 30,
+      "max_course_candidates_allowed": 30
+    },
+    "KDBQ_L31": {
+      "counts": {
+        "fix_candidates": 40,
+        "altitude_candidates": 22,
+        "turn_candidates": 0,
+        "course_candidates": 5,
+        "hold_candidates": 1,
+        "direct_phrase_snippets": 0,
+        "climb_phrase_snippets": 1
+      },
+      "source_sections": {
+        "missed_approach_text": 46,
+        "profile_view": 12,
+        "full_chart_unknown": 11
+      },
+      "known_noise": {},
+      "max_fix_candidates_allowed": 40,
+      "max_altitude_candidates_allowed": 30,
+      "max_course_candidates_allowed": 30
+    },
+    "KDIJ_RNV-A": {
+      "counts": {
+        "fix_candidates": 34,
+        "altitude_candidates": 16,
+        "turn_candidates": 1,
+        "course_candidates": 3,
+        "hold_candidates": 3,
+        "direct_phrase_snippets": 1,
+        "climb_phrase_snippets": 1
+      },
+      "source_sections": {
+        "missed_approach_text": 39,
+        "full_chart_unknown": 20
+      },
+      "known_noise": {},
+      "max_fix_candidates_allowed": 40,
+      "max_altitude_candidates_allowed": 30,
+      "max_course_candidates_allowed": 30
+    },
+    "KFKL_V21": {
+      "counts": {
+        "fix_candidates": 19,
+        "altitude_candidates": 22,
+        "turn_candidates": 1,
+        "course_candidates": 1,
+        "hold_candidates": 1,
+        "direct_phrase_snippets": 1,
+        "climb_phrase_snippets": 1
+      },
+      "source_sections": {
+        "missed_approach_text": 27,
+        "full_chart_unknown": 19
+      },
+      "known_noise": {},
+      "max_fix_candidates_allowed": 40,
+      "max_altitude_candidates_allowed": 30,
+      "max_course_candidates_allowed": 30
+    },
+    "KDAF_R36": {
+      "counts": {
+        "fix_candidates": 38,
+        "altitude_candidates": 28,
+        "turn_candidates": 1,
+        "course_candidates": 0,
+        "hold_candidates": 2,
+        "direct_phrase_snippets": 1,
+        "climb_phrase_snippets": 0
+      },
+      "source_sections": {
+        "missed_approach_text": 52,
+        "full_chart_unknown": 18
+      },
+      "known_noise": {
+        "MDA": 1
+      },
+      "max_fix_candidates_allowed": 40,
+      "max_altitude_candidates_allowed": 30,
+      "max_course_candidates_allowed": 30
+    },
+    "KDAL_I13L": {
+      "counts": {
+        "fix_candidates": 40,
+        "altitude_candidates": 18,
+        "turn_candidates": 1,
+        "course_candidates": 13,
+        "hold_candidates": 1,
+        "direct_phrase_snippets": 0,
+        "climb_phrase_snippets": 1
+      },
+      "source_sections": {
+        "missed_approach_text": 53,
+        "full_chart_unknown": 21
+      },
+      "known_noise": {},
+      "max_fix_candidates_allowed": 40,
+      "max_altitude_candidates_allowed": 30,
+      "max_course_candidates_allowed": 30
+    },
+    "KDKK_RNV-A": {
+      "counts": {
+        "fix_candidates": 17,
+        "altitude_candidates": 13,
+        "turn_candidates": 1,
+        "course_candidates": 0,
+        "hold_candidates": 1,
+        "direct_phrase_snippets": 1,
+        "climb_phrase_snippets": 1
+      },
+      "source_sections": {
+        "missed_approach_text": 16,
+        "full_chart_unknown": 18
+      },
+      "known_noise": {},
+      "max_fix_candidates_allowed": 40,
+      "max_altitude_candidates_allowed": 30,
+      "max_course_candidates_allowed": 30
+    },
+    "KDKX_L26": {
+      "counts": {
+        "fix_candidates": 37,
+        "altitude_candidates": 16,
+        "turn_candidates": 0,
+        "course_candidates": 10,
+        "hold_candidates": 1,
+        "direct_phrase_snippets": 0,
+        "climb_phrase_snippets": 1
+      },
+      "source_sections": {
+        "missed_approach_text": 44,
+        "full_chart_unknown": 21
+      },
+      "known_noise": {},
+      "max_fix_candidates_allowed": 40,
+      "max_altitude_candidates_allowed": 30,
+      "max_course_candidates_allowed": 30
+    },
+    "KDAG_R22": {
+      "counts": {
+        "fix_candidates": 38,
+        "altitude_candidates": 16,
+        "turn_candidates": 0,
+        "course_candidates": 4,
+        "hold_candidates": 2,
+        "direct_phrase_snippets": 1,
+        "climb_phrase_snippets": 2
+      },
+      "source_sections": {
+        "missed_approach_text": 45,
+        "full_chart_unknown": 18
+      },
+      "known_noise": {
+        "MDA": 1
+      },
+      "max_fix_candidates_allowed": 40,
+      "max_altitude_candidates_allowed": 30,
+      "max_course_candidates_allowed": 30
+    }
+  }
+}

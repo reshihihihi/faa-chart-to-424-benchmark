@@ -1,0 +1,67 @@
+{
+  "manifest_version": "0.2.0",
+  "created_at": "2026-04-28",
+  "status": "candidate_prefreeze_after_pilot10_r3_and_matcher_v3_dry_validation",
+  "scope": "B1_prime and C4 pilot candidate parameters. Not a final formal freeze.",
+  "inherits_repo_freeze": "configs/frozen_experiment_manifest.json",
+  "source_runs": {
+    "B1_C3": {
+      "run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+      "manifest": "predictions/pilot10_external/b1_c3_strict_json_prefill_20260427_r1/run_manifest.json",
+      "summary": "predictions/pilot10_external/b1_c3_strict_json_prefill_20260427_r1/summary_report.json"
+    },
+    "B1_prime_C4": {
+      "run_id": "pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3",
+      "manifest": "predictions/pilot10_external/pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3/run_manifest.json",
+      "summary": "predictions/pilot10_external/pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3/summary_report.json",
+      "important_note": "The r3 score used B1_prime matcher v2. Matcher v3 is dry-validated only and needs a new run_id before any score claim."
+    }
+  },
+  "candidate_prefrozen_items": {
+    "B1_prime": {
+      "status": "candidate_prefrozen_not_formal",
+      "method_boundary": "full-chart OCR text -> automatic OCR-only flat field candidates -> LLM -> canonical JSON",
+      "prompt_path": "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+      "prompt_sha256": "94018da0f40efae16f632bd780658350bab9479982f74d2aebdac9d7ec56efe2",
+      "field_candidates_schema_path": "schemas/field_candidates.schema.candidate.json",
+      "field_candidates_schema_sha256": "babd288dd754989813b872f84d232cbcf6bde7ae250532b74c7a6286a7aef4df",
+      "field_candidates_format": "object_candidates_not_field_to_leg_linking",
+      "latest_score_run": {
+        "run_id": "pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3",
+        "matcher_version_used": "ocr_text_only_regex_field_matcher_pilot_v2",
+        "score": "111/220",
+        "accuracy": 0.5045454545454545
+      },
+      "next_candidate_matcher": {
+        "version": "ocr_text_only_regex_field_matcher_pilot_v3",
+        "script_path": "scripts/run_b1prime_c4_pilot10.py",
+        "dry_validation_report": "reports/pilot/b1prime_field_matcher_v3_stats_20260428.json",
+        "status": "dry_validated_pending_model_rerun"
+      }
+    },
+    "C4": {
+      "status": "candidate_prefrozen_not_formal",
+      "method_boundary": "full chart image + full-chart OCR text -> VLM/MLLM -> canonical JSON",
+      "prompt_path": "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "prompt_sha256": "04b9587ad0caeebaa0884c88645fe3bfb467397026fa871e72989897b9ffa6b8",
+      "pilot10_r3_result": {
+        "run_id": "pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3",
+        "score": "132/220",
+        "accuracy": 0.6
+      }
+    },
+    "ocr_artifact_manifest_format": {
+      "status": "candidate_prefrozen_not_formal",
+      "manifest": "metadata/ocr_artifacts/pilot10_ocr_artifact_manifest_20260427.jsonl"
+    }
+  },
+  "explicitly_not_formal_frozen": [
+    "model/provider/max_tokens",
+    "formal rerun policy",
+    "formal300 split and target source",
+    "formal300 OCR artifact generation/reuse policy",
+    "final prompt manifest for B1/B1_prime/C3/C4",
+    "B1_prime matcher v3 performance until a new model run validates it",
+    "field_candidates schema as a repository-wide benchmark contract"
+  ]
+}

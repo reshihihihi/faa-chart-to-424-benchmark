@@ -100,6 +100,97 @@
         "score": "66/220",
         "accuracy": 0.3
       }
+    },
+    {
+      "method_id": "B1_prime",
+      "method_boundary_status": "candidate_prefrozen_not_formal",
+      "prompt_freeze_status": "candidate_not_frozen",
+      "prompt_path": "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+      "prompt_path_status": "repo_pilot_artifact_committed_not_formal_freeze",
+      "prompt_version": "pilot10.zh_v0_candidate.strict_json_protocol.field_candidates_object",
+      "sha256": "94018da0f40efae16f632bd780658350bab9479982f74d2aebdac9d7ec56efe2",
+      "allowed_input_fields": [
+        "chart_id",
+        "airport",
+        "approach_ident",
+        "chart_name",
+        "full_chart_ocr_text",
+        "automatic_field_candidates_generated_from_same_ocr_text"
+      ],
+      "forbidden_input_fields": [
+        "chart_image_pixels",
+        "ocr_bbox",
+        "roi",
+        "gold_ma_prose",
+        "gold_observable_evidence",
+        "canonical_target",
+        "field_targets_jsonl",
+        "evidence_provenance_jsonl",
+        "challenge_tags_jsonl",
+        "scorer_outputs",
+        "CIFP_or_ARINC_424_records",
+        "human_annotation",
+        "field_to_leg_candidates",
+        "gold_field_to_leg_mapping",
+        "historical_model_output_for_same_chart"
+      ],
+      "includes_domain_rules": false,
+      "includes_unknown_or_not_observable_instruction": true,
+      "field_candidates_schema": "schemas/field_candidates.schema.candidate.json",
+      "final_output_schema": "schemas/missed_approach_leg.schema.json",
+      "pilot_evidence_run_id": "pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3",
+      "pilot_evidence": {
+        "strict_json": "10/10",
+        "schema_valid": "10/10",
+        "parser_repair_count_non_strict_json": 0,
+        "score": "111/220",
+        "accuracy": 0.5045454545454545,
+        "important_note": "This score used B1_prime matcher v2. The committed runner contains matcher v3 for the next candidate rerun."
+      }
+    },
+    {
+      "method_id": "C4",
+      "method_boundary_status": "candidate_prefrozen_not_formal",
+      "prompt_freeze_status": "candidate_not_frozen",
+      "prompt_path": "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "prompt_path_status": "repo_pilot_artifact_committed_not_formal_freeze",
+      "prompt_version": "pilot10.zh_v1_candidate.strict_json_protocol.image_plus_ocr",
+      "sha256": "04b9587ad0caeebaa0884c88645fe3bfb467397026fa871e72989897b9ffa6b8",
+      "allowed_input_fields": [
+        "chart_id",
+        "airport",
+        "approach_ident",
+        "chart_name",
+        "full_chart_image",
+        "full_chart_ocr_text_from_same_chart"
+      ],
+      "forbidden_input_fields": [
+        "ocr_bbox",
+        "roi",
+        "automatic_field_candidates",
+        "field_to_leg_candidates",
+        "gold_ma_prose",
+        "gold_observable_evidence",
+        "canonical_target",
+        "field_targets_jsonl",
+        "evidence_provenance_jsonl",
+        "challenge_tags_jsonl",
+        "scorer_outputs",
+        "CIFP_or_ARINC_424_records",
+        "human_annotation",
+        "historical_model_output_for_same_chart"
+      ],
+      "includes_domain_rules": false,
+      "includes_unknown_or_not_observable_instruction": true,
+      "final_output_schema": "schemas/missed_approach_leg.schema.json",
+      "pilot_evidence_run_id": "pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3",
+      "pilot_evidence": {
+        "strict_json": "10/10",
+        "schema_valid": "10/10",
+        "parser_repair_count_non_strict_json": 0,
+        "score": "132/220",
+        "accuracy": 0.6
+      }
     }
   ],
   "required_fields_per_prompt": [

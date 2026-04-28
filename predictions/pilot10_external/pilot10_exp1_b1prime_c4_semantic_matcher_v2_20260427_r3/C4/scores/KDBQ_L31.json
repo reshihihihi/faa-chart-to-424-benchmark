@@ -1,0 +1,195 @@
+{
+  "correct": 8,
+  "total": 13,
+  "accuracy": 0.6153846153846154,
+  "rows": [
+    {
+      "field": "leg_count",
+      "correct": true,
+      "pred": {
+        "status": "present",
+        "value": 2
+      },
+      "target": {
+        "status": "present",
+        "value": 2
+      }
+    },
+    {
+      "field": "leg_1.Q_terminator",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": "CR"
+      },
+      "target": {
+        "status": "present",
+        "value": "CF"
+      }
+    },
+    {
+      "field": "leg_1.Q1_fix_ident",
+      "correct": true,
+      "pred": {
+        "status": "present",
+        "value": "CASSY"
+      },
+      "target": {
+        "status": "present",
+        "value": "CASSY"
+      }
+    },
+    {
+      "field": "leg_1.Q2_altitude_constraint",
+      "correct": true,
+      "pred": {
+        "status": "present",
+        "value": {
+          "desc": "AT_OR_ABOVE",
+          "altitude_ft": 3500,
+          "altitude_2_ft": null
+        }
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "desc": "AT_OR_ABOVE",
+          "altitude_ft": 3500,
+          "altitude_2_ft": null
+        }
+      }
+    },
+    {
+      "field": "leg_1.Q3_turn",
+      "correct": true,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_1.Q4_course_or_radial",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": {
+          "type": "navaid_radial",
+          "navaid": "DBQ",
+          "radial_deg": 322.0,
+          "direction": "outbound"
+        }
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "type": "navaid_radial",
+          "navaid": "DBQ",
+          "radial_deg": 321.5,
+          "direction": "inbound"
+        }
+      }
+    },
+    {
+      "field": "leg_1.Q5_hold_params",
+      "correct": true,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_2.Q_terminator",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": "HF"
+      },
+      "target": {
+        "status": "present",
+        "value": "HM"
+      }
+    },
+    {
+      "field": "leg_2.Q1_fix_ident",
+      "correct": true,
+      "pred": {
+        "status": "present",
+        "value": "CASSY"
+      },
+      "target": {
+        "status": "present",
+        "value": "CASSY"
+      }
+    },
+    {
+      "field": "leg_2.Q2_altitude_constraint",
+      "correct": false,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "desc": "AT_OR_ABOVE",
+          "altitude_ft": 3500,
+          "altitude_2_ft": null
+        }
+      }
+    },
+    {
+      "field": "leg_2.Q3_turn",
+      "correct": true,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_2.Q4_course_or_radial",
+      "correct": true,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_2.Q5_hold_params",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": {
+          "inbound_course_deg": 131.0,
+          "leg_time_min": null,
+          "leg_distance_nm": null,
+          "turn": "RIGHT"
+        }
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "inbound_course_deg": 321.5,
+          "leg_time_min": 1.0,
+          "leg_distance_nm": null,
+          "turn": "RIGHT"
+        }
+      }
+    }
+  ]
+}

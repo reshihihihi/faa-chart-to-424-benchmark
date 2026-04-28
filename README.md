@@ -59,14 +59,17 @@ Important upstream references currently expected:
 
 ## Current State
 
-This workspace now includes the clean scaffold plus a pilot-only B1/C3 strict
-JSON run package for 10 external charts. The pilot package is not part of the
-formal 300-sample evaluation and must not be used for final paper results.
+This workspace now includes the clean scaffold plus pilot-only B1/C3 and
+B1_prime/C4 strict JSON run packages for 10 external charts. The pilot packages
+are not part of the formal 300-sample evaluation and must not be used for final
+paper results.
 
 Pilot result summary:
 
 - `reports/b1_c3_pilot10_strict_json_prefill_20260427.md`
 - `predictions/pilot10_external/b1_c3_strict_json_prefill_20260427_r1/`
+- `reports/pilot/b1prime_c4_semantic_matcher_v2_r3_20260427.md`
+- `predictions/pilot10_external/pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3/`
 - `benchmark_exports/derived/v2/pilot10_external/`
 
 ## Governance Status

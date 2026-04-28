@@ -1,0 +1,13 @@
+{
+  "manifest_version": "pilot10_ocr_artifact_manifest_v1_candidate_summary",
+  "status": "candidate_not_formal_ocr_freeze",
+  "ocr_run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+  "sample_count": 10,
+  "manifest_path": "metadata/ocr_artifacts/pilot10_ocr_artifact_manifest_20260427.jsonl",
+  "reused_by": [
+    "B1",
+    "B1_prime",
+    "C4"
+  ],
+  "notes": "Records pilot OCR artifact provenance for reproducibility; not a formal OCR artifact freeze."
+}

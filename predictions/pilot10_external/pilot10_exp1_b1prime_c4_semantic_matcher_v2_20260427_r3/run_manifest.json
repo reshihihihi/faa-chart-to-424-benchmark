@@ -1,0 +1,89 @@
+{
+  "run_id": "pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3",
+  "method_ids": [
+    "B1_prime",
+    "C4"
+  ],
+  "parameter_status": "temporary_pilot_use_only_not_final_freeze",
+  "created_at": "2026-04-27T15:45:30.427926+00:00",
+  "sample_manifest": "benchmark_exports/derived/v2/pilot10_external/pilot10_manifest.jsonl",
+  "sample_role": "pilot10_external_excluded_from_formal_evaluation",
+  "model": "claude-sonnet-4-5-20250929",
+  "temperature": 0.0,
+  "max_tokens": {
+    "b1_prime": 4096,
+    "c4": 4096
+  },
+  "api": {
+    "provider": "anthropic_compatible",
+    "base_url_env": "ANTHROPIC_BASE_URL",
+    "auth_env": "ANTHROPIC_AUTH_TOKEN",
+    "token_value_recorded": false
+  },
+  "reused_frozen_or_prefrozen_assets": {
+    "schema": {
+      "path": "schemas/missed_approach_leg.schema.json",
+      "sha256": "7ccb2cb9dcc73e67167d7ae5a8874e73dc201f56ad243615009db620494482d9",
+      "status": "frozen_canonical_json_contract_v1"
+    },
+    "parser_policy": {
+      "strict_json_only": true,
+      "assistant_prefill_json": true,
+      "assistant_prefill_value": "{",
+      "semantic_repair": false,
+      "code_fence_stripping_allowed": false
+    },
+    "ocr_artifact_source_for_pilot": "predictions/pilot10_external/b1_c3_strict_json_prefill_20260427_r1/OCR/full_chart_text"
+  },
+  "new_temporary_prefreeze_required": {
+    "B1_prime_field_candidates_schema": "field_candidates_schema_v1_candidate",
+    "B1_prime_field_matcher_rules": "pilot_candidate_regex_ocr_text_only_v2",
+    "C4_allowed_forbidden_inputs": "pilot_candidate",
+    "B1_prime_prompt": "candidate_not_frozen",
+    "C4_prompt": "candidate_not_frozen"
+  },
+  "field_candidates_schema": {
+    "path": "schemas/field_candidates.schema.candidate.json",
+    "sha256": "babd288dd754989813b872f84d232cbcf6bde7ae250532b74c7a6286a7aef4df",
+    "status": "candidate_not_frozen",
+    "format": "object_candidates_not_field_to_leg_linking"
+  },
+  "prompts": {
+    "b1_prime": {
+      "path": "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+      "sha256": "94018da0f40efae16f632bd780658350bab9479982f74d2aebdac9d7ec56efe2"
+    },
+    "c4": {
+      "path": "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "sha256": "04b9587ad0caeebaa0884c88645fe3bfb467397026fa871e72989897b9ffa6b8"
+    }
+  },
+  "field_matcher": {
+    "path": "scripts/run_b1prime_c4_pilot10.py",
+    "function": "build_field_candidates",
+    "sha256": "ae805142a822daf601659c4f75b5acc9e1b910d1946fe331856956fe1f95be6f",
+    "uses_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "scoring": {
+    "target_used_only_after_validation": true,
+    "target_source": "pilot10_external canonical_proxy_gt_file"
+  },
+  "samples": [
+    "pilot10_external_01",
+    "pilot10_external_02",
+    "pilot10_external_03",
+    "pilot10_external_04",
+    "pilot10_external_05",
+    "pilot10_external_06",
+    "pilot10_external_07",
+    "pilot10_external_08",
+    "pilot10_external_09",
+    "pilot10_external_10"
+  ]
+}

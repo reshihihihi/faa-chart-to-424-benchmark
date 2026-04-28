@@ -1,0 +1,102 @@
+{
+  "files_checked": 10,
+  "schema_error_files": [],
+  "forbidden_key_files": [],
+  "candidate_counts": {
+    "KDAB_I07L": {
+      "fix_candidates": 60,
+      "altitude_candidates": 40,
+      "turn_candidates": 1,
+      "course_candidates": 16,
+      "hold_candidates": 1,
+      "direct_phrase_snippets": 0,
+      "climb_phrase_snippets": 1
+    },
+    "KDAB_R07L": {
+      "fix_candidates": 60,
+      "altitude_candidates": 29,
+      "turn_candidates": 0,
+      "course_candidates": 2,
+      "hold_candidates": 2,
+      "direct_phrase_snippets": 1,
+      "climb_phrase_snippets": 1
+    },
+    "KDAF_R36": {
+      "fix_candidates": 41,
+      "altitude_candidates": 33,
+      "turn_candidates": 1,
+      "course_candidates": 0,
+      "hold_candidates": 2,
+      "direct_phrase_snippets": 1,
+      "climb_phrase_snippets": 0
+    },
+    "KDAG_R22": {
+      "fix_candidates": 56,
+      "altitude_candidates": 27,
+      "turn_candidates": 0,
+      "course_candidates": 4,
+      "hold_candidates": 2,
+      "direct_phrase_snippets": 1,
+      "climb_phrase_snippets": 2
+    },
+    "KDAL_I13L": {
+      "fix_candidates": 60,
+      "altitude_candidates": 40,
+      "turn_candidates": 1,
+      "course_candidates": 13,
+      "hold_candidates": 1,
+      "direct_phrase_snippets": 0,
+      "climb_phrase_snippets": 1
+    },
+    "KDBQ_L31": {
+      "fix_candidates": 60,
+      "altitude_candidates": 40,
+      "turn_candidates": 0,
+      "course_candidates": 5,
+      "hold_candidates": 1,
+      "direct_phrase_snippets": 0,
+      "climb_phrase_snippets": 1
+    },
+    "KDIJ_RNV-A": {
+      "fix_candidates": 58,
+      "altitude_candidates": 31,
+      "turn_candidates": 1,
+      "course_candidates": 3,
+      "hold_candidates": 3,
+      "direct_phrase_snippets": 1,
+      "climb_phrase_snippets": 1
+    },
+    "KDKK_RNV-A": {
+      "fix_candidates": 20,
+      "altitude_candidates": 35,
+      "turn_candidates": 1,
+      "course_candidates": 0,
+      "hold_candidates": 1,
+      "direct_phrase_snippets": 1,
+      "climb_phrase_snippets": 1
+    },
+    "KDKX_L26": {
+      "fix_candidates": 53,
+      "altitude_candidates": 40,
+      "turn_candidates": 0,
+      "course_candidates": 10,
+      "hold_candidates": 1,
+      "direct_phrase_snippets": 0,
+      "climb_phrase_snippets": 1
+    },
+    "KFKL_V21": {
+      "fix_candidates": 48,
+      "altitude_candidates": 40,
+      "turn_candidates": 1,
+      "course_candidates": 1,
+      "hold_candidates": 1,
+      "direct_phrase_snippets": 1,
+      "climb_phrase_snippets": 1
+    }
+  },
+  "source_sections": {
+    "missed_approach_text": 502,
+    "full_chart_unknown": 442,
+    "profile_view": 18
+  }
+}
