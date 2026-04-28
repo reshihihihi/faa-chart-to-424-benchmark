@@ -1,12 +1,69 @@
 {
-  "manifest_version": "0.1.0",
-  "status": "pilot_candidate_not_formal_frozen",
+  "manifest_version": "0.2.0",
+  "status": "candidate_record_not_formal_prompt_freeze",
+  "last_updated_utc": "2026-04-27T08:45:00Z",
+  "decision": "B1 and C3 prompt hashes are recorded from the strict-json-prefill pilot as candidate evidence only. Formal prompt freeze is deferred until the user explicitly approves final prompt text and broader method set alignment.",
+  "strict_output_control": {
+    "status": "frozen_strict_raw_json_v1",
+    "assistant_prefill_json": true,
+    "assistant_prefill_value": "{",
+    "parser_policy_path": "configs/parser_repair_policy.md"
+  },
   "prompts": [
     {
-      "method_id": "OCR_full_chart_text_pilot10",
-      "prompt_path": "prompts/paper_v2/ocr_full_chart_text.zh_v1_candidate.md",
-      "prompt_version": "zh_v1_candidate",
-      "sha256": "35c82663b4f1e6a1f38a9df9538ed27076a224f935fc74e6955f84e097075af7",
+      "method_id": "B1",
+      "method_boundary_status": "frozen",
+      "prompt_freeze_status": "candidate_not_frozen",
+      "prompt_path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "prompt_path_status": "repo_pilot_artifact_committed_not_formal_freeze",
+      "prompt_version": "pilot10.zh_v1_candidate.strict_json_protocol",
+      "sha256": "75ba4289068b8fe8b3c450c7c611f34e09736c4017beb03814c9e3348d6f7cf0",
+      "pilot_run_prompt_sha256": "f2a2c27b534f93bb33d90834cc9fdde4726e8ae267bb3d1134679827d1e2f2e3",
+      "allowed_input_fields": [
+        "chart_id",
+        "airport",
+        "approach_ident",
+        "chart_name",
+        "full_chart_ocr_text"
+      ],
+      "forbidden_input_fields": [
+        "chart_image_pixels",
+        "ocr_bbox",
+        "roi",
+        "automatic_field_candidates",
+        "field_to_leg_candidates",
+        "gold_ma_prose",
+        "gold_observable_evidence",
+        "canonical_target",
+        "field_targets_jsonl",
+        "evidence_provenance_jsonl",
+        "challenge_tags_jsonl",
+        "scorer_outputs",
+        "CIFP_or_ARINC_424_records",
+        "human_annotation",
+        "historical_model_output_for_same_chart"
+      ],
+      "includes_domain_rules": false,
+      "includes_unknown_or_not_observable_instruction": true,
+      "final_output_schema": "schemas/missed_approach_leg.schema.json",
+      "pilot_evidence_run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+      "pilot_evidence": {
+        "strict_json": "10/10",
+        "schema_valid": "10/10",
+        "parser_repair_count_non_strict_json": 0,
+        "score": "94/220",
+        "accuracy": 0.42727272727272725
+      }
+    },
+    {
+      "method_id": "C3",
+      "method_boundary_status": "frozen",
+      "prompt_freeze_status": "candidate_not_frozen",
+      "prompt_path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+      "prompt_path_status": "repo_pilot_artifact_committed_not_formal_freeze",
+      "prompt_version": "pilot10.zh_v1_candidate.strict_json_protocol",
+      "sha256": "6491f5ba621ec5a91256503234cd2a4c87142c32e4d735234e571b84d70db294",
+      "pilot_run_prompt_sha256": "49e2ba9134e9c7737d98374786963424546123129c6faa7d648de8224e468e4e",
       "allowed_input_fields": [
         "chart_id",
         "airport",
@@ -15,82 +72,34 @@
         "full_chart_image"
       ],
       "forbidden_input_fields": [
-        "canonical_proxy_target",
-        "CIFP_or_ARINC_424_record",
-        "manual_annotation",
-        "prelabel_bbox",
-        "scorer_output",
-        "historical_model_output"
-      ],
-      "includes_domain_rules": false,
-      "includes_unknown_or_not_observable_instruction": true,
-      "formal_freeze_status": "not_frozen_pilot_only"
-    },
-    {
-      "method_id": "B1",
-      "prompt_path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
-      "prompt_version": "zh_v1_candidate_strict_json_prefill",
-      "sha256": "75ba4289068b8fe8b3c450c7c611f34e09736c4017beb03814c9e3348d6f7cf0",
-      "allowed_input_fields": [
-        "chart_id",
-        "airport",
-        "approach_ident",
-        "chart_name",
-        "full_chart_ocr_text",
-        "canonical_schema_contract"
-      ],
-      "forbidden_input_fields": [
-        "full_chart_image_pixels",
-        "OCR_bbox",
-        "ROI_or_region_label",
+        "external_ocr_text",
+        "ocr_bbox",
+        "roi",
         "automatic_field_candidates",
+        "field_to_leg_candidates",
+        "gold_ma_prose",
         "gold_observable_evidence",
-        "CIFP_or_ARINC_424_record",
-        "canonical_proxy_target",
-        "answer_key",
-        "scorer_output",
-        "manual_annotation",
-        "manual_corrected_text",
-        "manual_field_to_leg_mapping",
-        "historical_model_output",
-        "external_airnav_database_or_web_search"
+        "canonical_target",
+        "field_targets_jsonl",
+        "evidence_provenance_jsonl",
+        "challenge_tags_jsonl",
+        "scorer_outputs",
+        "CIFP_or_ARINC_424_records",
+        "human_annotation",
+        "historical_model_output_for_same_chart"
       ],
       "includes_domain_rules": false,
       "includes_unknown_or_not_observable_instruction": true,
-      "formal_freeze_status": "not_frozen_pilot_only"
-    },
-    {
-      "method_id": "C3",
-      "prompt_path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
-      "prompt_version": "zh_v1_candidate_strict_json_prefill",
-      "sha256": "6491f5ba621ec5a91256503234cd2a4c87142c32e4d735234e571b84d70db294",
-      "allowed_input_fields": [
-        "chart_id",
-        "airport",
-        "approach_ident",
-        "chart_name",
-        "full_chart_image",
-        "questionnaire_schema_contract"
-      ],
-      "forbidden_input_fields": [
-        "external_OCR_text",
-        "OCR_bbox",
-        "ROI_or_region_label",
-        "automatic_field_candidates",
-        "gold_observable_evidence",
-        "CIFP_or_ARINC_424_record",
-        "canonical_proxy_target",
-        "answer_key",
-        "scorer_output",
-        "manual_annotation",
-        "manual_corrected_text",
-        "manual_field_to_leg_mapping",
-        "historical_model_output",
-        "external_airnav_database_or_web_search"
-      ],
-      "includes_domain_rules": false,
-      "includes_unknown_or_not_observable_instruction": true,
-      "formal_freeze_status": "not_frozen_pilot_only"
+      "intermediate_output_type": "questionnaire_json",
+      "final_output_schema": "schemas/missed_approach_leg.schema.json",
+      "pilot_evidence_run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+      "pilot_evidence": {
+        "strict_json": "10/10",
+        "schema_valid": "10/10",
+        "parser_repair_count_non_strict_json": 0,
+        "score": "66/220",
+        "accuracy": 0.3
+      }
     }
   ],
   "required_fields_per_prompt": [

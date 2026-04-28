@@ -1,0 +1,83 @@
+{
+  "metadata_version": "0.1.0",
+  "created_utc": "2026-04-27T08:45:00Z",
+  "run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+  "purpose": "strict_json_prefill_pilot_evidence_for_B1_C3_pre_freeze",
+  "sample_role": "pilot_only_external_excluded_from_formal_evaluation",
+  "sample_count": 10,
+  "methods": [
+    "B1",
+    "C3"
+  ],
+  "schema": {
+    "path": "schemas/missed_approach_leg.schema.json",
+    "sha256": "7ccb2cb9dcc73e67167d7ae5a8874e73dc201f56ad243615009db620494482d9",
+    "status_after_freeze": "frozen_canonical_json_contract_v1"
+  },
+  "strict_output_control": {
+    "assistant_prefill_json": true,
+    "assistant_prefill_value": "{",
+    "parser_policy": "strict_raw_json_v1",
+    "code_fence_stripping_allowed": false,
+    "semantic_repair_allowed": false
+  },
+  "prompt_candidates": {
+    "B1": {
+      "path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "sha256": "f2a2c27b534f93bb33d90834cc9fdde4726e8ae267bb3d1134679827d1e2f2e3",
+      "formal_freeze_status": "candidate_not_frozen"
+    },
+    "C3": {
+      "path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+      "sha256": "49e2ba9134e9c7737d98374786963424546123129c6faa7d648de8224e468e4e",
+      "formal_freeze_status": "candidate_not_frozen"
+    }
+  },
+  "model_config": {
+    "provider": "anthropic-compatible",
+    "model": "claude-sonnet-4-5-20250929",
+    "temperature": 0.0,
+    "max_tokens_ocr": 4096,
+    "max_tokens_b1": 4096,
+    "max_tokens_c3": 4096,
+    "formal_freeze_status": "candidate_not_frozen"
+  },
+  "results": {
+    "B1": {
+      "strict_json": "10/10",
+      "schema_valid": "10/10",
+      "scored": "10/10",
+      "parser_repair_count_non_strict_json": 0,
+      "failures": 0,
+      "correct": 94,
+      "total": 220,
+      "accuracy": 0.42727272727272725
+    },
+    "C3": {
+      "strict_json": "10/10",
+      "schema_valid": "10/10",
+      "scored": "10/10",
+      "parser_repair_count_non_strict_json": 0,
+      "failures": 0,
+      "correct": 66,
+      "total": 220,
+      "accuracy": 0.3
+    }
+  },
+  "interpretation": {
+    "can_support_freeze": [
+      "strict_raw_json_policy_v1",
+      "assistant_prefill_json_output_control_v1",
+      "B1_C3_method_boundaries",
+      "pilot10_external_exclusion",
+      "run_artifact_layout"
+    ],
+    "cannot_support_freeze_yet": [
+      "formal_model_config",
+      "formal_prompt_text",
+      "formal300_split",
+      "formal_targets",
+      "formal_scorer"
+    ]
+  }
+}
