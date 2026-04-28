@@ -1,10 +1,25 @@
 {
   "manifest_version": "0.1.0",
-  "status": "pending_freeze",
-  "models": [],
+  "status": "pilot_candidate_not_formal_frozen",
+  "models": [
+    {
+      "config_id": "pilot10_anthropic_compatible_claude_sonnet_4_5_20250929_temp0",
+      "provider": "anthropic_compatible",
+      "model": "claude-sonnet-4-5-20250929",
+      "temperature": 0.0,
+      "max_tokens": {
+        "ocr": 4096,
+        "b1": 4096,
+        "c3": 4096
+      },
+      "assistant_prefill_json": true,
+      "assistant_prefill_value": "{",
+      "api_credentials_recorded": false,
+      "formal_freeze_status": "not_frozen_pilot_only"
+    }
+  ],
   "notes": [
     "Do not record API tokens or secrets here.",
     "Each formal model entry must include provider, model name, date/version when available, temperature, max_tokens, image settings, retry policy, and output parser version."
   ]
 }
-

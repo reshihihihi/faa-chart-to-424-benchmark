@@ -1,0 +1,70 @@
+{
+  "run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+  "method_ids": [
+    "B1",
+    "C3"
+  ],
+  "parameter_status": "temporary_pilot_use_only_not_final_freeze",
+  "created_at": "2026-04-27T08:28:54.339548+00:00",
+  "sample_manifest": "data/pilot10_external/pilot10_manifest.jsonl",
+  "model": "claude-sonnet-4-5-20250929",
+  "temperature": 0.0,
+  "max_tokens": {
+    "ocr": 4096,
+    "b1": 4096,
+    "c3": 4096
+  },
+  "api": {
+    "provider": "anthropic_compatible",
+    "base_url_env": "ANTHROPIC_BASE_URL",
+    "auth_env": "ANTHROPIC_AUTH_TOKEN",
+    "token_value_recorded": false
+  },
+  "prompts": {
+    "ocr": {
+      "path": "prompts/paper_v2/ocr_full_chart_text.zh_v1_candidate.md",
+      "sha256": "35c82663b4f1e6a1f38a9df9538ed27076a224f935fc74e6955f84e097075af7"
+    },
+    "b1": {
+      "path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "sha256": "f2a2c27b534f93bb33d90834cc9fdde4726e8ae267bb3d1134679827d1e2f2e3",
+      "method_changed": false
+    },
+    "c3": {
+      "path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+      "sha256": "49e2ba9134e9c7737d98374786963424546123129c6faa7d648de8224e468e4e",
+      "method_changed": false
+    }
+  },
+  "parser": {
+    "semantic_repair": false,
+    "target_used_for_parsing": false,
+    "strict_json_only": true,
+    "assistant_prefill_json": true,
+    "assistant_prefill_value": "{",
+    "format_violation_policy": "markdown_code_fence_or_extra_text_is_parse_failure",
+    "allowed_json_extraction_policy": [
+      "strict_json"
+    ],
+    "c3_questionnaire_to_canonical": {
+      "path": "scripts/c3_questionnaire_to_canonical.py",
+      "sha256": "cd8eccee78216923f63c187a6bec61444fb9d0c02eee35d83875c4ccc20ba7a4"
+    }
+  },
+  "scoring": {
+    "target_used_only_after_validation": true,
+    "target_source": "pilot10_external canonical_proxy_gt_file"
+  },
+  "samples": [
+    "pilot10_external_01",
+    "pilot10_external_02",
+    "pilot10_external_03",
+    "pilot10_external_04",
+    "pilot10_external_05",
+    "pilot10_external_06",
+    "pilot10_external_07",
+    "pilot10_external_08",
+    "pilot10_external_09",
+    "pilot10_external_10"
+  ]
+}

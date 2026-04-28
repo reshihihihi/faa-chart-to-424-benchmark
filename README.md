@@ -59,16 +59,21 @@ Important upstream references currently expected:
 
 ## Current State
 
-This initial commit creates the clean workspace and audit guardrails only. It
-does not yet import large data assets, formal targets, model predictions, or
-final paper-v2 results.
+This workspace now includes the clean scaffold plus a pilot-only B1/C3 strict
+JSON run package for 10 external charts. The pilot package is not part of the
+formal 300-sample evaluation and must not be used for final paper results.
+
+Pilot result summary:
+
+- `reports/b1_c3_pilot10_strict_json_prefill_20260427.md`
+- `predictions/pilot10_external/b1_c3_strict_json_prefill_20260427_r1/`
+- `benchmark_exports/derived/v2/pilot10_external/`
 
 ## Governance Status
 
-The repository is currently private. GitHub branch protection for this private
-repository is not available under the current account settings, so PR discipline
-is enforced by repository policy, CODEOWNERS, pull request templates, issue
-gates, and the `repository-integrity` GitHub Actions check. See
+The repository is intended to be public for paper-v2 artifact preparation. PR
+discipline is enforced by repository policy, CODEOWNERS, pull request templates,
+issue gates, and the `repository-integrity` GitHub Actions check. See
 `docs/repository_governance.md`.
 
 Before formal evaluation, complete `docs/formal_freeze_checklist.md`.

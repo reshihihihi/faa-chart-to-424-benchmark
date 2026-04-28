@@ -1,0 +1,6 @@
+SUSAP KDABK7FR07L  R      010COCADK7EA0E  I    IF                                 + 01700     18000                 A JS   627021210
+SUSAP KDABK7FR07L  R      021ZOPRIK7PC0E S  031TF                                 V 0068000691        -300          A JS   627051310
+SUSAP KDABK7FR07L  R      030RW07LK7PG0GY M 031TF                                   00087             -300          A JS   627061309
+SUSAP KDABK7FR07L  R      040         0  M     CA                     0702        + 00230                           A JS   627071406
+SUSAP KDABK7FR07L  R      050GILNEK7PC0EY   010DF                                 + 01600                           A JS   627082101
+SUSAP KDABK7FR07L  R      060GILNEK7PC0EE  L   HM                     25030040    + 01600                           A JS   627091310

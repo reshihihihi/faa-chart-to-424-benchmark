@@ -1,0 +1,236 @@
+# OCR Transcription
+
+DAGGETT, CALIFORNIA
+
+APP CRS 216°
+Rwy Ldg 5123
+TDZE 1918
+Apt Elev 1930
+
+AL-104 (FAA)
+
+25219
+
+RNAV (GPS) RWY 22
+
+BARSTOW-DAGGETT (DAG)
+
+RNP APCH.
+
+T
+A
+
+MISSED APPROACH: Climb to 8000 direct CIKVI and on track 275° to BINTE and on track 192° to NULMN and hold, continue climb-in-hold to 8000.
+
+ASOS
+132.175
+
+LOS ANGELES CENTER
+132.5 284.7
+
+UNICOM
+123.0 (CTAF) L
+
+Procedure NA for arrivals at DISBE on V394 northeast bound.
+
+(IAF)
+DISBE
+
+5000
+216°
+(14)
+
+(IAF)
+TEELE
+
+5000
+216°
+(12.9)
+
+M
+S
+A
+C
+U
+T
+N
+O
+2
+5
+N
+M
+
+7600
+
+(IF)
+BILKE
+
+Procedure NA for arrivals at TEELE on V587 northeast bound.
+
+2
+5
+0
+0
+2
+1
+6
+°
+(
+6
+.
+2
+)
+
+5
+0
+0
+0
+2
+1
+6
+°
+(
+5
+.
+1
+)
+
+(FAF)
+FALBA
+
+(IAF)
+ADIRE
+
+BINTE
+
+1
+0
+2
+°
+
+2
+7
+5
+°
+
+(MAP)
+CUTNO
+
+CIKVI
+
+Procedure NA for arrivals at HEC VORTAC on V12-210 eastbound.
+
+2
+1
+6
+°
+(
+8
+.
+3
+)
+
+HECTOR
+HEC
+
+ELEV 1930
+
+TDZE 1918
+
+MISSED APCH FIX
+
+NULMN
+
+067°
+
+247°
+
+7 NM
+
+216°
+
+8000
+CIKVI
+tr
+275°
+
+BINTE
+tr
+192°
+
+NULMN
+
+VGSI and descent angles not coincident (VGSI Angle 3.00/TCH 49).
+
+BILKE
+
+FALBA
+
+1.6 NM to
+CUTNO
+
+3.04°
+TCH 40
+
+216°
+
+5000
+
+CUTNO
+
+3500
+
+1 NM
+
+1.6 NM
+
+2.2 NM
+
+6.2 NM
+
+CATEGORY
+
+A
+
+B
+
+C
+
+D
+
+LNAV MDA
+
+2800-1¼ 882 (900-1¼)
+
+2800-2¾
+882 (900-2¾)
+
+2800-3
+882 (900-3)
+
+DAGGETT, CALIFORNIA
+Amdt 2C 18JUL19
+
+34°51'N-116°47'W
+
+P
+
+6402 X 150
+
+-0.3% UP
+
+22
+
+Procedure
+Turn
+NA
+
+MIRL Rwys 4-22 and 8-26 L
+
+BARSTOW-DAGGETT (DAG)
+
+RNAV (GPS) RWY 22
+
+SW-3, 16 APR 2026 to 14 MAY 2026
+
+SW-3, 16 APR 2026 to 14 MAY 2026

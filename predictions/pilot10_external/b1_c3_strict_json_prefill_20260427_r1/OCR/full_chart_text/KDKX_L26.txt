@@ -1,0 +1,234 @@
+# OCR Transcription
+
+KNOXVILLE, TENNESSEE
+
+AL-6102 (FAA)
+
+26022
+
+LOC I-DKX
+111.3
+
+APP CRS
+260°
+
+Rwy Idg
+TDZE
+Apt Elev
+
+3499
+832
+833
+
+LOC RWY 26
+
+KNOXVILLE DOWNTOWN ISLAND (DKX)
+
+DME required. RADAR required for procedure entry.
+
+MISSED APPROACH: Climb to 4000
+on heading 250° and on VXV VORTAC
+R-265 to SWASO/VXV 18 DME and hold.
+
+Rwy 26 helicopter visibility reduction below ¾ SM NA.
+
+A
+
+AWOS-3
+125.375
+
+KNOXVILLE APP CON
+123.9 353.6
+
+CLNC DEL
+121.7
+
+UNICOM
+123.075 (CTAF) L
+
+MSA VXV 25 NM
+
+5100
+
+270°
+
+7900
+
+(IF)
+SPROC
+VXV 15
+RADAR
+
+LOCALIZER 111.3
+I-DKX
+
+WOGEL
+INT
+RADAR
+
+RIZEN OM
+RADAR
+
+2700
+260°
+(7.4)
+
+050°
+
+1169
+
+R-085
+
+R-074
+
+R-265
+
+R-102
+
+MISSED APCH FIX
+
+(IAF)
+AUBRY
+VXV 15
+
+116.4 VXV
+
+265°
+
+R-265
+
+Chan 111
+
+085°
+SWASO
+VXV 18
+
+VOLUNTEER
+116.4 VXV
+Chan 111
+
+ELEV
+
+833
+
+TDZE
+
+832
+
+4000
+
+VXV
+R-265
+
+hdg 250°
+
+SWASO
+
+SPROC
+VXV 15
+RADAR
+
+RIZEN OM
+RADAR
+
+260°
+
+3500
+260°
+
+WOGEL
+INT
+RADAR
+
+3.38°
+TCH 44
+
+3499 X 75
+
+2700
+1520
+
+893
+
+3 NM
+
+2.1 NM
+
+7.4 NM
+
+CATEGORY
+
+A
+
+B
+
+C
+
+D
+
+S-26
+
+1520-1 688 (700-1)
+
+1520-2
+688 (700-2)
+
+NA
+
+CIRCLING
+
+1600-1
+767 (800-1)
+
+1720-1¼
+887 (900-1¼)
+
+1720-2¾
+887 (900-2¾)
+
+NA
+
+WOGEL FIX MINIMUMS
+
+REIL Rwys 8 and 26 L
+MIRL Rwy 8-26 L
+
+S-26
+
+1440-1 608 (700-1)
+
+1440-1¾
+608 (700-1¾)
+
+NA
+
+FAF to MAP 5.1 NM
+
+CIRCLING
+
+1600-1
+767 (800-1)
+
+1720-1½
+887 (900-1½)
+
+1720-2¾
+887 (900-2¾)
+
+NA
+
+Knots
+60
+90
+120
+150
+180
+Min:Sec 5:06 3:24 2:33 2:02 1:42
+
+KNOXVILLE, TENNESSEE
+Amdt 5 19MAY22
+
+KNOXVILLE DOWNTOWN ISLAND (DKX)
+35°58'N-83°52'W
+
+LOC RWY 26

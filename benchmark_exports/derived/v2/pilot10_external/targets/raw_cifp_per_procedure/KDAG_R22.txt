@@ -1,0 +1,7 @@
+SUSAP KDAGK2FR22   R      010BILKEK2PC0E  I    IF                                 + 05000     18000                 B PS   628392406
+SUSAP KDAGK2FR22   R      030CUTNOK2PC0EY M 031TF                                   02273             -304          B PS   628422406
+SUSAP KDAGK2FR22   R      040         0  M     CA                     2156        + 02330                           B PS   628432406
+SUSAP KDAGK2FR22   R      050CIKVIK2PC0E    010DF                                                                   B PS   628442406
+SUSAP KDAGK2FR22   R      060BINTEK2PC0E    010TF                                                                   B PS   628452406
+SUSAP KDAGK2FR22   R      070NULMNK2EA0EY   010TF                                 + 08000                           B PS   628462406
+SUSAP KDAGK2FR22   R      080NULMNK2EA0EE  R   HM                     06740070    + 08000                           B PS   628472406

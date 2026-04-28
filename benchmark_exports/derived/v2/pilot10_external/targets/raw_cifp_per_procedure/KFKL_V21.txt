@@ -1,0 +1,5 @@
+SUSAP KFKLK6FV21   V      020FKL  K6D 0V  F    IF FKL K6      00000000        D   + 02700     18000       FKL   K6D 0 NS   902931706
+SUSAP KFKLK6FV21   V      030RW21 K6PG0GY M    CF FKL K6      1870003318700033D     01591             -313          0 NS   902941706
+SUSAP KFKLK6FV21   V      040         0  M     CA                     1870        + 02200                           0 NS   902951706
+SUSAP KFKLK6FV21   V      050FKL  K6D 0VY  R   DF                                 + 03300                           0 NS   902961706
+SUSAP KFKLK6FV21   V      060FKL  K6D 0VE  R   HM                     1860T010    + 03300                           0 NS   902971706

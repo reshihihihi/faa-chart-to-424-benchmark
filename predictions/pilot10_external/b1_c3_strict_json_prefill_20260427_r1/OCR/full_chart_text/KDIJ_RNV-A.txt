@@ -1,0 +1,76 @@
+# OCR Transcription
+
+DRIGGS, IDAHO                                AL-9117 (FAA)                                25331
+
+APP CPRS    Rwy Ldg    N/A
+165°        TDZE       N/A
+            Apt Elev   6257
+
+RNAV (GPS)-A
+DRIGGS/REED MEML (DTJ)
+
+RNP APCH - GPS.
+
+T    Circling NA for Cats C and D southeast of Rwy 4-22.
+A    Circling Rwy 22 NA at night.
+
+MISSED APPROACH: (Do not exceed 185K until TOGRE)
+Climb to 7500, then climbing right turn to 10000 direct
+TOGRE then track 002° to BRELD then track 029° to
+PIKEQ and hold.
+
+AWOS-3PT                    SALT LAKE CENTER                    UNICOM
+120.775                     128.35  239.25                      122.7 (CTAF) L
+
+MSA DU 25 NM
+
+15000
+
+                                                    HOLD 17500
+                                                         10000
+(IAF)
+SABAT                                   7 NM
+        10000 NoPT                                  153°
+        089°                                        (5.3)
+        (23.1)                                              (IF/IAF)
+                                                            PIKEQ
+Procedure NA for arrivals at                                     1100
+SABAT on T331 southbound bound.                                  269°
+                                                                  (5.5)
+                                                                        13200
+                                                                        269°
+                                                                  HAMPA (7)
+                                                                        13600
+                                                                        269°
+                                                                  SWINN (11)
+                                                                        QUIRT
+        BRELD
+                                                    (FAF)
+                                                    TIHQI
+                                                            165°
+                                                    TOGRE
+
+                                                    (MAP)
+                                                    DIGUO
+
+                                                                  ELEV 6257
+                                                                        165°
+
+        PIKEQ    7500   10000  TOGRE      BRELD      PIKEQ
+7 NM                                tr     tr
+Holding Pattern                     002°   029°
+
+17500      333°
+10000      153°                     TIHQI
+                    153°
+                            8100    165°
+                                            DIGUO
+
+                    7.3 NM          4.5 NM
+
+CATEGORY        A           B           C           D           MIRL Rwy 4-22 L
+                6800-1      6880-1      6880-1¾     7660-3      REIL Rwy 22 L
+CIRCLING        543 (600-1) 623 (700-1) 623 (700-1¾) 1403 (1500-3)
+
+DRIGGS, IDAHO                                                   DRIGGS/REED MEML (DTJ)
+Amdt 2  02OCT25                     43°45'N-111°05'W            RNAV (GPS)-A

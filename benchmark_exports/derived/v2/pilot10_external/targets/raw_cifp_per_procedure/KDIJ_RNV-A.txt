@@ -1,0 +1,8 @@
+SUSAP KDIJK1FRNV-A R      010PIKEQK1PC0E  I    IF                                 + 10000     18000                 B PC   723592406
+SUSAP KDIJK1FRNV-A R      020TIHQIK1PC0E  F 010TF                                 + 08100                 KDIJ  K1PAB PC   723602510
+SUSAP KDIJK1FRNV-A R      030DIGUQK1PC0EY M 031TF                                   06257              000          B PC   723612510
+SUSAP KDIJK1FRNV-A R      040         0  M     CA                     1652        + 07500                           B PC   723622510
+SUSAP KDIJK1FRNV-A R      050TOGREK1PC0E   R010DF                                                  185              B-PC   723632510
+SUSAP KDIJK1FRNV-A R      060BRELDK1PC0E    010TF                                                                   B PC   723642510
+SUSAP KDIJK1FRNV-A R      070PIKEQK1PC0EY   010TF                                                                   B PC   723652510
+SUSAP KDIJK1FRNV-A R      080PIKEQK1PC0EE  R   HM                     15260070    + 10000                           B PC   723662510

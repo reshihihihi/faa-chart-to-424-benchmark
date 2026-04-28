@@ -1,0 +1,7 @@
+SUSAP KDKKK6FRNV-A R      010TRUNTK6PC0E  I    IF                                 + 03200     18000                 B PC   726551911
+SUSAP KDKKK6FRNV-A R      020NOKAAK6PC0E  F 010TF                                 + 02300                 RW24  K6PGB PC   726562201
+SUSAP KDKKK6FRNV-A R      021CUVBAK6PC0E S  031TF                                 + 01440                           B PC   726572201
+SUSAP KDKKK6FRNV-A R      030RW24 K6PG0GY M 031TF                                   00706              000          B PC   726582201
+SUSAP KDKKK6FRNV-A R      040         0  M     CA                     2394        + 01900                           B PC   726591911
+SUSAP KDKKK6FRNV-A R      050TRUNTK6PC0EY  R010DF                                 + 03200                           B PC   726601911
+SUSAP KDKKK6FRNV-A R      060TRUNTK6PC0EE  R   HM                     23940040    + 03200                           B PC   726611911

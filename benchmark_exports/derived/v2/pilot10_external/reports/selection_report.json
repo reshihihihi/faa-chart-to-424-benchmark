@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-04-26T14:27:22.311620+00:00",
+  "dataset": "pilot10_external",
+  "count": 10,
+  "source_urls": {
+    "dtpp_metafile": "https://aeronav.faa.gov/d-tpp/2604/xml_data/d-TPP_Metafile.xml",
+    "cifp_zip": "https://aeronav.faa.gov/Upload_313-d/cifp/CIFP_260416.zip"
+  },
+  "exclusion_refs": {
+    "formal300_pr": 32,
+    "formal300_pr_head": "d606b747a1cda86a013df1f145de2a1fa17e176d"
+  },
+  "schema_refs": {
+    "schema_pr": 28,
+    "schema_pr_head": "d2c54172b31184f8c0deb74415f37c239d3e3eca",
+    "target_projection_pr": 29,
+    "target_projection_pr_head": "1930aa381955ed1c2001d62dd9dae797d2fddc68"
+  },
+  "render_policy": {
+    "engine": "PyMuPDF",
+    "fitz_matrix": "Matrix(2, 2)",
+    "page_index": 0,
+    "alpha": false
+  },
+  "warnings": []
+}

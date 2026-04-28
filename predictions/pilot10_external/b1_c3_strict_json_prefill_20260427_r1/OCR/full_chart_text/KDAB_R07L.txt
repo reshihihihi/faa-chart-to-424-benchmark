@@ -1,0 +1,271 @@
+# OCR Transcription of RNAV (GPS) RWY 7L Approach Chart
+
+DAYTONA BEACH, FLORIDA
+AL-110 (FAA)
+25275
+
+WAAS
+CH 45500
+W07A
+
+APP CRS
+070°
+
+Rwy Idg 9810
+TDZE 30
+Apt Elev 34
+
+RNAV (GPS) RWY 7L
+DAYTONA BEACH INTL (DAB)
+
+T
+
+Inoperative table does not apply to LPV all Cats. For uncompensated Baro-VNAV
+systems, LNAV/VNAV NA below -15°C (5°F) or above 43°C (109°F). DME/DME
+RNP-0.3 NA. Helicopter visibility reduction below ¾ SM NA. For inoperative MALSR,
+increase LNAV/VNAV visibility all Cats to 1¼ and increase LNAV Cats A/B visibility
+to RVR 5000 and Cats C/D visibility to RVR 6000.
+
+MALSR
+A5
+
+MISSED APPROACH:
+Climb to 1600 direct
+GILNE and hold.
+
+ATIS
+132.875
+
+DAYTONA APP CON
+125.8 269.075
+
+DAYTONA TOWER
+120.7 257.8
+
+GND CON
+121.9 348.6
+
+Procedure NA for arrivals on OMN VORTAC
+airway radials 161 CW 211.
+
+ORMOND BEACH
+OMN
+
+GILNE
+2
+0
+5
+8
+°
+0
+7
+0
+°
+(
+4
+)
+
+1
+7
+0
+0
+2
+1
+7
+°
+(
+1
+4
+.
+5
+)
+
+4 NM
+
+168
+RW07L
+129
+
+1700 NoPT
+096° (6.7)
+
+ZOPRI
+1.9 NM
+to RW07L
+FOUG
+
+1
+6
+0
+0
+0
+7
+0
+°
+
+(FAF)
+
+2
+5
+0
+°
+
+4 NM
+
+M
+SA RW07L 25 N
+M
+
+2800
+
+0
+7
+0
+°
+
+(IAF)
+GUANO
+
+(IF/IAF)
+COCAD
+
+ELEV
+
+Procedure NA for arrivals at GUANO
+on V267 northbound.
+
+34
+
+D
+
+TDZE
+
+30
+
+1600
+4 NM
+Holding Pattern
+
+GILNE
+
+COCAD
+FOUG
+
+ZOPRI
+
+2
+5
+0
+°
+
+1700
+
+0
+7
+0
+°
+
+0
+7
+0
+°
+
+1600
+
+1.9 NM
+to RW07L
+
+LNAV only.
+1.1 NM to
+RW07L
+
+RW07L
+GP 3.00°
+TCH 58
+
+1600
+
+680
+1.1 NM
+
+5.9 NM
+CATEGORY
+
+A
+
+2.9 NM
+
+B
+
+0.8 NM
+
+C
+
+D
+
+LPV
+
+DA
+
+230/40
+
+200 (200-¾)
+
+LNAV/
+VNAV
+
+DA
+
+429/45
+
+399 (400-⅞)
+
+LNAV MDA
+
+420/40
+
+390 (400-¾)
+
+CIRCLING
+
+540-1
+
+506 (600-1)
+
+680-1¾
+646 (700-1¾)
+
+700-2
+666 (700-2)
+
+DAYTONA BEACH, FLORIDA
+Amdt 1C 23APR20
+
+29°11'N-81°03'W
+
+P
+
+7
+R
+
+P
+
+TWR
+
+P
+
+7
+L
+
+3156
+X 100
+
+070°
+
+TDZ/CL Rwy 7L
+HIRL Rwy 7L-25R
+REIL Rwys 7R, 16, 25L, and 34
+MIRL Rwys 7R-25L and 16-34
+
+DAYTONA BEACH INTL (DAB)
+RNAV (GPS) RWY 7L
