@@ -1,0 +1,1877 @@
+{
+  "created_at_utc": "2026-04-29T07:33:50.007974+00:00",
+  "status": "draft_for_user_review_not_submitted",
+  "purpose": "准备实验组1 formal300 正式运行前审查用的 GitHub PR 提交包；不包含 formal300 方法推理结果。",
+  "files": [
+    {
+      "path": "docs/method_registry.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "489a4248618686e61e3335ee6191dc563dbbb8d1c1d407db5d22370d1cc8fd0d",
+      "reason": "实验组1的方法边界总表，定义每个方法允许输入、禁止输入和最终输出类型。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "实验组1的方法边界总表，定义每个方法允许输入、禁止输入和最终输出类型。"
+    },
+    {
+      "path": "docs/group1_method_boundary_audit_20260428.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "884f2f12c8c88558ed7bc1b919b269d9b5bb713b00a7360e54231212d716216c",
+      "reason": "实验组1方法边界审计，用于让审查者确认各方法没有串组或混用输入。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "实验组1方法边界审计，用于让审查者确认各方法没有串组或混用输入。"
+    },
+    {
+      "path": "docs/group1_ocr_boundary_correction_20260428.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "56a39abc218f816fc26a5f99c3616612f5fe90b5267206d7d699ffaad34bd891",
+      "reason": "历史纠偏说明，解释为什么之前把 Claude 当 OCR 的结果只能降级为 debug 证据，不能作为正式 OCR 实验。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "历史纠偏说明，解释为什么之前把 Claude 当 OCR 的结果只能降级为 debug 证据，不能作为正式 OCR 实验。"
+    },
+    {
+      "path": "docs/formal_freeze_checklist.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "64c0a14732306891d31ca7e221457824df38f23f87238a69db96fd065541a811",
+      "reason": "正式评测前的冻结门槛清单。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "正式评测前的冻结门槛清单。"
+    },
+    {
+      "path": "docs/no_leakage_policy.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "15d977ba384c96f2ad1d495807eede4fce8bcb4efc7c66b989d82c3b4fe8a566",
+      "reason": "无泄漏约束，规定推理、target、scoring 必须隔离。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "无泄漏约束，规定推理、target、scoring 必须隔离。"
+    },
+    {
+      "path": "docs/rerun_policy.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "2dd6d3359b0085e391459c91711d1aea2a4844fa913eb22b31bc2b1713103450",
+      "reason": "重跑策略，区分允许的 API 故障恢复和禁止的按分数选择性重跑。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "重跑策略，区分允许的 API 故障恢复和禁止的按分数选择性重跑。"
+    },
+    {
+      "path": "configs/group1_formal_freeze_manifest_20260429.json",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "407f2430062a10bada5785604a1f309185f1b435e48ba71d26b24e8c123fe320",
+      "reason": "当前“未运行 formal300”的实验组1冻结 manifest，绑定资产、策略、模型、prompt 和 runner 计划。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "当前“未运行 formal300”的实验组1冻结 manifest，绑定资产、策略、模型、prompt 和 runner 计划。"
+    },
+    {
+      "path": "configs/group1_freeze_candidate_manifest_20260429.json",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "fb76554149417a58ed63b863e70313fc0cb2a782590942ba647a689e1932565c",
+      "reason": "冻结候选 manifest，说明哪些已经可作为候选冻结，哪些仍有 blocker。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "冻结候选 manifest，说明哪些已经可作为候选冻结，哪些仍有 blocker。"
+    },
+    {
+      "path": "configs/frozen_experiment_manifest.json",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit_after_review",
+      "sha256": "cec2f1f15833211bd79c7acc5f9931fb5d0dfd2922a15bf8aac6c35a680b2974",
+      "reason": "已有全局冻结 manifest；如果本次改动已经与它同步，就可以一起提交审查。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "审查后提交",
+      "reason_cn": "已有全局冻结 manifest；如果本次改动已经与它同步，就可以一起提交审查。"
+    },
+    {
+      "path": "configs/model_config_manifest.json",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit_after_review",
+      "sha256": "56cca2f7b1f36f5662e72431f7c0667c1741b265d6d6c3d42421cb7be3f5e5a2",
+      "reason": "模型、provider、调用参数的候选登记表。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "审查后提交",
+      "reason_cn": "模型、provider、调用参数的候选登记表。"
+    },
+    {
+      "path": "configs/ocr_source_manifest.json",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "c0534dc08056b6d233ebbe9680a225e0da69cf1ccb2c04572f0bf376eaeea86c",
+      "reason": "OCR-1/OCR-2 来源定义，以及普通 OCR 边界纠偏。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "OCR-1/OCR-2 来源定义，以及普通 OCR 边界纠偏。"
+    },
+    {
+      "path": "configs/prompt_manifest.json",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit_after_review",
+      "sha256": "e7e9aeba4cf5ffaddcf276de385d4cddf86d12363b5778414c8e810253b3f801",
+      "reason": "prompt 路径和 hash 登记表。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "审查后提交",
+      "reason_cn": "prompt 路径和 hash 登记表。"
+    },
+    {
+      "path": "configs/output_control_policy.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "a7a9f80eeabb82931b1a9c9c8f90f39ae3d589a9de272b4697dacc895c250416",
+      "reason": "输出控制策略，包括 C4 的 Anthropic tool 传输层加固。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "输出控制策略，包括 C4 的 Anthropic tool 传输层加固。"
+    },
+    {
+      "path": "configs/parser_repair_policy.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "d52cda1d316d51abb72c161f7b5b6670738d18d29abd7fe88e12d33aecebc9c2",
+      "reason": "严格 parser/no-repair 策略，说明正式实验中允许和禁止的格式处理。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "严格 parser/no-repair 策略，说明正式实验中允许和禁止的格式处理。"
+    },
+    {
+      "path": "configs/invalid_output_scoring_policy.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "f0e80576c8c56fd3725859791cffa3b4a3a666f183393b2b622a99f82345efc1",
+      "reason": "parse/schema/API 失败在正式评分中的处理策略。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "parse/schema/API 失败在正式评分中的处理策略。"
+    },
+    {
+      "path": "configs/degree_360_policy.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "4417d193ccf041fc3f42027a7f2ea7bb9302d6c380c506c8fea5866491e4fce9",
+      "reason": "360 度航向这一 schema 边界情况的预注册处理策略。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "360 度航向这一 schema 边界情况的预注册处理策略。"
+    },
+    {
+      "path": "configs/scorer_validator_manifest.json",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "02d06c70338a25155bec22e24dfe76cdf5ef6b60736ee5ce7b99014476fc7860",
+      "reason": "scorer/validator 的版本和 hash manifest。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "scorer/validator 的版本和 hash manifest。"
+    },
+    {
+      "path": "scripts/scorers/group1_canonical_field_scorer.py",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "be2bf016c557e9ce9f9df7b680370c921cd92fcc3dc34e7e09dff44384b26f45",
+      "reason": "实验组1 field-level scorer/validator 候选实现。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "实验组1 field-level scorer/validator 候选实现。"
+    },
+    {
+      "path": "scripts/prepare_group1_formal_run.py",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "15207e048ccaefc3265583ed974766be01ce780f4252a575d8429b72b61c9eb5",
+      "reason": "正式运行准备脚本，用于生成不含 formal300 推理结果的运行计划。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "正式运行准备脚本，用于生成不含 formal300 推理结果的运行计划。"
+    },
+    {
+      "path": "scripts/materialize_formal300_dataset.py",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "42515cf249e992370435633f52337beb030020b4d92090352878552403413be7",
+      "reason": "formal300 资产 materialization 脚本。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "formal300 资产 materialization 脚本。"
+    },
+    {
+      "path": "scripts/sync_formal300_annotation_images.py",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "1dd983481ac6cd60e46b069d22fa5cd3cdfa54b0c502ec177e64f6dd3054c351",
+      "reason": "formal300 标注图片对齐和同步脚本。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "formal300 标注图片对齐和同步脚本。"
+    },
+    {
+      "path": "scripts/model_clients.py",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "9bfc36bdb7b7c98d71fc8ee16a574b5c85c8d9015f4f5ec704e69d2ce58327cd",
+      "reason": "模型客户端层，包含 C4 Anthropic tool 传输层输出控制修正。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "模型客户端层，包含 C4 Anthropic tool 传输层输出控制修正。"
+    },
+    {
+      "path": "scripts/run_group1_pilot10_gpt54.py",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit_after_review",
+      "sha256": "57874612534f5027232a4fffb656f48bd2fca2f322ea7b126785efa4075cc09e",
+      "reason": "B/C 类方法使用过的 pilot runner，可作为 pilot 证据；它本身不等于正式 formal runner。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "审查后提交",
+      "reason_cn": "B/C 类方法使用过的 pilot runner，可作为 pilot 证据；它本身不等于正式 formal runner。"
+    },
+    {
+      "path": "scripts/run_a1_a2_rules_pilot10.py",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit_after_review",
+      "sha256": "ce455979d75e29827d06f37dfdd744e5bb79921b96ed33838876c97f24fa375a",
+      "reason": "A1/A2 规则系统候选 runner。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "审查后提交",
+      "reason_cn": "A1/A2 规则系统候选 runner。"
+    },
+    {
+      "path": "scripts/run_c2_qa_pilot10.py",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit_after_review",
+      "sha256": "be49e2f6d2ee8bb75bdfb4894042391591884b4900a7a367d4aa5a08342f7e56",
+      "reason": "C2 QA prompt runner。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "审查后提交",
+      "reason_cn": "C2 QA prompt runner。"
+    },
+    {
+      "path": "scripts/aggregate_c2_qa_candidate.py",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit_after_review",
+      "sha256": "551d1993151464bf8edd970e414b67055ace8a1e46a0beb8223fecba8d01d945",
+      "reason": "C2 确定性 QA 聚合器。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "审查后提交",
+      "reason_cn": "C2 确定性 QA 聚合器。"
+    },
+    {
+      "path": "schemas/field_candidates.schema.candidate.json",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "6a322e02cdb7c13364c804226a95985b1d9bf79bbabd6fbdfc923c935020910d",
+      "reason": "B1_prime 的 field_candidates 候选 schema。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "B1_prime 的 field_candidates 候选 schema。"
+    },
+    {
+      "path": "schemas/field_to_leg_links.schema.candidate.json",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "1085f187055f1e6b7b78bb9958643ed4eb06bfa7d8a4a65870537bd34f704262",
+      "reason": "B1_prime_link 的 field-to-leg link 候选 schema。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "B1_prime_link 的 field-to-leg link 候选 schema。"
+    },
+    {
+      "path": "schemas/c3_questionnaire.schema.candidate.json",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "d3d1aeabb2a45e477ae8fbec3d19c942aa2cc319e5c17d49c99a3e68fe21635e",
+      "reason": "C3 问卷中间结果候选 schema。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "C3 问卷中间结果候选 schema。"
+    },
+    {
+      "path": "schemas/d_sft_manifest.schema.json",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "1fdd37b1a9772aa9c019500fca2eb9aaa50ac09b0c0013a23ae0d133fc5c6324",
+      "reason": "D-SFT manifest schema。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "D-SFT manifest schema。"
+    },
+    {
+      "path": "docs/b1_prime_link_method_card.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "ff04ffd1e1364936b6a31f2ce6bda1d4f9d35c69531b3543acc2bb0a5e14fb93",
+      "reason": "B1_prime_link 方法卡。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "B1_prime_link 方法卡。"
+    },
+    {
+      "path": "docs/d_sft_method_card.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "b23b4073d21da4896197ddbcc0adad4e1f9700eaba26982635aaf16f65ca0f19",
+      "reason": "D-SFT 方法卡，与当前训练候选版本对应。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "D-SFT 方法卡，与当前训练候选版本对应。"
+    },
+    {
+      "path": "docs/group1_a1_a2_rules_candidate_v1.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "dfc83fcc4b5cf477a2ef770a473d86e2e074b06ccb22ac0203de257913071b41",
+      "reason": "A1/A2 规则系统候选方法细节。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "A1/A2 规则系统候选方法细节。"
+    },
+    {
+      "path": "docs/group1_c2_qa_aggregator_candidate_v1.md",
+      "exists": true,
+      "category": "must_submit",
+      "recommended_action": "submit",
+      "sha256": "1e27359ca3ed0e523d3a4f908e193e6563f6791fcfeeb6f856b88906f2af67c7",
+      "reason": "C2 QA 聚合器候选方法细节。",
+      "category_cn": "核心提交文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "C2 QA 聚合器候选方法细节。"
+    },
+    {
+      "path": "reports/freeze/group1_formal_freeze_ready_no_eval_20260429.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit",
+      "sha256": "d13340f3ad23b8e4279fd31c25536ed663dfc7b18fb481a68cfbb9e92900fcf8",
+      "reason": "当前“未运行 formal300”的冻结准备摘要。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "提交",
+      "reason_cn": "当前“未运行 formal300”的冻结准备摘要。"
+    },
+    {
+      "path": "reports/freeze/group1_formal_freeze_package_BLOCKED_20260429.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit_after_review",
+      "sha256": "f07d7a10978686f5e45bbdfde588050c18bea99915ca8d13ce7950c39731a4b7",
+      "reason": "较早的 blocked 版本；如保留历史，应标明已被当前 no-eval freeze package 替代。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "审查后提交",
+      "reason_cn": "较早的 blocked 版本；如保留历史，应标明已被当前 no-eval freeze package 替代。"
+    },
+    {
+      "path": "reports/freeze/group1_freeze_readiness_audit_20260429.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit",
+      "sha256": "b8455da7d27a7b68a01dec3608dc629108472448b3ad93cf1ce7c24dbab24a40",
+      "reason": "冻结 readiness 审计。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "提交",
+      "reason_cn": "冻结 readiness 审计。"
+    },
+    {
+      "path": "reports/freeze/group1_runner_gap_audit_20260429.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit",
+      "sha256": "03d3cd1ec20aa5814bbb40c8fcc7b5446ede269d6e38387f1faa13a8fbfda536",
+      "reason": "正式 runner 缺口审计。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "提交",
+      "reason_cn": "正式 runner 缺口审计。"
+    },
+    {
+      "path": "reports/freeze/group1_model_rerun_policy_audit_20260429.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit",
+      "sha256": "a00fa5c80a9732a24e241abe5e4e3464e7f8009a0ff69fa70e2ee6e25ff57607",
+      "reason": "模型和重跑策略审计。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "提交",
+      "reason_cn": "模型和重跑策略审计。"
+    },
+    {
+      "path": "reports/freeze/group1_c_methods_pilot100_evidence_20260429.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit",
+      "sha256": "3530ed2b8cfefbcb1b146d0edba8b9b3b676767d88f09b9d0d77564990fa58b1",
+      "reason": "C 系列方法 pilot100 证据汇总。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "提交",
+      "reason_cn": "C 系列方法 pilot100 证据汇总。"
+    },
+    {
+      "path": "reports/freeze/c4_output_control_fix_20260429.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit",
+      "sha256": "8139e1fc166149c24504eeca3275d66fb704ea6ef3df0b6f002922740822b34d",
+      "reason": "C4 输出控制修正记录。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "提交",
+      "reason_cn": "C4 输出控制修正记录。"
+    },
+    {
+      "path": "reports/pilot/c4_output_control_fix_pilot100_20260429.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit",
+      "sha256": "323735c6e56f8644444c01ad2adcdcd6bb4deb821d16f5751b3b04cf6d9d1bec",
+      "reason": "C4 输出控制修正后的 pilot100 验证报告。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "提交",
+      "reason_cn": "C4 输出控制修正后的 pilot100 验证报告。"
+    },
+    {
+      "path": "reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit",
+      "sha256": "d23fba4ce6948f6c86957d4866b3a47c28807c5521d1ac03decf1c4b8af0f383",
+      "reason": "B1_prime_link pilot100 候选证据。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "提交",
+      "reason_cn": "B1_prime_link pilot100 候选证据。"
+    },
+    {
+      "path": "reports/pilot/pilot100_b1_b1prime_expanded_validation_20260428.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit",
+      "sha256": "b9af5180ea5be707579792b47231aa2f6a48d00ff7134dcafbb56ad25186bfbd",
+      "reason": "B1/B1_prime 扩大到 pilot100 的验证证据。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "提交",
+      "reason_cn": "B1/B1_prime 扩大到 pilot100 的验证证据。"
+    },
+    {
+      "path": "reports/pilot/group1_prefreeze_final_optimization_20260429.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit",
+      "sha256": "6fe2a396c7cf01d36f312061ed47ae9d27b9a79135eca70972f35195dbdab114",
+      "reason": "正式冻结前最后一轮优化摘要。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "提交",
+      "reason_cn": "正式冻结前最后一轮优化摘要。"
+    },
+    {
+      "path": "training/d_sft/reports/d_sft_freeze_report_20260428_r1.md",
+      "exists": true,
+      "category": "pilot_evidence_and_audit",
+      "recommended_action": "submit",
+      "sha256": "daaec698387d9897c990d6f21ae2da867c1e3f64fce10962cf6010e2d39b06a9",
+      "reason": "D-SFT 训练、冻结和 pilot100 可行性报告。",
+      "category_cn": "pilot 证据与冻结审计报告",
+      "recommended_action_cn": "提交",
+      "reason_cn": "D-SFT 训练、冻结和 pilot100 可行性报告。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/manifest.json",
+      "exists": true,
+      "category": "formal300_manifest_submit_or_lfs",
+      "recommended_action": "submit_if_size_ok",
+      "sha256": "57b50e567daa33cf92373860ef42748be8d60b1d0344579ac47e3e59f0e3c526",
+      "reason": "formal300 每个样本的 image/PDF/target hash 总 manifest。",
+      "category_cn": "formal300 manifest 与小型分析文件",
+      "recommended_action_cn": "体积可接受则提交",
+      "reason_cn": "formal300 每个样本的 image/PDF/target hash 总 manifest。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/sample_manifest.jsonl",
+      "exists": true,
+      "category": "formal300_manifest_submit_or_lfs",
+      "recommended_action": "submit",
+      "sha256": "7891c333992a3cb7a430d03015aecb123509282b167bba249b64b2e11d745d89",
+      "reason": "formal300 样本 manifest，共 300 行。",
+      "category_cn": "formal300 manifest 与小型分析文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "formal300 样本 manifest，共 300 行。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/splits.json",
+      "exists": true,
+      "category": "formal300_manifest_submit_or_lfs",
+      "recommended_action": "submit",
+      "sha256": "857a95ae0e4c7304d69091e4a58d12396dd2286da7a7705b4c2f6f7a02d568ad",
+      "reason": "formal300 split 文件。",
+      "category_cn": "formal300 manifest 与小型分析文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "formal300 split 文件。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/checksums.sha256",
+      "exists": true,
+      "category": "formal300_manifest_submit_or_lfs",
+      "recommended_action": "submit",
+      "sha256": "ee35127ab204c4f47d7a76fd9e52bb4061ed813b01061287dbe3330cf4b143fc",
+      "reason": "formal300 包的 checksum 文件。",
+      "category_cn": "formal300 manifest 与小型分析文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "formal300 包的 checksum 文件。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/challenge_tags.jsonl",
+      "exists": true,
+      "category": "formal300_manifest_submit_or_lfs",
+      "recommended_action": "submit",
+      "sha256": "22acf71913060e086fd4f425b4853aab84572f07f455ce293bb3f7128d8748ab",
+      "reason": "用于论文分析的 challenge tags。",
+      "category_cn": "formal300 manifest 与小型分析文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "用于论文分析的 challenge tags。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/targets/field_targets.jsonl",
+      "exists": true,
+      "category": "formal300_manifest_submit_or_lfs",
+      "recommended_action": "submit",
+      "sha256": "47b5d1dc00e338c1bec0e11c0ea89f65a15cb310377005a68dd4b1160992ee91",
+      "reason": "用于 scoring/analysis 的字段级 target 导出。",
+      "category_cn": "formal300 manifest 与小型分析文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "用于 scoring/analysis 的字段级 target 导出。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/targets/evidence_provenance.jsonl",
+      "exists": true,
+      "category": "formal300_manifest_submit_or_lfs",
+      "recommended_action": "submit",
+      "sha256": "be27469981e723dd17252a7425134a84671d342eebe4c8426291cfc6097564ca",
+      "reason": "target 来源证据导出，用于审计。",
+      "category_cn": "formal300 manifest 与小型分析文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "target 来源证据导出，用于审计。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/reports/formal300_materialization_report.json",
+      "exists": true,
+      "category": "formal300_manifest_submit_or_lfs",
+      "recommended_action": "submit",
+      "sha256": "5104b2422db960856a66e21a3d8e70b81edf592886764f90c425b90ed28ccc27",
+      "reason": "formal300 materialization 报告。",
+      "category_cn": "formal300 manifest 与小型分析文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "formal300 materialization 报告。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/reports/annotation_image_alignment_report.json",
+      "exists": true,
+      "category": "formal300_manifest_submit_or_lfs",
+      "recommended_action": "submit",
+      "sha256": "bf1bff31b264dfb592c402813f7e18142fd4a6cb712d4a8679e557d1e5f4a854",
+      "reason": "标注图片对齐报告。",
+      "category_cn": "formal300 manifest 与小型分析文件",
+      "recommended_action_cn": "提交",
+      "reason_cn": "标注图片对齐报告。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/images/",
+      "exists": true,
+      "category": "large_or_manifest_only",
+      "recommended_action": "prefer_lfs_or_release_or_manifest_only",
+      "reason": "300 张 PNG 图片；对 benchmark 有用，但普通 PR 中可能过大，是否提交取决于 Git LFS 或 release artifact 策略。",
+      "category_cn": "大文件或仅提交 manifest",
+      "recommended_action_cn": "优先使用 Git LFS、Release artifact 或只提交 manifest/hash",
+      "reason_cn": "300 张 PNG 图片；对 benchmark 有用，但普通 PR 中可能过大，是否提交取决于 Git LFS 或 release artifact 策略。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/pdfs/",
+      "exists": true,
+      "category": "large_or_manifest_only",
+      "recommended_action": "prefer_lfs_or_release_or_manifest_only",
+      "reason": "299 个 PDF 文件；普通 PR 中通常过大，建议用 manifest+hash 或 Git LFS/release artifact 管理。",
+      "category_cn": "大文件或仅提交 manifest",
+      "recommended_action_cn": "优先使用 Git LFS、Release artifact 或只提交 manifest/hash",
+      "reason_cn": "299 个 PDF 文件；普通 PR 中通常过大，建议用 manifest+hash 或 Git LFS/release artifact 管理。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/targets/canonical_proxy_gt/",
+      "exists": true,
+      "category": "large_or_manifest_only",
+      "recommended_action": "submit_if_size_ok_or_manifest_only",
+      "reason": "300 个 canonical target JSON；文件可能不大，但它们是正式答案，是否随 PR 提交需要审查者决定。",
+      "category_cn": "大文件或仅提交 manifest",
+      "recommended_action_cn": "体积可接受则提交，否则只提交 manifest/hash",
+      "reason_cn": "300 个 canonical target JSON；文件可能不大，但它们是正式答案，是否随 PR 提交需要审查者决定。"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/targets/raw_cifp_per_procedure/",
+      "exists": true,
+      "category": "large_or_manifest_only",
+      "recommended_action": "submit_if_allowed_or_manifest_only",
+      "reason": "每个 procedure 的 raw CIFP 记录，是答案/来源证据，不应被推理 runner 访问。",
+      "category_cn": "大文件或仅提交 manifest",
+      "recommended_action_cn": "仓库策略允许则提交，否则只提交 manifest/hash",
+      "reason_cn": "每个 procedure 的 raw CIFP 记录，是答案/来源证据，不应被推理 runner 访问。"
+    },
+    {
+      "path": "E:\\experiment3\\try_B1_B1'",
+      "exists": true,
+      "category": "external_artifact_manifest_only",
+      "recommended_action": "do_not_commit_raw; reference manifest/report",
+      "reason": "B1/B1_prime pilot100 的图片、OCR、预测和 score 等大文件目录；建议只提交摘要和 manifest。",
+      "category_cn": "外部实验目录，仅提交 manifest/报告",
+      "recommended_action_cn": "不要提交原始大文件，只引用 manifest/报告",
+      "reason_cn": "B1/B1_prime pilot100 的图片、OCR、预测和 score 等大文件目录；建议只提交摘要和 manifest。"
+    },
+    {
+      "path": "E:\\experiment3\\B1'_link",
+      "exists": true,
+      "category": "external_artifact_manifest_only",
+      "recommended_action": "do_not_commit_raw; reference manifest/report",
+      "reason": "B1_prime_link pilot100 大文件目录；建议只提交摘要和报告。",
+      "category_cn": "外部实验目录，仅提交 manifest/报告",
+      "recommended_action_cn": "不要提交原始大文件，只引用 manifest/报告",
+      "reason_cn": "B1_prime_link pilot100 大文件目录；建议只提交摘要和报告。"
+    },
+    {
+      "path": "E:\\experiment3\\d_sft",
+      "exists": true,
+      "category": "external_artifact_manifest_only",
+      "recommended_action": "do_not_commit_raw checkpoint/data; submit report/config/manifest",
+      "reason": "包含训练数据、checkpoint 和日志，体积大，不应作为普通 PR 内容提交。",
+      "category_cn": "外部实验目录，仅提交 manifest/报告",
+      "recommended_action_cn": "不要提交原始训练数据或 checkpoint，只提交报告、配置和 manifest",
+      "reason_cn": "包含训练数据、checkpoint 和日志，体积大，不应作为普通 PR 内容提交。"
+    },
+    {
+      "path": "API tokens / ANTHROPIC_AUTH_TOKEN / OPENAI keys",
+      "category": "never_submit",
+      "recommended_action": "never_commit",
+      "reason": "密钥和凭证，绝对不能提交。",
+      "category_cn": "绝对不要提交",
+      "recommended_action_cn": "绝对不要提交",
+      "reason_cn": "密钥和凭证，绝对不能提交。"
+    },
+    {
+      "path": "scripts/__pycache__/ and *.pyc",
+      "category": "never_submit",
+      "recommended_action": "exclude",
+      "reason": "Python 生成的字节码文件，应排除。",
+      "category_cn": "绝对不要提交",
+      "recommended_action_cn": "排除",
+      "reason_cn": "Python 生成的字节码文件，应排除。"
+    },
+    {
+      "path": "predictions/pilot10_external/* raw run directories",
+      "category": "usually_do_not_submit",
+      "recommended_action": "submit only curated summaries",
+      "reason": "原始预测目录通常较大，除非特别要求，否则只提交整理后的摘要。",
+      "category_cn": "通常不提交原始内容",
+      "recommended_action_cn": "只提交整理后的摘要",
+      "reason_cn": "原始预测目录通常较大，除非特别要求，否则只提交整理后的摘要。"
+    },
+    {
+      "path": "formal_runs/* predictions or future formal outputs",
+      "category": "do_not_submit_before_review",
+      "recommended_action": "do not include formal inference outputs because user wants review before running",
+      "reason": "本 PR 的目的是真实运行前审查，所以不应包含 formal300 推理输出。",
+      "category_cn": "审查前不要提交",
+      "recommended_action_cn": "不包含 formal300 推理输出，因为本 PR 只做运行前审查",
+      "reason_cn": "本 PR 的目的是真实运行前审查，所以不应包含 formal300 推理输出。"
+    },
+    {
+      "path": "OpenAI",
+      "category": "needs_inspection",
+      "recommended_action": "do not submit until inspected",
+      "reason": "git status 中出现的未跟踪项，目的不清楚，检查前不要提交。",
+      "category_cn": "需先检查",
+      "recommended_action_cn": "检查清楚前不要提交",
+      "reason_cn": "git status 中出现的未跟踪项，目的不清楚，检查前不要提交。"
+    },
+    {
+      "path": "docs/pre_freeze_alignment_contract.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "9b7000b4c79e03fcc11b3fdb1ca5f9b07915d82fa20a4f856402b1a138f95855"
+    },
+    {
+      "path": "docs/field_candidates_schema_v1_candidate.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "8c5bf40615dda0920ffe538c7fd76f17d0aa08771cda00b0212ae29c07aa0d06"
+    },
+    {
+      "path": "configs/b1_prime_link_group1_candidate_manifest.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "c5724b696fe347c474286fd97c8832217bc4155ab06b3d1e1532594ffc04a3a3"
+    },
+    {
+      "path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "f9be2fb84a7554897045c27abf787e47758f1687de406312e9afe1ebe15d4f3f"
+    },
+    {
+      "path": "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "08244d80f0ea85c579158d4b8512bfa021a26755bb342742ed2362a80763c707"
+    },
+    {
+      "path": "prompts/paper_v2/b1_prime_link_ocr_candidates_links_to_canonical.zh_v0_candidate.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "2b135d82928e3963a5b37ad5ebcee82e2e079aa94d34c88cf33b1d215c8909c2"
+    },
+    {
+      "path": "prompts/paper_v2/c1_image_to_canonical_pilot10.zh_v1_candidate.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "aa87bf512359160da4c54503911bfccc38a6e55ee9af619b9eef3c48183ef74c"
+    },
+    {
+      "path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "858b91b07d778498ddbe484a6d54f8555169c9c674f3189dfb69b06e2c406362"
+    },
+    {
+      "path": "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "5a60df7bdeead7c01e38ccb8c8ccc1802af6110a0f41c4658e2f5cdcc313588a"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q0_leg_count.txt",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "e91a4a6fedd4e7cc15c5284e29588d3e18cf1a64354cf05636be10386897b465"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q1_fix_ident.txt",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "1e1446d7fb39fe063382ce4e5ac7c871537ccee1d5e8613aa2060cf30f09fe62"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q2_altitude_constraint.txt",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "158d5ff90363c80d75ec97eb861b434b7e8244ccc97f412378cbff15a43f96f8"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q3_turn.txt",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "a9eae472c781c187bfd32e533fd8c307f73c5fa7fab85c8c0dd19d20fe3d3bee"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q4_course_or_radial.txt",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "bd16d9644a915fba1297d80c75b5939bdccd4fccdad03bbadfd9949a274ddd5c"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q5_hold_params.txt",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "d17a854f79024c8e15ba841735306c74df7eced60f2c4c24e9a620fef925e529"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q_terminator.txt",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "f4019a7391d97d5479495f2fe851fd9292fe39bc5900f3a2fabaa0762eedf5c7"
+    },
+    {
+      "path": "scripts/run_b1prime_c4_pilot10.py",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "f7a34384818d13a78835de5bc408419b4996417e4c340ab69db0795fca79753a"
+    },
+    {
+      "path": "scripts/run_pilot10_anthropic.py",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "e268eff00dacf3ee6bec826b7a4ad00798cfcc41494bc454ad85038338b0011c"
+    },
+    {
+      "path": "scripts/run_pilot10_ordinary_ocr.py",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "146d8b0389ccfc4955fe8d2fd988cf24f7f9cadea0da20e9cb7d2ebabf1b67c6"
+    },
+    {
+      "path": "scripts/run_b1_c1_pilot10_ocr1.py",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "4dafd3f889ef54e5fcccca7639e6a31ba060520a89c57b628db71f28d724c4aa"
+    },
+    {
+      "path": "scripts/d_sft_prepare_dataset.py",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "79461f9f439a59e53896667a1d99d03603d5d9fb5e28da43a21a11cab1af7f2e"
+    },
+    {
+      "path": "scripts/d_sft_train_qwen2vl_lora.py",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "f87d67987d4f1a14b78756e77100d58b365ca09162fc73b5aa37f62722c8a74f"
+    },
+    {
+      "path": "scripts/d_sft_infer_qwen2vl_lora.py",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "abd8778aa98fbb11623e1782387c10c8df489e08d781178244daf7aeb39add03"
+    },
+    {
+      "path": "reports/freeze/group1_experiment_plan_methods_pilot100_summary_20260429.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "235bc973362988062eb59f4382b1342b467edabfc52e37c6c0cbda05c3a9ed81"
+    },
+    {
+      "path": "reports/freeze/group1_final_pr_submission_guide_20260429.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "463f7b4bf3cf03ccf7a554953c6a0eab5496f26c7a9c4a8c1bcd4db8b1a05744"
+    },
+    {
+      "path": "reports/freeze/group1_pr_package_checklist_20260429.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "3c6265bdd24f2e832c00fba01bf20c9c8d409b02a941335306d144a93ccd5012"
+    },
+    {
+      "path": "reports/freeze/group1_pr_draft_body_20260429.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "efcf214c64c9d9ba59f056aa80a7677bce8207349d5e3781eaccca526d0ad7bc"
+    },
+    {
+      "path": "reports/freeze/group1_pr_package_file_manifest_20260429.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。"
+    },
+    {
+      "path": "reports/freeze/group1_pr_submission_guide_20260429.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "9a397c68e86a560d6f5fa1ba581c19192d6636d92ca5dabb8dd0f8f9ca070d7b"
+    },
+    {
+      "path": "reports/freeze/group1_pr_submission_paths_20260429.txt",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "67063c1ced7810222fae9cdd3fb8d0b9e505897a412c839412b3ebef475178ce"
+    },
+    {
+      "path": "reports/freeze/group1_final_pr_submission_paths_20260429.txt",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "f09aef283f6edb3f1f6e98e097d76cd96f21474382f17ab5987b80d019adbac9"
+    },
+    {
+      "path": "reports/freeze/group1_freeze_readiness_audit_20260429.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "25bc20797071fa7ca8c89394c7f87aa09d82f8bd5997098ba69fa9470595979c"
+    },
+    {
+      "path": "reports/freeze/group1_runner_gap_audit_20260429.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "a7736a4fe8f09030addc703ad00e0ddd7395687bb1a0d25026f693f43b9bd46b"
+    },
+    {
+      "path": "reports/freeze/group1_model_rerun_policy_audit_20260429.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "5195d72d39507abeba4620d949fd79a57060125dd999653d8f689cc5c9d20835"
+    },
+    {
+      "path": "reports/freeze/group1_c_methods_pilot100_evidence_20260429.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "36b929fdae41ab2a57ee661dfe333d0039b6226430e350fbba23d00bf9af1713"
+    },
+    {
+      "path": "reports/freeze/c4_output_control_fix_20260429.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "28c8a611277b346b13fa31688932540e9bf38fa471dfbec2f7a22a973b9b2794"
+    },
+    {
+      "path": "reports/pilot/c4_output_control_fix_pilot100_20260429.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "02265815e7418895f502b2dc0d52115bb30b757f645eda87c4153be2cb2a8124"
+    },
+    {
+      "path": "reports/pilot/b1_prime_link_group1_candidate_pilot100_revalidation_20260429.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "d178a2e91afe9e29336eff5581bbef515c79142780f3ef83317dee528cf0644a"
+    },
+    {
+      "path": "reports/pilot/pilot100_b1_b1prime_result_summary_20260428_r1.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "3539b5ffa856e7f3315bbef022323758ca80d8e38177b567b80bed7553b75398"
+    },
+    {
+      "path": "reports/pilot/pilot100_b1prime_error_analysis_20260428.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "5559d0fd4af023179b6e739cecf4c432fbd0954b617cf91d26b94b7cdcd951c7"
+    },
+    {
+      "path": "reports/pilot/group1_pilot10_ordinary_ocr_gpt54_claude_20260428.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "e4e4b8211dcead0f80e4debf86ff26042b1d39647eb8514838eed92dd75a8327"
+    },
+    {
+      "path": "reports/pilot/group1_non_b1prime_auditfix_pilot10_20260428.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "1f99889f4e8c4bb25cb9468a2685e7771df2695efe9db0b3856107baf6e35957"
+    },
+    {
+      "path": "reports/pilot/ordinary_ocr_pilot10_artifacts_20260428.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "e1ff2ce02b3721f97c9b40961f04b11e2c0e872f2cbbf0f8302956ad9cca7d93"
+    },
+    {
+      "path": "reports/pilot/b1prime_method_decision_20260428.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "8efc3041addaa25fa96675502df8d1232df95036be5a3428995de947c17e0d53"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/source/formal300_source_manifest.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "b17b48c2e120b23e21cdbbbfc1778fc85c315684d08bc90bd3e9b82925abbc0a"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300_source_lock_20260429/BLOCKERS.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "9d7c42ce92d0c142bb85e9fd334007bd70e5559ed49fbf2a9ea671726a33be16"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300_source_lock_20260429/MANIFEST.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "556993ae5d1bb833343d9629991a9a115ae1869e09ad5f14cea05ea940b3f7c3"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300_source_lock_20260429/sample_manifest.jsonl",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "b2944fcdbc17bb890c32ed6262243542e7e67d0a4492bb52097ec67b2da1d8b0"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300_source_lock_20260429/splits.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "最终提交白名单",
+      "recommended_action": "submit",
+      "recommended_action_cn": "提交",
+      "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
+      "sha256": "655bdcc26a632056b2a65ae4c46f14b69a3bd8f756e86593fbfca583ec7bc739"
+    }
+  ],
+  "method_table": [
+    [
+      "A1",
+      "完整航图图像 -> OCR-1 PaddleOCR -> 确定性规则 -> canonical JSON",
+      "候选/预冻结",
+      "pilot100: 100/100 schema-valid，741/2344 = 0.3161"
+    ],
+    [
+      "A2",
+      "完整航图图像 -> OCR-2 Tesseract -> 同一套确定性规则 -> canonical JSON",
+      "候选/预冻结",
+      "pilot100: 100/100 schema-valid，521/2344 = 0.2223"
+    ],
+    [
+      "B1",
+      "OCR-1 文本 -> GPT-5.4 -> canonical JSON",
+      "候选/预冻结",
+      "pilot100: 100/100 schema-valid，728/2344 = 0.3106"
+    ],
+    [
+      "B1_prime",
+      "OCR-1 文本 + field_candidates -> GPT-5.4 -> canonical JSON",
+      "候选/预冻结",
+      "pilot100: 100/100 schema-valid，674/2344 = 0.2875"
+    ],
+    [
+      "B1_prime_link",
+      "OCR-1 文本 + field_candidates + field_to_leg_links -> GPT-5.4 -> canonical JSON",
+      "候选/预冻结",
+      "pilot100: 100/100 schema-valid，1031/2344 = 0.4398"
+    ],
+    [
+      "C1",
+      "完整航图图像 -> Claude VLM -> canonical JSON",
+      "候选/预冻结",
+      "pilot100: 99/100 schema-valid，902/2313 = 0.3900"
+    ],
+    [
+      "C2",
+      "完整航图图像 -> Claude VLM QA prompts -> 确定性聚合器 -> canonical JSON",
+      "候选/预冻结",
+      "pilot100: 100/100 schema-valid，457/2344 = 0.1950"
+    ],
+    [
+      "C3",
+      "完整航图图像 -> Claude VLM questionnaire -> 确定性 parser -> canonical JSON",
+      "候选/预冻结",
+      "pilot100: 99/100 schema-valid，874/2313 = 0.3779"
+    ],
+    [
+      "C4",
+      "完整航图图像 + OCR-1 文本 -> Claude VLM -> canonical JSON",
+      "候选/预冻结，已完成输出控制修正",
+      "API 故障恢复后 pilot100: 100/100 schema-valid，1248/2344 = 0.5324，retry=0"
+    ],
+    [
+      "D_SFT",
+      "完整航图图像 -> SFT VLM -> canonical JSON",
+      "下一轮 formal300 评测的冻结候选",
+      "pilot100: 94/100 schema-valid；已评分样本 1014/2200 = 0.4609"
+    ]
+  ],
+  "open_decisions": [
+    "确认 formal300 的 PDF/PNG 是直接提交、使用 Git LFS，还是作为外部 artifact 并在仓库中只提交 manifest/hash。",
+    "确认 300 个 canonical proxy target 是直接放入 PR，还是在正式审查前只提交 hash/manifest 并把答案文件放在受保护 artifact 中。",
+    "确认 300 个样本对应 299 个 PDF 是正常的 PDF 复用，还是 materialization 缺口。",
+    "如果后续继续修改文件，在开 PR 前重新计算并核对所有 hash。",
+    "决定较早的 blocked 报告是作为历史保留，还是由当前 no-eval freeze package 替代。"
+  ],
+  "language": "zh-CN",
+  "status_cn": "供用户审阅的草稿，尚未提交 PR",
+  "purpose_cn": "准备实验组1 formal300 正式运行前审查用的 GitHub PR 提交包；不包含 formal300 方法推理结果。",
+  "reviewer_questions": [
+    "实验组1的方法边界是否与 paper-v2 实验方案一致？",
+    "B1_prime_link 是否应作为 B1_prime 之后的实验组1 candidate 纳入？",
+    "formal300 的 PDF/PNG 应该提交到仓库、用 Git LFS 管理，还是只作为外部 artifact 引用？",
+    "formal300 canonical proxy targets 是否适合直接进入 PR，还是只审查 target hash/manifest？",
+    "invalid-output scoring policy 是否可以在 formal evaluation 前冻结？",
+    "C4 输出控制修正是否可接受：只修传输层/tool schema，不做机械 unwrap，不改变方法输入？",
+    "pilot100 证据是否足够支持进入 formal300 运行前审查？"
+  ],
+  "final_submission_whitelist_path": "reports/freeze/group1_final_pr_submission_paths_20260429.txt",
+  "final_submission_whitelist_count": 104,
+  "final_submission_scope_cn": [
+    "实验组1试验方案与方法边界",
+    "各方法 prompt、schema、runner、scorer、method card",
+    "OCR 边界纠正和 OCR-1/OCR-2 来源定义",
+    "pilot100 / pre-freeze 结果报告",
+    "formal300 manifest、checksum、field_targets、evidence_provenance、challenge_tags",
+    "正式运行前 no-leakage、rerun、parser repair、invalid-output、360-degree、output-control 策略"
+  ],
+  "final_submission_files": [
+    {
+      "path": "docs/method_registry.md",
+      "exists": true,
+      "sha256": "489a4248618686e61e3335ee6191dc563dbbb8d1c1d407db5d22370d1cc8fd0d"
+    },
+    {
+      "path": "docs/group1_method_boundary_audit_20260428.md",
+      "exists": true,
+      "sha256": "884f2f12c8c88558ed7bc1b919b269d9b5bb713b00a7360e54231212d716216c"
+    },
+    {
+      "path": "docs/group1_ocr_boundary_correction_20260428.md",
+      "exists": true,
+      "sha256": "56a39abc218f816fc26a5f99c3616612f5fe90b5267206d7d699ffaad34bd891"
+    },
+    {
+      "path": "docs/formal_freeze_checklist.md",
+      "exists": true,
+      "sha256": "64c0a14732306891d31ca7e221457824df38f23f87238a69db96fd065541a811"
+    },
+    {
+      "path": "docs/no_leakage_policy.md",
+      "exists": true,
+      "sha256": "15d977ba384c96f2ad1d495807eede4fce8bcb4efc7c66b989d82c3b4fe8a566"
+    },
+    {
+      "path": "docs/rerun_policy.md",
+      "exists": true,
+      "sha256": "2dd6d3359b0085e391459c91711d1aea2a4844fa913eb22b31bc2b1713103450"
+    },
+    {
+      "path": "docs/pre_freeze_alignment_contract.md",
+      "exists": true,
+      "sha256": "9b7000b4c79e03fcc11b3fdb1ca5f9b07915d82fa20a4f856402b1a138f95855"
+    },
+    {
+      "path": "docs/b1_prime_link_method_card.md",
+      "exists": true,
+      "sha256": "ff04ffd1e1364936b6a31f2ce6bda1d4f9d35c69531b3543acc2bb0a5e14fb93"
+    },
+    {
+      "path": "docs/d_sft_method_card.md",
+      "exists": true,
+      "sha256": "b23b4073d21da4896197ddbcc0adad4e1f9700eaba26982635aaf16f65ca0f19"
+    },
+    {
+      "path": "docs/group1_a1_a2_rules_candidate_v1.md",
+      "exists": true,
+      "sha256": "dfc83fcc4b5cf477a2ef770a473d86e2e074b06ccb22ac0203de257913071b41"
+    },
+    {
+      "path": "docs/group1_c2_qa_aggregator_candidate_v1.md",
+      "exists": true,
+      "sha256": "1e27359ca3ed0e523d3a4f908e193e6563f6791fcfeeb6f856b88906f2af67c7"
+    },
+    {
+      "path": "docs/field_candidates_schema_v1_candidate.md",
+      "exists": true,
+      "sha256": "8c5bf40615dda0920ffe538c7fd76f17d0aa08771cda00b0212ae29c07aa0d06"
+    },
+    {
+      "path": "configs/b1_prime_link_group1_candidate_manifest.json",
+      "exists": true,
+      "sha256": "c5724b696fe347c474286fd97c8832217bc4155ab06b3d1e1532594ffc04a3a3"
+    },
+    {
+      "path": "configs/group1_formal_freeze_manifest_20260429.json",
+      "exists": true,
+      "sha256": "407f2430062a10bada5785604a1f309185f1b435e48ba71d26b24e8c123fe320"
+    },
+    {
+      "path": "configs/group1_freeze_candidate_manifest_20260429.json",
+      "exists": true,
+      "sha256": "fb76554149417a58ed63b863e70313fc0cb2a782590942ba647a689e1932565c"
+    },
+    {
+      "path": "configs/frozen_experiment_manifest.json",
+      "exists": true,
+      "sha256": "cec2f1f15833211bd79c7acc5f9931fb5d0dfd2922a15bf8aac6c35a680b2974"
+    },
+    {
+      "path": "configs/model_config_manifest.json",
+      "exists": true,
+      "sha256": "56cca2f7b1f36f5662e72431f7c0667c1741b265d6d6c3d42421cb7be3f5e5a2"
+    },
+    {
+      "path": "configs/ocr_source_manifest.json",
+      "exists": true,
+      "sha256": "c0534dc08056b6d233ebbe9680a225e0da69cf1ccb2c04572f0bf376eaeea86c"
+    },
+    {
+      "path": "configs/prompt_manifest.json",
+      "exists": true,
+      "sha256": "e7e9aeba4cf5ffaddcf276de385d4cddf86d12363b5778414c8e810253b3f801"
+    },
+    {
+      "path": "configs/output_control_policy.md",
+      "exists": true,
+      "sha256": "a7a9f80eeabb82931b1a9c9c8f90f39ae3d589a9de272b4697dacc895c250416"
+    },
+    {
+      "path": "configs/parser_repair_policy.md",
+      "exists": true,
+      "sha256": "d52cda1d316d51abb72c161f7b5b6670738d18d29abd7fe88e12d33aecebc9c2"
+    },
+    {
+      "path": "configs/invalid_output_scoring_policy.md",
+      "exists": true,
+      "sha256": "f0e80576c8c56fd3725859791cffa3b4a3a666f183393b2b622a99f82345efc1"
+    },
+    {
+      "path": "configs/degree_360_policy.md",
+      "exists": true,
+      "sha256": "4417d193ccf041fc3f42027a7f2ea7bb9302d6c380c506c8fea5866491e4fce9"
+    },
+    {
+      "path": "configs/scorer_validator_manifest.json",
+      "exists": true,
+      "sha256": "02d06c70338a25155bec22e24dfe76cdf5ef6b60736ee5ce7b99014476fc7860"
+    },
+    {
+      "path": "schemas/field_candidates.schema.candidate.json",
+      "exists": true,
+      "sha256": "6a322e02cdb7c13364c804226a95985b1d9bf79bbabd6fbdfc923c935020910d"
+    },
+    {
+      "path": "schemas/field_to_leg_links.schema.candidate.json",
+      "exists": true,
+      "sha256": "1085f187055f1e6b7b78bb9958643ed4eb06bfa7d8a4a65870537bd34f704262"
+    },
+    {
+      "path": "schemas/c3_questionnaire.schema.candidate.json",
+      "exists": true,
+      "sha256": "d3d1aeabb2a45e477ae8fbec3d19c942aa2cc319e5c17d49c99a3e68fe21635e"
+    },
+    {
+      "path": "schemas/d_sft_manifest.schema.json",
+      "exists": true,
+      "sha256": "1fdd37b1a9772aa9c019500fca2eb9aaa50ac09b0c0013a23ae0d133fc5c6324"
+    },
+    {
+      "path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "exists": true,
+      "sha256": "f9be2fb84a7554897045c27abf787e47758f1687de406312e9afe1ebe15d4f3f"
+    },
+    {
+      "path": "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+      "exists": true,
+      "sha256": "08244d80f0ea85c579158d4b8512bfa021a26755bb342742ed2362a80763c707"
+    },
+    {
+      "path": "prompts/paper_v2/b1_prime_link_ocr_candidates_links_to_canonical.zh_v0_candidate.md",
+      "exists": true,
+      "sha256": "2b135d82928e3963a5b37ad5ebcee82e2e079aa94d34c88cf33b1d215c8909c2"
+    },
+    {
+      "path": "prompts/paper_v2/c1_image_to_canonical_pilot10.zh_v1_candidate.md",
+      "exists": true,
+      "sha256": "aa87bf512359160da4c54503911bfccc38a6e55ee9af619b9eef3c48183ef74c"
+    },
+    {
+      "path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+      "exists": true,
+      "sha256": "858b91b07d778498ddbe484a6d54f8555169c9c674f3189dfb69b06e2c406362"
+    },
+    {
+      "path": "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "exists": true,
+      "sha256": "5a60df7bdeead7c01e38ccb8c8ccc1802af6110a0f41c4658e2f5cdcc313588a"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q0_leg_count.txt",
+      "exists": true,
+      "sha256": "e91a4a6fedd4e7cc15c5284e29588d3e18cf1a64354cf05636be10386897b465"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q1_fix_ident.txt",
+      "exists": true,
+      "sha256": "1e1446d7fb39fe063382ce4e5ac7c871537ccee1d5e8613aa2060cf30f09fe62"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q2_altitude_constraint.txt",
+      "exists": true,
+      "sha256": "158d5ff90363c80d75ec97eb861b434b7e8244ccc97f412378cbff15a43f96f8"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q3_turn.txt",
+      "exists": true,
+      "sha256": "a9eae472c781c187bfd32e533fd8c307f73c5fa7fab85c8c0dd19d20fe3d3bee"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q4_course_or_radial.txt",
+      "exists": true,
+      "sha256": "bd16d9644a915fba1297d80c75b5939bdccd4fccdad03bbadfd9949a274ddd5c"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q5_hold_params.txt",
+      "exists": true,
+      "sha256": "d17a854f79024c8e15ba841735306c74df7eced60f2c4c24e9a620fef925e529"
+    },
+    {
+      "path": "prompts/path_c_qa_v2/q_terminator.txt",
+      "exists": true,
+      "sha256": "f4019a7391d97d5479495f2fe851fd9292fe39bc5900f3a2fabaa0762eedf5c7"
+    },
+    {
+      "path": "scripts/model_clients.py",
+      "exists": true,
+      "sha256": "9bfc36bdb7b7c98d71fc8ee16a574b5c85c8d9015f4f5ec704e69d2ce58327cd"
+    },
+    {
+      "path": "scripts/scorers/group1_canonical_field_scorer.py",
+      "exists": true,
+      "sha256": "be2bf016c557e9ce9f9df7b680370c921cd92fcc3dc34e7e09dff44384b26f45"
+    },
+    {
+      "path": "scripts/prepare_group1_formal_run.py",
+      "exists": true,
+      "sha256": "15207e048ccaefc3265583ed974766be01ce780f4252a575d8429b72b61c9eb5"
+    },
+    {
+      "path": "scripts/materialize_formal300_dataset.py",
+      "exists": true,
+      "sha256": "42515cf249e992370435633f52337beb030020b4d92090352878552403413be7"
+    },
+    {
+      "path": "scripts/sync_formal300_annotation_images.py",
+      "exists": true,
+      "sha256": "1dd983481ac6cd60e46b069d22fa5cd3cdfa54b0c502ec177e64f6dd3054c351"
+    },
+    {
+      "path": "scripts/run_group1_pilot10_gpt54.py",
+      "exists": true,
+      "sha256": "57874612534f5027232a4fffb656f48bd2fca2f322ea7b126785efa4075cc09e"
+    },
+    {
+      "path": "scripts/run_a1_a2_rules_pilot10.py",
+      "exists": true,
+      "sha256": "ce455979d75e29827d06f37dfdd744e5bb79921b96ed33838876c97f24fa375a"
+    },
+    {
+      "path": "scripts/run_c2_qa_pilot10.py",
+      "exists": true,
+      "sha256": "be49e2f6d2ee8bb75bdfb4894042391591884b4900a7a367d4aa5a08342f7e56"
+    },
+    {
+      "path": "scripts/aggregate_c2_qa_candidate.py",
+      "exists": true,
+      "sha256": "551d1993151464bf8edd970e414b67055ace8a1e46a0beb8223fecba8d01d945"
+    },
+    {
+      "path": "scripts/run_b1prime_c4_pilot10.py",
+      "exists": true,
+      "sha256": "f7a34384818d13a78835de5bc408419b4996417e4c340ab69db0795fca79753a"
+    },
+    {
+      "path": "scripts/run_pilot10_anthropic.py",
+      "exists": true,
+      "sha256": "e268eff00dacf3ee6bec826b7a4ad00798cfcc41494bc454ad85038338b0011c"
+    },
+    {
+      "path": "scripts/run_pilot10_ordinary_ocr.py",
+      "exists": true,
+      "sha256": "146d8b0389ccfc4955fe8d2fd988cf24f7f9cadea0da20e9cb7d2ebabf1b67c6"
+    },
+    {
+      "path": "scripts/run_b1_c1_pilot10_ocr1.py",
+      "exists": true,
+      "sha256": "4dafd3f889ef54e5fcccca7639e6a31ba060520a89c57b628db71f28d724c4aa"
+    },
+    {
+      "path": "scripts/d_sft_prepare_dataset.py",
+      "exists": true,
+      "sha256": "79461f9f439a59e53896667a1d99d03603d5d9fb5e28da43a21a11cab1af7f2e"
+    },
+    {
+      "path": "scripts/d_sft_train_qwen2vl_lora.py",
+      "exists": true,
+      "sha256": "f87d67987d4f1a14b78756e77100d58b365ca09162fc73b5aa37f62722c8a74f"
+    },
+    {
+      "path": "scripts/d_sft_infer_qwen2vl_lora.py",
+      "exists": true,
+      "sha256": "abd8778aa98fbb11623e1782387c10c8df489e08d781178244daf7aeb39add03"
+    },
+    {
+      "path": "reports/freeze/group1_experiment_plan_methods_pilot100_summary_20260429.md",
+      "exists": true,
+      "sha256": "235bc973362988062eb59f4382b1342b467edabfc52e37c6c0cbda05c3a9ed81"
+    },
+    {
+      "path": "reports/freeze/group1_final_pr_submission_guide_20260429.md",
+      "exists": true,
+      "sha256": "463f7b4bf3cf03ccf7a554953c6a0eab5496f26c7a9c4a8c1bcd4db8b1a05744"
+    },
+    {
+      "path": "reports/freeze/group1_pr_package_checklist_20260429.md",
+      "exists": true,
+      "sha256": "3c6265bdd24f2e832c00fba01bf20c9c8d409b02a941335306d144a93ccd5012"
+    },
+    {
+      "path": "reports/freeze/group1_pr_draft_body_20260429.md",
+      "exists": true,
+      "sha256": "efcf214c64c9d9ba59f056aa80a7677bce8207349d5e3781eaccca526d0ad7bc"
+    },
+    {
+      "path": "reports/freeze/group1_pr_package_file_manifest_20260429.json",
+      "exists": true
+    },
+    {
+      "path": "reports/freeze/group1_pr_submission_guide_20260429.md",
+      "exists": true,
+      "sha256": "9a397c68e86a560d6f5fa1ba581c19192d6636d92ca5dabb8dd0f8f9ca070d7b"
+    },
+    {
+      "path": "reports/freeze/group1_pr_submission_paths_20260429.txt",
+      "exists": true,
+      "sha256": "67063c1ced7810222fae9cdd3fb8d0b9e505897a412c839412b3ebef475178ce"
+    },
+    {
+      "path": "reports/freeze/group1_final_pr_submission_paths_20260429.txt",
+      "exists": true,
+      "sha256": "f09aef283f6edb3f1f6e98e097d76cd96f21474382f17ab5987b80d019adbac9"
+    },
+    {
+      "path": "reports/freeze/group1_formal_freeze_ready_no_eval_20260429.md",
+      "exists": true,
+      "sha256": "d13340f3ad23b8e4279fd31c25536ed663dfc7b18fb481a68cfbb9e92900fcf8"
+    },
+    {
+      "path": "reports/freeze/group1_formal_freeze_package_BLOCKED_20260429.md",
+      "exists": true,
+      "sha256": "f07d7a10978686f5e45bbdfde588050c18bea99915ca8d13ce7950c39731a4b7"
+    },
+    {
+      "path": "reports/freeze/group1_freeze_readiness_audit_20260429.md",
+      "exists": true,
+      "sha256": "b8455da7d27a7b68a01dec3608dc629108472448b3ad93cf1ce7c24dbab24a40"
+    },
+    {
+      "path": "reports/freeze/group1_freeze_readiness_audit_20260429.json",
+      "exists": true,
+      "sha256": "25bc20797071fa7ca8c89394c7f87aa09d82f8bd5997098ba69fa9470595979c"
+    },
+    {
+      "path": "reports/freeze/group1_runner_gap_audit_20260429.md",
+      "exists": true,
+      "sha256": "03d3cd1ec20aa5814bbb40c8fcc7b5446ede269d6e38387f1faa13a8fbfda536"
+    },
+    {
+      "path": "reports/freeze/group1_runner_gap_audit_20260429.json",
+      "exists": true,
+      "sha256": "a7736a4fe8f09030addc703ad00e0ddd7395687bb1a0d25026f693f43b9bd46b"
+    },
+    {
+      "path": "reports/freeze/group1_model_rerun_policy_audit_20260429.md",
+      "exists": true,
+      "sha256": "a00fa5c80a9732a24e241abe5e4e3464e7f8009a0ff69fa70e2ee6e25ff57607"
+    },
+    {
+      "path": "reports/freeze/group1_model_rerun_policy_audit_20260429.json",
+      "exists": true,
+      "sha256": "5195d72d39507abeba4620d949fd79a57060125dd999653d8f689cc5c9d20835"
+    },
+    {
+      "path": "reports/freeze/group1_c_methods_pilot100_evidence_20260429.md",
+      "exists": true,
+      "sha256": "3530ed2b8cfefbcb1b146d0edba8b9b3b676767d88f09b9d0d77564990fa58b1"
+    },
+    {
+      "path": "reports/freeze/group1_c_methods_pilot100_evidence_20260429.json",
+      "exists": true,
+      "sha256": "36b929fdae41ab2a57ee661dfe333d0039b6226430e350fbba23d00bf9af1713"
+    },
+    {
+      "path": "reports/freeze/c4_output_control_fix_20260429.md",
+      "exists": true,
+      "sha256": "8139e1fc166149c24504eeca3275d66fb704ea6ef3df0b6f002922740822b34d"
+    },
+    {
+      "path": "reports/freeze/c4_output_control_fix_20260429.json",
+      "exists": true,
+      "sha256": "28c8a611277b346b13fa31688932540e9bf38fa471dfbec2f7a22a973b9b2794"
+    },
+    {
+      "path": "reports/pilot/c4_output_control_fix_pilot100_20260429.md",
+      "exists": true,
+      "sha256": "323735c6e56f8644444c01ad2adcdcd6bb4deb821d16f5751b3b04cf6d9d1bec"
+    },
+    {
+      "path": "reports/pilot/c4_output_control_fix_pilot100_20260429.json",
+      "exists": true,
+      "sha256": "02265815e7418895f502b2dc0d52115bb30b757f645eda87c4153be2cb2a8124"
+    },
+    {
+      "path": "reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md",
+      "exists": true,
+      "sha256": "d23fba4ce6948f6c86957d4866b3a47c28807c5521d1ac03decf1c4b8af0f383"
+    },
+    {
+      "path": "reports/pilot/b1_prime_link_group1_candidate_pilot100_revalidation_20260429.json",
+      "exists": true,
+      "sha256": "d178a2e91afe9e29336eff5581bbef515c79142780f3ef83317dee528cf0644a"
+    },
+    {
+      "path": "reports/pilot/pilot100_b1_b1prime_expanded_validation_20260428.md",
+      "exists": true,
+      "sha256": "b9af5180ea5be707579792b47231aa2f6a48d00ff7134dcafbb56ad25186bfbd"
+    },
+    {
+      "path": "reports/pilot/pilot100_b1_b1prime_result_summary_20260428_r1.json",
+      "exists": true,
+      "sha256": "3539b5ffa856e7f3315bbef022323758ca80d8e38177b567b80bed7553b75398"
+    },
+    {
+      "path": "reports/pilot/pilot100_b1prime_error_analysis_20260428.md",
+      "exists": true,
+      "sha256": "5559d0fd4af023179b6e739cecf4c432fbd0954b617cf91d26b94b7cdcd951c7"
+    },
+    {
+      "path": "reports/pilot/group1_prefreeze_final_optimization_20260429.md",
+      "exists": true,
+      "sha256": "6fe2a396c7cf01d36f312061ed47ae9d27b9a79135eca70972f35195dbdab114"
+    },
+    {
+      "path": "reports/pilot/group1_pilot10_ordinary_ocr_gpt54_claude_20260428.md",
+      "exists": true,
+      "sha256": "e4e4b8211dcead0f80e4debf86ff26042b1d39647eb8514838eed92dd75a8327"
+    },
+    {
+      "path": "reports/pilot/group1_non_b1prime_auditfix_pilot10_20260428.md",
+      "exists": true,
+      "sha256": "1f99889f4e8c4bb25cb9468a2685e7771df2695efe9db0b3856107baf6e35957"
+    },
+    {
+      "path": "reports/pilot/ordinary_ocr_pilot10_artifacts_20260428.md",
+      "exists": true,
+      "sha256": "e1ff2ce02b3721f97c9b40961f04b11e2c0e872f2cbbf0f8302956ad9cca7d93"
+    },
+    {
+      "path": "reports/pilot/b1prime_method_decision_20260428.md",
+      "exists": true,
+      "sha256": "8efc3041addaa25fa96675502df8d1232df95036be5a3428995de947c17e0d53"
+    },
+    {
+      "path": "training/d_sft/reports/d_sft_freeze_report_20260428_r1.md",
+      "exists": true,
+      "sha256": "daaec698387d9897c990d6f21ae2da867c1e3f64fce10962cf6010e2d39b06a9"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/manifest.json",
+      "exists": true,
+      "sha256": "57b50e567daa33cf92373860ef42748be8d60b1d0344579ac47e3e59f0e3c526"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/sample_manifest.jsonl",
+      "exists": true,
+      "sha256": "7891c333992a3cb7a430d03015aecb123509282b167bba249b64b2e11d745d89"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/splits.json",
+      "exists": true,
+      "sha256": "857a95ae0e4c7304d69091e4a58d12396dd2286da7a7705b4c2f6f7a02d568ad"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/checksums.sha256",
+      "exists": true,
+      "sha256": "ee35127ab204c4f47d7a76fd9e52bb4061ed813b01061287dbe3330cf4b143fc"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/challenge_tags.jsonl",
+      "exists": true,
+      "sha256": "22acf71913060e086fd4f425b4853aab84572f07f455ce293bb3f7128d8748ab"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/source/formal300_source_manifest.json",
+      "exists": true,
+      "sha256": "b17b48c2e120b23e21cdbbbfc1778fc85c315684d08bc90bd3e9b82925abbc0a"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/targets/field_targets.jsonl",
+      "exists": true,
+      "sha256": "47b5d1dc00e338c1bec0e11c0ea89f65a15cb310377005a68dd4b1160992ee91"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/targets/evidence_provenance.jsonl",
+      "exists": true,
+      "sha256": "be27469981e723dd17252a7425134a84671d342eebe4c8426291cfc6097564ca"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/reports/formal300_materialization_report.json",
+      "exists": true,
+      "sha256": "5104b2422db960856a66e21a3d8e70b81edf592886764f90c425b90ed28ccc27"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/reports/annotation_image_alignment_report.json",
+      "exists": true,
+      "sha256": "bf1bff31b264dfb592c402813f7e18142fd4a6cb712d4a8679e557d1e5f4a854"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300_source_lock_20260429/BLOCKERS.md",
+      "exists": true,
+      "sha256": "9d7c42ce92d0c142bb85e9fd334007bd70e5559ed49fbf2a9ea671726a33be16"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300_source_lock_20260429/MANIFEST.json",
+      "exists": true,
+      "sha256": "556993ae5d1bb833343d9629991a9a115ae1869e09ad5f14cea05ea940b3f7c3"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300_source_lock_20260429/sample_manifest.jsonl",
+      "exists": true,
+      "sha256": "b2944fcdbc17bb890c32ed6262243542e7e67d0a4492bb52097ec67b2da1d8b0"
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300_source_lock_20260429/splits.json",
+      "exists": true,
+      "sha256": "655bdcc26a632056b2a65ae4c46f14b69a3bd8f756e86593fbfca583ec7bc739"
+    }
+  ]
+}

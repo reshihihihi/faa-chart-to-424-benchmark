@@ -1,307 +1,187 @@
-# C3 Pilot Prompt v1 中文候选版：完整航图图像到结构化问卷
+# C3 Pilot Prompt v1 Candidate: Full-Chart Image to Questionnaire JSON
 
-## 实验定位
+## Method Boundary
 
-你执行的是 paper-v2 的 C3 baseline：
+You are running paper-v2 C3:
 
+full chart image -> VLM fixed questionnaire JSON -> deterministic parser -> canonical JSON
 
-完整未遮盖 FAA approach chart 图像
-  -> VLM 填固定结构化问卷
-  -> deterministic parser
-  -> canonical JSON
+C3 tests whether a fixed questionnaire output protocol reduces formatting errors and hallucination compared with direct canonical JSON. Your output must be questionnaire JSON only. A separate deterministic parser will convert it to canonical JSON.
 
-你的输出只能是结构化 questionnaire JSON。后续由单独 parser 转换为 canonical JSON。
+C3 must not receive OCR text, OCR bounding boxes, ROI labels, field candidates, CIFP/ARINC 424 records, canonical targets, scorer outputs, human annotations, gold missed-approach prose, or previous model outputs for the same chart.
 
-C3 的研究目的，是测试固定问卷表单是否能减少直接 JSON 输出中的格式错误和幻觉。C3 不能接收 OCR 文本、ROI、bbox、CIFP 或 target 信息。
+## Allowed Inputs
 
-## 规范来源与继承关系
+Use only:
 
-本 prompt 仍然定义同一个 paper-v2 C3 方法，不引入新方法、不改变实验计划中的 C3 边界。C3 对应旧实验命名中的 E / questionnaire extraction：完整航图图像 -> 结构化问卷 -> deterministic parser -> canonical JSON。
+- chart_id
+- airport
+- approach_ident
+- chart_name
+- full chart image
+- the questionnaire output contract described here
 
-本 prompt 必须继承并严格执行以下既有规范：
+## Forbidden Inputs
 
-- PR #28 的 canonical leg-level schema 与 structured questionnaire template。
-- Issue #12 的图像输入问卷约束提取方法：保存 raw response、parsed questionnaire JSON、final canonical JSON，且 final JSON 必须可进入统一 validator / scorer。
-- Issue #6 的字段状态规则：`present`、`not_applicable`、`not_observable`、`unknown`。
-- Issue #19 的大模型提示词规范：图上看不出或无法可靠判断时必须允许 `unknown` / `not_observable`，不得硬猜。
-- paper-v2 PV2-08 的实验组 1 要求：C3 是 `questionnaire->JSON` 主抽取方法，输出必须可追溯、可验证、可评分，invalid 必须被记录。
+Do not use:
 
-因此，本 prompt 的修订只是在原 C3 方法内强化既有格式约束，不允许引入 OCR、CIFP、target、人工答案、历史输出或 parser 语义修复。
+- external OCR text
+- OCR bbox or coordinates
+- ROI, prelabels, or human annotation boxes
+- automatic field candidates
+- field-to-leg candidates
+- gold missed-approach prose
+- gold observable evidence
+- canonical target or answer key
+- field_targets.jsonl
+- evidence_provenance.jsonl
+- challenge_tags.jsonl
+- scorer output
+- CIFP or ARINC 424 records
+- historical model output for the same chart
+- web search or external aviation databases
 
-## 与其他实验的边界
+## Task
 
-- 不要执行 C1 的单次完整 canonical JSON 输出。
-- 不要执行 C2 的多轮 QA 聚合协议。
-- 不要执行 C4 的图像 + OCR 混合输入。
-- 不要使用 B 组方法的 OCR 文本。
-- 不要使用 domain-rule prompt 中的扩展领域规则；该变体后续单独评估。
+Read the full FAA approach chart image and fill a structured missed-approach questionnaire. You may use visible missed-approach prose, plan view, profile view, holding depiction, icons, and chart labels in the image. Preserve the flown order of the missed-approach legs.
 
-## 允许输入
+If the image is too small, ambiguous, occluded, contradictory, or insufficient, use unknown. Do not guess ARINC terminators, fixes, courses, radials, altitudes, or hold parameters merely to fill the questionnaire.
 
-仅允许使用以下输入：
+## Status Values
 
-- `chart_id`
-- `airport`
-- `approach_ident`
-- `chart_name`
-- 完整航图图像
-- 本 prompt 中定义的 questionnaire 输出契约
+Each answer object must use:
 
-## 禁止输入
+- status: one of present, not_applicable, not_observable, unknown
+- value: a concrete value only when status is present; otherwise null
 
-不得使用以下任何信息：
+Use present only when the chart image supports the value. Use unknown when image readability or procedure semantics are ambiguous. Use not_observable only when the field could apply but the image shows no observable evidence. Use not_applicable when the field has no structural meaning for that leg.
 
-- 外部 OCR 文本
-- OCR bbox、坐标、区域标签、ROI、prelabel 或人工标注框
-- 自动字段候选、字段匹配结果、gold observable evidence
-- CIFP、ARINC 424 或任何原始导航数据库记录
-- canonical proxy target JSON、answer key、scorer 输出
-- 人工标注、人工校正文本、人工字段对应
-- 同一张航图的历史模型输出
-- 除 manifest metadata 外，从图像文件名或 PDF 文件名推断出的信息
-- 外部航空数据库或网页搜索
+## Status/Value Separation Hard Rule
 
-## 任务
+The status field is a label about observability only. It must never contain the extracted aviation value.
 
-直接读取完整航图图像，并填写 missed-approach questionnaire。
+Allowed status strings are exactly:
 
-可以使用图上可见的 missed-approach text box、plan view、profile view、holding depiction。问卷必须描述复飞程序的有序 leg 序列。
+- present
+- not_applicable
+- not_observable
+- unknown
 
-若图像太小、模糊、遮挡、文本不可读、有歧义或相互冲突，使用 `unknown`，不要猜测。
+Do not put ARINC path terminators, fix idents, altitudes, courses, radials, directions, or hold values in status.
 
-## Status 枚举
+If the chart image supports a concrete answer, use status present and put the concrete answer in value. For example, a DF terminator must be written as status present with value DF, not status DF. A fix ident FKL must be written as status present with value FKL, not status FKL.
 
-每个 answer 的 `status` 必须是以下四个之一：
+If the answer is uncertain, not observable, or not applicable, status must be unknown, not_observable, or not_applicable, and value must be null.
 
-- `present`
-- `not_applicable`
-- `not_observable`
-- `unknown`
+## Schema-Bound Output Hard Rules
 
-不要输出 `invalid`。`invalid` 只由 validator 或 scorer 在输出不合法时标记。
+This run may be transported through a schema-bound tool use. The tool input must be exactly the questionnaire JSON object and must not contain canonical JSON, prose, evidence sidecars, or diagnostic fields.
 
-## Status 判定规则
+- Copy `chart_id`, `airport`, `approach_ident`, and `chart_name` exactly from the input metadata. Do not infer, correct, abbreviate, or replace metadata from the chart image.
+- Never encode a nested JSON value as a quoted string.
+- Never put the string unknown in value. If the answer is unknown, use status unknown and value null.
+- Never put null in value when status is present.
+- If Q0_leg_count.status is present, Q0_leg_count.value must equal the number of questionnaire leg objects.
+- If Q0_leg_count.status is unknown, not_observable, or not_applicable, Q0_leg_count.value must be null and legs must be an empty array.
 
-- 使用 `present`：航图图像明确支持该值，或该值来自本 prompt 明确允许的结构性约定。
-- 使用 `not_applicable`：该字段对当前 leg 类型没有结构意义。
-- 使用 `not_observable`：字段理论上可能适用，但完整航图图像中没有可观测证据。
-- 使用 `unknown`：图像不可读、字段歧义、证据冲突，或无法可靠确定 leg 切分、terminator、fix、course、altitude、hold 参数。
+## Questionnaire JSON Shape
 
-不要为了补全问卷而编造 ARINC terminator、fix、course、radial、altitude 或 hold 参数。
+The top-level object must contain exactly:
 
-## Status 与 value 联动规则
+- chart_id
+- procedure
+- questionnaire
 
-每个 answer 必须满足以下联动规则：
+procedure must contain exactly:
 
-- 当 `status = "present"` 时，`value` 必须是该字段允许的具体合法值。
-- 当 `status = "not_applicable"` 时，`value` 必须为 `null`。
-- 当 `status = "not_observable"` 时，`value` 必须为 `null`。
-- 当 `status = "unknown"` 时，`value` 必须为 `null`。
-- 不得在 `status` 不是 `present` 时填入猜测值。
-- 不得用类型词、说明词或占位符替代真实字段值。
+- airport
+- approach_ident
+- chart_name
 
-## 允许的最小结构性约定
+questionnaire must contain exactly:
 
-这些约定属于 questionnaire 输出结构，不属于扩展 domain-rule prompt：
+- Q0_leg_count
+- legs
 
-- 非 hold leg 的 `Q5_hold_params` 为 `not_applicable`。
-- hold leg 的 `Q3_turn` 为 `not_applicable`，因为 hold turn 属于 `Q5_hold_params`。
-- Q1 的 fix 适用性由 terminator 决定：
-  - `CF / DF / TF / AF`：fix 是 terminator fix。
-  - `FA / FC / FD / FM`：fix 是 origin fix。
-  - `HA / HF / HM`：fix 是 hold fix。
-  - `IF`：fix 是 initial fix。
-  - `CA / VA / VD / VI / VM / VR / CD / CI / CR / VC / RF / PI`：Q1 为 `not_applicable`。
-- Q2 没有 altitude constraint 时为 `not_applicable`。
-- Q4 对 hold leg 为 `not_applicable`；hold 的 inbound course 属于 Q5。
-- Q5 对非 hold leg 为 `not_applicable`。
+Q0_leg_count must be an answer object with status and value. If the leg count cannot be determined reliably, set Q0_leg_count.status to unknown, Q0_leg_count.value to null, and legs to an empty array.
 
-不得加入未在本 prompt 中明确写出的额外航空规则。若需要测试额外规则，应使用后续独立的 domain-rule prompt。
+Each questionnaire leg object must contain exactly:
 
-## Questionnaire 输出契约
+- leg_index, starting at 1 and increasing by 1 without gaps
+- Q_terminator
+- Q1_fix_ident
+- Q2_altitude_constraint
+- Q3_turn
+- Q4_course_or_radial
+- Q5_hold_params
 
-顶层 JSON 必须包含且只包含：
+## Field Value Constraints
 
-- `chart_id`
-- `procedure`
-- `questionnaire`
+Q_terminator value, when present, must be one of:
 
-`procedure` 必须包含且只包含：
+CA, CF, CI, CR, DF, FA, FM, HA, HF, HM, IF, RF, TF, VA, VD, VI, VM, VR, AF, CD, FC, FD, VC, PI
 
-- `airport`
-- `approach_ident`
-- `chart_name`
+Q1_fix_ident value, when present, must be a real fix, waypoint, runway, or navaid ident string with at most 5 characters. Facility labels often contain an ident plus a facility type, such as ORL VORTAC; in that case the ident is ORL and the facility type VORTAC must never be output as Q1_fix_ident. Do not output facility-type words such as VOR, VORTAC, DME, NDB, FIX, WAYPOINT, NAVAID, HOLDING, AIRPORT, RUNWAY, LOCALIZER, LOC, or ILS. If the image shows only a facility type word and not the actual ident, set Q1_fix_ident to unknown with value null.
 
-`questionnaire` 必须包含且只包含：
+Q2_altitude_constraint value, when present, must contain desc, altitude_ft, and altitude_2_ft. desc must be one of AT, AT_OR_ABOVE, AT_OR_BELOW, BETWEEN. altitude_ft and altitude_2_ft must be integers or null. altitude_2_ft is non-null only for BETWEEN.
 
-- `Q0_leg_count`
-- `legs`
+Q3_turn value, when present, must be LEFT or RIGHT.
 
-`Q0_leg_count.status` 只能是：
+Q4_course_or_radial value, when present, must be exactly one of:
 
-- `present`
-- `not_observable`
-- `unknown`
+- type course_deg with course_deg
+- type navaid_radial with navaid, radial_deg, and direction inbound or outbound
+- type direct
 
-`Q0_leg_count.value` 必须是 integer 或 null。
+For Q4_course_or_radial, status must never be course_deg, navaid_radial, direct, type course_deg, type navaid_radial, or type direct. If a course/radial/direct answer is supported, write status present and put the variant object in value.
 
-每个 questionnaire leg 必须包含：
+Q5_hold_params value, when present, must contain inbound_course_deg, leg_time_min, leg_distance_nm, and turn. For non-hold legs, Q5_hold_params should be not_applicable. For hold legs, Q3_turn should usually be not_applicable because hold turn belongs in Q5_hold_params.
 
-- `leg_index`
-- `Q_terminator`
-- `Q1_fix_ident`
-- `Q2_altitude_constraint`
-- `Q3_turn`
-- `Q4_course_or_radial`
-- `Q5_hold_params`
+All degree-valued fields (`course_deg`, `radial_deg`, and `inbound_course_deg`) must be in the schema range 0.0 through 359.9. If the chart displays 360 degrees, encode it as 359.9, never as 360.
 
-`leg_index` 必须严格遵守：
+## Final Internal Check Before Emitting
 
-- 第一条 leg 的 `leg_index` 必须是 `1`，不得是 `0`。
-- 第二条 leg 的 `leg_index` 必须是 `2`，之后依次连续递增。
-- `legs` 数组中的顺序必须与复飞程序飞行顺序一致。
-- 当 `Q0_leg_count.status = "present"` 时，`Q0_leg_count.value` 必须等于 `legs` 数组长度。
-- 如果无法可靠确定 leg 数量，必须返回 `Q0_leg_count.status = "unknown"`、`Q0_leg_count.value = null`、`legs = []`。
-- 不得输出非连续编号、重复编号或从 0 开始的编号。
+Before emitting the questionnaire object, silently check:
 
-## Q 字段取值规则
+- metadata fields exactly match the input metadata;
+- the top-level keys are exactly chart_id, procedure, and questionnaire;
+- every answer object has exactly status and value;
+- every status is one of the allowed status labels, never an aviation value;
+- every non-present answer has value null;
+- every present answer has a schema-valid value;
+- every Q1_fix_ident value is at most 5 characters and is not a facility-type word;
+- every degree value is between 0.0 and 359.9;
+- if Q0_leg_count.status is present, Q0_leg_count.value equals the number of questionnaire legs;
+- leg_index starts at 1 and increases by 1 without gaps.
 
-### Q_terminator
+If a concrete field would violate these checks, set that field to status unknown with value null instead of emitting invalid JSON.
 
-`status` 只能是 `present`、`not_observable` 或 `unknown`。
+## Parser Contract
 
-当 `status = "present"` 时，`value` 必须是以下 ARINC-style code 之一：
+The deterministic parser may only map:
 
+- questionnaire.Q0_leg_count to missed_approach.leg_count
+- each questionnaire leg to one canonical missed_approach.legs item
+- each Q field to the same-named canonical answers field
 
-CA, CF, CI, CR, DF, FA, FM, HA, HF, HM, IF, RF, TF,
-VA, VD, VI, VM, VR, AF, CD, FC, FD, VC, PI
+The parser must not use targets, CIFP, annotations, OCR, external databases, or semantic repair.
 
-如果不能确定 code，使用 `status = "unknown"`，`value = null`。
+## Strict Raw Output Contract
 
-### Q1_fix_ident
+Return exactly one bare questionnaire JSON object.
 
-`status` 可以是 `present`、`not_applicable`、`not_observable` 或 `unknown`。
+- First non-whitespace character must be {.
+- Last non-whitespace character must be }.
+- Do not output Markdown.
+- Do not output code fences.
+- Do not output three backticks anywhere.
+- Do not output explanation before or after JSON.
+- Do not return canonical JSON.
+- The raw response will be parsed directly as JSON.
 
-当 `status = "present"` 时，`value` 是 fix、waypoint 或 navaid ident 字符串，最长 5 个字符。否则 `value = null`。
-
-`Q1_fix_ident.value` 必须是真实 ident，不得是设施类型或泛称：
-
-- 合法示例：`FKL`、`ALS`、`ORL`、`SMYRA`、`RW06`。
-- 禁止示例：`VORTAC`、`VOR`、`NDB`、`FIX`、`WAYPOINT`、`NAVAID`、`HOLDING`、`AIRPORT`、`RUNWAY`。
-- 如果图上写成 `<IDENT> VORTAC`、`<IDENT> VOR/DME`、`<IDENT> VOR`、`<IDENT> NDB` 或 `<IDENT> DME`，只输出前面的 `<IDENT>`，不要输出设施类型。例如 `ORL VORTAC` 的 ident 是 `ORL`，不是 `VORTAC`。
-- 如果 hold fix 标注为 `ORL VORTAC`，`Q1_fix_ident.value` 必须是 `ORL`。
-- 如果能看出是某类设施但看不清具体 ident，使用 `status = "unknown"`、`value = null`。
-- 如果该 leg 类型没有 fix reference，使用 `status = "not_applicable"`、`value = null`。
-
-### Q2_altitude_constraint
-
-`status` 可以是 `present`、`not_applicable`、`not_observable` 或 `unknown`。
-
-当 `status = "present"` 时，`value` 必须为：
-
-
-{
-  "desc": "AT_OR_ABOVE",
-  "altitude_ft": 3000,
-  "altitude_2_ft": null
-}
-
-`desc` 必须是以下之一：
-
-
-AT, AT_OR_ABOVE, AT_OR_BELOW, BETWEEN
-
-`altitude_ft` 和 `altitude_2_ft` 必须是 integer 或 null。只有 `desc = "BETWEEN"` 时，`altitude_2_ft` 才应为非 null。
-
-### Q3_turn
-
-`status` 可以是 `present`、`not_applicable`、`not_observable` 或 `unknown`。
-
-当 `status = "present"` 时，`value` 必须是 `LEFT` 或 `RIGHT`。否则 `value = null`。
-
-### Q4_course_or_radial
-
-`status` 可以是 `present`、`not_applicable`、`not_observable` 或 `unknown`。
-
-当 `status = "present"` 时，`value` 必须且只能是以下三种结构之一：
-
-
-{"type": "course_deg", "course_deg": 70.0}
-
-
-{"type": "navaid_radial", "navaid": "ABC", "radial_deg": 123.0, "direction": "outbound"}
-
-
-{"type": "direct"}
-
-`direction` 只能是 `outbound` 或 `inbound`。
-
-### Q5_hold_params
-
-`status` 可以是 `present`、`not_applicable`、`not_observable` 或 `unknown`。
-
-当 `status = "present"` 时，`value` 必须为：
-
-
-{
-  "inbound_course_deg": 70.0,
-  "leg_time_min": 1.0,
-  "leg_distance_nm": null,
-  "turn": "RIGHT"
-}
-
-`inbound_course_deg`、`leg_time_min`、`leg_distance_nm` 可以是 number 或 null。`turn` 可以是 `LEFT`、`RIGHT` 或 null。
-
-当航图支持 hold time 或 hold distance 时，`leg_time_min` 和 `leg_distance_nm` 应恰好一个为非 null。若 hold 参数无法可靠确定，使用 `status = "unknown"`，`value = null`。
-
-## Parser 映射要求
-
-后续 deterministic parser 只能做字段结构转换：
-
-- `questionnaire.Q0_leg_count` -> `missed_approach.leg_count`
-- 每个 questionnaire leg -> 一个 canonical `missed_approach.legs[]` item
-- 每个 `Q_*` 字段 -> canonical `answers` 中的同名字段
-
-parser 不得使用 target、CIFP、annotation、OCR、外部数据库或人工修复值。parser 不得根据答案正确性修改字段，只能做结构重排和 schema 级别的机械校验。
-
-## 输出要求
-
-- 只返回 questionnaire JSON。
-- 输出的第一个字符必须是 `{`。
-- 输出的最后一个字符必须是 `}`。
-- 你的回答会被程序直接交给 JSON parser；如果输出 markdown code fence、自然语言或前后缀文本，本样本会被判为格式错误。
-- 回复前必须自检：第一字符是 `{`，最后字符是 `}`，且没有任何 三个反引号。
-- 不要返回 canonical JSON。
-- 不要包含 markdown。
-- 不要包含 markdown code fence。
-- 不要输出 三个反引号json 或 三个反引号。
-- 不要包含解释。
-- 不要包含 evidence snippet。
-- 不要包含本契约以外的字段。
-- 不要输出占位符。
-- 不要输出枚举说明。
-- 保持 missed-approach leg 顺序。
-- 如果无法可靠抽取复飞程序，返回 `Q0_leg_count.status = "unknown"`，`Q0_leg_count.value = null`，并且 `legs = []`。
-
-## 输入
-
+## Input Metadata
 
 chart_id: {{chart_id}}
 airport: {{airport}}
 approach_ident: {{approach_ident}}
 chart_name: {{chart_name}}
-IMAGE: {{chart_image}}
-## STRICT RAW OUTPUT CONTRACT / 严格原始输出协议
-
-This section overrides any formatting habit from examples above. The final answer MUST be exactly one bare JSON object.
-
-- The first non-whitespace character MUST be {.
-- The last non-whitespace character MUST be }.
-- Do NOT output Markdown.
-- Do NOT output code fences.
-- Do NOT output the string ` anywhere.
-- Do NOT output json as a wrapper or label.
-- Do NOT add explanation before or after the JSON.
-- The evaluator will run strict JSON parsing on the raw response. Any Markdown fence or extra text is a format violation.
-
-

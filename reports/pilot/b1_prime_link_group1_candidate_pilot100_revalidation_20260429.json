@@ -1,0 +1,89 @@
+{
+  "report_id": "b1_prime_link_group1_candidate_pilot100_revalidation_20260429",
+  "generated_at_local_date": "2026-04-29",
+  "method_id": "B1_prime_link",
+  "display_name": "B1?_link",
+  "group1_candidate_position": "after_B1_prime_before_C1",
+  "revalidation_type": "local_artifact_recheck_of_existing_pilot100_run_no_new_model_calls",
+  "run_id": "b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2",
+  "run_dir": "E:\\experiment3\\B1'_link\\predictions\\b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2",
+  "sample_manifest": "E:\\experiment3\\B1'_link\\data\\manifests\\b1prime_link_pilot100_20260428.jsonl",
+  "sample_manifest_sha256": "9d41833720662c5b511913eb8d70bf0242883df35027f0eba90ac4ad3e11c301",
+  "sample_role": "pilot100_external_expanded_feasibility_only_excluded_from_formal300",
+  "artifact_counts": {
+    "run_manifest_samples": 100,
+    "results_records": 100,
+    "sample_canonical_json_files_expected": 100,
+    "sample_validation_files_expected": 100,
+    "sample_score_files_expected": 100,
+    "sample_field_to_leg_link_files_expected": 100,
+    "non_sample_linking_summary_files_present": 1
+  },
+  "missing_artifacts": {
+    "canonical_json": [],
+    "validation": [],
+    "scores": [],
+    "field_to_leg_links": []
+  },
+  "model_and_output_control": {
+    "provider": "openai_compatible",
+    "model": "gpt-5.4",
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "schema_retry": 1,
+    "output_control": "openai_tool_call",
+    "json_extraction_policy_counts": {
+      "openai_tool_call_arguments": 100
+    }
+  },
+  "hashes": {
+    "canonical_schema_sha256_current_repo": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+    "field_to_leg_links_schema_sha256_external": "1085f187055f1e6b7b78bb9958643ed4eb06bfa7d8a4a65870537bd34f704262",
+    "prompt_sha256_external": "2b135d82928e3963a5b37ad5ebcee82e2e079aa94d34c88cf33b1d215c8909c2",
+    "linking_script_sha256_external": "132c90afc38f12d1c50a1930a44ba519afb33d40e0da5059a630d4eb71944dd9",
+    "runner_script_sha256_external": "1e61a1c5f7130d8cabb51deb0baaefb4725374aff8b1fc55636e9a4e01cb87a9",
+    "field_to_leg_links_schema_sha256_current_repo": "1085f187055f1e6b7b78bb9958643ed4eb06bfa7d8a4a65870537bd34f704262",
+    "prompt_sha256_current_repo": "2b135d82928e3963a5b37ad5ebcee82e2e079aa94d34c88cf33b1d215c8909c2"
+  },
+  "validation": {
+    "canonical_schema_errors_on_100_sample_outputs": 0,
+    "field_to_leg_schema_errors_on_100_sample_links": 0,
+    "validation_error_count_from_results": 0,
+    "summary_schema_valid": 100,
+    "summary_failures": 0
+  },
+  "score": {
+    "samples_total": 100,
+    "samples_scored": 100,
+    "correct_recomputed": 1031,
+    "total_recomputed": 2344,
+    "accuracy_recomputed": 0.4398464163822526,
+    "summary_correct": 1031,
+    "summary_total": 2344,
+    "summary_accuracy": 0.4398464163822526,
+    "schema_retry_count_recomputed": 1,
+    "schema_retry_count_summary": 1,
+    "parser_repair_count_non_strict_json": 0
+  },
+  "boundary_checks": {
+    "allowed_inputs": "OCR-1 full-chart text + OCR-text-only field_candidates + automatic non-target-aware field_to_leg_links + metadata + canonical schema contract",
+    "targets_in_prompt": false,
+    "scorer_in_prompt": false,
+    "cifp_in_prompt": false,
+    "human_annotation_in_prompt": false,
+    "ocr_bbox_in_prompt": false,
+    "chart_image_pixels_in_prompt": false
+  },
+  "monitors": {
+    "zero_candidate_leg_count_outputs": 2,
+    "candidate_leg_count_equals_predicted_leg_count_count": 0,
+    "candidate_leg_count_equals_predicted_leg_count_chart_ids_first_20": [],
+    "monitor_interpretation": "not automatically a violation; prompt forbids mechanical copying and equality can be real for simple procedures"
+  },
+  "decision": "passes_group1_candidate_pilot100_artifact_revalidation; candidate_not_formally_frozen",
+  "remaining_limitations": [
+    "This is an artifact recheck of an existing full pilot100 run, not a new API rerun.",
+    "B1_prime_link adds automatic field-to-leg linking and must remain a distinct Group 1 candidate after B1_prime, not a replacement or hidden optimization of B1_prime.",
+    "Formal300 split, final model/provider parameters, final rerun policy, and formal scorer are still not frozen here."
+  ]
+}

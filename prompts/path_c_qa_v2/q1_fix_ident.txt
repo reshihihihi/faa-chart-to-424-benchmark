@@ -26,9 +26,18 @@ OUTPUT (single JSON object):
 }
 
 Rules:
-- Leg type has a fix (per above table) and chart shows it → status=present, value=ident.
-- Leg type has NO fix → status=not_applicable, value=null.
-- Leg type should have a fix but chart omits a required ident → status=not_observable, value=null.
-- You see something but cannot read it → status=unknown, value=null.
+- Leg type has a fix (per above table) and chart shows it -> status=present, value=ident.
+- Leg type has NO fix -> status=not_applicable, value=null.
+- Leg type should have a fix but chart omits a required ident -> status=not_observable, value=null.
+- You see something but cannot read it -> status=unknown, value=null.
 
 Idents are typically 5 characters or fewer (e.g., "COE", "MUDRE", "RW06", "BRA").
+Facility labels often contain an ident plus a facility type, such as ORL VORTAC; in that case the ident is ORL and the facility type VORTAC must never be output as value.
+Do not output facility-type words such as VOR, VORTAC, DME, NDB, FIX, WAYPOINT, NAVAID, HOLDING, AIRPORT, RUNWAY, LOCALIZER, LOC, or ILS as value.
+
+Strict output rules:
+- Return exactly one bare JSON object with keys status and value.
+- Do not output Markdown, code fences, prose, or any text outside JSON.
+- status must be exactly present, not_applicable, not_observable, or unknown.
+- If status is not present, value must be null.
+- If status is present, value must be an ident string with at most 5 characters.

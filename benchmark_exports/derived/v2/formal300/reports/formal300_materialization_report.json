@@ -1,0 +1,45 @@
+{
+  "status": "formal300_materialized_ready_for_freeze_review",
+  "created_at_utc": "2026-04-29T06:06:14.825428+00:00",
+  "source_manifest": "E:\\experiment3\\try_B1_B1'\\source\\formal300_manifest_pr32_head_7785325.json",
+  "source_manifest_sha256": "00f8de653bf4bd6cf413e3383b7d431692fe4d0631bef9f393040dc6a64e3677",
+  "cifp_file": "E:\\experiment3\\pilot10_a1_b1_c3_20260426_v0\\sources\\faa_2604\\cifp\\FAACIFP18",
+  "cifp_sha256": "9a7a3e6312edca25af374324c00d67d14886c62dc005792aa04629e8c8e8b85c",
+  "schema": {
+    "path": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark\\schemas\\missed_approach_leg.schema.json",
+    "sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9"
+  },
+  "render_policy": {
+    "engine": "PyMuPDF",
+    "fitz_version": [
+      "1.27.2.2",
+      "1.27.2",
+      null
+    ],
+    "matrix": "Matrix(2, 2)",
+    "page_index": 0,
+    "alpha": false
+  },
+  "counts": {
+    "samples": 300,
+    "pdf_available": 300,
+    "image_available": 300,
+    "target_schema_valid": 300,
+    "field_targets": 6084,
+    "evidence_rows": 6084,
+    "challenge_tag_rows": 300
+  },
+  "split_counts": {
+    "evaluation": 75,
+    "development": 200,
+    "probe": 25
+  },
+  "procedure_type_counts": {
+    "ILS": 13,
+    "LOC": 25,
+    "RNAV": 262
+  },
+  "target_errors": [],
+  "materialization_errors": [],
+  "formal_evaluation_ran": false
+}

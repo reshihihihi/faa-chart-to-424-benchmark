@@ -1,0 +1,77 @@
+{
+  "manifest_version": "0.1.0",
+  "status": "candidate_parameters_recorded_not_formal_frozen",
+  "created_at_utc": "2026-04-29T04:52:59.238936+00:00",
+  "text_llm_methods": {
+    "methods": [
+      "B1",
+      "B1_prime",
+      "B1_prime_link"
+    ],
+    "provider": "openai_compatible",
+    "model": "gpt-5.4",
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "output_control": "openai forced tool call emit_canonical_json",
+    "tool_schema": "schemas/missed_approach_leg.schema.json",
+    "schema_retry_count": 1,
+    "parser_repair": false,
+    "formal_status": "candidate_not_formal_frozen"
+  },
+  "vlm_methods": {
+    "methods": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "provider": "anthropic_compatible",
+    "model": "claude-sonnet-4-5-20250929",
+    "temperature": 0.0,
+    "max_tokens": {
+      "C1": 4096,
+      "C3": 4096,
+      "C4": 4096,
+      "C2_QA_call": 2048
+    },
+    "output_control": "anthropic tool use, method-specific tool schema",
+    "schema_retry_count": 1,
+    "parser_repair": false,
+    "formal_status": "candidate_not_formal_frozen"
+  },
+  "ocr_rule_methods": {
+    "A1": "OCR-1 PaddleOCR PP-OCRv5 + deterministic rules",
+    "A2": "OCR-2 Tesseract 5.x + same deterministic rules",
+    "formal_status": "candidate_not_formal_frozen"
+  },
+  "d_sft": {
+    "base_model": "Qwen/Qwen2-VL-2B-Instruct",
+    "tuning": "QLoRA adapter r=8 alpha=16 dropout=0.05",
+    "training_config": "training/d_sft/configs/d_sft_training_config.frozen_20260428_r1.json",
+    "formal_status": "frozen_candidate_for_next_formal300_eval_but_not_formal300_result"
+  },
+  "policy_files": {
+    "output_control_policy": {
+      "path": "configs/output_control_policy.md",
+      "sha256": "2892c32e7f7ce9c7dba3a6e271f84ddb78161e51bec144f860d7e62026c3562a"
+    },
+    "parser_repair_policy": {
+      "path": "configs/parser_repair_policy.md",
+      "sha256": "d52cda1d316d51abb72c161f7b5b6670738d18d29abd7fe88e12d33aecebc9c2"
+    },
+    "rerun_policy": {
+      "path": "docs/rerun_policy.md",
+      "sha256": "2dd6d3359b0085e391459c91711d1aea2a4844fa913eb22b31bc2b1713103450"
+    },
+    "model_config_manifest": {
+      "path": "configs/model_config_manifest.json",
+      "sha256": "341ae6445e3ff9e28bb8dd1ec597c80c58228935c10a9bee4b8ad7807ac203f4"
+    }
+  },
+  "formal_freeze_blockers": [
+    "Final base URL/provider identity must be recorded without credentials and tied to formal run ids.",
+    "Retry policy must state how parse/schema failures score in formal tables, not only when rerun is allowed.",
+    "Each formal runner must write per-sample attempt_count, retry reason, model config hash, prompt hash, parser hash, and scorer hash.",
+    "C1/C3 pilot100 schema failures still need a pre-registered decision. The previous C4 high retry count was resolved by the 2026-04-29 output-control fix pilot100 validation."
+  ]
+}

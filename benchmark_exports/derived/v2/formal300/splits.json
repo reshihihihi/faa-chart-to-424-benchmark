@@ -1,0 +1,1517 @@
+{
+  "status": "materialized_not_formal_evaluated",
+  "created_at_utc": "2026-04-29T06:06:14.824011+00:00",
+  "split_counts": {
+    "development": 200,
+    "evaluation": 75,
+    "probe": 25
+  },
+  "splits": {
+    "evaluation": [
+      {
+        "sample_id": "formal300_001",
+        "chart_id": "KABE_I06",
+        "pdf_file": "00015IL6.PDF"
+      },
+      {
+        "sample_id": "formal300_003",
+        "chart_id": "KAMA_I04",
+        "pdf_file": "00019IL4.PDF"
+      },
+      {
+        "sample_id": "formal300_020",
+        "chart_id": "KBUR_L08-Z",
+        "pdf_file": "00067IZLZ8.PDF"
+      },
+      {
+        "sample_id": "formal300_025",
+        "chart_id": "KCRP_L36",
+        "pdf_file": "05032IL36.PDF"
+      },
+      {
+        "sample_id": "formal300_029",
+        "chart_id": "KAWM_L17",
+        "pdf_file": "05386IL17.PDF"
+      },
+      {
+        "sample_id": "formal300_030",
+        "chart_id": "KBPT_L12",
+        "pdf_file": "00521IL12.PDF"
+      },
+      {
+        "sample_id": "formal300_032",
+        "chart_id": "KBTL_L23R",
+        "pdf_file": "00041IL23R.PDF"
+      },
+      {
+        "sample_id": "formal300_035",
+        "chart_id": "KCAK_L01",
+        "pdf_file": "00638IL1.PDF"
+      },
+      {
+        "sample_id": "formal300_043",
+        "chart_id": "KAPT_R04",
+        "pdf_file": "05783R4.PDF"
+      },
+      {
+        "sample_id": "formal300_048",
+        "chart_id": "KAVQ_R21",
+        "pdf_file": "10213R21.PDF"
+      },
+      {
+        "sample_id": "formal300_049",
+        "chart_id": "KAXH_R27",
+        "pdf_file": "06575R27.PDF"
+      },
+      {
+        "sample_id": "formal300_057",
+        "chart_id": "KBUR_R08-Z",
+        "pdf_file": "00067RZ8.PDF"
+      },
+      {
+        "sample_id": "formal300_058",
+        "chart_id": "KBWC_R26",
+        "pdf_file": "06932R26.PDF"
+      },
+      {
+        "sample_id": "formal300_059",
+        "chart_id": "KCAG_R07",
+        "pdf_file": "06338R7.PDF"
+      },
+      {
+        "sample_id": "formal300_067",
+        "chart_id": "KANY_R18",
+        "pdf_file": "00533R18.PDF"
+      },
+      {
+        "sample_id": "formal300_073",
+        "chart_id": "KAWG_R36",
+        "pdf_file": "06289R36.PDF"
+      },
+      {
+        "sample_id": "formal300_075",
+        "chart_id": "KAXV_R26",
+        "pdf_file": "06065R26.PDF"
+      },
+      {
+        "sample_id": "formal300_082",
+        "chart_id": "KBTR_R04L",
+        "pdf_file": "00040R4L.PDF"
+      },
+      {
+        "sample_id": "formal300_093",
+        "chart_id": "KCGI_R10",
+        "pdf_file": "00943R10.PDF"
+      },
+      {
+        "sample_id": "formal300_100",
+        "chart_id": "KCRS_R32",
+        "pdf_file": "05998R32.PDF"
+      },
+      {
+        "sample_id": "formal300_104",
+        "chart_id": "KABE_R24",
+        "pdf_file": "00015R24.PDF"
+      },
+      {
+        "sample_id": "formal300_106",
+        "chart_id": "KABY_R17",
+        "pdf_file": "00008R17.PDF"
+      },
+      {
+        "sample_id": "formal300_110",
+        "chart_id": "KACT_R19",
+        "pdf_file": "00439R19.PDF"
+      },
+      {
+        "sample_id": "formal300_117",
+        "chart_id": "KAFW_R34R",
+        "pdf_file": "06918R34R.PDF"
+      },
+      {
+        "sample_id": "formal300_126",
+        "chart_id": "KALB_R28",
+        "pdf_file": "00010R28.PDF"
+      },
+      {
+        "sample_id": "formal300_127",
+        "chart_id": "KALN_R17",
+        "pdf_file": "05178R17.PDF"
+      },
+      {
+        "sample_id": "formal300_128",
+        "chart_id": "KALS_R02",
+        "pdf_file": "00018R2.PDF"
+      },
+      {
+        "sample_id": "formal300_136",
+        "chart_id": "KART_R10",
+        "pdf_file": "00666R10.PDF"
+      },
+      {
+        "sample_id": "formal300_139",
+        "chart_id": "KATA_R05",
+        "pdf_file": "06164R5.PDF"
+      },
+      {
+        "sample_id": "formal300_143",
+        "chart_id": "KAAF_R14",
+        "pdf_file": "05600R14.PDF"
+      },
+      {
+        "sample_id": "formal300_144",
+        "chart_id": "KAAF_R24",
+        "pdf_file": "05600R24.PDF"
+      },
+      {
+        "sample_id": "formal300_147",
+        "chart_id": "KAAS_R05",
+        "pdf_file": "05210R5.PDF"
+      },
+      {
+        "sample_id": "formal300_152",
+        "chart_id": "KABQ_R03-Y",
+        "pdf_file": "00012RY3.PDF"
+      },
+      {
+        "sample_id": "formal300_159",
+        "chart_id": "KACK_R06",
+        "pdf_file": "00659R6.PDF"
+      },
+      {
+        "sample_id": "formal300_161",
+        "chart_id": "KACP_R18",
+        "pdf_file": "09133R18.PDF"
+      },
+      {
+        "sample_id": "formal300_169",
+        "chart_id": "KACZ_R09",
+        "pdf_file": "05587R9.PDF"
+      },
+      {
+        "sample_id": "formal300_180",
+        "chart_id": "KADS_R34",
+        "pdf_file": "00768R34.PDF"
+      },
+      {
+        "sample_id": "formal300_185",
+        "chart_id": "KAEL_R17",
+        "pdf_file": "05420R17.PDF"
+      },
+      {
+        "sample_id": "formal300_190",
+        "chart_id": "KAFK_R15",
+        "pdf_file": "09202R15.PDF"
+      },
+      {
+        "sample_id": "formal300_194",
+        "chart_id": "KAFP_R34",
+        "pdf_file": "06613R34.PDF"
+      },
+      {
+        "sample_id": "formal300_195",
+        "chart_id": "KAFW_R16L",
+        "pdf_file": "06918R16L.PDF"
+      },
+      {
+        "sample_id": "formal300_197",
+        "chart_id": "KAGO_R18",
+        "pdf_file": "06279R18.PDF"
+      },
+      {
+        "sample_id": "formal300_199",
+        "chart_id": "KAGS_R08-Y",
+        "pdf_file": "00027RY8.PDF"
+      },
+      {
+        "sample_id": "formal300_208",
+        "chart_id": "KAIA_R08",
+        "pdf_file": "00016R8.PDF"
+      },
+      {
+        "sample_id": "formal300_209",
+        "chart_id": "KAIA_R12",
+        "pdf_file": "00016R12.PDF"
+      },
+      {
+        "sample_id": "formal300_210",
+        "chart_id": "KAIA_R26",
+        "pdf_file": "00016R26.PDF"
+      },
+      {
+        "sample_id": "formal300_216",
+        "chart_id": "KAIK_R07",
+        "pdf_file": "05197R7.PDF"
+      },
+      {
+        "sample_id": "formal300_219",
+        "chart_id": "KAIO_R20",
+        "pdf_file": "05314R20.PDF"
+      },
+      {
+        "sample_id": "formal300_220",
+        "chart_id": "KAIT_R16",
+        "pdf_file": "06406R16.PDF"
+      },
+      {
+        "sample_id": "formal300_222",
+        "chart_id": "KAIV_R06",
+        "pdf_file": "09812R6.PDF"
+      },
+      {
+        "sample_id": "formal300_226",
+        "chart_id": "KAJG_R04",
+        "pdf_file": "06159R4.PDF"
+      },
+      {
+        "sample_id": "formal300_228",
+        "chart_id": "KAJG_R31",
+        "pdf_file": "06159R31.PDF"
+      },
+      {
+        "sample_id": "formal300_230",
+        "chart_id": "KAJR_R24",
+        "pdf_file": "06074R24.PDF"
+      },
+      {
+        "sample_id": "formal300_232",
+        "chart_id": "KAKO_R29",
+        "pdf_file": "05054R29.PDF"
+      },
+      {
+        "sample_id": "formal300_235",
+        "chart_id": "KALI_R13",
+        "pdf_file": "00481R13.PDF"
+      },
+      {
+        "sample_id": "formal300_236",
+        "chart_id": "KALI_R31",
+        "pdf_file": "00481R31.PDF"
+      },
+      {
+        "sample_id": "formal300_246",
+        "chart_id": "KAMG_R34",
+        "pdf_file": "00017R34.PDF"
+      },
+      {
+        "sample_id": "formal300_250",
+        "chart_id": "KAMT_R05",
+        "pdf_file": "06236R5.PDF"
+      },
+      {
+        "sample_id": "formal300_253",
+        "chart_id": "KAMW_R13",
+        "pdf_file": "05307R13.PDF"
+      },
+      {
+        "sample_id": "formal300_255",
+        "chart_id": "KANB_R23",
+        "pdf_file": "05014R23.PDF"
+      },
+      {
+        "sample_id": "formal300_257",
+        "chart_id": "KAND_R17",
+        "pdf_file": "00857R17.PDF"
+      },
+      {
+        "sample_id": "formal300_263",
+        "chart_id": "KANQ_R05",
+        "pdf_file": "06196R5.PDF"
+      },
+      {
+        "sample_id": "formal300_270",
+        "chart_id": "KAOH_R28",
+        "pdf_file": "05143R28.PDF"
+      },
+      {
+        "sample_id": "formal300_275",
+        "chart_id": "KAPA_R35R",
+        "pdf_file": "05715R35R.PDF"
+      },
+      {
+        "sample_id": "formal300_278",
+        "chart_id": "KAPF_R23-Y",
+        "pdf_file": "06020RY23.PDF"
+      },
+      {
+        "sample_id": "formal300_282",
+        "chart_id": "KAPS_R35",
+        "pdf_file": "09134R35.PDF"
+      },
+      {
+        "sample_id": "formal300_283",
+        "chart_id": "KAQO_R17",
+        "pdf_file": "05959R17.PDF"
+      },
+      {
+        "sample_id": "formal300_284",
+        "chart_id": "KAQO_R35",
+        "pdf_file": "05959R35.PDF"
+      },
+      {
+        "sample_id": "formal300_285",
+        "chart_id": "KAQP_R13",
+        "pdf_file": "09142R13.PDF"
+      },
+      {
+        "sample_id": "formal300_287",
+        "chart_id": "KAQX_R35",
+        "pdf_file": "05769R35.PDF"
+      },
+      {
+        "sample_id": "formal300_290",
+        "chart_id": "KARB_R06",
+        "pdf_file": "05506R6.PDF"
+      },
+      {
+        "sample_id": "formal300_295",
+        "chart_id": "KARM_R32",
+        "pdf_file": "06032R32.PDF"
+      },
+      {
+        "sample_id": "formal300_296",
+        "chart_id": "KARR_R09",
+        "pdf_file": "05103R9.PDF"
+      },
+      {
+        "sample_id": "formal300_297",
+        "chart_id": "KARR_R15",
+        "pdf_file": "05103R15.PDF"
+      },
+      {
+        "sample_id": "formal300_300",
+        "chart_id": "KART_R28",
+        "pdf_file": "00666R28.PDF"
+      }
+    ],
+    "development": [
+      {
+        "sample_id": "formal300_002",
+        "chart_id": "KALS_I02",
+        "pdf_file": "00018IL2.PDF"
+      },
+      {
+        "sample_id": "formal300_006",
+        "chart_id": "KAUS_I18L",
+        "pdf_file": "00556IL18L.PDF"
+      },
+      {
+        "sample_id": "formal300_007",
+        "chart_id": "KAVL_I17",
+        "pdf_file": "05061IL17.PDF"
+      },
+      {
+        "sample_id": "formal300_008",
+        "chart_id": "KAYS_I19-Z",
+        "pdf_file": "00994IZLZ19.PDF"
+      },
+      {
+        "sample_id": "formal300_009",
+        "chart_id": "KBMI_I29",
+        "pdf_file": "05058IL29.PDF"
+      },
+      {
+        "sample_id": "formal300_010",
+        "chart_id": "KBUY_I06-Z",
+        "pdf_file": "05694IZLZ6.PDF"
+      },
+      {
+        "sample_id": "formal300_011",
+        "chart_id": "KBWG_I03-Y",
+        "pdf_file": "00605IYLY3.PDF"
+      },
+      {
+        "sample_id": "formal300_012",
+        "chart_id": "KCFO_I26",
+        "pdf_file": "06851IL26.PDF"
+      },
+      {
+        "sample_id": "formal300_013",
+        "chart_id": "KCMH_I10R",
+        "pdf_file": "00094IL10R.PDF"
+      },
+      {
+        "sample_id": "formal300_014",
+        "chart_id": "KAVP_L04",
+        "pdf_file": "00661IL4.PDF"
+      },
+      {
+        "sample_id": "formal300_016",
+        "chart_id": "KBDL_L33",
+        "pdf_file": "00460IL33.PDF"
+      },
+      {
+        "sample_id": "formal300_017",
+        "chart_id": "KBDR_L06",
+        "pdf_file": "00621IL6.PDF"
+      },
+      {
+        "sample_id": "formal300_019",
+        "chart_id": "KBOS_L15R",
+        "pdf_file": "00058IL15R.PDF"
+      },
+      {
+        "sample_id": "formal300_021",
+        "chart_id": "KBYL_L20",
+        "pdf_file": "10311L20.PDF"
+      },
+      {
+        "sample_id": "formal300_022",
+        "chart_id": "KCEC_L12",
+        "pdf_file": "00034IL12.PDF"
+      },
+      {
+        "sample_id": "formal300_023",
+        "chart_id": "KCFO_L17",
+        "pdf_file": "06851IL17.PDF"
+      },
+      {
+        "sample_id": "formal300_024",
+        "chart_id": "KCOE_L06",
+        "pdf_file": "00527IL6.PDF"
+      },
+      {
+        "sample_id": "formal300_026",
+        "chart_id": "KCRW_L05",
+        "pdf_file": "00852IL5.PDF"
+      },
+      {
+        "sample_id": "formal300_027",
+        "chart_id": "KALN_L29",
+        "pdf_file": "05178IL29.PDF"
+      },
+      {
+        "sample_id": "formal300_028",
+        "chart_id": "KALO_L12",
+        "pdf_file": "00945IL12.PDF"
+      },
+      {
+        "sample_id": "formal300_031",
+        "chart_id": "KBRD_L34",
+        "pdf_file": "05182IL34.PDF"
+      },
+      {
+        "sample_id": "formal300_033",
+        "chart_id": "KBTP_L08",
+        "pdf_file": "00899IL8.PDF"
+      },
+      {
+        "sample_id": "formal300_034",
+        "chart_id": "KBWI_L15L",
+        "pdf_file": "00804IL15L.PDF"
+      },
+      {
+        "sample_id": "formal300_036",
+        "chart_id": "KCBF_L36",
+        "pdf_file": "05540IL36.PDF"
+      },
+      {
+        "sample_id": "formal300_037",
+        "chart_id": "KCHA_L20",
+        "pdf_file": "00079IL20.PDF"
+      },
+      {
+        "sample_id": "formal300_038",
+        "chart_id": "KCJR_L04",
+        "pdf_file": "05877L4.PDF"
+      },
+      {
+        "sample_id": "formal300_039",
+        "chart_id": "KAFN_RNV-B",
+        "pdf_file": "05335RB.PDF"
+      },
+      {
+        "sample_id": "formal300_041",
+        "chart_id": "KAIB_RNV-A",
+        "pdf_file": "09483RA.PDF"
+      },
+      {
+        "sample_id": "formal300_042",
+        "chart_id": "KANP_RNV-A",
+        "pdf_file": "09806RA.PDF"
+      },
+      {
+        "sample_id": "formal300_044",
+        "chart_id": "KAPV_R18",
+        "pdf_file": "05822R18.PDF"
+      },
+      {
+        "sample_id": "formal300_045",
+        "chart_id": "KAQW_RNV-A",
+        "pdf_file": "10089RA.PDF"
+      },
+      {
+        "sample_id": "formal300_046",
+        "chart_id": "KAQW_RNV-B",
+        "pdf_file": "10089RB.PDF"
+      },
+      {
+        "sample_id": "formal300_047",
+        "chart_id": "KAVQ_R12",
+        "pdf_file": "10213R12.PDF"
+      },
+      {
+        "sample_id": "formal300_050",
+        "chart_id": "KBDH_R31",
+        "pdf_file": "10310R31.PDF"
+      },
+      {
+        "sample_id": "formal300_052",
+        "chart_id": "KBJC_R12L",
+        "pdf_file": "05612R12L.PDF"
+      },
+      {
+        "sample_id": "formal300_053",
+        "chart_id": "KBLF_R05",
+        "pdf_file": "00787R5.PDF"
+      },
+      {
+        "sample_id": "formal300_054",
+        "chart_id": "KBMQ_R01",
+        "pdf_file": "05772R1.PDF"
+      },
+      {
+        "sample_id": "formal300_056",
+        "chart_id": "KBTV_R33-Y",
+        "pdf_file": "00070RY33.PDF"
+      },
+      {
+        "sample_id": "formal300_060",
+        "chart_id": "KCBE_R05",
+        "pdf_file": "05263R5.PDF"
+      },
+      {
+        "sample_id": "formal300_061",
+        "chart_id": "KCEA_RNV-D",
+        "pdf_file": "05142RD.PDF"
+      },
+      {
+        "sample_id": "formal300_062",
+        "chart_id": "KCII_R33",
+        "pdf_file": "06814R33.PDF"
+      },
+      {
+        "sample_id": "formal300_063",
+        "chart_id": "KCOE_R02",
+        "pdf_file": "00527R2.PDF"
+      },
+      {
+        "sample_id": "formal300_064",
+        "chart_id": "KACT_R32",
+        "pdf_file": "00439R32.PDF"
+      },
+      {
+        "sample_id": "formal300_065",
+        "chart_id": "KADF_R22",
+        "pdf_file": "05756R22.PDF"
+      },
+      {
+        "sample_id": "formal300_068",
+        "chart_id": "KAOO_R03-Z",
+        "pdf_file": "00100RZ3.PDF"
+      },
+      {
+        "sample_id": "formal300_069",
+        "chart_id": "KAOO_R21",
+        "pdf_file": "00100R21.PDF"
+      },
+      {
+        "sample_id": "formal300_070",
+        "chart_id": "KARG_R04",
+        "pdf_file": "00441R4.PDF"
+      },
+      {
+        "sample_id": "formal300_071",
+        "chart_id": "KATW_R21",
+        "pdf_file": "05216R21.PDF"
+      },
+      {
+        "sample_id": "formal300_072",
+        "chart_id": "KAVP_R22",
+        "pdf_file": "00661R22.PDF"
+      },
+      {
+        "sample_id": "formal300_074",
+        "chart_id": "KAXN_R22",
+        "pdf_file": "00014R22.PDF"
+      },
+      {
+        "sample_id": "formal300_076",
+        "chart_id": "KAZC_R29",
+        "pdf_file": "09194R29.PDF"
+      },
+      {
+        "sample_id": "formal300_077",
+        "chart_id": "KBFD_R14",
+        "pdf_file": "00926R14.PDF"
+      },
+      {
+        "sample_id": "formal300_078",
+        "chart_id": "KBJI_R31",
+        "pdf_file": "05174R31.PDF"
+      },
+      {
+        "sample_id": "formal300_080",
+        "chart_id": "KBKX_R30",
+        "pdf_file": "00969R30.PDF"
+      },
+      {
+        "sample_id": "formal300_081",
+        "chart_id": "KBLV_R32RY",
+        "pdf_file": "00046RRZ14L.PDF"
+      },
+      {
+        "sample_id": "formal300_083",
+        "chart_id": "KBUM_R18",
+        "pdf_file": "00964R18.PDF"
+      },
+      {
+        "sample_id": "formal300_085",
+        "chart_id": "KBXA_R18",
+        "pdf_file": "06397R18.PDF"
+      },
+      {
+        "sample_id": "formal300_086",
+        "chart_id": "KBYH_R36",
+        "pdf_file": "00054R36.PDF"
+      },
+      {
+        "sample_id": "formal300_087",
+        "chart_id": "KBYI_R20",
+        "pdf_file": "00068R20.PDF"
+      },
+      {
+        "sample_id": "formal300_089",
+        "chart_id": "KCBF_R36",
+        "pdf_file": "05540R36.PDF"
+      },
+      {
+        "sample_id": "formal300_090",
+        "chart_id": "KCDI_R04",
+        "pdf_file": "05993R4.PDF"
+      },
+      {
+        "sample_id": "formal300_091",
+        "chart_id": "KCDR_R03",
+        "pdf_file": "00506R3.PDF"
+      },
+      {
+        "sample_id": "formal300_092",
+        "chart_id": "KCDS_R36",
+        "pdf_file": "00082R36.PDF"
+      },
+      {
+        "sample_id": "formal300_094",
+        "chart_id": "KCHO_R03",
+        "pdf_file": "00765R3.PDF"
+      },
+      {
+        "sample_id": "formal300_095",
+        "chart_id": "KCHQ_R36",
+        "pdf_file": "06198R36.PDF"
+      },
+      {
+        "sample_id": "formal300_096",
+        "chart_id": "KCIC_R13L",
+        "pdf_file": "00557R13L.PDF"
+      },
+      {
+        "sample_id": "formal300_097",
+        "chart_id": "KCLL_R11",
+        "pdf_file": "00928R11.PDF"
+      },
+      {
+        "sample_id": "formal300_098",
+        "chart_id": "KCNC_R10",
+        "pdf_file": "06068R10.PDF"
+      },
+      {
+        "sample_id": "formal300_099",
+        "chart_id": "KCOI_R11",
+        "pdf_file": "06988R11.PDF"
+      },
+      {
+        "sample_id": "formal300_101",
+        "chart_id": "KANB_R05",
+        "pdf_file": "05014R5.PDF"
+      },
+      {
+        "sample_id": "formal300_102",
+        "chart_id": "KAST_R26",
+        "pdf_file": "00024R26.PDF"
+      },
+      {
+        "sample_id": "formal300_103",
+        "chart_id": "KABE_R13",
+        "pdf_file": "00015R13.PDF"
+      },
+      {
+        "sample_id": "formal300_105",
+        "chart_id": "KABY_R05",
+        "pdf_file": "00008R5.PDF"
+      },
+      {
+        "sample_id": "formal300_107",
+        "chart_id": "KABY_R23",
+        "pdf_file": "00008R23.PDF"
+      },
+      {
+        "sample_id": "formal300_108",
+        "chart_id": "KACB_R02",
+        "pdf_file": "05131R2.PDF"
+      },
+      {
+        "sample_id": "formal300_109",
+        "chart_id": "KACK_R33",
+        "pdf_file": "00659R33.PDF"
+      },
+      {
+        "sample_id": "formal300_111",
+        "chart_id": "KACV_R01",
+        "pdf_file": "00519R1.PDF"
+      },
+      {
+        "sample_id": "formal300_112",
+        "chart_id": "KACY_R13-Y",
+        "pdf_file": "00669RY13.PDF"
+      },
+      {
+        "sample_id": "formal300_113",
+        "chart_id": "KACY_R31-Y",
+        "pdf_file": "00669RY31.PDF"
+      },
+      {
+        "sample_id": "formal300_114",
+        "chart_id": "KADS_R16",
+        "pdf_file": "00768R16.PDF"
+      },
+      {
+        "sample_id": "formal300_115",
+        "chart_id": "KAEX_R14",
+        "pdf_file": "00013R14.PDF"
+      },
+      {
+        "sample_id": "formal300_116",
+        "chart_id": "KAEX_R18",
+        "pdf_file": "00013R18.PDF"
+      },
+      {
+        "sample_id": "formal300_118",
+        "chart_id": "KAGC_R10",
+        "pdf_file": "00326R10.PDF"
+      },
+      {
+        "sample_id": "formal300_119",
+        "chart_id": "KAGC_R28",
+        "pdf_file": "00326R28.PDF"
+      },
+      {
+        "sample_id": "formal300_120",
+        "chart_id": "KAGS_R26",
+        "pdf_file": "00027R26.PDF"
+      },
+      {
+        "sample_id": "formal300_121",
+        "chart_id": "KAHQ_R20",
+        "pdf_file": "06377R20.PDF"
+      },
+      {
+        "sample_id": "formal300_122",
+        "chart_id": "KAJZ_R03",
+        "pdf_file": "10760R3.PDF"
+      },
+      {
+        "sample_id": "formal300_123",
+        "chart_id": "KAKH_R21",
+        "pdf_file": "06081R21.PDF"
+      },
+      {
+        "sample_id": "formal300_124",
+        "chart_id": "KALB_R10",
+        "pdf_file": "00010R10.PDF"
+      },
+      {
+        "sample_id": "formal300_125",
+        "chart_id": "KALB_R19-Y",
+        "pdf_file": "00010RY19.PDF"
+      },
+      {
+        "sample_id": "formal300_129",
+        "chart_id": "KALW_R02",
+        "pdf_file": "00440R2.PDF"
+      },
+      {
+        "sample_id": "formal300_130",
+        "chart_id": "KAMA_R04-Y",
+        "pdf_file": "00019RY4.PDF"
+      },
+      {
+        "sample_id": "formal300_131",
+        "chart_id": "KAMA_R13-Y",
+        "pdf_file": "00019RY13.PDF"
+      },
+      {
+        "sample_id": "formal300_133",
+        "chart_id": "KAPC_R01LY",
+        "pdf_file": "00281R6.PDF"
+      },
+      {
+        "sample_id": "formal300_134",
+        "chart_id": "KAPC_R01LZ",
+        "pdf_file": "00281R6.PDF"
+      },
+      {
+        "sample_id": "formal300_135",
+        "chart_id": "KAPN_R01",
+        "pdf_file": "00718R1.PDF"
+      },
+      {
+        "sample_id": "formal300_137",
+        "chart_id": "KARV_R18",
+        "pdf_file": "05692R18.PDF"
+      },
+      {
+        "sample_id": "formal300_140",
+        "chart_id": "KAAA_R03",
+        "pdf_file": "05697R3.PDF"
+      },
+      {
+        "sample_id": "formal300_141",
+        "chart_id": "KAAA_R21",
+        "pdf_file": "05697R21.PDF"
+      },
+      {
+        "sample_id": "formal300_145",
+        "chart_id": "KAAO_R18",
+        "pdf_file": "06234R18.PDF"
+      },
+      {
+        "sample_id": "formal300_146",
+        "chart_id": "KAAO_R36",
+        "pdf_file": "06234R36.PDF"
+      },
+      {
+        "sample_id": "formal300_148",
+        "chart_id": "KAAS_R23",
+        "pdf_file": "05210R23.PDF"
+      },
+      {
+        "sample_id": "formal300_149",
+        "chart_id": "KAAT_R31",
+        "pdf_file": "06436R31.PDF"
+      },
+      {
+        "sample_id": "formal300_150",
+        "chart_id": "KABI_R17L",
+        "pdf_file": "00001R17L.PDF"
+      },
+      {
+        "sample_id": "formal300_151",
+        "chart_id": "KABI_R35R",
+        "pdf_file": "00001R35R.PDF"
+      },
+      {
+        "sample_id": "formal300_153",
+        "chart_id": "KABQ_R08-Y",
+        "pdf_file": "00012RY8.PDF"
+      },
+      {
+        "sample_id": "formal300_154",
+        "chart_id": "KABR_R13",
+        "pdf_file": "00642R13.PDF"
+      },
+      {
+        "sample_id": "formal300_155",
+        "chart_id": "KABR_R17",
+        "pdf_file": "00642R17.PDF"
+      },
+      {
+        "sample_id": "formal300_156",
+        "chart_id": "KABR_R31",
+        "pdf_file": "00642R31.PDF"
+      },
+      {
+        "sample_id": "formal300_157",
+        "chart_id": "KACJ_R05",
+        "pdf_file": "05951R5.PDF"
+      },
+      {
+        "sample_id": "formal300_158",
+        "chart_id": "KACJ_R23",
+        "pdf_file": "05951R23.PDF"
+      },
+      {
+        "sample_id": "formal300_160",
+        "chart_id": "KACK_R15",
+        "pdf_file": "00659R15.PDF"
+      },
+      {
+        "sample_id": "formal300_162",
+        "chart_id": "KACP_R36",
+        "pdf_file": "09133R36.PDF"
+      },
+      {
+        "sample_id": "formal300_163",
+        "chart_id": "KACQ_R15",
+        "pdf_file": "06150R15.PDF"
+      },
+      {
+        "sample_id": "formal300_165",
+        "chart_id": "KACT_R01",
+        "pdf_file": "00439R1.PDF"
+      },
+      {
+        "sample_id": "formal300_166",
+        "chart_id": "KACV_R14",
+        "pdf_file": "00519R14.PDF"
+      },
+      {
+        "sample_id": "formal300_167",
+        "chart_id": "KACV_R32",
+        "pdf_file": "00519R32.PDF"
+      },
+      {
+        "sample_id": "formal300_170",
+        "chart_id": "KACZ_R27",
+        "pdf_file": "05587R27.PDF"
+      },
+      {
+        "sample_id": "formal300_171",
+        "chart_id": "KADC_R16",
+        "pdf_file": "09365R16.PDF"
+      },
+      {
+        "sample_id": "formal300_172",
+        "chart_id": "KADC_R34",
+        "pdf_file": "09365R34.PDF"
+      },
+      {
+        "sample_id": "formal300_173",
+        "chart_id": "KADF_R04",
+        "pdf_file": "05756R4.PDF"
+      },
+      {
+        "sample_id": "formal300_174",
+        "chart_id": "KADG_R05",
+        "pdf_file": "05555R5.PDF"
+      },
+      {
+        "sample_id": "formal300_175",
+        "chart_id": "KADG_R23",
+        "pdf_file": "05555R23.PDF"
+      },
+      {
+        "sample_id": "formal300_176",
+        "chart_id": "KADH_R18",
+        "pdf_file": "05149R18.PDF"
+      },
+      {
+        "sample_id": "formal300_178",
+        "chart_id": "KADM_R13",
+        "pdf_file": "00022R13.PDF"
+      },
+      {
+        "sample_id": "formal300_179",
+        "chart_id": "KADM_R31",
+        "pdf_file": "00022R31.PDF"
+      },
+      {
+        "sample_id": "formal300_182",
+        "chart_id": "KADU_R32",
+        "pdf_file": "06019R32.PDF"
+      },
+      {
+        "sample_id": "formal300_183",
+        "chart_id": "KAEG_R04",
+        "pdf_file": "06859R4.PDF"
+      },
+      {
+        "sample_id": "formal300_184",
+        "chart_id": "KAEG_R22",
+        "pdf_file": "06859R22.PDF"
+      },
+      {
+        "sample_id": "formal300_186",
+        "chart_id": "KAEL_R35",
+        "pdf_file": "05420R35.PDF"
+      },
+      {
+        "sample_id": "formal300_187",
+        "chart_id": "KAEX_R32",
+        "pdf_file": "00013R32.PDF"
+      },
+      {
+        "sample_id": "formal300_188",
+        "chart_id": "KAFJ_R09",
+        "pdf_file": "05148R9.PDF"
+      },
+      {
+        "sample_id": "formal300_189",
+        "chart_id": "KAFJ_R27",
+        "pdf_file": "05148R27.PDF"
+      },
+      {
+        "sample_id": "formal300_191",
+        "chart_id": "KAFK_R33",
+        "pdf_file": "09202R33.PDF"
+      },
+      {
+        "sample_id": "formal300_192",
+        "chart_id": "KAFO_R34",
+        "pdf_file": "09116R34.PDF"
+      },
+      {
+        "sample_id": "formal300_193",
+        "chart_id": "KAFP_R16",
+        "pdf_file": "06613R16.PDF"
+      },
+      {
+        "sample_id": "formal300_196",
+        "chart_id": "KAFW_R16R",
+        "pdf_file": "06918R16R.PDF"
+      },
+      {
+        "sample_id": "formal300_198",
+        "chart_id": "KAGO_R36",
+        "pdf_file": "06279R36.PDF"
+      },
+      {
+        "sample_id": "formal300_201",
+        "chart_id": "KAGZ_R09",
+        "pdf_file": "10429R9.PDF"
+      },
+      {
+        "sample_id": "formal300_202",
+        "chart_id": "KAGZ_R27",
+        "pdf_file": "10429R27.PDF"
+      },
+      {
+        "sample_id": "formal300_203",
+        "chart_id": "KAHH_R18",
+        "pdf_file": "06711R18.PDF"
+      },
+      {
+        "sample_id": "formal300_204",
+        "chart_id": "KAHH_R36",
+        "pdf_file": "06711R36.PDF"
+      },
+      {
+        "sample_id": "formal300_205",
+        "chart_id": "KAHN_R02",
+        "pdf_file": "00983R2.PDF"
+      },
+      {
+        "sample_id": "formal300_206",
+        "chart_id": "KAHN_R09",
+        "pdf_file": "00983R9.PDF"
+      },
+      {
+        "sample_id": "formal300_207",
+        "chart_id": "KAHN_R20",
+        "pdf_file": "00983R20.PDF"
+      },
+      {
+        "sample_id": "formal300_211",
+        "chart_id": "KAID_R12",
+        "pdf_file": "05133R12.PDF"
+      },
+      {
+        "sample_id": "formal300_212",
+        "chart_id": "KAID_R30",
+        "pdf_file": "05133R30.PDF"
+      },
+      {
+        "sample_id": "formal300_213",
+        "chart_id": "KAIG_R09",
+        "pdf_file": "06215R9.PDF"
+      },
+      {
+        "sample_id": "formal300_214",
+        "chart_id": "KAIG_R17",
+        "pdf_file": "06215R17.PDF"
+      },
+      {
+        "sample_id": "formal300_215",
+        "chart_id": "KAIG_R27",
+        "pdf_file": "06215R27.PDF"
+      },
+      {
+        "sample_id": "formal300_217",
+        "chart_id": "KAIK_R25",
+        "pdf_file": "05197R25.PDF"
+      },
+      {
+        "sample_id": "formal300_218",
+        "chart_id": "KAIO_R02",
+        "pdf_file": "05314R2.PDF"
+      },
+      {
+        "sample_id": "formal300_221",
+        "chart_id": "KAIT_R34",
+        "pdf_file": "06406R34.PDF"
+      },
+      {
+        "sample_id": "formal300_223",
+        "chart_id": "KAIV_R24",
+        "pdf_file": "09812R24.PDF"
+      },
+      {
+        "sample_id": "formal300_224",
+        "chart_id": "KAIZ_R04",
+        "pdf_file": "05765R4.PDF"
+      },
+      {
+        "sample_id": "formal300_227",
+        "chart_id": "KAJG_R22",
+        "pdf_file": "06159R22.PDF"
+      },
+      {
+        "sample_id": "formal300_229",
+        "chart_id": "KAJR_R06",
+        "pdf_file": "06074R6.PDF"
+      },
+      {
+        "sample_id": "formal300_233",
+        "chart_id": "KAKQ_R21",
+        "pdf_file": "05781R21.PDF"
+      },
+      {
+        "sample_id": "formal300_234",
+        "chart_id": "KAKR_R25",
+        "pdf_file": "00006R25.PDF"
+      },
+      {
+        "sample_id": "formal300_237",
+        "chart_id": "KALM_R04",
+        "pdf_file": "05130R4.PDF"
+      },
+      {
+        "sample_id": "formal300_238",
+        "chart_id": "KALN_R11",
+        "pdf_file": "05178R11.PDF"
+      },
+      {
+        "sample_id": "formal300_239",
+        "chart_id": "KALO_R12",
+        "pdf_file": "00945R12.PDF"
+      },
+      {
+        "sample_id": "formal300_240",
+        "chart_id": "KALO_R18",
+        "pdf_file": "00945R18.PDF"
+      },
+      {
+        "sample_id": "formal300_241",
+        "chart_id": "KALS_R20",
+        "pdf_file": "00018R20.PDF"
+      },
+      {
+        "sample_id": "formal300_242",
+        "chart_id": "KALW_R20",
+        "pdf_file": "00440R20.PDF"
+      },
+      {
+        "sample_id": "formal300_243",
+        "chart_id": "KALX_R18",
+        "pdf_file": "05480R18.PDF"
+      },
+      {
+        "sample_id": "formal300_244",
+        "chart_id": "KALX_R36",
+        "pdf_file": "05480R36.PDF"
+      },
+      {
+        "sample_id": "formal300_245",
+        "chart_id": "KAMG_R16",
+        "pdf_file": "00017R16.PDF"
+      },
+      {
+        "sample_id": "formal300_247",
+        "chart_id": "KAMN_R09",
+        "pdf_file": "05620R9.PDF"
+      },
+      {
+        "sample_id": "formal300_248",
+        "chart_id": "KAMN_R18",
+        "pdf_file": "05620R18.PDF"
+      },
+      {
+        "sample_id": "formal300_249",
+        "chart_id": "KAMN_R27",
+        "pdf_file": "05620R27.PDF"
+      },
+      {
+        "sample_id": "formal300_251",
+        "chart_id": "KAMT_R23",
+        "pdf_file": "06236R23.PDF"
+      },
+      {
+        "sample_id": "formal300_252",
+        "chart_id": "KAMW_R01",
+        "pdf_file": "05307R1.PDF"
+      },
+      {
+        "sample_id": "formal300_254",
+        "chart_id": "KAMW_R19",
+        "pdf_file": "05307R19.PDF"
+      },
+      {
+        "sample_id": "formal300_256",
+        "chart_id": "KAND_R05",
+        "pdf_file": "00857R5.PDF"
+      },
+      {
+        "sample_id": "formal300_258",
+        "chart_id": "KAND_R23",
+        "pdf_file": "00857R23.PDF"
+      },
+      {
+        "sample_id": "formal300_259",
+        "chart_id": "KANE_R09",
+        "pdf_file": "05202R9.PDF"
+      },
+      {
+        "sample_id": "formal300_261",
+        "chart_id": "KANE_R27",
+        "pdf_file": "05202R27.PDF"
+      },
+      {
+        "sample_id": "formal300_262",
+        "chart_id": "KANJ_R32",
+        "pdf_file": "00503R32.PDF"
+      },
+      {
+        "sample_id": "formal300_264",
+        "chart_id": "KANQ_R23",
+        "pdf_file": "06196R23.PDF"
+      },
+      {
+        "sample_id": "formal300_265",
+        "chart_id": "KANW_R13",
+        "pdf_file": "05681R13.PDF"
+      },
+      {
+        "sample_id": "formal300_266",
+        "chart_id": "KANW_R17",
+        "pdf_file": "05681R17.PDF"
+      },
+      {
+        "sample_id": "formal300_267",
+        "chart_id": "KANW_R31",
+        "pdf_file": "05681R31.PDF"
+      },
+      {
+        "sample_id": "formal300_268",
+        "chart_id": "KANY_R36",
+        "pdf_file": "00533R36.PDF"
+      },
+      {
+        "sample_id": "formal300_269",
+        "chart_id": "KAOH_R10",
+        "pdf_file": "05143R10.PDF"
+      },
+      {
+        "sample_id": "formal300_271",
+        "chart_id": "KAOV_R13",
+        "pdf_file": "06542R13.PDF"
+      },
+      {
+        "sample_id": "formal300_272",
+        "chart_id": "KAOV_R31",
+        "pdf_file": "06542R31.PDF"
+      },
+      {
+        "sample_id": "formal300_274",
+        "chart_id": "KAPA_R28",
+        "pdf_file": "05715R28.PDF"
+      },
+      {
+        "sample_id": "formal300_276",
+        "chart_id": "KAPF_R05-Y",
+        "pdf_file": "06020RY5.PDF"
+      },
+      {
+        "sample_id": "formal300_277",
+        "chart_id": "KAPF_R14",
+        "pdf_file": "06020R14.PDF"
+      },
+      {
+        "sample_id": "formal300_279",
+        "chart_id": "KAPN_R07",
+        "pdf_file": "00718R7.PDF"
+      },
+      {
+        "sample_id": "formal300_280",
+        "chart_id": "KAPN_R19",
+        "pdf_file": "00718R19.PDF"
+      },
+      {
+        "sample_id": "formal300_281",
+        "chart_id": "KAPS_R17",
+        "pdf_file": "09134R17.PDF"
+      },
+      {
+        "sample_id": "formal300_286",
+        "chart_id": "KAQX_R17",
+        "pdf_file": "05769R17.PDF"
+      },
+      {
+        "sample_id": "formal300_289",
+        "chart_id": "KARA_R35",
+        "pdf_file": "05040R35.PDF"
+      },
+      {
+        "sample_id": "formal300_291",
+        "chart_id": "KARB_R24",
+        "pdf_file": "05506R24.PDF"
+      },
+      {
+        "sample_id": "formal300_292",
+        "chart_id": "KARG_R18",
+        "pdf_file": "00441R18.PDF"
+      },
+      {
+        "sample_id": "formal300_293",
+        "chart_id": "KARG_R22",
+        "pdf_file": "00441R22.PDF"
+      },
+      {
+        "sample_id": "formal300_298",
+        "chart_id": "KARR_R27",
+        "pdf_file": "05103R27.PDF"
+      },
+      {
+        "sample_id": "formal300_299",
+        "chart_id": "KART_R07",
+        "pdf_file": "00666R7.PDF"
+      }
+    ],
+    "probe": [
+      {
+        "sample_id": "formal300_004",
+        "chart_id": "KAPC_I01L",
+        "pdf_file": "00281ILZ1L.PDF"
+      },
+      {
+        "sample_id": "formal300_005",
+        "chart_id": "KATL_I09R",
+        "pdf_file": "00026IL9R.PDF"
+      },
+      {
+        "sample_id": "formal300_015",
+        "chart_id": "KAXH_L09",
+        "pdf_file": "06575L9.PDF"
+      },
+      {
+        "sample_id": "formal300_018",
+        "chart_id": "KBFF_L12",
+        "pdf_file": "00383ILD12.PDF"
+      },
+      {
+        "sample_id": "formal300_040",
+        "chart_id": "KAFN_RNV-C",
+        "pdf_file": "05335RC.PDF"
+      },
+      {
+        "sample_id": "formal300_051",
+        "chart_id": "KBDN_R34",
+        "pdf_file": "05579R34.PDF"
+      },
+      {
+        "sample_id": "formal300_055",
+        "chart_id": "KBOS_R32",
+        "pdf_file": "00058R32.PDF"
+      },
+      {
+        "sample_id": "formal300_066",
+        "chart_id": "KAKH_R03",
+        "pdf_file": "06081R3.PDF"
+      },
+      {
+        "sample_id": "formal300_079",
+        "chart_id": "KBKW_R01",
+        "pdf_file": "00788R1.PDF"
+      },
+      {
+        "sample_id": "formal300_084",
+        "chart_id": "KBVY_R34",
+        "pdf_file": "05039R34.PDF"
+      },
+      {
+        "sample_id": "formal300_088",
+        "chart_id": "KCAO_R02",
+        "pdf_file": "09063R2.PDF"
+      },
+      {
+        "sample_id": "formal300_132",
+        "chart_id": "KANJ_R14",
+        "pdf_file": "00503R14.PDF"
+      },
+      {
+        "sample_id": "formal300_138",
+        "chart_id": "KARV_R28",
+        "pdf_file": "05692R28.PDF"
+      },
+      {
+        "sample_id": "formal300_142",
+        "chart_id": "KAAF_R06",
+        "pdf_file": "05600R6.PDF"
+      },
+      {
+        "sample_id": "formal300_164",
+        "chart_id": "KACQ_R33",
+        "pdf_file": "06150R33.PDF"
+      },
+      {
+        "sample_id": "formal300_168",
+        "chart_id": "KACY_R04",
+        "pdf_file": "00669R4.PDF"
+      },
+      {
+        "sample_id": "formal300_177",
+        "chart_id": "KADH_R36",
+        "pdf_file": "05149R36.PDF"
+      },
+      {
+        "sample_id": "formal300_181",
+        "chart_id": "KADT_R17",
+        "pdf_file": "06746R17.PDF"
+      },
+      {
+        "sample_id": "formal300_200",
+        "chart_id": "KAGS_R08-Z",
+        "pdf_file": "00027RZ8.PDF"
+      },
+      {
+        "sample_id": "formal300_225",
+        "chart_id": "KAIZ_R22",
+        "pdf_file": "05765R22.PDF"
+      },
+      {
+        "sample_id": "formal300_231",
+        "chart_id": "KAKO_R11",
+        "pdf_file": "05054R11.PDF"
+      },
+      {
+        "sample_id": "formal300_260",
+        "chart_id": "KANE_R18",
+        "pdf_file": "05202R18.PDF"
+      },
+      {
+        "sample_id": "formal300_273",
+        "chart_id": "KAPA_R17LY",
+        "pdf_file": "05715RRZ17L.PDF"
+      },
+      {
+        "sample_id": "formal300_288",
+        "chart_id": "KARA_R17",
+        "pdf_file": "05040R17.PDF"
+      },
+      {
+        "sample_id": "formal300_294",
+        "chart_id": "KARM_R14",
+        "pdf_file": "06032R14.PDF"
+      }
+    ]
+  }
+}
