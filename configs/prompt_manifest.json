@@ -1,115 +1,351 @@
 {
-  "manifest_version": "0.2.0",
-  "status": "candidate_record_not_formal_prompt_freeze",
-  "last_updated_utc": "2026-04-27T08:45:00Z",
-  "decision": "B1 and C3 prompt hashes are recorded from the strict-json-prefill pilot as candidate evidence only. Formal prompt freeze is deferred until the user explicitly approves final prompt text and broader method set alignment.",
-  "strict_output_control": {
-    "status": "frozen_strict_raw_json_v1",
-    "assistant_prefill_json": true,
-    "assistant_prefill_value": "{",
-    "parser_policy_path": "configs/parser_repair_policy.md"
-  },
-  "prompts": [
-    {
-      "method_id": "B1",
-      "method_boundary_status": "frozen",
-      "prompt_freeze_status": "candidate_not_frozen",
-      "prompt_path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
-      "prompt_path_status": "repo_pilot_artifact_committed_not_formal_freeze",
-      "prompt_version": "pilot10.zh_v1_candidate.strict_json_protocol",
-      "sha256": "75ba4289068b8fe8b3c450c7c611f34e09736c4017beb03814c9e3348d6f7cf0",
-      "pilot_run_prompt_sha256": "f2a2c27b534f93bb33d90834cc9fdde4726e8ae267bb3d1134679827d1e2f2e3",
-      "allowed_input_fields": [
-        "chart_id",
-        "airport",
-        "approach_ident",
-        "chart_name",
-        "full_chart_ocr_text"
-      ],
-      "forbidden_input_fields": [
-        "chart_image_pixels",
-        "ocr_bbox",
-        "roi",
-        "automatic_field_candidates",
-        "field_to_leg_candidates",
-        "gold_ma_prose",
-        "gold_observable_evidence",
-        "canonical_target",
-        "field_targets_jsonl",
-        "evidence_provenance_jsonl",
-        "challenge_tags_jsonl",
-        "scorer_outputs",
-        "CIFP_or_ARINC_424_records",
-        "human_annotation",
-        "historical_model_output_for_same_chart"
-      ],
-      "includes_domain_rules": false,
-      "includes_unknown_or_not_observable_instruction": true,
-      "final_output_schema": "schemas/missed_approach_leg.schema.json",
-      "pilot_evidence_run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
-      "pilot_evidence": {
-        "strict_json": "10/10",
-        "schema_valid": "10/10",
-        "parser_repair_count_non_strict_json": 0,
-        "score": "94/220",
-        "accuracy": 0.42727272727272725
-      }
-    },
-    {
-      "method_id": "C3",
-      "method_boundary_status": "frozen",
-      "prompt_freeze_status": "candidate_not_frozen",
-      "prompt_path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
-      "prompt_path_status": "repo_pilot_artifact_committed_not_formal_freeze",
-      "prompt_version": "pilot10.zh_v1_candidate.strict_json_protocol",
-      "sha256": "6491f5ba621ec5a91256503234cd2a4c87142c32e4d735234e571b84d70db294",
-      "pilot_run_prompt_sha256": "49e2ba9134e9c7737d98374786963424546123129c6faa7d648de8224e468e4e",
-      "allowed_input_fields": [
-        "chart_id",
-        "airport",
-        "approach_ident",
-        "chart_name",
-        "full_chart_image"
-      ],
-      "forbidden_input_fields": [
-        "external_ocr_text",
-        "ocr_bbox",
-        "roi",
-        "automatic_field_candidates",
-        "field_to_leg_candidates",
-        "gold_ma_prose",
-        "gold_observable_evidence",
-        "canonical_target",
-        "field_targets_jsonl",
-        "evidence_provenance_jsonl",
-        "challenge_tags_jsonl",
-        "scorer_outputs",
-        "CIFP_or_ARINC_424_records",
-        "human_annotation",
-        "historical_model_output_for_same_chart"
-      ],
-      "includes_domain_rules": false,
-      "includes_unknown_or_not_observable_instruction": true,
-      "intermediate_output_type": "questionnaire_json",
-      "final_output_schema": "schemas/missed_approach_leg.schema.json",
-      "pilot_evidence_run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
-      "pilot_evidence": {
-        "strict_json": "10/10",
-        "schema_valid": "10/10",
-        "parser_repair_count_non_strict_json": 0,
-        "score": "66/220",
-        "accuracy": 0.3
-      }
-    }
-  ],
-  "required_fields_per_prompt": [
-    "method_id",
-    "prompt_path",
-    "prompt_version",
-    "sha256",
-    "allowed_input_fields",
-    "forbidden_input_fields",
-    "includes_domain_rules",
-    "includes_unknown_or_not_observable_instruction"
-  ]
+    "manifest_version":  "0.3.0",
+    "status":  "candidate_record_prefreeze_final_optimization_not_formal_prompt_freeze",
+    "last_updated_utc":  "2026-04-29T02:45:22Z",
+    "decision":  "Experiment Group 1 candidate prompts have received the final pre-freeze output-stability hardening: exact metadata copy, status/value separation, schema-valid final self-checks, and degree/fix-ident safeguards. This is not formal prompt freeze and must not be interpreted as pilot100 score tuning.",
+    "strict_output_control":  {
+                                  "status":  "frozen_strict_raw_json_v1_plus_openai_tool_call_v1",
+                                  "raw_output_requirement":  "bare_json_only_no_markdown_no_code_fence",
+                                  "output_control_policy_path":  "configs/output_control_policy.md",
+                                  "openai_compatible_control":  {
+                                                                    "json_mode":  false,
+                                                                    "assistant_prefill_json":  false,
+                                                                    "output_control_for_B1_B1_prime":  "forced_tool_call_emit_canonical_json",
+                                                                    "tool_parameters_schema":  "schemas/missed_approach_leg.schema.json",
+                                                                    "schema_retry_count":  1,
+                                                                    "schema_retry_uses_target_or_scorer":  false
+                                                                },
+                                  "anthropic_compatible_control_for_historical_runs":  {
+                                                                                           "assistant_prefill_json":  true,
+                                                                                           "assistant_prefill_value":  "{"
+                                                                                       },
+                                  "anthropic_compatible_control_for_c_group_candidate_runs":  {
+                                                                                                  "json_mode":  false,
+                                                                                                  "assistant_prefill_json":  true,
+                                                                                                  "assistant_prefill_value":  "{"
+                                                                                              },
+                                  "parser_policy_path":  "configs/parser_repair_policy.md"
+                              },
+    "prompts":  [
+                    {
+                        "method_id":  "B1",
+                        "experiment_group":  1,
+                        "method_boundary_status":  "frozen",
+                        "prompt_freeze_status":  "candidate_prefreeze_final_optimization_not_formal_frozen",
+                        "prompt_path":  "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+                        "prompt_version":  "pilot10.zh_v1_candidate.gpt54_status_value_q4_strict_json.prefreeze_final_20260429",
+                        "sha256":  "f9be2fb84a7554897045c27abf787e47758f1687de406312e9afe1ebe15d4f3f",
+                        "allowed_input_fields":  [
+                                                     "chart_id",
+                                                     "airport",
+                                                     "approach_ident",
+                                                     "chart_name",
+                                                     "full_chart_ocr_text_from_registered_OCR_1"
+                                                 ],
+                        "forbidden_input_fields":  [
+                                                       "chart_image_pixels_at_llm_stage",
+                                                       "ocr_bbox",
+                                                       "roi",
+                                                       "automatic_field_candidates",
+                                                       "field_to_leg_candidates",
+                                                       "gold_ma_prose",
+                                                       "gold_observable_evidence",
+                                                       "canonical_target",
+                                                       "field_targets_jsonl",
+                                                       "evidence_provenance_jsonl",
+                                                       "challenge_tags_jsonl",
+                                                       "scorer_outputs",
+                                                       "CIFP_or_ARINC_424_records",
+                                                       "human_annotation",
+                                                       "historical_model_output_for_same_chart"
+                                                   ],
+                        "includes_domain_rules":  false,
+                        "includes_unknown_or_not_observable_instruction":  true,
+                        "final_output_schema":  "schemas/missed_approach_leg.schema.json"
+                    },
+                    {
+                        "method_id":  "B1_prime",
+                        "experiment_group":  1,
+                        "method_boundary_status":  "candidate_not_frozen",
+                        "prompt_freeze_status":  "candidate_prefreeze_final_optimization_not_formal_frozen",
+                        "prompt_path":  "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+                        "prompt_version":  "pilot10.zh_v0_candidate.gpt54_status_value_q4_strict_json_weak_candidates_route_snippets_v8.prefreeze_final_20260429",
+                        "sha256":  "08244d80f0ea85c579158d4b8512bfa021a26755bb342742ed2362a80763c707",
+                        "allowed_input_fields":  [
+                                                     "chart_id",
+                                                     "airport",
+                                                     "approach_ident",
+                                                     "chart_name",
+                                                     "full_chart_ocr_text_from_registered_OCR_1",
+                                                     "automatic_field_candidates_from_ocr_text_only_matcher"
+                                                 ],
+                        "forbidden_input_fields":  [
+                                                       "chart_image_pixels_at_llm_stage",
+                                                       "roi",
+                                                       "field_to_leg_candidates",
+                                                       "gold_ma_prose",
+                                                       "gold_observable_evidence",
+                                                       "canonical_target",
+                                                       "expected_value",
+                                                       "PR32_target_aware_mapping",
+                                                       "scorer_outputs",
+                                                       "CIFP_or_ARINC_424_records",
+                                                       "human_annotation"
+                                                   ],
+                        "includes_domain_rules":  false,
+                        "includes_unknown_or_not_observable_instruction":  true,
+                        "final_output_schema":  "schemas/missed_approach_leg.schema.json",
+                        "candidate_evidence_policy":  "field_candidates_are_weak_evidence_instruction_and_route_snippets_are_ocr_only_non_gold_no_leg_binding_no_empty_legs_when_usable_instruction_exists"
+                    },
+                    {
+                        "method_id":  "B1_prime_link",
+                        "experiment_group":  1,
+                        "method_boundary_status":  "candidate_not_frozen",
+                        "prompt_freeze_status":  "candidate_group1_prefreeze_not_formal_frozen",
+                        "prompt_path":  "prompts/paper_v2/b1_prime_link_ocr_candidates_links_to_canonical.zh_v0_candidate.md",
+                        "prompt_version":  "zh_v0_candidate.gpt54_ocr1_field_candidates_field_to_leg_links.prefreeze_20260429",
+                        "sha256":  "2b135d82928e3963a5b37ad5ebcee82e2e079aa94d34c88cf33b1d215c8909c2",
+                        "pilot100_run_prompt_sha256":  "2b135d82928e3963a5b37ad5ebcee82e2e079aa94d34c88cf33b1d215c8909c2",
+                        "allowed_input_fields":  [
+                                                     "chart_id",
+                                                     "airport",
+                                                     "approach_ident",
+                                                     "chart_name",
+                                                     "full_chart_ocr_text_from_registered_OCR_1",
+                                                     "automatic_flat_field_candidates_from_ocr_text_only_matcher",
+                                                     "automatic_non_target_aware_field_to_leg_links_from_same_ocr_text_and_field_candidates"
+                                                 ],
+                        "forbidden_input_fields":  [
+                                                       "chart_image_pixels_at_llm_stage",
+                                                       "ocr_bbox_or_coordinates",
+                                                       "roi_or_visual_cells",
+                                                       "gold_ma_prose",
+                                                       "gold_observable_evidence",
+                                                       "canonical_target",
+                                                       "expected_value",
+                                                       "manual_or_gold_field_to_leg_mapping",
+                                                       "PR32_target_aware_mapping",
+                                                       "field_targets_jsonl",
+                                                       "evidence_provenance_jsonl",
+                                                       "challenge_tags_jsonl",
+                                                       "scorer_outputs",
+                                                       "CIFP_or_ARINC_424_records",
+                                                       "human_annotation",
+                                                       "historical_model_output_for_same_chart"
+                                                   ],
+                        "includes_domain_rules":  false,
+                        "includes_unknown_or_not_observable_instruction":  true,
+                        "field_to_leg_schema":  "schemas/field_to_leg_links.schema.candidate.json",
+                        "field_to_leg_schema_sha256":  "1085f187055f1e6b7b78bb9958643ed4eb06bfa7d8a4a65870537bd34f704262",
+                        "final_output_schema":  "schemas/missed_approach_leg.schema.json",
+                        "candidate_evidence_policy":  "field_to_leg_links_are_automatic_non_target_aware_weak_evidence_not_gold_legs_not_allowed_inside_B1_prime"
+                    },
+                    {
+                        "method_id":  "C1",
+                        "experiment_group":  1,
+                        "method_boundary_status":  "candidate_not_frozen",
+                        "prompt_freeze_status":  "candidate_prefreeze_final_optimization_not_formal_frozen",
+                        "prompt_path":  "prompts/paper_v2/c1_image_to_canonical_pilot10.zh_v1_candidate.md",
+                        "prompt_version":  "pilot10.zh_v1_candidate.claude_vlm_strict_json.prefreeze_final_20260429",
+                        "sha256":  "aa87bf512359160da4c54503911bfccc38a6e55ee9af619b9eef3c48183ef74c",
+                        "allowed_input_fields":  [
+                                                     "chart_id",
+                                                     "airport",
+                                                     "approach_ident",
+                                                     "chart_name",
+                                                     "full_chart_image"
+                                                 ],
+                        "forbidden_input_fields":  [
+                                                       "ocr_text",
+                                                       "ocr_bbox",
+                                                       "roi",
+                                                       "automatic_field_candidates",
+                                                       "field_to_leg_candidates",
+                                                       "gold_ma_prose",
+                                                       "gold_observable_evidence",
+                                                       "canonical_target",
+                                                       "scorer_outputs",
+                                                       "CIFP_or_ARINC_424_records",
+                                                       "human_annotation"
+                                                   ],
+                        "includes_domain_rules":  false,
+                        "includes_unknown_or_not_observable_instruction":  true,
+                        "final_output_schema":  "schemas/missed_approach_leg.schema.json"
+                    },
+                    {
+                        "method_id":  "C2",
+                        "experiment_group":  1,
+                        "method_boundary_status":  "candidate_not_frozen",
+                        "prompt_freeze_status":  "candidate_not_frozen",
+                        "prompt_path":  "prompts/path_c_qa_v2/",
+                        "prompt_version":  "path_c_qa_v2.upstream_pr28_candidate",
+                        "sha256":  "5c9973be0baac527390868b3f7200ae4e522b8e9f9921a7fb8f73422e43a2ffc",
+                        "sha256_semantics":  "bundle hash from docs/upstream_imports/pr28_schema_import_20260427.md",
+                        "allowed_input_fields":  [
+                                                     "chart_id",
+                                                     "airport",
+                                                     "approach_ident",
+                                                     "chart_name",
+                                                     "full_chart_image",
+                                                     "fixed_QA_prompt_bundle"
+                                                 ],
+                        "forbidden_input_fields":  [
+                                                       "ocr_text",
+                                                       "ocr_bbox",
+                                                       "roi",
+                                                       "automatic_field_candidates",
+                                                       "field_to_leg_candidates",
+                                                       "gold_ma_prose",
+                                                       "gold_observable_evidence",
+                                                       "canonical_target",
+                                                       "field_targets_jsonl",
+                                                       "evidence_provenance_jsonl",
+                                                       "challenge_tags_jsonl",
+                                                       "scorer_outputs",
+                                                       "CIFP_or_ARINC_424_records",
+                                                       "human_annotation"
+                                                   ],
+                        "includes_domain_rules":  true,
+                        "includes_unknown_or_not_observable_instruction":  true,
+                        "intermediate_output_type":  "per_question_qa_json",
+                        "aggregator_path":  "scripts/aggregate_c2_qa_candidate.py",
+                        "aggregator_spec_path":  "docs/group1_c2_qa_aggregator_candidate_v1.md",
+                        "final_output_schema":  "schemas/missed_approach_leg.schema.json"
+                    },
+                    {
+                        "method_id":  "C3",
+                        "experiment_group":  1,
+                        "method_boundary_status":  "frozen",
+                        "prompt_freeze_status":  "candidate_prefreeze_final_optimization_not_formal_frozen",
+                        "prompt_path":  "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+                        "prompt_version":  "pilot10.zh_v1_candidate.claude_vlm_questionnaire_q4_strict_json.prefreeze_final_20260429",
+                        "sha256":  "858b91b07d778498ddbe484a6d54f8555169c9c674f3189dfb69b06e2c406362",
+                        "allowed_input_fields":  [
+                                                     "chart_id",
+                                                     "airport",
+                                                     "approach_ident",
+                                                     "chart_name",
+                                                     "full_chart_image"
+                                                 ],
+                        "forbidden_input_fields":  [
+                                                       "external_ocr_text",
+                                                       "ocr_bbox",
+                                                       "roi",
+                                                       "automatic_field_candidates",
+                                                       "field_to_leg_candidates",
+                                                       "gold_ma_prose",
+                                                       "gold_observable_evidence",
+                                                       "canonical_target",
+                                                       "field_targets_jsonl",
+                                                       "evidence_provenance_jsonl",
+                                                       "challenge_tags_jsonl",
+                                                       "scorer_outputs",
+                                                       "CIFP_or_ARINC_424_records",
+                                                       "human_annotation",
+                                                       "historical_model_output_for_same_chart"
+                                                   ],
+                        "includes_domain_rules":  false,
+                        "includes_unknown_or_not_observable_instruction":  true,
+                        "intermediate_output_type":  "questionnaire_json",
+                        "final_output_schema":  "schemas/missed_approach_leg.schema.json"
+                    },
+                    {
+                        "method_id":  "C4",
+                        "experiment_group":  1,
+                        "method_boundary_status":  "candidate_not_frozen",
+                        "prompt_freeze_status":  "candidate_prefreeze_final_optimization_not_formal_frozen",
+                        "prompt_path":  "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+                        "prompt_version":  "pilot10.zh_v1_candidate.claude_vlm_ocr1_q4_strict_json.prefreeze_final_20260429",
+                        "sha256":  "5a60df7bdeead7c01e38ccb8c8ccc1802af6110a0f41c4658e2f5cdcc313588a",
+                        "allowed_input_fields":  [
+                                                     "chart_id",
+                                                     "airport",
+                                                     "approach_ident",
+                                                     "chart_name",
+                                                     "full_chart_image",
+                                                     "full_chart_ocr_text_from_same_full_chart_image_and_registered_OCR_1"
+                                                 ],
+                        "forbidden_input_fields":  [
+                                                       "ocr_text_from_another_input_view",
+                                                       "roi",
+                                                       "automatic_field_candidates",
+                                                       "field_to_leg_candidates",
+                                                       "gold_ma_prose",
+                                                       "gold_observable_evidence",
+                                                       "canonical_target",
+                                                       "field_targets_jsonl",
+                                                       "evidence_provenance_jsonl",
+                                                       "challenge_tags_jsonl",
+                                                       "scorer_outputs",
+                                                       "CIFP_or_ARINC_424_records",
+                                                       "human_annotation",
+                                                       "historical_model_output_for_same_chart"
+                                                   ],
+                        "includes_domain_rules":  false,
+                        "includes_unknown_or_not_observable_instruction":  true,
+                        "final_output_schema":  "schemas/missed_approach_leg.schema.json"
+                    }
+                ],
+    "prior_pilot_evidence":  {
+                                 "pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1":  {
+                                                                                                                   "sample_role":  "pilot100_external_expanded_feasibility_only_not_formal300",
+                                                                                                                   "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                                   "report_path":  "reports/pilot/pilot100_b1_b1prime_expanded_validation_20260428.md",
+                                                                                                                   "B1":  "100/100 schema-valid, 0 parser repair, 7 schema-only retries, 723/2344 accuracy=0.308447",
+                                                                                                                   "B1_prime":  "100/100 schema-valid, 0 parser repair, 11 schema-only retries, field_candidates 100/100 schema-valid, 674/2344 accuracy=0.287543",
+                                                                                                                   "interpretation":  "Supports output/path stability for B1 and B1_prime, but B1_prime remains candidate because it underperformed B1 on the expanded set."
+                                                                                                               },
+                                 "b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2":  {
+                                                                                                      "sample_role":  "pilot100_external_expanded_feasibility_only_not_formal300",
+                                                                                                      "artifact_root":  "E:\\experiment3\\B1\u0027_link",
+                                                                                                      "report_path":  "reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md",
+                                                                                                      "revalidation_json":  "reports/pilot/b1_prime_link_group1_candidate_pilot100_revalidation_20260429.json",
+                                                                                                      "B1_prime_link":  "100/100 schema-valid, 100/100 field_to_leg sample links schema-valid, 0 parser repair, 1 schema-only retry, 1031/2344 accuracy=0.439846",
+                                                                                                      "comparison":  "Same pilot100 set: B1 723/2344 accuracy=0.308447; B1_prime 674/2344 accuracy=0.287543.",
+                                                                                                      "interpretation":  "Supports adding B1_prime_link as a separate Group 1 candidate after B1_prime. It is not B1_prime and remains not formally frozen."
+                                                                                                  },
+                                 "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1":  {
+                                                                                            "B1":  "forbidden_for_formal_use_because_ocr_text_was_claude_mllm_generated",
+                                                                                            "C3":  "image_only_pilot_evidence_not_model_comparable_to_gpt54_until_rerun"
+                                                                                        },
+                                 "pilot100_b1prime_v4_smoke18_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1":  {
+                                                                                                                           "sample_role":  "pilot100_b1prime_v4_smoke_external_excluded_from_formal_evaluation",
+                                                                                                                           "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                                           "report_path":  "reports/pilot/pilot100_b1prime_v4_smoke18_20260428.md",
+                                                                                                                           "candidate_audit":  "pilot100_b1prime_field_matcher_v4_candidate_audit_20260428_r3: 100/100 field_candidates schema-valid, 0 model calls",
+                                                                                                                           "B1_prime_v4":  "18/18 schema-valid, 0 parser repair, 0 schema retries, 118/438 accuracy=0.269406",
+                                                                                                                           "comparison_subset":  "B1 old 114/438; B1_prime v3 old 89/438; B1_prime v4 smoke 118/438",
+                                                                                                                           "decision":  "Do not run 30-chart probe yet; B1_prime remains candidate_not_frozen because 5/18 smoke outputs still produced empty legs."
+                                                                                                                       },
+                                 "pilot100_b1prime_v7_smoke18_and_probe30_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1":  {
+                                                                                                                                       "sample_role":  "pilot100 external smoke/probe excluded from formal evaluation",
+                                                                                                                                       "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                                                       "report_path":  "reports/pilot/pilot100_b1prime_v7_smoke18_probe30_20260428.md",
+                                                                                                                                       "comparison_json":  "reports/pilot/pilot100_b1prime_v7_smoke18_probe30_comparison_20260428_r1.json",
+                                                                                                                                       "candidate_audit":  "pilot100_b1prime_field_matcher_v7_candidate_audit_20260428_r1: 100/100 field_candidates schema-valid, 0 model calls",
+                                                                                                                                       "B1_prime_v7_smoke18":  "18/18 schema-valid, 0 parser repair, 0 schema retries, 0 empty-leg outputs, 159/438 accuracy=0.363014",
+                                                                                                                                       "B1_prime_v7_probe30":  "30/30 schema-valid, 0 parser repair, 2 schema-only retries, 0 empty-leg outputs, 191/606 accuracy=0.315182",
+                                                                                                                                       "decision":  "Do not formally freeze B1_prime matcher/prompt yet. v7 fixes empty-leg failures but probe30 remains below B1 old, so targeted under-segmentation analysis is required before full pilot100 v7."
+                                                                                                                                   },
+                                 "pilot100_b1prime_v8_hard4_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1":  {
+                                                                                                                         "sample_role":  "pilot100_b1prime_v8_hard4_smoke_external_excluded_from_formal_evaluation",
+                                                                                                                         "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                                         "report_path":  "reports/pilot/pilot100_b1prime_v8_hard4_20260428.md",
+                                                                                                                         "comparison_json":  "reports/pilot/pilot100_b1prime_v8_hard4_comparison_20260428_r1.json",
+                                                                                                                         "candidate_audit":  "pilot100_b1prime_field_matcher_v8_candidate_audit_20260428_r2: 100/100 field_candidates schema-valid, 0 model calls",
+                                                                                                                         "B1_prime_v8_hard4":  "4/4 schema-valid, 0 parser repair, 0 schema retries, 27/160 accuracy=0.16875",
+                                                                                                                         "comparison_subset":  "B1_prime v7 same hard4 cases 13/160; B1_prime v8 27/160",
+                                                                                                                         "decision":  "Do not formally freeze B1_prime matcher/prompt. v8 helps explicit track-to-fix prose but does not solve route-table-only RNAV and remains candidate."
+                                                                                                                     }
+                             },
+    "required_fields_per_prompt":  [
+                                       "method_id",
+                                       "prompt_path",
+                                       "prompt_version",
+                                       "sha256",
+                                       "allowed_input_fields",
+                                       "forbidden_input_fields",
+                                       "includes_domain_rules",
+                                       "includes_unknown_or_not_observable_instruction"
+                                   ]
 }

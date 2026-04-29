@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/schemas/c3_questionnaire.schema.candidate.json",
+  "title": "C3 Questionnaire JSON Candidate Schema",
+  "description": "Intermediate questionnaire JSON schema for C3 before deterministic conversion to canonical missed-approach JSON.",
+  "type": "object",
+  "required": ["chart_id", "procedure", "questionnaire"],
+  "additionalProperties": false,
+  "properties": {
+    "chart_id": {
+      "type": "string",
+      "pattern": "^[A-Z]{4}_[A-Z0-9\\-]+$"
+    },
+    "procedure": {
+      "type": "object",
+      "required": ["airport", "approach_ident", "chart_name"],
+      "additionalProperties": false,
+      "properties": {
+        "airport": { "type": "string", "pattern": "^[A-Z]{4}$" },
+        "approach_ident": { "type": "string" },
+        "chart_name": { "type": "string" }
+      }
+    },
+    "questionnaire": {
+      "type": "object",
+      "required": ["Q0_leg_count", "legs"],
+      "additionalProperties": false,
+      "properties": {
+        "Q0_leg_count": { "$ref": "#/$defs/answer_int" },
+        "legs": {
+          "type": "array",
+          "minItems": 0,
+          "items": { "$ref": "#/$defs/questionnaire_leg" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "status_enum": {
+      "type": "string",
+      "enum": ["present", "not_applicable", "not_observable", "unknown"]
+    },
+    "answer_int": {
+      "type": "object",
+      "required": ["status", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "$ref": "#/$defs/status_enum" },
+        "value": { "type": ["integer", "null"] }
+      }
+    },
+    "questionnaire_leg": {
+      "type": "object",
+      "required": [
+        "leg_index",
+        "Q_terminator",
+        "Q1_fix_ident",
+        "Q2_altitude_constraint",
+        "Q3_turn",
+        "Q4_course_or_radial",
+        "Q5_hold_params"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "leg_index": { "type": "integer", "minimum": 1 },
+        "Q_terminator": { "$ref": "#/$defs/answer_terminator" },
+        "Q1_fix_ident": { "$ref": "#/$defs/answer_fix_ident" },
+        "Q2_altitude_constraint": { "$ref": "#/$defs/answer_altitude_constraint" },
+        "Q3_turn": { "$ref": "#/$defs/answer_turn" },
+        "Q4_course_or_radial": { "$ref": "#/$defs/answer_course_or_radial" },
+        "Q5_hold_params": { "$ref": "#/$defs/answer_hold_params" }
+      }
+    },
+    "answer_terminator": {
+      "type": "object",
+      "required": ["status", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "$ref": "#/$defs/status_enum" },
+        "value": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "string",
+              "enum": [
+                "CA", "CF", "CI", "CR", "DF", "FA", "FM",
+                "HA", "HF", "HM", "IF", "RF", "TF",
+                "VA", "VD", "VI", "VM", "VR",
+                "AF", "CD", "FC", "FD", "VC", "PI",
+                "unknown"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "answer_fix_ident": {
+      "type": "object",
+      "required": ["status", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "$ref": "#/$defs/status_enum" },
+        "value": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "string", "minLength": 1, "maxLength": 5 }
+          ]
+        }
+      }
+    },
+    "answer_altitude_constraint": {
+      "type": "object",
+      "required": ["status", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "$ref": "#/$defs/status_enum" },
+        "value": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["desc", "altitude_ft", "altitude_2_ft"],
+              "additionalProperties": false,
+              "properties": {
+                "desc": {
+                  "type": "string",
+                  "enum": ["AT", "AT_OR_ABOVE", "AT_OR_BELOW", "BETWEEN"]
+                },
+                "altitude_ft": { "type": ["integer", "null"] },
+                "altitude_2_ft": { "type": ["integer", "null"] }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "answer_turn": {
+      "type": "object",
+      "required": ["status", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "$ref": "#/$defs/status_enum" },
+        "value": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "string", "enum": ["LEFT", "RIGHT"] }
+          ]
+        }
+      }
+    },
+    "answer_course_or_radial": {
+      "type": "object",
+      "required": ["status", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "$ref": "#/$defs/status_enum" },
+        "value": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["type"],
+              "oneOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "type": { "const": "course_deg" },
+                    "course_deg": { "type": "number", "minimum": 0, "maximum": 359.9 }
+                  },
+                  "required": ["type", "course_deg"]
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "type": { "const": "navaid_radial" },
+                    "navaid": { "type": "string", "minLength": 1, "maxLength": 5 },
+                    "radial_deg": { "type": "number", "minimum": 0, "maximum": 359.9 },
+                    "direction": { "type": "string", "enum": ["outbound", "inbound"] }
+                  },
+                  "required": ["type", "navaid", "radial_deg", "direction"]
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "type": { "const": "direct" }
+                  },
+                  "required": ["type"]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "answer_hold_params": {
+      "type": "object",
+      "required": ["status", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "$ref": "#/$defs/status_enum" },
+        "value": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["inbound_course_deg", "leg_time_min", "leg_distance_nm", "turn"],
+              "additionalProperties": false,
+              "properties": {
+                "inbound_course_deg": { "type": ["number", "null"], "minimum": 0, "maximum": 359.9 },
+                "leg_time_min": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+                "leg_distance_nm": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+                "turn": {
+                  "anyOf": [
+                    { "type": "null" },
+                    { "type": "string", "enum": ["LEFT", "RIGHT"] }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

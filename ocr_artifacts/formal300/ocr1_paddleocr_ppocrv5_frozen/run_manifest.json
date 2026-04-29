@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-04-29T15:34:36.285691+00:00",
+  "sample_manifest": "benchmark_exports/derived/v2/formal300/sample_manifest.jsonl",
+  "sample_role": "formal300_group1_input_frozen_candidate",
+  "config": {
+    "ocr_id": "OCR-1",
+    "engine": "PaddleOCR",
+    "paddleocr_version": "3.5.0",
+    "paddle_version": "3.2.2",
+    "ocr_version": "PP-OCRv5",
+    "lang": "en",
+    "line_ordering_rule": "paddleocr_engine_returned_rec_texts_order",
+    "ordinary_ocr_source": true,
+    "mlm_or_vlm_transcription": false
+  },
+  "sample_count": 300,
+  "manifest_path": "ocr_artifacts/formal300/ocr1_paddleocr_ppocrv5_frozen/manifest.jsonl",
+  "manifest_sha256": "f31c34258be5ca46bfd4d083682c4101a45368efff1525920fa020cd34eebe39"
+}

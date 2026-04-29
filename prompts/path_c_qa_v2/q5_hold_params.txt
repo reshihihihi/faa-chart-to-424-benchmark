@@ -7,7 +7,7 @@ Four sub-fields:
   leg_time_min        : time on each racetrack leg (typical: 1.0 min below 14000 ft,
                         1.5 min above). Mutually exclusive with leg_distance_nm.
   leg_distance_nm     : distance-based hold (RNAV); null if time-based.
-  turn                : "LEFT" or "RIGHT" — direction of racetrack turns
+  turn                : "LEFT" or "RIGHT" - direction of racetrack turns
 
 Exactly ONE of leg_time_min / leg_distance_nm is non-null.
 
@@ -19,7 +19,7 @@ Chart cues:
 - Turn direction from the racetrack's curve orientation OR text
   "left turns" / "right turns"
 
-Standard inferences (use when chart does not explicitly state — these are valid PRESENT
+Standard inferences (use when chart does not explicitly state - these are valid PRESENT
 answers, not not_observable):
 - Time-based hold: 1.0 min below 14000 ft, 1.5 min at or above
 - Turn direction: right turns unless chart shows otherwise
@@ -39,8 +39,17 @@ OUTPUT (single JSON object):
 Scoring note: COMPOSITE field. All four sub-fields compared as one atom.
 
 Rules:
-- Non-hold leg (CA/CF/DF/TF/FA/VI/etc.) → status=not_applicable, value=null.
-- Hold leg with explicit + inferable parameters → status=present, value populated.
+- Non-hold leg (CA/CF/DF/TF/FA/VI/etc.) -> status=not_applicable, value=null.
+- Hold leg with explicit + inferable parameters -> status=present, value populated.
 - Hold leg but a parameter cannot be determined even from standard conventions
-  → set that sub-field to null; keep status=present if other parameters resolved,
+  -> set that sub-field to null; keep status=present if other parameters resolved,
   or status=unknown if too many are null.
+- inbound_course_deg must be 0.0 through 359.9. If the chart displays 360 degrees, encode it as 359.9, never as 360.
+
+Strict output rules:
+- Return exactly one bare JSON object with keys status and value.
+- Do not output Markdown, code fences, prose, or any text outside JSON.
+- status must be exactly present, not_applicable, not_observable, or unknown.
+- If status is not present, value must be null.
+- If status is present, value must contain exactly inbound_course_deg, leg_time_min, leg_distance_nm, and turn.
+- Do not encode the value object as a string. Use "value": {"inbound_course_deg": 175, "leg_time_min": 1.0, "leg_distance_nm": null, "turn": "RIGHT"}, not a quoted JSON string.

@@ -20,6 +20,13 @@ OUTPUT (single JSON object):
 { "status": "<present|not_observable|unknown>", "value": <integer | null> }
 
 Rules:
-- If you can count legs from the chart → status=present, value=count.
-- If the chart gives no missed-approach instructions at all (rare) → status=not_observable, value=null.
-- If uncertain → status=unknown, value=null. "unknown" is a valid answer; do not guess.
+- If you can count legs from the chart -> status=present, value=count.
+- If the chart gives no missed-approach instructions at all (rare) -> status=not_observable, value=null.
+- If uncertain -> status=unknown, value=null. "unknown" is a valid answer; do not guess.
+
+Strict output rules:
+- Return exactly one bare JSON object with keys status and value.
+- Do not output Markdown, code fences, prose, or any text outside JSON.
+- status must be exactly present, not_observable, or unknown.
+- If status is not present, value must be null.
+- If status is present, value must be an integer leg count.

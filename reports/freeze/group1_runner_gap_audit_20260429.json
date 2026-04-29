@@ -1,0 +1,84 @@
+{
+  "status": "runner_gaps_recorded_not_formal_frozen",
+  "created_at_utc": "2026-04-29T04:55:02.684779+00:00",
+  "required_formal_runner_properties": [
+    "accepts a frozen sample/input manifest",
+    "writes run_manifest with prompt/model/schema/scorer/parser hashes",
+    "writes per-sample raw output, parsed output, validation, attempt_count, retry reason",
+    "cannot read target/scorer directories during inference",
+    "separates inference from scoring",
+    "preserves parse/schema/API failures rather than dropping samples"
+  ],
+  "methods": [
+    {
+      "method": "A1",
+      "runner": "scripts/run_a1_a2_rules_pilot10.py",
+      "exists": true,
+      "status": "candidate_pilot_runner_only",
+      "gap": "Needs formal300 input-manifest driven wrapper; must write OCR-1 artifact hashes and rule diagnostics."
+    },
+    {
+      "method": "A2",
+      "runner": "scripts/run_a1_a2_rules_pilot10.py",
+      "exists": true,
+      "status": "candidate_pilot_runner_only",
+      "gap": "Needs same formal rules wrapper as A1 with OCR-2 artifact manifest and identical rules hash."
+    },
+    {
+      "method": "B1",
+      "runner": "scripts/run_group1_pilot10_gpt54.py",
+      "exists": true,
+      "status": "candidate_pilot_runner_only",
+      "gap": "Needs formal runner that reads OCR-1 artifact manifest but cannot read targets/scores during inference."
+    },
+    {
+      "method": "B1_prime",
+      "runner": "scripts/run_group1_pilot10_gpt54.py",
+      "exists": true,
+      "status": "candidate_pilot_runner_only",
+      "gap": "Needs frozen field_candidates generator/matcher and formal runner path."
+    },
+    {
+      "method": "B1_prime_link",
+      "runner": "external only under E:/experiment3/B1'_link",
+      "exists": false,
+      "status": "not_consolidated_in_repo",
+      "gap": "Need repo runner or wrapper that generates field_candidates and field_to_leg_links without target/scorer access."
+    },
+    {
+      "method": "C1",
+      "runner": "scripts/run_b1_c1_pilot10_ocr1.py",
+      "exists": true,
+      "status": "candidate_pilot_runner_only",
+      "gap": "Needs image-only formal runner using VLM tool schema and no OCR text."
+    },
+    {
+      "method": "C2",
+      "runner": "scripts/run_c2_qa_pilot10.py + scripts/aggregate_c2_qa_candidate.py",
+      "exists": true,
+      "status": "candidate_pilot_runner_only",
+      "gap": "Needs formal QA call manifest, QA schema hash, aggregator hash, and invalid QA handling."
+    },
+    {
+      "method": "C3",
+      "runner": "scripts/run_pilot10_anthropic.py",
+      "exists": true,
+      "status": "candidate_pilot_runner_only",
+      "gap": "Needs formal image-only C3 wrapper; current script has pilot10-oriented constants."
+    },
+    {
+      "method": "C4",
+      "runner": "scripts/run_b1prime_c4_pilot10.py",
+      "exists": true,
+      "status": "candidate_pilot_runner_only",
+      "gap": "Needs formal image+OCR-1 runner with high-retry decision documented."
+    },
+    {
+      "method": "D_SFT",
+      "runner": "scripts/d_sft_infer_qwen2vl_lora.py",
+      "exists": true,
+      "status": "candidate/frozen D-SFT runner exists",
+      "gap": "Needs formal300 run wrapper and invalid output denominator policy."
+    }
+  ]
+}

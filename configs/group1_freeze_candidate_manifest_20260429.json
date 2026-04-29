@@ -1,0 +1,38 @@
+{
+  "manifest_version": "0.1.0",
+  "status": "group1_blocked_not_formal_frozen",
+  "created_at_utc": "2026-04-29T04:52:11.648540+00:00",
+  "readiness_audit_json": "reports/freeze/group1_freeze_readiness_audit_20260429.json",
+  "readiness_audit_md": "reports/freeze/group1_freeze_readiness_audit_20260429.md",
+  "formal300_source_lock": "benchmark_exports/derived/v2/formal300_source_lock_20260429/MANIFEST.json",
+  "scorer_validator_manifest": "configs/scorer_validator_manifest.json",
+  "schema_path": "schemas/missed_approach_leg.schema.json",
+  "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+  "method_ids": [
+    "A1",
+    "A2",
+    "B1",
+    "B1_prime",
+    "B1_prime_link",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "D_SFT"
+  ],
+  "formal_freeze_allowed": false,
+  "hard_blockers": [
+    "formal300 source sample/split lock exists, but formal300 image/PDF artifacts and checksums are missing locally.",
+    "formal300 canonical proxy targets, field_targets, evidence_provenance, and challenge_tags are not materialized/frozen.",
+    "Scorer/validator is now implemented as a candidate standalone script, but it still needs formal review and lock against formal300 targets.",
+    "Model/provider/base_url/max_tokens/tool policy/retry policy are still candidate, not formal frozen.",
+    "C1 and C3 each have one pilot100 schema failure on KMCW_I36; C4 has high schema-only retry count.",
+    "A1/A2/B/C runners are mostly pilot/external runners; formal300 no-leakage input manifest and runner wrappers are not consolidated.",
+    "D_SFT pilot100 has 6 parse/schema failures; formal handling of invalid outputs must be specified before leaderboard reporting."
+  ],
+  "runner_gap_audit_md": "reports/freeze/group1_runner_gap_audit_20260429.md",
+  "runner_gap_audit_json": "reports/freeze/group1_runner_gap_audit_20260429.json",
+  "model_rerun_policy_audit_md": "reports/freeze/group1_model_rerun_policy_audit_20260429.md",
+  "c_methods_pilot100_evidence_md": "reports/freeze/group1_c_methods_pilot100_evidence_20260429.md",
+  "formal_freeze_package_blocked_md": "reports/freeze/group1_formal_freeze_package_BLOCKED_20260429.md"
+}
