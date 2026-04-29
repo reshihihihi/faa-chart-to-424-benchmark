@@ -1,0 +1,1008 @@
+{
+  "chart_id": "KAPC_I01L",
+  "image_path": "datasets/formal300/images/004__KAPC_I01L__00281ILZ1L_p0.png",
+  "image_dimensions": {
+    "width": 807,
+    "height": 1238
+  },
+  "prelabel_version": "v0.26-formal300-structure-aware-prelabels",
+  "generated_at": "2026-04-25T02:58:32.591602+00:00",
+  "generation_policy": {
+    "final_ground_truth": false,
+    "human_calibration_required": true,
+    "upper_coarse_boxes_are_formal_annotations": true,
+    "lower_detail_box_is_seed_only": true,
+    "candidate_mappings_are_cifp424_targets_not_independent_predictions": true,
+    "formal300_small_box_prelabels_added": true,
+    "small_box_source": "score lower missed-approach detail candidates with PR28 text anchors, boxed-cell structure, and CV icon components; only detected evidence is drawn",
+    "small_box_final_ground_truth": false,
+    "small_box_human_calibration_required": true,
+    "missed_approach_icon_or_detail_area_first": true,
+    "low_confidence_blank_fallback_boxes_enabled": false,
+    "boxed_cell_structure_weighted": true
+  },
+  "review_priority": "high",
+  "target_summary": {
+    "candidate_missed_approach_leg_count": 4,
+    "candidate_leg_ids": [
+      "KAPC_I01L__ma1",
+      "KAPC_I01L__ma2",
+      "KAPC_I01L__ma3",
+      "KAPC_I01L__ma4"
+    ]
+  },
+  "regions": [
+    {
+      "region_id": "KAPC_I01L_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "bbox": {
+        "x_center": 0.805,
+        "y_center": 0.142,
+        "width": 0.33,
+        "height": 0.07
+      },
+      "ocr_text": "",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "confidence": 0.35,
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 500 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 500,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=course_deg, course_deg=5.7",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 5.7
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "SGD",
+          "expected_answer": {
+            "status": "present",
+            "value": "SGD"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q3_turn",
+          "expected_value": "LEFT",
+          "expected_answer": {
+            "status": "present",
+            "value": "LEFT"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=direct",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "direct"
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "TF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "BURDE",
+          "expected_answer": {
+            "status": "present",
+            "value": "BURDE"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "TF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3200 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3200,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "BURDE",
+          "expected_answer": {
+            "status": "present",
+            "value": "BURDE"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3200 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3200,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q5_hold_params",
+          "expected_value": "inbound_course_deg=230.0, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 230,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "RIGHT"
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "I"
+        }
+      ],
+      "human_review": {
+        "review_action": "pending",
+        "notes": ""
+      }
+    },
+    {
+      "region_id": "KAPC_I01L_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "bbox": {
+        "x_center": 0.5,
+        "y_center": 0.43,
+        "width": 0.94,
+        "height": 0.48
+      },
+      "ocr_text": "",
+      "label": "coarse plan-view context for missed approach",
+      "confidence": 0.3,
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [],
+      "human_review": {
+        "review_action": "pending",
+        "notes": ""
+      }
+    },
+    {
+      "region_id": "KAPC_I01L_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "bbox": {
+        "x_center": 0.541,
+        "y_center": 0.6093,
+        "width": 0.3164,
+        "height": 0.101
+      },
+      "ocr_text": "",
+      "label": "lower/profile missed-approach detail area detected from PDF text/icon anchors",
+      "confidence": 0.5,
+      "annotation_scope": "lower_detail_seed",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [],
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Generic seed only; add fine-grained boxes as needed."
+      },
+      "source_layer": "pdf_text_cluster_icon_area_detector"
+    },
+    {
+      "region_id": "KAPC_I01L_pilotcopy_702_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "bbox": {
+        "x_center": 0.4857,
+        "y_center": 0.6026,
+        "width": 0.05,
+        "height": 0.017
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: 3200",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_altitude_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "3200",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KAPC_I01L__ma3",
+      "source_leg_type": "TF",
+      "source_field_name": "Q2_altitude_constraint",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "TF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3200 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3200,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3200 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3200,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma3",
+          "leg_type": "TF",
+          "field_name": "altitude",
+          "expected_value": "03200",
+          "display_value": "3200",
+          "match_basis": "curated lower/profile grid completion: 3200",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma4",
+          "leg_type": "HM",
+          "field_name": "altitude",
+          "expected_value": "03200",
+          "display_value": "3200",
+          "match_basis": "curated lower/profile grid completion: 3200",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 3,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KAPC_I01L_pilotcopy_700_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "bbox": {
+        "x_center": 0.4349,
+        "y_center": 0.6034,
+        "width": 0.0417,
+        "height": 0.0167
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: 500",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_altitude_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "500",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KAPC_I01L__ma1",
+      "source_leg_type": "CA",
+      "source_field_name": "Q2_altitude_constraint",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 500 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 500,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma1",
+          "leg_type": "CA",
+          "field_name": "altitude",
+          "expected_value": "00500",
+          "display_value": "500",
+          "match_basis": "curated lower/profile grid completion: 500",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 1,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KAPC_I01L_pilotcopy_708_fix_text",
+      "region_type": "FIX_TEXT",
+      "bbox": {
+        "x_center": 0.6351,
+        "y_center": 0.6135,
+        "width": 0.061,
+        "height": 0.0165
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: BURDE",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_fix_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "BURDE",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KAPC_I01L__ma3",
+      "source_leg_type": "TF",
+      "source_field_name": "Q1_fix_ident",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "TF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "BURDE",
+          "expected_answer": {
+            "status": "present",
+            "value": "BURDE"
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "BURDE",
+          "expected_answer": {
+            "status": "present",
+            "value": "BURDE"
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma3",
+          "leg_type": "TF",
+          "field_name": "fix",
+          "expected_value": "BURDE",
+          "display_value": "BURDE",
+          "match_basis": "curated lower/profile grid completion: BURDE",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma4",
+          "leg_type": "HM",
+          "field_name": "holding_fix",
+          "expected_value": "BURDE",
+          "display_value": "BURDE",
+          "match_basis": "curated lower/profile grid completion: BURDE",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 3,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KAPC_I01L_pilotcopy_704_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "bbox": {
+        "x_center": 0.5384,
+        "y_center": 0.6034,
+        "width": 0.0384,
+        "height": 0.0167
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: SGD",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_navaid_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "SGD",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KAPC_I01L__ma2",
+      "source_leg_type": "DF",
+      "source_field_name": "Q1_fix_ident",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "SGD",
+          "expected_answer": {
+            "status": "present",
+            "value": "SGD"
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma2",
+          "leg_type": "DF",
+          "field_name": "fix",
+          "expected_value": "SGD",
+          "display_value": "SGD",
+          "match_basis": "curated lower/profile grid completion: SGD",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KAPC_I01L_pilotcopy_706_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "bbox": {
+        "x_center": 0.583,
+        "y_center": 0.6131,
+        "width": 0.046,
+        "height": 0.0165
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: SGD",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_navaid_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "SGD",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KAPC_I01L__ma3",
+      "source_leg_type": "TF",
+      "source_field_name": "Q4_course_or_radial",
+      "candidate_mappings": [],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma3",
+          "leg_type": "TF",
+          "field_name": "initial_track",
+          "expected_value": "SGD R-230",
+          "display_value": "SGD R-230",
+          "match_basis": "curated lower/profile grid completion: SGD",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 3,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KAPC_I01L_pilotcopy_707_radial_text",
+      "region_type": "RADIAL_TEXT",
+      "bbox": {
+        "x_center": 0.583,
+        "y_center": 0.6268,
+        "width": 0.054,
+        "height": 0.017
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: R-230",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_radial_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "R-230",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KAPC_I01L__ma3",
+      "source_leg_type": "TF",
+      "source_field_name": "Q4_course_or_radial",
+      "candidate_mappings": [],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma3",
+          "leg_type": "TF",
+          "field_name": "initial_track",
+          "expected_value": "R-230",
+          "display_value": "R-230",
+          "match_basis": "curated lower/profile grid completion: R-230",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 3,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KAPC_I01L_pilotcopy_701_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "bbox": {
+        "x_center": 0.4343,
+        "y_center": 0.6284,
+        "width": 0.0182,
+        "height": 0.0409
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: climb arrow",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_climb_arrow",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "climb arrow",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KAPC_I01L__ma1",
+      "source_leg_type": "CA",
+      "source_field_name": "Q2_altitude_constraint",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 500 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 500,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma1",
+          "leg_type": "CA",
+          "field_name": "climb_altitude",
+          "expected_value": "00500",
+          "display_value": "500",
+          "match_basis": "curated lower/profile grid completion: climb arrow",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 1,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KAPC_I01L_pilotcopy_705_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "bbox": {
+        "x_center": 0.538,
+        "y_center": 0.6248,
+        "width": 0.03,
+        "height": 0.023
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: SGD fix symbol",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_fix_symbol",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "SGD fix symbol",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KAPC_I01L__ma2",
+      "source_leg_type": "DF",
+      "source_field_name": "Q1_fix_ident",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "SGD",
+          "expected_answer": {
+            "status": "present",
+            "value": "SGD"
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma2",
+          "leg_type": "DF",
+          "field_name": "fix",
+          "expected_value": "SGD",
+          "display_value": "SGD",
+          "match_basis": "curated lower/profile grid completion: SGD fix symbol",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KAPC_I01L_iconalign_003_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "bbox": {
+        "x_center": 0.6344,
+        "y_center": 0.6272,
+        "width": 0.0248,
+        "height": 0.0089
+      },
+      "ocr_text": "",
+      "label": "fix symbol for BURDE; fix symbol for BURDE",
+      "confidence": 0.48,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "TF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "BURDE",
+          "expected_answer": {
+            "status": "present",
+            "value": "BURDE"
+          },
+          "match_basis": "detected fix/navaid symbol near fix text",
+          "confidence": 0.48,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KAPC_I01L__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "BURDE",
+          "expected_answer": {
+            "status": "present",
+            "value": "BURDE"
+          },
+          "match_basis": "detected fix/navaid symbol near fix text",
+          "confidence": 0.48,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KAPC_I01L_pilotcopy_703_path_segment",
+      "region_type": "PATH_SEGMENT",
+      "bbox": {
+        "x_center": 0.4864,
+        "y_center": 0.6276,
+        "width": 0.0508,
+        "height": 0.0355
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: left turn arc; PATH_SEGMENT for LEFT",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_path_segment",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "left turn arc",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KAPC_I01L__ma2",
+      "source_leg_type": "DF",
+      "source_field_name": "Q3_turn",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q3_turn",
+          "expected_value": "LEFT",
+          "expected_answer": {
+            "status": "present",
+            "value": "LEFT"
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma2",
+          "leg_type": "DF",
+          "field_name": "turn_direction",
+          "expected_value": "left turn",
+          "display_value": "left turn",
+          "match_basis": "curated lower/profile grid completion: left turn arc",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KAPC_I01L_iconalign_005_holding_pattern",
+      "region_type": "HOLDING_PATTERN",
+      "bbox": {
+        "x_center": 0.4975,
+        "y_center": 0.5767,
+        "width": 0.0335,
+        "height": 0.0372
+      },
+      "ocr_text": "",
+      "label": "HOLDING_PATTERN for inbound_course_deg=230.0, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
+      "confidence": 0.46,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAPC_I01L__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q5_hold_params",
+          "expected_value": "inbound_course_deg=230.0, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 230,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "RIGHT"
+            }
+          },
+          "match_basis": "detected path/holding icon component inside lower missed-approach area",
+          "confidence": 0.46,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_I01L.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    }
+  ]
+}

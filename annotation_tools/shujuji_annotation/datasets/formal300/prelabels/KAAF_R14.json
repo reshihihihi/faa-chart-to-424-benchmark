@@ -1,0 +1,703 @@
+{
+  "chart_id": "KAAF_R14",
+  "image_path": "datasets/formal300/images/143__KAAF_R14__05600R14_p0.png",
+  "image_dimensions": {
+    "width": 775,
+    "height": 1188
+  },
+  "prelabel_version": "v0.26-formal300-structure-aware-prelabels",
+  "generated_at": "2026-04-25T02:58:53.847205+00:00",
+  "generation_policy": {
+    "final_ground_truth": false,
+    "human_calibration_required": true,
+    "upper_coarse_boxes_are_formal_annotations": true,
+    "lower_detail_box_is_seed_only": true,
+    "candidate_mappings_are_cifp424_targets_not_independent_predictions": true,
+    "formal300_small_box_prelabels_added": true,
+    "small_box_source": "score lower missed-approach detail candidates with PR28 text anchors, boxed-cell structure, and CV icon components; only detected evidence is drawn",
+    "small_box_final_ground_truth": false,
+    "small_box_human_calibration_required": true,
+    "missed_approach_icon_or_detail_area_first": true,
+    "low_confidence_blank_fallback_boxes_enabled": false,
+    "boxed_cell_structure_weighted": true
+  },
+  "review_priority": "high",
+  "target_summary": {
+    "candidate_missed_approach_leg_count": 3,
+    "candidate_leg_ids": [
+      "KAAF_R14__ma1",
+      "KAAF_R14__ma2",
+      "KAAF_R14__ma3"
+    ]
+  },
+  "regions": [
+    {
+      "region_id": "KAAF_R14_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "bbox": {
+        "x_center": 0.805,
+        "y_center": 0.142,
+        "width": 0.33,
+        "height": 0.07
+      },
+      "ocr_text": "",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "confidence": 0.35,
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAAF_R14__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 500 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 500,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=course_deg, course_deg=138.3",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 138.3
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "ONBOE",
+          "expected_answer": {
+            "status": "present",
+            "value": "ONBOE"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q3_turn",
+          "expected_value": "LEFT",
+          "expected_answer": {
+            "status": "present",
+            "value": "LEFT"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=direct",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "direct"
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "ONBOE",
+          "expected_answer": {
+            "status": "present",
+            "value": "ONBOE"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q5_hold_params",
+          "expected_value": "inbound_course_deg=243.4, leg_time_min=None, leg_distance_nm=4.0, turn=RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 243.4,
+              "leg_time_min": null,
+              "leg_distance_nm": 4,
+              "turn": "RIGHT"
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "R"
+        }
+      ],
+      "human_review": {
+        "review_action": "pending",
+        "notes": ""
+      }
+    },
+    {
+      "region_id": "KAAF_R14_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "bbox": {
+        "x_center": 0.5,
+        "y_center": 0.43,
+        "width": 0.94,
+        "height": 0.48
+      },
+      "ocr_text": "",
+      "label": "coarse plan-view context for missed approach",
+      "confidence": 0.3,
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [],
+      "human_review": {
+        "review_action": "pending",
+        "notes": ""
+      }
+    },
+    {
+      "region_id": "KAAF_R14_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "bbox": {
+        "x_center": 0.581,
+        "y_center": 0.7131,
+        "width": 0.2348,
+        "height": 0.0915
+      },
+      "ocr_text": "",
+      "label": "lower/profile missed-approach detail area detected from PDF text/icon anchors",
+      "confidence": 0.5,
+      "annotation_scope": "lower_detail_seed",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [],
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Generic seed only; add fine-grained boxes as needed."
+      },
+      "source_layer": "pdf_text_cluster_icon_area_detector"
+    },
+    {
+      "region_id": "KAAF_R14_iconalign_003_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "bbox": {
+        "x_center": 0.5708,
+        "y_center": 0.7126,
+        "width": 0.0442,
+        "height": 0.0131
+      },
+      "ocr_text": "",
+      "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft; ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAAF_R14__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "PDF text token '3000' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "PDF text token '3000' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "R"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KAAF_R14_iconalign_001_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "bbox": {
+        "x_center": 0.5168,
+        "y_center": 0.7136,
+        "width": 0.034,
+        "height": 0.0131
+      },
+      "ocr_text": "",
+      "label": "ALTITUDE_TEXT: 500 -> AT_OR_ABOVE 500 ft",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAAF_R14__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 500 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 500,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "PDF text token '500' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "R"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KAAF_R14_iconalign_002_fix_text",
+      "region_type": "FIX_TEXT",
+      "bbox": {
+        "x_center": 0.6309,
+        "y_center": 0.7126,
+        "width": 0.0662,
+        "height": 0.0131
+      },
+      "ocr_text": "",
+      "label": "FIX_TEXT: ONBOE -> ONBOE; FIX_TEXT: ONBOE -> ONBOE",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAAF_R14__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "ONBOE",
+          "expected_answer": {
+            "status": "present",
+            "value": "ONBOE"
+          },
+          "match_basis": "PDF text token 'ONBOE' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "ONBOE",
+          "expected_answer": {
+            "status": "present",
+            "value": "ONBOE"
+          },
+          "match_basis": "PDF text token 'ONBOE' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "R"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KAAF_R14_iconalign_006_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "bbox": {
+        "x_center": 0.5168,
+        "y_center": 0.7302,
+        "width": 0.009,
+        "height": 0.0126
+      },
+      "ocr_text": "",
+      "label": "climb arrow for CA; climb arrow for AT_OR_ABOVE 500 ft; climb arrow for type=course_deg, course_deg=138.3; climb arrow for AT_OR_ABOVE 3000 ft; climb arrow for AT_OR_ABOVE 3000 ft",
+      "confidence": 0.5,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAAF_R14__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q_terminator",
+          "expected_value": "CA",
+          "expected_answer": {
+            "status": "present",
+            "value": "CA"
+          },
+          "match_basis": "detected climb/missed-approach icon near altitude text",
+          "confidence": 0.5,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 500 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 500,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "detected climb/missed-approach icon near altitude text",
+          "confidence": 0.5,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=course_deg, course_deg=138.3",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 138.3
+            }
+          },
+          "match_basis": "detected climb/missed-approach icon near altitude text",
+          "confidence": 0.5,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "detected climb/missed-approach icon near altitude text",
+          "confidence": 0.5,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "detected climb/missed-approach icon near altitude text",
+          "confidence": 0.5,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "R"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KAAF_R14_iconalign_009_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "bbox": {
+        "x_center": 0.6277,
+        "y_center": 0.7361,
+        "width": 0.0374,
+        "height": 0.0227
+      },
+      "ocr_text": "",
+      "label": "fix symbol for ONBOE; fix symbol for ONBOE",
+      "confidence": 0.48,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAAF_R14__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "ONBOE",
+          "expected_answer": {
+            "status": "present",
+            "value": "ONBOE"
+          },
+          "match_basis": "detected fix/navaid symbol near fix text",
+          "confidence": 0.48,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "ONBOE",
+          "expected_answer": {
+            "status": "present",
+            "value": "ONBOE"
+          },
+          "match_basis": "detected fix/navaid symbol near fix text",
+          "confidence": 0.48,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "R"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KAAF_R14_iconalign_011_path_segment",
+      "region_type": "PATH_SEGMENT",
+      "bbox": {
+        "x_center": 0.5684,
+        "y_center": 0.7399,
+        "width": 0.0503,
+        "height": 0.0354
+      },
+      "ocr_text": "",
+      "label": "PATH_SEGMENT for LEFT; HOLDING_PATTERN for inbound_course_deg=243.4, leg_time_min=None, leg_distance_nm=4.0, turn=RIGHT",
+      "confidence": 0.46,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAAF_R14__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q3_turn",
+          "expected_value": "LEFT",
+          "expected_answer": {
+            "status": "present",
+            "value": "LEFT"
+          },
+          "match_basis": "detected path/holding icon component inside lower missed-approach area",
+          "confidence": 0.46,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAAF_R14__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q5_hold_params",
+          "expected_value": "inbound_course_deg=243.4, leg_time_min=None, leg_distance_nm=4.0, turn=RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 243.4,
+              "leg_time_min": null,
+              "leg_distance_nm": 4,
+              "turn": "RIGHT"
+            }
+          },
+          "match_basis": "detected path/holding icon component inside lower missed-approach area",
+          "confidence": 0.46,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAAF_R14.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "R"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    }
+  ]
+}

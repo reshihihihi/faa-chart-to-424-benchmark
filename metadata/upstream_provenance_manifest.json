@@ -67,18 +67,27 @@
       "frozen_for_formal_evaluation": false
     },
     {
-      "object": "formal300 chart images, prelabels, and canonical proxy targets",
-      "status": "planned",
+      "object": "Shujuji annotation web app and bundled annotation datasets",
+      "status": "imported",
       "source_pr": 32,
-      "source_commit": "d606b747a1cda86a013df1f145de2a1fa17e176d",
+      "source_commit": "2b16a9483de0cec539c0de55a5f7eed751a80170",
       "source_paths": [
         "tools/shujuji_annotation/"
       ],
       "destination_paths": [
-        "benchmark_exports/derived/v2/"
+        "annotation_tools/shujuji_annotation/"
       ],
-      "sha256": null,
-      "frozen_for_formal_evaluation": false
+      "sha256": "8cc80790f40a62c77a3c81be230e413ecade9f4e677f8b65f1fb2b3f306f0e91",
+      "frozen_for_formal_evaluation": false,
+      "source_pr_state_at_import": "open",
+      "imported_at_utc": "2026-04-29T00:00:00Z",
+      "import_reason": "Provide the standalone human annotation web app, documentation, prelabels, chart images, and canonical proxy targets used to collect and audit benchmark evidence labels.",
+      "excluded_paths": [
+        "tools/shujuji_annotation/datasets/formal300/annotations/claims.json",
+        "tools/shujuji_annotation/datasets/practice10/annotations/claims.json"
+      ],
+      "sha256_semantics": "sha256 over sorted lines of '<relative_path>\\0<file_sha256>\\n' for files imported under annotation_tools/shujuji_annotation/",
+      "file_count": 972
     },
     {
       "object": "paper-v2 scaffold and issue plan",

@@ -1,0 +1,1748 @@
+{
+  "chart_id": "KCOE_L06",
+  "image_path": "datasets/practice10/images/006__KCOE_L06__.PDF_p0.png",
+  "image_dimensions": {
+    "width": 807,
+    "height": 1238
+  },
+  "prelabel_version": "v0.14-canonical-pr28-field-mappings",
+  "generated_at": "2026-04-24T12:23:03.494Z",
+  "generation_inputs": {
+    "max_set_file": "config/max_set_from_FAACIFP18.v1.json",
+    "max_set_version": "from_FAACIFP18_v1",
+    "target_fields_file": "datasets/practice10/targets/canonical_targets.json",
+    "icon_anchor_file": "datasets/practice10/targets/missed_approach_icon_candidates_10.json",
+    "user_lower_detail_roi_file": "datasets/practice10/targets/user_lower_detail_rois_10.json",
+    "lower_symbol_candidates_file": "datasets/practice10/targets/lower_missed_approach_symbol_candidates_10.json",
+    "manifest_file": "datasets/practice10/manifest.json"
+  },
+  "generation_policy": {
+    "based_on_max_set": true,
+    "field_space_constrained_by_max_set": true,
+    "region_space_constrained_by_max_set": true,
+    "target_file_used_for_candidate_mappings": true,
+    "missed_approach_icon_anchor_used_for_layout_only": true,
+    "user_lower_detail_roi_used": true,
+    "upper_coarse_boxes_are_formal_annotations": true,
+    "upper_annotation_requirement": "All upper annotations are intentionally represented by two large formal boxes: MISSED_APPROACH_TEXT and PLAN_VIEW.",
+    "coarse_box_requirement": "two upper formal annotation boxes: MISSED_APPROACH_TEXT and PLAN_VIEW",
+    "lower_detail_requirement": "use one user red-box ROI as the lower/profile missed-approach detail area, then generate only fine-grained symbol boxes inside that ROI; no visible per-leg blue step boxes are generated",
+    "lower_detail_box_source": "curated lower/profile grid completion for the 10 pilot charts, then automatic second-pass supplement from uncovered detected candidates inside the user ROI",
+    "curated_grid_completion_used": true,
+    "auto_detected_grid_gap_supplement_used": false,
+    "auto_detected_grid_gap_supplement_mode": "available but disabled by default for curated pilot charts to preserve the reviewed grid effect; set FAA_ENABLE_GRID_GAP_SUPPLEMENT=1 for supplement experiments",
+    "duplicate_policy": "overlapping fine-grained boxes for the same leg are merged into one visible box with combined candidate mappings",
+    "final_ground_truth": false,
+    "human_calibration_required": true,
+    "canonical_pr28_mapping_used": true,
+    "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json"
+  },
+  "review_priority": "high",
+  "target_summary": {
+    "sample_type": "anomaly",
+    "main_transition_candidate": "L",
+    "candidate_missed_approach_leg_count": 4,
+    "candidate_leg_ids": [
+      "KCOE_L06__ma1",
+      "KCOE_L06__ma2",
+      "KCOE_L06__ma3",
+      "KCOE_L06__ma4"
+    ],
+    "flat_field_targets": [
+      "raw_instruction",
+      "climb_altitude",
+      "waypoints",
+      "turn_direction",
+      "holding_required",
+      "holding_fix",
+      "initial_track",
+      "turn_trigger",
+      "holding_details"
+    ],
+    "anomaly_note": "Priority review requested by pilot manifest."
+  },
+  "regions": [
+    {
+      "region_id": "KCOE_L06_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "bbox": {
+        "x_center": 0.805,
+        "y_center": 0.142,
+        "width": 0.33,
+        "height": 0.07
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "confidence": 0.72,
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "is_formal_annotation_candidate": true,
+      "coarse_annotation_reason": "upper annotations are intentionally grouped into large boxes",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 2900 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 2900,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from altitude via MISSED_APPROACH_TEXT evidence",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "FA",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "COE",
+          "expected_answer": {
+            "status": "present",
+            "value": "COE"
+          },
+          "match_basis": "canonical PR #28 mapping from fix via MISSED_APPROACH_TEXT evidence",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "FA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 6000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 6000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from altitude via MISSED_APPROACH_TEXT evidence",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "CF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "COE",
+          "expected_answer": {
+            "status": "present",
+            "value": "COE"
+          },
+          "match_basis": "canonical PR #28 mapping from fix via MISSED_APPROACH_TEXT evidence",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "CF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 6500 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 6500,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from altitude via MISSED_APPROACH_TEXT evidence",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "COE",
+          "expected_answer": {
+            "status": "present",
+            "value": "COE"
+          },
+          "match_basis": "canonical PR #28 mapping from fix via MISSED_APPROACH_TEXT evidence",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 6500 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 6500,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from altitude via MISSED_APPROACH_TEXT evidence",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q5_hold_params",
+          "expected_value": "inbound_course_deg=51.0, leg_time_min=1.0, leg_distance_nm=None, turn=LEFT",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 51,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "LEFT"
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from holding_required via MISSED_APPROACH_TEXT evidence",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "MISSED_APPROACH_TEXT",
+        "notes": "Formal upper annotation box. To save annotation effort, upper missed-approach text evidence is intentionally annotated with this large box rather than symbol-level boxes."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma1",
+          "leg_type": "CA",
+          "field_name": "altitude",
+          "expected_value": "02900",
+          "display_value": "2900",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: altitude text in missed approach text or profile view",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "leg_type": "FA",
+          "field_name": "fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: fix text in missed approach text, plan view, or profile view",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "leg_type": "FA",
+          "field_name": "altitude",
+          "expected_value": "06000",
+          "display_value": "6000",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: altitude text in missed approach text or profile view",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "leg_type": "CF",
+          "field_name": "fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: fix text in missed approach text, plan view, or profile view",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "leg_type": "CF",
+          "field_name": "altitude",
+          "expected_value": "06500",
+          "display_value": "6500",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: altitude text in missed approach text or profile view",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "leg_type": "HM",
+          "field_name": "fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: fix text in missed approach text, plan view, or profile view",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "leg_type": "HM",
+          "field_name": "altitude",
+          "expected_value": "06500",
+          "display_value": "6500",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: altitude text in missed approach text or profile view",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "leg_type": "HM",
+          "field_name": "holding_required",
+          "expected_value": true,
+          "display_value": "true",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: and hold text or holding pattern depiction",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "leg_type": "HM",
+          "field_name": "holding_fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: holding fix name in text/plan/profile",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "raw_instruction",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: MISSED_APPROACH_TEXT region",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "climb_altitude",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: altitude values in text/profile; human should decide which value is the relevant climb target",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "waypoints",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: fix names after missed approach begins",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "turn_direction",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: turn phrase or turn arrow; may be not explicit in some charts",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "holding_required",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: and hold text or holding pattern depiction",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "holding_fix",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: fix associated with holding leg",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "turn_trigger",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: altitude/fix triggering turn if chart-visible",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "holding_details",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: missed-approach text block: holding altitude, inbound/outbound, leg time, direction if chart-visible",
+          "confidence": 0.72,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 1,
+      "source_field_name": "Q2_altitude_constraint",
+      "source_leg_type": "CA",
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "bbox": {
+        "x_center": 0.5,
+        "y_center": 0.42,
+        "width": 0.91,
+        "height": 0.46
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "upper coarse formal annotation: plan-view block",
+      "confidence": 0.68,
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "is_formal_annotation_candidate": true,
+      "coarse_annotation_reason": "upper annotations are intentionally grouped into large boxes",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "FA",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "COE",
+          "expected_answer": {
+            "status": "present",
+            "value": "COE"
+          },
+          "match_basis": "canonical PR #28 mapping from fix via PLAN_VIEW evidence",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "CF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "COE",
+          "expected_answer": {
+            "status": "present",
+            "value": "COE"
+          },
+          "match_basis": "canonical PR #28 mapping from fix via PLAN_VIEW evidence",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "COE",
+          "expected_answer": {
+            "status": "present",
+            "value": "COE"
+          },
+          "match_basis": "canonical PR #28 mapping from fix via PLAN_VIEW evidence",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q5_hold_params",
+          "expected_value": "inbound_course_deg=51.0, leg_time_min=1.0, leg_distance_nm=None, turn=LEFT",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 51,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "LEFT"
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from holding_required via PLAN_VIEW evidence",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "PLAN_VIEW",
+        "notes": "Formal upper annotation box. To save annotation effort, upper plan-view evidence is intentionally annotated with this large box rather than splitting every symbol."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "leg_type": "FA",
+          "field_name": "fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "upper coarse formal annotation: plan-view block: fix text in missed approach text, plan view, or profile view",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "leg_type": "CF",
+          "field_name": "fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "upper coarse formal annotation: plan-view block: fix text in missed approach text, plan view, or profile view",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "leg_type": "HM",
+          "field_name": "fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "upper coarse formal annotation: plan-view block: fix text in missed approach text, plan view, or profile view",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "leg_type": "HM",
+          "field_name": "holding_required",
+          "expected_value": true,
+          "display_value": "true",
+          "match_basis": "upper coarse formal annotation: plan-view block: and hold text or holding pattern depiction",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "leg_type": "HM",
+          "field_name": "holding_fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "upper coarse formal annotation: plan-view block: holding fix name in text/plan/profile",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "waypoints",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: plan-view block: fix names after missed approach begins",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "turn_direction",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: plan-view block: turn phrase or turn arrow; may be not explicit in some charts",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "holding_required",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: plan-view block: and hold text or holding pattern depiction",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "holding_fix",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: plan-view block: fix associated with holding leg",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "initial_track",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: plan-view block: course/radial/outbound/inbound labels if chart-visible",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "",
+          "leg_type": "",
+          "field_name": "holding_details",
+          "expected_value": null,
+          "display_value": "",
+          "match_basis": "upper coarse formal annotation: plan-view block: holding altitude, inbound/outbound, leg time, direction if chart-visible",
+          "confidence": 0.68,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "source_field_name": "Q1_fix_ident",
+      "source_leg_type": "FA",
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_03_missed_approach_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "bbox": {
+        "x_center": 0.4752,
+        "y_center": 0.687,
+        "width": 0.4597,
+        "height": 0.0735
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "user specified lower/profile detailed annotation area",
+      "confidence": 0.92,
+      "annotation_scope": "lower_detail_roi_guide",
+      "element_role": "user_red_box_lower_detail_area",
+      "is_formal_annotation_candidate": false,
+      "is_roi_guide": true,
+      "roi_source": "user_red_box_2026-04-24",
+      "user_roi_file": "datasets/practice10/targets/user_lower_detail_rois_10.json",
+      "child_symbol_required": true,
+      "candidate_mappings": [],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "MISSED_APPROACH_DETAIL_AREA",
+        "notes": "Guide ROI derived from the user's red boxes. The detailed lower missed-approach symbols should be checked, added, moved, or deleted inside this area."
+      }
+    },
+    {
+      "region_id": "KCOE_L06_04_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "bbox": {
+        "x_center": 0.3154,
+        "y_center": 0.6652,
+        "width": 0.0504,
+        "height": 0.0159
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: 2900",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_altitude_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "2900",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma1",
+      "source_leg_type": "CA",
+      "source_field_name": "Q2_altitude_constraint",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 2900 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 2900,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from altitude via ALTITUDE_TEXT evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "ALTITUDE_TEXT",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma1",
+          "leg_type": "CA",
+          "field_name": "altitude",
+          "expected_value": "02900",
+          "display_value": "2900",
+          "match_basis": "curated lower/profile grid completion: 2900",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 1,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_05_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "bbox": {
+        "x_center": 0.3147,
+        "y_center": 0.6922,
+        "width": 0.0169,
+        "height": 0.0393
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: climb arrow",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_climb_arrow",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "climb arrow",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma1",
+      "source_leg_type": "CA",
+      "source_field_name": "Q2_altitude_constraint",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 2900 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 2900,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from climb_altitude via CLIMB_ARROW evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "CLIMB_ARROW",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma1",
+          "leg_type": "CA",
+          "field_name": "climb_altitude",
+          "expected_value": "02900",
+          "display_value": "2900",
+          "match_basis": "curated lower/profile grid completion: climb arrow",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 1,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_06_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "bbox": {
+        "x_center": 0.3699,
+        "y_center": 0.6652,
+        "width": 0.05,
+        "height": 0.016
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: 6000",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_altitude_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "6000",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma2",
+      "source_leg_type": "FA",
+      "source_field_name": "Q2_altitude_constraint",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "FA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 6000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 6000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from altitude via ALTITUDE_TEXT evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "ALTITUDE_TEXT",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "leg_type": "FA",
+          "field_name": "altitude",
+          "expected_value": "06000",
+          "display_value": "6000",
+          "match_basis": "curated lower/profile grid completion: 6000",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_07_path_segment",
+      "region_type": "PATH_SEGMENT",
+      "bbox": {
+        "x_center": 0.3705,
+        "y_center": 0.691,
+        "width": 0.0582,
+        "height": 0.0363
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: left turn arc",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_path_segment",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "left turn arc",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma2",
+      "source_leg_type": "FA",
+      "source_field_name": "Q3_turn",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "FA",
+          "field_name": "Q3_turn",
+          "expected_value": "unknown",
+          "expected_answer": {
+            "status": "unknown",
+            "value": null
+          },
+          "match_basis": "canonical PR #28 mapping from turn_direction via PATH_SEGMENT evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "PATH_SEGMENT",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "leg_type": "FA",
+          "field_name": "turn_direction",
+          "expected_value": "left turn",
+          "display_value": "left turn",
+          "match_basis": "curated lower/profile grid completion: left turn arc",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_08_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "bbox": {
+        "x_center": 0.4368,
+        "y_center": 0.6708,
+        "width": 0.0454,
+        "height": 0.0159
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: COE",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_navaid_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "COE",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma2",
+      "source_leg_type": "FA",
+      "source_field_name": "Q1_fix_ident",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "FA",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "COE",
+          "expected_answer": {
+            "status": "present",
+            "value": "COE"
+          },
+          "match_basis": "canonical PR #28 mapping from fix via NAVAID_TEXT evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "NAVAID_TEXT",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "leg_type": "FA",
+          "field_name": "fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "curated lower/profile grid completion: COE",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_09_radial_text",
+      "region_type": "RADIAL_TEXT",
+      "bbox": {
+        "x_center": 0.4374,
+        "y_center": 0.6842,
+        "width": 0.0471,
+        "height": 0.0167
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: R-350",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_radial_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "R-350",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma2",
+      "source_leg_type": "FA",
+      "source_field_name": "Q4_course_or_radial",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "FA",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=navaid_radial, navaid=COE, radial_deg=350.0, direction=outbound",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "navaid_radial",
+              "navaid": "COE",
+              "radial_deg": 350,
+              "direction": "outbound"
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from initial_track via RADIAL_TEXT evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "RADIAL_TEXT",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "leg_type": "FA",
+          "field_name": "initial_track",
+          "expected_value": "R-350 outbound",
+          "display_value": "R-350 outbound",
+          "match_basis": "curated lower/profile grid completion: R-350",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_10_outbound_inbound_mark",
+      "region_type": "OUTBOUND_INBOUND_MARK",
+      "bbox": {
+        "x_center": 0.4368,
+        "y_center": 0.6975,
+        "width": 0.0533,
+        "height": 0.0175
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: outbnd",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_outbound_inbound_mark",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "outbnd",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma2",
+      "source_leg_type": "FA",
+      "source_field_name": "Q4_course_or_radial",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "FA",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=navaid_radial, navaid=COE, radial_deg=350.0, direction=outbound",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "navaid_radial",
+              "navaid": "COE",
+              "radial_deg": 350,
+              "direction": "outbound"
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from initial_track via OUTBOUND_INBOUND_MARK evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "OUTBOUND_INBOUND_MARK",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma2",
+          "leg_type": "FA",
+          "field_name": "initial_track",
+          "expected_value": "outbound",
+          "display_value": "outbound",
+          "match_basis": "curated lower/profile grid completion: outbnd",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_11_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "bbox": {
+        "x_center": 0.5074,
+        "y_center": 0.6652,
+        "width": 0.0504,
+        "height": 0.0159
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: 6500",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_altitude_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "6500",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma3",
+      "source_leg_type": "CF",
+      "source_field_name": "Q2_altitude_constraint",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "CF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 6500 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 6500,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from altitude via ALTITUDE_TEXT evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 6500 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 6500,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from altitude via ALTITUDE_TEXT evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "ALTITUDE_TEXT",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "leg_type": "CF",
+          "field_name": "altitude",
+          "expected_value": "06500",
+          "display_value": "6500",
+          "match_basis": "curated lower/profile grid completion: 6500",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "leg_type": "HM",
+          "field_name": "altitude",
+          "expected_value": "06500",
+          "display_value": "6500",
+          "match_basis": "curated lower/profile grid completion: 6500",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 3,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_12_path_segment",
+      "region_type": "PATH_SEGMENT",
+      "bbox": {
+        "x_center": 0.52,
+        "y_center": 0.689,
+        "width": 0.06,
+        "height": 0.04
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: left turn arc",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_path_segment",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "left turn arc",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma3",
+      "source_leg_type": "CF",
+      "source_field_name": "Q3_turn",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "CF",
+          "field_name": "Q3_turn",
+          "expected_value": "LEFT",
+          "expected_answer": {
+            "status": "present",
+            "value": "LEFT"
+          },
+          "match_basis": "canonical PR #28 mapping from turn_direction via PATH_SEGMENT evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "PATH_SEGMENT",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "leg_type": "CF",
+          "field_name": "turn_direction",
+          "expected_value": "left turn",
+          "display_value": "left turn",
+          "match_basis": "curated lower/profile grid completion: left turn arc",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 3,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_13_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "bbox": {
+        "x_center": 0.57,
+        "y_center": 0.6708,
+        "width": 0.045,
+        "height": 0.016
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: COE",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_navaid_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "COE",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma3",
+      "source_leg_type": "CF",
+      "source_field_name": "Q1_fix_ident",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "CF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "COE",
+          "expected_answer": {
+            "status": "present",
+            "value": "COE"
+          },
+          "match_basis": "canonical PR #28 mapping from fix via NAVAID_TEXT evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "NAVAID_TEXT",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "leg_type": "CF",
+          "field_name": "fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "curated lower/profile grid completion: COE",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 3,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_14_radial_text",
+      "region_type": "RADIAL_TEXT",
+      "bbox": {
+        "x_center": 0.57,
+        "y_center": 0.6898,
+        "width": 0.052,
+        "height": 0.018
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: R-350",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_radial_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "R-350",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma3",
+      "source_leg_type": "CF",
+      "source_field_name": "Q4_course_or_radial",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "CF",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=navaid_radial, navaid=COE, radial_deg=350.0, direction=inbound",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "navaid_radial",
+              "navaid": "COE",
+              "radial_deg": 350,
+              "direction": "inbound"
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from initial_track via RADIAL_TEXT evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "RADIAL_TEXT",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "leg_type": "CF",
+          "field_name": "initial_track",
+          "expected_value": "R-350 inbound",
+          "display_value": "R-350 inbound",
+          "match_basis": "curated lower/profile grid completion: R-350",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 3,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_15_outbound_inbound_mark",
+      "region_type": "OUTBOUND_INBOUND_MARK",
+      "bbox": {
+        "x_center": 0.57,
+        "y_center": 0.704,
+        "width": 0.055,
+        "height": 0.018
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: inbnd",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_outbound_inbound_mark",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "inbnd",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma3",
+      "source_leg_type": "CF",
+      "source_field_name": "Q4_course_or_radial",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "CF",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=navaid_radial, navaid=COE, radial_deg=350.0, direction=inbound",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "navaid_radial",
+              "navaid": "COE",
+              "radial_deg": 350,
+              "direction": "inbound"
+            }
+          },
+          "match_basis": "canonical PR #28 mapping from initial_track via OUTBOUND_INBOUND_MARK evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "OUTBOUND_INBOUND_MARK",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma3",
+          "leg_type": "CF",
+          "field_name": "initial_track",
+          "expected_value": "inbound",
+          "display_value": "inbound",
+          "match_basis": "curated lower/profile grid completion: inbnd",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 3,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_16_fix_text",
+      "region_type": "FIX_TEXT",
+      "bbox": {
+        "x_center": 0.6357,
+        "y_center": 0.6704,
+        "width": 0.0454,
+        "height": 0.0167
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: COE",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_fix_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "COE",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma4",
+      "source_leg_type": "HM",
+      "source_field_name": "Q1_fix_ident",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "COE",
+          "expected_answer": {
+            "status": "present",
+            "value": "COE"
+          },
+          "match_basis": "canonical PR #28 mapping from holding_fix via FIX_TEXT evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "FIX_TEXT",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "leg_type": "HM",
+          "field_name": "holding_fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "curated lower/profile grid completion: COE",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 4,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KCOE_L06_17_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "bbox": {
+        "x_center": 0.6357,
+        "y_center": 0.6898,
+        "width": 0.0417,
+        "height": 0.0232
+      },
+      "source_layer": "auto_candidate_from_FAACIFP18_max_set",
+      "ocr_text": "",
+      "label": "curated lower detail: COE fix symbol",
+      "confidence": 0.78,
+      "annotation_scope": "lower_missed_approach_fine_detail",
+      "element_role": "curated_fix_symbol",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "COE fix symbol",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KCOE_L06__ma4",
+      "source_leg_type": "HM",
+      "source_field_name": "Q1_fix_ident",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "COE",
+          "expected_answer": {
+            "status": "present",
+            "value": "COE"
+          },
+          "match_basis": "canonical PR #28 mapping from holding_fix via FIX_SYMBOL evidence",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/practice10/targets/canonical_proxy_gt/KCOE_L06.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "adjusted_bbox": null,
+        "final_region_type": "FIX_SYMBOL",
+        "notes": "Curated grid-completion candidate for the lower missed-approach strip. Verify the box is tight and accept/reject the proposed leg-field mappings."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KCOE_L06__ma4",
+          "leg_type": "HM",
+          "field_name": "holding_fix",
+          "expected_value": "COE",
+          "display_value": "COE",
+          "match_basis": "curated lower/profile grid completion: COE fix symbol",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 4,
+      "canonical_mapping_required": true
+    }
+  ],
+  "unmatched_targets": [
+    {
+      "candidate_leg_id": "KCOE_L06__ma1",
+      "field_name": "leg_type",
+      "expected_value": "CA",
+      "display_value": "CA",
+      "reason": "not directly chart-visible; keep as CIFP/schema target for human review"
+    },
+    {
+      "candidate_leg_id": "KCOE_L06__ma1",
+      "field_name": "alt_desc",
+      "expected_value": "+",
+      "display_value": "+",
+      "reason": "not directly chart-visible; keep as CIFP/schema target for human review"
+    },
+    {
+      "candidate_leg_id": "KCOE_L06__ma2",
+      "field_name": "leg_type",
+      "expected_value": "FA",
+      "display_value": "FA",
+      "reason": "not directly chart-visible; keep as CIFP/schema target for human review"
+    },
+    {
+      "candidate_leg_id": "KCOE_L06__ma2",
+      "field_name": "alt_desc",
+      "expected_value": "+",
+      "display_value": "+",
+      "reason": "not directly chart-visible; keep as CIFP/schema target for human review"
+    },
+    {
+      "candidate_leg_id": "KCOE_L06__ma3",
+      "field_name": "leg_type",
+      "expected_value": "CF",
+      "display_value": "CF",
+      "reason": "not directly chart-visible; keep as CIFP/schema target for human review"
+    },
+    {
+      "candidate_leg_id": "KCOE_L06__ma3",
+      "field_name": "alt_desc",
+      "expected_value": "+",
+      "display_value": "+",
+      "reason": "not directly chart-visible; keep as CIFP/schema target for human review"
+    },
+    {
+      "candidate_leg_id": "KCOE_L06__ma4",
+      "field_name": "leg_type",
+      "expected_value": "HM",
+      "display_value": "HM",
+      "reason": "not directly chart-visible; keep as CIFP/schema target for human review"
+    },
+    {
+      "candidate_leg_id": "KCOE_L06__ma4",
+      "field_name": "alt_desc",
+      "expected_value": "+",
+      "display_value": "+",
+      "reason": "not directly chart-visible; keep as CIFP/schema target for human review"
+    }
+  ],
+  "sample_notes": "Automatic prelabel only. Bboxes are max-set/target-driven candidates and must be calibrated by a human in the annotation platform.",
+  "practice_only": true
+}

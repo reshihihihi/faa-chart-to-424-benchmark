@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>复飞航图字段证据标注</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">FAA Missed Approach Dataset</p>
+        <h1>复飞航图字段证据标注</h1>
+      </div>
+      <div class="top-actions">
+        <label class="identity-editor">
+          <span>标注人</span>
+          <input id="annotatorInput" type="text" value="" autocomplete="off" spellcheck="false" placeholder="如 A06">
+        </label>
+        <button id="applyAnnotatorBtn" type="button">应用身份</button>
+        <span id="participantBadge" class="identity-pill">当前参与者</span>
+        <button id="helpBtn" type="button">帮助</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar" data-zoom-area="left">
+        <div class="side-title">任务队列</div>
+        <p class="side-note">先预览航图难度；确认可做后，在这里领取并开始。</p>
+        <section class="side-action-panel">
+          <h2>本图操作</h2>
+          <button id="claimCurrentBtn" class="primary claim-current-btn" type="button">领取并开始</button>
+          <div class="final-actions">
+            <button id="saveDraftBtn" type="button">暂存</button>
+            <button id="returnClaimBtn" class="danger" type="button">退回专家复审</button>
+            <button id="saveBtn" class="primary" type="button">完成本图</button>
+          </div>
+          <p class="hint">完成前必须清空右侧“尚未确认字段”。</p>
+        </section>
+        <input id="chartFilter" class="filter" placeholder="搜索 chart_id / 类型">
+        <div id="chartList" class="chart-list"></div>
+      </aside>
+
+      <div class="resize-handle" data-resize-handle="left-center" role="separator" aria-label="调节任务队列和航图宽度" title="拖动调节任务队列和航图宽度"></div>
+
+      <section class="workspace" data-zoom-area="center">
+        <div class="workspace-toolbar">
+          <div class="chart-heading">
+            <strong id="currentTitle">请选择航图</strong>
+            <span id="currentMeta" class="muted"></span>
+          </div>
+          <div class="toolbar-actions">
+            <div class="zoom-controls zoom-controls-inline" aria-label="center image zoom">
+              <span>航图缩放</span>
+              <button id="centerZoomOut" type="button">-</button>
+              <strong id="centerZoomValue">72%</strong>
+              <button id="centerZoomIn" type="button">+</button>
+              <button id="centerZoomReset" type="button">重置</button>
+            </div>
+            <button id="drawBtn" type="button">为当前字段画证据框</button>
+            <button id="deleteRegionBtn" class="danger ghost-danger" type="button">删除选中框</button>
+            <button id="undoBtn" type="button" disabled>撤销</button>
+            <details class="compact-details region-type-picker">
+              <summary>高级：手动选择框类型</summary>
+              <select id="newRegionType" title="新增框类型按最大 JSON 字段分组">
+                <optgroup label="区域框：定位复飞证据">
+                  <option value="MISSED_APPROACH_TEXT" data-field="REGION_CONTEXT" data-role="upper_text">MISSED_APPROACH_TEXT - 上方复飞文字</option>
+                  <option value="PLAN_VIEW" data-field="REGION_CONTEXT" data-role="plan_context">PLAN_VIEW - 平面图复飞上下文</option>
+                  <option value="MISSED_APPROACH_DETAIL_AREA" data-field="REGION_CONTEXT" data-role="detail_area">MISSED_APPROACH_DETAIL_AREA - 下方复飞细节区</option>
+                </optgroup>
+                <optgroup label="Q1_fix_ident：fix / navaid">
+                  <option value="FIX_TEXT" data-field="Q1_fix_ident" data-role="fix_name">FIX_TEXT - fix 名称</option>
+                  <option value="FIX_SYMBOL" data-field="Q1_fix_ident" data-role="fix_symbol">FIX_SYMBOL - fix 图标</option>
+                  <option value="NAVAID_TEXT" data-field="Q1_fix_ident" data-role="navaid_name">NAVAID_TEXT - navaid 名称</option>
+                </optgroup>
+                <optgroup label="Q2_altitude_constraint：高度限制">
+                  <option value="ALTITUDE_TEXT" data-field="Q2_altitude_constraint" data-role="altitude">ALTITUDE_TEXT - 高度</option>
+                </optgroup>
+                <optgroup label="Q3_turn：转弯方向/转弯证据">
+                  <option value="PATH_SEGMENT" data-field="Q3_turn" data-role="turn_or_path">PATH_SEGMENT - 转弯弧线/路径段</option>
+                  <option value="TURN_PHRASE" data-field="Q3_turn" data-role="turn_text">TURN_PHRASE - left/right turn 文字</option>
+                </optgroup>
+                <optgroup label="Q4_course_or_radial：航向/径向/track">
+                  <option value="HEADING_TEXT" data-field="Q4_course_or_radial" data-role="heading">HEADING_TEXT - hdg/heading</option>
+                  <option value="RADIAL_TEXT" data-field="Q4_course_or_radial" data-role="radial">RADIAL_TEXT - R-xxx</option>
+                  <option value="TRACK_OR_RADIAL_TEXT" data-field="Q4_course_or_radial" data-role="track_or_radial">TRACK_OR_RADIAL_TEXT - tr/track/radial</option>
+                  <option value="OUTBOUND_INBOUND_MARK" data-field="Q4_course_or_radial" data-role="direction_mark">OUTBOUND_INBOUND_MARK - outbound/inbound</option>
+                </optgroup>
+                <optgroup label="Q5_hold_params：holding 参数">
+                  <option value="HOLDING_ARC" data-field="Q5_hold_params" data-role="holding_arc">HOLDING_ARC - holding 弧线</option>
+                  <option value="HOLDING_PATTERN" data-field="Q5_hold_params" data-role="holding_pattern">HOLDING_PATTERN - holding 图形</option>
+                  <option value="HOLDING_TIME_TEXT" data-field="Q5_hold_params" data-role="holding_time">HOLDING_TIME_TEXT - holding 时间</option>
+                  <option value="DME_DISTANCE_TEXT" data-field="Q5_hold_params" data-role="dme_distance">DME_DISTANCE_TEXT - DME/距离</option>
+                </optgroup>
+                <optgroup label="补充/特殊情况">
+                  <option value="MISSED_APPROACH_ICON" data-field="REGION_CONTEXT" data-role="missed_approach_icon">MISSED_APPROACH_ICON - 复飞图标</option>
+                  <option value="MISSED_APPROACH_STEP_BOX" data-field="REGION_CONTEXT" data-role="step_box">MISSED_APPROACH_STEP_BOX - 复飞步骤格</option>
+                </optgroup>
+              </select>
+              <div id="newRegionTypeHint" class="type-hint"></div>
+            </details>
+          </div>
+        </div>
+
+        <div id="stageWrap" class="stage-wrap">
+          <div id="imageStage" class="image-stage">
+            <img id="chartImage" alt="航图">
+            <svg id="overlay" aria-label="annotation overlay"></svg>
+          </div>
+        </div>
+      </section>
+
+      <div class="resize-handle" data-resize-handle="center-inspector" role="separator" aria-label="调节航图和字段任务宽度" title="拖动调节航图和字段任务宽度"></div>
+
+      <aside class="inspector" data-zoom-area="right">
+        <section class="panel workflow-panel">
+          <div id="workflowSummary" class="workflow-summary"></div>
+          <div class="workflow-buttons">
+            <button id="nextPendingBtn" type="button">只查看下一个（不记录）</button>
+          </div>
+          <div id="workflowNextList" class="workflow-next-list"></div>
+        </section>
+
+        <details class="panel selected-region-panel" open>
+          <summary>已选证据框</summary>
+          <div id="emptyRegion" class="empty">还没有选中框。</div>
+          <div id="regionForm" class="region-form hidden">
+            <div id="regionRoleHint" class="region-role-hint"></div>
+            <details class="advanced-region">
+              <summary>高级：查看/修改框信息</summary>
+              <label>框编号<input id="regionIdInput"></label>
+              <label>框类型<input id="regionTypeInput"></label>
+              <label>框的中文含义<input id="labelInput"></label>
+              <label>OCR / 可见文字<textarea id="ocrInput"></textarea></label>
+              <div class="grid-4">
+                <label>x<input id="bboxX" type="number" step="0.001"></label>
+                <label>y<input id="bboxY" type="number" step="0.001"></label>
+                <label>w<input id="bboxW" type="number" step="0.001"></label>
+                <label>h<input id="bboxH" type="number" step="0.001"></label>
+              </div>
+              <label>人工校准动作
+                <select id="reviewActionInput">
+                  <option value="pending">待确认</option>
+                  <option value="accept">确认正确</option>
+                  <option value="adjust">已调整位置/大小</option>
+                  <option value="delete">建议删除</option>
+                  <option value="split">建议拆分</option>
+                  <option value="add_detail">已补充细节框</option>
+                  <option value="reject_mapping">拒绝字段对应</option>
+                </select>
+              </label>
+              <label>中文备注<textarea id="notesInput"></textarea></label>
+            </details>
+          </div>
+        </details>
+
+        <details class="panel mapping-panel">
+          <summary>选中框支持的字段</summary>
+          <div id="mappingList" class="mapping-list"></div>
+        </details>
+
+        <details class="panel compact-details advanced-actions-panel">
+          <summary>高级：批量与候选工具</summary>
+          <div class="advanced-action-grid">
+            <button id="quickAcceptBtn" type="button">采纳已有候选</button>
+            <button id="undoQuickAcceptBtn" type="button" disabled>撤销采纳</button>
+            <button id="openTargetsBtn" type="button">显示全部候选字段</button>
+          </div>
+        </details>
+
+        <details id="targetPanel" class="panel target-panel compact-details">
+          <summary>高级：按航段浏览全部候选字段</summary>
+          <p class="hint">普通流程优先使用“当前字段任务”。只有字段或证据关系需要手动修正时，再在这里挂接候选。</p>
+          <div id="targetList"></div>
+        </details>
+
+        <details class="panel canonical-panel compact-details">
+          <summary>开发检查：PR #28 详细证据对齐 / JSON</summary>
+          <div id="canonicalSummary" class="score-summary"></div>
+          <div id="canonicalCompare" class="compare-list"></div>
+          <details>
+            <summary>查看人工框生成 JSON</summary>
+            <pre id="annotationJsonPreview" class="json-preview"></pre>
+          </details>
+          <details>
+            <summary>查看 CIFP 424 canonical JSON</summary>
+            <pre id="canonicalJsonPreview" class="json-preview"></pre>
+          </details>
+        </details>
+      </aside>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <div id="helpOverlay" class="help-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+      <div class="help-modal">
+        <div class="help-modal-head">
+          <div>
+            <p class="eyebrow">Annotation Guide</p>
+            <h2 id="helpTitle">普通参与者操作说明</h2>
+          </div>
+          <button id="helpCloseBtn" type="button">关闭</button>
+        </div>
+        <div class="help-content">
+          <section>
+            <h3>主流程</h3>
+            <ol>
+              <li>左侧点击航图预览，判断难度。</li>
+              <li>确认可做后点击左侧“领取并开始”。</li>
+              <li>按右侧“当前字段任务”逐个字段判断。</li>
+              <li>先核对当前字段的证据篮子：系统会自动填入候选框，可以加入、移除、微调或画新框。</li>
+              <li>选择来源类型并确认：直接图面证据、多证据综合、规则/默认补全、缺少足够编码信息或不确定。</li>
+              <li>字段全部处理后点击“完成本图”。</li>
+            </ol>
+          </section>
+          <section>
+            <h3>来源类型</h3>
+            <p>“多证据综合”和“规则/默认补全”都必须先选证据框。前者表示多个框共同构成一个可见事实；后者表示这些框只是前提，还需要航图省略、程序规则或默认语义补全。</p>
+          </section>
+          <section>
+            <h3>退回</h3>
+            <p>领取后发现航图超出能力范围，使用“退回专家复审”。退回后普通参与者不能继续保存该图。</p>
+          </section>
+          <section>
+            <h3>完整教程</h3>
+            <div class="tutorial-actions">
+              <button id="fullTutorialBtn" class="primary tutorial-open-btn" type="button">打开完整操作手册</button>
+              <button id="detailBoxTutorialBtn" class="tutorial-open-btn" type="button">打开下方框读法教程</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>

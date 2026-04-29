@@ -1,0 +1,1074 @@
+{
+  "chart_id": "KATL_I09R",
+  "image_path": "datasets/formal300/images/005__KATL_I09R__00026IL9R_p0.png",
+  "image_dimensions": {
+    "width": 807,
+    "height": 1238
+  },
+  "prelabel_version": "v0.26-formal300-structure-aware-prelabels",
+  "generated_at": "2026-04-25T02:58:32.713603+00:00",
+  "generation_policy": {
+    "final_ground_truth": false,
+    "human_calibration_required": true,
+    "upper_coarse_boxes_are_formal_annotations": true,
+    "lower_detail_box_is_seed_only": true,
+    "candidate_mappings_are_cifp424_targets_not_independent_predictions": true,
+    "formal300_small_box_prelabels_added": true,
+    "small_box_source": "score lower missed-approach detail candidates with PR28 text anchors, boxed-cell structure, and CV icon components; only detected evidence is drawn",
+    "small_box_final_ground_truth": false,
+    "small_box_human_calibration_required": true,
+    "missed_approach_icon_or_detail_area_first": true,
+    "low_confidence_blank_fallback_boxes_enabled": false,
+    "boxed_cell_structure_weighted": true
+  },
+  "review_priority": "high",
+  "target_summary": {
+    "candidate_missed_approach_leg_count": 3,
+    "candidate_leg_ids": [
+      "KATL_I09R__ma1",
+      "KATL_I09R__ma2",
+      "KATL_I09R__ma3"
+    ]
+  },
+  "regions": [
+    {
+      "region_id": "KATL_I09R_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "bbox": {
+        "x_center": 0.805,
+        "y_center": 0.142,
+        "width": 0.33,
+        "height": 0.07
+      },
+      "ocr_text": "",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "confidence": 0.35,
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "VI",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=course_deg, course_deg=100.0",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 100
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "CF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "CONNI",
+          "expected_answer": {
+            "status": "present",
+            "value": "CONNI"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "CF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 4000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 4000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "CF",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=navaid_radial, navaid=AHN, radial_deg=234.6, direction=inbound",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "navaid_radial",
+              "navaid": "AHN",
+              "radial_deg": 234.6,
+              "direction": "inbound"
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "CONNI",
+          "expected_answer": {
+            "status": "present",
+            "value": "CONNI"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 4000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 4000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q5_hold_params",
+          "expected_value": "inbound_course_deg=54.6, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 54.6,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "RIGHT"
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        }
+      ],
+      "human_review": {
+        "review_action": "pending",
+        "notes": ""
+      }
+    },
+    {
+      "region_id": "KATL_I09R_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "bbox": {
+        "x_center": 0.5,
+        "y_center": 0.43,
+        "width": 0.94,
+        "height": 0.48
+      },
+      "ocr_text": "",
+      "label": "coarse plan-view context for missed approach",
+      "confidence": 0.3,
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [],
+      "human_review": {
+        "review_action": "pending",
+        "notes": ""
+      }
+    },
+    {
+      "region_id": "KATL_I09R_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "bbox": {
+        "x_center": 0.5691,
+        "y_center": 0.6803,
+        "width": 0.2636,
+        "height": 0.1321
+      },
+      "ocr_text": "",
+      "label": "lower/profile missed-approach detail area detected from PDF text/icon anchors",
+      "confidence": 0.5,
+      "annotation_scope": "lower_detail_seed",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [],
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Generic seed only; add fine-grained boxes as needed."
+      },
+      "source_layer": "pdf_text_cluster_icon_area_detector"
+    },
+    {
+      "region_id": "KATL_I09R_pilotcopy_700_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "bbox": {
+        "x_center": 0.4938,
+        "y_center": 0.657,
+        "width": 0.052,
+        "height": 0.017
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: 4000",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_altitude_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "4000",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KATL_I09R__ma2",
+      "source_leg_type": "CF",
+      "source_field_name": "Q2_altitude_constraint",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "CF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 4000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 4000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 4000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 4000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "leg_type": "CF",
+          "field_name": "altitude",
+          "expected_value": "04000",
+          "display_value": "4000",
+          "match_basis": "curated lower/profile grid completion: 4000",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "leg_type": "HM",
+          "field_name": "altitude",
+          "expected_value": "04000",
+          "display_value": "4000",
+          "match_basis": "curated lower/profile grid completion: 4000",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KATL_I09R_pilotcopy_705_fix_text",
+      "region_type": "FIX_TEXT",
+      "bbox": {
+        "x_center": 0.6289,
+        "y_center": 0.6587,
+        "width": 0.064,
+        "height": 0.016
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: CONNI",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_fix_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "CONNI",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KATL_I09R__ma2",
+      "source_leg_type": "CF",
+      "source_field_name": "Q1_fix_ident",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "CF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "CONNI",
+          "expected_answer": {
+            "status": "present",
+            "value": "CONNI"
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "CONNI",
+          "expected_answer": {
+            "status": "present",
+            "value": "CONNI"
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "leg_type": "CF",
+          "field_name": "fix",
+          "expected_value": "CONNI",
+          "display_value": "CONNI",
+          "match_basis": "curated lower/profile grid completion: CONNI",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "leg_type": "HM",
+          "field_name": "holding_fix",
+          "expected_value": "CONNI",
+          "display_value": "CONNI",
+          "match_basis": "curated lower/profile grid completion: CONNI",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KATL_I09R_pilotcopy_703_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "bbox": {
+        "x_center": 0.5626,
+        "y_center": 0.6733,
+        "width": 0.045,
+        "height": 0.017
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: AHN",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_navaid_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "AHN",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KATL_I09R__ma2",
+      "source_leg_type": "CF",
+      "source_field_name": "Q4_course_or_radial",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "CF",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=navaid_radial, navaid=AHN, radial_deg=234.6, direction=inbound",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "navaid_radial",
+              "navaid": "AHN",
+              "radial_deg": 234.6,
+              "direction": "inbound"
+            }
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "leg_type": "CF",
+          "field_name": "initial_track",
+          "expected_value": "AHN",
+          "display_value": "AHN",
+          "match_basis": "curated lower/profile grid completion: AHN",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KATL_I09R_pilotcopy_706_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "bbox": {
+        "x_center": 0.632,
+        "y_center": 0.6812,
+        "width": 0.046,
+        "height": 0.0155
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: AHN",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_navaid_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "AHN",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KATL_I09R__ma3",
+      "source_leg_type": "HM",
+      "source_field_name": "Q5_hold_params",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q5_hold_params",
+          "expected_value": "inbound_course_deg=54.6, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 54.6,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "RIGHT"
+            }
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "leg_type": "HM",
+          "field_name": "holding_details",
+          "expected_value": "AHN",
+          "display_value": "AHN",
+          "match_basis": "curated lower/profile grid completion: AHN",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 3,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KATL_I09R_pilotcopy_704_radial_text",
+      "region_type": "RADIAL_TEXT",
+      "bbox": {
+        "x_center": 0.5626,
+        "y_center": 0.69,
+        "width": 0.06,
+        "height": 0.02
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: R-235",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_radial_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "R-235",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KATL_I09R__ma2",
+      "source_leg_type": "CF",
+      "source_field_name": "Q4_course_or_radial",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "CF",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=navaid_radial, navaid=AHN, radial_deg=234.6, direction=inbound",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "navaid_radial",
+              "navaid": "AHN",
+              "radial_deg": 234.6,
+              "direction": "inbound"
+            }
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "leg_type": "CF",
+          "field_name": "initial_track",
+          "expected_value": "R-235",
+          "display_value": "R-235",
+          "match_basis": "curated lower/profile grid completion: R-235",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 2,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KATL_I09R_pilotcopy_702_heading_text",
+      "region_type": "HEADING_TEXT",
+      "bbox": {
+        "x_center": 0.4938,
+        "y_center": 0.7007,
+        "width": 0.0776,
+        "height": 0.0207
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: hdg 100",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_heading_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "hdg 100",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KATL_I09R__ma1",
+      "source_leg_type": "VI",
+      "source_field_name": "Q3_turn",
+      "candidate_mappings": [],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma1",
+          "leg_type": "VI",
+          "field_name": "turn_direction",
+          "expected_value": "hdg 100",
+          "display_value": "hdg 100",
+          "match_basis": "curated lower/profile grid completion: hdg 100",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 1,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KATL_I09R_iconalign_001_heading_text",
+      "region_type": "HEADING_TEXT",
+      "bbox": {
+        "x_center": 0.5126,
+        "y_center": 0.7011,
+        "width": 0.0408,
+        "height": 0.0131
+      },
+      "ocr_text": "",
+      "label": "HEADING_TEXT: 100° -> type=course_deg, course_deg=100.0",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "VI",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=course_deg, course_deg=100.0",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 100
+            }
+          },
+          "match_basis": "PDF text token '100°' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KATL_I09R_iconalign_002_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "bbox": {
+        "x_center": 0.4926,
+        "y_center": 0.6704,
+        "width": 0.0087,
+        "height": 0.0129
+      },
+      "ocr_text": "",
+      "label": "climb arrow for VI; climb arrow for AT_OR_ABOVE 4000 ft; climb arrow for AT_OR_ABOVE 4000 ft",
+      "confidence": 0.5,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "VI",
+          "field_name": "Q_terminator",
+          "expected_value": "VI",
+          "expected_answer": {
+            "status": "present",
+            "value": "VI"
+          },
+          "match_basis": "detected climb/missed-approach icon near altitude text",
+          "confidence": 0.5,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "CF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 4000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 4000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "detected climb/missed-approach icon near altitude text",
+          "confidence": 0.5,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 4000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 4000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "detected climb/missed-approach icon near altitude text",
+          "confidence": 0.5,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KATL_I09R_pilotcopy_701_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "bbox": {
+        "x_center": 0.4932,
+        "y_center": 0.6846,
+        "width": 0.0169,
+        "height": 0.0466
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: climb arrow",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_climb_arrow",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "climb arrow",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KATL_I09R__ma1",
+      "source_leg_type": "VI",
+      "source_field_name": "Q2_altitude_constraint",
+      "candidate_mappings": [],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma1",
+          "leg_type": "VI",
+          "field_name": "climb_altitude",
+          "expected_value": "04000",
+          "display_value": "4000",
+          "match_basis": "curated lower/profile grid completion: climb arrow",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 1,
+      "canonical_mapping_required": true
+    },
+    {
+      "region_id": "KATL_I09R_iconalign_003_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "bbox": {
+        "x_center": 0.671,
+        "y_center": 0.7391,
+        "width": 0.0062,
+        "height": 0.0129
+      },
+      "ocr_text": "",
+      "label": "climb arrow for type=course_deg, course_deg=100.0",
+      "confidence": 0.5,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "VI",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=course_deg, course_deg=100.0",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 100
+            }
+          },
+          "match_basis": "detected climb/missed-approach icon near altitude text",
+          "confidence": 0.5,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KATL_I09R_iconalign_004_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "bbox": {
+        "x_center": 0.6245,
+        "y_center": 0.6862,
+        "width": 0.0223,
+        "height": 0.0089
+      },
+      "ocr_text": "",
+      "label": "fix symbol for CONNI; fix symbol for CONNI",
+      "confidence": 0.48,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "CF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "CONNI",
+          "expected_answer": {
+            "status": "present",
+            "value": "CONNI"
+          },
+          "match_basis": "detected fix/navaid symbol near fix text",
+          "confidence": 0.48,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "CONNI",
+          "expected_answer": {
+            "status": "present",
+            "value": "CONNI"
+          },
+          "match_basis": "detected fix/navaid symbol near fix text",
+          "confidence": 0.48,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KATL_I09R_iconalign_008_holding_pattern",
+      "region_type": "HOLDING_PATTERN",
+      "bbox": {
+        "x_center": 0.6314,
+        "y_center": 0.6821,
+        "width": 0.0458,
+        "height": 0.025
+      },
+      "ocr_text": "",
+      "label": "HOLDING_PATTERN for inbound_course_deg=54.6, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
+      "confidence": 0.46,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q5_hold_params",
+          "expected_value": "inbound_course_deg=54.6, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 54.6,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "RIGHT"
+            }
+          },
+          "match_basis": "detected path/holding icon component inside lower missed-approach area",
+          "confidence": 0.46,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KATL_I09R_pilotcopy_707_dme_distance_text",
+      "region_type": "DME_DISTANCE_TEXT",
+      "bbox": {
+        "x_center": 0.632,
+        "y_center": 0.694,
+        "width": 0.046,
+        "height": 0.017
+      },
+      "source_layer": "copied_from_reviewed_pilot10_prelabel",
+      "ocr_text": "",
+      "label": "curated lower detail: 30.2",
+      "confidence": 0.55,
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "element_role": "curated_dme_distance_text",
+      "detection_source": "curated_grid_completion_v0.10",
+      "preserve_curated_box": true,
+      "expected_visual_value": "30.2",
+      "profile_sequence_index": null,
+      "source_candidate_leg_id": "KATL_I09R__ma3",
+      "source_leg_type": "HM",
+      "source_field_name": "Q5_hold_params",
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q5_hold_params",
+          "expected_value": "inbound_course_deg=54.6, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 54.6,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "RIGHT"
+            }
+          },
+          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
+          "confidence": 0.55,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KATL_I09R.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+      },
+      "legacy_candidate_mappings": [
+        {
+          "candidate_leg_id": "KATL_I09R__ma3",
+          "leg_type": "HM",
+          "field_name": "holding_details",
+          "expected_value": "30.2 DME",
+          "display_value": "30.2 DME",
+          "match_basis": "curated lower/profile grid completion: 30.2",
+          "confidence": 0.78,
+          "human_decision": "pending",
+          "human_notes": ""
+        }
+      ],
+      "source_canonical_leg_index": 3,
+      "canonical_mapping_required": true
+    }
+  ]
+}

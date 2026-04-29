@@ -1,0 +1,160 @@
+{
+  "chart_id": "KBUR_L08-Z",
+  "procedure": {
+    "airport": "KBUR",
+    "approach_ident": "L08-Z",
+    "chart_name": "ILS Z OR LOC Z RWY 08"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 4
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CA"
+          },
+          "Q1_fix_ident": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 1300,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 78.9
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "VI"
+          },
+          "Q1_fix_ident": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q2_altitude_constraint": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q3_turn": {
+            "status": "present",
+            "value": "RIGHT"
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 210
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 3,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "VTU"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 4600,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "navaid_radial",
+              "navaid": "VTU",
+              "radial_deg": 86,
+              "direction": "inbound"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 4,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "HM"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "VTU"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 4600,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 130.6,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "LEFT"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

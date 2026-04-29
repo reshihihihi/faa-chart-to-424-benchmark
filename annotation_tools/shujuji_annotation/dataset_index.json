@@ -1,0 +1,19 @@
+{
+  "practice10": {
+    "url_path": "/practice/",
+    "count": 10,
+    "final_dataset": false,
+    "annotation_save_policy": "practice annotations are saved separately and excluded from final formal300 exports"
+  },
+  "formal300": {
+    "url_path": "/formal/",
+    "count": 300,
+    "final_dataset": true,
+    "splits": {
+      "development": 200,
+      "evaluation": 75,
+      "probe": 25
+    },
+    "annotation_save_policy": "formal annotations are saved by annotator and timestamp to support LAN multi-person work"
+  }
+}

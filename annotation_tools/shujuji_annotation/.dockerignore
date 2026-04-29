@@ -1,0 +1,8 @@
+annotation_platform/node_modules
+annotation_platform/npm-debug.log
+annotation_platform/server.log
+*.log
+**/__pycache__
+**/*.pyc
+runtime_data
+**/runtime_data
