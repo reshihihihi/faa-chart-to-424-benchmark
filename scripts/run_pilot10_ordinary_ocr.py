@@ -96,12 +96,13 @@ def run_paddleocr(
     *,
     sample_manifest: Path = DEFAULT_MANIFEST,
     sample_role: str = "pilot10_external_excluded_from_formal_evaluation",
+    run_name: str = "ocr1_paddleocr_ppocrv5_20260428_r1",
 ) -> list[dict[str, Any]]:
     import paddle
     import paddleocr
     from paddleocr import PaddleOCR
 
-    run_dir = output_root / "ocr1_paddleocr_ppocrv5_20260428_r1"
+    run_dir = output_root / run_name
     raw_dir = run_dir / "raw_blocks"
     text_dir = run_dir / "full_text"
 
@@ -201,6 +202,7 @@ def run_tesseract(
     *,
     sample_manifest: Path = DEFAULT_MANIFEST,
     sample_role: str = "pilot10_external_excluded_from_formal_evaluation",
+    run_name: str = "ocr2_tesseract5_20260428_r1",
 ) -> list[dict[str, Any]]:
     import pytesseract
     from PIL import Image
@@ -209,7 +211,7 @@ def run_tesseract(
     pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
     version = str(pytesseract.get_tesseract_version())
 
-    run_dir = output_root / "ocr2_tesseract5_20260428_r1"
+    run_dir = output_root / run_name
     raw_dir = run_dir / "raw_tsv"
     raw_json_dir = run_dir / "raw_blocks"
     text_dir = run_dir / "full_text"
@@ -316,7 +318,8 @@ def run_tesseract(
             },
             "ordinary_ocr_source": True,
             "mlm_or_vlm_transcription": False,
-            "tesseract_cmd_recorded": False,
+            "tesseract_cmd_recorded": True,
+            "tesseract_cmd": tesseract_cmd,
         },
         manifest_rows,
         sample_manifest=sample_manifest,
@@ -351,18 +354,27 @@ def write_run_manifest(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Generate ordinary OCR-1/OCR-2 artifacts for pilot10.")
+    parser = argparse.ArgumentParser(description="Generate ordinary OCR-1/OCR-2 artifacts for pilot or formal manifests.")
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
-    parser.add_argument("--limit", type=int, default=10)
+    parser.add_argument("--limit", type=int, default=10, help="Number of manifest rows to process; use 0 for all rows.")
     parser.add_argument("--engine", choices=["paddleocr", "tesseract", "both"], default="both")
     parser.add_argument("--tesseract-cmd", default="tesseract")
     parser.add_argument("--sample-role", default="pilot10_external_excluded_from_formal_evaluation")
+    parser.add_argument("--run-name-ocr1", default="ocr1_paddleocr_ppocrv5_20260428_r1")
+    parser.add_argument("--run-name-ocr2", default="ocr2_tesseract5_20260428_r1")
     args = parser.parse_args()
 
-    rows = read_jsonl(args.manifest)[: args.limit]
+    all_rows = read_jsonl(args.manifest)
+    rows = all_rows if args.limit == 0 else all_rows[: args.limit]
     if args.engine in {"paddleocr", "both"}:
-        run_paddleocr(rows, args.output_root, sample_manifest=args.manifest, sample_role=args.sample_role)
+        run_paddleocr(
+            rows,
+            args.output_root,
+            sample_manifest=args.manifest,
+            sample_role=args.sample_role,
+            run_name=args.run_name_ocr1,
+        )
     if args.engine in {"tesseract", "both"}:
         run_tesseract(
             rows,
@@ -370,6 +382,7 @@ def main() -> int:
             args.tesseract_cmd,
             sample_manifest=args.manifest,
             sample_role=args.sample_role,
+            run_name=args.run_name_ocr2,
         )
     return 0
 
