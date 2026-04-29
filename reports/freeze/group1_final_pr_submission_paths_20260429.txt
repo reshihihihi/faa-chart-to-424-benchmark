@@ -75,6 +75,8 @@ reports/freeze/group1_c_methods_pilot100_evidence_20260429.md
 reports/freeze/group1_c_methods_pilot100_evidence_20260429.json
 reports/freeze/c4_output_control_fix_20260429.md
 reports/freeze/c4_output_control_fix_20260429.json
+reports/freeze/formal300_pdf_image_reuse_audit_20260429.md
+reports/freeze/formal300_pdf_image_reuse_audit_20260429.json
 reports/pilot/c4_output_control_fix_pilot100_20260429.md
 reports/pilot/c4_output_control_fix_pilot100_20260429.json
 reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md

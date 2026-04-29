@@ -78,12 +78,13 @@ pilot100 是外部可行性验证集，不属于 formal300，也不与 pilot10 �
 - C4 已完成 Anthropic tool transport 输出控制修正，API 恢复后 pilot100 schema-valid 100/100，schema retry 0。
 - D-SFT 已完成 train/dev 数据准备、no-leakage 检查、训练、pilot100 可行性验证和冻结候选报告。
 - formal300 manifest、checksum、field_targets、evidence_provenance、challenge_tags 等前置文件已生成用于审查。
+- 已补充 formal300 PDF/image 复用审计：`reports/freeze/formal300_pdf_image_reuse_audit_20260429.md`。
 
 ## 7. 仍需审查或冻结的事项
 
 - formal300 尚未正式运行。
 - formal300 OCR-1/OCR-2 artifact 尚未作为正式输入冻结。
-- formal300 有 300 个样本但 299 个 PDF，需要确认是正常 PDF 复用还是 materialization 缺口。
+- formal300 有 300 个样本但 299 个 PDF。审计确认不是 PDF 缺失，而是 `formal300_133 KAPC_R01LY` 与 `formal300_134 KAPC_R01LZ` 共享同一 PDF 和同一渲染图像 hash，但 target JSON 不同。正式冻结前需要决定替换、排除，还是明确保留并把任务定义为带 `proc_ident` 元数据的 extraction。
 - B1_prime_link 是否正式作为实验组1 candidate 纳入，需要审查者确认。
 - formal300 PNG/PDF/canonical_proxy_gt/raw CIFP 是否进入仓库，需要决定 Git、Git LFS、Release artifact 或外部 artifact 策略。
 - model/provider/max_tokens/tool policy/retry policy 需要在 formal run manifest 中最终绑定。
@@ -97,6 +98,7 @@ pilot100 是外部可行性验证集，不属于 formal300，也不与 pilot10 �
 - `reports/freeze/group1_pr_draft_body_20260429.md`
 - `reports/freeze/group1_pr_package_file_manifest_20260429.json`
 - `reports/freeze/group1_final_pr_submission_paths_20260429.txt`
+- `reports/freeze/formal300_pdf_image_reuse_audit_20260429.md`
 - `reports/pilot/pilot100_b1_b1prime_expanded_validation_20260428.md`
 - `reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md`
 - `reports/freeze/group1_c_methods_pilot100_evidence_20260429.md`

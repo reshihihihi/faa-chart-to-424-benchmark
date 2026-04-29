@@ -1,0 +1,67 @@
+{
+  "status": "review_decision_required_before_formal300_freeze",
+  "summary": {
+    "sample_rows": 300,
+    "unique_sample_id": 300,
+    "unique_chart_id": 300,
+    "unique_pdf_file": 299,
+    "unique_pdf_path": 299,
+    "unique_image_sha256": 299,
+    "missing_referenced_pdfs": 0,
+    "pdf_hash_mismatches": 0,
+    "pdf_status_not_available": 0
+  },
+  "duplicate_pdf_groups": [
+    {
+      "pdf_file": "00281R6.PDF",
+      "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00281R6.PDF",
+      "pdf_sha256": "0e711dda064b2f78dfc5e69b5f3c48d85734e39197f149bff37afa64c0412762",
+      "samples": [
+        {
+          "sample_id": "formal300_133",
+          "chart_id": "KAPC_R01LY",
+          "airport": "KAPC",
+          "proc_ident": "R01LY",
+          "chart_name": "RNAV (GPS) RWY 06",
+          "dataset_split": "development",
+          "image_file": "133__KAPC_R01LY__00281R6_p0.png",
+          "image_sha256": "5912a94e98be08bcd9bbe2a1ea50774bc720bdf2c438c29037d635d22414de10",
+          "target_sha256": "1eb8306e988c635d2f2ab4ccb3f149188acd8b0f066c9fa170dd6e5f3f1f774b",
+          "raw_cifp_sha256": "5185cb2ee264c9342393d7abb326666364f1ea536632e4f92fc2749b937ceea7"
+        },
+        {
+          "sample_id": "formal300_134",
+          "chart_id": "KAPC_R01LZ",
+          "airport": "KAPC",
+          "proc_ident": "R01LZ",
+          "chart_name": "RNAV (GPS) RWY 06",
+          "dataset_split": "development",
+          "image_file": "134__KAPC_R01LZ__00281R6_p0.png",
+          "image_sha256": "5912a94e98be08bcd9bbe2a1ea50774bc720bdf2c438c29037d635d22414de10",
+          "target_sha256": "7fb1d65eda61bbb7445eea4cdda7104ad374d5fa6853287b432ebc5426a84f84",
+          "raw_cifp_sha256": "a7cca39fec68c3a6b56bb8d244494697bcd260c3967af50764478c454decd204"
+        }
+      ],
+      "same_image_sha256": true,
+      "same_target_sha256": false,
+      "same_raw_cifp_sha256": false,
+      "canonical_target_differences": [
+        {
+          "field": "leg1.Q2_altitude_constraint.value",
+          "KAPC_R01LY": {
+            "desc": "AT_OR_ABOVE",
+            "altitude_ft": 436,
+            "altitude_2_ft": null
+          },
+          "KAPC_R01LZ": {
+            "desc": "AT_OR_ABOVE",
+            "altitude_ft": 217,
+            "altitude_2_ft": null
+          }
+        }
+      ]
+    }
+  ],
+  "interpretation": "Not a missing-PDF problem; this is a duplicate visual input with divergent CIFP-derived target problem.",
+  "recommended_resolution": "Prefer replacing one of the two samples before formal freeze, or explicitly document metadata-conditioned extraction and duplicate-image handling if both samples are kept."
+}

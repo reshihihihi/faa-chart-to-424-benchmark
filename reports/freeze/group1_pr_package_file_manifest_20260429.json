@@ -985,7 +985,7 @@
       "recommended_action_cn": "提交",
       "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
       "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
-      "sha256": "235bc973362988062eb59f4382b1342b467edabfc52e37c6c0cbda05c3a9ed81"
+      "sha256": "d8c81a84364913cbffcf8ae7b67485001a626a04e8b33c7961d02dd9b25ae936"
     },
     {
       "path": "reports/freeze/group1_final_pr_submission_guide_20260429.md",
@@ -1061,7 +1061,7 @@
       "recommended_action_cn": "提交",
       "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
       "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
-      "sha256": "f09aef283f6edb3f1f6e98e097d76cd96f21474382f17ab5987b80d019adbac9"
+      "sha256": "4720229da7c0c00736d797ccb7489f7e729ad889f3aa010746c8c0295f1d207d"
     },
     {
       "path": "reports/freeze/group1_freeze_readiness_audit_20260429.json",
@@ -1260,6 +1260,28 @@
       "reason": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
       "reason_cn": "最终 PR 白名单文件，用于提交实验组1方案、方法内容、pilot100 结果、冻结策略或 formal300 前置 manifest。",
       "sha256": "655bdcc26a632056b2a65ae4c46f14b69a3bd8f756e86593fbfca583ec7bc739"
+    },
+    {
+      "path": "reports/freeze/formal300_pdf_image_reuse_audit_20260429.md",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "???????",
+      "recommended_action": "submit",
+      "recommended_action_cn": "??",
+      "reason": "formal300 PDF/image ????????1?? PR ?????",
+      "reason_cn": "formal300 PDF/image ????????1?? PR ?????",
+      "sha256": "200215275787a10f641f5802f19199c7dbb8f57d0159dbe320cab0ec4c6b6e4b"
+    },
+    {
+      "path": "reports/freeze/formal300_pdf_image_reuse_audit_20260429.json",
+      "exists": true,
+      "category": "final_submission_whitelist",
+      "category_cn": "???????",
+      "recommended_action": "submit",
+      "recommended_action_cn": "??",
+      "reason": "formal300 PDF/image ????????1?? PR ?????",
+      "reason_cn": "formal300 PDF/image ????????1?? PR ?????",
+      "sha256": "58cc231bcae286cb284b2b1b5f16c37ab28d643e697d98385f90c70504fe232d"
     }
   ],
   "method_table": [
@@ -1344,7 +1366,7 @@
     "pilot100 证据是否足够支持进入 formal300 运行前审查？"
   ],
   "final_submission_whitelist_path": "reports/freeze/group1_final_pr_submission_paths_20260429.txt",
-  "final_submission_whitelist_count": 104,
+  "final_submission_whitelist_count": 106,
   "final_submission_scope_cn": [
     "实验组1试验方案与方法边界",
     "各方法 prompt、schema、runner、scorer、method card",
@@ -1642,7 +1664,7 @@
     {
       "path": "reports/freeze/group1_experiment_plan_methods_pilot100_summary_20260429.md",
       "exists": true,
-      "sha256": "235bc973362988062eb59f4382b1342b467edabfc52e37c6c0cbda05c3a9ed81"
+      "sha256": "d8c81a84364913cbffcf8ae7b67485001a626a04e8b33c7961d02dd9b25ae936"
     },
     {
       "path": "reports/freeze/group1_final_pr_submission_guide_20260429.md",
@@ -1676,7 +1698,7 @@
     {
       "path": "reports/freeze/group1_final_pr_submission_paths_20260429.txt",
       "exists": true,
-      "sha256": "f09aef283f6edb3f1f6e98e097d76cd96f21474382f17ab5987b80d019adbac9"
+      "sha256": "4720229da7c0c00736d797ccb7489f7e729ad889f3aa010746c8c0295f1d207d"
     },
     {
       "path": "reports/freeze/group1_formal_freeze_ready_no_eval_20260429.md",
@@ -1737,6 +1759,16 @@
       "path": "reports/freeze/c4_output_control_fix_20260429.json",
       "exists": true,
       "sha256": "28c8a611277b346b13fa31688932540e9bf38fa471dfbec2f7a22a973b9b2794"
+    },
+    {
+      "path": "reports/freeze/formal300_pdf_image_reuse_audit_20260429.md",
+      "exists": true,
+      "sha256": "200215275787a10f641f5802f19199c7dbb8f57d0159dbe320cab0ec4c6b6e4b"
+    },
+    {
+      "path": "reports/freeze/formal300_pdf_image_reuse_audit_20260429.json",
+      "exists": true,
+      "sha256": "58cc231bcae286cb284b2b1b5f16c37ab28d643e697d98385f90c70504fe232d"
     },
     {
       "path": "reports/pilot/c4_output_control_fix_pilot100_20260429.md",
