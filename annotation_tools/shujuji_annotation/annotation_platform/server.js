@@ -341,6 +341,76 @@ async function listAnnotationExports() {
   return files.sort((a, b) => b.created_at.localeCompare(a.created_at));
 }
 
+function chartIdFromAnnotationEntry(entry) {
+  const data = entry?.data || {};
+  const explicit = data.chart_id || data.manifest?.chart_id || "";
+  if (explicit) return explicit;
+  const name = path.basename(String(entry?.relative_path || ""), ".json");
+  return isSafeChartId(name) ? name : "";
+}
+
+function uniqueChartCount(entries) {
+  const chartIds = new Set();
+  for (const entry of entries || []) {
+    const chartId = chartIdFromAnnotationEntry(entry);
+    if (chartId) chartIds.add(chartId);
+  }
+  return chartIds.size;
+}
+
+async function buildDatasetProgress(dataset) {
+  const manifest = await readDatasetJson(dataset, "manifest.json", []);
+  const claims = dataset.finalDataset ? await readClaims(dataset) : {};
+  const currentDrafts = await readAnnotationEntries(annotationPath(dataset, "drafts", "by_annotator"));
+  const draftSnapshots = await readAnnotationEntries(annotationPath(dataset, "drafts", "snapshots"));
+  const byAnnotator = await readAnnotationEntries(annotationPath(dataset, "by_annotator"));
+  const submissions = await readAnnotationEntries(annotationPath(dataset, "submissions"));
+  const statusCounts = {};
+  for (const claim of Object.values(claims || {})) {
+    const status = claim?.status || "claimed";
+    statusCounts[status] = (statusCounts[status] || 0) + 1;
+  }
+  const totalCharts = manifest.length;
+  const submittedCount = statusCounts.submitted || 0;
+  const returnedCount = statusCounts.returned_for_expert_review || 0;
+  const activeClaimCount = Object.values(claims || {}).filter((claim) => {
+    const status = claim?.status || "claimed";
+    return !["submitted", "returned_for_expert_review"].includes(status);
+  }).length;
+  return {
+    dataset_key: dataset.key,
+    label: dataset.label,
+    final_dataset: dataset.finalDataset,
+    total_charts: totalCharts,
+    claims_count: Object.keys(claims || {}).length,
+    unassigned_count: dataset.finalDataset ? Math.max(0, totalCharts - Object.keys(claims || {}).length) : null,
+    active_claim_count: activeClaimCount,
+    submitted_claim_count: submittedCount,
+    returned_for_expert_review_count: returnedCount,
+    current_draft_json_count: currentDrafts.length,
+    current_draft_chart_count: uniqueChartCount(currentDrafts),
+    draft_snapshot_json_count: draftSnapshots.length,
+    final_json_count: byAnnotator.length,
+    final_chart_count: uniqueChartCount(byAnnotator),
+    submission_json_count: submissions.length,
+    submission_chart_count: uniqueChartCount(submissions),
+    progress_percent: totalCharts ? Math.round((submittedCount / totalCharts) * 100) : 0,
+    claim_status_counts: statusCounts,
+    updated_at: new Date().toISOString()
+  };
+}
+
+async function buildAdminProgress() {
+  return {
+    ok: true,
+    updated_at: new Date().toISOString(),
+    datasets: {
+      practice10: await buildDatasetProgress(datasets.practice10),
+      formal300: await buildDatasetProgress(datasets.formal300)
+    }
+  };
+}
+
 async function readClaims(dataset) {
   if (!dataset.finalDataset) return {};
   return readAnnotationJson(dataset, "claims.json", {});
@@ -842,12 +912,14 @@ function adminHtml() {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>标注结果管理员导出</title>
+  <title>标注管理员控制台</title>
   <style>
     body{margin:0;background:#f6efe1;color:#10241f;font-family:"Microsoft YaHei","Noto Sans SC",sans-serif}
-    main{max-width:980px;margin:7vh auto;padding:0 24px 48px}
+    main{max-width:1120px;margin:7vh auto;padding:0 24px 48px}
     .card{background:#fffaf0;border:1px solid #dfceb0;border-radius:22px;padding:24px;margin:18px 0;box-shadow:0 18px 50px rgba(26,55,46,.12)}
     h1{margin:0 0 10px;font-size:30px}
+    h2{margin:0 0 12px}
+    h3{margin:0 0 12px}
     p{line-height:1.7;color:#405a54}
     input{box-sizing:border-box;width:100%;padding:13px 14px;border:1px solid #cdbf9f;border-radius:12px;background:#fff;font-size:16px}
     button,a.download{display:inline-block;margin:12px 10px 0 0;padding:12px 18px;border:0;border-radius:12px;background:#176f5b;color:white;text-decoration:none;font-size:15px;font-weight:700;cursor:pointer}
@@ -856,20 +928,34 @@ function adminHtml() {
     th,td{padding:12px;border-bottom:1px solid #eadcc4;text-align:left;font-size:14px;vertical-align:top}
     code{background:#efe4cf;padding:2px 6px;border-radius:6px}
     .status{white-space:pre-wrap;background:#10241f;color:#e6fff8;border-radius:14px;padding:14px;min-height:44px}
+    .muted{color:#64746f;font-size:14px}
+    .dataset-card{background:white;border:1px solid #eadcc4;border-radius:16px;padding:16px;margin-top:14px}
+    .metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px}
+    .metric{background:#f8f1e3;border:1px solid #eadcc4;border-radius:14px;padding:12px}
+    .metric strong{display:block;font-size:24px;line-height:1.2;color:#0f513f}
+    .metric span{display:block;margin-top:4px;color:#4a5d58;font-size:13px}
+    .progress-bar{height:10px;background:#eadcc4;border-radius:999px;overflow:hidden}
+    .progress-fill{display:block;height:100%;background:#176f5b;border-radius:999px}
   </style>
 </head>
 <body>
   <main>
-    <h1>标注结果管理员导出</h1>
+    <h1>标注管理员控制台</h1>
     <p>这个页面只给管理员使用。普通标注人员继续使用正式标注链接，不需要进入这里。</p>
     <section class="card">
       <h2>管理员 token</h2>
       <input id="token" type="password" placeholder="请输入管理员导出 token">
       <button type="button" onclick="saveToken()">保存 token</button>
+      <button class="secondary" type="button" onclick="loadProgress()">刷新当前进度</button>
       <button class="secondary" type="button" onclick="createExport()">生成并保存新导出</button>
       <button class="secondary" type="button" onclick="loadExports()">刷新导出列表</button>
       <p>导出文件会同时保存在服务器 <code>/data/shujuji_annotation/exports</code>，并可在本页下载。</p>
       <div id="status" class="status">等待操作...</div>
+    </section>
+    <section class="card">
+      <h2>当前进度</h2>
+      <p class="muted">这里是实时读取服务器当前标注文件和领取状态，不需要先生成导出。</p>
+      <div id="progress">请输入管理员 token 后刷新。</div>
     </section>
     <section class="card">
       <h2>已有导出</h2>
@@ -879,6 +965,7 @@ function adminHtml() {
   <script>
     const tokenInput = document.getElementById("token");
     const statusBox = document.getElementById("status");
+    const progressBox = document.getElementById("progress");
     const params = new URLSearchParams(location.search);
     const tokenFromUrl = params.get("admin_token");
     if (tokenFromUrl) {
@@ -897,6 +984,39 @@ function adminHtml() {
     }
     function show(value) {
       statusBox.textContent = typeof value === "string" ? value : JSON.stringify(value, null, 2);
+    }
+    function escapeCell(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[char]));
+    }
+    function numberCell(value) {
+      return Number.isFinite(Number(value)) ? Number(value).toLocaleString("zh-CN") : "-";
+    }
+    function metric(label, value, hint) {
+      return "<div class='metric'><strong>" + numberCell(value) + "</strong><span>" + escapeCell(label) + (hint ? "<br>" + escapeCell(hint) : "") + "</span></div>";
+    }
+    function renderDatasetProgress(item) {
+      const progress = Math.max(0, Math.min(100, Number(item.progress_percent || 0)));
+      const assigned = Math.max(0, Number(item.claims_count || 0) - Number(item.returned_for_expert_review_count || 0));
+      return "<div class='dataset-card'><h3>" + escapeCell(item.label || item.dataset_key) + "</h3>" +
+        "<div class='progress-bar'><span class='progress-fill' style='width:" + progress + "%'></span></div>" +
+        "<p class='muted'>已提交 " + numberCell(item.submitted_claim_count) + " / " + numberCell(item.total_charts) +
+        "，完成率 " + progress + "%；更新时间 " + escapeCell(item.updated_at || "") + "</p>" +
+        "<div class='metric-grid'>" +
+        metric("总航图", item.total_charts) +
+        metric("已领取/有状态", assigned, "不含退回复核") +
+        metric("未领取", item.unassigned_count) +
+        metric("暂存过的图", item.current_draft_chart_count, item.current_draft_json_count + " 个当前草稿文件") +
+        metric("已提交", item.submitted_claim_count, item.final_json_count + " 个正式结果文件") +
+        metric("提交快照", item.submission_chart_count, item.submission_json_count + " 个历史快照") +
+        metric("专家复核", item.returned_for_expert_review_count) +
+        metric("进行中领取", item.active_claim_count) +
+        "</div></div>";
     }
     async function adminFetch(url, options = {}) {
       if (!token()) throw new Error("请先填写管理员 token");
@@ -920,6 +1040,17 @@ function adminHtml() {
         show("导出失败：" + error.message);
       }
     }
+    async function loadProgress() {
+      try {
+        saveToken();
+        const data = await adminFetch("/api/admin/progress");
+        progressBox.innerHTML = renderDatasetProgress(data.datasets.formal300) + renderDatasetProgress(data.datasets.practice10);
+        show("当前进度已刷新。");
+      } catch (error) {
+        progressBox.textContent = "刷新失败：" + error.message;
+        show("刷新进度失败：" + error.message);
+      }
+    }
     async function loadExports() {
       try {
         saveToken();
@@ -927,7 +1058,7 @@ function adminHtml() {
         const rows = data.exports.map((item) => {
           const summary = item.summary?.formal300 || {};
           const href = "/api/admin/export/download?file=" + encodeURIComponent(item.file_name) + "&admin_token=" + encodeURIComponent(token());
-          return "<tr><td>" + item.created_at + "</td><td>" + item.file_name + "</td><td>" +
+          return "<tr><td>" + escapeCell(item.created_at) + "</td><td>" + escapeCell(item.file_name) + "</td><td>" +
             "暂存 " + (summary.draft_json_count || 0) + " / 正式 " + (summary.final_json_count || 0) + " / 提交快照 " + (summary.submission_json_count || 0) +
             "</td><td><a class='download' href='" + href + "'>下载 JSON</a></td></tr>";
         }).join("");
@@ -939,7 +1070,10 @@ function adminHtml() {
         show("刷新失败：" + error.message);
       }
     }
-    if (token()) loadExports();
+    if (token()) {
+      loadProgress();
+      loadExports();
+    }
   </script>
 </body>
 </html>`;
@@ -1165,6 +1299,12 @@ async function route(req, res) {
       ok: true,
       exports: await listAnnotationExports()
     });
+    return;
+  }
+
+  if (req.method === "GET" && pathname === "/api/admin/progress") {
+    requireAdminAccess(req, requestUrl);
+    sendJson(res, 200, await buildAdminProgress());
     return;
   }
 
