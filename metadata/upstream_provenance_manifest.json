@@ -70,24 +70,24 @@
       "object": "Shujuji annotation web app and bundled annotation datasets",
       "status": "imported",
       "source_pr": 32,
-      "source_commit": "dd0f708c6cf70a17b73455f811e9343c5efa1c67",
+      "source_commit": "5d37871f4ed65e2968012382e0f75c49ebb5b6f8",
       "source_paths": [
         "tools/shujuji_annotation/"
       ],
       "destination_paths": [
         "annotation_tools/shujuji_annotation/"
       ],
-      "sha256": "feb3cd604d77e51a530d29403c7f2cec3112fcd2019c9fdcb05119ba5deb0445",
+      "sha256": "d9e9555d7f671ded7281f124404e47f89f068af89520b0291ad379f6f6cc8ffe",
       "frozen_for_formal_evaluation": false,
       "source_pr_state_at_import": "open",
-      "imported_at_utc": "2026-04-30T03:32:24Z",
+      "imported_at_utc": "2026-04-30T03:46:04Z",
       "import_reason": "Provide the standalone human annotation web app, documentation, prelabels, chart images, and canonical proxy targets used to collect and audit benchmark evidence labels.",
       "excluded_paths": [
         "tools/shujuji_annotation/datasets/formal300/annotations/claims.json",
         "tools/shujuji_annotation/datasets/practice10/annotations/claims.json"
       ],
       "sha256_semantics": "sha256 over sorted lines of '<relative_path>\\0<file_sha256>\\n' for files imported under annotation_tools/shujuji_annotation/",
-      "file_count": 972
+      "file_count": 975
     },
     {
       "object": "paper-v2 scaffold and issue plan",

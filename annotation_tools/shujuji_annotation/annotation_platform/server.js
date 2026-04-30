@@ -626,11 +626,12 @@ async function loadChartDetail(dataset, chartId, annotator) {
   const target = targets.find((item) => item.chart_id === chartId) || null;
   const prelabel = await readDatasetJson(dataset, `prelabels/${chartId}.json`, null);
   const canonicalGt = await readDatasetJson(dataset, `targets/canonical_proxy_gt/${chartId}.json`, null);
-  const annotation = annotator
-    ? await readAnnotationJson(dataset, `by_annotator/${annotator}/${chartId}.json`, null)
+  const effectiveAnnotator = annotator || (dataset.finalDataset && claim?.annotator ? claim.annotator : "");
+  const annotation = effectiveAnnotator
+    ? await readAnnotationJson(dataset, `by_annotator/${effectiveAnnotator}/${chartId}.json`, null)
     : null;
-  const draft = annotator
-    ? await readAnnotationJson(dataset, `drafts/by_annotator/${annotator}/${chartId}.json`, null)
+  const draft = effectiveAnnotator
+    ? await readAnnotationJson(dataset, `drafts/by_annotator/${effectiveAnnotator}/${chartId}.json`, null)
     : null;
 
   return {
@@ -652,6 +653,7 @@ async function loadChartDetail(dataset, chartId, annotator) {
     prelabel: scrubClientValue(prelabel),
     annotation: scrubClientValue(annotation),
     draft: scrubClientValue(draft),
+    annotation_annotator: effectiveAnnotator,
     image_url: `/api/image?dataset=${encodeURIComponent(dataset.key)}&file=${encodeURIComponent(manifestItem.image_file)}`
   };
 }
@@ -1353,8 +1355,18 @@ async function route(req, res) {
     return;
   }
 
+  if (req.method === "GET" && pathname === "/showcase") {
+    sendRedirect(res, redirectWithQuery("/showcase/", requestUrl));
+    return;
+  }
+
   if (req.method === "GET" && (pathname === "/practice/" || pathname === "/formal/")) {
     await serveStatic(res, "/index.html");
+    return;
+  }
+
+  if (req.method === "GET" && pathname === "/showcase/") {
+    await serveStatic(res, "/showcase.html");
     return;
   }
 
