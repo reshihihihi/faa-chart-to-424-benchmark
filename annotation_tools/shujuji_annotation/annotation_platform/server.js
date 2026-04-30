@@ -838,7 +838,17 @@ async function readRequestBody(req) {
 async function serveStatic(res, pathname) {
   const cleanPath = pathname === "/" ? "index.html" : pathname.replace(/^\/+/, "");
   const filePath = safeJoin(publicRoot, cleanPath);
-  const stat = await fs.stat(filePath);
+  let stat;
+  try {
+    stat = await fs.stat(filePath);
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      const notFound = new Error("Not found");
+      notFound.statusCode = 404;
+      throw notFound;
+    }
+    throw error;
+  }
   if (!stat.isFile()) {
     const error = new Error("Not found");
     error.statusCode = 404;
