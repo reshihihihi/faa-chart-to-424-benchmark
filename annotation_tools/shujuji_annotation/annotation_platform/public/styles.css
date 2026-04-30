@@ -793,11 +793,29 @@ body.formal-queue-mode .workspace-toolbar {
   font-weight: 800;
 }
 
-.current-task-card h2 {
+.task-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
   margin: 6px 0;
+}
+
+.task-title-row h2 {
+  margin: 0;
   color: var(--ink);
   font-size: 24px;
   line-height: 1.25;
+}
+
+.task-title-row span {
+  border: 1px solid rgba(27, 109, 143, 0.2);
+  border-radius: 999px;
+  padding: 3px 8px;
+  color: var(--accent-strong);
+  background: rgba(27, 109, 143, 0.08);
+  font-size: 13px;
+  font-weight: 800;
 }
 
 .task-answer {

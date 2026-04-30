@@ -376,6 +376,15 @@ function friendlyFieldName(field) {
   return FIELD_LABELS[field] ? `${field} · ${FIELD_LABELS[field]}` : field || "字段";
 }
 
+function taskFieldName(field) {
+  return FIELD_LABELS[field] || field || "字段";
+}
+
+function taskLegContext(row) {
+  const legIndex = row?.canonical_leg_index || canonicalLegIndexForMapping(row);
+  return legIndex ? `第 ${legIndex} 段` : "";
+}
+
 function friendlyLegName(legOrMapping) {
   const legIndex = legOrMapping?.canonical_leg_index || canonicalLegIndexForMapping(legOrMapping) || "?";
   const legType = legOrMapping?.leg_type || "";
@@ -385,6 +394,13 @@ function friendlyLegName(legOrMapping) {
 
 function friendlyRegionType(type) {
   return REGION_TYPE_LABELS[type] || type || "未知框类型";
+}
+
+function evidenceRegionSummary(region) {
+  if (!region) return "已删除框";
+  const text = String(region.ocr_text || region.label || "").trim();
+  if (!text) return "点击在航图上定位";
+  return text.length > 30 ? `${text.slice(0, 30)}...` : text;
 }
 
 function friendlyAnswerValue(answer, fallback = "") {
@@ -1882,12 +1898,10 @@ function renderWorkflowPanel() {
         : "当前航图不能由该参与者编辑。";
 
   const selectedEvidenceIds = selectedReview?.required_evidence_region_ids || [];
-  const selectedEvidenceSources = selectedReview?.evidence_source?.length
-    ? selectedReview.evidence_source
-    : sourcesForRegionIds(selectedEvidenceIds);
   const selectedFieldTitle = selected
-    ? `${friendlyLegName(selected)} · ${friendlyFieldName(selected.field_name)}`
+    ? taskFieldName(selected.field_name)
     : "请选择航图";
+  const selectedFieldContext = selected ? taskLegContext(selected) : "";
   const selectedFieldAnswer = selected
     ? friendlyAnswerValue(selected.expected_answer, selected.expected_value)
     : "左侧选择航图后，这里会显示要判断的字段。";
@@ -1895,7 +1909,7 @@ function renderWorkflowPanel() {
     ? FIELD_REVIEW_LABELS[selectedReview.review_status] || selectedReview.review_status
     : "未选择";
   const selectedEvidenceText = selectedEvidenceIds.length
-    ? `证据框：${selectedEvidenceIds.join("、")}`
+    ? `证据篮：${selectedEvidenceIds.length} 个框`
     : "证据篮子为空";
   const fieldActionDisabled = !selected || !state.current || !canEdit;
   const confirmDisabled = fieldActionDisabled ? "disabled" : "";
@@ -1934,13 +1948,11 @@ function renderWorkflowPanel() {
     ? selectedEvidenceIds.map((regionId) => {
         const region = regionById(regionId);
         const active = regionId === state.selectedRegionId ? " active" : "";
-        const source = evidenceSourceForRegion(region);
         return `
           <div class="evidence-basket-row${active}">
             <button type="button" data-select-evidence="${escapeText(regionId)}">
-              <strong>${escapeText(regionId)}</strong>
-              <span>${escapeText(region ? friendlyRegionType(region.region_type) : "已删除框")}</span>
-              <small>${escapeText(source)}</small>
+              <strong>${escapeText(region ? friendlyRegionType(region.region_type) : "已删除框")}</strong>
+              <span>${escapeText(evidenceRegionSummary(region))}</span>
             </button>
             <button type="button" class="evidence-remove" data-remove-evidence="${escapeText(regionId)}" ${confirmDisabled}>移除</button>
           </div>
@@ -1950,14 +1962,16 @@ function renderWorkflowPanel() {
 
   els.workflowSummary.innerHTML = `
     <div class="current-task-card">
-      <div class="task-kicker">当前必须判断的字段</div>
-      <h2>${escapeText(selectedFieldTitle)}</h2>
-      <div class="task-answer">字段真值：<strong>${escapeText(selectedFieldAnswer)}</strong></div>
-      <p>先核对证据篮子，再选择这个字段的来源类型。加入或调整框不会完成字段；只有下面的确认按钮会记录并进入下一个字段。</p>
+      <div class="task-kicker">当前判断</div>
+      <div class="task-title-row">
+        <h2>${escapeText(selectedFieldTitle)}</h2>
+        ${selectedFieldContext ? `<span>${escapeText(selectedFieldContext)}</span>` : ""}
+      </div>
+      <div class="task-answer">应标结论：<strong>${escapeText(selectedFieldAnswer)}</strong></div>
+      <p>先核对证据篮子，再选择这个结论来自哪里。加入或调整框不会完成字段；只有下面的确认按钮会记录并进入下一个字段。</p>
       <div class="task-status-row">
         <span class="field-status status-${escapeText(selectedReview?.review_status || "pending")}">${escapeText(selectedStatus)}</span>
         <span>${escapeText(selectedEvidenceText)}</span>
-        ${selectedEvidenceSources.length ? `<span>来源：${escapeText(selectedEvidenceSources.join("、"))}</span>` : ""}
       </div>
       <div class="evidence-basket">
         <div class="basket-head">
@@ -2067,7 +2081,7 @@ function renderWorkflowPanel() {
     const item = document.createElement("div");
     item.className = `workflow-missing-row field-review-row status-${review.review_status} ${row.key === state.selectedFieldKey ? "active" : ""}`;
     item.innerHTML = `
-      <span>${escapeText(`${friendlyLegName(row)} · ${friendlyFieldName(row.field_name)}`)}</span>
+      <span>${escapeText([taskLegContext(row), taskFieldName(row.field_name)].filter(Boolean).join(" · "))}</span>
       <b>${escapeText(friendlyAnswerValue(row.expected_answer, row.expected_value))}</b>
       <small>${escapeText(FIELD_REVIEW_LABELS[review.review_status] || review.review_status)}</small>
     `;
@@ -2235,8 +2249,13 @@ async function returnCurrentClaim() {
     showToast("只能退回自己领取的航图。");
     return;
   }
-  const reason = window.prompt("请写明退回原因，例如“holding 结构复杂，需要专家复审”。", "");
+  const reason = window.prompt("请写明需要专家复核的原因，例如“holding 结构复杂，需要专家复审”。", "");
   if (reason === null) return;
+  await saveCurrentDraftSnapshot({
+    reason,
+    reviewStatus: "submitted_for_expert_review",
+    silent: true
+  });
   const result = await postJson(apiUrl(`/api/claims/${encodeURIComponent(chartId)}/return`), {
     annotator: currentAnnotator(),
     reason
@@ -2258,9 +2277,9 @@ async function returnCurrentClaim() {
   renderChartList();
   renderCanonicalPanel();
   if (formalQueueMode()) {
-    await advanceFormalQueue({ afterChartId: chartId, successPrefix: "已退回并标记为专家复审" });
+    await advanceFormalQueue({ afterChartId: chartId, successPrefix: "已提交专家复核" });
   } else {
-    showToast("已退回并标记为专家复审。");
+    showToast("已提交专家复核。");
   }
 }
 
@@ -3253,6 +3272,27 @@ function buildAnnotationPayload(mode = "final") {
   };
 }
 
+async function saveCurrentDraftSnapshot({ reason = "", reviewStatus = "draft_saved", silent = false } = {}) {
+  if (!state.current) return null;
+  updateSelectedFromForm();
+  const chartId = state.current.manifest.chart_id;
+  const payload = buildAnnotationPayload("draft");
+  payload.review_status = reviewStatus;
+  if (reason) payload.return_reason = reason;
+  if (reviewStatus === "submitted_for_expert_review") {
+    payload.sample_notes = "Draft auto-saved before submitting this chart to expert review.";
+  }
+  const result = await postJson(apiUrl(`/api/drafts/${encodeURIComponent(chartId)}`), payload);
+  state.current.draft = { ...payload, saved_at: result.saved_at || payload.saved_at || "" };
+  const chart = state.charts.find((item) => item.chart_id === chartId);
+  if (chart) {
+    chart.has_my_draft = true;
+    chart.draft_saved_at = result.saved_at || payload.saved_at || new Date().toISOString();
+  }
+  if (!silent) showToast("已暂存。");
+  return result;
+}
+
 async function saveCurrentWork(mode = "final") {
   if (!state.current) {
     showToast("请先选择一张航图。");
@@ -3298,14 +3338,14 @@ async function saveCurrentWork(mode = "final") {
   const chart = state.charts.find((item) => item.chart_id === chartId);
 
   if (mode === "draft") {
-    showToast("\u5df2\u6682\u5b58\u3002");
-    state.current.draft = payload;
+    showToast("已暂存。");
+    state.current.draft = { ...payload, saved_at: result.saved_at || payload.saved_at || "" };
     if (chart) {
       chart.has_my_draft = true;
-      chart.draft_saved_at = payload.saved_at || new Date().toISOString();
+      chart.draft_saved_at = result.saved_at || payload.saved_at || new Date().toISOString();
     }
   } else {
-    if (!formalQueueMode()) showToast("已完成本图。");
+    if (!formalQueueMode()) showToast("已提交。");
     if (datasetConfig.finalDataset) {
       state.current.manifest.claim_status = "submitted";
       state.current.manifest.claimed_by = currentAnnotator();
@@ -3322,7 +3362,7 @@ async function saveCurrentWork(mode = "final") {
   updateClaimButton();
   renderChartList();
   if (mode !== "draft" && formalQueueMode()) {
-    await advanceFormalQueue({ afterChartId: chartId, successPrefix: "已完成本图" });
+    await advanceFormalQueue({ afterChartId: chartId, successPrefix: "已提交" });
   }
 }
 
@@ -3603,7 +3643,7 @@ function updateFormalQueueStatus() {
   const current = state.current?.manifest?.chart_id
     ? `当前 ${state.current.manifest.chart_id}`
     : "等待下一张";
-  els.sideActionHint.textContent = `${current} · 队列剩余 ${remaining} 张；完成或退回后自动进入下一张。`;
+  els.sideActionHint.textContent = `${current} · 队列剩余 ${remaining} 张；提交后自动进入下一张。`;
 }
 
 function setupFormalQueueUi() {
@@ -3618,8 +3658,8 @@ function setupFormalQueueUi() {
     els.sideActionPanel.querySelector("h2").textContent = "本图操作";
   }
   if (els.saveDraftBtn) els.saveDraftBtn.textContent = "暂存当前图";
-  if (els.returnClaimBtn) els.returnClaimBtn.textContent = "退回并下一张";
-  if (els.saveBtn) els.saveBtn.textContent = "完成并下一张";
+  if (els.returnClaimBtn) els.returnClaimBtn.textContent = "提交专家复核";
+  if (els.saveBtn) els.saveBtn.textContent = "提交";
   els.claimCurrentBtn?.classList.add("hidden");
   updateFormalQueueStatus();
 }
