@@ -39,7 +39,8 @@
   "registered_files": {
     "method_card": "docs/b1_prime_link_method_card.md",
     "prompt_path": "prompts/paper_v2/b1_prime_link_ocr_candidates_links_to_canonical.zh_v0_candidate.md",
-    "prompt_sha256_current_repo": "2b135d82928e3963a5b37ad5ebcee82e2e079aa94d34c88cf33b1d215c8909c2",
+    "prompt_sha256_current_repo": "eea6f2bed857d9b762d1a5bee42de7933e4b19d0254a94d5045acbe137558dd7",
+    "formal_group1_prompt_sha256": "eea6f2bed857d9b762d1a5bee42de7933e4b19d0254a94d5045acbe137558dd7",
     "field_to_leg_schema_path": "schemas/field_to_leg_links.schema.candidate.json",
     "field_to_leg_schema_sha256": "1085f187055f1e6b7b78bb9958643ed4eb06bfa7d8a4a65870537bd34f704262",
     "pilot100_report": "reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md",

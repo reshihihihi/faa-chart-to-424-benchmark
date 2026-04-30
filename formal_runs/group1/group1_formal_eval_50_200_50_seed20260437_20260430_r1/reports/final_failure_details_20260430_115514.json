@@ -1,0 +1,471 @@
+{
+  "A1": [],
+  "A2": [],
+  "B1": [],
+  "B1_prime": [],
+  "B1_prime_link": [
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_005",
+      "chart_id": "KATL_I09R",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "missed_approach.legs.0.answers.Q4_course_or_radial.value: {'heading_deg': 100} is not valid under any of the given schemas",
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'radial_deg': 235, 'nav_fix': 'AHN'} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_028",
+      "chart_id": "KALO_L12",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'type': 'radial', 'degrees': 96} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_048",
+      "chart_id": "KAVQ_R21",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 284} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_068",
+      "chart_id": "KAOO_R03-Z",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 42} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_069",
+      "chart_id": "KAOO_R21",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 223} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_099",
+      "chart_id": "KCOI_R11",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'course_deg': 190} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_102",
+      "chart_id": "KAST_R26",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'course_deg': 189} is not valid under any of the given schemas",
+        "missed_approach.legs.3.answers.Q4_course_or_radial.value: {'course_deg': 113} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_104",
+      "chart_id": "KABE_R24",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'type': 'course_deg', 'degrees': 266} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_106",
+      "chart_id": "KABY_R17",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 226} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_107",
+      "chart_id": "KABY_R23",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 197} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_112",
+      "chart_id": "KACY_R13-Y",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.2.answers.Q4_course_or_radial.value: 76 is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_119",
+      "chart_id": "KAGC_R28",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 197} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_124",
+      "chart_id": "KALB_R10",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 91} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_125",
+      "chart_id": "KALB_R19-Y",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'course_deg': 196} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "B1_prime_link",
+      "sample_id": "formal300_127",
+      "chart_id": "KALN_R17",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 122} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    }
+  ],
+  "C1": [],
+  "C2": [],
+  "C3": [
+    {
+      "method": "C3",
+      "sample_id": "formal300_246",
+      "chart_id": "KAMG_R34",
+      "failure_type": "api_failure",
+      "failure": "InternalServerError(\"Error code: 502 - {'type': 'error', 'error': {'type': 'network_error', 'message': '网络请求错误 (502)，请检查代理配置或尝试不使用代理'}}\")",
+      "validation_error_count": null,
+      "validation_errors": null,
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "C3",
+      "sample_id": "formal300_247",
+      "chart_id": "KAMN_R09",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.0.answers.Q4_course_or_radial.value: {'course_deg': None, 'type': 'direct'} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "C3",
+      "sample_id": "formal300_264",
+      "chart_id": "KANQ_R23",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "missed_approach.legs.0.answers.Q4_course_or_radial.value: {'course_deg': None, 'type': 'direct'} is not valid under any of the given schemas"
+      ],
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    },
+    {
+      "method": "C3",
+      "sample_id": "formal300_271",
+      "chart_id": "KAOV_R13",
+      "failure_type": "api_failure",
+      "failure": "InternalServerError(\"Error code: 502 - {'type': 'error', 'error': {'type': 'network_error', 'message': '网络请求错误 (502)，请检查代理配置或尝试不使用代理'}}\")",
+      "validation_error_count": null,
+      "validation_errors": null,
+      "attempt_count": 2,
+      "schema_retry_count": 1
+    }
+  ],
+  "C4": [],
+  "D_SFT": [
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_003",
+      "chart_id": "KAMA_I04",
+      "failure_type": "parse_failure",
+      "failure": "JSONDecodeError('Extra data: line 1 column 1489 (char 1488)')",
+      "validation_error_count": null,
+      "validation_errors": null,
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_055",
+      "chart_id": "KBOS_R32",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 1,
+      "validation_errors": [
+        "$: Additional properties are not allowed ('approach', 'chart_name' were unexpected)"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_062",
+      "chart_id": "KCII_R33",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "chart_id: 'KCI_I33' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+        "procedure.airport: 'KCI' does not match '^[A-Z]{4}$'"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_068",
+      "chart_id": "KAOO_R03-Z",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "chart_id: 'KA00_R03' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+        "procedure.airport: 'KA00' does not match '^[A-Z]{4}$'"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_109",
+      "chart_id": "KACK_R33",
+      "failure_type": "parse_failure",
+      "failure": "JSONDecodeError('Extra data: line 1 column 1500 (char 1499)')",
+      "validation_error_count": null,
+      "validation_errors": null,
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_131",
+      "chart_id": "KAMA_R13-Y",
+      "failure_type": "parse_failure",
+      "failure": "JSONDecodeError('Extra data: line 1 column 1495 (char 1494)')",
+      "validation_error_count": null,
+      "validation_errors": null,
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_201",
+      "chart_id": "KAGZ_R09",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "chart_id: 'KGZ_R09' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+        "procedure.airport: 'KGZ' does not match '^[A-Z]{4}$'"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_202",
+      "chart_id": "KAGZ_R27",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "chart_id: 'KGZ_R27' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+        "procedure.airport: 'KGZ' does not match '^[A-Z]{4}$'"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_218",
+      "chart_id": "KAIO_R02",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "chart_id: 'KAI02_R02' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+        "procedure.airport: 'KAI02' does not match '^[A-Z]{4}$'"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_219",
+      "chart_id": "KAIO_R20",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "chart_id: 'KAI020' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+        "procedure.airport: 'KAI020' does not match '^[A-Z]{4}$'"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_221",
+      "chart_id": "KAIT_R34",
+      "failure_type": "parse_failure",
+      "failure": "JSONDecodeError('Extra data: line 1 column 82 (char 81)')",
+      "validation_error_count": null,
+      "validation_errors": null,
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_224",
+      "chart_id": "KAIZ_R04",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "chart_id: 'KAI_R04' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+        "procedure.airport: 'KAI' does not match '^[A-Z]{4}$'"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_225",
+      "chart_id": "KAIZ_R22",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "chart_id: 'KAI_L22' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+        "procedure.airport: 'KAI_L22' does not match '^[A-Z]{4}$'"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_246",
+      "chart_id": "KAMG_R34",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q1_fix_ident.value: 'CLUYAT' is not valid under any of the given schemas",
+        "missed_approach.legs.2.answers.Q1_fix_ident.value: 'CLUYAT' is not valid under any of the given schemas"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_247",
+      "chart_id": "KAMN_R09",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q1_fix_ident.value: 'CEEGEE' is not valid under any of the given schemas",
+        "missed_approach.legs.2.answers.Q1_fix_ident.value: 'CEEGEE' is not valid under any of the given schemas"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    },
+    {
+      "method": "D_SFT",
+      "sample_id": "formal300_249",
+      "chart_id": "KAMN_R27",
+      "failure_type": "schema_validation_failure",
+      "failure": null,
+      "validation_error_count": 2,
+      "validation_errors": [
+        "missed_approach.legs.1.answers.Q1_fix_ident.value: 'CEEGEE' is not valid under any of the given schemas",
+        "missed_approach.legs.2.answers.Q1_fix_ident.value: 'CEEGEE' is not valid under any of the given schemas"
+      ],
+      "attempt_count": null,
+      "schema_retry_count": null
+    }
+  ]
+}
