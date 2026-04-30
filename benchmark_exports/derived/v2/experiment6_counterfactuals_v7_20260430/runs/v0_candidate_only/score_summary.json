@@ -243,7 +243,7 @@
       "valid": 86
     }
   },
-  "cases_jsonl": "<external-workspace>/zu6/derived\\verification_counterfactuals\\prefreeze_v7_formal300_cases.jsonl",
+  "cases_jsonl": "cases/verification_counterfactuals_v7_formal300.jsonl",
   "interpretation": {
     "false_negative_rate": "For V0 candidate-only, a high value means the baseline tends to let negative candidates pass, which is expected if artifacts are weak.",
     "negative_reject_rate_artifact_score": "For V0 candidate-only, a high value suggests counterfactual artifacts are detectable without chart evidence."
@@ -273,5 +273,5 @@
     "total": 3091,
     "valid": 3091
   },
-  "predictions_jsonl": "<external-workspace>/zu6/derived\\runs\\v0_candidate_only_gpt54_20260430_v7builder\\prefreeze_v7_formal300_v0_predictions.jsonl"
+  "predictions_jsonl": "<not-in-package>/v0_candidate_only_predictions.jsonl"
 }

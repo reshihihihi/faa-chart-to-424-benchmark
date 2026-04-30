@@ -46,7 +46,8 @@ gold `error_fields`, or the counterfactual type.
 For generated `implicit_hold_time_omission` cases:
 
 - `consistent` must be `false`;
-- `error_fields` must point to the affected holding parameter field;
+- `error_fields` must point to
+  `missed_approach.legs[i].hold_params.value.leg_time_min`;
 - the case must remain otherwise minimally changed.
 
 If the chart or target explicitly supports a different hold time or distance,

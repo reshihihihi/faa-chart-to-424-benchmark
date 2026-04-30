@@ -46,6 +46,7 @@ def allowed_error_fields(candidate_record: Dict[str, Any]) -> List[str]:
                 f"missed_approach.legs[{leg_index}].turn",
                 f"missed_approach.legs[{leg_index}].course_or_radial",
                 f"missed_approach.legs[{leg_index}].hold_params",
+                f"missed_approach.legs[{leg_index}].hold_params.value.leg_time_min",
             ]
         )
     return fields

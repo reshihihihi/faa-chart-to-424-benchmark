@@ -425,7 +425,7 @@ def mutate_ca_omission(candidate: Dict[str, Any]) -> Optional[Tuple[Dict[str, An
             for new_index, item in enumerate(legs, start=1):
                 item["leg_index"] = new_index
             mutated["missed_approach"]["leg_count"] = len(legs)
-            return mutated, f"missed_approach.legs[{removed_index}]", f"remove CA leg {removed_index}"
+            return mutated, "missed_approach.legs.sequence", f"remove CA leg {removed_index}"
     return None
 
 

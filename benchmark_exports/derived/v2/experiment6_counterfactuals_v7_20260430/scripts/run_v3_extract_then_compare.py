@@ -21,6 +21,17 @@ FIELD_MAP = {
 }
 
 
+def hold_param_error_field(leg_index: int, candidate_value: Any, extraction_value: Any) -> str:
+    if not isinstance(candidate_value, dict) or not isinstance(extraction_value, dict):
+        return f"missed_approach.legs[{leg_index}].hold_params"
+    candidate_inner = candidate_value.get("value")
+    extraction_inner = extraction_value.get("value")
+    if isinstance(candidate_inner, dict) and isinstance(extraction_inner, dict):
+        if not values_equal(candidate_inner.get("leg_time_min"), extraction_inner.get("leg_time_min")):
+            return f"missed_approach.legs[{leg_index}].hold_params.value.leg_time_min"
+    return f"missed_approach.legs[{leg_index}].hold_params"
+
+
 def read_jsonl(path: Path) -> Iterable[Dict[str, Any]]:
     with path.open("r", encoding="utf-8") as f:
         for line in f:
@@ -104,7 +115,10 @@ def compare_candidate_to_extraction(candidate: Dict[str, Any], extraction: Dict[
             if extraction_value is None:
                 continue
             if not values_equal(candidate_value, extraction_value):
-                error_fields.append(f"missed_approach.legs[{leg_index}].{field_name}")
+                if field_name == "hold_params":
+                    error_fields.append(hold_param_error_field(leg_index, candidate_value, extraction_value))
+                else:
+                    error_fields.append(f"missed_approach.legs[{leg_index}].{field_name}")
 
     unique_fields = []
     for field in error_fields:

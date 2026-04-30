@@ -11,26 +11,6 @@
       "type": "array",
       "items": { "type": "string", "minLength": 1 },
       "uniqueItems": true
-    },
-    "error_explanation": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["field", "candidate_value", "chart_evidence", "reason"],
-        "additionalProperties": false,
-        "properties": {
-          "field": { "type": "string" },
-          "candidate_value": true,
-          "chart_evidence": { "type": "string" },
-          "reason": { "type": "string" }
-        }
-      },
-      "default": []
-    },
-    "confidence": {
-      "type": "string",
-      "enum": ["low", "medium", "high"],
-      "default": "medium"
     }
   }
 }

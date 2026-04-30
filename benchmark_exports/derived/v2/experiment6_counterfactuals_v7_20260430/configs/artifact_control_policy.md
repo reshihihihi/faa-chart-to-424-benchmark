@@ -27,9 +27,9 @@ counterfactual type, score files, QC decisions, or this policy text.
 The v7 artifact check is:
 
 - run directory:
-  `<external-workspace>/zu6/derived\runs\v0_candidate_only_gpt54_20260430_v7builder`
+  `runs/v0_candidate_only/`
 - cases:
-  `<external-workspace>/zu6/derived\verification_counterfactuals\prefreeze_v7_formal300_cases.jsonl`
+  `cases/verification_counterfactuals_v7_formal300.jsonl`
 - model:
   `gpt-5.4`
 - final records:

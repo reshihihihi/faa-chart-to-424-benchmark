@@ -45,6 +45,11 @@ smallest set that describes the error:
 When the error cannot be attributed to a single leg without ambiguity,
 `missed_approach.legs.sequence` is preferred.
 
+For the v7 freeze candidate, `CA omission` cases use
+`missed_approach.legs.sequence` rather than a whole-leg path such as
+`missed_approach.legs[1]`, because the candidate no longer contains the omitted
+leg as an addressable output field.
+
 ## Reporting Rule
 
 Sequence errors must be reported separately from single-field value errors.

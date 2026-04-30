@@ -49,17 +49,17 @@ V0 candidate-only:
 - only `candidate_record` and non-answer IDs are allowed;
 - chart image and text are forbidden.
 
-V2 text-only:
+V1 text-only:
 
-- missed approach prose and candidate record are allowed;
+- frozen OCR-1 full-chart text and candidate record are allowed;
 - full chart image is forbidden.
 
-V3 direct VLM:
+V2 direct VLM:
 
 - full chart image and candidate record are allowed;
 - target, labels, provenance, and challenge tags are forbidden.
 
-V4 extract-then-compare:
+V3 extract-then-compare:
 
 - extraction predictions may be used only as the explicit input to the symbolic
   comparer;

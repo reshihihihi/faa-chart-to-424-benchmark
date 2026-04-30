@@ -37,19 +37,19 @@
     },
     "cases_jsonl": {
       "path": "cases/verification_counterfactuals_v7_formal300.jsonl",
-      "sha256": "912C50305883534459B72E1C7423219656BEACAB10D4DE560E50BFFCDF8688EC"
+      "sha256": "5FB005BF0861DA74FADA20B6DCA34D3738ED5F1C54EB41DEBB9597CCB2251DAF"
     },
     "builder_script": {
       "path": "scripts/build_424_counterfactuals.py",
-      "sha256": "73D34C8FB074B5C68F60E0564B30B4A2448D59D3FF05B8E8BC875509A47C699A"
+      "sha256": "23FDCE967F21DF8024A9969D0DDA162ACC597AEE363A45D9A210A557D874B576"
     },
     "construction_policy": {
       "path": "configs/counterfactual_construction_policy.md",
-      "sha256": "6E441DF58C558DBD3C4DA6D43BCB7047540D3E2C5605012C171877D5AB0F1991"
+      "sha256": "63B8CD7176BCFD1973E422C5F30F83ACE21C80E7073AA91945DC0B22FC6693D5"
     },
     "implicit_hold_time_policy": {
       "path": "configs/implicit_hold_time_policy.md",
-      "sha256": "1ADEA0A4E3AE99DE17CFAFE3F652B51778D73078BBB80C87DCF6745EB5EB2B27"
+      "sha256": "17D3F453D02528F3E7EEB933BF6943CAEE3F0529A474AACDC9DC56ECA3594DE9"
     },
     "derived_424_policy": {
       "path": "configs/424_derived_policy.md",
@@ -57,11 +57,11 @@
     },
     "sequence_policy": {
       "path": "configs/424_sequence_policy.md",
-      "sha256": "027EF896E8BEF2B418AB300EB293CC9A45FC2A2A05444AFCC8E6299DEFB135A0"
+      "sha256": "931993B20CF3FE00CE0265CFB1B1B93F5F7C0EFD44480C44B11EA5BB972685B8"
     },
     "artifact_control_policy": {
       "path": "configs/artifact_control_policy.md",
-      "sha256": "9ED74C2F580AB9C6499742227874306A41B18DA164FCA1F37A4E029006FB68B5"
+      "sha256": "7098BB2A35EDD4B3AC98140B6E3F8BD75E697ACA55BB7AE301FC2711AB98E76F"
     },
     "method_boundary_policy": {
       "path": "configs/method_boundary_v1_v4_policy.md",
@@ -73,7 +73,7 @@
     },
     "audit_decision_schema": {
       "path": "configs/audit_decision_schema.json",
-      "sha256": "EB1996C40BC3839854080367DB1F324B6BCD0BE3B409E014E4B2806A1574A070"
+      "sha256": "6DD777E2CD30172A4F8D3120FF8DB829A999E1E0FF92ED96FDBA9713869F4C60"
     },
     "verification_case_schema": {
       "path": "configs/verification_case_schema.json",
@@ -85,15 +85,15 @@
     },
     "v1_runner": {
       "path": "scripts/run_v1_text_only_verifier.py",
-      "sha256": "6AFE1DF859F6B98CF64BE76D0E1C97E7FBA7E2F3C69592776BF784383EFEAF0B"
+      "sha256": "90649B3C49705E31BFFB6B2E4AC2C1F8C2AB45E58C5CA9761B452586327EB4EA"
     },
     "v2_runner": {
       "path": "scripts/run_v2_direct_vlm_verifier.py",
-      "sha256": "A4FD492E4774D507D1580C8EB7534429D18D288A4F89BD25456E3471B877167D"
+      "sha256": "5A52B018F55CE62C0EBFB86A1DE31640D49B1436DD8113B7185775FF09CF1955"
     },
     "v3_runner": {
       "path": "scripts/run_v3_extract_then_compare.py",
-      "sha256": "9A2F6A3CE660F2C52B2BD270F45BE487342FED6514C8D29DAEA229A79285BB06"
+      "sha256": "885531999E9C12F0E27698EDC93E4BD3A8CABAE158C64452B910E639ED823F7B"
     }
   },
   "packed_inputs": {

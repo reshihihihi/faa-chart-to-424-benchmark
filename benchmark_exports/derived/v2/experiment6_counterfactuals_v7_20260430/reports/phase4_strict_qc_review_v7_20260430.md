@@ -18,17 +18,30 @@ Reviewed Experiment Group 6 424 counterfactual verification cases against the pa
 ## Final Candidate
 
 - Builder version: `experiment6_counterfactual_builder_prefreeze_v7`
-- Case file: `<external-workspace>/zu6/derived\verification_counterfactuals\prefreeze_v7_formal300_cases.jsonl`
+- Case file: `cases/verification_counterfactuals_v7_formal300.jsonl`
 - Case count: 3091
 - Source charts: 300 formal300 charts
 
-SHA256:
+Current package hashes are recorded in `checksums.sha256` and
+`freeze_manifest.json`.
 
-```text
-73D34C8FB074B5C68F60E0564B30B4A2448D59D3FF05B8E8BC875509A47C699A  <external-workspace>/zu6/scripts\build_424_counterfactuals.py
-6E441DF58C558DBD3C4DA6D43BCB7047540D3E2C5605012C171877D5AB0F1991  <external-workspace>/zu6/configs\counterfactual_construction_policy.md
-912C50305883534459B72E1C7423219656BEACAB10D4DE560E50BFFCDF8688EC  <external-workspace>/zu6/derived\verification_counterfactuals\prefreeze_v7_formal300_cases.jsonl
-```
+## PR #21 Audit Fixes
+
+During the PR #21 freeze-readiness audit, the following documentation and
+label-vocabulary issues were fixed before formal runs:
+
+- V1/V2/V3 numbering in `no_leakage_policy.md` was aligned with the method
+  card.
+- V1 text-only input was clarified as frozen OCR-1 full-chart text.
+- `audit_decision_schema.json` was tightened to exactly two output keys:
+  `consistent` and `error_fields`.
+- V2 runner parsing was tightened to reject markdown/prose wrappers and
+  extra keys.
+- `ca_omission` labels were changed from whole-leg paths such as
+  `missed_approach.legs[1]` to the sequence-level field
+  `missed_approach.legs.sequence`.
+- `hold_params.value.leg_time_min` was added to the formal output vocabulary
+  for implicit hold-time omission cases.
 
 ## Issues Found During Strict Review
 
@@ -84,12 +97,14 @@ No-leakage:
 
 ```text
 V0 candidate-only inputs: pass, finding_count=0
-V3 direct VLM inputs:     pass, finding_count=0
+V1 text-only inputs:      pass, finding_count=0
+V2 direct VLM inputs:     pass, finding_count=0
+V3 extract-compare inputs: pass, finding_count=0
 ```
 
 ## V0 Candidate-Only Artifact Check
 
-Run: `<external-workspace>/zu6/derived\runs\v0_candidate_only_gpt54_20260430_v7builder`
+Run: `runs/v0_candidate_only/`
 
 The first run had 10 transient API/parse failures. The original file was backed up, failed rows were removed, and those exact 10 cases were rerun. Final run status:
 
@@ -131,7 +146,7 @@ Interpretation: v7 no longer has the v5 `fix_substitution = 0.909` hard artifact
 Final v7 QC packet:
 
 ```text
-<external-workspace>/zu6/derived\qc\phase4_review_packet_v7_20260430
+external QC packet retained outside the repository; summary is recorded here
 ```
 
 Reviewed sample count: 215

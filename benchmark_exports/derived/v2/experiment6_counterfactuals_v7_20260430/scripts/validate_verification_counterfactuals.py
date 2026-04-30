@@ -23,6 +23,26 @@ REQUIRED_TOP = {
 }
 
 
+def allowed_error_fields(candidate_record: Dict[str, Any]) -> set[str]:
+    fields = {"missed_approach.leg_count", "missed_approach.legs.sequence"}
+    for leg in candidate_record.get("missed_approach", {}).get("legs", []):
+        leg_index = leg.get("leg_index")
+        if not isinstance(leg_index, int):
+            continue
+        fields.update(
+            {
+                f"missed_approach.legs[{leg_index}].path_terminator",
+                f"missed_approach.legs[{leg_index}].fix_ident",
+                f"missed_approach.legs[{leg_index}].altitude_constraint",
+                f"missed_approach.legs[{leg_index}].turn",
+                f"missed_approach.legs[{leg_index}].course_or_radial",
+                f"missed_approach.legs[{leg_index}].hold_params",
+                f"missed_approach.legs[{leg_index}].hold_params.value.leg_time_min",
+            }
+        )
+    return fields
+
+
 def read_jsonl(path: Path) -> Iterable[Dict[str, Any]]:
     with path.open("r", encoding="utf-8") as f:
         for line_no, line in enumerate(f, start=1):
@@ -72,6 +92,11 @@ def validate_case(case: Dict[str, Any]) -> List[str]:
         errors.append("consistent case must use counterfactual_type=positive")
     if label.get("consistent") is False and label.get("counterfactual_type") == "positive":
         errors.append("positive counterfactual_type cannot be inconsistent")
+    if isinstance(label.get("error_fields"), list):
+        allowed = allowed_error_fields(candidate)
+        for field in label["error_fields"]:
+            if field not in allowed:
+                errors.append(f"label.error_fields contains value outside output vocabulary: {field}")
 
     return errors
 
@@ -88,6 +113,7 @@ def main() -> int:
     duplicate_ids = []
     type_counts: Counter[str] = Counter()
     split_counts: Counter[str] = Counter()
+    chart_splits: Dict[str, set[str]] = {}
     count = 0
 
     for case in read_jsonl(path):
@@ -98,9 +124,20 @@ def main() -> int:
         ids.add(case_id)
         type_counts[case.get("label", {}).get("counterfactual_type", "<missing>")] += 1
         split_counts[case.get("split", "<missing>")] += 1
+        chart_id = case.get("chart_id")
+        if isinstance(chart_id, str):
+            chart_splits.setdefault(chart_id, set()).add(str(case.get("split", "<missing>")))
         case_errors = validate_case(case)
         if case_errors:
             errors.append({"verification_case_id": case_id, "errors": case_errors})
+
+    split_crossings = {
+        chart_id: sorted(splits)
+        for chart_id, splits in chart_splits.items()
+        if len(splits) > 1
+    }
+    for chart_id, splits in sorted(split_crossings.items())[:100]:
+        errors.append({"verification_case_id": chart_id, "errors": [f"chart_id appears in multiple splits: {splits}"]})
 
     report = {
         "cases_jsonl": str(path),

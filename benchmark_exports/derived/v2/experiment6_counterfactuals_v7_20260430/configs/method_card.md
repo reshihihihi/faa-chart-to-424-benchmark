@@ -44,7 +44,7 @@ For direct chart-aware verification:
 
 For text-only verification:
 
-- Missed approach prose only.
+- Frozen OCR-1 full-chart text.
 - Candidate 424-like missed-approach record.
 - Non-answer chart metadata.
 

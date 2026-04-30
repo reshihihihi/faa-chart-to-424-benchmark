@@ -81,6 +81,8 @@ Additional pre-freeze v3 rules:
   perturbing a graphical or derived course/radial/holding parameter.
 - `424_derived_trap` preserves visible fix/altitude values while perturbing a
   structurally plausible path terminator code.
+- `ca_omission` omits a required climb-to-altitude leg and is labeled as a
+  sequence-level error with `missed_approach.legs.sequence`.
 - `ca_to_df_sequence_error` omits an initial CA climb leg and expresses the
   following to-fix leg as a DF-style direct-to-fix segment. This is a
   sequence-level error and should be scored with

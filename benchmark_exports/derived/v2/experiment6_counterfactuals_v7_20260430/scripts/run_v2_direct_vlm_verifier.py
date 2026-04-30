@@ -58,6 +58,7 @@ def allowed_error_fields(candidate_record: Dict[str, Any]) -> List[str]:
                 f"missed_approach.legs[{leg_index}].turn",
                 f"missed_approach.legs[{leg_index}].course_or_radial",
                 f"missed_approach.legs[{leg_index}].hold_params",
+                f"missed_approach.legs[{leg_index}].hold_params.value.leg_time_min",
             ]
         )
     return fields
@@ -65,25 +66,14 @@ def allowed_error_fields(candidate_record: Dict[str, Any]) -> List[str]:
 
 def extract_json(raw: str) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
     text = raw.strip()
-    if text.startswith("```"):
-        lines = text.splitlines()
-        if lines and lines[0].strip().startswith("```"):
-            lines = lines[1:]
-        if lines and lines[-1].strip() == "```":
-            lines = lines[:-1]
-        text = "\n".join(lines).strip()
-
-    start = text.find("{")
-    end = text.rfind("}")
-    if start >= 0 and end > start:
-        text = text[start : end + 1]
-
     try:
         obj = json.loads(text)
     except json.JSONDecodeError as exc:
         return None, f"json_parse_error: {exc}"
     if not isinstance(obj, dict):
         return None, "json_root_not_object"
+    if set(obj) != {"consistent", "error_fields"}:
+        return None, f"schema_key_error: expected ['consistent','error_fields'], got {sorted(obj)}"
     if not isinstance(obj.get("consistent"), bool):
         return None, "schema_type_error: consistent must be boolean"
     if not isinstance(obj.get("error_fields"), list) or not all(isinstance(x, str) for x in obj["error_fields"]):

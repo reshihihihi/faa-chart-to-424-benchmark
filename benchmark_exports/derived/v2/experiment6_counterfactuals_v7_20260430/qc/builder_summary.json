@@ -16,8 +16,8 @@
     "text_only_trap": 300,
     "turn_direction_flip": 86
   },
-  "repo_root": "<external-workspace>/experiment3/github_work\\faa-chart-to-424-benchmark",
-  "sample_manifest": "<repo-root>/benchmark_exports\\derived\\v2\\formal300\\sample_manifest.jsonl",
+  "repo_root": "<repo-root>",
+  "sample_manifest": "benchmark_exports/derived/v2/formal300/sample_manifest.jsonl",
   "skipped_by_type": {
     "424_derived_trap": 0,
     "altitude_perturbation": 8,
