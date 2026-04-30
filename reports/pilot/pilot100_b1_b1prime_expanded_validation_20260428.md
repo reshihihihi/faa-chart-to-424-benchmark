@@ -4,16 +4,16 @@ Status: expanded feasibility validation only; not formal300 evaluation.
 
 Date: 2026-04-28.
 
-External artifact root: `E:\experiment3\try_B1_B1'`
+External artifact root: `<external-artifact-root>/try_B1_B1_prime`
 
 ## Step 1 - Evidence Fix
 
 Current valid pilot100 evidence:
 
 - run_id: `pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1`
-- run directory: `E:\experiment3\try_B1_B1'\predictions\pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1`
-- result summary: `E:\experiment3\try_B1_B1'\reports\pilot100_b1_b1prime_result_summary_20260428_r1.json`
-- expanded validation report: `E:\experiment3\try_B1_B1'\reports\pilot100_b1_b1prime_expanded_validation_report_20260428_r1.md`
+- run directory: `<external-artifact-root>/try_B1_B1_prime\predictions\pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1`
+- result summary: `<external-artifact-root>/try_B1_B1_prime\reports\pilot100_b1_b1prime_result_summary_20260428_r1.json`
+- expanded validation report: `<external-artifact-root>/try_B1_B1_prime\reports\pilot100_b1_b1prime_expanded_validation_report_20260428_r1.md`
 
 This evidence is separate from pilot10 and formal300:
 
@@ -31,9 +31,9 @@ Therefore this run can be used as expanded pilot evidence, but not as formal eva
 
 Data:
 
-- sample manifest: `E:\experiment3\try_B1_B1'\data\pilot100_external\pilot100_external_manifest.jsonl`
-- checksums: `E:\experiment3\try_B1_B1'\data\pilot100_external\checksums.sha256`
-- data audit: `E:\experiment3\try_B1_B1'\reports\pilot100_external_audit_20260428_r1.json`
+- sample manifest: `<external-artifact-root>/try_B1_B1_prime\data\pilot100_external\pilot100_external_manifest.jsonl`
+- checksums: `<external-artifact-root>/try_B1_B1_prime\data\pilot100_external\checksums.sha256`
+- data audit: `<external-artifact-root>/try_B1_B1_prime\reports\pilot100_external_audit_20260428_r1.json`
 
 OCR-1:
 
@@ -42,7 +42,7 @@ OCR-1:
 - OCR text files: 100/100
 - raw block files: 100/100
 - empty OCR text files: 0
-- OCR audit: `E:\experiment3\try_B1_B1'\reports\ocr1_paddleocr_pilot100_external_audit_20260428_r1.json`
+- OCR audit: `<external-artifact-root>/try_B1_B1_prime\reports\ocr1_paddleocr_pilot100_external_audit_20260428_r1.json`
 
 Schema and prompts used:
 
@@ -161,7 +161,7 @@ Recommended PR contents:
 Do not commit the large external pilot100 image/PDF/prediction artifact tree directly unless the repository intentionally accepts generated artifacts. The artifact root should remain referenced as:
 
 ```text
-E:\experiment3\try_B1_B1'
+<external-artifact-root>/try_B1_B1_prime
 ```
 
 PR description must say:

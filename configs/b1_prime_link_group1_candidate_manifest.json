@@ -46,18 +46,18 @@
     "pilot100_revalidation_json": "reports/pilot/b1_prime_link_group1_candidate_pilot100_revalidation_20260429.json"
   },
   "external_pilot100_scripts_used_by_validation_run": {
-    "linking_script_path": "E:\\experiment3\\B1'_link\\scripts\\build_field_to_leg_links.py",
+    "linking_script_path": "<external-artifact-root>\\B1'_link\\scripts\\build_field_to_leg_links.py",
     "linking_script_sha256": "132c90afc38f12d1c50a1930a44ba519afb33d40e0da5059a630d4eb71944dd9",
-    "runner_script_path": "E:\\experiment3\\B1'_link\\scripts\\run_b1prime_link_smoke.py",
+    "runner_script_path": "<external-artifact-root>\\B1'_link\\scripts\\run_b1prime_link_smoke.py",
     "runner_script_sha256": "1e61a1c5f7130d8cabb51deb0baaefb4725374aff8b1fc55636e9a4e01cb87a9",
     "repo_runner_status": "not_yet_ported_to_repo_formal_runner"
   },
   "pilot100_validation": {
     "status": "passed_artifact_revalidation_no_new_model_calls",
     "run_id": "b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2",
-    "artifact_root": "E:\\experiment3\\B1'_link",
+    "artifact_root": "<external-artifact-root>\\B1'_link",
     "sample_role": "pilot100_external_expanded_feasibility_only_excluded_from_formal300",
-    "sample_manifest": "E:\\experiment3\\B1'_link\\data\\manifests\\b1prime_link_pilot100_20260428.jsonl",
+    "sample_manifest": "<external-artifact-root>\\B1'_link\\data\\manifests\\b1prime_link_pilot100_20260428.jsonl",
     "sample_manifest_sha256": "9d41833720662c5b511913eb8d70bf0242883df35027f0eba90ac4ad3e11c301",
     "prompt_sha256_used_by_run": "2b135d82928e3963a5b37ad5ebcee82e2e079aa94d34c88cf33b1d215c8909c2",
     "canonical_schema_sha256_used_by_run": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",

@@ -71,7 +71,7 @@ Configuration:
 ```text
 engine: Tesseract OCR
 tesseract_version: 5.5.0.20241111
-tesseract_cmd: C:\Program Files\Tesseract-OCR\tesseract.exe
+tesseract_cmd: <local-tesseract-install>\tesseract.exe
 lang: eng
 oem: 3
 psm: 6

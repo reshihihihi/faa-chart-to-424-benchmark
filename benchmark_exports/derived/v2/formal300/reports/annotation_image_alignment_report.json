@@ -1,8 +1,8 @@
 {
   "status": "formal300_images_aligned_to_annotation_dataset",
   "created_at_utc": "2026-04-29T06:09:51.511125+00:00",
-  "formal300_dir": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark\\benchmark_exports\\derived\\v2\\formal300",
-  "annotation_root": "E:\\shujuji\\datasets\\formal300",
+  "formal300_dir": "benchmark_exports\\derived\\v2\\formal300",
+  "annotation_root": "<external-formal300-source-root>",
   "annotation_manifest_sha256": "4db94c53aeed1a980eb4ba4bf49d1e7044ae1ba0a254bb13bfec2a0a40d83cd6",
   "formal_manifest_sha256": "7891c333992a3cb7a430d03015aecb123509282b167bba249b64b2e11d745d89",
   "image_count": 300,

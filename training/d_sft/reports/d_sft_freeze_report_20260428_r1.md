@@ -22,7 +22,7 @@ D-SFT is full chart image -> SFT VLM -> canonical JSON. Inference forbids OCR te
 - Run: `d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1`
 - Epochs: 1; train samples: 500; dev samples: 100
 - Best dev loss: 0.04459553452208638
-- Final checkpoint: `E:\experiment3\d_sft\checkpoints\d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1\checkpoint-final`
+- Final checkpoint: `<external-artifact-root>/d_sft\checkpoints\d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1\checkpoint-final`
 - Adapter SHA256: `df5e5eb5e97ffb5b86368fb966705cddffe09e4dfaa622959859d2da9fc412e0`
 - CUDA peak memory: 7.1405 GB
 

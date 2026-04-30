@@ -649,7 +649,7 @@
       "reason_cn": "每个 procedure 的 raw CIFP 记录，是答案/来源证据，不应被推理 runner 访问。"
     },
     {
-      "path": "E:\\experiment3\\try_B1_B1'",
+      "path": "<external-artifact-root>\\try_B1_B1'",
       "exists": true,
       "category": "external_artifact_manifest_only",
       "recommended_action": "do_not_commit_raw; reference manifest/report",
@@ -659,7 +659,7 @@
       "reason_cn": "B1/B1_prime pilot100 的图片、OCR、预测和 score 等大文件目录；建议只提交摘要和 manifest。"
     },
     {
-      "path": "E:\\experiment3\\B1'_link",
+      "path": "<external-artifact-root>\\B1'_link",
       "exists": true,
       "category": "external_artifact_manifest_only",
       "recommended_action": "do_not_commit_raw; reference manifest/report",
@@ -669,7 +669,7 @@
       "reason_cn": "B1_prime_link pilot100 大文件目录；建议只提交摘要和报告。"
     },
     {
-      "path": "E:\\experiment3\\d_sft",
+      "path": "<external-artifact-root>/d_sft",
       "exists": true,
       "category": "external_artifact_manifest_only",
       "recommended_action": "do_not_commit_raw checkpoint/data; submit report/config/manifest",

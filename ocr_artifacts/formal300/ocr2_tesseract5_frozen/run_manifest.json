@@ -15,7 +15,7 @@
     "ordinary_ocr_source": true,
     "mlm_or_vlm_transcription": false,
     "tesseract_cmd_recorded": true,
-    "tesseract_cmd": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+    "tesseract_cmd": "<local-tesseract-install>\\tesseract.exe"
   },
   "sample_count": 300,
   "manifest_path": "ocr_artifacts/formal300/ocr2_tesseract5_frozen/manifest.jsonl",

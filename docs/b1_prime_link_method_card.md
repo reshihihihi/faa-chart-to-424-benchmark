@@ -63,14 +63,14 @@ full chart image
 - field-to-leg schema sha256: `1085f187055f1e6b7b78bb9958643ed4eb06bfa7d8a4a65870537bd34f704262`
 - canonical schema: `schemas/missed_approach_leg.schema.json`
 - canonical schema sha256 at validation: `cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9`
-- external pilot100 linking script: `E:\experiment3\B1'_link\scripts\build_field_to_leg_links.py`, sha256 `132c90afc38f12d1c50a1930a44ba519afb33d40e0da5059a630d4eb71944dd9`
-- external pilot100 runner script: `E:\experiment3\B1'_link\scripts\run_b1prime_link_smoke.py`, sha256 `1e61a1c5f7130d8cabb51deb0baaefb4725374aff8b1fc55636e9a4e01cb87a9`
+- external pilot100 linking script: `<external-artifact-root>/B1_prime_link\scripts\build_field_to_leg_links.py`, sha256 `132c90afc38f12d1c50a1930a44ba519afb33d40e0da5059a630d4eb71944dd9`
+- external pilot100 runner script: `<external-artifact-root>/B1_prime_link\scripts\run_b1prime_link_smoke.py`, sha256 `1e61a1c5f7130d8cabb51deb0baaefb4725374aff8b1fc55636e9a4e01cb87a9`
 
 ## Pilot100 Validation
 
 Pilot100 validation is recorded in:
 
-- external artifact root: `E:\experiment3\B1'_link`
+- external artifact root: `<external-artifact-root>/B1_prime_link`
 - run id: `b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2`
 - revalidation JSON: `reports/pilot/b1_prime_link_group1_candidate_pilot100_revalidation_20260429.json`
 - report: `reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md`

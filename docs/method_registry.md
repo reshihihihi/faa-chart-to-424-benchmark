@@ -243,7 +243,7 @@ reports/pilot/b1prime_method_decision_20260428.md
 External B1_prime artifacts are stored under:
 
 ```text
-E:\experiment3\try_B1_B1'
+<external-artifact-root>/try_B1_B1_prime
 ```
 
 Current intended boundary:
@@ -388,7 +388,7 @@ Candidate artifacts registered in this repository:
 Pilot100 external validation, excluded from formal300:
 
 - run_id: `b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2`
-- artifact root: `E:\experiment3\B1'_link`
+- artifact root: `<external-artifact-root>/B1_prime_link`
 - OCR-1: PaddleOCR PP-OCRv5 ordinary OCR, inherited from the pilot100 OCR-1 artifact set
 - text LLM: `gpt-5.4`
 - output control: OpenAI-compatible forced tool call to canonical schema
@@ -410,14 +410,14 @@ Any B1_link variant that uses manual links, gold links, target-aware mappings, s
 Historical setup workspace that produced the now-registered `B1_prime_link` pilot100 artifacts:
 
 ```text
-E:\experiment3\B1'_link
+<external-artifact-root>/B1_prime_link
 ```
 
 Historical setup artifacts:
 
-- method manifest: `E:\experiment3\B1'_link\configs\method_manifest.json`
-- field-to-leg schema: `E:\experiment3\B1'_link\schemas\field_to_leg_links.schema.json`
-- linking-only report: `E:\experiment3\B1'_link\reports\b1prime_link_hard4_linking_only_20260428.md`
+- method manifest: `<external-artifact-root>/B1_prime_link\configs\method_manifest.json`
+- field-to-leg schema: `<external-artifact-root>/B1_prime_link\schemas\field_to_leg_links.schema.json`
+- linking-only report: `<external-artifact-root>/B1_prime_link\reports\b1prime_link_hard4_linking_only_20260428.md`
 
 Residual Group 5 boundary, if later used for diagnostic variants, must be declared separately from `B1_prime_link`. The non-oracle automatic boundary already registered for Group 1 is:
 

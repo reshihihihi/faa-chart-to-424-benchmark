@@ -123,7 +123,7 @@ Passed:
 Run:
 
 ```text
-E:\experiment3\try_B1_B1'\predictions\pilot100_group1_a1_a2_rules_prefreeze_final_20260429_r1
+<external-artifact-root>/try_B1_B1_prime\predictions\pilot100_group1_a1_a2_rules_prefreeze_final_20260429_r1
 ```
 
 Result:
@@ -140,7 +140,7 @@ Interpretation: the schema-safety rule hardening did not change the aggregate A1
 Initial 100-run command was interrupted by command timeout after saving 86 completed samples. Remaining 14 were run under a separate run id. Combined summary:
 
 ```text
-E:\experiment3\try_B1_B1'\reports\pilot100_group1_b1_prefreeze_final_20260429_combined_summary.json
+<external-artifact-root>/try_B1_B1_prime\reports\pilot100_group1_b1_prefreeze_final_20260429_combined_summary.json
 ```
 
 Combined result:
@@ -152,8 +152,8 @@ Combined result:
 Run roots:
 
 ```text
-E:\experiment3\try_B1_B1'\predictions\pilot100_group1_b1_gpt54_prefreeze_final_20260429_r1
-E:\experiment3\try_B1_B1'\predictions\pilot100_group1_b1_gpt54_prefreeze_final_20260429_remaining14_r1
+<external-artifact-root>/try_B1_B1_prime\predictions\pilot100_group1_b1_gpt54_prefreeze_final_20260429_r1
+<external-artifact-root>/try_B1_B1_prime\predictions\pilot100_group1_b1_gpt54_prefreeze_final_20260429_remaining14_r1
 ```
 
 Interpretation: B1 remains mechanically runnable and schema-valid under OpenAI-compatible forced tool call. Score is not used for further prompt tuning.
@@ -163,7 +163,7 @@ Interpretation: B1 remains mechanically runnable and schema-valid under OpenAI-c
 Run:
 
 ```text
-E:\experiment3\try_B1_B1'\predictions\pilot5_group1_c4_claude_prefreeze_final_20260429_r1
+<external-artifact-root>/try_B1_B1_prime\predictions\pilot5_group1_c4_claude_prefreeze_final_20260429_r1
 ```
 
 Result:
@@ -179,7 +179,7 @@ Interpretation: C4 remains schema-valid with Anthropic tool-use output control. 
 Run:
 
 ```text
-E:\experiment3\try_B1_B1'\predictions\pilot3_group1_c1_c3_claude_prefreeze_final_20260429_r1
+<external-artifact-root>/try_B1_B1_prime\predictions\pilot3_group1_c1_c3_claude_prefreeze_final_20260429_r1
 ```
 
 Result:
@@ -196,7 +196,7 @@ Interpretation: the image-only direct canonical path and questionnaire path were
 Run root:
 
 ```text
-E:\experiment3\try_B1_B1'\predictions\pilot20_group1_c1_c3_c4_claude_prefreeze_final_20260429_r1
+<external-artifact-root>/try_B1_B1_prime\predictions\pilot20_group1_c1_c3_c4_claude_prefreeze_final_20260429_r1
 ```
 
 This command timed out before summary generation. Partial artifacts were retained but are not used as a primary validation result:

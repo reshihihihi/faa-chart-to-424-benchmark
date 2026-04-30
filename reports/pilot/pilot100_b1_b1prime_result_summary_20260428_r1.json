@@ -1,6 +1,6 @@
 {
   "run_id": "pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
-  "artifact_root": "E:\\experiment3\\try_B1_B1'",
+  "artifact_root": "<external-artifact-root>\\try_B1_B1'",
   "sample_role": "pilot100_external_expanded_feasibility_only_not_formal300",
   "formal300_overlap": {
     "chart_id": 0,

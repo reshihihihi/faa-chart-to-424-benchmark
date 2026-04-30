@@ -1,7 +1,7 @@
 {
   "status": "source_lock_only_not_formal_eval_ready",
   "created_at_utc": "2026-04-29T04:50:27.860859+00:00",
-  "source_manifest_path": "E:\\experiment3\\try_B1_B1'\\source\\formal300_manifest_pr32_head_7785325.json",
+  "source_manifest_path": "<external-artifact-root>\\try_B1_B1'\\source\\formal300_manifest_pr32_head_7785325.json",
   "source_manifest_sha256": "00f8de653bf4bd6cf413e3383b7d431692fe4d0631bef9f393040dc6a64e3677",
   "split_counts": {
     "development": 200,
