@@ -70,8 +70,7 @@ select {
 
 .controls select,
 .controls input,
-.controls button,
-.segmented button {
+.controls button {
   height: 36px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -92,24 +91,6 @@ select {
 .controls button {
   padding: 0 12px;
   cursor: pointer;
-}
-
-.segmented {
-  display: inline-flex;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.segmented button {
-  border: 0;
-  border-radius: 0;
-  background: #f7f1e7;
-}
-
-.segmented button.active {
-  background: var(--green);
-  color: white;
 }
 
 .checkline {
@@ -249,9 +230,24 @@ select {
 }
 
 .field-card h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
   margin: 0 0 6px;
   font-size: 16px;
   line-height: 1.35;
+}
+
+.record-tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 6px;
+  background: var(--accent);
+  color: white;
+  padding: 3px 6px;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .field-card .value {
@@ -301,7 +297,7 @@ select {
   font-size: 12px;
 }
 
-.arinc-group {
+.evidence-group {
   display: grid;
   gap: 10px;
 }
@@ -324,38 +320,67 @@ select {
   font-size: 12px;
 }
 
-.raw-record {
+.raw-record-visual {
   overflow-x: auto;
-  margin: 0;
   border-radius: 6px;
   background: #0f1815;
   padding: 10px;
   color: #f5fff9;
+}
+
+.raw-record-canvas {
+  position: relative;
+  width: 132ch;
+  min-height: calc(1.45em + var(--marker-height, 46px));
   font: 13px/1.45 "Cascadia Mono", "Consolas", monospace;
   white-space: pre;
+}
+
+.raw-record-text {
+  display: block;
+}
+
+.record-marker {
+  position: absolute;
+  top: calc(1.75em + var(--lane) * 28px);
+  left: calc(var(--start) * 1ch);
+  width: calc(var(--len) * 1ch);
+  min-width: 1ch;
+  color: #f4c65d;
+}
+
+.record-underline {
+  display: block;
+  height: 7px;
+  border-bottom: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+.record-stem {
+  display: block;
+  width: 2px;
+  height: 10px;
+  margin-left: calc(50% - 1px);
+  background: currentColor;
+}
+
+.record-label {
+  position: absolute;
+  top: 17px;
+  left: calc(50% - 8px);
+  white-space: nowrap;
+  border-radius: 6px;
+  background: #f4c65d;
+  color: #17231f;
+  padding: 3px 6px;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .numbered-field-list {
   display: grid;
   gap: 10px;
-}
-
-.arinc-field-card {
-  padding-left: 48px;
-}
-
-.number-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  min-width: 28px;
-  border-radius: 6px;
-  background: var(--accent);
-  color: white;
-  padding: 3px 5px;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 700;
 }
 
 .leader-overlay {

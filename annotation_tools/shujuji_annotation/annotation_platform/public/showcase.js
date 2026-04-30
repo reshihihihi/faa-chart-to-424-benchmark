@@ -8,8 +8,6 @@ const els = {
   chartInput: document.querySelector("#chartInput"),
   loadChartBtn: document.querySelector("#loadChartBtn"),
   legSelect: document.querySelector("#legSelect"),
-  evidenceModeBtn: document.querySelector("#evidenceModeBtn"),
-  arincModeBtn: document.querySelector("#arincModeBtn"),
   showAllLegs: document.querySelector("#showAllLegs"),
   viewerShell: document.querySelector("#viewerShell"),
   chartPane: document.querySelector("#chartPane"),
@@ -68,7 +66,6 @@ const state = {
   rows: [],
   fieldReviews: {},
   currentLeg: 1,
-  mode: params.get("mode") === "424" ? "arinc" : "evidence",
   activeFieldKey: ""
 };
 
@@ -295,8 +292,7 @@ function colorForRow(row) {
 function activeRows() {
   return state.rows.filter((row) => {
     if (!els.showAllLegs.checked && row.canonical_leg_index !== state.currentLeg) return false;
-    if (state.mode === "evidence") return answerIsPresent(row);
-    return true;
+    return answerIsPresent(row);
   });
 }
 
@@ -374,14 +370,10 @@ function arincSegmentForRow(row) {
 }
 
 function activeArincRows() {
-  return state.rows.filter((row) => {
-    if (!els.showAllLegs.checked && row.canonical_leg_index !== state.currentLeg) return false;
-    return Boolean(arincSegmentForRow(row));
-  });
+  return activeRows().filter((row) => Boolean(arincSegmentForRow(row)));
 }
 
 function displayItems() {
-  if (state.mode === "arinc") return activeArincRows().map((row) => ({ type: "field", key: row.key, row, rows: [row] }));
   return activeRows().map((row) => ({ type: "field", key: row.key, row, rows: [row] }));
 }
 
@@ -414,16 +406,14 @@ function renderLegOptions() {
 function renderFieldCards() {
   const items = displayItems();
   els.panelTitle.textContent = els.showAllLegs.checked
-    ? (state.mode === "arinc" ? "全部航段 · 424 编码" : "全部航段 · 证据结论")
-    : (state.mode === "arinc" ? `航段 ${state.currentLeg} · 424 编码` : `航段 ${state.currentLeg} · 证据结论`);
+    ? "全部航段 · 证据结论"
+    : `航段 ${state.currentLeg} · 证据结论`;
   els.resultSource.textContent = sourceLabel();
   if (!items.length) {
     els.fieldList.innerHTML = "<p class='muted'>当前航段没有可展示字段。</p>";
     return;
   }
-  els.fieldList.innerHTML = state.mode === "arinc"
-    ? renderArincGroups()
-    : items.map((item) => renderEvidenceCard(item.row)).join("");
+  els.fieldList.innerHTML = activeLegIndexes().map((legIndex) => renderLegEvidenceGroup(legIndex)).join("");
   els.fieldList.querySelectorAll(".field-card").forEach((card) => {
     card.addEventListener("mouseenter", () => {
       state.activeFieldKey = card.dataset.fieldKey || "";
@@ -446,6 +436,25 @@ function evidenceChipsForIds(evidenceIds) {
   }).join("");
 }
 
+function recordAnnotationsForLeg(legIndex) {
+  const rows = activeArincRows().filter((row) => row.canonical_leg_index === legIndex);
+  return rows.map((row, index) => ({
+    row,
+    number: index + 1,
+    segment: arincSegmentForRow(row)
+  })).filter((item) => item.segment);
+}
+
+function recordAnnotationForRow(row) {
+  return recordAnnotationsForLeg(row.canonical_leg_index).find((item) => item.row.key === row.key) || null;
+}
+
+function renderRecordTag(row) {
+  const annotation = recordAnnotationForRow(row);
+  if (!annotation) return "";
+  return `<span class="record-tag">[${annotation.number}] 424 ${escapeText(annotation.segment.label)}</span>`;
+}
+
 function renderEvidenceCard(row) {
   const evidenceIds = evidenceIdsForRow(row);
   const status = reviewStatusForRow(row, evidenceIds);
@@ -453,60 +462,51 @@ function renderEvidenceCard(row) {
   const dimmed = answerIsPresent(row) ? "" : " dimmed";
   return `<article class="field-card${dimmed}" data-field-key="${escapeText(row.key)}" style="--accent:${color}">
     <div class="meta">证据结论航段 ${escapeText(row.canonical_leg_index)} · ${escapeText(row.leg_type || "-")}</div>
-    <h2>${escapeText(FIELD_LABELS[row.field_name] || row.field_name)}</h2>
+    <h2>${renderRecordTag(row)}${escapeText(FIELD_LABELS[row.field_name] || row.field_name)}</h2>
     <p class="value">${escapeText(formatAnswer(row.expected_answer))}</p>
     <div class="meta">${escapeText(STATUS_LABELS[status] || status)} · ${evidenceIds.length} 处证据</div>
     <div class="evidence-list">${evidenceChipsForIds(evidenceIds)}</div>
   </article>`;
 }
 
-function pointerLine(record, segment, number) {
-  if (!record) return `[${number}] ${segment.label}`;
-  const start = Math.max(0, Math.min(record.length - 1, segment.start));
-  const width = Math.max(1, Math.min(record.length - start, segment.end - segment.start));
-  return `${" ".repeat(start)}${"^".repeat(width)} [${number}] ${segment.label}`;
+function renderRawRecordMarkers(annotations) {
+  return annotations.map((item, lane) => {
+    const start = Math.max(0, Number(item.segment.start || 0));
+    const length = Math.max(1, Number(item.segment.end || 0) - start);
+    return `<div class="record-marker" style="--start:${start};--len:${length};--lane:${lane}">
+      <span class="record-underline"></span>
+      <span class="record-stem"></span>
+      <span class="record-label">[${item.number}] ${escapeText(item.segment.label)}</span>
+    </div>`;
+  }).join("");
 }
 
-function renderRawRecordBlock(legIndex, rows) {
+function renderRawRecordBlock(legIndex) {
   const record = rawRecordForLeg(legIndex);
-  const first = rows[0] || legRowsForIndex(legIndex)[0] || {};
-  const annotated = rows.map((row, index) => ({
-    row,
-    number: index + 1,
-    segment: arincSegmentForRow(row)
-  })).filter((item) => item.segment);
-  const pointers = annotated.map((item) => pointerLine(record, item.segment, item.number)).join("\n");
+  const first = legRowsForIndex(legIndex)[0] || {};
+  const annotations = recordAnnotationsForLeg(legIndex);
+  const markerHeight = Math.max(1, annotations.length) * 28 + 18;
   return `<section class="raw-record-card">
     <div class="meta">424 132 位编码文本 · 映射到证据结论航段 ${escapeText(legIndex)}</div>
     <h2>SEQ ${escapeText(first.source_seq_no || "-")} · ${escapeText(first.source_trans_ident || "-")} · ${escapeText(first.leg_type || "-")}</h2>
-    <pre class="raw-record"><code>${escapeText(record)}${pointers ? `\n${escapeText(pointers)}` : ""}</code></pre>
+    <div class="raw-record-visual" style="--marker-height:${markerHeight}px">
+      <div class="raw-record-canvas">
+        <code class="raw-record-text">${escapeText(record || "No raw 424 record")}</code>
+        ${renderRawRecordMarkers(annotations)}
+      </div>
+    </div>
   </section>`;
 }
 
-function renderArincNumberedCard(row, number) {
-  const evidenceIds = evidenceIdsForRow(row);
-  const color = colorForRow(row);
-  return `<article class="field-card arinc-field-card" data-field-key="${escapeText(row.key)}" style="--accent:${color}">
-    <div class="number-badge">[${number}]</div>
-    <div class="meta">编码字段 → 证据结论航段 ${escapeText(row.canonical_leg_index)}</div>
-    <h2>${escapeText(ARINC_LABELS[row.field_name] || row.field_name)}</h2>
-    <p class="value">${escapeText(formatAnswer(row.expected_answer))}</p>
-    <div class="meta">${evidenceIds.length} 处图面证据</div>
-    <div class="evidence-list">${evidenceChipsForIds(evidenceIds)}</div>
-  </article>`;
-}
-
-function renderArincGroups() {
-  return activeLegIndexes().map((legIndex) => {
-    const rows = activeArincRows().filter((row) => row.canonical_leg_index === legIndex);
-    if (!rows.length) return "";
-    return `<section class="arinc-group">
-      ${renderRawRecordBlock(legIndex, rows)}
-      <div class="numbered-field-list">
-        ${rows.map((row, index) => renderArincNumberedCard(row, index + 1)).join("")}
-      </div>
-    </section>`;
-  }).join("");
+function renderLegEvidenceGroup(legIndex) {
+  const rows = activeRows().filter((row) => row.canonical_leg_index === legIndex);
+  if (!rows.length) return "";
+  return `<section class="evidence-group">
+    ${renderRawRecordBlock(legIndex)}
+    <div class="numbered-field-list">
+      ${rows.map((row) => renderEvidenceCard(row)).join("")}
+    </div>
+  </section>`;
 }
 
 function regionRect(region, width, height) {
@@ -659,14 +659,6 @@ async function loadChart(chartId) {
   renderAll();
 }
 
-function setMode(mode) {
-  state.mode = mode;
-  els.evidenceModeBtn.classList.toggle("active", mode === "evidence");
-  els.arincModeBtn.classList.toggle("active", mode === "arinc");
-  renderFieldCards();
-  renderOverlays();
-}
-
 function bindEvents() {
   els.loadChartBtn.addEventListener("click", () => loadChart(els.chartInput.value.trim()).catch((error) => showToast(error.message)));
   els.chartInput.addEventListener("keydown", (event) => {
@@ -682,8 +674,6 @@ function bindEvents() {
     renderFieldCards();
     renderOverlays();
   });
-  els.evidenceModeBtn.addEventListener("click", () => setMode("evidence"));
-  els.arincModeBtn.addEventListener("click", () => setMode("arinc"));
   els.chartPane.addEventListener("scroll", () => renderOverlays(), { passive: true });
   document.querySelector(".field-pane").addEventListener("scroll", () => renderOverlays(), { passive: true });
   window.addEventListener("resize", () => {
@@ -695,7 +685,6 @@ function bindEvents() {
 async function init() {
   initializeAccessToken();
   bindEvents();
-  setMode(state.mode);
   await loadCharts();
   const requestedChart = params.get("chart_id") || params.get("chart") || state.charts[0]?.chart_id || "";
   await loadChart(requestedChart);
