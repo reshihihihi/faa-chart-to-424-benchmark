@@ -1,0 +1,40 @@
+{
+  "builder_version": "experiment6_counterfactual_builder_prefreeze_v7",
+  "case_count": 3091,
+  "input_chart_count": 300,
+  "produced_by_type": {
+    "424_derived_trap": 300,
+    "altitude_perturbation": 292,
+    "ca_omission": 294,
+    "ca_to_df_sequence_error": 287,
+    "course_radial_error": 299,
+    "fix_substitution": 300,
+    "holding_parameter_error": 298,
+    "implicit_hold_time_omission": 35,
+    "path_terminator_substitution": 300,
+    "positive": 300,
+    "text_only_trap": 300,
+    "turn_direction_flip": 86
+  },
+  "repo_root": "<external-workspace>/experiment3/github_work\\faa-chart-to-424-benchmark",
+  "sample_manifest": "<repo-root>/benchmark_exports\\derived\\v2\\formal300\\sample_manifest.jsonl",
+  "skipped_by_type": {
+    "424_derived_trap": 0,
+    "altitude_perturbation": 8,
+    "ca_omission": 6,
+    "ca_to_df_sequence_error": 13,
+    "course_radial_error": 1,
+    "fix_substitution": 0,
+    "holding_parameter_error": 2,
+    "implicit_hold_time_omission": 265,
+    "path_terminator_substitution": 0,
+    "text_only_trap": 0,
+    "turn_direction_flip": 214
+  },
+  "splits": [
+    "development",
+    "evaluation",
+    "probe"
+  ],
+  "status": "prefreeze_cases_with_labels_not_model_inputs"
+}

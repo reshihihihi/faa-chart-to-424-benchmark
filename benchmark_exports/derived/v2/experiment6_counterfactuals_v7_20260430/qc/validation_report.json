@@ -1,0 +1,27 @@
+{
+  "case_count": 3091,
+  "cases_jsonl": "benchmark_exports\\derived\\v2\\experiment6_counterfactuals_v7_20260430\\cases\\verification_counterfactuals_v7_formal300.jsonl",
+  "duplicate_ids": [],
+  "error_count": 0,
+  "errors": [],
+  "split_counts": {
+    "development": 2065,
+    "evaluation": 768,
+    "probe": 258
+  },
+  "status": "pass",
+  "type_counts": {
+    "424_derived_trap": 300,
+    "altitude_perturbation": 292,
+    "ca_omission": 294,
+    "ca_to_df_sequence_error": 287,
+    "course_radial_error": 299,
+    "fix_substitution": 300,
+    "holding_parameter_error": 298,
+    "implicit_hold_time_omission": 35,
+    "path_terminator_substitution": 300,
+    "positive": 300,
+    "text_only_trap": 300,
+    "turn_direction_flip": 86
+  }
+}

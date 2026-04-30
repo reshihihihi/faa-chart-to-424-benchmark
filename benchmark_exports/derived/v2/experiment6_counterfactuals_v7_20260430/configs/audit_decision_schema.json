@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "experiment6/audit_decision_schema.json",
+  "title": "Experiment 6 Audit Decision Output",
+  "type": "object",
+  "required": ["consistent", "error_fields"],
+  "additionalProperties": false,
+  "properties": {
+    "consistent": { "type": "boolean" },
+    "error_fields": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "error_explanation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["field", "candidate_value", "chart_evidence", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "field": { "type": "string" },
+          "candidate_value": true,
+          "chart_evidence": { "type": "string" },
+          "reason": { "type": "string" }
+        }
+      },
+      "default": []
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["low", "medium", "high"],
+      "default": "medium"
+    }
+  }
+}
