@@ -358,6 +358,82 @@ function uniqueChartCount(entries) {
   return chartIds.size;
 }
 
+function fieldReviewsFromAnnotation(data) {
+  const reviews = data?.field_reviews;
+  if (Array.isArray(reviews)) return reviews;
+  if (reviews && typeof reviews === "object") return Object.values(reviews);
+  return [];
+}
+
+function annotationSavedAt(entry) {
+  const data = entry?.data || {};
+  return data.saved_at || data.reviewed_at || data.generated_at || "";
+}
+
+function latestEntry(entries) {
+  return [...(entries || [])].sort((left, right) => {
+    const leftTime = annotationSavedAt(left) || "";
+    const rightTime = annotationSavedAt(right) || "";
+    return rightTime.localeCompare(leftTime) || String(right.relative_path || "").localeCompare(String(left.relative_path || ""));
+  })[0] || null;
+}
+
+function annotationSummary(entry) {
+  if (!entry || entry.error) return null;
+  const data = entry.data || {};
+  const reviews = fieldReviewsFromAnnotation(data);
+  const statusCounts = {};
+  let evidenceRegionCount = 0;
+  for (const review of reviews) {
+    const status = review.support_mode || review.review_status || "unknown";
+    statusCounts[status] = (statusCounts[status] || 0) + 1;
+    const evidenceIds = new Set([
+      ...(review.evidence_region_ids || []),
+      ...(review.required_evidence_region_ids || []),
+      ...(review.secondary_evidence_region_ids || [])
+    ].filter(Boolean).map(String));
+    evidenceRegionCount += evidenceIds.size;
+  }
+  const pendingFieldCount = statusCounts.pending || 0;
+  return {
+    relative_path: entry.relative_path || "",
+    annotator: data.annotator || data.reviewed_by || "",
+    saved_at: annotationSavedAt(entry),
+    review_status: data.review_status || "",
+    save_mode: data.save_mode || "",
+    field_review_count: reviews.length,
+    pending_field_count: pendingFieldCount,
+    completed_field_count: Math.max(0, reviews.length - pendingFieldCount),
+    evidence_region_count: evidenceRegionCount,
+    review_status_counts: statusCounts
+  };
+}
+
+function entriesGroupedByChart(entries) {
+  const grouped = new Map();
+  for (const entry of entries || []) {
+    const chartId = chartIdFromAnnotationEntry(entry);
+    if (!chartId) continue;
+    if (!grouped.has(chartId)) grouped.set(chartId, []);
+    grouped.get(chartId).push(entry);
+  }
+  return grouped;
+}
+
+function entryCountsByChart(entries) {
+  const counts = {};
+  for (const entry of entries || []) {
+    const chartId = chartIdFromAnnotationEntry(entry);
+    if (!chartId) continue;
+    counts[chartId] = (counts[chartId] || 0) + 1;
+  }
+  return counts;
+}
+
+function latestTimestamp(values) {
+  return values.filter(Boolean).map(String).sort().at(-1) || "";
+}
+
 async function buildDatasetProgress(dataset) {
   const manifest = await readDatasetJson(dataset, "manifest.json", []);
   const claims = dataset.finalDataset ? await readClaims(dataset) : {};
@@ -400,6 +476,88 @@ async function buildDatasetProgress(dataset) {
   };
 }
 
+async function buildDatasetOverview(dataset) {
+  const manifest = await readDatasetJson(dataset, "manifest.json", []);
+  const claims = dataset.finalDataset ? await readClaims(dataset) : {};
+  const currentDrafts = await readAnnotationEntries(annotationPath(dataset, "drafts", "by_annotator"));
+  const byAnnotator = await readAnnotationEntries(annotationPath(dataset, "by_annotator"));
+  const submissions = await readAnnotationEntries(annotationPath(dataset, "submissions"));
+  const draftsByChart = entriesGroupedByChart(currentDrafts);
+  const finalsByChart = entriesGroupedByChart(byAnnotator);
+  const submissionCounts = entryCountsByChart(submissions);
+
+  const rows = manifest.map((item, index) => {
+    const chartId = item.chart_id;
+    const claim = claims[chartId] || null;
+    const draftEntry = latestEntry(draftsByChart.get(chartId));
+    const finalEntry = latestEntry(finalsByChart.get(chartId));
+    const draft = annotationSummary(draftEntry);
+    const final = annotationSummary(finalEntry);
+    const hasAnnotation = Boolean(finalEntry);
+    const hasDraft = Boolean(draftEntry);
+    const rawClaimStatus = dataset.finalDataset ? (claim?.status || "unassigned") : "";
+    let status = "unassigned";
+    if (dataset.finalDataset && rawClaimStatus === "returned_for_expert_review") {
+      status = "returned_for_expert_review";
+    } else if (hasAnnotation || rawClaimStatus === "submitted") {
+      status = "submitted";
+    } else if (hasDraft) {
+      status = "draft_saved";
+    } else if (dataset.finalDataset && claim) {
+      status = rawClaimStatus || "claimed";
+    } else if (!dataset.finalDataset && hasDraft) {
+      status = "draft_saved";
+    } else if (!dataset.finalDataset && hasAnnotation) {
+      status = "submitted";
+    }
+    const annotator = final?.annotator || draft?.annotator || claim?.annotator || "";
+    return {
+      row_index: index + 1,
+      dataset_key: dataset.key,
+      chart_id: chartId,
+      airport: item.airport || "",
+      proc_ident: item.proc_ident || "",
+      chart_name: item.chart_name || "",
+      kind: item.kind || "",
+      ma_leg_count: item.ma_leg_count ?? item.source_ma_leg_count ?? null,
+      status,
+      claim_status: rawClaimStatus,
+      annotator,
+      claimed_at: claim?.claimed_at || "",
+      last_opened_at: claim?.last_opened_at || "",
+      last_saved_at: claim?.last_saved_at || "",
+      returned_at: claim?.returned_at || "",
+      returned_by: claim?.returned_by || "",
+      return_reason: claim?.return_reason || "",
+      expert_review_required: Boolean(claim?.expert_review_required || status === "returned_for_expert_review"),
+      has_draft: hasDraft,
+      has_annotation: hasAnnotation,
+      draft,
+      final,
+      submission_count: submissionCounts[chartId] || 0,
+      updated_at: latestTimestamp([
+        claim?.last_saved_at,
+        claim?.returned_at,
+        claim?.last_opened_at,
+        claim?.claimed_at,
+        draft?.saved_at,
+        final?.saved_at
+      ])
+    };
+  });
+  const statusCounts = {};
+  for (const row of rows) statusCounts[row.status] = (statusCounts[row.status] || 0) + 1;
+  return {
+    dataset_key: dataset.key,
+    label: dataset.label,
+    final_dataset: dataset.finalDataset,
+    updated_at: new Date().toISOString(),
+    total_charts: rows.length,
+    status_counts: statusCounts,
+    rows
+  };
+}
+
 async function buildAdminProgress() {
   return {
     ok: true,
@@ -408,6 +566,15 @@ async function buildAdminProgress() {
       practice10: await buildDatasetProgress(datasets.practice10),
       formal300: await buildDatasetProgress(datasets.formal300)
     }
+  };
+}
+
+async function buildAdminOverview(datasetKey) {
+  const dataset = datasets[datasetKey] || datasets.formal300;
+  return {
+    ok: true,
+    updated_at: new Date().toISOString(),
+    dataset: await buildDatasetOverview(dataset)
   };
 }
 
@@ -944,9 +1111,10 @@ function adminHtml() {
     h2{margin:0 0 12px}
     h3{margin:0 0 12px}
     p{line-height:1.7;color:#405a54}
-    input{box-sizing:border-box;width:100%;padding:13px 14px;border:1px solid #cdbf9f;border-radius:12px;background:#fff;font-size:16px}
+    input,select{box-sizing:border-box;width:100%;padding:13px 14px;border:1px solid #cdbf9f;border-radius:12px;background:#fff;font-size:16px}
     button,a.download{display:inline-block;margin:12px 10px 0 0;padding:12px 18px;border:0;border-radius:12px;background:#176f5b;color:white;text-decoration:none;font-size:15px;font-weight:700;cursor:pointer}
     button.secondary{background:#efe4cf;color:#10241f;border:1px solid #d8ccb7}
+    a.table-link{color:#176f5b;font-weight:700;text-decoration:none}
     table{width:100%;border-collapse:collapse;margin-top:16px;background:white;border-radius:14px;overflow:hidden}
     th,td{padding:12px;border-bottom:1px solid #eadcc4;text-align:left;font-size:14px;vertical-align:top}
     code{background:#efe4cf;padding:2px 6px;border-radius:6px}
@@ -959,6 +1127,22 @@ function adminHtml() {
     .metric span{display:block;margin-top:4px;color:#4a5d58;font-size:13px}
     .progress-bar{height:10px;background:#eadcc4;border-radius:999px;overflow:hidden}
     .progress-fill{display:block;height:100%;background:#176f5b;border-radius:999px}
+    .toolbar{display:grid;grid-template-columns:1.1fr 1fr 1.5fr auto;gap:12px;align-items:end;margin:16px 0}
+    .summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:12px 0}
+    .pill{background:#f8f1e3;border:1px solid #eadcc4;border-radius:999px;padding:9px 12px;font-size:13px;color:#405a54}
+    .pill strong{color:#0f513f}
+    .overview-table-wrap{max-height:68vh;overflow:auto;border:1px solid #eadcc4;border-radius:14px;background:white}
+    .overview-table{margin:0;border-radius:0}
+    .overview-table thead th{position:sticky;top:0;background:#fff4df;z-index:1}
+    .status-badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:700;background:#efe4cf;color:#10241f;white-space:nowrap}
+    .status-submitted{background:#d9efe7;color:#0f513f}
+    .status-draft_saved{background:#fff0c7;color:#745200}
+    .status-claimed{background:#e2ecff;color:#244d91}
+    .status-returned_for_expert_review{background:#ffe0dc;color:#9a2f22}
+    .status-unassigned{background:#ece7dc;color:#5d5a51}
+    .field-progress{white-space:nowrap;color:#405a54}
+    .row-actions{white-space:nowrap}
+    @media (max-width:800px){.toolbar{grid-template-columns:1fr}.overview-table-wrap{max-height:none}}
   </style>
 </head>
 <body>
@@ -968,8 +1152,11 @@ function adminHtml() {
     <section class="card">
       <h2>管理员 token</h2>
       <input id="token" type="password" placeholder="请输入管理员导出 token">
+      <p class="muted">展示页需要普通访问 token；如果本页 URL 带了 <code>token=...</code> 会自动保存，也可以在这里手动填。</p>
+      <input id="accessToken" type="password" placeholder="展示页访问 token，可选">
       <button type="button" onclick="saveToken()">保存 token</button>
       <button class="secondary" type="button" onclick="loadProgress()">刷新当前进度</button>
+      <button class="secondary" type="button" onclick="loadOverview()">刷新逐图总览</button>
       <button class="secondary" type="button" onclick="createExport()">生成并保存新导出</button>
       <button class="secondary" type="button" onclick="loadExports()">刷新导出列表</button>
       <p>导出文件会同时保存在服务器 <code>/data/shujuji_annotation/exports</code>，并可在本页下载。</p>
@@ -981,28 +1168,58 @@ function adminHtml() {
       <div id="progress">请输入管理员 token 后刷新。</div>
     </section>
     <section class="card">
+      <h2>逐图总览</h2>
+      <p class="muted">只展示服务器里已经保存的领取、草稿、正式提交状态；点击“展示页”进入只读结果页检查那张图。</p>
+      <div class="toolbar">
+        <label>数据集<select id="overviewDataset"><option value="formal300">正式集 300 张</option><option value="practice10">练习集 10 张</option></select></label>
+        <label>状态筛选<select id="overviewStatus"><option value="">全部状态</option><option value="submitted">已提交</option><option value="draft_saved">有草稿</option><option value="claimed">已领取未提交</option><option value="returned_for_expert_review">专家复核</option><option value="unassigned">未领取/未标</option></select></label>
+        <label>搜索<input id="overviewSearch" type="search" placeholder="chart_id / 机场 / 程序 / 标注人"></label>
+        <button type="button" onclick="loadOverview()">刷新</button>
+      </div>
+      <div id="overview">请输入管理员 token 后刷新。</div>
+    </section>
+    <section class="card">
       <h2>已有导出</h2>
       <div id="exports"></div>
     </section>
   </main>
   <script>
     const tokenInput = document.getElementById("token");
+    const accessTokenInput = document.getElementById("accessToken");
     const statusBox = document.getElementById("status");
     const progressBox = document.getElementById("progress");
+    const overviewBox = document.getElementById("overview");
+    const overviewDataset = document.getElementById("overviewDataset");
+    const overviewStatus = document.getElementById("overviewStatus");
+    const overviewSearch = document.getElementById("overviewSearch");
+    let overviewRows = [];
+    let overviewMeta = null;
     const params = new URLSearchParams(location.search);
     const tokenFromUrl = params.get("admin_token");
     if (tokenFromUrl) {
       sessionStorage.setItem("shujuji_admin_token", tokenFromUrl);
       params.delete("admin_token");
+    }
+    const accessTokenFromUrl = params.get("token");
+    if (accessTokenFromUrl) {
+      sessionStorage.setItem("shujuji_access_token", accessTokenFromUrl);
+      params.delete("token");
+    }
+    if (tokenFromUrl || accessTokenFromUrl) {
       history.replaceState(null, "", location.pathname + (params.toString() ? "?" + params.toString() : ""));
     }
     tokenInput.value = sessionStorage.getItem("shujuji_admin_token") || "";
+    accessTokenInput.value = sessionStorage.getItem("shujuji_access_token") || "";
 
     function token() {
       return tokenInput.value.trim();
     }
+    function accessToken() {
+      return accessTokenInput.value.trim();
+    }
     function saveToken() {
       sessionStorage.setItem("shujuji_admin_token", token());
+      sessionStorage.setItem("shujuji_access_token", accessToken());
       statusBox.textContent = "管理员 token 已保存在当前浏览器会话。";
     }
     function show(value) {
@@ -1041,6 +1258,90 @@ function adminHtml() {
         metric("进行中领取", item.active_claim_count) +
         "</div></div>";
     }
+    const STATUS_LABELS = {
+      submitted: "已提交",
+      draft_saved: "有草稿",
+      claimed: "已领取",
+      claimed_by_me: "已领取",
+      returned_for_expert_review: "专家复核",
+      unassigned: "未领取",
+      practice_unstarted: "未标"
+    };
+    function statusLabel(status) {
+      return STATUS_LABELS[status] || status || "-";
+    }
+    function formatTime(value) {
+      if (!value) return "-";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return date.toLocaleString("zh-CN", { hour12: false });
+    }
+    function fieldSummary(summary) {
+      if (!summary) return "-";
+      const total = Number(summary.field_review_count || 0);
+      const done = Number(summary.completed_field_count || 0);
+      const pending = Number(summary.pending_field_count || 0);
+      return "<span class='field-progress'>" + done + "/" + total + " 完成" + (pending ? "，待 " + pending : "") + "</span>";
+    }
+    function overviewSummaryHtml(dataset) {
+      const counts = dataset.status_counts || {};
+      return "<div class='summary-grid'>" +
+        "<div class='pill'><strong>" + numberCell(dataset.total_charts) + "</strong> 总图数</div>" +
+        "<div class='pill'><strong>" + numberCell(counts.submitted || 0) + "</strong> 已提交</div>" +
+        "<div class='pill'><strong>" + numberCell(counts.draft_saved || 0) + "</strong> 有草稿</div>" +
+        "<div class='pill'><strong>" + numberCell(counts.claimed || 0) + "</strong> 已领取</div>" +
+        "<div class='pill'><strong>" + numberCell(counts.returned_for_expert_review || 0) + "</strong> 专家复核</div>" +
+        "<div class='pill'><strong>" + numberCell(counts.unassigned || 0) + "</strong> 未领取</div>" +
+      "</div>";
+    }
+    function showcaseHref(row) {
+      const url = new URL("/showcase/", location.origin);
+      url.searchParams.set("dataset", row.dataset_key);
+      url.searchParams.set("chart_id", row.chart_id);
+      if (row.annotator) url.searchParams.set("annotator", row.annotator);
+      if (accessToken()) url.searchParams.set("token", accessToken());
+      return url.pathname + url.search;
+    }
+    function formalHref(row) {
+      const url = new URL(row.dataset_key === "practice10" ? "/practice/" : "/formal/", location.origin);
+      url.searchParams.set("dataset", row.dataset_key);
+      url.searchParams.set("chart_id", row.chart_id);
+      if (row.annotator) url.searchParams.set("annotator", row.annotator);
+      if (accessToken()) url.searchParams.set("token", accessToken());
+      return url.pathname + url.search;
+    }
+    function filteredOverviewRows() {
+      const wantedStatus = overviewStatus.value;
+      const query = overviewSearch.value.trim().toUpperCase();
+      return overviewRows.filter((row) => {
+        if (wantedStatus && row.status !== wantedStatus) return false;
+        if (!query) return true;
+        return [row.chart_id, row.airport, row.proc_ident, row.chart_name, row.annotator, row.kind]
+          .some((value) => String(value || "").toUpperCase().includes(query));
+      });
+    }
+    function renderOverviewRows() {
+      if (!overviewMeta) {
+        overviewBox.textContent = "请输入管理员 token 后刷新。";
+        return;
+      }
+      const rows = filteredOverviewRows();
+      const body = rows.map((row) => {
+        const summary = row.final || row.draft;
+        const reason = row.return_reason ? "<div class='muted'>原因：" + escapeCell(row.return_reason) + "</div>" : "";
+        return "<tr><td><strong>" + escapeCell(row.chart_id) + "</strong><div class='muted'>" + escapeCell([row.airport, row.proc_ident, row.chart_name].filter(Boolean).join(" · ")) + "</div></td>" +
+          "<td><span class='status-badge status-" + escapeCell(row.status) + "'>" + escapeCell(statusLabel(row.status)) + "</span>" + reason + "</td>" +
+          "<td>" + escapeCell(row.annotator || "-") + "</td>" +
+          "<td>" + fieldSummary(summary) + "<div class='muted'>草稿 " + (row.has_draft ? "有" : "无") + "；正式 " + (row.has_annotation ? "有" : "无") + "；快照 " + numberCell(row.submission_count) + "</div></td>" +
+          "<td>" + formatTime(row.updated_at) + "</td>" +
+          "<td class='row-actions'><a class='table-link' target='_blank' rel='noopener' href='" + escapeCell(showcaseHref(row)) + "'>展示页</a><br><a class='table-link' target='_blank' rel='noopener' href='" + escapeCell(formalHref(row)) + "'>标注页</a></td></tr>";
+      }).join("");
+      overviewBox.innerHTML = overviewSummaryHtml(overviewMeta) +
+        "<p class='muted'>当前显示 " + rows.length + " / " + overviewRows.length + " 张；更新时间 " + escapeCell(overviewMeta.updated_at || "") + "</p>" +
+        "<div class='overview-table-wrap'><table class='overview-table'><thead><tr><th>航图</th><th>状态</th><th>标注人</th><th>字段进度</th><th>最近更新</th><th>操作</th></tr></thead><tbody>" +
+        (body || "<tr><td colspan='6'>没有匹配结果。</td></tr>") +
+        "</tbody></table></div>";
+    }
     async function adminFetch(url, options = {}) {
       if (!token()) throw new Error("请先填写管理员 token");
       const headers = new Headers(options.headers || {});
@@ -1074,6 +1375,21 @@ function adminHtml() {
         show("刷新进度失败：" + error.message);
       }
     }
+    async function loadOverview() {
+      try {
+        saveToken();
+        overviewBox.textContent = "正在读取逐图总览...";
+        const datasetKey = overviewDataset.value || "formal300";
+        const data = await adminFetch("/api/admin/overview?dataset=" + encodeURIComponent(datasetKey));
+        overviewMeta = data.dataset;
+        overviewRows = overviewMeta.rows || [];
+        renderOverviewRows();
+        show("逐图总览已刷新，共 " + overviewRows.length + " 张。");
+      } catch (error) {
+        overviewBox.textContent = "刷新失败：" + error.message;
+        show("刷新逐图总览失败：" + error.message);
+      }
+    }
     async function loadExports() {
       try {
         saveToken();
@@ -1095,8 +1411,12 @@ function adminHtml() {
     }
     if (token()) {
       loadProgress();
+      loadOverview();
       loadExports();
     }
+    overviewDataset.addEventListener("change", loadOverview);
+    overviewStatus.addEventListener("change", renderOverviewRows);
+    overviewSearch.addEventListener("input", renderOverviewRows);
   </script>
 </body>
 </html>`;
@@ -1328,6 +1648,12 @@ async function route(req, res) {
   if (req.method === "GET" && pathname === "/api/admin/progress") {
     requireAdminAccess(req, requestUrl);
     sendJson(res, 200, await buildAdminProgress());
+    return;
+  }
+
+  if (req.method === "GET" && pathname === "/api/admin/overview") {
+    requireAdminAccess(req, requestUrl);
+    sendJson(res, 200, await buildAdminOverview(requestUrl.searchParams.get("dataset")));
     return;
   }
 
