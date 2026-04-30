@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "experiment6/audit_decision_schema.json",
+  "title": "Experiment 6 Audit Decision Output",
+  "type": "object",
+  "required": ["consistent", "error_fields"],
+  "additionalProperties": false,
+  "properties": {
+    "consistent": { "type": "boolean" },
+    "error_fields": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    }
+  }
+}

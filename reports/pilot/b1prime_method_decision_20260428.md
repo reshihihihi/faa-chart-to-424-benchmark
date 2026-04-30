@@ -7,7 +7,7 @@ Date: 2026-04-28
 Primary external copy:
 
 ```text
-E:\experiment3\try_B1_B1'\reports\b1prime_method_decision_20260428.md
+<external-artifact-root>/try_B1_B1_prime\reports\b1prime_method_decision_20260428.md
 ```
 
 ## Decision

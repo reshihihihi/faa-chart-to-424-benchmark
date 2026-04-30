@@ -2,7 +2,7 @@
 
 ## Scope
 
-本报告只分析 `E:\experiment3\try_B1_B1'\predictions\pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1` 中已经完成的 100 张 external pilot 结果。
+本报告只分析 `<external-artifact-root>/try_B1_B1_prime\predictions\pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1` 中已经完成的 100 张 external pilot 结果。
 
 分析目标是解释为什么 B1_prime 在 100 张上低于 B1，并决定当前 B1_prime matcher 是否可以冻结。这里使用 score/target 只做事后误差分析，不进入 B1_prime 输入、prompt、matcher 或 rerun 逻辑。
 

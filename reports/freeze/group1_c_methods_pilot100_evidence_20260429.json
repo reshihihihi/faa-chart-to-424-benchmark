@@ -1,8 +1,8 @@
 {
   "status": "pilot100_evidence_available_not_formal_freeze_ready",
   "created_at_utc": "2026-04-29T04:54:16.497152+00:00",
-  "C1_C3_C4_summary_path": "E:\\experiment3\\try_B1_B1'\\predictions\\pilot100_group1_c1_c3_c4_claude_tooluse_semantic_audit_ordinary_ocr_20260428_r1\\summary_report.json",
-  "C2_summary_path": "E:\\experiment3\\try_B1_B1'\\predictions\\pilot100_group1_c2_claude_tooluse_qa_semantic_audit_ordinary_ocr_20260428_r1\\summary_report.json",
+  "C1_C3_C4_summary_path": "<external-artifact-root>\\try_B1_B1'\\predictions\\pilot100_group1_c1_c3_c4_claude_tooluse_semantic_audit_ordinary_ocr_20260428_r1\\summary_report.json",
+  "C2_summary_path": "<external-artifact-root>\\try_B1_B1'\\predictions\\pilot100_group1_c2_claude_tooluse_qa_semantic_audit_ordinary_ocr_20260428_r1\\summary_report.json",
   "methods": {
     "C1": {
       "run_id": "pilot100_group1_c1_c3_c4_claude_tooluse_semantic_audit_ordinary_ocr_20260428_r1",

@@ -6,8 +6,8 @@
   "group1_candidate_position": "after_B1_prime_before_C1",
   "revalidation_type": "local_artifact_recheck_of_existing_pilot100_run_no_new_model_calls",
   "run_id": "b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2",
-  "run_dir": "E:\\experiment3\\B1'_link\\predictions\\b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2",
-  "sample_manifest": "E:\\experiment3\\B1'_link\\data\\manifests\\b1prime_link_pilot100_20260428.jsonl",
+  "run_dir": "<external-artifact-root>\\B1'_link\\predictions\\b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2",
+  "sample_manifest": "<external-artifact-root>\\B1'_link\\data\\manifests\\b1prime_link_pilot100_20260428.jsonl",
   "sample_manifest_sha256": "9d41833720662c5b511913eb8d70bf0242883df35027f0eba90ac4ad3e11c301",
   "sample_role": "pilot100_external_expanded_feasibility_only_excluded_from_formal300",
   "artifact_counts": {

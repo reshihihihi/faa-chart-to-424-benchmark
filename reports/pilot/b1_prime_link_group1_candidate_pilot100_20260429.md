@@ -42,15 +42,15 @@ Forbidden evidence:
 - prompt sha256 in repository and pilot100 validation run: `2b135d82928e3963a5b37ad5ebcee82e2e079aa94d34c88cf33b1d215c8909c2`
 - field-to-leg schema: `schemas/field_to_leg_links.schema.candidate.json`
 - field-to-leg schema sha256: `1085f187055f1e6b7b78bb9958643ed4eb06bfa7d8a4a65870537bd34f704262`
-- external pilot100 linking script: `E:\experiment3\B1'_link\scripts\build_field_to_leg_links.py`, sha256 `132c90afc38f12d1c50a1930a44ba519afb33d40e0da5059a630d4eb71944dd9`
-- external pilot100 runner script: `E:\experiment3\B1'_link\scripts\run_b1prime_link_smoke.py`, sha256 `1e61a1c5f7130d8cabb51deb0baaefb4725374aff8b1fc55636e9a4e01cb87a9`
+- external pilot100 linking script: `<external-artifact-root>/B1_prime_link\scripts\build_field_to_leg_links.py`, sha256 `132c90afc38f12d1c50a1930a44ba519afb33d40e0da5059a630d4eb71944dd9`
+- external pilot100 runner script: `<external-artifact-root>/B1_prime_link\scripts\run_b1prime_link_smoke.py`, sha256 `1e61a1c5f7130d8cabb51deb0baaefb4725374aff8b1fc55636e9a4e01cb87a9`
 - local revalidation JSON: `reports/pilot/b1_prime_link_group1_candidate_pilot100_revalidation_20260429.json`
 
 ## Pilot100 Run
 
 - run id: `b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2`
-- external artifact root: `E:\experiment3\B1'_link`
-- sample manifest: `E:\experiment3\B1'_link\data\manifests\b1prime_link_pilot100_20260428.jsonl`
+- external artifact root: `<external-artifact-root>/B1_prime_link`
+- sample manifest: `<external-artifact-root>/B1_prime_link\data\manifests\b1prime_link_pilot100_20260428.jsonl`
 - sample role: pilot100 external feasibility only, excluded from formal300
 - OCR-1: PaddleOCR PP-OCRv5 ordinary OCR
 - text LLM: `gpt-5.4`

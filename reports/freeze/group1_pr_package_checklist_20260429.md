@@ -104,9 +104,9 @@
 | [x] | `benchmark_exports/derived/v2/formal300/pdfs/` | 优先使用 Git LFS、Release artifact 或只提交 manifest/hash | 299 个 PDF 文件；普通 PR 中通常过大，建议用 manifest+hash 或 Git LFS/release artifact 管理。 |
 | [x] | `benchmark_exports/derived/v2/formal300/targets/canonical_proxy_gt/` | 体积可接受则提交，否则只提交 manifest/hash | 300 个 canonical target JSON；文件可能不大，但它们是正式答案，是否随 PR 提交需要审查者决定。 |
 | [x] | `benchmark_exports/derived/v2/formal300/targets/raw_cifp_per_procedure/` | 仓库策略允许则提交，否则只提交 manifest/hash | 每个 procedure 的 raw CIFP 记录，是答案/来源证据，不应被推理 runner 访问。 |
-| [x] | `E:\experiment3\try_B1_B1'` | 不要提交原始大文件，只引用 manifest/报告 | B1/B1_prime pilot100 的图片、OCR、预测和 score 等大文件目录；建议只提交摘要和 manifest。 |
-| [x] | `E:\experiment3\B1'_link` | 不要提交原始大文件，只引用 manifest/报告 | B1_prime_link pilot100 大文件目录；建议只提交摘要和报告。 |
-| [x] | `E:\experiment3\d_sft` | 不要提交原始训练数据或 checkpoint，只提交报告、配置和 manifest | 包含训练数据、checkpoint 和日志，体积大，不应作为普通 PR 内容提交。 |
+| [x] | `<external-artifact-root>/try_B1_B1_prime` | 不要提交原始大文件，只引用 manifest/报告 | B1/B1_prime pilot100 的图片、OCR、预测和 score 等大文件目录；建议只提交摘要和 manifest。 |
+| [x] | `<external-artifact-root>/B1_prime_link` | 不要提交原始大文件，只引用 manifest/报告 | B1_prime_link pilot100 大文件目录；建议只提交摘要和报告。 |
+| [x] | `<external-artifact-root>/d_sft` | 不要提交原始训练数据或 checkpoint，只提交报告、配置和 manifest | 包含训练数据、checkpoint 和日志，体积大，不应作为普通 PR 内容提交。 |
 
 ## 不应提交或需要先检查
 

@@ -91,7 +91,7 @@
                  "formal_evaluation_split_locked":  false,
                  "pilot10_external_role":  "pilot_only_excluded_from_formal_evaluation",
                  "pilot100_external_role":  "expanded_feasibility_only_excluded_from_formal_evaluation",
-                 "pilot100_external_artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                 "pilot100_external_artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
                  "pilot100_external_overlap_checks":  {
                                                           "formal300_chart_id_overlap":  0,
                                                           "formal300_pdf_overlap":  0,
@@ -155,7 +155,7 @@
                            "ordinary_ocr_B1_B1_prime_pilot100_expanded_validation":  {
                                                                                          "run_id":  "pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
                                                                                          "sample_role":  "pilot100_external_expanded_feasibility_only_not_formal300",
-                                                                                         "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                         "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
                                                                                          "report_path":  "reports/pilot/pilot100_b1_b1prime_expanded_validation_20260428.md",
                                                                                          "data_integrity":  {
                                                                                                                 "sample_count":  100,
@@ -196,7 +196,7 @@
                            "ordinary_ocr_B1_prime_link_pilot100_group1_candidate_validation":  {
                                                                                                   "run_id":  "b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2",
                                                                                                   "sample_role":  "pilot100_external_expanded_feasibility_only_not_formal300",
-                                                                                                  "artifact_root":  "E:\\experiment3\\B1\u0027_link",
+                                                                                                  "artifact_root":  "<external-artifact-root>\\B1\u0027_link",
                                                                                                   "report_path":  "reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md",
                                                                                                   "revalidation_json":  "reports/pilot/b1_prime_link_group1_candidate_pilot100_revalidation_20260429.json",
                                                                                                   "data_integrity":  {

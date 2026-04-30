@@ -1,0 +1,60 @@
+{
+  "status": "freeze_candidate_before_full_formal_run",
+  "date": "2026-04-30",
+  "experiment_group": "6",
+  "case_set": {
+    "builder_version": "experiment6_counterfactual_builder_prefreeze_v7",
+    "cases_jsonl": "cases/verification_counterfactuals_v7_formal300.jsonl",
+    "case_count": 3091
+  },
+  "output_schema": "configs/audit_decision_schema.json",
+  "parser_policy": {
+    "formal_output": "bare_json_or_anthropic_tool_json_only",
+    "markdown_code_fence": "invalid",
+    "prose_wrapper": "invalid",
+    "allowed_keys": [
+      "consistent",
+      "error_fields"
+    ]
+  },
+  "retry_policy": {
+    "api_failure": "rerun_exact_failed_cases_only_with_same_input_prompt_model_parameters",
+    "parse_or_schema_failure": "count_as_failure_unless_the_runner_uses_pre_frozen_tool_call_json",
+    "low_score": "no_selective_rerun"
+  },
+  "methods": {
+    "V1_text_only": {
+      "input": "OCR-1 full-chart text + candidate_record",
+      "prompt": "prompts/formal_v1_text_only_verifier.md",
+      "model": "gpt-5.4",
+      "provider": "OpenAI-compatible local proxy",
+      "base_url": "http://127.0.0.1:8080/v1",
+      "temperature": 0.0,
+      "max_tokens": 300,
+      "api_retries": 1
+    },
+    "V2_direct_vlm": {
+      "input": "full chart image + candidate_record",
+      "prompt": "prompts/formal_v2_direct_vlm_verifier.md",
+      "model": "claude-sonnet-4-5-20250929",
+      "provider": "OpenAI-compatible Claude proxy",
+      "base_url": "https://api.claudecode.uk/v1",
+      "temperature": 0.0,
+      "max_tokens": 300,
+      "api_retries": 1,
+      "output_control": "audit_decision_tool_call_json_plus_strict_parser"
+    },
+    "V3_extract_then_compare": {
+      "input": "frozen Group 1 canonical extraction + candidate_record",
+      "prompt_or_spec": "prompts/formal_v3_extract_then_compare_spec.md",
+      "model": "symbolic_comparer",
+      "default_smoke_extractor": "C4",
+      "formal_extractor_selection": "must be chosen before scoring and recorded in the formal run manifest"
+    },
+    "V4_sft_verifier_optional": {
+      "input": "full chart image + candidate_record",
+      "prompt_or_spec": "prompts/formal_v4_sft_verifier_spec.md",
+      "status": "not_run_until_no_leakage_sft_checkpoint_is_frozen"
+    }
+  }
+}
