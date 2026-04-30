@@ -619,6 +619,84 @@ async function returnClaimForRequest(req, requestUrl, dataset, chartId) {
   };
 }
 
+async function claimNextChart(dataset, annotator, afterChartId = "") {
+  if (!dataset.finalDataset) {
+    const manifest = await readDatasetJson(dataset, "manifest.json", []);
+    return { chartId: manifest[0]?.chart_id || "", claim: null };
+  }
+  if (!annotator) {
+    const error = new Error("正式标注请先填写标注人，再领取航图。");
+    error.statusCode = 400;
+    throw error;
+  }
+  return withClaimLock(async () => {
+    const manifest = await readDatasetJson(dataset, "manifest.json", []);
+    const claims = await readClaims(dataset);
+    const now = new Date().toISOString();
+    const openForMe = manifest.find((item) => {
+      const chartId = item.chart_id;
+      const claim = claims[chartId];
+      return chartId !== afterChartId
+        && claim?.annotator === annotator
+        && !["submitted", "returned_for_expert_review"].includes(claim.status || "");
+    });
+    if (openForMe) {
+      const chartId = openForMe.chart_id;
+      claims[chartId] = {
+        ...claims[chartId],
+        chart_id: chartId,
+        annotator,
+        status: claims[chartId].status || "claimed",
+        claimed_at: claims[chartId].claimed_at || now,
+        last_opened_at: now
+      };
+      await writeClaims(dataset, claims);
+      return { chartId, claim: claims[chartId] };
+    }
+
+    const unassigned = manifest.find((item) => item.chart_id !== afterChartId && !claims[item.chart_id]);
+    if (!unassigned) return { chartId: "", claim: null };
+
+    const chartId = unassigned.chart_id;
+    claims[chartId] = {
+      chart_id: chartId,
+      annotator,
+      status: "claimed",
+      claimed_at: now,
+      last_opened_at: now,
+      last_saved_at: ""
+    };
+    await writeClaims(dataset, claims);
+    return { chartId, claim: claims[chartId] };
+  });
+}
+
+async function nextChartForRequest(req, requestUrl, dataset) {
+  const payload = req.method === "POST"
+    ? JSON.parse(stripBom(await readRequestBody(req)) || "{}")
+    : {};
+  const annotator = getAnnotator(requestUrl) || safeAnnotator(payload.annotator || "");
+  const afterChartId = isSafeChartId(payload.after_chart_id) ? payload.after_chart_id : "";
+  const next = await claimNextChart(dataset, annotator, afterChartId);
+  const charts = await loadCharts(dataset, annotator, { lite: dataset.finalDataset });
+  const chart = next.chartId
+    ? await loadChartDetail(dataset, next.chartId, annotator)
+    : null;
+  return {
+    ok: true,
+    dataset: {
+      key: dataset.key,
+      label: dataset.label,
+      final_dataset: dataset.finalDataset,
+      url_path: dataset.urlPath
+    },
+    chart_id: next.chartId,
+    claim: next.claim,
+    charts,
+    chart
+  };
+}
+
 function sendJson(res, statusCode, payload) {
   res.writeHead(statusCode, jsonHeaders);
   res.end(JSON.stringify(payload, null, 2));
@@ -1159,6 +1237,12 @@ async function route(req, res) {
   if (req.method === "GET" && pathname === "/api/chart") {
     requireAccess(req, requestUrl);
     sendJson(res, 200, await loadChartDetail(dataset, requestUrl.searchParams.get("chart_id"), annotator));
+    return;
+  }
+
+  if (req.method === "POST" && pathname === "/api/queue/next") {
+    requireAccess(req, requestUrl);
+    sendJson(res, 200, await nextChartForRequest(req, requestUrl, dataset));
     return;
   }
 

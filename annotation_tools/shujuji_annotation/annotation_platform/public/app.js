@@ -2290,8 +2290,14 @@ async function loadChart(chartId) {
     showToast(listItem.claim_status === "returned_for_expert_review" ? "这张图已退回专家复审。" : "这张图已被其他参与者领取。");
     return;
   }
-  state.current = await getJson(apiUrl("/api/chart", { chart_id: chartId }));
+  const chartData = await getJson(apiUrl("/api/chart", { chart_id: chartId }));
+  applyLoadedChart(chartData, chartId);
+}
+
+function applyLoadedChart(chartData, fallbackChartId = "") {
+  state.current = chartData;
   state.dataset = state.current.dataset || datasetConfig;
+  const chartId = state.current.manifest?.chart_id || fallbackChartId;
   const sourceRegions = state.current.draft?.regions || state.current.annotation?.regions || state.current.prelabel?.regions || [];
   state.regions = sourceRegions.map(normalizeRegion);
   state.fieldReviews = normalizeFieldReviews(state.current.draft?.field_reviews || state.current.annotation?.field_reviews || {});
@@ -3648,6 +3654,7 @@ function updateFormalQueueStatus() {
 
 function setupFormalQueueUi() {
   if (!formalQueueMode()) return;
+  document.documentElement.classList.add("formal-queue-mode");
   document.body.classList.add("formal-queue-mode");
   if (els.sideActionPanel && els.workspaceToolbar && !els.sideActionPanel.classList.contains("toolbar-action-panel")) {
     els.sideActionPanel.classList.add("toolbar-action-panel");
@@ -3677,30 +3684,17 @@ async function advanceFormalQueue({ afterChartId = "", successPrefix = "" } = {}
   if (state.formalQueueAdvancing) return;
   state.formalQueueAdvancing = true;
   try {
-    for (let attempt = 0; attempt < 4; attempt += 1) {
-      await refreshCharts();
-      const next = nextFormalQueueChart({ afterChartId });
-      if (!next) {
-        showFormalQueueEmpty(successPrefix);
-        return;
-      }
-      try {
-        if (next.claim_status === "unassigned") {
-          await claimChartFromList(next.chart_id, { openAfter: true, silent: true });
-        } else {
-          await loadChart(next.chart_id);
-        }
-        showToast(`${successPrefix ? `${successPrefix}，` : ""}已进入下一张：${next.chart_id}`);
-        return;
-      } catch (error) {
-        if (error.status === 409) {
-          afterChartId = "";
-          continue;
-        }
-        throw error;
-      }
+    const data = await postJson(apiUrl("/api/queue/next"), { after_chart_id: afterChartId });
+    state.dataset = data.dataset || datasetConfig;
+    state.charts = data.charts || [];
+    renderChartList();
+    if (!data.chart) {
+      showFormalQueueEmpty(successPrefix);
+      return;
     }
-    showFormalQueueEmpty(successPrefix);
+    applyLoadedChart(data.chart, data.chart_id);
+    const chartId = data.chart?.manifest?.chart_id || data.chart_id;
+    showToast(`${successPrefix ? `${successPrefix}，` : ""}已进入下一张：${chartId}`);
   } finally {
     state.formalQueueAdvancing = false;
   }
