@@ -1,0 +1,1200 @@
+{
+  "package_id": "group1_formal_freeze_20260430_r1",
+  "manifest_version": "1.0.0",
+  "created_at_utc": "2026-04-30T12:42:12.003734+00:00",
+  "status": "frozen",
+  "supersedes": [
+    "configs/group1_formal_freeze_manifest_20260429.json"
+  ],
+  "formal_run": {
+    "run_id": "group1_formal_eval_50_200_50_seed20260437_20260430_r1",
+    "run_dir": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1",
+    "split_filter": "evaluation",
+    "inference_target_access": false,
+    "scoring_manifest_separate": true
+  },
+  "freeze_steps": [
+    {
+      "step": 1,
+      "name": "sample and split",
+      "status": "frozen",
+      "meaning": "The formal reporting split is fixed to the 200-sample evaluation subset of formal300_50_200_50_seed20260437."
+    },
+    {
+      "step": 2,
+      "name": "schema target scorer",
+      "status": "frozen",
+      "meaning": "Canonical schema, proxy targets, field scorer, and invalid-output scoring policy are fixed by path and sha256."
+    },
+    {
+      "step": 3,
+      "name": "method boundaries",
+      "status": "frozen",
+      "meaning": "Each method's allowed inputs and forbidden leakage sources are fixed for Group 1 reporting."
+    },
+    {
+      "step": 4,
+      "name": "model and call parameters",
+      "status": "frozen",
+      "meaning": "OCR engines, LLM/VLM identities, D-SFT checkpoint role, deterministic settings, and retry policy are fixed for this run."
+    },
+    {
+      "step": 5,
+      "name": "runner prompt rule aggregator",
+      "status": "frozen",
+      "meaning": "Runners, prompts, rules, link builder, QA aggregator, and D-SFT inference prompt are fixed by path and sha256."
+    },
+    {
+      "step": 6,
+      "name": "results and failure accounting",
+      "status": "frozen",
+      "meaning": "Final method table, C2 combination policy, coverage, method failures, and field accuracy are fixed from the timestamped completion audit."
+    },
+    {
+      "step": 7,
+      "name": "freeze package",
+      "status": "generated",
+      "meaning": "This package is the reporting source for Group 1 formal results before moving to later experiment groups."
+    }
+  ],
+  "sample_and_split_freeze": {
+    "split_id": "formal300_50_200_50_seed20260437",
+    "formal300_dir": "benchmark_exports/derived/v2/formal300",
+    "split_filter": "evaluation",
+    "evaluation_sample_count": 200,
+    "development_sample_count": 50,
+    "probe_sample_count": 50,
+    "artifacts": {
+      "sample_manifest": {
+        "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/sample_manifest_50_200_50_seed20260437.jsonl",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "d15f0ab36a223dd60705f2231643254925dbb1783295f686d21146c57a6ee468",
+        "bytes": 509679
+      },
+      "split_policy": {
+        "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/SPLIT_POLICY_50_200_50_seed20260437.md",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "d1a927e1e76e5be788b5f67b68749bcf89b0b6e977296d73327cbf80346aede7",
+        "bytes": 1544
+      },
+      "split_json": {
+        "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/splits_50_200_50_seed20260437.json",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "b0c7f6b75f16022b78531b372ac35820960aa70fc581d4aa086d016a180a9f9f",
+        "bytes": 37708
+      }
+    }
+  },
+  "schema_target_scorer_freeze": {
+    "schema": {
+      "path": "schemas/missed_approach_leg.schema.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "bytes": 7660
+    },
+    "scorer": {
+      "path": "scripts/scorers/group1_canonical_field_scorer.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "be2bf016c557e9ce9f9df7b680370c921cd92fcc3dc34e7e09dff44384b26f45",
+      "bytes": 9316
+    },
+    "scorer_validator_manifest": {
+      "path": "configs/scorer_validator_manifest.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "69a3f34adc329d01ff1718048b1b254ceb94f8a71bcabf299f52ea931a4d2d84",
+      "bytes": 1872
+    },
+    "targets": {
+      "field_targets": {
+        "path": "benchmark_exports/derived/v2/formal300/targets/field_targets.jsonl",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "47b5d1dc00e338c1bec0e11c0ea89f65a15cb310377005a68dd4b1160992ee91",
+        "bytes": 1447800
+      },
+      "evidence_provenance": {
+        "path": "benchmark_exports/derived/v2/formal300/targets/evidence_provenance.jsonl",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "be27469981e723dd17252a7425134a84671d342eebe4c8426291cfc6097564ca",
+        "bytes": 2961636
+      },
+      "canonical_proxy_gt_combined": {
+        "path": "benchmark_exports/derived/v2/formal300/targets/canonical_proxy_gt_combined.json",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "9a67277de2d05ee3255eed98c40c9e31060e5d6b6a76ffc576734bf71c3729d4",
+        "bytes": 1071220
+      }
+    },
+    "policies": {
+      "invalid_output_policy": {
+        "path": "configs/invalid_output_scoring_policy.md",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "f0e80576c8c56fd3725859791cffa3b4a3a666f183393b2b622a99f82345efc1",
+        "bytes": 1850
+      },
+      "output_control_policy": {
+        "path": "configs/output_control_policy.md",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "a7a9f80eeabb82931b1a9c9c8f90f39ae3d589a9de272b4697dacc895c250416",
+        "bytes": 9888
+      },
+      "parser_repair_policy": {
+        "path": "configs/parser_repair_policy.md",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "d52cda1d316d51abb72c161f7b5b6670738d18d29abd7fe88e12d33aecebc9c2",
+        "bytes": 4012
+      },
+      "rerun_policy": {
+        "path": "docs/rerun_policy.md",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "2dd6d3359b0085e391459c91711d1aea2a4844fa913eb22b31bc2b1713103450",
+        "bytes": 867
+      },
+      "no_leakage_policy": {
+        "path": "docs/no_leakage_policy.md",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "15d977ba384c96f2ad1d495807eede4fce8bcb4efc7c66b989d82c3b4fe8a566",
+        "bytes": 1670
+      }
+    }
+  },
+  "model_call_freeze": {
+    "OCR_1": {
+      "engine": "PaddleOCR PP-OCRv5",
+      "role": "ordinary OCR for A1/B1/B1_prime/B1_prime_link/C4",
+      "manifest": {
+        "path": "ocr_artifacts/formal300/ocr1_paddleocr_ppocrv5_frozen/manifest.jsonl",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "f31c34258be5ca46bfd4d083682c4101a45368efff1525920fa020cd34eebe39",
+        "bytes": 175481
+      },
+      "run_manifest": {
+        "path": "ocr_artifacts/formal300/ocr1_paddleocr_ppocrv5_frozen/run_manifest.json",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "3ef4a618c0d01f64cca6f6c7085a6f7b8d6e3625358e5ce17cfbf411227645c0",
+        "bytes": 728
+      }
+    },
+    "OCR_2": {
+      "engine": "Tesseract 5.x",
+      "role": "alternative OCR for A2 only in Group 1",
+      "manifest": {
+        "path": "ocr_artifacts/formal300/ocr2_tesseract5_frozen/manifest.jsonl",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "3b53a370909404899d9cd207e2b15f187ac3e65c7040daba3818d29575a85d10",
+        "bytes": 236461
+      },
+      "run_manifest": {
+        "path": "ocr_artifacts/formal300/ocr2_tesseract5_frozen/run_manifest.json",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "cd36d896a0d2c315b575c4ed7a52d9b6001b11cea8a041c8fb103fb10538dbe4",
+        "bytes": 842
+      }
+    },
+    "LLM_B_methods": {
+      "provider": "openai_compatible",
+      "model": "gpt-5.4",
+      "temperature": 0.0,
+      "max_tokens": 4096,
+      "output_control": "forced tool call / schema-bound canonical JSON",
+      "schema_retry_count": 1,
+      "parser_repair": false
+    },
+    "VLM_C_methods": {
+      "provider": "anthropic_compatible",
+      "model": "claude-sonnet-4-5-20250929",
+      "temperature": 0.0,
+      "max_tokens": {
+        "C1": 4096,
+        "C2_QA_call": 2048,
+        "C3": 4096,
+        "C4": 4096
+      },
+      "output_control": "anthropic tool use / schema-bound canonical JSON",
+      "schema_retry_count": 1,
+      "parser_repair": false
+    },
+    "D_SFT": {
+      "base_model": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "QLoRA adapter selected by D-SFT dev split only",
+      "training_config": {
+        "path": "training/d_sft/configs/d_sft_training_config.frozen_20260428_r1.json",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "0b06b0d80ba332ea8f97c367f20fb34670fccdaaa0891748d34a794190b69dd0",
+        "bytes": 13958
+      },
+      "inference_runner": {
+        "path": "scripts/d_sft_infer_qwen2vl_lora.py",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "abd8778aa98fbb11623e1782387c10c8df489e08d781178244daf7aeb39add03",
+        "bytes": 14138
+      },
+      "parser_policy": "strict_json_only; no code fence stripping; no semantic repair; no selective retry"
+    }
+  },
+  "method_boundaries": [
+    {
+      "method": "A1",
+      "formal_definition": "OCR-1 full-chart text -> deterministic rules -> canonical JSON",
+      "allowed_inputs": [
+        "chart metadata",
+        "OCR-1 PaddleOCR PP-OCRv5 full-chart text"
+      ],
+      "forbidden_inputs": [
+        "chart image at rule stage",
+        "OCR-2",
+        "LLM/VLM",
+        "field candidates",
+        "target",
+        "score",
+        "CIFP/ARINC 424",
+        "human answer"
+      ],
+      "model": "none",
+      "runner_or_logic": "scripts/run_group1_formal_manifest.py + docs/group1_a1_a2_rules_candidate_v1.md"
+    },
+    {
+      "method": "A2",
+      "formal_definition": "OCR-2 full-chart text -> deterministic rules -> canonical JSON",
+      "allowed_inputs": [
+        "chart metadata",
+        "OCR-2 Tesseract 5.x full-chart text"
+      ],
+      "forbidden_inputs": [
+        "chart image at rule stage",
+        "OCR-1",
+        "LLM/VLM",
+        "field candidates",
+        "target",
+        "score",
+        "CIFP/ARINC 424",
+        "human answer"
+      ],
+      "model": "none",
+      "runner_or_logic": "scripts/run_group1_formal_manifest.py + docs/group1_a1_a2_rules_candidate_v1.md"
+    },
+    {
+      "method": "B1",
+      "formal_definition": "OCR-1 full-chart text -> LLM -> canonical JSON",
+      "allowed_inputs": [
+        "chart metadata",
+        "OCR-1 PaddleOCR PP-OCRv5 full-chart text",
+        "B1 prompt"
+      ],
+      "forbidden_inputs": [
+        "chart image at LLM stage",
+        "OCR bounding boxes",
+        "field candidates",
+        "target",
+        "score",
+        "CIFP/ARINC 424",
+        "human answer"
+      ],
+      "model": "gpt-5.4",
+      "runner_or_logic": "scripts/run_group1_formal_manifest.py",
+      "prompt": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md"
+    },
+    {
+      "method": "B1_prime",
+      "formal_definition": "OCR-1 full-chart text -> deterministic field candidates -> LLM -> canonical JSON",
+      "allowed_inputs": [
+        "chart metadata",
+        "OCR-1 PaddleOCR PP-OCRv5 full-chart text",
+        "OCR-only field_candidates",
+        "B1_prime prompt"
+      ],
+      "forbidden_inputs": [
+        "chart image at LLM stage",
+        "manual/gold field candidates",
+        "field-to-leg links",
+        "target",
+        "score",
+        "CIFP/ARINC 424",
+        "human answer"
+      ],
+      "model": "gpt-5.4",
+      "runner_or_logic": "scripts/run_group1_formal_manifest.py",
+      "prompt": "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md"
+    },
+    {
+      "method": "B1_prime_link",
+      "formal_definition": "OCR-1 full-chart text -> deterministic field candidates -> deterministic field-to-leg links -> LLM -> canonical JSON",
+      "allowed_inputs": [
+        "chart metadata",
+        "OCR-1 PaddleOCR PP-OCRv5 full-chart text",
+        "OCR-only field_candidates",
+        "OCR-only field_to_leg_links",
+        "B1_prime_link prompt"
+      ],
+      "forbidden_inputs": [
+        "chart image at LLM stage",
+        "manual/gold links",
+        "target",
+        "score",
+        "CIFP/ARINC 424",
+        "human answer"
+      ],
+      "model": "gpt-5.4",
+      "runner_or_logic": "scripts/run_group1_formal_manifest.py + scripts/build_field_to_leg_links.py",
+      "prompt": "prompts/paper_v2/b1_prime_link_ocr_candidates_links_to_canonical.zh_v0_candidate.md"
+    },
+    {
+      "method": "C1",
+      "formal_definition": "full chart image -> VLM -> canonical JSON",
+      "allowed_inputs": [
+        "chart metadata",
+        "full chart image",
+        "C1 prompt"
+      ],
+      "forbidden_inputs": [
+        "OCR text",
+        "field candidates",
+        "target",
+        "score",
+        "CIFP/ARINC 424",
+        "human answer"
+      ],
+      "model": "claude-sonnet-4-5-20250929",
+      "runner_or_logic": "scripts/run_group1_formal_manifest.py",
+      "prompt": "prompts/paper_v2/c1_image_to_canonical_pilot10.zh_v1_candidate.md"
+    },
+    {
+      "method": "C2",
+      "formal_definition": "full chart image -> fixed per-field QA prompts -> deterministic aggregator -> canonical JSON",
+      "allowed_inputs": [
+        "chart metadata",
+        "full chart image",
+        "prompts/path_c_qa_v2 QA bundle",
+        "deterministic aggregator"
+      ],
+      "forbidden_inputs": [
+        "OCR text",
+        "field candidates",
+        "target",
+        "score",
+        "CIFP/ARINC 424",
+        "human answer"
+      ],
+      "model": "claude-sonnet-4-5-20250929",
+      "runner_or_logic": "scripts/run_group1_formal_manifest.py + scripts/aggregate_c2_qa_candidate.py",
+      "prompt": "prompts/path_c_qa_v2"
+    },
+    {
+      "method": "C3",
+      "formal_definition": "full chart image -> questionnaire-style VLM extraction -> canonical JSON",
+      "allowed_inputs": [
+        "chart metadata",
+        "full chart image",
+        "C3 questionnaire prompt"
+      ],
+      "forbidden_inputs": [
+        "OCR text",
+        "field candidates",
+        "target",
+        "score",
+        "CIFP/ARINC 424",
+        "human answer"
+      ],
+      "model": "claude-sonnet-4-5-20250929",
+      "runner_or_logic": "scripts/run_group1_formal_manifest.py",
+      "prompt": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md"
+    },
+    {
+      "method": "C4",
+      "formal_definition": "full chart image + OCR-1 full-chart text -> VLM -> canonical JSON",
+      "allowed_inputs": [
+        "chart metadata",
+        "full chart image",
+        "OCR-1 PaddleOCR PP-OCRv5 full-chart text",
+        "C4 prompt"
+      ],
+      "forbidden_inputs": [
+        "OCR-2",
+        "field candidates",
+        "target",
+        "score",
+        "CIFP/ARINC 424",
+        "human answer"
+      ],
+      "model": "claude-sonnet-4-5-20250929",
+      "runner_or_logic": "scripts/run_group1_formal_manifest.py",
+      "prompt": "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md"
+    },
+    {
+      "method": "D_SFT",
+      "formal_definition": "full chart image -> SFT VLM checkpoint -> canonical JSON",
+      "allowed_inputs": [
+        "chart metadata",
+        "full chart image",
+        "D-SFT frozen prompt",
+        "selected D-SFT checkpoint"
+      ],
+      "forbidden_inputs": [
+        "OCR text",
+        "field candidates",
+        "target at inference",
+        "score",
+        "CIFP/ARINC 424",
+        "human answer",
+        "other method predictions"
+      ],
+      "model": "Qwen/Qwen2-VL-2B-Instruct + QLoRA adapter checkpoint",
+      "runner_or_logic": "scripts/d_sft_infer_qwen2vl_lora.py",
+      "prompt": "training/d_sft/prompts/d_sft_image_to_canonical.v2.md"
+    }
+  ],
+  "runner_prompt_rule_freeze": {
+    "runner_prepare": {
+      "path": "scripts/prepare_group1_formal_run.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "4980b16e4e464d9a23f615b7cf074c44d1d0f6461bcffc7abbb39718b10a7689",
+      "bytes": 8997
+    },
+    "runner_execute": {
+      "path": "scripts/run_group1_formal_manifest.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "e7d8942f857f96d8dea92a1ba4dff0b0282d94047a2065ec51824bbe16e3c9d7",
+      "bytes": 36015
+    },
+    "runner_audit_completion": {
+      "path": "scripts/audit_group1_formal_completion.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "41c1ea9e8c2a691ecfd3561d6a1608012b9ccc1ada7d18f54f7e4e3b41486186",
+      "bytes": 25127
+    },
+    "rules_doc_a1_a2": {
+      "path": "docs/group1_a1_a2_rules_candidate_v1.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "dfc83fcc4b5cf477a2ef770a473d86e2e074b06ccb22ac0203de257913071b41",
+      "bytes": 7404
+    },
+    "b1_prompt": {
+      "path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "f9be2fb84a7554897045c27abf787e47758f1687de406312e9afe1ebe15d4f3f",
+      "bytes": 7973
+    },
+    "b1_prime_prompt": {
+      "path": "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "08244d80f0ea85c579158d4b8512bfa021a26755bb342742ed2362a80763c707",
+      "bytes": 10745
+    },
+    "b1_prime_link_prompt": {
+      "path": "prompts/paper_v2/b1_prime_link_ocr_candidates_links_to_canonical.zh_v0_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "eea6f2bed857d9b762d1a5bee42de7933e4b19d0254a94d5045acbe137558dd7",
+      "bytes": 5420
+    },
+    "c1_prompt": {
+      "path": "prompts/paper_v2/c1_image_to_canonical_pilot10.zh_v1_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "aa87bf512359160da4c54503911bfccc38a6e55ee9af619b9eef3c48183ef74c",
+      "bytes": 7738
+    },
+    "c2_qa_prompt_bundle": {
+      "path": "prompts/path_c_qa_v2",
+      "kind": "directory",
+      "exists": true,
+      "required": true,
+      "sha256": "27a2de44db9d4407ee4eff7f43b7e5871159ad5f69cf0f0b96aaf4db002cf992",
+      "bytes": null
+    },
+    "c2_aggregator": {
+      "path": "scripts/aggregate_c2_qa_candidate.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "551d1993151464bf8edd970e414b67055ace8a1e46a0beb8223fecba8d01d945",
+      "bytes": 7613
+    },
+    "c2_aggregator_doc": {
+      "path": "docs/group1_c2_qa_aggregator_candidate_v1.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "1e27359ca3ed0e523d3a4f908e193e6563f6791fcfeeb6f856b88906f2af67c7",
+      "bytes": 5712
+    },
+    "c3_prompt": {
+      "path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "858b91b07d778498ddbe484a6d54f8555169c9c674f3189dfb69b06e2c406362",
+      "bytes": 8297
+    },
+    "c4_prompt": {
+      "path": "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "5a60df7bdeead7c01e38ccb8c8ccc1802af6110a0f41c4658e2f5cdcc313588a",
+      "bytes": 10044
+    },
+    "field_candidate_schema": {
+      "path": "schemas/field_candidates.schema.candidate.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "6a322e02cdb7c13364c804226a95985b1d9bf79bbabd6fbdfc923c935020910d",
+      "bytes": 6711
+    },
+    "field_to_leg_link_schema": {
+      "path": "schemas/field_to_leg_links.schema.candidate.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "1085f187055f1e6b7b78bb9958643ed4eb06bfa7d8a4a65870537bd34f704262",
+      "bytes": 8171
+    },
+    "field_to_leg_link_builder": {
+      "path": "scripts/build_field_to_leg_links.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "132c90afc38f12d1c50a1930a44ba519afb33d40e0da5059a630d4eb71944dd9",
+      "bytes": 18596
+    },
+    "d_sft_prompt": {
+      "path": "training/d_sft/prompts/d_sft_image_to_canonical.v2.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "8e0f6d36c023e6d23b78655ab1a1910f49880d7bd473db75d4250681ac21445e",
+      "bytes": 2091
+    },
+    "d_sft_training_config": {
+      "path": "training/d_sft/configs/d_sft_training_config.frozen_20260428_r1.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "0b06b0d80ba332ea8f97c367f20fb34670fccdaaa0891748d34a794190b69dd0",
+      "bytes": 13958
+    },
+    "d_sft_infer_runner": {
+      "path": "scripts/d_sft_infer_qwen2vl_lora.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "abd8778aa98fbb11623e1782387c10c8df489e08d781178244daf7aeb39add03",
+      "bytes": 14138
+    }
+  },
+  "formal_results": {
+    "completion_decision": "formal_group1_outputs_complete_for_reporting_with_method_failures_counted",
+    "hard_blocker_count": 0,
+    "missing_required_artifacts": [],
+    "method_table": [
+      {
+        "method": "A1",
+        "status": "complete",
+        "samples_total": 200,
+        "schema_valid": 200,
+        "samples_scored": 200,
+        "method_failure_count": 0,
+        "correct": 1184,
+        "total": 4052,
+        "accuracy": 0.29220138203356366,
+        "schema_retry_count_total": 0,
+        "qa_schema_retry_count_total": null
+      },
+      {
+        "method": "A2",
+        "status": "complete",
+        "samples_total": 200,
+        "schema_valid": 200,
+        "samples_scored": 200,
+        "method_failure_count": 0,
+        "correct": 916,
+        "total": 4052,
+        "accuracy": 0.22606120434353405,
+        "schema_retry_count_total": 0,
+        "qa_schema_retry_count_total": null
+      },
+      {
+        "method": "B1",
+        "status": "complete",
+        "samples_total": 200,
+        "schema_valid": 200,
+        "samples_scored": 200,
+        "method_failure_count": 0,
+        "correct": 1104,
+        "total": 4052,
+        "accuracy": 0.2724580454096742,
+        "schema_retry_count_total": 10,
+        "qa_schema_retry_count_total": null
+      },
+      {
+        "method": "B1_prime",
+        "status": "complete",
+        "samples_total": 200,
+        "schema_valid": 200,
+        "samples_scored": 200,
+        "method_failure_count": 0,
+        "correct": 1303,
+        "total": 4052,
+        "accuracy": 0.32156959526159923,
+        "schema_retry_count_total": 16,
+        "qa_schema_retry_count_total": null
+      },
+      {
+        "method": "B1_prime_link",
+        "status": "complete_with_method_failures",
+        "samples_total": 200,
+        "schema_valid": 185,
+        "samples_scored": 185,
+        "method_failure_count": 15,
+        "correct": 718,
+        "total": 3683,
+        "accuracy": 0.19494976920988324,
+        "schema_retry_count_total": 51,
+        "qa_schema_retry_count_total": null
+      },
+      {
+        "method": "C1",
+        "status": "complete",
+        "samples_total": 200,
+        "schema_valid": 200,
+        "samples_scored": 200,
+        "method_failure_count": 0,
+        "correct": 1503,
+        "total": 4052,
+        "accuracy": 0.3709279368213228,
+        "schema_retry_count_total": 16,
+        "qa_schema_retry_count_total": null
+      },
+      {
+        "method": "C2",
+        "status": "complete",
+        "samples_total": 200,
+        "schema_valid": 200,
+        "samples_scored": 200,
+        "method_failure_count": 0,
+        "correct": 970,
+        "total": 4052,
+        "accuracy": 0.23938795656465942,
+        "schema_retry_count_total": null,
+        "qa_schema_retry_count_total": 18
+      },
+      {
+        "method": "C3",
+        "status": "complete_with_method_failures",
+        "samples_total": 200,
+        "schema_valid": 196,
+        "samples_scored": 196,
+        "method_failure_count": 4,
+        "correct": 1522,
+        "total": 3976,
+        "accuracy": 0.3827967806841046,
+        "schema_retry_count_total": 27,
+        "qa_schema_retry_count_total": null
+      },
+      {
+        "method": "C4",
+        "status": "complete",
+        "samples_total": 200,
+        "schema_valid": 200,
+        "samples_scored": 200,
+        "method_failure_count": 0,
+        "correct": 1624,
+        "total": 4052,
+        "accuracy": 0.40078973346495556,
+        "schema_retry_count_total": 3,
+        "qa_schema_retry_count_total": null
+      },
+      {
+        "method": "D_SFT",
+        "status": "complete_with_method_failures",
+        "samples_total": 200,
+        "schema_valid": 184,
+        "samples_scored": 184,
+        "method_failure_count": 16,
+        "correct": 2739,
+        "total": 3724,
+        "accuracy": 0.735499462943072,
+        "schema_retry_count_total": null,
+        "qa_schema_retry_count_total": null
+      }
+    ],
+    "result_artifacts": {
+      "completion_audit": {
+        "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/reports/final_completion_audit_20260430_115514.json",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "8e496c0ea286e6684577fa06ef010bc1e5cb94b80f91e890849749424f12ccc1",
+        "bytes": 234455
+      },
+      "completion_audit_markdown": {
+        "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/reports/FORMAL_GROUP1_COMPLETION_AUDIT_20260430_115514.md",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "a2fa934bf279af822d69ce47d8fab7b9dadcf84af2a9797ed78361bc11d7d63b",
+        "bytes": 2175
+      },
+      "failure_details": {
+        "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/reports/final_failure_details_20260430_115514.json",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "cc8bef581dc36b32ee08631b21ec49810adcb3a985e0fc5f0b4c77515904b837",
+        "bytes": 16556
+      },
+      "combined_summary_csv": {
+        "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/reports/final_combined_summary_20260430_115514.csv",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "f4db0cf1e96b10a2ca805a5870037d4aaa44048919085e15508ddaf68defa965",
+        "bytes": 2462
+      },
+      "d_sft_formal_summary": {
+        "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT/D_SFT/predictions/group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT/summary_report.json",
+        "kind": "file",
+        "exists": true,
+        "required": true,
+        "sha256": "6cf02c1fe60aab4a1d401ac04d9164751592a123a7dcfc7ae1bff0e46fdadda5",
+        "bytes": 117373
+      }
+    },
+    "interpretation_rules": [
+      "Report coverage beside accuracy.",
+      "Do not count parse/schema/API failures as correct.",
+      "Use zero_for_all_target_fields policy for invalid outputs in paper tables when reporting full-sample denominator.",
+      "The audit table's field-level accuracy is over schema-valid scored samples; full-sample summaries must separately apply invalid-output policy."
+    ]
+  },
+  "all_artifact_hashes": {
+    "sample_manifest": {
+      "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/sample_manifest_50_200_50_seed20260437.jsonl",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "d15f0ab36a223dd60705f2231643254925dbb1783295f686d21146c57a6ee468",
+      "bytes": 509679
+    },
+    "split_policy": {
+      "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/SPLIT_POLICY_50_200_50_seed20260437.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "d1a927e1e76e5be788b5f67b68749bcf89b0b6e977296d73327cbf80346aede7",
+      "bytes": 1544
+    },
+    "split_json": {
+      "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/splits_50_200_50_seed20260437.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "b0c7f6b75f16022b78531b372ac35820960aa70fc581d4aa086d016a180a9f9f",
+      "bytes": 37708
+    },
+    "schema": {
+      "path": "schemas/missed_approach_leg.schema.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "bytes": 7660
+    },
+    "scorer": {
+      "path": "scripts/scorers/group1_canonical_field_scorer.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "be2bf016c557e9ce9f9df7b680370c921cd92fcc3dc34e7e09dff44384b26f45",
+      "bytes": 9316
+    },
+    "scorer_validator_manifest": {
+      "path": "configs/scorer_validator_manifest.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "69a3f34adc329d01ff1718048b1b254ceb94f8a71bcabf299f52ea931a4d2d84",
+      "bytes": 1872
+    },
+    "field_targets": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/field_targets.jsonl",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "47b5d1dc00e338c1bec0e11c0ea89f65a15cb310377005a68dd4b1160992ee91",
+      "bytes": 1447800
+    },
+    "evidence_provenance": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/evidence_provenance.jsonl",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "be27469981e723dd17252a7425134a84671d342eebe4c8426291cfc6097564ca",
+      "bytes": 2961636
+    },
+    "canonical_proxy_gt_combined": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/canonical_proxy_gt_combined.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "9a67277de2d05ee3255eed98c40c9e31060e5d6b6a76ffc576734bf71c3729d4",
+      "bytes": 1071220
+    },
+    "invalid_output_policy": {
+      "path": "configs/invalid_output_scoring_policy.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "f0e80576c8c56fd3725859791cffa3b4a3a666f183393b2b622a99f82345efc1",
+      "bytes": 1850
+    },
+    "output_control_policy": {
+      "path": "configs/output_control_policy.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "a7a9f80eeabb82931b1a9c9c8f90f39ae3d589a9de272b4697dacc895c250416",
+      "bytes": 9888
+    },
+    "parser_repair_policy": {
+      "path": "configs/parser_repair_policy.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "d52cda1d316d51abb72c161f7b5b6670738d18d29abd7fe88e12d33aecebc9c2",
+      "bytes": 4012
+    },
+    "rerun_policy": {
+      "path": "docs/rerun_policy.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "2dd6d3359b0085e391459c91711d1aea2a4844fa913eb22b31bc2b1713103450",
+      "bytes": 867
+    },
+    "no_leakage_policy": {
+      "path": "docs/no_leakage_policy.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "15d977ba384c96f2ad1d495807eede4fce8bcb4efc7c66b989d82c3b4fe8a566",
+      "bytes": 1670
+    },
+    "ocr1_manifest": {
+      "path": "ocr_artifacts/formal300/ocr1_paddleocr_ppocrv5_frozen/manifest.jsonl",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "f31c34258be5ca46bfd4d083682c4101a45368efff1525920fa020cd34eebe39",
+      "bytes": 175481
+    },
+    "ocr1_run_manifest": {
+      "path": "ocr_artifacts/formal300/ocr1_paddleocr_ppocrv5_frozen/run_manifest.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "3ef4a618c0d01f64cca6f6c7085a6f7b8d6e3625358e5ce17cfbf411227645c0",
+      "bytes": 728
+    },
+    "ocr2_manifest": {
+      "path": "ocr_artifacts/formal300/ocr2_tesseract5_frozen/manifest.jsonl",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "3b53a370909404899d9cd207e2b15f187ac3e65c7040daba3818d29575a85d10",
+      "bytes": 236461
+    },
+    "ocr2_run_manifest": {
+      "path": "ocr_artifacts/formal300/ocr2_tesseract5_frozen/run_manifest.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "cd36d896a0d2c315b575c4ed7a52d9b6001b11cea8a041c8fb103fb10538dbe4",
+      "bytes": 842
+    },
+    "formal_run_plan": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/run_plan.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "4977d798a3a67c31abe41dcf404ed69e7554d6e97095f3d92cda0551731231d3",
+      "bytes": 1654
+    },
+    "formal_run_manifest": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/formal_run_manifest.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "8b5b624ad93642e94954ae79692a1daee89cd8c034197d7df95ef6bc52699b75",
+      "bytes": 4879
+    },
+    "scoring_manifest": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/scoring_manifest.jsonl",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "4eb885e60ae2188360fecc05ce3e018599a01e201ff8616e9e750746042a9ce1",
+      "bytes": 74512
+    },
+    "boundary_audit": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/reports/boundary_audit.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "da25c7695c95fefc51cf668a97314f00050540c3dcbe8eb335d89b76fdf07ebb",
+      "bytes": 3310
+    },
+    "completion_audit": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/reports/final_completion_audit_20260430_115514.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "8e496c0ea286e6684577fa06ef010bc1e5cb94b80f91e890849749424f12ccc1",
+      "bytes": 234455
+    },
+    "completion_audit_markdown": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/reports/FORMAL_GROUP1_COMPLETION_AUDIT_20260430_115514.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "a2fa934bf279af822d69ce47d8fab7b9dadcf84af2a9797ed78361bc11d7d63b",
+      "bytes": 2175
+    },
+    "failure_details": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/reports/final_failure_details_20260430_115514.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "cc8bef581dc36b32ee08631b21ec49810adcb3a985e0fc5f0b4c77515904b837",
+      "bytes": 16556
+    },
+    "combined_summary_csv": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/reports/final_combined_summary_20260430_115514.csv",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "f4db0cf1e96b10a2ca805a5870037d4aaa44048919085e15508ddaf68defa965",
+      "bytes": 2462
+    },
+    "runner_prepare": {
+      "path": "scripts/prepare_group1_formal_run.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "4980b16e4e464d9a23f615b7cf074c44d1d0f6461bcffc7abbb39718b10a7689",
+      "bytes": 8997
+    },
+    "runner_execute": {
+      "path": "scripts/run_group1_formal_manifest.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "e7d8942f857f96d8dea92a1ba4dff0b0282d94047a2065ec51824bbe16e3c9d7",
+      "bytes": 36015
+    },
+    "runner_audit_completion": {
+      "path": "scripts/audit_group1_formal_completion.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "41c1ea9e8c2a691ecfd3561d6a1608012b9ccc1ada7d18f54f7e4e3b41486186",
+      "bytes": 25127
+    },
+    "rules_doc_a1_a2": {
+      "path": "docs/group1_a1_a2_rules_candidate_v1.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "dfc83fcc4b5cf477a2ef770a473d86e2e074b06ccb22ac0203de257913071b41",
+      "bytes": 7404
+    },
+    "b1_prompt": {
+      "path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "f9be2fb84a7554897045c27abf787e47758f1687de406312e9afe1ebe15d4f3f",
+      "bytes": 7973
+    },
+    "b1_prime_prompt": {
+      "path": "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "08244d80f0ea85c579158d4b8512bfa021a26755bb342742ed2362a80763c707",
+      "bytes": 10745
+    },
+    "b1_prime_link_prompt": {
+      "path": "prompts/paper_v2/b1_prime_link_ocr_candidates_links_to_canonical.zh_v0_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "eea6f2bed857d9b762d1a5bee42de7933e4b19d0254a94d5045acbe137558dd7",
+      "bytes": 5420
+    },
+    "c1_prompt": {
+      "path": "prompts/paper_v2/c1_image_to_canonical_pilot10.zh_v1_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "aa87bf512359160da4c54503911bfccc38a6e55ee9af619b9eef3c48183ef74c",
+      "bytes": 7738
+    },
+    "c2_qa_prompt_bundle": {
+      "path": "prompts/path_c_qa_v2",
+      "kind": "directory",
+      "exists": true,
+      "required": true,
+      "sha256": "27a2de44db9d4407ee4eff7f43b7e5871159ad5f69cf0f0b96aaf4db002cf992",
+      "bytes": null
+    },
+    "c2_aggregator": {
+      "path": "scripts/aggregate_c2_qa_candidate.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "551d1993151464bf8edd970e414b67055ace8a1e46a0beb8223fecba8d01d945",
+      "bytes": 7613
+    },
+    "c2_aggregator_doc": {
+      "path": "docs/group1_c2_qa_aggregator_candidate_v1.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "1e27359ca3ed0e523d3a4f908e193e6563f6791fcfeeb6f856b88906f2af67c7",
+      "bytes": 5712
+    },
+    "c3_prompt": {
+      "path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "858b91b07d778498ddbe484a6d54f8555169c9c674f3189dfb69b06e2c406362",
+      "bytes": 8297
+    },
+    "c4_prompt": {
+      "path": "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "5a60df7bdeead7c01e38ccb8c8ccc1802af6110a0f41c4658e2f5cdcc313588a",
+      "bytes": 10044
+    },
+    "field_candidate_schema": {
+      "path": "schemas/field_candidates.schema.candidate.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "6a322e02cdb7c13364c804226a95985b1d9bf79bbabd6fbdfc923c935020910d",
+      "bytes": 6711
+    },
+    "field_to_leg_link_schema": {
+      "path": "schemas/field_to_leg_links.schema.candidate.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "1085f187055f1e6b7b78bb9958643ed4eb06bfa7d8a4a65870537bd34f704262",
+      "bytes": 8171
+    },
+    "field_to_leg_link_builder": {
+      "path": "scripts/build_field_to_leg_links.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "132c90afc38f12d1c50a1930a44ba519afb33d40e0da5059a630d4eb71944dd9",
+      "bytes": 18596
+    },
+    "d_sft_prompt": {
+      "path": "training/d_sft/prompts/d_sft_image_to_canonical.v2.md",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "8e0f6d36c023e6d23b78655ab1a1910f49880d7bd473db75d4250681ac21445e",
+      "bytes": 2091
+    },
+    "d_sft_training_config": {
+      "path": "training/d_sft/configs/d_sft_training_config.frozen_20260428_r1.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "0b06b0d80ba332ea8f97c367f20fb34670fccdaaa0891748d34a794190b69dd0",
+      "bytes": 13958
+    },
+    "d_sft_infer_runner": {
+      "path": "scripts/d_sft_infer_qwen2vl_lora.py",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "abd8778aa98fbb11623e1782387c10c8df489e08d781178244daf7aeb39add03",
+      "bytes": 14138
+    },
+    "d_sft_formal_summary": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT/D_SFT/predictions/group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT/summary_report.json",
+      "kind": "file",
+      "exists": true,
+      "required": true,
+      "sha256": "6cf02c1fe60aab4a1d401ac04d9164751592a123a7dcfc7ae1bff0e46fdadda5",
+      "bytes": 117373
+    }
+  },
+  "package_outputs": {
+    "manifest_json": "reports/freeze/group1_formal_freeze_package_20260430_r1.json",
+    "markdown": "reports/freeze/group1_formal_freeze_package_20260430_r1.md",
+    "method_boundary_csv": "reports/freeze/group1_formal_method_boundaries_20260430_r1.csv",
+    "result_table_csv": "reports/freeze/group1_formal_result_table_20260430_r1.csv"
+  }
+}

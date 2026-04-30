@@ -1,93 +1,111 @@
-# B1_prime_link prompt draft
+# B1_prime_link Prompt v1 Candidate
 
-Status: draft only, not frozen
+Status: candidate for formal smoke and formal300 evaluation. Not final-paper frozen until the Group 1 freeze package is approved.
 
-你将收到同一张 FAA approach chart 的 OCR-1 全图文本，以及自动生成的 `field_to_leg_links` 候选表。你的任务是根据这些输入输出 missed approach 的 canonical JSON。
+## Method Boundary
 
-## 方法边界
+You are running paper-v2 B1_prime_link:
 
-- `field_to_leg_links` 是弱证据，不是答案。
-- `candidate_leg_index` 是自动算法生成的候选序号，不是 gold leg index。
-- 候选表可能有错、漏、重复或来自 OCR 错序文本。
-- 如果 OCR 正文和候选表冲突，应优先根据 OCR 中可见的 missed approach instruction 判断。
-- 不要使用外部知识、CIFP、ARINC 424、历史答案、人工标注或 scorer 结果。
-- 不要根据 FAA procedure 常识补全 OCR 中不可见的值。
+full chart image -> registered ordinary OCR-1 full-chart text -> deterministic field candidate extraction -> deterministic field-to-leg linking -> LLM -> canonical JSON
 
-## 使用 candidate legs 的规则
+B1_prime_link tests whether weak field-to-leg candidate links help a text LLM recover the missed-approach procedure. The links are candidate evidence only. They are not labels, not gold leg indices, not scorer output, and not target data.
 
-- `direct_to_fix`、`track_to_fix`、`course_to_fix`、`radial_to_fix`、`hold_at_fix` 只能作为候选航段证据。
-- `candidate_legs` 数量少不代表真实航段少；如果 OCR route table 或 plan-view 文本没有被 linker 绑定，仍应检查 OCR 正文和 unlinked context。
-- `candidate_legs` 不是 canonical legs。不要把每个 candidate_leg 机械地一对一复制成输出 legs。
-- 不要把 `candidate_leg_index` 当作输出 `leg_index`。
-- 不要把 `link_type` 直接翻译成 `Q_terminator`。例如 `track_to_fix` 不一定等于 `TF`，`hold_at_fix` 不一定等于 `HM`，必须结合 OCR 正文判断。
-- 不要把 `leg_count.value` 设置为 `candidate_legs` 的数量，除非 OCR 正文本身也支持这个航段数量。
-- B1′-link linker 可能没有生成 initial climb / CA leg；如果 OCR 明确写有 climb to altitude，应考虑是否需要单独的初始 climb leg。
-- 如果 `direct_to_fix` 和 `hold_at_fix` 共享同一个 fix，通常表示先 direct 到该 fix，再在该 fix hold；不要把 direct 和 hold 无依据地合并成一个 HM leg。
-- 如果 `track_to_fix` 和 `hold_at_fix` 共享同一个 fix，可能是“track to fix and hold”的同一 hold 结构，也可能是 track leg 后接 hold leg；必须由 OCR 正文决定，不要机械拆分或机械合并。
-- `linking_warnings` 是重要输入。遇到同一 fix 的 direct/track + hold 配对警告时，应重新检查 OCR_TEXT，而不是直接照抄 candidate legs。
-- 如果一个可见 route chain 包含多个 `to FIX`，不要无故压缩成只到第一个 fix 和最终 hold。
-- 如果候选 evidence 明显来自 notes、minima、communications、procedure NA、altimeter setting、frequency 或不相关区域，应降低可信度。
-- 如果候选链条不完整，可以把缺失字段设为 `status: "unknown"`，但不要忽略 OCR 正文里清楚出现的 flown route。
-- 对 KAVO_R05 这类 OCR 错序风险要特别谨慎：`direct ANA` 这类短语虽然可能出现在 OCR snippet 中，但如果上下文混有 minima/notes/altimeter language，应作为弱证据。
-- 对 KLLJ_RNV-A 这类 route-table-heavy 样本要特别谨慎：只出现一个 final hold candidate 不代表中间 route legs 不存在。
+## Allowed Inputs
 
-## 输出格式
+Use only:
 
-- 只输出 canonical JSON。
-- 输出必须是裸 JSON。
-- 不允许 markdown code fence。
-- 不允许解释性文字。
-- 所有字段必须使用 schema 规定的 `status` / `value` 结构。
-- 不确定但可见字段不足时，用 `status: "unknown", "value": null`。
-- 不适用字段用 `status: "not_applicable", "value": null`。
-- 只要 `status` 是 `"unknown"`，`value` 必须是 JSON `null`，绝对不能写字符串 `"unknown"`。
-- 只要 `status` 是 `"not_applicable"`，`value` 必须是 JSON `null`，绝对不能写字符串、对象、数字或 `"unknown"`。
-- `Q_terminator` 也必须遵守这条规则：如果无法确定 terminator，输出 `{"status":"unknown","value":null}`，不要输出 `{"status":"unknown","value":"unknown"}`。
+- chart_id
+- airport
+- approach_ident
+- chart_name
+- registered ordinary OCR-1 full-chart text
+- automatically generated field_candidates derived from the same OCR-1 text
+- automatically generated field_to_leg_links derived from the same OCR-1 text and field_candidates
+- the canonical output contract described here
 
-## 严格字段格式
+## Forbidden Inputs
 
-`Q4_course_or_radial.value` 绝对不能是裸数字、字符串、`degrees`、`deg`、`track`、`heading`、`nav_ref` 或 `nav_fix` 自创格式。
+Do not use:
 
-如果是 course / track / heading 度数，必须写成：
+- chart image pixels at the LLM stage
+- OCR-2 text or OCR text from another source
+- OCR bounding boxes or coordinates
+- ROI labels, human annotation boxes, or visual cells
+- gold missed-approach prose
+- gold observable evidence
+- canonical target or answer key
+- field_targets.jsonl
+- evidence_provenance.jsonl
+- challenge_tags.jsonl
+- scorer output
+- CIFP or ARINC 424 records
+- historical model output for the same chart
+- web search or external aviation databases
 
-`{"type":"course_deg","course_deg":191}`
+## How To Use Candidate Links
 
-如果是 navaid radial，必须写成：
+- Treat field_to_leg_links as weak evidence, not as instructions to copy.
+- candidate_leg_index is an automatically generated candidate order. It is not the gold canonical leg_index.
+- candidate_legs may be wrong, incomplete, duplicated, noisy, or missing route-table-heavy segments.
+- If OCR prose conflicts with a candidate link, rely on the visible OCR missed-approach instruction.
+- Do not set leg_count.value equal to the number of candidate_legs unless the OCR instruction itself supports that count.
+- Do not mechanically map link_type to Q_terminator. For example, track_to_fix is not always TF, and hold_at_fix is not always HM.
+- Do not mechanically copy candidate_legs one-to-one into output legs.
+- If direct_to_fix and hold_at_fix share one fix, the procedure may mean direct to the fix and then hold at the fix. Do not merge or split without support in the OCR prose.
+- If track_to_fix and hold_at_fix share one fix, inspect OCR prose before deciding whether this is one flown segment or a track segment followed by a hold.
+- If route_sequence_snippets or unlinked_candidates contain visible route-chain evidence, consider it, but do not invent missing values.
+- If a value is uncertain or not sufficiently supported by OCR text and candidate links, use unknown with value null.
 
-`{"type":"navaid_radial","navaid":"BOS","radial_deg":30,"direction":"outbound"}`
+## Task
 
-如果只是 direct，没有可用 course/radial，必须写成：
+Use only the OCR-1 text, field_candidates, and field_to_leg_links to extract the published missed approach procedure and output one canonical JSON object.
 
-`{"type":"direct"}`
+Preserve the flown order of the missed-approach legs. If evidence is missing, corrupt, ambiguous, contradictory, or insufficient, use unknown. Do not guess ARINC terminators, fixes, courses, radials, altitudes, or hold parameters merely to fill the schema.
 
-错误示例，禁止输出：
+## Status Values
 
-- `"value": 191`
-- `"value": "R-030"`
-- `"value": {"type":"track","degrees":191}`
-- `"value": {"heading_deg":60}`
-- `"value": {"radial_deg":295,"nav_ref":"SBJ"}`
+Each answer object must use:
 
-`Q_terminator.value` 只能使用 schema 允许的 ARINC terminator 字符串，例如 `CA`, `DF`, `TF`, `HM`, `VM`, `unknown`，不能自创解释。
+- status: one of present, not_applicable, not_observable, unknown
+- value: a concrete value only when status is present; otherwise null
 
-`Q2_altitude_constraint.value` 如果 present，必须是：
+The status field is a label about observability only. It must never contain the extracted aviation value.
 
-`{"desc":"AT_OR_ABOVE","altitude_ft":3000,"altitude_2_ft":null}`
+If the OCR/candidates support a concrete answer, use status present and put the concrete answer in value. For example, a DF terminator must be written as status present with value DF, not status DF. A fix ident FKL must be written as status present with value FKL, not status FKL.
 
-`Q5_hold_params.value` 如果 present，必须包含：
+If the answer is uncertain, not observable, or not applicable, status must be unknown, not_observable, or not_applicable, and value must be null.
 
-`{"inbound_course_deg":null,"leg_time_min":null,"leg_distance_nm":null,"turn":null}`
+## Schema-Bound Output Hard Rules
 
-## 输入
+This run may be transported through a schema-bound tool call. Whether the transport is a raw JSON response or tool-call arguments, the emitted object must be exactly the canonical JSON object.
+
+- Copy chart_id, airport, approach_ident, and chart_name exactly from the input metadata. Do not infer, correct, abbreviate, or replace metadata from OCR text.
+- Top-level object must contain exactly chart_id, procedure, and missed_approach.
+- Output bare JSON only.
+- Do not output markdown code fences.
+- Do not output explanations, comments, evidence sidecars, confidence fields, or diagnostics.
+- Do not include field_candidates or field_to_leg_links in the output.
+- All answer objects must obey status/value separation.
+- If status is not present, value must be null.
+- If status is present, value must follow the canonical schema.
+- Every degree field must be from 0.0 through 359.9. If the source shows 360 degrees, encode 359.9.
+- Q1_fix_ident.value must be a real fix/navaid/runway ident when present. Do not output facility-type words such as VOR, VORTAC, DME, NDB, FIX, WAYPOINT, NAVAID, HOLDING, AIRPORT, RUNWAY, LOCALIZER, LOC, or ILS as the value.
+
+## Required Metadata
 
 chart_id: {{chart_id}}
 airport: {{airport}}
+approach_ident: {{approach_ident}}
 chart_name: {{chart_name}}
 
-OCR-1 full-chart text:
+## OCR-1 Full-Chart Text
 
 {{ocr_text}}
 
-field_to_leg_links:
+## field_candidates
+
+{{field_candidates_json}}
+
+## field_to_leg_links
 
 {{field_to_leg_links_json}}
