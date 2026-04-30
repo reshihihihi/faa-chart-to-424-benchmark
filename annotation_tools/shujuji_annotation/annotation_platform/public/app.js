@@ -18,13 +18,17 @@ function detectDatasetKey() {
   const explicit = params.get("dataset");
   if (DATASET_CONFIG[explicit]) return explicit;
   if (window.location.pathname.startsWith("/practice")) return "practice10";
-  if (window.location.pathname.startsWith("/formal")) return "formal300";
+  if (window.location.pathname.startsWith("/formal") || window.location.pathname.startsWith("/expert")) return "formal300";
   return "formal300";
 }
 
 const datasetKey = detectDatasetKey();
 const datasetConfig = DATASET_CONFIG[datasetKey] || DATASET_CONFIG.formal300;
 const ACCESS_TOKEN_STORAGE_KEY = "shujuji_access_token";
+
+function expertReviewMode() {
+  return window.location.pathname.startsWith("/expert");
+}
 
 function initializeAccessToken() {
   const url = new URL(window.location.href);
@@ -87,6 +91,7 @@ const els = {
   helpCloseBtn: document.querySelector("#helpCloseBtn"),
   fullTutorialBtn: document.querySelector("#fullTutorialBtn"),
   detailBoxTutorialBtn: document.querySelector("#detailBoxTutorialBtn"),
+  identityLabel: document.querySelector(".identity-editor span"),
   participantBadge: document.querySelector("#participantBadge"),
   undoBtn: document.querySelector("#undoBtn"),
   workflowUndoBtn: document.querySelector("#workflowUndoBtn"),
@@ -1241,39 +1246,55 @@ function generatedParticipantId() {
 function participantIdFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return cleanParticipantId(
-    params.get("participant")
+    params.get("expert")
+    || params.get("reviewer")
+    || params.get("participant")
     || params.get("annotator")
     || params.get("user")
     || ""
   );
 }
 
+function participantStorageKey() {
+  return expertReviewMode() ? "shujuji_expert_reviewer" : datasetConfig.storageKey;
+}
+
 function ensureParticipantId() {
   const fromUrl = participantIdFromUrl();
-  const stored = cleanParticipantId(localStorage.getItem(datasetConfig.storageKey) || "");
+  const stored = cleanParticipantId(localStorage.getItem(participantStorageKey()) || "");
   const participantId = fromUrl || stored || generatedParticipantId();
   state.participantSource = fromUrl ? "链接身份" : stored ? "本机保存身份" : "临时本机身份";
-  localStorage.setItem(datasetConfig.storageKey, participantId);
+  localStorage.setItem(participantStorageKey(), participantId);
   if (els.annotatorInput) els.annotatorInput.value = participantId;
   updateParticipantBadge(participantId);
   return participantId;
 }
 
 function currentAnnotator() {
-  return cleanParticipantId(els.annotatorInput?.value || localStorage.getItem(datasetConfig.storageKey) || "");
+  return cleanParticipantId(els.annotatorInput?.value || localStorage.getItem(participantStorageKey()) || "");
 }
 
 function updateParticipantBadge(participantId = currentAnnotator()) {
   if (!els.participantBadge) return;
   const source = state.participantSource || (participantIdFromUrl() ? "链接身份" : "本机保存身份");
-  els.participantBadge.textContent = datasetConfig.finalDataset
+  els.participantBadge.textContent = expertReviewMode()
+    ? `当前复核人：${participantId || "未填写"} · ${source}`
+    : datasetConfig.finalDataset
     ? `当前参与者：${participantId || "未填写"} · ${source}`
     : `练习身份：${participantId || "未填写"}`;
 }
 
 function replaceUrlAnnotator(participantId) {
   const url = new URL(window.location.href);
-  url.searchParams.set("annotator", participantId);
+  if (expertReviewMode()) {
+    url.searchParams.set("role", "expert");
+    url.searchParams.set("expert", participantId);
+    url.searchParams.delete("annotator");
+  } else {
+    url.searchParams.set("annotator", participantId);
+    url.searchParams.delete("expert");
+    url.searchParams.delete("reviewer");
+  }
   url.searchParams.delete("participant");
   url.searchParams.delete("user");
   window.history.replaceState({}, document.title, `${url.pathname}${url.search}${url.hash}`);
@@ -1284,6 +1305,13 @@ function currentChartStatus() {
 }
 
 function currentChartClaimedByMe() {
+  if (expertReviewMode()) {
+    return Boolean(
+      state.current
+      && state.current.manifest?.claimed_by === currentAnnotator()
+      && ["expert_review_claimed", "expert_review_claimed_by_me"].includes(currentChartStatus())
+    );
+  }
   return Boolean(
     state.current
     && state.current.manifest?.claimed_by === currentAnnotator()
@@ -1298,6 +1326,14 @@ function canAnnotateCurrent() {
 }
 
 function canClaimCurrent() {
+  if (expertReviewMode()) {
+    return Boolean(
+      state.current
+      && datasetConfig.finalDataset
+      && currentChartStatus() === "expert_review_available"
+      && currentAnnotator()
+    );
+  }
   return Boolean(
     state.current
     && datasetConfig.finalDataset
@@ -1307,7 +1343,13 @@ function canClaimCurrent() {
 }
 
 function currentChartIsPreview() {
-  return Boolean(state.current && datasetConfig.finalDataset && currentChartStatus() === "unassigned");
+  return Boolean(
+    state.current
+    && datasetConfig.finalDataset
+    && (expertReviewMode()
+      ? currentChartStatus() === "expert_review_available"
+      : currentChartStatus() === "unassigned")
+  );
 }
 
 function formalQueueMode() {
@@ -1317,10 +1359,16 @@ function formalQueueMode() {
 function apiUrl(path, params = {}) {
   const url = new URL(path, window.location.origin);
   url.searchParams.set("dataset", datasetKey);
+  if (expertReviewMode()) {
+    url.searchParams.set("role", "expert");
+  }
   const token = currentAccessToken();
   if (token) url.searchParams.set("token", token);
   const annotator = params.annotator ?? currentAnnotator();
-  if (annotator) url.searchParams.set("annotator", annotator);
+  if (annotator) {
+    if (expertReviewMode()) url.searchParams.set("expert", annotator);
+    url.searchParams.set("annotator", annotator);
+  }
   Object.entries(params).forEach(([key, value]) => {
     if (key !== "annotator" && value !== undefined && value !== null) {
       url.searchParams.set(key, value);
@@ -1615,7 +1663,7 @@ async function applyAnnotatorIdentity() {
     return;
   }
   if (els.annotatorInput) els.annotatorInput.value = participantId;
-  localStorage.setItem(datasetConfig.storageKey, participantId);
+  localStorage.setItem(participantStorageKey(), participantId);
   state.participantSource = "手动输入身份";
   replaceUrlAnnotator(participantId);
   updateParticipantBadge(participantId);
@@ -2058,7 +2106,7 @@ function renderWorkflowPanel() {
   if (els.openTargetsBtn) els.openTargetsBtn.disabled = !state.current;
   if (els.drawBtn) els.drawBtn.disabled = !canEdit || !selected;
   if (els.deleteRegionBtn) els.deleteRegionBtn.disabled = !canEdit || !selectedRegion();
-  const canReturn = canEdit && currentChartStatus() !== "submitted";
+  const canReturn = !expertReviewMode() && canEdit && currentChartStatus() !== "submitted";
   if (els.returnClaimBtn) els.returnClaimBtn.disabled = !canReturn;
   if (els.returnWorkflowBtn) els.returnWorkflowBtn.disabled = !canReturn;
   if (els.claimCurrentBtn) {
@@ -2066,7 +2114,7 @@ function renderWorkflowPanel() {
     els.claimCurrentBtn.disabled = !canClaimCurrent();
     els.claimCurrentBtn.textContent = canClaimCurrent()
       ? "领取并开始"
-      : currentChartStatus() === "returned_for_expert_review"
+      : currentChartStatus() === "returned_for_expert_review" || currentChartStatus() === "expert_review_claimed_by_other"
         ? "已退回专家复审"
         : currentChartStatus() === "claimed_by_other"
           ? "他人处理中"
@@ -2205,16 +2253,20 @@ async function claimChartFromList(chartId, { openAfter = false, silent = false }
   const chart = state.charts.find((item) => item.chart_id === chartId);
   if (chart) {
     chart.claim_status = claim.status || "claimed";
-    chart.claimed_by = claim.annotator || currentAnnotator();
+    chart.claimed_by = expertReviewMode() ? (claim.expert_reviewer || currentAnnotator()) : (claim.annotator || currentAnnotator());
+    chart.original_annotator = claim.annotator || chart.original_annotator || "";
+    chart.expert_reviewer = claim.expert_reviewer || chart.expert_reviewer || "";
     chart.claimed_at = claim.claimed_at || "";
   }
   if (state.current?.manifest?.chart_id === chartId) {
     state.current.manifest.claim_status = claim.status || "claimed";
-    state.current.manifest.claimed_by = claim.annotator || currentAnnotator();
+    state.current.manifest.claimed_by = expertReviewMode() ? (claim.expert_reviewer || currentAnnotator()) : (claim.annotator || currentAnnotator());
+    state.current.manifest.original_annotator = claim.annotator || state.current.manifest.original_annotator || "";
+    state.current.manifest.expert_reviewer = claim.expert_reviewer || state.current.manifest.expert_reviewer || "";
     state.current.manifest.claimed_at = claim.claimed_at || "";
     const claimText = state.current.manifest.claimed_by ? ` · 领取人 ${state.current.manifest.claimed_by}` : "";
     if (els.currentMeta) {
-      els.currentMeta.textContent = ` ${state.current.manifest.sample_type || ""} · 标注模式${claimText}`;
+      els.currentMeta.textContent = ` ${state.current.manifest.sample_type || ""} · ${expertReviewMode() ? "复核模式" : "标注模式"}${claimText}`;
     }
   }
   renderChartList();
@@ -2243,6 +2295,10 @@ async function returnCurrentClaim() {
   }
   if (!datasetConfig.finalDataset) {
     showToast("练习集不需要退回。");
+    return;
+  }
+  if (expertReviewMode()) {
+    showToast("专家复核页不再二次退回；可以暂存或提交复核结果。");
     return;
   }
   const chartId = state.current.manifest.chart_id;
@@ -2297,10 +2353,12 @@ async function skipCurrentClaim() {
   const chartId = state.current.manifest.chart_id;
   const claimedBy = state.current.manifest.claimed_by || "";
   if (claimedBy !== currentAnnotator()) {
-    showToast("只能释放自己领取的航图。");
+    showToast(expertReviewMode() ? "只能跳过自己领取的复核航图。" : "只能释放自己领取的航图。");
     return;
   }
-  const ok = window.confirm("换一张只释放当前领取，不会提交专家复核。需要保留当前改动时，请先取消并点击“暂存当前图”。继续换图吗？");
+  const ok = window.confirm(expertReviewMode()
+    ? "跳过会把当前航图放回复核队列，不会提交复核结果。需要保留当前改动时，请先取消并暂存。继续吗？"
+    : "换一张只释放当前领取，不会提交专家复核。需要保留当前改动时，请先取消并点击“暂存当前图”。继续换图吗？");
   if (!ok) return;
 
   await postJson(apiUrl(`/api/claims/${encodeURIComponent(chartId)}/release`), {
@@ -2308,18 +2366,18 @@ async function skipCurrentClaim() {
   });
   const chart = state.charts.find((item) => item.chart_id === chartId);
   if (chart) {
-    chart.claim_status = "unassigned";
+    chart.claim_status = expertReviewMode() ? "expert_review_available" : "unassigned";
     chart.claimed_by = "";
     chart.claimed_at = "";
     chart.last_saved_at = "";
   }
-  state.current.manifest.claim_status = "unassigned";
+  state.current.manifest.claim_status = expertReviewMode() ? "expert_review_available" : "unassigned";
   state.current.manifest.claimed_by = "";
   state.current.manifest.claimed_at = "";
   renderChartList();
   renderCanonicalPanel();
   if (formalQueueMode()) {
-    await advanceFormalQueue({ afterChartId: chartId, successPrefix: "已换一张" });
+    await advanceFormalQueue({ afterChartId: chartId, successPrefix: expertReviewMode() ? "已跳过当前复核" : "已换一张" });
   } else {
     showToast("当前图已释放。");
   }
@@ -2328,8 +2386,12 @@ async function skipCurrentClaim() {
 async function loadChart(chartId) {
   ensureParticipantId();
   const listItem = state.charts.find((item) => item.chart_id === chartId);
-  if (datasetConfig.finalDataset && listItem && ["claimed_by_other", "returned_for_expert_review"].includes(listItem.claim_status || "")) {
+  if (datasetConfig.finalDataset && listItem && !expertReviewMode() && ["claimed_by_other", "returned_for_expert_review"].includes(listItem.claim_status || "")) {
     showToast(listItem.claim_status === "returned_for_expert_review" ? "这张图已退回专家复审。" : "这张图已被其他参与者领取。");
+    return;
+  }
+  if (datasetConfig.finalDataset && listItem && expertReviewMode() && ["expert_review_claimed_by_other", "not_in_expert_queue"].includes(listItem.claim_status || "")) {
+    showToast(listItem.claim_status === "expert_review_claimed_by_other" ? "这张图已由其他专家领取复核。" : "这张图不在专家复核队列中。");
     return;
   }
   const chartData = await getJson(apiUrl("/api/chart", { chart_id: chartId }));
@@ -2356,10 +2418,11 @@ function applyLoadedChart(chartData, fallbackChartId = "") {
   const statusText = currentChartIsPreview()
     ? "预览模式"
     : canAnnotateCurrent()
-      ? "标注模式"
+      ? (expertReviewMode() ? "复核模式" : "标注模式")
       : (state.current.manifest.claim_status || "");
-  const claimText = state.current.manifest.claimed_by ? ` · 领取人 ${state.current.manifest.claimed_by}` : "";
-  els.currentMeta.textContent = ` ${state.current.manifest.sample_type || ""} · ${statusText}${claimText}`;
+  const claimText = state.current.manifest.claimed_by ? ` · ${expertReviewMode() ? "复核人" : "领取人"} ${state.current.manifest.claimed_by}` : "";
+  const originalText = expertReviewMode() && state.current.manifest.original_annotator ? ` · 原标注 ${state.current.manifest.original_annotator}` : "";
+  els.currentMeta.textContent = ` ${state.current.manifest.sample_type || ""} · ${statusText}${claimText}${originalText}`;
   els.overlay.style.width = "1px";
   els.overlay.style.height = "1px";
   els.chartImage.onload = () => {
@@ -3355,13 +3418,18 @@ async function saveCurrentWork(mode = "final") {
   if (datasetConfig.finalDataset) {
     const claimedBy = state.current.manifest.claimed_by || "";
     const claimStatus = state.current.manifest.claim_status || "unassigned";
-    if (claimStatus === "returned_for_expert_review") {
+    if (!expertReviewMode() && claimStatus === "returned_for_expert_review") {
       showToast("这张图已退回专家复审，不能继续保存。");
       return;
     }
-    if (claimedBy !== currentAnnotator() || !["claimed", "claimed_by_me", "submitted"].includes(claimStatus)) {
+    const editableStatuses = expertReviewMode()
+      ? ["expert_review_claimed", "expert_review_claimed_by_me"]
+      : ["claimed", "claimed_by_me", "submitted"];
+    if (claimedBy !== currentAnnotator() || !editableStatuses.includes(claimStatus)) {
       showToast(formalQueueMode()
-        ? "当前图尚未领取成功，请刷新或重新进入正式标注。"
+        ? expertReviewMode()
+          ? "当前复核任务尚未领取成功，请刷新或重新进入专家复核。"
+          : "当前图尚未领取成功，请刷新或重新进入正式标注。"
         : "请先在左侧点击“领取并开始”，领取成功后再保存。");
       updateClaimButton();
       return;
@@ -3403,6 +3471,7 @@ async function saveCurrentWork(mode = "final") {
       chart.has_my_annotation = true;
       chart.claim_status = datasetConfig.finalDataset ? "submitted" : "practice";
       chart.claimed_by = currentAnnotator();
+      if (expertReviewMode()) chart.expert_reviewer = currentAnnotator();
       chart.submission_count = Number(chart.submission_count || 0) + 1;
     }
   }
@@ -3410,7 +3479,7 @@ async function saveCurrentWork(mode = "final") {
   updateClaimButton();
   renderChartList();
   if (mode !== "draft" && formalQueueMode()) {
-    await advanceFormalQueue({ afterChartId: chartId, successPrefix: "已提交" });
+    await advanceFormalQueue({ afterChartId: chartId, successPrefix: expertReviewMode() ? "已提交复核结果" : "已提交" });
   }
 }
 
@@ -3675,13 +3744,20 @@ function formalQueueCandidates({ afterChartId = "" } = {}) {
   return state.charts.filter((chart) => {
     if (!chart || chart.chart_id === afterChartId) return false;
     if (chart.has_my_annotation || chart.claim_status === "submitted") return false;
+    if (expertReviewMode()) {
+      return ["expert_review_available", "expert_review_claimed", "expert_review_claimed_by_me"].includes(chart.claim_status || "");
+    }
     return ["claimed", "claimed_by_me", "unassigned"].includes(chart.claim_status || "");
   });
 }
 
 function nextFormalQueueChart({ afterChartId = "" } = {}) {
   const candidates = formalQueueCandidates({ afterChartId });
-  return candidates.find((chart) => ["claimed", "claimed_by_me"].includes(chart.claim_status || ""))
+  return expertReviewMode()
+    ? candidates.find((chart) => ["expert_review_claimed", "expert_review_claimed_by_me"].includes(chart.claim_status || ""))
+      || candidates.find((chart) => chart.claim_status === "expert_review_available")
+      || null
+    : candidates.find((chart) => ["claimed", "claimed_by_me"].includes(chart.claim_status || ""))
     || candidates.find((chart) => chart.claim_status === "unassigned")
     || null;
 }
@@ -3692,7 +3768,7 @@ function updateFormalQueueStatus() {
   const current = state.current?.manifest?.chart_id
     ? `当前 ${state.current.manifest.chart_id}`
     : "等待下一张";
-  els.sideActionHint.textContent = `${current} · 队列剩余 ${remaining} 张；提交后自动进入下一张。`;
+  els.sideActionHint.textContent = `${current} · ${expertReviewMode() ? "复核队列" : "队列"}剩余 ${remaining} 张；提交后自动进入下一张。`;
 }
 
 function setupFormalQueueUi() {
@@ -3705,11 +3781,15 @@ function setupFormalQueueUi() {
     els.workspaceToolbar.insertBefore(els.sideActionPanel, toolbarActions || null);
   }
   if (els.sideActionPanel?.querySelector("h2")) {
-    els.sideActionPanel.querySelector("h2").textContent = "本图操作";
+    els.sideActionPanel.querySelector("h2").textContent = expertReviewMode() ? "本图复核" : "本图操作";
   }
-  if (els.saveDraftBtn) els.saveDraftBtn.textContent = "暂存当前图";
-  if (els.returnClaimBtn) els.returnClaimBtn.textContent = "提交专家复核";
-  if (els.saveBtn) els.saveBtn.textContent = "提交";
+  if (els.saveDraftBtn) els.saveDraftBtn.textContent = expertReviewMode() ? "暂存复核" : "暂存当前图";
+  if (els.skipClaimBtn) els.skipClaimBtn.textContent = expertReviewMode() ? "跳过复核" : "换一张";
+  if (els.returnClaimBtn) {
+    els.returnClaimBtn.textContent = "提交专家复核";
+    els.returnClaimBtn.classList.toggle("hidden", expertReviewMode());
+  }
+  if (els.saveBtn) els.saveBtn.textContent = expertReviewMode() ? "提交复核结果" : "提交";
   els.claimCurrentBtn?.classList.add("hidden");
   updateFormalQueueStatus();
 }
@@ -3749,15 +3829,20 @@ function setupDatasetUi() {
   const participantId = ensureParticipantId();
   document.title = `${datasetConfig.label} - 复飞航图字段证据标注`;
   if (els.pageTitle) {
-    els.pageTitle.textContent = "复飞航图字段证据标注";
+    els.pageTitle.textContent = expertReviewMode() ? "复飞航图专家复核" : "复飞航图字段证据标注";
   }
   if (els.datasetEyebrow) {
-    els.datasetEyebrow.textContent = datasetConfig.finalDataset
+    els.datasetEyebrow.textContent = expertReviewMode()
+      ? "专家复核队列"
+      : datasetConfig.finalDataset
       ? "正式集 300 张"
       : "练习集 10 张";
   }
   if (els.sideTitle) {
-    els.sideTitle.textContent = datasetConfig.finalDataset ? "正式航图任务" : "练习航图任务";
+    els.sideTitle.textContent = expertReviewMode() ? "专家复核任务" : datasetConfig.finalDataset ? "正式航图任务" : "练习航图任务";
+  }
+  if (els.identityLabel) {
+    els.identityLabel.textContent = expertReviewMode() ? "复核人" : "标注人";
   }
   updateParticipantBadge(participantId);
 }
@@ -3783,6 +3868,13 @@ async function init() {
   renderWorkflowPanel();
   applyZooms({ render: false });
   if (formalQueueMode()) {
+    const initialChartId = new URLSearchParams(window.location.search).get("chart_id");
+    if (initialChartId && expertReviewMode()) {
+      await refreshCharts();
+      await claimChartFromList(initialChartId, { openAfter: true, silent: true });
+      showToast(`已打开复核任务：${initialChartId}`);
+      return;
+    }
     await advanceFormalQueue();
     return;
   }

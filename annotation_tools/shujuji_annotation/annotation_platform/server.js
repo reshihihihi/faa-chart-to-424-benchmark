@@ -15,6 +15,7 @@ const port = Number(process.env.PORT || 8787);
 const publicBaseUrl = String(process.env.PUBLIC_BASE_URL || "").replace(/\/+$/, "");
 const accessToken = String(process.env.SHUJUJI_ACCESS_TOKEN || "").trim();
 const adminToken = String(process.env.SHUJUJI_ADMIN_TOKEN || "").trim();
+const expertToken = String(process.env.SHUJUJI_EXPERT_TOKEN || "").trim();
 
 const datasets = {
   practice10: {
@@ -115,8 +116,27 @@ function getAnnotator(requestUrl) {
   return safeAnnotator(requestUrl.searchParams.get("annotator") || "");
 }
 
+function getExpertReviewer(requestUrl) {
+  return safeAnnotator(
+    requestUrl.searchParams.get("expert")
+    || requestUrl.searchParams.get("reviewer")
+    || requestUrl.searchParams.get("annotator")
+    || ""
+  );
+}
+
+function isExpertRole(requestUrl) {
+  return requestUrl.searchParams.get("role") === "expert"
+    || requestUrl.searchParams.get("expert_mode") === "1";
+}
+
 function hashText(value) {
   return crypto.createHash("sha256").update(String(value || "")).digest();
+}
+
+function tokenMatches(supplied, expected) {
+  return Boolean(supplied && expected)
+    && crypto.timingSafeEqual(hashText(supplied), hashText(expected));
 }
 
 function hasValidAccess(req, requestUrl) {
@@ -127,8 +147,9 @@ function hasValidAccess(req, requestUrl) {
     || ""
   ).trim();
   if (!supplied) return false;
-  if (crypto.timingSafeEqual(hashText(supplied), hashText(accessToken))) return true;
-  return Boolean(adminToken) && crypto.timingSafeEqual(hashText(supplied), hashText(adminToken));
+  if (tokenMatches(supplied, accessToken)) return true;
+  if (tokenMatches(supplied, expertToken)) return true;
+  return tokenMatches(supplied, adminToken);
 }
 
 function requireAccess(req, requestUrl) {
@@ -146,13 +167,34 @@ function hasValidAdminAccess(req, requestUrl) {
     || ""
   ).trim();
   if (!supplied) return false;
-  return crypto.timingSafeEqual(hashText(supplied), hashText(adminToken));
+  return tokenMatches(supplied, adminToken);
 }
 
 function requireAdminAccess(req, requestUrl) {
   if (hasValidAdminAccess(req, requestUrl)) return;
   const error = new Error(adminToken ? "Admin token required" : "Admin export is not enabled");
   error.statusCode = adminToken ? 401 : 503;
+  throw error;
+}
+
+function hasValidExpertAccess(req, requestUrl) {
+  const supplied = String(
+    req.headers["x-shujuji-expert-token"]
+    || req.headers["x-shujuji-token"]
+    || requestUrl.searchParams.get("expert_token")
+    || requestUrl.searchParams.get("token")
+    || requestUrl.searchParams.get("admin_token")
+    || ""
+  ).trim();
+  if (tokenMatches(supplied, expertToken)) return true;
+  if (tokenMatches(supplied, adminToken)) return true;
+  return !expertToken && !adminToken && hasValidAccess(req, requestUrl);
+}
+
+function requireExpertAccess(req, requestUrl) {
+  if (hasValidExpertAccess(req, requestUrl)) return;
+  const error = new Error(expertToken || adminToken ? "Expert review token required" : "Expert review is not enabled");
+  error.statusCode = expertToken || adminToken ? 401 : 503;
   throw error;
 }
 
@@ -435,6 +477,10 @@ function latestTimestamp(values) {
   return values.filter(Boolean).map(String).sort().at(-1) || "";
 }
 
+function isExpertReviewClaimStatus(status) {
+  return ["returned_for_expert_review", "expert_review_claimed"].includes(status || "");
+}
+
 async function buildDatasetProgress(dataset) {
   const manifest = await readDatasetJson(dataset, "manifest.json", []);
   const claims = dataset.finalDataset ? await readClaims(dataset) : {};
@@ -449,10 +495,10 @@ async function buildDatasetProgress(dataset) {
   }
   const totalCharts = manifest.length;
   const submittedCount = statusCounts.submitted || 0;
-  const returnedCount = statusCounts.returned_for_expert_review || 0;
+  const returnedCount = (statusCounts.returned_for_expert_review || 0) + (statusCounts.expert_review_claimed || 0);
   const activeClaimCount = Object.values(claims || {}).filter((claim) => {
     const status = claim?.status || "claimed";
-    return !["submitted", "returned_for_expert_review"].includes(status);
+    return !["submitted", "returned_for_expert_review", "expert_review_claimed"].includes(status);
   }).length;
   return {
     dataset_key: dataset.key,
@@ -498,8 +544,8 @@ async function buildDatasetOverview(dataset) {
     const hasDraft = Boolean(draftEntry);
     const rawClaimStatus = dataset.finalDataset ? (claim?.status || "unassigned") : "";
     let status = "unassigned";
-    if (dataset.finalDataset && rawClaimStatus === "returned_for_expert_review") {
-      status = "returned_for_expert_review";
+    if (dataset.finalDataset && isExpertReviewClaimStatus(rawClaimStatus)) {
+      status = rawClaimStatus;
     } else if (hasAnnotation || rawClaimStatus === "submitted") {
       status = "submitted";
     } else if (hasDraft) {
@@ -530,7 +576,11 @@ async function buildDatasetOverview(dataset) {
       returned_at: claim?.returned_at || "",
       returned_by: claim?.returned_by || "",
       return_reason: claim?.return_reason || "",
-      expert_review_required: Boolean(claim?.expert_review_required || status === "returned_for_expert_review"),
+      original_annotator: claim?.annotator || "",
+      expert_reviewer: claim?.expert_reviewer || "",
+      expert_review_claimed_at: claim?.expert_review_claimed_at || "",
+      expert_reviewed_at: claim?.expert_reviewed_at || "",
+      expert_review_required: Boolean(claim?.expert_review_required || isExpertReviewClaimStatus(status)),
       has_draft: hasDraft,
       has_annotation: hasAnnotation,
       draft,
@@ -599,7 +649,7 @@ async function claimChart(dataset, chartId, annotator) {
   return withClaimLock(async () => {
     const claims = await readClaims(dataset);
     const existing = claims[chartId];
-    if (existing?.status === "returned_for_expert_review") {
+    if (isExpertReviewClaimStatus(existing?.status)) {
       const error = new Error("这张图已被退回并标记为专家复审，不再分配给普通标注流程。");
       error.statusCode = 409;
       error.claim = existing;
@@ -619,6 +669,43 @@ async function claimChart(dataset, chartId, annotator) {
       claimed_at: existing?.claimed_at || now,
       last_opened_at: now,
       last_saved_at: existing?.last_saved_at || ""
+    };
+    await writeClaims(dataset, claims);
+    return claims[chartId];
+  });
+}
+
+async function claimExpertReviewChart(dataset, chartId, reviewer) {
+  if (!dataset.finalDataset) return null;
+  if (!reviewer) {
+    const error = new Error("专家复核请先填写复核人。");
+    error.statusCode = 400;
+    throw error;
+  }
+  return withClaimLock(async () => {
+    const claims = await readClaims(dataset);
+    const existing = claims[chartId];
+    if (!existing || !isExpertReviewClaimStatus(existing.status)) {
+      const error = new Error("这张图不在专家复核队列中。");
+      error.statusCode = 409;
+      error.claim = existing || null;
+      throw error;
+    }
+    if (existing.expert_reviewer && existing.expert_reviewer !== reviewer) {
+      const error = new Error(`这张图已由专家 ${existing.expert_reviewer} 领取复核。`);
+      error.statusCode = 409;
+      error.claim = existing;
+      throw error;
+    }
+    const now = new Date().toISOString();
+    claims[chartId] = {
+      ...existing,
+      chart_id: chartId,
+      status: "expert_review_claimed",
+      expert_review_required: true,
+      expert_reviewer: reviewer,
+      expert_review_claimed_at: existing.expert_review_claimed_at || now,
+      expert_last_opened_at: now
     };
     await writeClaims(dataset, claims);
     return claims[chartId];
@@ -680,7 +767,7 @@ async function releaseClaim(dataset, chartId, annotator) {
       error.claim = existing;
       throw error;
     }
-    if (["submitted", "returned_for_expert_review"].includes(existing.status || "")) {
+    if (["submitted", "returned_for_expert_review", "expert_review_claimed"].includes(existing.status || "")) {
       const error = new Error("这张图已经提交或进入专家复核，不能当作普通换图释放。");
       error.statusCode = 409;
       error.claim = existing;
@@ -698,18 +785,54 @@ async function releaseClaim(dataset, chartId, annotator) {
   });
 }
 
-async function markSubmitted(dataset, chartId, annotator) {
+async function releaseExpertReviewClaim(dataset, chartId, reviewer) {
+  if (!dataset.finalDataset) return null;
+  if (!reviewer) {
+    const error = new Error("专家复核请先填写复核人。");
+    error.statusCode = 400;
+    throw error;
+  }
+  return withClaimLock(async () => {
+    const claims = await readClaims(dataset);
+    const existing = claims[chartId];
+    if (!existing || existing.status !== "expert_review_claimed") return null;
+    if (existing.expert_reviewer && existing.expert_reviewer !== reviewer) {
+      const error = new Error(`这张图已由专家 ${existing.expert_reviewer} 领取复核，不能用 ${reviewer} 跳过。`);
+      error.statusCode = 409;
+      error.claim = existing;
+      throw error;
+    }
+    claims[chartId] = {
+      ...existing,
+      status: "returned_for_expert_review",
+      expert_reviewer: "",
+      expert_last_released_by: reviewer,
+      expert_last_released_at: new Date().toISOString()
+    };
+    await writeClaims(dataset, claims);
+    return claims[chartId];
+  });
+}
+
+async function markSubmitted(dataset, chartId, annotator, options = {}) {
   if (!dataset.finalDataset) return null;
   return withClaimLock(async () => {
     const claims = await readClaims(dataset);
     const now = new Date().toISOString();
+    const previous = claims[chartId] || {};
     claims[chartId] = {
-      ...(claims[chartId] || {}),
+      ...previous,
       chart_id: chartId,
       annotator,
       status: "submitted",
       last_saved_at: now
     };
+    if (options.expertReviewer) {
+      claims[chartId].expert_review_required = false;
+      claims[chartId].expert_reviewer = options.expertReviewer;
+      claims[chartId].expert_reviewed_at = now;
+      claims[chartId].expert_review_previous_status = previous.status || "";
+    }
     if (!claims[chartId].claimed_at) claims[chartId].claimed_at = now;
     await writeClaims(dataset, claims);
     return claims[chartId];
@@ -727,13 +850,23 @@ async function submissionCount(dataset, chartId) {
   }
 }
 
-function claimStatusFor(dataset, claim, annotator) {
+function claimStatusFor(dataset, claim, annotator, options = {}) {
+  const expertMode = Boolean(options.expertMode);
   const mine = Boolean(annotator && claim?.annotator === annotator);
+  const expertMine = Boolean(annotator && claim?.expert_reviewer === annotator);
   return !dataset.finalDataset
     ? "practice"
     : !claim
-      ? "unassigned"
-      : claim.status === "returned_for_expert_review"
+      ? (expertMode ? "not_in_expert_queue" : "unassigned")
+      : expertMode
+        ? claim.status === "returned_for_expert_review"
+          ? "expert_review_available"
+          : claim.status === "expert_review_claimed"
+            ? (expertMine ? "expert_review_claimed_by_me" : "expert_review_claimed_by_other")
+            : claim.status === "submitted"
+              ? "submitted"
+              : "not_in_expert_queue"
+      : isExpertReviewClaimStatus(claim.status)
         ? "returned_for_expert_review"
         : mine
           ? claim.status || "claimed_by_me"
@@ -742,6 +875,7 @@ function claimStatusFor(dataset, claim, annotator) {
 
 async function loadCharts(dataset, annotator, options = {}) {
   const lite = Boolean(options.lite);
+  const expertMode = Boolean(options.expertMode);
   const manifest = await readDatasetJson(dataset, "manifest.json", []);
   const targets = lite ? [] : await readDatasetJson(dataset, "targets/canonical_targets.json", []);
   const targetById = new Map(targets.map((item) => [item.chart_id, item]));
@@ -750,12 +884,14 @@ async function loadCharts(dataset, annotator, options = {}) {
   return Promise.all(manifest.map(async (item) => {
     const chartId = item.chart_id;
     const claim = claims[chartId] || null;
-    const claimStatus = claimStatusFor(dataset, claim, annotator);
+    const claimStatus = claimStatusFor(dataset, claim, annotator, { expertMode });
     if (lite) {
       return scrubClientValue({
         chart_id: chartId,
         claim_status: claimStatus,
-        claimed_by: claim?.annotator || "",
+        claimed_by: expertMode ? (claim?.expert_reviewer || "") : (claim?.annotator || ""),
+        original_annotator: claim?.annotator || "",
+        expert_reviewer: claim?.expert_reviewer || "",
         has_my_annotation: claimStatus === "submitted",
         has_my_draft: false
       });
@@ -763,11 +899,12 @@ async function loadCharts(dataset, annotator, options = {}) {
 
     const target = targetById.get(chartId) || {};
     const prelabelPath = safeJoin(dataset.root, "prelabels", `${chartId}.json`);
-    const myAnnotationPath = annotator
-      ? annotationPath(dataset, "by_annotator", annotator, `${chartId}.json`)
+    const storageAnnotator = expertMode && claim?.annotator ? claim.annotator : annotator;
+    const myAnnotationPath = storageAnnotator
+      ? annotationPath(dataset, "by_annotator", storageAnnotator, `${chartId}.json`)
       : "";
-    const myDraftPath = annotator
-      ? annotationPath(dataset, "drafts", "by_annotator", annotator, `${chartId}.json`)
+    const myDraftPath = storageAnnotator
+      ? annotationPath(dataset, "drafts", "by_annotator", storageAnnotator, `${chartId}.json`)
       : "";
     const draft = !lite && myDraftPath ? await readJsonFile(myDraftPath, null) : null;
     return scrubClientValue({
@@ -781,8 +918,12 @@ async function loadCharts(dataset, annotator, options = {}) {
       draft_saved_at: draft?.saved_at || draft?.updated_at || "",
       submission_count: await submissionCount(dataset, chartId),
       claim_status: claimStatus,
-      claimed_by: claim?.annotator || "",
+      claimed_by: expertMode ? (claim?.expert_reviewer || "") : (claim?.annotator || ""),
+      original_annotator: claim?.annotator || "",
+      expert_reviewer: claim?.expert_reviewer || "",
       claimed_at: claim?.claimed_at || "",
+      expert_review_claimed_at: claim?.expert_review_claimed_at || "",
+      expert_reviewed_at: claim?.expert_reviewed_at || "",
       last_saved_at: claim?.last_saved_at || "",
       returned_at: claim?.returned_at || "",
       returned_by: claim?.returned_by || "",
@@ -794,7 +935,8 @@ async function loadCharts(dataset, annotator, options = {}) {
   }));
 }
 
-async function loadChartDetail(dataset, chartId, annotator) {
+async function loadChartDetail(dataset, chartId, annotator, options = {}) {
+  const expertMode = Boolean(options.expertMode);
   if (!isSafeChartId(chartId)) {
     const error = new Error("Invalid chart_id");
     error.statusCode = 400;
@@ -816,9 +958,13 @@ async function loadChartDetail(dataset, chartId, annotator) {
     dataset_key: dataset.key,
     final_dataset: dataset.finalDataset,
     image_file: imageBasename(rawManifestItem.image_file || rawManifestItem.image_path),
-    claim_status: claimStatusFor(dataset, claim, annotator),
-    claimed_by: claim?.annotator || "",
+    claim_status: claimStatusFor(dataset, claim, annotator, { expertMode }),
+    claimed_by: expertMode ? (claim?.expert_reviewer || "") : (claim?.annotator || ""),
+    original_annotator: claim?.annotator || "",
+    expert_reviewer: claim?.expert_reviewer || "",
     claimed_at: claim?.claimed_at || "",
+    expert_review_claimed_at: claim?.expert_review_claimed_at || "",
+    expert_reviewed_at: claim?.expert_reviewed_at || "",
     last_saved_at: claim?.last_saved_at || "",
     returned_at: claim?.returned_at || "",
     returned_by: claim?.returned_by || "",
@@ -840,7 +986,9 @@ async function loadChartDetail(dataset, chartId, annotator) {
     : null;
   const prelabel = await readDatasetJson(dataset, `prelabels/${chartId}.json`, null);
   const canonicalGt = await readDatasetJson(dataset, `targets/canonical_proxy_gt/${chartId}.json`, null);
-  const effectiveAnnotator = annotator || (dataset.finalDataset && claim?.annotator ? claim.annotator : "");
+  const effectiveAnnotator = expertMode && dataset.finalDataset && claim?.annotator
+    ? claim.annotator
+    : annotator || (dataset.finalDataset && claim?.annotator ? claim.annotator : "");
   const annotation = effectiveAnnotator
     ? await readAnnotationJson(dataset, `by_annotator/${effectiveAnnotator}/${chartId}.json`, null)
     : null;
@@ -878,8 +1026,11 @@ async function claimChartForRequest(requestUrl, dataset, chartId) {
     error.statusCode = 400;
     throw error;
   }
-  const annotator = getAnnotator(requestUrl);
-  const claim = await claimChart(dataset, chartId, annotator || (dataset.finalDataset ? "" : "practice_user"));
+  const expertMode = isExpertRole(requestUrl);
+  const annotator = expertMode ? getExpertReviewer(requestUrl) : getAnnotator(requestUrl);
+  const claim = expertMode
+    ? await claimExpertReviewChart(dataset, chartId, annotator)
+    : await claimChart(dataset, chartId, annotator || (dataset.finalDataset ? "" : "practice_user"));
   return {
     ok: true,
     dataset: dataset.key,
@@ -912,14 +1063,69 @@ async function releaseClaimForRequest(req, requestUrl, dataset, chartId) {
     throw error;
   }
   const payload = JSON.parse(stripBom(await readRequestBody(req)) || "{}");
-  const annotator = getAnnotator(requestUrl) || safeAnnotator(payload.annotator || "");
-  const claim = await releaseClaim(dataset, chartId, annotator);
+  const expertMode = isExpertRole(requestUrl);
+  const annotator = expertMode
+    ? (getExpertReviewer(requestUrl) || safeAnnotator(payload.expert || payload.reviewer || payload.annotator || ""))
+    : (getAnnotator(requestUrl) || safeAnnotator(payload.annotator || ""));
+  const claim = expertMode
+    ? await releaseExpertReviewClaim(dataset, chartId, annotator)
+    : await releaseClaim(dataset, chartId, annotator);
   return {
     ok: true,
     dataset: dataset.key,
     chart_id: chartId,
     claim
   };
+}
+
+async function claimNextExpertReviewChart(dataset, reviewer, afterChartId = "") {
+  if (!dataset.finalDataset) return { chartId: "", claim: null };
+  if (!reviewer) {
+    const error = new Error("专家复核请先填写复核人。");
+    error.statusCode = 400;
+    throw error;
+  }
+  return withClaimLock(async () => {
+    const manifest = await readDatasetJson(dataset, "manifest.json", []);
+    const claims = await readClaims(dataset);
+    const now = new Date().toISOString();
+    const openForMe = manifest.find((item) => {
+      const chartId = item.chart_id;
+      const claim = claims[chartId];
+      return chartId !== afterChartId
+        && claim?.status === "expert_review_claimed"
+        && claim.expert_reviewer === reviewer;
+    });
+    if (openForMe) {
+      const chartId = openForMe.chart_id;
+      claims[chartId] = {
+        ...claims[chartId],
+        expert_last_opened_at: now
+      };
+      await writeClaims(dataset, claims);
+      return { chartId, claim: claims[chartId] };
+    }
+
+    const available = manifest.find((item) => {
+      const chartId = item.chart_id;
+      const claim = claims[chartId];
+      return chartId !== afterChartId && claim?.status === "returned_for_expert_review";
+    });
+    if (!available) return { chartId: "", claim: null };
+
+    const chartId = available.chart_id;
+    claims[chartId] = {
+      ...claims[chartId],
+      chart_id: chartId,
+      status: "expert_review_claimed",
+      expert_review_required: true,
+      expert_reviewer: reviewer,
+      expert_review_claimed_at: now,
+      expert_last_opened_at: now
+    };
+    await writeClaims(dataset, claims);
+    return { chartId, claim: claims[chartId] };
+  });
 }
 
 async function claimNextChart(dataset, annotator, afterChartId = "") {
@@ -941,7 +1147,7 @@ async function claimNextChart(dataset, annotator, afterChartId = "") {
       const claim = claims[chartId];
       return chartId !== afterChartId
         && claim?.annotator === annotator
-        && !["submitted", "returned_for_expert_review"].includes(claim.status || "");
+        && !["submitted", "returned_for_expert_review", "expert_review_claimed"].includes(claim.status || "");
     });
     if (openForMe) {
       const chartId = openForMe.chart_id;
@@ -978,12 +1184,17 @@ async function nextChartForRequest(req, requestUrl, dataset) {
   const payload = req.method === "POST"
     ? JSON.parse(stripBom(await readRequestBody(req)) || "{}")
     : {};
-  const annotator = getAnnotator(requestUrl) || safeAnnotator(payload.annotator || "");
+  const expertMode = isExpertRole(requestUrl);
+  const annotator = expertMode
+    ? (getExpertReviewer(requestUrl) || safeAnnotator(payload.expert || payload.reviewer || payload.annotator || ""))
+    : (getAnnotator(requestUrl) || safeAnnotator(payload.annotator || ""));
   const afterChartId = isSafeChartId(payload.after_chart_id) ? payload.after_chart_id : "";
-  const next = await claimNextChart(dataset, annotator, afterChartId);
-  const charts = await loadCharts(dataset, annotator, { lite: dataset.finalDataset });
+  const next = expertMode
+    ? await claimNextExpertReviewChart(dataset, annotator, afterChartId)
+    : await claimNextChart(dataset, annotator, afterChartId);
+  const charts = await loadCharts(dataset, annotator, { lite: dataset.finalDataset, expertMode });
   const chart = next.chartId
-    ? await loadChartDetail(dataset, next.chartId, annotator)
+    ? await loadChartDetail(dataset, next.chartId, annotator, { expertMode })
     : null;
   return {
     ok: true,
@@ -1108,6 +1319,7 @@ function redirectWithQuery(pathname, requestUrl) {
 function landingHtml(requestUrl) {
   const practiceHref = landingLink("/practice/", requestUrl);
   const formalHref = landingLink("/formal/", requestUrl);
+  const expertHref = landingLink("/expert/", requestUrl);
   return `<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -1137,6 +1349,11 @@ function landingHtml(requestUrl) {
       <h2>正式网页：300 张</h2>
       <p>正式入口会按“标注人领取航图”防止重复。可以在链接中预置 <code>annotator=A06</code>，也可以进入后在右上角填写标注人再领取未分配航图。</p>
       <a href="${escapeHtml(formalHref)}">进入正式标注</a>
+    </section>
+    <section class="card">
+      <h2>专家复核</h2>
+      <p>普通标注人点击“提交专家复核”后，已做的标注会保留为草稿；专家在这里逐张领取复核并提交正式结果。</p>
+      <a href="${escapeHtml(expertHref)}">进入专家复核</a>
     </section>
     <section class="card">
       <h2>公网网页 / 局域网都可用</h2>
@@ -1192,6 +1409,7 @@ function adminHtml() {
     .status-draft_saved{background:#fff0c7;color:#745200}
     .status-claimed{background:#e2ecff;color:#244d91}
     .status-returned_for_expert_review{background:#ffe0dc;color:#9a2f22}
+    .status-expert_review_claimed{background:#ffe9b8;color:#805100}
     .status-unassigned{background:#ece7dc;color:#5d5a51}
     .field-progress{white-space:nowrap;color:#405a54}
     .row-actions{white-space:nowrap}
@@ -1204,7 +1422,7 @@ function adminHtml() {
     <p>这个页面只给管理员使用。普通标注人员继续使用正式标注链接，不需要进入这里。</p>
     <section class="card">
       <h2>访问凭证</h2>
-      <p class="muted"><code>admin_token</code> 是后台管理凭证，用于刷新进度、逐图总览、导出，也可以直接打开对应的展示页/标注页。</p>
+      <p class="muted"><code>admin_token</code> 是后台管理凭证，用于刷新进度、逐图总览、导出，也可以作为专家复核凭证打开复核页。</p>
       <input id="token" type="password" placeholder="后台管理 token">
       <button type="button" onclick="saveToken()">保存凭证</button>
       <button class="secondary" type="button" onclick="loadProgress()">刷新当前进度</button>
@@ -1224,7 +1442,7 @@ function adminHtml() {
       <p class="muted">只展示服务器里已经保存的领取、草稿、正式提交状态；点击“展示页”进入只读结果页检查那张图。</p>
       <div class="toolbar">
         <label>数据集<select id="overviewDataset"><option value="formal300">正式集 300 张</option><option value="practice10">练习集 10 张</option></select></label>
-        <label>状态筛选<select id="overviewStatus"><option value="">全部状态</option><option value="submitted">已提交</option><option value="draft_saved">有草稿</option><option value="claimed">已领取未提交</option><option value="returned_for_expert_review">专家复核</option><option value="unassigned">未领取/未标</option></select></label>
+        <label>状态筛选<select id="overviewStatus"><option value="">全部状态</option><option value="submitted">已提交</option><option value="draft_saved">有草稿</option><option value="claimed">已领取未提交</option><option value="returned_for_expert_review">待专家复核</option><option value="expert_review_claimed">专家复核中</option><option value="unassigned">未领取/未标</option></select></label>
         <label>搜索<input id="overviewSearch" type="search" placeholder="chart_id / 机场 / 程序 / 标注人"></label>
         <button type="button" onclick="loadOverview()">刷新</button>
       </div>
@@ -1304,7 +1522,8 @@ function adminHtml() {
       draft_saved: "有草稿",
       claimed: "已领取",
       claimed_by_me: "已领取",
-      returned_for_expert_review: "专家复核",
+      returned_for_expert_review: "待专家复核",
+      expert_review_claimed: "专家复核中",
       unassigned: "未领取",
       practice_unstarted: "未标"
     };
@@ -1331,7 +1550,7 @@ function adminHtml() {
         "<div class='pill'><strong>" + numberCell(counts.submitted || 0) + "</strong> 已提交</div>" +
         "<div class='pill'><strong>" + numberCell(counts.draft_saved || 0) + "</strong> 有草稿</div>" +
         "<div class='pill'><strong>" + numberCell(counts.claimed || 0) + "</strong> 已领取</div>" +
-        "<div class='pill'><strong>" + numberCell(counts.returned_for_expert_review || 0) + "</strong> 专家复核</div>" +
+        "<div class='pill'><strong>" + numberCell((counts.returned_for_expert_review || 0) + (counts.expert_review_claimed || 0)) + "</strong> 专家复核</div>" +
         "<div class='pill'><strong>" + numberCell(counts.unassigned || 0) + "</strong> 未领取</div>" +
       "</div>";
     }
@@ -1344,10 +1563,16 @@ function adminHtml() {
       return url.pathname + url.search;
     }
     function formalHref(row) {
-      const url = new URL(row.dataset_key === "practice10" ? "/practice/" : "/formal/", location.origin);
+      const expertRow = row.dataset_key !== "practice10" && (row.status === "returned_for_expert_review" || row.status === "expert_review_claimed");
+      const url = new URL(row.dataset_key === "practice10" ? "/practice/" : expertRow ? "/expert/" : "/formal/", location.origin);
       url.searchParams.set("dataset", row.dataset_key);
       url.searchParams.set("chart_id", row.chart_id);
-      if (row.annotator) url.searchParams.set("annotator", row.annotator);
+      if (expertRow) {
+        url.searchParams.set("role", "expert");
+        url.searchParams.set("expert", row.expert_reviewer || "admin");
+      } else if (row.annotator) {
+        url.searchParams.set("annotator", row.annotator);
+      }
       if (token()) url.searchParams.set("token", token());
       return url.pathname + url.search;
     }
@@ -1370,12 +1595,13 @@ function adminHtml() {
       const body = rows.map((row) => {
         const summary = row.final || row.draft;
         const reason = row.return_reason ? "<div class='muted'>原因：" + escapeCell(row.return_reason) + "</div>" : "";
+        const reviewer = row.expert_reviewer ? "<div class='muted'>复核人：" + escapeCell(row.expert_reviewer) + "</div>" : "";
         return "<tr><td><strong>" + escapeCell(row.chart_id) + "</strong><div class='muted'>" + escapeCell([row.airport, row.proc_ident, row.chart_name].filter(Boolean).join(" · ")) + "</div></td>" +
-          "<td><span class='status-badge status-" + escapeCell(row.status) + "'>" + escapeCell(statusLabel(row.status)) + "</span>" + reason + "</td>" +
+          "<td><span class='status-badge status-" + escapeCell(row.status) + "'>" + escapeCell(statusLabel(row.status)) + "</span>" + reason + reviewer + "</td>" +
           "<td>" + escapeCell(row.annotator || "-") + "</td>" +
           "<td>" + fieldSummary(summary) + "<div class='muted'>草稿 " + (row.has_draft ? "有" : "无") + "；正式 " + (row.has_annotation ? "有" : "无") + "；快照 " + numberCell(row.submission_count) + "</div></td>" +
           "<td>" + formatTime(row.updated_at) + "</td>" +
-          "<td class='row-actions'><a class='table-link' target='_blank' rel='noopener' href='" + escapeCell(showcaseHref(row)) + "'>展示页</a><br><a class='table-link' target='_blank' rel='noopener' href='" + escapeCell(formalHref(row)) + "'>标注页</a></td></tr>";
+          "<td class='row-actions'><a class='table-link' target='_blank' rel='noopener' href='" + escapeCell(showcaseHref(row)) + "'>展示页</a><br><a class='table-link' target='_blank' rel='noopener' href='" + escapeCell(formalHref(row)) + "'>" + ((row.status === "returned_for_expert_review" || row.status === "expert_review_claimed") ? "复核页" : "标注页") + "</a></td></tr>";
       }).join("");
       overviewBox.innerHTML = overviewSummaryHtml(overviewMeta) +
         "<p class='muted'>当前显示 " + rows.length + " / " + overviewRows.length + " 张；更新时间 " + escapeCell(overviewMeta.updated_at || "") + "</p>" +
@@ -1510,57 +1736,83 @@ async function saveAnnotation(req, requestUrl, dataset, chartId) {
     throw error;
   }
   const payload = JSON.parse(stripBom(await readRequestBody(req)));
-  const annotator = safeAnnotator(payload.annotator || getAnnotator(requestUrl) || (dataset.finalDataset ? "" : "practice_user"));
-  if (dataset.finalDataset && !annotator) {
+  const expertMode = isExpertRole(requestUrl);
+  const reviewerOrAnnotator = safeAnnotator(
+    expertMode
+      ? (payload.expert_reviewer || payload.reviewer || payload.annotator || getExpertReviewer(requestUrl))
+      : (payload.annotator || getAnnotator(requestUrl) || (dataset.finalDataset ? "" : "practice_user"))
+  );
+  if (dataset.finalDataset && !reviewerOrAnnotator) {
     const error = new Error("正式标注必须先填写标注人。");
     error.statusCode = 400;
     throw error;
   }
 
+  let claim = null;
+  let storageAnnotator = reviewerOrAnnotator;
   if (dataset.finalDataset) {
     const claims = await readClaims(dataset);
-    const claim = claims[chartId];
-    if (claim?.status === "returned_for_expert_review") {
-      const error = new Error("这张图已退回专家复审，不能继续保存普通人工标注。");
-      error.statusCode = 409;
-      throw error;
-    }
-    if (claim?.annotator && claim.annotator !== annotator) {
-      const error = new Error(`这张图已由 ${claim.annotator} 领取，不能用 ${annotator} 保存，避免重复覆盖。`);
-      error.statusCode = 409;
-      throw error;
-    }
-    if (!claim) {
-      const error = new Error("请先点击“领取当前图”，领取成功后再保存，避免多人重复标注同一张图。");
-      error.statusCode = 409;
-      throw error;
+    claim = claims[chartId];
+    if (expertMode) {
+      claim = await claimExpertReviewChart(dataset, chartId, reviewerOrAnnotator);
+      storageAnnotator = claim.annotator || reviewerOrAnnotator;
+    } else {
+      if (isExpertReviewClaimStatus(claim?.status)) {
+        const error = new Error("这张图已退回专家复审，不能继续保存普通人工标注。");
+        error.statusCode = 409;
+        throw error;
+      }
+      if (claim?.annotator && claim.annotator !== reviewerOrAnnotator) {
+        const error = new Error(`这张图已由 ${claim.annotator} 领取，不能用 ${reviewerOrAnnotator} 保存，避免重复覆盖。`);
+        error.statusCode = 409;
+        throw error;
+      }
+      if (!claim) {
+        const error = new Error("请先点击“领取当前图”，领取成功后再保存，避免多人重复标注同一张图。");
+        error.statusCode = 409;
+        throw error;
+      }
     }
   }
 
   const savedAt = new Date().toISOString();
-  const submissionName = `${timestampForFile()}__${annotator}.json`;
+  const submissionName = `${timestampForFile()}__${expertMode ? `expert-${reviewerOrAnnotator}` : reviewerOrAnnotator}.json`;
   const enrichedPayload = {
     ...payload,
     chart_id: chartId,
     dataset_key: dataset.key,
     final_dataset: dataset.finalDataset,
-    annotator,
+    annotator: storageAnnotator,
     saved_at: savedAt,
-    saved_by: "shujuji_annotation_platform",
+    saved_by: expertMode ? "shujuji_annotation_platform_expert_review" : "shujuji_annotation_platform",
     saved_from_ip: clientIp(req)
   };
+  if (expertMode) {
+    enrichedPayload.review_status = "expert_reviewed";
+    enrichedPayload.original_annotator = storageAnnotator;
+    enrichedPayload.expert_reviewer = reviewerOrAnnotator;
+    enrichedPayload.expert_review = {
+      reviewer: reviewerOrAnnotator,
+      reviewed_at: savedAt,
+      original_annotator: storageAnnotator,
+      returned_by: claim?.returned_by || "",
+      returned_at: claim?.returned_at || "",
+      return_reason: claim?.return_reason || ""
+    };
+  }
 
-  const currentPath = annotationPath(dataset, "by_annotator", annotator, `${chartId}.json`);
+  const currentPath = annotationPath(dataset, "by_annotator", storageAnnotator, `${chartId}.json`);
   const submissionPath = annotationPath(dataset, "submissions", chartId, submissionName);
   await writeJsonFileAtomic(currentPath, enrichedPayload);
   await writeJsonFileAtomic(submissionPath, enrichedPayload);
-  await markSubmitted(dataset, chartId, annotator);
+  await markSubmitted(dataset, chartId, storageAnnotator, expertMode ? { expertReviewer: reviewerOrAnnotator } : {});
 
   return {
     ok: true,
     dataset: dataset.key,
     chart_id: chartId,
-    annotator,
+    annotator: storageAnnotator,
+    expert_reviewer: expertMode ? reviewerOrAnnotator : "",
     saved_at: savedAt
   };
 }
@@ -1573,48 +1825,72 @@ async function saveDraft(req, requestUrl, dataset, chartId) {
   }
 
   const payload = JSON.parse(stripBom(await readRequestBody(req)));
-  const annotator = safeAnnotator(payload.annotator || getAnnotator(requestUrl) || (dataset.finalDataset ? "" : "practice_user"));
-  if (dataset.finalDataset && !annotator) {
+  const expertMode = isExpertRole(requestUrl);
+  const reviewerOrAnnotator = safeAnnotator(
+    expertMode
+      ? (payload.expert_reviewer || payload.reviewer || payload.annotator || getExpertReviewer(requestUrl))
+      : (payload.annotator || getAnnotator(requestUrl) || (dataset.finalDataset ? "" : "practice_user"))
+  );
+  if (dataset.finalDataset && !reviewerOrAnnotator) {
     const error = new Error("正式标注必须先填写标注人。");
     error.statusCode = 400;
     throw error;
   }
 
+  let claim = null;
+  let storageAnnotator = reviewerOrAnnotator;
   if (dataset.finalDataset) {
     const claims = await readClaims(dataset);
-    const claim = claims[chartId];
-    if (claim?.status === "returned_for_expert_review") {
-      const error = new Error("这张图已退回专家复审，不能继续暂存普通人工标注。");
-      error.statusCode = 409;
-      throw error;
-    }
-    if (claim?.annotator && claim.annotator !== annotator) {
-      const error = new Error(`这张图已由 ${claim.annotator} 领取，不能用 ${annotator} 暂存。`);
-      error.statusCode = 409;
-      throw error;
-    }
-    if (!claim) {
-      const error = new Error("请先领取当前航图，再进行暂存。");
-      error.statusCode = 409;
-      throw error;
+    claim = claims[chartId];
+    if (expertMode) {
+      claim = await claimExpertReviewChart(dataset, chartId, reviewerOrAnnotator);
+      storageAnnotator = claim.annotator || reviewerOrAnnotator;
+    } else {
+      if (isExpertReviewClaimStatus(claim?.status)) {
+        const error = new Error("这张图已退回专家复审，不能继续暂存普通人工标注。");
+        error.statusCode = 409;
+        throw error;
+      }
+      if (claim?.annotator && claim.annotator !== reviewerOrAnnotator) {
+        const error = new Error(`这张图已由 ${claim.annotator} 领取，不能用 ${reviewerOrAnnotator} 暂存。`);
+        error.statusCode = 409;
+        throw error;
+      }
+      if (!claim) {
+        const error = new Error("请先领取当前航图，再进行暂存。");
+        error.statusCode = 409;
+        throw error;
+      }
     }
   }
 
   const savedAt = new Date().toISOString();
-  const snapshotName = `${timestampForFile()}__${annotator}.json`;
+  const snapshotName = `${timestampForFile()}__${expertMode ? `expert-${reviewerOrAnnotator}` : reviewerOrAnnotator}.json`;
   const enrichedPayload = {
     ...payload,
     chart_id: chartId,
     dataset_key: dataset.key,
     final_dataset: dataset.finalDataset,
-    annotator,
+    annotator: storageAnnotator,
     review_status: payload.review_status || "draft_saved",
     saved_at: savedAt,
-    saved_by: "shujuji_annotation_platform_draft",
+    saved_by: expertMode ? "shujuji_annotation_platform_expert_draft" : "shujuji_annotation_platform_draft",
     saved_from_ip: clientIp(req)
   };
+  if (expertMode) {
+    enrichedPayload.original_annotator = storageAnnotator;
+    enrichedPayload.expert_reviewer = reviewerOrAnnotator;
+    enrichedPayload.expert_review = {
+      reviewer: reviewerOrAnnotator,
+      reviewed_at: savedAt,
+      original_annotator: storageAnnotator,
+      returned_by: claim?.returned_by || "",
+      returned_at: claim?.returned_at || "",
+      return_reason: claim?.return_reason || ""
+    };
+  }
 
-  const currentPath = annotationPath(dataset, "drafts", "by_annotator", annotator, `${chartId}.json`);
+  const currentPath = annotationPath(dataset, "drafts", "by_annotator", storageAnnotator, `${chartId}.json`);
   const snapshotPath = annotationPath(dataset, "drafts", "snapshots", chartId, snapshotName);
   await writeJsonFileAtomic(currentPath, enrichedPayload);
   await writeJsonFileAtomic(snapshotPath, enrichedPayload);
@@ -1623,7 +1899,8 @@ async function saveDraft(req, requestUrl, dataset, chartId) {
     ok: true,
     dataset: dataset.key,
     chart_id: chartId,
-    annotator,
+    annotator: storageAnnotator,
+    expert_reviewer: expertMode ? reviewerOrAnnotator : "",
     saved_at: savedAt
   };
 }
@@ -1645,6 +1922,7 @@ async function route(req, res) {
       service: "shujuji_annotation_platform",
       access_control_enabled: Boolean(accessToken),
       admin_export_enabled: Boolean(adminToken),
+      expert_review_enabled: Boolean(expertToken || adminToken),
       datasets: Object.fromEntries(Object.entries(datasets).map(([key, dataset]) => [
         key,
         {
@@ -1743,12 +2021,17 @@ async function route(req, res) {
     return;
   }
 
+  if (req.method === "GET" && pathname === "/expert") {
+    sendRedirect(res, redirectWithQuery("/expert/", requestUrl));
+    return;
+  }
+
   if (req.method === "GET" && pathname === "/showcase") {
     sendRedirect(res, redirectWithQuery("/showcase/", requestUrl));
     return;
   }
 
-  if (req.method === "GET" && (pathname === "/practice/" || pathname === "/formal/")) {
+  if (req.method === "GET" && (pathname === "/practice/" || pathname === "/formal/" || pathname === "/expert/")) {
     await serveStatic(res, "/index.html");
     return;
   }
@@ -1759,7 +2042,9 @@ async function route(req, res) {
   }
 
   if (req.method === "GET" && pathname === "/api/charts") {
-    requireAccess(req, requestUrl);
+    const expertMode = isExpertRole(requestUrl);
+    if (expertMode) requireExpertAccess(req, requestUrl);
+    else requireAccess(req, requestUrl);
     sendJson(res, 200, {
       dataset: {
         key: dataset.key,
@@ -1767,21 +2052,30 @@ async function route(req, res) {
         final_dataset: dataset.finalDataset,
         url_path: dataset.urlPath
       },
-      charts: await loadCharts(dataset, annotator, {
-        lite: dataset.finalDataset && requestUrl.searchParams.get("scope") === "queue"
+      charts: await loadCharts(dataset, expertMode ? getExpertReviewer(requestUrl) : annotator, {
+        lite: dataset.finalDataset && requestUrl.searchParams.get("scope") === "queue",
+        expertMode
       })
     });
     return;
   }
 
   if (req.method === "GET" && pathname === "/api/chart") {
-    requireAccess(req, requestUrl);
-    sendJson(res, 200, await loadChartDetail(dataset, requestUrl.searchParams.get("chart_id"), annotator));
+    const expertMode = isExpertRole(requestUrl);
+    if (expertMode) requireExpertAccess(req, requestUrl);
+    else requireAccess(req, requestUrl);
+    sendJson(res, 200, await loadChartDetail(
+      dataset,
+      requestUrl.searchParams.get("chart_id"),
+      expertMode ? getExpertReviewer(requestUrl) : annotator,
+      { expertMode }
+    ));
     return;
   }
 
   if (req.method === "POST" && pathname === "/api/queue/next") {
-    requireAccess(req, requestUrl);
+    if (isExpertRole(requestUrl)) requireExpertAccess(req, requestUrl);
+    else requireAccess(req, requestUrl);
     sendJson(res, 200, await nextChartForRequest(req, requestUrl, dataset));
     return;
   }
@@ -1795,7 +2089,8 @@ async function route(req, res) {
   }
 
   if (req.method === "POST" && pathname.startsWith("/api/claims/") && pathname.endsWith("/release")) {
-    requireAccess(req, requestUrl);
+    if (isExpertRole(requestUrl)) requireExpertAccess(req, requestUrl);
+    else requireAccess(req, requestUrl);
     const parts = pathname.split("/");
     const chartId = parts[3];
     sendJson(res, 200, await releaseClaimForRequest(req, requestUrl, dataset, chartId));
@@ -1803,7 +2098,8 @@ async function route(req, res) {
   }
 
   if (req.method === "POST" && pathname.startsWith("/api/claims/")) {
-    requireAccess(req, requestUrl);
+    if (isExpertRole(requestUrl)) requireExpertAccess(req, requestUrl);
+    else requireAccess(req, requestUrl);
     const chartId = pathname.split("/").pop();
     sendJson(res, 200, await claimChartForRequest(requestUrl, dataset, chartId));
     return;
@@ -1838,14 +2134,16 @@ async function route(req, res) {
   }
 
   if (req.method === "POST" && pathname.startsWith("/api/annotations/")) {
-    requireAccess(req, requestUrl);
+    if (isExpertRole(requestUrl)) requireExpertAccess(req, requestUrl);
+    else requireAccess(req, requestUrl);
     const chartId = pathname.split("/").pop();
     sendJson(res, 200, await saveAnnotation(req, requestUrl, dataset, chartId));
     return;
   }
 
   if (req.method === "POST" && pathname.startsWith("/api/drafts/")) {
-    requireAccess(req, requestUrl);
+    if (isExpertRole(requestUrl)) requireExpertAccess(req, requestUrl);
+    else requireAccess(req, requestUrl);
     const chartId = pathname.split("/").pop();
     sendJson(res, 200, await saveDraft(req, requestUrl, dataset, chartId));
     return;
@@ -1870,15 +2168,18 @@ server.listen(port, "0.0.0.0", () => {
   if (publicBaseUrl) {
     console.log(`Public practice: ${publicBaseUrl}/practice/`);
     console.log(`Public formal:   ${publicBaseUrl}/formal/`);
+    console.log(`Public expert:   ${publicBaseUrl}/expert/`);
   }
   console.log(`Local practice: http://127.0.0.1:${port}/practice/`);
   console.log(`Local formal:   http://127.0.0.1:${port}/formal/`);
+  console.log(`Local expert:   http://127.0.0.1:${port}/expert/`);
   Object.values(os.networkInterfaces())
     .flat()
     .filter((item) => item && item.family === "IPv4" && !item.internal)
     .forEach((item) => {
       console.log(`LAN practice:   http://${item.address}:${port}/practice/`);
       console.log(`LAN formal:     http://${item.address}:${port}/formal/`);
+      console.log(`LAN expert:     http://${item.address}:${port}/expert/`);
     });
   console.log(`Workspace root: ${workspaceRoot}`);
   console.log(`Runtime data root: ${runtimeRoot}`);
