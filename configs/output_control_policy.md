@@ -79,7 +79,7 @@ Expanded pilot100 result with B1/B1_prime:
 
 ```text
 run_id: pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1
-artifact_root: E:\experiment3\try_B1_B1'
+artifact_root: <external-artifact-root>/try_B1_B1_prime
 B1:       100/100 schema-valid, 7 schema-only retries, 0 parser repair
 B1_prime: 100/100 schema-valid, 11 schema-only retries, 0 parser repair
 ```

@@ -177,10 +177,10 @@
                         "experiment_group":  1,
                         "method_boundary_status":  "candidate_not_frozen",
                         "prompt_freeze_status":  "candidate_not_frozen",
-                        "prompt_path":  "prompts/path_c_qa_v2/",
+                        "prompt_path":  "prompts/path_c_qa_v2_bundle_manifest.md",
                         "prompt_version":  "path_c_qa_v2.upstream_pr28_candidate",
-                        "sha256":  "5c9973be0baac527390868b3f7200ae4e522b8e9f9921a7fb8f73422e43a2ffc",
-                        "sha256_semantics":  "bundle hash from docs/upstream_imports/pr28_schema_import_20260427.md",
+                        "sha256":  "2947fd1cd74734862286428e4dc1c2e1900657ae5fbce7fd6b65f1d4ffee3e4d",
+                        "sha256_semantics":  "repository manifest file hash for the fixed QA prompt bundle; component files live under prompts/path_c_qa_v2/",
                         "allowed_input_fields":  [
                                                      "chart_id",
                                                      "airport",
@@ -289,7 +289,7 @@
     "prior_pilot_evidence":  {
                                  "pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1":  {
                                                                                                                    "sample_role":  "pilot100_external_expanded_feasibility_only_not_formal300",
-                                                                                                                   "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                                   "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
                                                                                                                    "report_path":  "reports/pilot/pilot100_b1_b1prime_expanded_validation_20260428.md",
                                                                                                                    "B1":  "100/100 schema-valid, 0 parser repair, 7 schema-only retries, 723/2344 accuracy=0.308447",
                                                                                                                    "B1_prime":  "100/100 schema-valid, 0 parser repair, 11 schema-only retries, field_candidates 100/100 schema-valid, 674/2344 accuracy=0.287543",
@@ -297,7 +297,7 @@
                                                                                                                },
                                  "b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2":  {
                                                                                                       "sample_role":  "pilot100_external_expanded_feasibility_only_not_formal300",
-                                                                                                      "artifact_root":  "E:\\experiment3\\B1\u0027_link",
+                                                                                                      "artifact_root":  "<external-artifact-root>\\B1\u0027_link",
                                                                                                       "report_path":  "reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md",
                                                                                                       "revalidation_json":  "reports/pilot/b1_prime_link_group1_candidate_pilot100_revalidation_20260429.json",
                                                                                                       "B1_prime_link":  "100/100 schema-valid, 100/100 field_to_leg sample links schema-valid, 0 parser repair, 1 schema-only retry, 1031/2344 accuracy=0.439846",
@@ -310,7 +310,7 @@
                                                                                         },
                                  "pilot100_b1prime_v4_smoke18_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1":  {
                                                                                                                            "sample_role":  "pilot100_b1prime_v4_smoke_external_excluded_from_formal_evaluation",
-                                                                                                                           "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                                           "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
                                                                                                                            "report_path":  "reports/pilot/pilot100_b1prime_v4_smoke18_20260428.md",
                                                                                                                            "candidate_audit":  "pilot100_b1prime_field_matcher_v4_candidate_audit_20260428_r3: 100/100 field_candidates schema-valid, 0 model calls",
                                                                                                                            "B1_prime_v4":  "18/18 schema-valid, 0 parser repair, 0 schema retries, 118/438 accuracy=0.269406",
@@ -319,7 +319,7 @@
                                                                                                                        },
                                  "pilot100_b1prime_v7_smoke18_and_probe30_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1":  {
                                                                                                                                        "sample_role":  "pilot100 external smoke/probe excluded from formal evaluation",
-                                                                                                                                       "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                                                       "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
                                                                                                                                        "report_path":  "reports/pilot/pilot100_b1prime_v7_smoke18_probe30_20260428.md",
                                                                                                                                        "comparison_json":  "reports/pilot/pilot100_b1prime_v7_smoke18_probe30_comparison_20260428_r1.json",
                                                                                                                                        "candidate_audit":  "pilot100_b1prime_field_matcher_v7_candidate_audit_20260428_r1: 100/100 field_candidates schema-valid, 0 model calls",
@@ -329,7 +329,7 @@
                                                                                                                                    },
                                  "pilot100_b1prime_v8_hard4_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1":  {
                                                                                                                          "sample_role":  "pilot100_b1prime_v8_hard4_smoke_external_excluded_from_formal_evaluation",
-                                                                                                                         "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                                         "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
                                                                                                                          "report_path":  "reports/pilot/pilot100_b1prime_v8_hard4_20260428.md",
                                                                                                                          "comparison_json":  "reports/pilot/pilot100_b1prime_v8_hard4_comparison_20260428_r1.json",
                                                                                                                          "candidate_audit":  "pilot100_b1prime_field_matcher_v8_candidate_audit_20260428_r2: 100/100 field_candidates schema-valid, 0 model calls",

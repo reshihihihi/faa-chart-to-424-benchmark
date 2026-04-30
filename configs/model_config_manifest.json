@@ -39,7 +39,7 @@
                                                                           "expanded_validation":  {
                                                                                                       "run_id":  "pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
                                                                                                       "sample_role":  "pilot100_external_expanded_feasibility_only_not_formal300",
-                                                                                                      "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                      "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
                                                                                                       "B1":  {
                                                                                                                  "schema_valid":  "100/100",
                                                                                                                  "score":  "723/2344",
@@ -60,7 +60,7 @@
                                                                           "b1prime_v4_smoke":  {
                                                                                                    "run_id":  "pilot100_b1prime_v4_smoke18_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
                                                                                                    "sample_role":  "pilot100_b1prime_v4_smoke_external_excluded_from_formal_evaluation",
-                                                                                                   "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                   "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
                                                                                                    "schema_valid":  "18/18",
                                                                                                    "score":  "118/438",
                                                                                                    "accuracy":  0.2694063926940639,
@@ -73,7 +73,7 @@
                                                                                                          "probe_run_id":  "pilot100_b1prime_v7_probe30_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
                                                                                                          "candidate_audit":  "pilot100_b1prime_field_matcher_v7_candidate_audit_20260428_r1",
                                                                                                          "sample_role":  "pilot100 external smoke/probe excluded from formal evaluation",
-                                                                                                         "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                         "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
                                                                                                          "smoke_schema_valid":  "18/18",
                                                                                                          "smoke_score":  "159/438",
                                                                                                          "smoke_accuracy":  0.363013698630137,
@@ -88,7 +88,7 @@
                                                                                                          "run_id":  "pilot100_b1prime_v8_hard4_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
                                                                                                          "candidate_audit":  "pilot100_b1prime_field_matcher_v8_candidate_audit_20260428_r2",
                                                                                                          "sample_role":  "pilot100_b1prime_v8_hard4_smoke_external_excluded_from_formal_evaluation",
-                                                                                                         "artifact_root":  "E:\\experiment3\\try_B1_B1\u0027",
+                                                                                                         "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
                                                                                                          "schema_valid":  "4/4",
                                                                                                          "score":  "27/160",
                                                                                                          "accuracy":  0.16875,
@@ -100,7 +100,7 @@
                                                                           "b1prime_link_group1_candidate_pilot100":  {
                                                                                                                           "run_id":  "b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2",
                                                                                                                           "sample_role":  "pilot100 external feasibility excluded from formal300",
-                                                                                                                          "artifact_root":  "E:\\experiment3\\B1\u0027_link",
+                                                                                                                          "artifact_root":  "<external-artifact-root>\\B1\u0027_link",
                                                                                                                           "report_path":  "reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md",
                                                                                                                           "schema_valid":  "100/100",
                                                                                                                           "field_to_leg_link_schema_valid":  "100/100",

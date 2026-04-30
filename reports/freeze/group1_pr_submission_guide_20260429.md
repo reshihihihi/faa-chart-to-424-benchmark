@@ -153,7 +153,7 @@
 ### 4.1 切到仓库并重命名分支
 
 ```powershell
-Set-Location E:\experiment3\github_work\faa-chart-to-424-benchmark
+Set-Location <repo-root>
 git branch -m group1-formal300-preflight-review-20260429
 ```
 
