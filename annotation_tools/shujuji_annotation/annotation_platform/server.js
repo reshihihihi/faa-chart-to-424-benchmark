@@ -1317,7 +1317,6 @@ function redirectWithQuery(pathname, requestUrl) {
 }
 
 function landingHtml(requestUrl) {
-  const practiceHref = landingLink("/practice/", requestUrl);
   const formalHref = landingLink("/formal/", requestUrl);
   const expertHref = landingLink("/expert/", requestUrl);
   return `<!doctype html>
@@ -1340,11 +1339,6 @@ function landingHtml(requestUrl) {
   <main>
     <p>FAA MISSED APPROACH DATASET</p>
     <h1>复飞航图多人协同标注平台</h1>
-    <section class="card">
-      <h2>练习网页：10 张</h2>
-      <p>用于新手熟悉流程，保存结果不进入正式 300 张数据集。</p>
-      <a href="${escapeHtml(practiceHref)}">进入练习标注</a>
-    </section>
     <section class="card">
       <h2>正式网页：300 张</h2>
       <p>正式入口会按“标注人领取航图”防止重复。可以在链接中预置 <code>annotator=A06</code>，也可以进入后在右上角填写标注人再领取未分配航图。</p>
@@ -1439,9 +1433,9 @@ function adminHtml() {
     </section>
     <section class="card">
       <h2>逐图总览</h2>
-      <p class="muted">只展示服务器里已经保存的领取、草稿、正式提交状态；点击“展示页”进入只读结果页检查那张图。</p>
+      <p class="muted">只展示正式集服务器里已经保存的领取、草稿、正式提交状态；点击“展示页”检查那张图，展示页里可以继续跳回标注页修改。</p>
       <div class="toolbar">
-        <label>数据集<select id="overviewDataset"><option value="formal300">正式集 300 张</option><option value="practice10">练习集 10 张</option></select></label>
+        <label>数据集<select id="overviewDataset"><option value="formal300">正式集 300 张</option></select></label>
         <label>状态筛选<select id="overviewStatus"><option value="">全部状态</option><option value="submitted">已提交</option><option value="draft_saved">有草稿</option><option value="claimed">已领取未提交</option><option value="returned_for_expert_review">待专家复核</option><option value="expert_review_claimed">专家复核中</option><option value="unassigned">未领取/未标</option></select></label>
         <label>搜索<input id="overviewSearch" type="search" placeholder="chart_id / 机场 / 程序 / 标注人"></label>
         <button type="button" onclick="loadOverview()">刷新</button>
@@ -1635,7 +1629,7 @@ function adminHtml() {
       try {
         saveToken();
         const data = await adminFetch("/api/admin/progress");
-        progressBox.innerHTML = renderDatasetProgress(data.datasets.formal300) + renderDatasetProgress(data.datasets.practice10);
+        progressBox.innerHTML = renderDatasetProgress(data.datasets.formal300);
         show("当前进度已刷新。");
       } catch (error) {
         progressBox.textContent = "刷新失败：" + error.message;

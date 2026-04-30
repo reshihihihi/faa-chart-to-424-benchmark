@@ -72,7 +72,8 @@ select {
 
 .controls select,
 .controls input,
-.controls button {
+.controls button,
+.edit-link {
   height: 36px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -90,9 +91,19 @@ select {
   padding: 0 10px;
 }
 
-.controls button {
+.controls button,
+.edit-link {
   padding: 0 12px;
   cursor: pointer;
+}
+
+.edit-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
 }
 
 .checkline {

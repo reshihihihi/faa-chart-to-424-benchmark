@@ -7,6 +7,7 @@ const els = {
   chartSelect: document.querySelector("#chartSelect"),
   chartInput: document.querySelector("#chartInput"),
   loadChartBtn: document.querySelector("#loadChartBtn"),
+  editAnnotationLink: document.querySelector("#editAnnotationLink"),
   legSelect: document.querySelector("#legSelect"),
   showAllLegs: document.querySelector("#showAllLegs"),
   viewerShell: document.querySelector("#viewerShell"),
@@ -379,6 +380,41 @@ function sourceLabel() {
   return "没有人工标注结果";
 }
 
+function editAnnotationHref() {
+  const manifest = state.current?.manifest || {};
+  const chartId = manifest.chart_id || els.chartInput.value.trim();
+  const expertStatus = ["returned_for_expert_review", "expert_review_claimed", "expert_review_available", "expert_review_claimed_by_me"].includes(manifest.claim_status || "");
+  const path = datasetKey === "practice10"
+    ? "/practice/"
+    : expertStatus
+      ? "/expert/"
+      : "/formal/";
+  const url = new URL(path, window.location.origin);
+  url.searchParams.set("dataset", datasetKey);
+  if (chartId) url.searchParams.set("chart_id", chartId);
+  if (expertStatus) {
+    url.searchParams.set("role", "expert");
+    url.searchParams.set("expert", params.get("expert") || params.get("reviewer") || manifest.expert_reviewer || "admin");
+  } else {
+    const annotator = state.current?.annotation_annotator
+      || params.get("annotator")
+      || manifest.original_annotator
+      || manifest.claimed_by
+      || "";
+    if (annotator) url.searchParams.set("annotator", annotator);
+  }
+  const token = currentAccessToken();
+  if (token) url.searchParams.set("token", token);
+  return `${url.pathname}${url.search}`;
+}
+
+function updateEditAnnotationLink() {
+  if (!els.editAnnotationLink) return;
+  const expertStatus = ["returned_for_expert_review", "expert_review_claimed", "expert_review_available", "expert_review_claimed_by_me"].includes(state.current?.manifest?.claim_status || "");
+  els.editAnnotationLink.href = editAnnotationHref();
+  els.editAnnotationLink.textContent = expertStatus ? "去复核页修改" : "去标注页修改";
+}
+
 function renderLegOptions() {
   const rowsForLegs = Object.keys(state.fieldReviews).length
     ? state.rows.filter((row) => state.fieldReviews[row.key])
@@ -637,6 +673,7 @@ function renderAll() {
   els.chartMeta.textContent = `${manifest.chart_id || ""} · ${manifest.chart_name || ""}`;
   els.chartInput.value = manifest.chart_id || "";
   els.chartSelect.value = manifest.chart_id || "";
+  updateEditAnnotationLink();
   renderLegOptions();
   fitChartToPane();
   renderFieldCards();

@@ -3860,6 +3860,34 @@ function firstOpenableChart() {
   return nextFormalQueueChart();
 }
 
+async function openInitialFormalChart(chartId) {
+  if (!chartId) return false;
+  await refreshCharts();
+  const chart = state.charts.find((item) => item.chart_id === chartId);
+  const status = chart?.claim_status || "";
+  if (expertReviewMode()) {
+    if (["expert_review_available", "expert_review_claimed", "expert_review_claimed_by_me"].includes(status)) {
+      await claimChartFromList(chartId, { openAfter: true, silent: true });
+      showToast(`已打开复核任务：${chartId}`);
+      return true;
+    }
+    showToast(status === "expert_review_claimed_by_other" ? "这张图已由其他专家领取复核。" : "这张图不在专家复核队列中。");
+    return true;
+  }
+  if (status === "unassigned") {
+    await claimChartFromList(chartId, { openAfter: true, silent: true });
+    showToast(`已打开并领取：${chartId}`);
+    return true;
+  }
+  if (["claimed", "claimed_by_me", "submitted"].includes(status)) {
+    await loadChart(chartId);
+    showToast(`已打开：${chartId}`);
+    return true;
+  }
+  showToast(status === "returned_for_expert_review" ? "这张图已进入专家复核，请从复核页修改。" : "这张图由其他参与者处理中。");
+  return true;
+}
+
 async function init() {
   setupDatasetUi();
   bindEvents();
@@ -3869,10 +3897,7 @@ async function init() {
   applyZooms({ render: false });
   if (formalQueueMode()) {
     const initialChartId = new URLSearchParams(window.location.search).get("chart_id");
-    if (initialChartId && expertReviewMode()) {
-      await refreshCharts();
-      await claimChartFromList(initialChartId, { openAfter: true, silent: true });
-      showToast(`已打开复核任务：${initialChartId}`);
+    if (await openInitialFormalChart(initialChartId)) {
       return;
     }
     await advanceFormalQueue();
