@@ -221,13 +221,13 @@ const FIELD_LABELS = {
 
 const FIELD_REVIEW_LABELS = {
   pending: "待确认",
-  direct_visible: "直接图面证据",
-  visible_joint: "图面综合支持",
-  rule_default_completion: "规则/默认补全",
-  insufficient_for_encoding: "缺少足够编码信息",
-  supported_by_chart: "直接图面证据",
-  no_direct_chart_evidence: "缺少足够编码信息",
-  implicit_or_derived: "规则/默认补全",
+  direct_visible: "一处直接能看出",
+  visible_joint: "多处合起来能看出",
+  rule_default_completion: "图上证据 + 规则补全",
+  insufficient_for_encoding: "图上看不够",
+  supported_by_chart: "一处直接能看出",
+  no_direct_chart_evidence: "图上看不够",
+  implicit_or_derived: "图上证据 + 规则补全",
   not_applicable: "不适用",
   uncertain: "不确定"
 };
@@ -251,10 +251,10 @@ const FIELD_SUPPORT_REQUIRES_EVIDENCE = new Set([
 ]);
 
 const FIELD_CONFIRM_MODES = [
-  { mode: "direct_visible", label: "直接图面证据" },
-  { mode: "visible_joint", label: "图面综合支持" },
-  { mode: "rule_default_completion", label: "规则/默认补全" },
-  { mode: "insufficient_for_encoding", label: "缺少足够编码信息" },
+  { mode: "direct_visible", label: "一处直接能看出" },
+  { mode: "visible_joint", label: "多处合起来能看出" },
+  { mode: "rule_default_completion", label: "图上证据 + 规则补全" },
+  { mode: "insufficient_for_encoding", label: "图上看不够" },
   { mode: "uncertain", label: "不确定 / 交复核" }
 ];
 
@@ -924,7 +924,7 @@ function linkSelectedFieldToRegion({ accept = true } = {}) {
     showToast("先在航图上选中一个证据框。");
     return false;
   }
-  pushUndo("调整字段证据篮子");
+  pushUndo("调整图上依据");
   const review = reviewForField(row);
   const evidenceIds = uniqueList(review.required_evidence_region_ids || []);
   const alreadySelected = evidenceIds.includes(region.region_id);
@@ -943,8 +943,8 @@ function linkSelectedFieldToRegion({ accept = true } = {}) {
   renderTargets();
   renderCanonicalPanel();
   showToast(alreadySelected
-    ? "已从当前字段证据篮子移除选中框。选择来源类型后再确认字段。"
-    : "已加入当前字段证据篮子。选择来源类型后再确认字段。");
+    ? "已移除这处依据。请选择这些地方怎么支持判断。"
+    : "已加入这处依据。请选择这些地方怎么支持判断。");
   return true;
 }
 
@@ -967,7 +967,7 @@ function startDrawRegionForSelectedField() {
   state.drawMode = true;
   els.drawBtn.classList.add("primary");
   els.drawBtn.textContent = "正在画证据框";
-  showToast("请在航图上拖出证据框；新框会加入当前字段证据篮子。");
+  showToast("请在航图上拖出能支持这个判断的位置。");
 }
 
 function removeEvidenceFromSelectedField(regionId) {
@@ -975,14 +975,14 @@ function removeEvidenceFromSelectedField(regionId) {
   if (!row || !canAnnotateCurrent()) return;
   const review = reviewForField(row);
   const nextIds = uniqueList(review.required_evidence_region_ids || []).filter((item) => item !== regionId);
-  pushUndo("移除字段证据框");
+  pushUndo("移除图上依据");
   updateRegionMappingDecision(row, regionId, "rejected", "Removed from the field evidence basket.");
   setFieldEvidenceDraft(row, nextIds);
   renderOverlay();
   renderRegionForm();
   renderTargets();
   renderCanonicalPanel();
-  showToast("已从当前字段证据篮子移除该框。");
+  showToast("已移除这处依据。");
 }
 
 function recommendedSupportModeForField(row, evidenceIds) {
@@ -1038,19 +1038,19 @@ function confirmSelectedField(supportMode) {
     return;
   }
   if (!supportMode) {
-    showToast("请先选择这个字段的来源类型。");
+    showToast("请先选择这些地方怎么支持判断。");
     return;
   }
   const review = reviewForField(row);
   const requiredIds = uniqueList(review.required_evidence_region_ids || []);
   if (FIELD_SUPPORT_REQUIRES_EVIDENCE.has(supportMode) && !requiredIds.length) {
-    showToast("这个来源类型需要先选至少一个证据框。若航图不足以恢复字段，请选“缺少足够编码信息”。");
+    showToast("这个判断需要先选至少一处图上依据。若图上确实看不够，请选“图上看不够”。");
     return;
   }
   const notes = supportMode === "insufficient_for_encoding" || supportMode === "uncertain"
     ? (window.prompt("可选：写一句判断依据或复核备注。", review.notes || "") || "")
     : review.notes || "";
-  pushUndo("确认字段来源");
+  pushUndo("确认图上依据");
   const idsUsedAsSupport = FIELD_SUPPORT_REQUIRES_EVIDENCE.has(supportMode) ? requiredIds : [];
   applyEvidenceSelectionToMappings(row, idsUsedAsSupport, supportMode);
   setFieldReview(row, supportMode, {
@@ -1909,8 +1909,8 @@ function renderWorkflowPanel() {
     ? FIELD_REVIEW_LABELS[selectedReview.review_status] || selectedReview.review_status
     : "未选择";
   const selectedEvidenceText = selectedEvidenceIds.length
-    ? `证据篮：${selectedEvidenceIds.length} 个框`
-    : "证据篮子为空";
+    ? `已选 ${selectedEvidenceIds.length} 处依据`
+    : "还没选依据";
   const fieldActionDisabled = !selected || !state.current || !canEdit;
   const confirmDisabled = fieldActionDisabled ? "disabled" : "";
   const selectedSupportMode = selected
@@ -1927,7 +1927,7 @@ function renderWorkflowPanel() {
     selectedRegionForBasket && selectedEvidenceIds.includes(selectedRegionForBasket.region_id)
   );
   const basketToggleDisabled = fieldActionDisabled || !selectedRegionForBasket ? "disabled" : "";
-  const basketToggleLabel = selectedRegionInBasket ? "移出证据篮" : "加入证据篮";
+  const basketToggleLabel = selectedRegionInBasket ? "移除这处依据" : "加入为依据";
   const basketToggleTitle = selectedRegionForBasket
     ? `${basketToggleLabel}：${selectedRegionForBasket.region_id}`
     : "先在航图上选中一个证据框";
@@ -1935,15 +1935,15 @@ function renderWorkflowPanel() {
     ? FIELD_REVIEW_LABELS[selectedSupportMode] || selectedSupportMode
     : "未选择";
   const confirmHint = !selectedSupportMode
-    ? "请选择来源类型。"
+    ? "请选择这些地方怎么支持判断。"
     : selectedSupportNeedsEvidence && !selectedEvidenceIds.length
-      ? "当前选择需要至少一个证据框。"
+      ? "当前选择需要至少一处图上依据。"
       : "";
   const evidenceHint = selectedReview?.autofilled_evidence
-    ? "系统已自动填入候选框；请核对后选择来源类型。"
+    ? "系统先放入了可能相关的位置；请删掉不支持判断的部分。"
     : selectedEvidenceIds.length
-      ? "这些框会作为本字段结论的证据来源保存。"
-      : "先选中图上的框加入证据篮子；如果图上确实缺少足够信息，再选缺少足够编码信息。";
+      ? "这些位置会作为这个判断的依据保存。"
+      : "先在图上选中能支持判断的位置；如果图上确实看不够，再选“图上看不够”。";
   const evidenceRows = selectedEvidenceIds.length
     ? selectedEvidenceIds.map((regionId) => {
         const region = regionById(regionId);
@@ -1958,7 +1958,7 @@ function renderWorkflowPanel() {
           </div>
         `;
       }).join("")
-    : '<p class="empty compact-empty">当前字段还没有证据框。</p>';
+    : '<p class="empty compact-empty">还没有选出支持这个判断的位置。</p>';
 
   els.workflowSummary.innerHTML = `
     <div class="current-task-card">
@@ -1967,26 +1967,26 @@ function renderWorkflowPanel() {
         <h2>${escapeText(selectedFieldTitle)}</h2>
         ${selectedFieldContext ? `<span>${escapeText(selectedFieldContext)}</span>` : ""}
       </div>
-      <div class="task-answer">应标结论：<strong>${escapeText(selectedFieldAnswer)}</strong></div>
-      <p>先核对证据篮子，再选择这个结论来自哪里。加入或调整框不会完成字段；只有下面的确认按钮会记录并进入下一个字段。</p>
+      <div class="task-answer">要从图上证明：<strong>${escapeText(selectedFieldAnswer)}</strong></div>
+      <p>先找出图上哪些位置支持这个判断，再说明这些位置是直接支持、还是需要多处综合或规则补全。</p>
       <div class="task-status-row">
         <span class="field-status status-${escapeText(selectedReview?.review_status || "pending")}">${escapeText(selectedStatus)}</span>
         <span>${escapeText(selectedEvidenceText)}</span>
       </div>
       <div class="evidence-basket">
         <div class="basket-head">
-          <strong>当前字段证据篮子</strong>
+          <strong>从哪些地方可以看出？</strong>
           <span>${escapeText(evidenceHint)}</span>
         </div>
         <div class="basket-actions">
           <button type="button" data-link-selected-evidence title="${escapeText(basketToggleTitle)}" ${basketToggleDisabled}>${escapeText(basketToggleLabel)}</button>
-          <button type="button" data-draw-support-evidence ${confirmDisabled}>画新支持框</button>
+          <button type="button" data-draw-support-evidence ${confirmDisabled}>画一处依据</button>
         </div>
         ${evidenceRows}
       </div>
       <div class="source-choice-block">
         <div class="source-choice-head">
-          <strong>来源类型</strong>
+          <strong>这些地方怎么支持判断？</strong>
           <span>当前选择：${escapeText(selectedSupportText)}</span>
         </div>
         <div class="field-confirm-grid">
@@ -1994,7 +1994,7 @@ function renderWorkflowPanel() {
         </div>
         <div class="confirm-selection-row">
           ${confirmHint ? `<span>${escapeText(confirmHint)}</span>` : "<span></span>"}
-          <button type="button" class="primary" data-confirm-selected-field ${confirmSelectionDisabled}>确认当前选择</button>
+          <button type="button" class="primary" data-confirm-selected-field ${confirmSelectionDisabled}>确认并看下一项</button>
         </div>
       </div>
     </div>
@@ -2004,7 +2004,7 @@ function renderWorkflowPanel() {
     </div>
     <div class="workflow-metric">
       <strong>${completion}%</strong>
-      <span>字段完成</span>
+      <span>判断完成</span>
     </div>
     <div class="workflow-metric">
       <strong>${reviews.filter((item) => ["visible_joint", "rule_default_completion"].includes(item.review.review_status)).length}</strong>
@@ -2916,8 +2916,8 @@ function targetFieldButton(target, leg, field) {
     <div><b>应在图上找到：</b>${escapeText(friendlyAnswerValue(answer, expectedValue))}</div>
     <div class="target-actions">
       ${alreadyLinked
-        ? '<button data-action="accept-existing">加入证据篮子</button><button data-action="unlink-existing">取消挂接</button>'
-        : '<button data-action="link">挂到当前框</button><button data-action="link-accept">挂到证据篮子</button>'
+        ? '<button data-action="accept-existing">加入为依据</button><button data-action="unlink-existing">取消挂接</button>'
+        : '<button data-action="link">挂到当前框</button><button data-action="link-accept">加入为依据</button>'
       }
     </div>
   `;
@@ -2935,7 +2935,7 @@ function targetFieldButton(target, leg, field) {
       const rowKey = fieldKey(leg?.canonical_leg_index || canonicalLegIndexForMapping({ candidate_leg_id: legId }), fieldName);
       const row = buildFieldRows().find((item) => item.key === rowKey);
       if (!row) return;
-      pushUndo("加入字段证据篮子");
+      pushUndo("加入图上依据");
       ensureMappingForRegion(row, activeRegion, "pending");
       const review = reviewForField(row);
       setFieldEvidenceDraft(row, uniqueList([...(review.required_evidence_region_ids || []), activeRegion.region_id]));
@@ -2944,7 +2944,7 @@ function targetFieldButton(target, leg, field) {
       renderMappingsV2(activeRegion);
       renderTargets();
       renderCanonicalPanel();
-      showToast("已把当前框加入该字段证据篮子；还需要在当前字段卡片选择来源类型。");
+      showToast("已把当前框加入为图上依据；还需要说明它怎么支持判断。");
       return;
     }
     if (button.dataset.action === "unlink-existing") {
@@ -2959,7 +2959,7 @@ function targetFieldButton(target, leg, field) {
       return;
     }
     const shouldAddToBasket = button.dataset.action === "link-accept";
-    pushUndo(shouldAddToBasket ? "挂到字段证据篮子" : "挂接字段");
+    pushUndo(shouldAddToBasket ? "加入图上依据" : "挂接字段");
     activeRegion.candidate_mappings.push({
       candidate_leg_id: leg?.candidate_leg_id || "",
       canonical_leg_index: leg?.canonical_leg_index || null,
@@ -2985,7 +2985,7 @@ function targetFieldButton(target, leg, field) {
     renderMappingsV2(activeRegion);
     renderTargets();
     renderCanonicalPanel();
-    showToast(shouldAddToBasket ? "已挂到当前字段证据篮子；还需要选择来源类型。" : "已加入当前框的候选映射。");
+    showToast(shouldAddToBasket ? "已加入为图上依据；还需要说明它怎么支持判断。" : "已加入当前框的候选映射。");
   }));
   item.querySelectorAll("button").forEach((button) => {
     button.disabled = !canAnnotateCurrent();
@@ -3137,7 +3137,7 @@ function addRegion(type, bbox) {
       els.drawBtn.textContent = "为当前字段画证据框";
     }
     flashRegion(region.region_id);
-    showToast("新框已加入当前字段证据篮子。选择来源类型后再确认字段。");
+    showToast("新框已加入为图上依据。请说明它怎么支持判断。");
   }
   renderOverlay();
   renderRegionForm();
@@ -3480,7 +3480,7 @@ function bindEvents() {
     els.drawBtn.classList.toggle("primary", state.drawMode);
     resetOverlayCursor();
     els.drawBtn.textContent = "正在画证据框";
-    showToast("请在航图上拖出证据框；新框会加入当前字段证据篮子。");
+    showToast("请在航图上拖出能支持这个判断的位置。");
   });
   els.saveDraftBtn?.addEventListener("click", () => saveDraft().catch((error) => showToast(error.message)));
   els.saveBtn?.addEventListener("click", () => saveAnnotation().catch((error) => showToast(error.message)));
