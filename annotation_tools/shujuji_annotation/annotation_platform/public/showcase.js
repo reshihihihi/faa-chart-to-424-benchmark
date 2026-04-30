@@ -198,6 +198,57 @@ function answerIsPresent(row) {
   return row.expected_answer?.status === "present";
 }
 
+function expectedAnswerValue(row) {
+  return row?.expected_answer?.value ?? null;
+}
+
+function sameSourceLeg(row, region) {
+  if (!row || !region) return false;
+  if (region.source_candidate_leg_id && row.candidate_leg_id) {
+    return region.source_candidate_leg_id === row.candidate_leg_id;
+  }
+  return (region.candidate_mappings || []).some((mapping) => canonicalLegIndexForMapping(mapping) === row.canonical_leg_index);
+}
+
+function fieldEvidenceRank(row, region) {
+  const regionType = region?.region_type || "";
+  const value = expectedAnswerValue(row);
+  if (!row || !region) return 99;
+  if (["MISSED_APPROACH_TEXT", "PLAN_VIEW", "MISSED_APPROACH_DETAIL_AREA"].includes(regionType)) return 60;
+  if (row.field_name === "Q1_fix_ident") {
+    if (["FIX_TEXT", "NAVAID_TEXT"].includes(regionType)) return 0;
+    if (regionType === "FIX_SYMBOL") return 8;
+    return 99;
+  }
+  if (row.field_name === "Q2_altitude_constraint") {
+    if (regionType === "ALTITUDE_TEXT") return 0;
+    if (regionType === "CLIMB_ARROW") return 8;
+    return 99;
+  }
+  if (row.field_name === "Q3_turn") {
+    if (["PATH_SEGMENT", "TURN_PHRASE"].includes(regionType)) return 0;
+    if (["HOLDING_PATTERN", "HOLDING_ARC"].includes(regionType)) return 20;
+    return 99;
+  }
+  if (row.field_name === "Q4_course_or_radial") {
+    if (value?.type === "navaid_radial") {
+      if (["NAVAID_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(regionType)) return 0;
+      if (["PATH_SEGMENT", "FIX_SYMBOL"].includes(regionType)) return 12;
+      return 99;
+    }
+    if (["HEADING_TEXT", "TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT"].includes(regionType)) return 0;
+    if (regionType === "PATH_SEGMENT") return 12;
+    return 99;
+  }
+  if (row.field_name === "Q5_hold_params") {
+    if (["HOLDING_PATTERN", "HOLDING_ARC"].includes(regionType)) return 0;
+    if (["HOLDING_TIME_TEXT", "DME_DISTANCE_TEXT", "TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(regionType)) return 4;
+    if (["FIX_TEXT", "NAVAID_TEXT", "FIX_SYMBOL"].includes(regionType)) return 12;
+    return 99;
+  }
+  return 50;
+}
+
 function padNumber(value, width) {
   const number = Number(value);
   if (!Number.isFinite(number)) return "";
@@ -264,12 +315,32 @@ function evidenceIdsForRow(row) {
     });
   }).map((region) => region.region_id);
   if (accepted.length) return uniqueList(accepted);
-  const candidates = state.regions.filter((region) => {
-    return (region.candidate_mappings || []).some((mapping) => {
-      const decision = mapping.human_decision || "pending";
-      return fieldKeyForMapping(mapping) === row.key && !["rejected", "needs_discussion"].includes(decision);
-    });
-  }).map((region) => region.region_id);
+  const direct = state.regions.flatMap((region) => {
+    return (region.candidate_mappings || [])
+      .filter((mapping) => {
+        const decision = mapping.human_decision || "pending";
+        return fieldKeyForMapping(mapping) === row.key && !["rejected", "needs_discussion"].includes(decision);
+      })
+      .map((mapping) => ({ region, mapping, rank: fieldEvidenceRank(row, region) }))
+      .filter((item) => item.rank < 90);
+  });
+  const compatible = state.regions
+    .filter((region) => sameSourceLeg(row, region))
+    .map((region) => ({ region, mapping: null, rank: fieldEvidenceRank(row, region) }))
+    .filter((item) => item.rank < 50);
+  const byRegion = new Map();
+  [...direct, ...compatible].forEach((item) => {
+    const existing = byRegion.get(item.region.region_id);
+    if (!existing || item.rank < existing.rank) byRegion.set(item.region.region_id, item);
+  });
+  const ranked = Array.from(byRegion.values()).sort((left, right) => left.rank - right.rank);
+  const fine = ranked.filter((item) => item.rank < 50);
+  const primary = row.field_name === "Q4_course_or_radial" && fine.some((item) => item.rank === 0)
+    ? fine.filter((item) => item.rank === 0)
+    : fine.length
+      ? fine
+      : ranked;
+  const candidates = uniqueList(primary.map((item) => item.region.region_id));
   if (row.field_name === "Q_terminator" && !candidates.length) {
     return uniqueList(state.rows
       .filter((item) => item.canonical_leg_index === row.canonical_leg_index && item.field_name !== "Q_terminator" && answerIsPresent(item))
@@ -278,11 +349,31 @@ function evidenceIdsForRow(row) {
   return uniqueList(candidates);
 }
 
+function evidenceGroupKeyForRow(row, regionId) {
+  const region = state.regions.find((item) => item.region_id === regionId);
+  const regionType = region?.region_type || "";
+  const value = expectedAnswerValue(row);
+  if (row?.field_name === "Q4_course_or_radial") {
+    if (value?.type === "navaid_radial" && ["NAVAID_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(regionType)) {
+      return `${row.key}.q4-navaid-radial-text`;
+    }
+    if (value?.type === "course_deg" && ["HEADING_TEXT", "TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT"].includes(regionType)) {
+      return `${row.key}.q4-course-text`;
+    }
+  }
+  return regionId;
+}
+
+function evidenceGroupCountForRow(row, evidenceIds) {
+  return uniqueList((evidenceIds || []).map((regionId) => evidenceGroupKeyForRow(row, regionId))).length;
+}
+
 function reviewStatusForRow(row, evidenceIds) {
   const saved = state.fieldReviews[row.key] || {};
   if (saved.support_mode || saved.review_status) return saved.support_mode || saved.review_status;
   if (!answerIsPresent(row)) return "not_applicable";
-  return evidenceIds.length > 1 ? "visible_joint" : evidenceIds.length ? "direct_visible" : "pending";
+  const groupCount = evidenceGroupCountForRow(row, evidenceIds);
+  return groupCount > 1 ? "visible_joint" : groupCount ? "direct_visible" : "pending";
 }
 
 function colorForRow(row) {
@@ -462,11 +553,15 @@ function renderEvidenceCard(row) {
   const status = reviewStatusForRow(row, evidenceIds);
   const color = colorForRow(row);
   const dimmed = answerIsPresent(row) ? "" : " dimmed";
+  const groupCount = evidenceGroupCountForRow(row, evidenceIds);
+  const evidenceSummary = groupCount && groupCount !== evidenceIds.length
+    ? `${groupCount} 组证据 / ${evidenceIds.length} 个框`
+    : `${evidenceIds.length} 处证据`;
   return `<article class="field-card${dimmed}" data-field-key="${escapeText(row.key)}" style="--accent:${color}">
     <div class="meta">证据结论航段 ${escapeText(row.canonical_leg_index)} · ${escapeText(row.leg_type || "-")}</div>
     <h2>${renderRecordTag(row)}${escapeText(FIELD_LABELS[row.field_name] || row.field_name)}</h2>
     <p class="value">${escapeText(formatAnswer(row.expected_answer))}</p>
-    <div class="meta">${escapeText(STATUS_LABELS[status] || status)} · ${evidenceIds.length} 处证据</div>
+    <div class="meta">${escapeText(STATUS_LABELS[status] || status)} · ${escapeText(evidenceSummary)}</div>
     <div class="evidence-list">${evidenceChipsForIds(evidenceIds)}</div>
   </article>`;
 }
