@@ -1,0 +1,49 @@
+{
+  "status": "prepared_not_run",
+  "split_candidate_id": "formal300_50_200_50_seed20260437",
+  "split_role": "evaluation",
+  "evaluation_sample_count": 200,
+  "run_id": "group1_formal_prepared_50_200_50_seed20260437_no_eval",
+  "methods": [
+    "A1",
+    "A2",
+    "B1",
+    "B1_prime",
+    "B1_prime_link",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "D_SFT"
+  ],
+  "formal_evaluation_ran": false,
+  "ready_for_user_decision_to_run": true,
+  "readiness_audit_error_count": 0,
+  "frozen_files": {
+    "split_manifest": {
+      "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/sample_manifest_50_200_50_seed20260437.jsonl",
+      "sha256": "d15f0ab36a223dd60705f2231643254925dbb1783295f686d21146c57a6ee468"
+    },
+    "split_policy": {
+      "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/SPLIT_POLICY_50_200_50_seed20260437.md",
+      "sha256": "d1a927e1e76e5be788b5f67b68749bcf89b0b6e977296d73327cbf80346aede7"
+    },
+    "run_plan": {
+      "path": "formal_runs/group1/group1_formal_prepared_50_200_50_seed20260437_no_eval/run_plan.json",
+      "sha256": "8c1230cf641ae320b9a3cfd7c1a4b7a19e215f54fefaa501197d20ffbde2f621"
+    },
+    "scoring_manifest": {
+      "path": "formal_runs/group1/group1_formal_prepared_50_200_50_seed20260437_no_eval/scoring_manifest.jsonl",
+      "sha256": "4eb885e60ae2188360fecc05ce3e018599a01e201ff8616e9e750746042a9ce1"
+    },
+    "readiness_audit": {
+      "path": "formal_runs/group1/group1_formal_prepared_50_200_50_seed20260437_no_eval/reports/formal200_manifest_readiness_audit.json",
+      "sha256": "a12547543d0f897103c9fb49d2464e154ba99de35ec3129a0cf477da30b8d81a"
+    }
+  },
+  "use_policy": [
+    "Do not run formal evaluation until the user explicitly decides to run.",
+    "Do not report group1_formal_eval_20260430_r1 as final paper evidence.",
+    "Do not alter evaluation membership using method scores, failures, or predictions."
+  ]
+}
