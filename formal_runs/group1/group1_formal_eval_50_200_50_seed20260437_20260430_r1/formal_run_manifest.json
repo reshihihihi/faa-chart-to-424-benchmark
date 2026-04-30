@@ -1,0 +1,141 @@
+{
+  "created_at": "2026-04-30T01:23:44.584638+00:00",
+  "run_id": "group1_formal_eval_50_200_50_seed20260437_20260430_r1",
+  "run_dir": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1",
+  "methods": [
+    "A1",
+    "A2",
+    "B1",
+    "B1_prime",
+    "B1_prime_link",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "D_SFT"
+  ],
+  "formal_runner": {
+    "path": "scripts/run_group1_formal_manifest.py",
+    "sha256": "ed98e98a769da305a4ed1d49e3425d8f7d81577dd40027c21c4065df542454de"
+  },
+  "input_policy": {
+    "inference_reads_method_input_manifest_only": true,
+    "scoring_reads_scoring_manifest_after_prediction": true,
+    "target_used_for_prompt_or_parsing": false
+  },
+  "models": {
+    "text_llm": {
+      "provider": "openai_compatible",
+      "model": "gpt-5.4",
+      "temperature": 0.0,
+      "max_tokens": 4096
+    },
+    "vlm": {
+      "provider": "anthropic_compatible",
+      "model": "claude-sonnet-4-5-20250929",
+      "temperature": 0.0,
+      "max_tokens": 4096
+    },
+    "c2": {
+      "provider": "anthropic_compatible",
+      "model": "claude-sonnet-4-5-20250929",
+      "temperature": 0.0,
+      "max_tokens": 1024
+    },
+    "d_sft": {
+      "checkpoint": "<external-artifact-root>/checkpoints/d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1/checkpoint-final",
+      "config": "training/d_sft/configs/d_sft_training_config.frozen_20260428_r1.json",
+      "checkpoint_source": "--d-sft-checkpoint or D_SFT_CHECKPOINT environment variable",
+      "checkpoint_artifact_id": "checkpoints/d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1/checkpoint-final"
+    }
+  },
+  "api": {
+    "openai_compatible": {
+      "provider": "openai_compatible",
+      "base_url": "http://127.0.0.1:8080/v1",
+      "base_url_env_candidates": [
+        "OPENAI_BASE_URL",
+        "OPENAI_COMPAT_BASE_URL",
+        "CODEX_PROXY_BASE_URL"
+      ],
+      "base_url_env_used": null,
+      "auth_env_candidates": [
+        "OPENAI_API_KEY",
+        "OPENAI_COMPAT_API_KEY",
+        "CODEX_PROXY_API_KEY"
+      ],
+      "token_value_recorded": false,
+      "json_mode": true,
+      "assistant_prefill_json": false,
+      "assistant_prefill_value": null
+    },
+    "anthropic_compatible": {
+      "provider": "anthropic_compatible",
+      "base_url_env": "ANTHROPIC_BASE_URL",
+      "auth_env": "ANTHROPIC_AUTH_TOKEN",
+      "token_value_recorded": false,
+      "json_mode": false,
+      "assistant_prefill_json": false,
+      "assistant_prefill_value": null,
+      "tool_use_single_parameter_wrapper_unwrapped": true,
+      "anthropic_tool_schema_transport_hardening": {
+        "schema_metadata_keys_stripped_from_input_schema": [
+          "$schema",
+          "$id"
+        ],
+        "tool_description_forbids_root_wrappers": true,
+        "root_wrapper_normalization_enabled": false
+      }
+    }
+  },
+  "schema": {
+    "path": "schemas/missed_approach_leg.schema.json",
+    "sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9"
+  },
+  "field_candidates_schema": {
+    "path": "schemas/field_candidates.schema.candidate.json",
+    "sha256": "6a322e02cdb7c13364c804226a95985b1d9bf79bbabd6fbdfc923c935020910d"
+  },
+  "field_to_leg_links_schema": {
+    "path": "schemas/field_to_leg_links.schema.candidate.json",
+    "sha256": "1085f187055f1e6b7b78bb9958643ed4eb06bfa7d8a4a65870537bd34f704262"
+  },
+  "rule_spec": {
+    "path": "docs/group1_a1_a2_rules_candidate_v1.md",
+    "sha256": "dfc83fcc4b5cf477a2ef770a473d86e2e074b06ccb22ac0203de257913071b41"
+  },
+  "prompts": {
+    "B1": {
+      "path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "sha256": "f9be2fb84a7554897045c27abf787e47758f1687de406312e9afe1ebe15d4f3f"
+    },
+    "B1_prime": {
+      "path": "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+      "sha256": "08244d80f0ea85c579158d4b8512bfa021a26755bb342742ed2362a80763c707"
+    },
+    "B1_prime_link": {
+      "path": "prompts/paper_v2/b1_prime_link_ocr_candidates_links_to_canonical.zh_v0_candidate.md",
+      "sha256": "eea6f2bed857d9b762d1a5bee42de7933e4b19d0254a94d5045acbe137558dd7"
+    },
+    "C1": {
+      "path": "prompts/paper_v2/c1_image_to_canonical_pilot10.zh_v1_candidate.md",
+      "sha256": "aa87bf512359160da4c54503911bfccc38a6e55ee9af619b9eef3c48183ef74c"
+    },
+    "C3": {
+      "path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+      "sha256": "858b91b07d778498ddbe484a6d54f8555169c9c674f3189dfb69b06e2c406362"
+    },
+    "C4": {
+      "path": "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "sha256": "5a60df7bdeead7c01e38ccb8c8ccc1802af6110a0f41c4658e2f5cdcc313588a"
+    }
+  },
+  "parser_policy": {
+    "strict_json_only": true,
+    "code_fence_stripping_allowed": false,
+    "schema_retry_count_text": 1,
+    "schema_retry_count_vlm": 1,
+    "schema_retry_uses_target_or_scorer": false,
+    "semantic_repair_allowed": false
+  }
+}

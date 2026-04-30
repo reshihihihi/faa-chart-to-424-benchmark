@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -54,7 +55,7 @@ FIELD_CANDIDATES_SCHEMA = ROOT / "schemas" / "field_candidates.schema.candidate.
 FIELD_TO_LEG_SCHEMA = ROOT / "schemas" / "field_to_leg_links.schema.candidate.json"
 C3_QUESTIONNAIRE_SCHEMA = ROOT / "schemas" / "c3_questionnaire.schema.candidate.json"
 D_SFT_CONFIG = ROOT / "training" / "d_sft" / "configs" / "d_sft_training_config.frozen_20260428_r1.json"
-D_SFT_CHECKPOINT = Path("E:/experiment3/d_sft/checkpoints/d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1/checkpoint-final")
+D_SFT_CHECKPOINT_ARTIFACT_ID = "checkpoints/d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1/checkpoint-final"
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -80,6 +81,21 @@ def display_path(path: Path) -> str:
         return path.relative_to(ROOT.resolve()).as_posix()
     except ValueError:
         return str(path)
+
+
+def display_external_checkpoint(path: Path | None) -> str | None:
+    if path is None:
+        return None
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(ROOT.resolve()).as_posix()
+    except ValueError:
+        parts = list(path.parts)
+        if "checkpoints" in parts:
+            suffix = parts[parts.index("checkpoints") :]
+        else:
+            suffix = parts[-2:] if len(parts) >= 2 else [path.name]
+        return "<external-artifact-root>/" + "/".join(str(part).replace("\\", "/") for part in suffix)
 
 
 def repo_path(value: str) -> Path:
@@ -493,7 +509,13 @@ def run_c2_method(
     return results, failures
 
 
-def run_d_sft_method(run_dir: Path, rows: list[dict[str, Any]], targets: dict[str, Path], limit: int | None) -> dict[str, Any]:
+def run_d_sft_method(
+    run_dir: Path,
+    rows: list[dict[str, Any]],
+    targets: dict[str, Path],
+    limit: int | None,
+    checkpoint: Path,
+) -> dict[str, Any]:
     manifest_rows = []
     for row in rows[:limit] if limit is not None else rows:
         image_path = artifact_path(row, "image")
@@ -516,7 +538,7 @@ def run_d_sft_method(run_dir: Path, rows: list[dict[str, Any]], targets: dict[st
         "--config",
         str(D_SFT_CONFIG),
         "--checkpoint",
-        str(D_SFT_CHECKPOINT),
+        str(checkpoint),
         "--manifest",
         str(manifest),
         "--schema",
@@ -569,7 +591,12 @@ def write_run_manifest(run_dir: Path, methods: list[str], args: argparse.Namespa
             "text_llm": {"provider": "openai_compatible", "model": args.text_model, "temperature": args.temperature, "max_tokens": args.text_max_tokens},
             "vlm": {"provider": "anthropic_compatible", "model": args.vlm_model, "temperature": args.temperature, "max_tokens": args.vlm_max_tokens},
             "c2": {"provider": "anthropic_compatible", "model": args.vlm_model, "temperature": args.temperature, "max_tokens": args.c2_max_tokens},
-            "d_sft": {"checkpoint": str(D_SFT_CHECKPOINT), "config": display_path(D_SFT_CONFIG)},
+            "d_sft": {
+                "checkpoint": display_external_checkpoint(args.d_sft_checkpoint),
+                "checkpoint_source": "--d-sft-checkpoint or D_SFT_CHECKPOINT environment variable",
+                "checkpoint_artifact_id": D_SFT_CHECKPOINT_ARTIFACT_ID,
+                "config": display_path(D_SFT_CONFIG),
+            },
         },
         "api": {
             "openai_compatible": model_api_manifest(provider="openai_compatible", base_url=args.openai_base_url, api_key_env=args.openai_api_key_env, json_mode=True),
@@ -612,6 +639,13 @@ def main() -> int:
     parser.add_argument("--c2-schema-retry-count", type=int, default=1)
     parser.add_argument("--max-qa-legs", type=int, default=12)
     parser.add_argument("--d-sft-limit", type=int, default=None)
+    default_d_sft_checkpoint = os.environ.get("D_SFT_CHECKPOINT")
+    parser.add_argument(
+        "--d-sft-checkpoint",
+        type=Path,
+        default=Path(default_d_sft_checkpoint) if default_d_sft_checkpoint else None,
+        help="External D-SFT adapter checkpoint path. Required when executing D_SFT; may also be set via D_SFT_CHECKPOINT.",
+    )
     args = parser.parse_args()
 
     run_dir = args.run_dir if args.run_dir.is_absolute() else ROOT / args.run_dir
@@ -628,6 +662,8 @@ def main() -> int:
     if args.dry_run_boundary_only:
         print(json.dumps({"status": "boundary_ready", "run_dir": display_path(run_dir), "methods": methods}, ensure_ascii=False, indent=2))
         return 0
+    if "D_SFT" in methods and args.d_sft_checkpoint is None:
+        raise ValueError("D_SFT execution requires --d-sft-checkpoint or the D_SFT_CHECKPOINT environment variable.")
 
     canonical_schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
     canonical_validator = Draft202012Validator(canonical_schema)
@@ -715,7 +751,7 @@ def main() -> int:
                 max_qa_legs=args.max_qa_legs,
             )
         elif method == "D_SFT":
-            summary = run_d_sft_method(run_dir, rows, targets, args.d_sft_limit)
+            summary = run_d_sft_method(run_dir, rows, targets, args.d_sft_limit, args.d_sft_checkpoint)
             results = summary.get("results", [])
             method_failures = summary.get("failures", [])
         else:

@@ -1,0 +1,338 @@
+{
+  "status": "frozen_after_d_sft_pilot100_feasibility_20260428_r1",
+  "method_id": "D_SFT",
+  "created_at": "2026-04-28T00:00:00Z",
+  "data": {
+    "dataset_name": "d_sft_train500_dev100",
+    "train_jsonl": "<external-artifact-root>/d_sft/training_jsonl/d_sft_train500_dev100.prompt_v2.train.jsonl",
+    "dev_jsonl": "<external-artifact-root>/d_sft/training_jsonl/d_sft_train500_dev100.prompt_v2.dev.jsonl",
+    "combined_manifest": "<external-artifact-root>/d_sft/data/d_sft_train500_dev100/combined_manifest.jsonl",
+    "prompt_path": "training/d_sft/prompts/d_sft_image_to_canonical.v2.md",
+    "schema_path": "schemas/missed_approach_leg.schema.json",
+    "label_source": "CIFP_260416_FAACIFP18_to_current_canonical_proxy_projection",
+    "forbidden_sets": [
+      "formal300_default_forbidden",
+      "pilot10_external",
+      "pilot100_external_heldout_feasibility"
+    ]
+  },
+  "model": {
+    "base_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+    "base_model_role": "local_trainable_vlm",
+    "local_files_only": true,
+    "download_source": "local_huggingface_cache",
+    "load_in_4bit": true,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "device_map": "auto"
+  },
+  "lora": {
+    "mode": "qlora_adapter",
+    "r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "image": {
+    "input_policy": "full_chart_image_only",
+    "min_pixels": 3136,
+    "max_pixels": 501760,
+    "resize_policy": "Qwen2VLProcessor dynamic resize capped at max_pixels=501760; no OCR or crop input"
+  },
+  "output_control": {
+    "assistant_prefill": "{",
+    "policy": "training masks the prefilled opening brace and inference prepends the same brace before generation; final raw output must still be strict bare JSON",
+    "parser_repair": false
+  },
+  "training": {
+    "seed": 260428,
+    "epochs": 1,
+    "per_device_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "compute_dtype": "float16",
+    "gradient_checkpointing": true,
+    "max_seq_length": 4096,
+    "checkpoint_save_policy": "save adapter and processor after each epoch plus final",
+    "checkpoint_selection_policy": "lowest dev loss among epoch checkpoints; dev split only",
+    "checkpoint_selection_dev_samples": 100
+  },
+  "inference": {
+    "prompt_policy": "same prompt file as SFT training user message",
+    "max_new_tokens": 1536,
+    "decoding": "greedy_do_sample_false",
+    "parser_policy": "strict_json_only_no_code_fence_no_semantic_repair",
+    "rerun_policy": "no selective rerun; engineering failure may rerun complete failed run with new run_id"
+  },
+  "dry_run": {
+    "train_samples": 16,
+    "dev_samples": 4,
+    "epochs": 3,
+    "purpose": "engineering check only: image loading, JSON labels, checkpoint save, inference, parser, schema validation, scorer"
+  },
+  "freeze_manifest": {
+    "status": "frozen_after_d_sft_pilot100_feasibility_20260428_r1",
+    "frozen_at": "2026-04-28T20:25:45.086244+00:00",
+    "method_id": "D_SFT",
+    "method_definition": "full_chart_image -> SFT VLM -> canonical JSON",
+    "not_formal300_result": true,
+    "freeze_decision": {
+      "accepted_for_next_formal300_evaluation": true,
+      "reason": "No hard leakage, train/dev preparation passed, formal training completed, pilot100_external heldout feasibility completed without selective rerun. Remaining parse/schema failures are counted as method failures rather than repaired.",
+      "no_selective_rerun": true,
+      "parser_repair_allowed": false
+    },
+    "repo_artifacts": {
+      "method_card": {
+        "path": "docs/d_sft_method_card.md",
+        "sha256": "b23b4073d21da4896197ddbcc0adad4e1f9700eaba26982635aaf16f65ca0f19"
+      },
+      "manifest_schema": {
+        "path": "schemas/d_sft_manifest.schema.json",
+        "sha256": "1fdd37b1a9772aa9c019500fca2eb9aaa50ac09b0c0013a23ae0d133fc5c6324"
+      },
+      "prompt": {
+        "path": "training/d_sft/prompts/d_sft_image_to_canonical.v2.md",
+        "sha256": "8e0f6d36c023e6d23b78655ab1a1910f49880d7bd473db75d4250681ac21445e"
+      },
+      "training_script": {
+        "path": "scripts/d_sft_train_qwen2vl_lora.py",
+        "sha256": "f87d67987d4f1a14b78756e77100d58b365ca09162fc73b5aa37f62722c8a74f"
+      },
+      "inference_script": {
+        "path": "scripts/d_sft_infer_qwen2vl_lora.py",
+        "sha256": "abd8778aa98fbb11623e1782387c10c8df489e08d781178244daf7aeb39add03"
+      },
+      "prepare_script": {
+        "path": "scripts/d_sft_prepare_dataset.py",
+        "sha256": "79461f9f439a59e53896667a1d99d03603d5d9fb5e28da43a21a11cab1af7f2e"
+      },
+      "candidate_config_at_freeze": {
+        "path": "training/d_sft/configs/d_sft_training_config.candidate.json",
+        "sha256": "f6f542a58594a99cd2a8dd7ee6118319f55e2d3d41bb0112a1cfb1b174562cbd"
+      }
+    },
+    "data": {
+      "output_root": "<external-artifact-root>/d_sft",
+      "train_manifest": {
+        "path": "<external-artifact-root>/d_sft/data/d_sft_train500_dev100/train_manifest.jsonl",
+        "rows": 500,
+        "sha256": "63767a0baf54e492b51f0b3b407c6687aaf5caca27353bf056d13d1ae1bf3ae7"
+      },
+      "dev_manifest": {
+        "path": "<external-artifact-root>/d_sft/data/d_sft_train500_dev100/dev_manifest.jsonl",
+        "rows": 100,
+        "sha256": "ab2c0b3be664ed231bdc446ed9fd04c58c2b32b6d0c2c680e229e237fb5d64a0"
+      },
+      "combined_manifest": {
+        "path": "<external-artifact-root>/d_sft/data/d_sft_train500_dev100/combined_manifest.jsonl",
+        "rows": 600,
+        "sha256": "e87fe718b4b987e6381d551d0d22a2ed2533ff99a05947f2d411bbd89c9f0663"
+      },
+      "training_jsonl_train": {
+        "path": "<external-artifact-root>/d_sft/training_jsonl/d_sft_train500_dev100.prompt_v2.train.jsonl",
+        "rows": 500,
+        "sha256": "8d9434e499c5f0151711ad7a5d93466f1c1707f537e2066416247425d309a7cb"
+      },
+      "training_jsonl_dev": {
+        "path": "<external-artifact-root>/d_sft/training_jsonl/d_sft_train500_dev100.prompt_v2.dev.jsonl",
+        "rows": 100,
+        "sha256": "d21000873c2be3bee7963d25f92d2f1dcd0242778f5c98c43b2291ed340b9cfa"
+      },
+      "prep_report": {
+        "path": "<external-artifact-root>/d_sft/reports/d_sft_dataset_preparation_report.json",
+        "sha256": "38d40c41f89d210bfd4d6e3c41a612912176762bceee2b3fd1684eb302ade5c0",
+        "fallback_used": false,
+        "skipped_count": 8
+      },
+      "prompt_v2_jsonl_report": {
+        "path": "<external-artifact-root>/d_sft/reports/d_sft_prompt_v2_training_jsonl_report.json",
+        "sha256": "bf8960cb0190063cb961d4c29ef822168085b2495db2bbe68a9114b749be10cf"
+      },
+      "no_leakage_report": {
+        "path": "<external-artifact-root>/d_sft/reports/d_sft_no_leakage_report.json",
+        "sha256": "a6a567607785feb3d3e9a829bc64d79b2368f262629cb94681df5e981aeee7ff",
+        "hard_leakage": false,
+        "forbidden_overlap_counts": {
+          "chart_id": 0,
+          "pdf_name": 0,
+          "exact_proc_key": 0,
+          "family_key": 0,
+          "image_path": 0,
+          "target_path": 0
+        },
+        "train_dev_overlap_counts": {
+          "chart_id": 0,
+          "pdf_name": 0,
+          "family_key": 0
+        }
+      }
+    },
+    "training": {
+      "base_model_id": "Qwen/Qwen2-VL-2B-Instruct",
+      "model_role": "local_trainable_vlm",
+      "lora": {
+        "mode": "qlora_adapter",
+        "r": 8,
+        "lora_alpha": 16,
+        "lora_dropout": 0.05,
+        "target_modules": [
+          "q_proj",
+          "k_proj",
+          "v_proj",
+          "o_proj",
+          "gate_proj",
+          "up_proj",
+          "down_proj"
+        ]
+      },
+      "image": {
+        "input_policy": "full_chart_image_only",
+        "min_pixels": 3136,
+        "max_pixels": 501760,
+        "resize_policy": "Qwen2VLProcessor dynamic resize capped at max_pixels=501760; no OCR or crop input"
+      },
+      "training_config": {
+        "seed": 260428,
+        "epochs": 1,
+        "per_device_batch_size": 1,
+        "gradient_accumulation_steps": 8,
+        "learning_rate": 0.0002,
+        "weight_decay": 0.0,
+        "max_grad_norm": 1.0,
+        "compute_dtype": "float16",
+        "gradient_checkpointing": true,
+        "max_seq_length": 4096,
+        "checkpoint_save_policy": "save adapter and processor after each epoch plus final",
+        "checkpoint_selection_policy": "lowest dev loss among epoch checkpoints; dev split only",
+        "checkpoint_selection_dev_samples": 100
+      },
+      "output_control": {
+        "assistant_prefill": "{",
+        "policy": "training masks the prefilled opening brace and inference prepends the same brace before generation; final raw output must still be strict bare JSON",
+        "parser_repair": false
+      },
+      "formal_training_run_id": "d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1",
+      "training_report": {
+        "path": "<external-artifact-root>/d_sft/reports/d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1_training_report.json",
+        "sha256": "159d8fc2c97023890f921fac165aa38082533a0f89ec154263def2e1c9265f58"
+      },
+      "train_samples": 500,
+      "dev_samples": 100,
+      "best_dev_loss": 0.04459553452208638,
+      "checkpoint": {
+        "path": "<external-artifact-root>/d_sft/checkpoints/d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1/checkpoint-final",
+        "adapter_sha256": "df5e5eb5e97ffb5b86368fb966705cddffe09e4dfaa622959859d2da9fc412e0",
+        "adapter_bytes": 36986952
+      },
+      "dependency_versions": {
+        "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Mar 11 2026, 17:12:15) [MSC v.1942 64 bit (AMD64)]",
+        "torch": "2.6.0+cu124",
+        "transformers": "5.5.4",
+        "peft": "0.19.1",
+        "bitsandbytes": "0.49.2",
+        "Pillow": "11.1.0",
+        "jsonschema": "4.26.0"
+      },
+      "cuda": {
+        "available": true,
+        "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "max_memory_allocated_gb": 7.1405
+      }
+    },
+    "pilot100_feasibility": {
+      "run_id": "d_sft_pilot100_promptv2_prefill_20260428_r1",
+      "summary_report": {
+        "path": "<external-artifact-root>/d_sft/reports/d_sft_pilot100_promptv2_prefill_20260428_r1_summary_report.json",
+        "sha256": "04ca322e126d2d7f14ab4959147dff283d4331b3f413c00a15768d29033c68f4"
+      },
+      "sample_role": "pilot100_external_heldout_feasibility_only_not_formal300",
+      "samples_total": 100,
+      "schema_valid": 94,
+      "samples_scored": 94,
+      "parse_or_schema_failures": 6,
+      "field_level_score": {
+        "correct": 1014,
+        "total": 2200,
+        "accuracy": 0.46090909090909093
+      },
+      "failures": [
+        {
+          "sample_id": "pilot100_external_009",
+          "chart_id": "KARR_L33",
+          "stage": "inference_or_parse",
+          "error": "JSONDecodeError('Extra data: line 1 column 1487 (char 1486)')"
+        },
+        {
+          "sample_id": "pilot100_external_024",
+          "chart_id": "KABR_R35",
+          "stage": "schema_validation",
+          "error": "missed_approach.legs.1.answers.Q1_fix_ident.value: 'FISOPO' is not valid under any of the given schemas"
+        },
+        {
+          "sample_id": "pilot100_external_034",
+          "chart_id": "KEWR_R11",
+          "stage": "schema_validation",
+          "error": "missed_approach.legs.1.answers.Q1_fix_ident.value: 'JKLINE' is not valid under any of the given schemas"
+        },
+        {
+          "sample_id": "pilot100_external_053",
+          "chart_id": "KOLY_R11",
+          "stage": "schema_validation",
+          "error": "chart_id: 'OL11_R11' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'"
+        },
+        {
+          "sample_id": "pilot100_external_078",
+          "chart_id": "KMCW_I36",
+          "stage": "schema_validation",
+          "error": "missed_approach.legs.0.answers.Q4_course_or_radial.value: {'type': 'course_deg', 'course_deg': 360.0} is not valid under any of the given schemas"
+        },
+        {
+          "sample_id": "pilot100_external_100",
+          "chart_id": "KCLW_RNV-A",
+          "stage": "schema_validation",
+          "error": "chart_id: 'KLW_RNV-A' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'"
+        }
+      ],
+      "inference": {
+        "prompt_policy": "same prompt file as SFT training user message",
+        "max_new_tokens": 1536,
+        "decoding": "greedy_do_sample_false",
+        "parser_policy": "strict_json_only_no_code_fence_no_semantic_repair",
+        "rerun_policy": "no selective rerun; engineering failure may rerun complete failed run with new run_id"
+      },
+      "input_boundary": {
+        "inference_input": [
+          "full_chart_image",
+          "frozen_d_sft_prompt"
+        ],
+        "forbidden_inference_inputs": [
+          "OCR_text",
+          "field_candidates",
+          "CIFP_raw_record",
+          "target_JSON",
+          "score_file",
+          "human_answer",
+          "other_method_prediction"
+        ],
+        "target_used_only_after_prediction_for_scoring": true
+      }
+    },
+    "limitations": [
+      "pilot100_external result is heldout feasibility only and is not the formal300 paper result.",
+      "Six pilot100 samples failed strict parse or schema validation and are counted as method failures; no parser repair or selective rerun was applied.",
+      "Field-level accuracy is computed only over the 94 schema-valid/scored samples.",
+      "formal300 evaluation remains required before paper claims."
+    ]
+  }
+}

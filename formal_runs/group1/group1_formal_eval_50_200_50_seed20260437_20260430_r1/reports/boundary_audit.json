@@ -1,0 +1,75 @@
+{
+  "created_at": "2026-04-30T01:23:44.180982+00:00",
+  "run_dir": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1",
+  "methods": {
+    "A1": {
+      "rows": 200,
+      "manifest": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/A1/input_manifest.jsonl",
+      "manifest_sha256": "21b182372818c6c049b1baa1ad6d359a93c7e884a2e2a67046defb35eaaac1bc",
+      "errors": []
+    },
+    "A2": {
+      "rows": 200,
+      "manifest": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/A2/input_manifest.jsonl",
+      "manifest_sha256": "110387e8c0efac9f124b307891d9a371d597c3242b6c4f17678c381923fae449",
+      "errors": []
+    },
+    "B1": {
+      "rows": 200,
+      "manifest": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/B1/input_manifest.jsonl",
+      "manifest_sha256": "284c592dc9cc3b90ef15b134ca33e7d29ec1184e20dd34ca7591aa16a9914824",
+      "errors": []
+    },
+    "B1_prime": {
+      "rows": 200,
+      "manifest": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/B1_prime/input_manifest.jsonl",
+      "manifest_sha256": "f5237fccf8d0cc5d43065dd25a44858321d91cfd03f96717b0a1e7c4f3066b9b",
+      "errors": []
+    },
+    "B1_prime_link": {
+      "rows": 200,
+      "manifest": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/B1_prime_link/input_manifest.jsonl",
+      "manifest_sha256": "496a1a7eb3bd2244864e62b788ed3fd8b04f4b049145595a83edeb46d42348d9",
+      "errors": []
+    },
+    "C1": {
+      "rows": 200,
+      "manifest": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/C1/input_manifest.jsonl",
+      "manifest_sha256": "ec407a03abac7681b4fa23600bc604bd74dfb5689876ee77f6a09e4b2483c720",
+      "errors": []
+    },
+    "C2": {
+      "rows": 200,
+      "manifest": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/C2/input_manifest.jsonl",
+      "manifest_sha256": "f550c0b6da354da8f1cdf53d4d50e1e8782de8262ca34b1163c99abbf61de761",
+      "errors": []
+    },
+    "C3": {
+      "rows": 200,
+      "manifest": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/C3/input_manifest.jsonl",
+      "manifest_sha256": "0e8b351e62108e0d4040242529947bbc8c1f20004b451a2aef3d44451c201c02",
+      "errors": []
+    },
+    "C4": {
+      "rows": 200,
+      "manifest": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/C4/input_manifest.jsonl",
+      "manifest_sha256": "369099b391ec7f20be77f632ee7585bea7b3536ed6c8345a95069e83d5cbb5e5",
+      "errors": []
+    },
+    "D_SFT": {
+      "rows": 200,
+      "manifest": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/D_SFT/input_manifest.jsonl",
+      "manifest_sha256": "22d85ca91218a36b835de3a98d39938a2a5112325d127ff173c419581b9a085a",
+      "errors": []
+    }
+  },
+  "errors": [],
+  "target_keys_forbidden_in_input_manifest": true,
+  "scoring_manifest": {
+    "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/scoring_manifest.jsonl",
+    "sha256": "4eb885e60ae2188360fecc05ce3e018599a01e201ff8616e9e750746042a9ce1",
+    "targets": 200,
+    "missing_targets": []
+  },
+  "ready": true
+}

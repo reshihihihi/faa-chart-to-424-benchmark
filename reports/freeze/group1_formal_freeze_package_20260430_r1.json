@@ -1,7 +1,7 @@
 {
   "package_id": "group1_formal_freeze_20260430_r1",
   "manifest_version": "1.0.0",
-  "created_at_utc": "2026-04-30T12:42:12.003734+00:00",
+  "created_at_utc": "2026-04-30T15:58:28.769300+00:00",
   "status": "frozen",
   "supersedes": [
     "configs/group1_formal_freeze_manifest_20260429.json"
@@ -70,8 +70,8 @@
         "kind": "file",
         "exists": true,
         "required": true,
-        "sha256": "d15f0ab36a223dd60705f2231643254925dbb1783295f686d21146c57a6ee468",
-        "bytes": 509679
+        "sha256": "a9f66283fa61a8e7ee9822ef205e886a9925c3eea1c092de60c93d407f84c402",
+        "bytes": 510879
       },
       "split_policy": {
         "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/SPLIT_POLICY_50_200_50_seed20260437.md",
@@ -156,8 +156,8 @@
         "kind": "file",
         "exists": true,
         "required": true,
-        "sha256": "a7a9f80eeabb82931b1a9c9c8f90f39ae3d589a9de272b4697dacc895c250416",
-        "bytes": 9888
+        "sha256": "735c35b0dacd66c375a46c3ef3181ed213796e2213efff9096175ffd80a61631",
+        "bytes": 9903
       },
       "parser_repair_policy": {
         "path": "configs/parser_repair_policy.md",
@@ -222,8 +222,8 @@
         "kind": "file",
         "exists": true,
         "required": true,
-        "sha256": "cd36d896a0d2c315b575c4ed7a52d9b6001b11cea8a041c8fb103fb10538dbe4",
-        "bytes": 842
+        "sha256": "7cbd8d1fd2633407eb1b8a20bdae3927df692e62d8a649b607ce6dee344770db",
+        "bytes": 835
       }
     },
     "LLM_B_methods": {
@@ -241,7 +241,7 @@
       "temperature": 0.0,
       "max_tokens": {
         "C1": 4096,
-        "C2_QA_call": 2048,
+        "C2_QA_call": 1024,
         "C3": 4096,
         "C4": 4096
       },
@@ -252,13 +252,16 @@
     "D_SFT": {
       "base_model": "Qwen/Qwen2-VL-2B-Instruct",
       "adapter": "QLoRA adapter selected by D-SFT dev split only",
+      "checkpoint": "<external-artifact-root>/checkpoints/d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1/checkpoint-final",
+      "checkpoint_source": "--d-sft-checkpoint or D_SFT_CHECKPOINT environment variable",
+      "checkpoint_artifact_id": "checkpoints/d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1/checkpoint-final",
       "training_config": {
         "path": "training/d_sft/configs/d_sft_training_config.frozen_20260428_r1.json",
         "kind": "file",
         "exists": true,
         "required": true,
-        "sha256": "0b06b0d80ba332ea8f97c367f20fb34670fccdaaa0891748d34a794190b69dd0",
-        "bytes": 13958
+        "sha256": "2ebf72d81a8460795fa989f49362abda779fedd75fa551b7a56dc5b9af576788",
+        "bytes": 13962
       },
       "inference_runner": {
         "path": "scripts/d_sft_infer_qwen2vl_lora.py",
@@ -496,8 +499,8 @@
       "kind": "file",
       "exists": true,
       "required": true,
-      "sha256": "e7d8942f857f96d8dea92a1ba4dff0b0282d94047a2065ec51824bbe16e3c9d7",
-      "bytes": 36015
+      "sha256": "ff4aa6cdb2f0495a4f0f55655f79173778262453605b52ea04e6a74a2c2e9428",
+      "bytes": 37396
     },
     "runner_audit_completion": {
       "path": "scripts/audit_group1_formal_completion.py",
@@ -624,8 +627,8 @@
       "kind": "file",
       "exists": true,
       "required": true,
-      "sha256": "0b06b0d80ba332ea8f97c367f20fb34670fccdaaa0891748d34a794190b69dd0",
-      "bytes": 13958
+      "sha256": "2ebf72d81a8460795fa989f49362abda779fedd75fa551b7a56dc5b9af576788",
+      "bytes": 13962
     },
     "d_sft_infer_runner": {
       "path": "scripts/d_sft_infer_qwen2vl_lora.py",
@@ -810,8 +813,8 @@
         "kind": "file",
         "exists": true,
         "required": true,
-        "sha256": "6cf02c1fe60aab4a1d401ac04d9164751592a123a7dcfc7ae1bff0e46fdadda5",
-        "bytes": 117373
+        "sha256": "384d221d77b401bc8d84f07399e490436b7fd8417d468aaa6a3a1d674d511546",
+        "bytes": 104596
       }
     },
     "interpretation_rules": [
@@ -827,8 +830,8 @@
       "kind": "file",
       "exists": true,
       "required": true,
-      "sha256": "d15f0ab36a223dd60705f2231643254925dbb1783295f686d21146c57a6ee468",
-      "bytes": 509679
+      "sha256": "a9f66283fa61a8e7ee9822ef205e886a9925c3eea1c092de60c93d407f84c402",
+      "bytes": 510879
     },
     "split_policy": {
       "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/SPLIT_POLICY_50_200_50_seed20260437.md",
@@ -907,8 +910,8 @@
       "kind": "file",
       "exists": true,
       "required": true,
-      "sha256": "a7a9f80eeabb82931b1a9c9c8f90f39ae3d589a9de272b4697dacc895c250416",
-      "bytes": 9888
+      "sha256": "735c35b0dacd66c375a46c3ef3181ed213796e2213efff9096175ffd80a61631",
+      "bytes": 9903
     },
     "parser_repair_policy": {
       "path": "configs/parser_repair_policy.md",
@@ -963,8 +966,8 @@
       "kind": "file",
       "exists": true,
       "required": true,
-      "sha256": "cd36d896a0d2c315b575c4ed7a52d9b6001b11cea8a041c8fb103fb10538dbe4",
-      "bytes": 842
+      "sha256": "7cbd8d1fd2633407eb1b8a20bdae3927df692e62d8a649b607ce6dee344770db",
+      "bytes": 835
     },
     "formal_run_plan": {
       "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/run_plan.json",
@@ -979,8 +982,8 @@
       "kind": "file",
       "exists": true,
       "required": true,
-      "sha256": "8b5b624ad93642e94954ae79692a1daee89cd8c034197d7df95ef6bc52699b75",
-      "bytes": 4879
+      "sha256": "57bcfb34576a3a88d0ab5e3e43a1e80adfe1306843f3c35a705f02e961a8da84",
+      "bytes": 5089
     },
     "scoring_manifest": {
       "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/scoring_manifest.jsonl",
@@ -1043,8 +1046,8 @@
       "kind": "file",
       "exists": true,
       "required": true,
-      "sha256": "e7d8942f857f96d8dea92a1ba4dff0b0282d94047a2065ec51824bbe16e3c9d7",
-      "bytes": 36015
+      "sha256": "ff4aa6cdb2f0495a4f0f55655f79173778262453605b52ea04e6a74a2c2e9428",
+      "bytes": 37396
     },
     "runner_audit_completion": {
       "path": "scripts/audit_group1_formal_completion.py",
@@ -1171,8 +1174,8 @@
       "kind": "file",
       "exists": true,
       "required": true,
-      "sha256": "0b06b0d80ba332ea8f97c367f20fb34670fccdaaa0891748d34a794190b69dd0",
-      "bytes": 13958
+      "sha256": "2ebf72d81a8460795fa989f49362abda779fedd75fa551b7a56dc5b9af576788",
+      "bytes": 13962
     },
     "d_sft_infer_runner": {
       "path": "scripts/d_sft_infer_qwen2vl_lora.py",
@@ -1187,8 +1190,8 @@
       "kind": "file",
       "exists": true,
       "required": true,
-      "sha256": "6cf02c1fe60aab4a1d401ac04d9164751592a123a7dcfc7ae1bff0e46fdadda5",
-      "bytes": 117373
+      "sha256": "384d221d77b401bc8d84f07399e490436b7fd8417d468aaa6a3a1d674d511546",
+      "bytes": 104596
     }
   },
   "package_outputs": {

@@ -321,11 +321,18 @@ def write_markdown(path: Path, package: dict[str, Any]) -> None:
 def build_package(base_run_id: str, output_dir: Path) -> dict[str, Any]:
     run_dir = ROOT / "formal_runs" / "group1" / base_run_id
     reports_dir = run_dir / "reports"
+    run_manifest_path = run_dir / "formal_run_manifest.json"
     audit_path = latest_timestamped(reports_dir, "final_completion_audit_*.json")
     failure_path = latest_timestamped(reports_dir, "final_failure_details_*.json")
     result_csv_path = latest_timestamped(reports_dir, "final_combined_summary_*.csv")
     markdown_audit_path = latest_timestamped(reports_dir, "FORMAL_GROUP1_COMPLETION_AUDIT_*.md")
     audit = read_json(audit_path)
+    run_manifest = read_json(run_manifest_path) if run_manifest_path.exists() else {}
+    model_manifest = run_manifest.get("models", {})
+    text_call = model_manifest.get("text_llm", {})
+    vlm_call = model_manifest.get("vlm", {})
+    c2_call = model_manifest.get("c2", {})
+    d_sft_call = model_manifest.get("d_sft", {})
     method_rows = [row_for_method(row) for row in audit["method_table"]]
     boundaries = method_boundaries()
 
@@ -483,19 +490,24 @@ def build_package(base_run_id: str, output_dir: Path) -> dict[str, Any]:
                 "run_manifest": files["ocr2_run_manifest"],
             },
             "LLM_B_methods": {
-                "provider": "openai_compatible",
-                "model": "gpt-5.4",
-                "temperature": 0.0,
-                "max_tokens": 4096,
+                "provider": text_call.get("provider", "openai_compatible"),
+                "model": text_call.get("model", "gpt-5.4"),
+                "temperature": text_call.get("temperature", 0.0),
+                "max_tokens": text_call.get("max_tokens", 4096),
                 "output_control": "forced tool call / schema-bound canonical JSON",
                 "schema_retry_count": 1,
                 "parser_repair": False,
             },
             "VLM_C_methods": {
-                "provider": "anthropic_compatible",
-                "model": "claude-sonnet-4-5-20250929",
-                "temperature": 0.0,
-                "max_tokens": {"C1": 4096, "C2_QA_call": 2048, "C3": 4096, "C4": 4096},
+                "provider": vlm_call.get("provider", "anthropic_compatible"),
+                "model": vlm_call.get("model", "claude-sonnet-4-5-20250929"),
+                "temperature": vlm_call.get("temperature", 0.0),
+                "max_tokens": {
+                    "C1": vlm_call.get("max_tokens", 4096),
+                    "C2_QA_call": c2_call.get("max_tokens", 1024),
+                    "C3": vlm_call.get("max_tokens", 4096),
+                    "C4": vlm_call.get("max_tokens", 4096),
+                },
                 "output_control": "anthropic tool use / schema-bound canonical JSON",
                 "schema_retry_count": 1,
                 "parser_repair": False,
@@ -503,6 +515,9 @@ def build_package(base_run_id: str, output_dir: Path) -> dict[str, Any]:
             "D_SFT": {
                 "base_model": "Qwen/Qwen2-VL-2B-Instruct",
                 "adapter": "QLoRA adapter selected by D-SFT dev split only",
+                "checkpoint": d_sft_call.get("checkpoint"),
+                "checkpoint_source": d_sft_call.get("checkpoint_source"),
+                "checkpoint_artifact_id": d_sft_call.get("checkpoint_artifact_id"),
                 "training_config": files["d_sft_training_config"],
                 "inference_runner": files["d_sft_infer_runner"],
                 "parser_policy": "strict_json_only; no code fence stripping; no semantic repair; no selective retry",

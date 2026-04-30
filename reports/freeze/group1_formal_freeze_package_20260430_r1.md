@@ -1,7 +1,7 @@
 # Group 1 Formal Freeze Package
 
 - Package id: `group1_formal_freeze_20260430_r1`
-- Created at: `2026-04-30T12:42:12.003734+00:00`
+- Created at: `2026-04-30T15:58:28.769300+00:00`
 - Formal run id: `group1_formal_eval_50_200_50_seed20260437_20260430_r1`
 - Split id: `formal300_50_200_50_seed20260437`
 - Evaluation samples: `200`
