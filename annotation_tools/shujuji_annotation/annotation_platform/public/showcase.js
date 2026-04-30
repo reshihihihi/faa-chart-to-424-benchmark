@@ -19,6 +19,7 @@ const els = {
   leaderOverlay: document.querySelector("#leaderOverlay"),
   panelTitle: document.querySelector("#panelTitle"),
   resultSource: document.querySelector("#resultSource"),
+  evidenceLegend: document.querySelector("#evidenceLegend"),
   fieldList: document.querySelector("#fieldList"),
   toast: document.querySelector("#toast")
 };
@@ -51,6 +52,15 @@ const STATUS_LABELS = {
 };
 
 const COLORS = ["#176f5b", "#315f9e", "#a96e14", "#9a4d7a", "#b34b4b", "#4d6f23", "#6a5b9e", "#95623c"];
+
+const EVIDENCE_CATEGORIES = {
+  ma_text: { label: "复飞文字", color: "#176f5b", dash: "", marker: "text" },
+  chart_text: { label: "图中文字", color: "#315f9e", dash: "", marker: "text" },
+  chart_graphic: { label: "图形/路径", color: "#a96e14", dash: "9 5", marker: "diamond" },
+  icon_detail: { label: "图标/细节区", color: "#9a4d7a", dash: "4 4", marker: "triangle" },
+  plan_view: { label: "平面图区域", color: "#4d6f23", dash: "2 5", marker: "circle" },
+  other: { label: "其他证据", color: "#62706b", dash: "6 5", marker: "square" }
+};
 
 const state = {
   charts: [],
@@ -216,6 +226,27 @@ function shortRegionLabel(region) {
   return region.ocr_text || region.label || region.region_type || region.region_id;
 }
 
+function evidenceCategoryForRegion(region) {
+  const type = region?.region_type || "";
+  if (region?.evidence_source && EVIDENCE_CATEGORIES[region.evidence_source]) return region.evidence_source;
+  if (type === "MISSED_APPROACH_TEXT") return "ma_text";
+  if (type === "PLAN_VIEW") return "plan_view";
+  if (["MISSED_APPROACH_DETAIL_AREA", "MISSED_APPROACH_ICON", "MISSED_APPROACH_STEP_BOX", "CLIMB_ARROW"].includes(type)) {
+    return "icon_detail";
+  }
+  if (["FIX_SYMBOL", "PATH_SEGMENT", "HOLDING_ARC", "HOLDING_PATTERN", "OUTBOUND_INBOUND_MARK"].includes(type)) {
+    return "chart_graphic";
+  }
+  if (["FIX_TEXT", "NAVAID_TEXT", "ALTITUDE_TEXT", "TURN_PHRASE", "HEADING_TEXT", "RADIAL_TEXT", "TRACK_OR_RADIAL_TEXT", "HOLDING_TIME_TEXT", "DME_DISTANCE_TEXT"].includes(type)) {
+    return "chart_text";
+  }
+  return "other";
+}
+
+function evidenceCategoryMeta(region) {
+  return EVIDENCE_CATEGORIES[evidenceCategoryForRegion(region)] || EVIDENCE_CATEGORIES.other;
+}
+
 function evidenceIdsForRow(row) {
   const saved = state.fieldReviews[row.key] || {};
   const savedIds = uniqueList(saved.required_evidence_region_ids || saved.evidence_region_ids || []);
@@ -262,6 +293,42 @@ function activeRows() {
   });
 }
 
+function legRowsForIndex(legIndex) {
+  return state.rows.filter((row) => row.canonical_leg_index === legIndex);
+}
+
+function activeLegs() {
+  const legMap = new Map();
+  for (const row of state.rows) {
+    if (!els.showAllLegs.checked && row.canonical_leg_index !== state.currentLeg) continue;
+    if (!legMap.has(row.canonical_leg_index)) {
+      legMap.set(row.canonical_leg_index, {
+        type: "encoding",
+        key: `encoding-leg-${row.canonical_leg_index}`,
+        canonical_leg_index: row.canonical_leg_index,
+        leg_type: row.leg_type || "",
+        source_seq_no: row.source_seq_no || "",
+        source_trans_ident: row.source_trans_ident || "",
+        rows: []
+      });
+    }
+    legMap.get(row.canonical_leg_index).rows.push(row);
+  }
+  return Array.from(legMap.values());
+}
+
+function displayItems() {
+  if (state.mode === "arinc") return activeLegs();
+  return activeRows().map((row) => ({ type: "field", key: row.key, row, rows: [row] }));
+}
+
+function evidenceIdsForItem(item) {
+  if (item.type === "field") return evidenceIdsForRow(item.row);
+  return uniqueList((item.rows || [])
+    .filter(answerIsPresent)
+    .flatMap((row) => evidenceIdsForRow(row)));
+}
+
 function sourceLabel() {
   if (state.current?.annotation) return `人工结果：${state.current.annotation_annotator || "unknown"}`;
   if (state.current?.draft) return `暂存草稿：${state.current.annotation_annotator || "unknown"}`;
@@ -282,37 +349,18 @@ function renderLegOptions() {
 }
 
 function renderFieldCards() {
-  const rows = activeRows();
+  const items = displayItems();
   els.panelTitle.textContent = els.showAllLegs.checked
-    ? (state.mode === "arinc" ? "全部航段 · 424 字段" : "全部航段 · 证据结论")
-    : (state.mode === "arinc" ? `航段 ${state.currentLeg} · 424 字段` : `航段 ${state.currentLeg} · 证据结论`);
+    ? (state.mode === "arinc" ? "全部航段 · 424 编码" : "全部航段 · 证据结论")
+    : (state.mode === "arinc" ? `航段 ${state.currentLeg} · 424 编码` : `航段 ${state.currentLeg} · 证据结论`);
   els.resultSource.textContent = sourceLabel();
-  if (!rows.length) {
+  renderEvidenceLegend();
+  if (!items.length) {
     els.fieldList.innerHTML = "<p class='muted'>当前航段没有可展示字段。</p>";
     return;
   }
-  els.fieldList.innerHTML = rows.map((row) => {
-    const evidenceIds = evidenceIdsForRow(row);
-    const status = reviewStatusForRow(row, evidenceIds);
-    const color = colorForRow(row);
-    const evidenceChips = evidenceIds.map((regionId) => {
-      const region = state.regions.find((item) => item.region_id === regionId);
-      return `<span class="evidence-chip">${escapeText(shortRegionLabel(region || { region_id: regionId }))}</span>`;
-    }).join("");
-    const title = state.mode === "arinc"
-      ? `${ARINC_LABELS[row.field_name] || row.field_name}`
-      : `${FIELD_LABELS[row.field_name] || row.field_name}`;
-    const prefix = state.mode === "arinc"
-      ? `SEQ ${row.source_seq_no || "-"} · ${row.source_trans_ident || "-"} · ${row.leg_type || "-"}`
-      : `航段 ${row.canonical_leg_index} · ${row.leg_type || "-"}`;
-    const dimmed = answerIsPresent(row) ? "" : " dimmed";
-    return `<article class="field-card${dimmed}" data-field-key="${escapeText(row.key)}" style="--accent:${color}">
-      <div class="meta">${escapeText(prefix)}</div>
-      <h2>${escapeText(title)}</h2>
-      <p class="value">${escapeText(formatAnswer(row.expected_answer))}</p>
-      <div class="meta">${escapeText(STATUS_LABELS[status] || status)} · ${evidenceIds.length} 处证据</div>
-      <div class="evidence-list">${evidenceChips}</div>
-    </article>`;
+  els.fieldList.innerHTML = items.map((item) => {
+    return item.type === "encoding" ? renderEncodingCard(item) : renderEvidenceCard(item.row);
   }).join("");
   els.fieldList.querySelectorAll(".field-card").forEach((card) => {
     card.addEventListener("mouseenter", () => {
@@ -326,6 +374,57 @@ function renderFieldCards() {
   });
 }
 
+function renderEvidenceLegend() {
+  els.evidenceLegend.innerHTML = Object.entries(EVIDENCE_CATEGORIES).map(([key, meta]) => {
+    return `<span class="legend-item"><i class="legend-mark ${escapeText(meta.marker)}" style="--cat:${meta.color}"></i>${escapeText(meta.label)}</span>`;
+  }).join("");
+}
+
+function evidenceChipsForIds(evidenceIds) {
+  return evidenceIds.map((regionId) => {
+    const region = state.regions.find((item) => item.region_id === regionId);
+    const meta = evidenceCategoryMeta(region);
+    return `<span class="evidence-chip" style="--cat:${meta.color}">
+      <i class="chip-mark ${escapeText(meta.marker)}"></i>${escapeText(shortRegionLabel(region || { region_id: regionId }))}
+    </span>`;
+  }).join("");
+}
+
+function renderEvidenceCard(row) {
+  const evidenceIds = evidenceIdsForRow(row);
+  const status = reviewStatusForRow(row, evidenceIds);
+  const color = colorForRow(row);
+  const dimmed = answerIsPresent(row) ? "" : " dimmed";
+  return `<article class="field-card${dimmed}" data-field-key="${escapeText(row.key)}" style="--accent:${color}">
+    <div class="meta">证据结论航段 ${escapeText(row.canonical_leg_index)} · ${escapeText(row.leg_type || "-")}</div>
+    <h2>${escapeText(FIELD_LABELS[row.field_name] || row.field_name)}</h2>
+    <p class="value">${escapeText(formatAnswer(row.expected_answer))}</p>
+    <div class="meta">${escapeText(STATUS_LABELS[status] || status)} · ${evidenceIds.length} 处证据</div>
+    <div class="evidence-list">${evidenceChipsForIds(evidenceIds)}</div>
+  </article>`;
+}
+
+function renderEncodingCard(item) {
+  const evidenceIds = evidenceIdsForItem(item);
+  const color = colorForRow(item.rows[0] || { canonical_leg_index: item.canonical_leg_index, field_name: "Q_terminator" });
+  const presentRows = item.rows.filter(answerIsPresent);
+  const fieldLines = item.rows.map((row) => {
+    const present = answerIsPresent(row);
+    return `<div class="encoding-row${present ? "" : " muted-row"}">
+      <span>${escapeText(ARINC_LABELS[row.field_name] || row.field_name)}</span>
+      <strong>${escapeText(formatAnswer(row.expected_answer))}</strong>
+    </div>`;
+  }).join("");
+  return `<article class="field-card encoding-card" data-field-key="${escapeText(item.key)}" style="--accent:${color}">
+    <div class="meta">424 编码记录</div>
+    <h2>SEQ ${escapeText(item.source_seq_no || "-")} · ${escapeText(item.source_trans_ident || "-")} · ${escapeText(item.leg_type || "-")}</h2>
+    <p class="value">映射到证据结论：航段 ${escapeText(item.canonical_leg_index)}。再由该航段的 ${presentRows.length} 个可见字段连到图上证据。</p>
+    <div class="encoding-table">${fieldLines}</div>
+    <div class="meta">${evidenceIds.length} 处图面证据</div>
+    <div class="evidence-list">${evidenceChipsForIds(evidenceIds)}</div>
+  </article>`;
+}
+
 function regionRect(region, width, height) {
   const box = region?.bbox || {};
   const w = Number(box.width || 0) * width;
@@ -337,13 +436,32 @@ function regionRect(region, width, height) {
 
 function activeEvidenceMap() {
   const map = new Map();
-  for (const row of activeRows()) {
-    for (const regionId of evidenceIdsForRow(row)) {
+  for (const item of displayItems()) {
+    for (const regionId of evidenceIdsForItem(item)) {
       if (!map.has(regionId)) map.set(regionId, []);
-      map.get(regionId).push(row);
+      map.get(regionId).push(item);
     }
   }
   return map;
+}
+
+function markerSvg(meta, x, y, size = 18) {
+  const color = meta.color;
+  if (meta.marker === "diamond") {
+    const mid = size / 2;
+    return `<path d="M ${x + mid} ${y} L ${x + size} ${y + mid} L ${x + mid} ${y + size} L ${x} ${y + mid} Z" fill="${color}" fill-opacity="0.92"></path>`;
+  }
+  if (meta.marker === "triangle") {
+    return `<path d="M ${x + size / 2} ${y} L ${x + size} ${y + size} L ${x} ${y + size} Z" fill="${color}" fill-opacity="0.92"></path>`;
+  }
+  if (meta.marker === "circle") {
+    return `<circle cx="${x + size / 2}" cy="${y + size / 2}" r="${size / 2}" fill="${color}" fill-opacity="0.92"></circle>`;
+  }
+  if (meta.marker === "text") {
+    return `<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="3" fill="${color}" fill-opacity="0.92"></rect>
+      <text x="${x + size / 2}" y="${y + size * 0.7}" text-anchor="middle" font-size="${size * 0.7}" font-weight="700" fill="white">T</text>`;
+  }
+  return `<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="2" fill="${color}" fill-opacity="0.92"></rect>`;
 }
 
 function renderBoxes() {
@@ -351,16 +469,20 @@ function renderBoxes() {
   const naturalHeight = els.chartImage.naturalHeight || state.current?.manifest?.image_dimensions?.height || 1;
   els.boxOverlay.setAttribute("viewBox", `0 0 ${naturalWidth} ${naturalHeight}`);
   const evidenceMap = activeEvidenceMap();
-  els.boxOverlay.innerHTML = Array.from(evidenceMap.entries()).map(([regionId, rows]) => {
+  els.boxOverlay.innerHTML = Array.from(evidenceMap.entries()).map(([regionId, items]) => {
     const region = state.regions.find((item) => item.region_id === regionId);
     if (!region) return "";
     const rect = regionRect(region, naturalWidth, naturalHeight);
-    const row = rows.find((item) => item.key === state.activeFieldKey) || rows[0];
-    const active = !state.activeFieldKey || rows.some((item) => item.key === state.activeFieldKey);
-    const color = colorForRow(row);
+    const active = !state.activeFieldKey || items.some((item) => item.key === state.activeFieldKey);
+    const meta = evidenceCategoryMeta(region);
     const opacity = active ? 0.96 : 0.22;
-    return `<rect x="${rect.x}" y="${rect.y}" width="${rect.w}" height="${rect.h}" rx="4"
-      fill="${color}" fill-opacity="0.12" stroke="${color}" stroke-width="${active ? 3 : 2}" stroke-opacity="${opacity}"></rect>`;
+    const markerX = Math.max(2, rect.x - 4);
+    const markerY = Math.max(2, rect.y - 22);
+    return `<g>
+      <rect x="${rect.x}" y="${rect.y}" width="${rect.w}" height="${rect.h}" rx="4"
+        fill="${meta.color}" fill-opacity="0.11" stroke="${meta.color}" stroke-width="${active ? 3 : 2}" stroke-opacity="${opacity}" stroke-dasharray="${meta.dash}"></rect>
+      ${markerSvg(meta, markerX, markerY, 18)}
+    </g>`;
   }).join("");
 }
 
@@ -371,25 +493,25 @@ function renderLeaders() {
   const shellHeight = els.viewerShell.clientHeight;
   els.leaderOverlay.setAttribute("viewBox", `0 0 ${shellWidth} ${shellHeight}`);
   const paths = [];
-  for (const row of activeRows()) {
-    const card = els.fieldList.querySelector(`[data-field-key="${CSS.escape(row.key)}"]`);
+  for (const item of displayItems()) {
+    const card = els.fieldList.querySelector(`[data-field-key="${CSS.escape(item.key)}"]`);
     if (!card) continue;
     const cardRect = card.getBoundingClientRect();
     if (cardRect.bottom < shellRect.top || cardRect.top > shellRect.bottom) continue;
     const endX = cardRect.left - shellRect.left + 2;
     const endY = cardRect.top - shellRect.top + Math.min(52, Math.max(30, cardRect.height / 2));
-    const color = colorForRow(row);
-    const active = !state.activeFieldKey || state.activeFieldKey === row.key;
-    for (const regionId of evidenceIdsForRow(row)) {
+    const active = !state.activeFieldKey || state.activeFieldKey === item.key;
+    for (const regionId of evidenceIdsForItem(item)) {
       const region = state.regions.find((item) => item.region_id === regionId);
       if (!region) continue;
+      const meta = evidenceCategoryMeta(region);
       const box = region.bbox || {};
       const startX = imageRect.left - shellRect.left + (Number(box.x_center || 0.5) + Number(box.width || 0) / 2) * imageRect.width;
       const startY = imageRect.top - shellRect.top + Number(box.y_center || 0.5) * imageRect.height;
       const midX = startX + Math.max(80, (endX - startX) * 0.48);
       const path = `M ${startX.toFixed(1)} ${startY.toFixed(1)} C ${midX.toFixed(1)} ${startY.toFixed(1)}, ${midX.toFixed(1)} ${endY.toFixed(1)}, ${endX.toFixed(1)} ${endY.toFixed(1)}`;
-      paths.push(`<path d="${path}" fill="none" stroke="${color}" stroke-width="${active ? 2.4 : 1.2}" stroke-opacity="${active ? 0.78 : 0.16}"></path>`);
-      if (active) paths.push(`<circle cx="${startX.toFixed(1)}" cy="${startY.toFixed(1)}" r="3.5" fill="${color}" fill-opacity="0.9"></circle>`);
+      paths.push(`<path d="${path}" fill="none" stroke="${meta.color}" stroke-width="${active ? 2.4 : 1.2}" stroke-opacity="${active ? 0.76 : 0.14}" stroke-dasharray="${meta.dash}"></path>`);
+      if (active) paths.push(`<circle cx="${startX.toFixed(1)}" cy="${startY.toFixed(1)}" r="3.5" fill="${meta.color}" fill-opacity="0.9"></circle>`);
     }
   }
   els.leaderOverlay.innerHTML = paths.join("");
@@ -400,12 +522,25 @@ function renderOverlays() {
   renderLeaders();
 }
 
+function fitChartToPane() {
+  const dimensions = state.current?.manifest?.image_dimensions || {};
+  const naturalWidth = els.chartImage.naturalWidth || Number(dimensions.width || 0);
+  const naturalHeight = els.chartImage.naturalHeight || Number(dimensions.height || 0);
+  if (!naturalWidth || !naturalHeight) return;
+  const paneWidth = Math.max(320, els.chartPane.clientWidth - 24);
+  const paneHeight = Math.max(360, els.chartPane.clientHeight - 24);
+  const scale = Math.min(paneWidth / naturalWidth, paneHeight / naturalHeight);
+  els.chartFrame.style.width = `${Math.floor(naturalWidth * scale)}px`;
+  els.chartFrame.style.height = `${Math.floor(naturalHeight * scale)}px`;
+}
+
 function renderAll() {
   const manifest = state.current?.manifest || {};
   els.chartMeta.textContent = `${manifest.chart_id || ""} · ${manifest.chart_name || ""}`;
   els.chartInput.value = manifest.chart_id || "";
   els.chartSelect.value = manifest.chart_id || "";
   renderLegOptions();
+  fitChartToPane();
   renderFieldCards();
   renderOverlays();
 }
@@ -431,7 +566,10 @@ async function loadChart(chartId) {
   state.currentLeg = state.rows.some((row) => row.canonical_leg_index === requestedLeg)
     ? requestedLeg
     : (state.rows[0]?.canonical_leg_index || 1);
-  els.chartImage.onload = () => renderOverlays();
+  els.chartImage.onload = () => {
+    fitChartToPane();
+    renderOverlays();
+  };
   els.chartImage.src = withAccessToken(data.image_url);
   els.chartImage.alt = `航图 ${chartId}`;
   renderAll();
@@ -464,7 +602,10 @@ function bindEvents() {
   els.arincModeBtn.addEventListener("click", () => setMode("arinc"));
   els.chartPane.addEventListener("scroll", () => renderOverlays(), { passive: true });
   document.querySelector(".field-pane").addEventListener("scroll", () => renderOverlays(), { passive: true });
-  window.addEventListener("resize", () => renderOverlays());
+  window.addEventListener("resize", () => {
+    fitChartToPane();
+    renderOverlays();
+  });
 }
 
 async function init() {
