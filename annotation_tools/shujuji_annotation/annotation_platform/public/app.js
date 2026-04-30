@@ -1619,11 +1619,11 @@ async function applyAnnotatorIdentity() {
   replaceUrlAnnotator(participantId);
   updateParticipantBadge(participantId);
   resetCurrentChartView();
-  await refreshCharts();
   if (formalQueueMode()) {
     await advanceFormalQueue({ successPrefix: `已切换到标注人：${participantId}` });
     return;
   }
+  await refreshCharts();
   const first = firstOpenableChart();
   if (first) await loadChart(first.chart_id);
   showToast(`已切换到标注人：${participantId}`);
@@ -3726,7 +3726,7 @@ function setupDatasetUi() {
 }
 
 async function refreshCharts() {
-  const data = await getJson(apiUrl("/api/charts"));
+  const data = await getJson(apiUrl("/api/charts", formalQueueMode() ? { scope: "queue" } : {}));
   state.dataset = data.dataset || datasetConfig;
   state.charts = data.charts || [];
   renderChartList();
@@ -3745,11 +3745,11 @@ async function init() {
   updateClaimButton();
   renderWorkflowPanel();
   applyZooms({ render: false });
-  await refreshCharts();
   if (formalQueueMode()) {
     await advanceFormalQueue();
     return;
   }
+  await refreshCharts();
   const first = firstOpenableChart();
   if (first) {
     await loadChart(first.chart_id);

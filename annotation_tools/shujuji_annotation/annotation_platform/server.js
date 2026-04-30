@@ -454,34 +454,49 @@ async function submissionCount(dataset, chartId) {
   }
 }
 
-async function loadCharts(dataset, annotator) {
+function claimStatusFor(dataset, claim, annotator) {
+  const mine = Boolean(annotator && claim?.annotator === annotator);
+  return !dataset.finalDataset
+    ? "practice"
+    : !claim
+      ? "unassigned"
+      : claim.status === "returned_for_expert_review"
+        ? "returned_for_expert_review"
+        : mine
+          ? claim.status || "claimed_by_me"
+        : "claimed_by_other";
+}
+
+async function loadCharts(dataset, annotator, options = {}) {
+  const lite = Boolean(options.lite);
   const manifest = await readDatasetJson(dataset, "manifest.json", []);
-  const targets = await readDatasetJson(dataset, "targets/canonical_targets.json", []);
+  const targets = lite ? [] : await readDatasetJson(dataset, "targets/canonical_targets.json", []);
   const targetById = new Map(targets.map((item) => [item.chart_id, item]));
   const claims = await readClaims(dataset);
 
   return Promise.all(manifest.map(async (item) => {
     const chartId = item.chart_id;
+    const claim = claims[chartId] || null;
+    const claimStatus = claimStatusFor(dataset, claim, annotator);
+    if (lite) {
+      return scrubClientValue({
+        chart_id: chartId,
+        claim_status: claimStatus,
+        claimed_by: claim?.annotator || "",
+        has_my_annotation: claimStatus === "submitted",
+        has_my_draft: false
+      });
+    }
+
     const target = targetById.get(chartId) || {};
     const prelabelPath = safeJoin(dataset.root, "prelabels", `${chartId}.json`);
-    const claim = claims[chartId] || null;
-    const mine = Boolean(annotator && claim?.annotator === annotator);
-    const claimStatus = !dataset.finalDataset
-      ? "practice"
-      : !claim
-        ? "unassigned"
-        : claim.status === "returned_for_expert_review"
-          ? "returned_for_expert_review"
-          : mine
-            ? claim.status || "claimed_by_me"
-          : "claimed_by_other";
     const myAnnotationPath = annotator
       ? annotationPath(dataset, "by_annotator", annotator, `${chartId}.json`)
       : "";
     const myDraftPath = annotator
       ? annotationPath(dataset, "drafts", "by_annotator", annotator, `${chartId}.json`)
       : "";
-    const draft = myDraftPath ? await readJsonFile(myDraftPath, null) : null;
+    const draft = !lite && myDraftPath ? await readJsonFile(myDraftPath, null) : null;
     return scrubClientValue({
       ...item,
       dataset_key: dataset.key,
@@ -513,9 +528,9 @@ async function loadChartDetail(dataset, chartId, annotator) {
     throw error;
   }
 
-  const charts = await loadCharts(dataset, annotator);
-  const manifestItem = charts.find((item) => item.chart_id === chartId);
-  if (!manifestItem) {
+  const manifest = await readDatasetJson(dataset, "manifest.json", []);
+  const rawManifestItem = manifest.find((item) => item.chart_id === chartId);
+  if (!rawManifestItem) {
     const error = new Error(`Unknown chart_id: ${chartId}`);
     error.statusCode = 404;
     throw error;
@@ -523,6 +538,20 @@ async function loadChartDetail(dataset, chartId, annotator) {
 
   const claims = await readClaims(dataset);
   const claim = claims[chartId] || null;
+  const manifestItem = {
+    ...rawManifestItem,
+    dataset_key: dataset.key,
+    final_dataset: dataset.finalDataset,
+    image_file: imageBasename(rawManifestItem.image_file || rawManifestItem.image_path),
+    claim_status: claimStatusFor(dataset, claim, annotator),
+    claimed_by: claim?.annotator || "",
+    claimed_at: claim?.claimed_at || "",
+    last_saved_at: claim?.last_saved_at || "",
+    returned_at: claim?.returned_at || "",
+    returned_by: claim?.returned_by || "",
+    return_reason: claim?.return_reason || "",
+    expert_review_required: Boolean(claim?.expert_review_required)
+  };
   const targets = await readDatasetJson(dataset, "targets/canonical_targets.json", []);
   const target = targets.find((item) => item.chart_id === chartId) || null;
   const prelabel = await readDatasetJson(dataset, `prelabels/${chartId}.json`, null);
@@ -543,8 +572,6 @@ async function loadChartDetail(dataset, chartId, annotator) {
     },
     manifest: scrubClientValue({
       ...manifestItem,
-      claim_status: claim?.status || manifestItem.claim_status,
-      claimed_by: claim?.annotator || manifestItem.claimed_by,
       returned_at: claim?.returned_at || manifestItem.returned_at || "",
       returned_by: claim?.returned_by || manifestItem.returned_by || "",
       return_reason: claim?.return_reason || manifestItem.return_reason || "",
@@ -1122,7 +1149,9 @@ async function route(req, res) {
         final_dataset: dataset.finalDataset,
         url_path: dataset.urlPath
       },
-      charts: await loadCharts(dataset, annotator)
+      charts: await loadCharts(dataset, annotator, {
+        lite: dataset.finalDataset && requestUrl.searchParams.get("scope") === "queue"
+      })
     });
     return;
   }
