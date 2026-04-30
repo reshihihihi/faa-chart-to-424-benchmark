@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "experiment6/candidate_424_like_schema.json",
+  "title": "Experiment 6 Candidate 424-like Missed Approach Record",
+  "type": "object",
+  "required": ["record_schema_version", "chart_id", "procedure", "missed_approach"],
+  "additionalProperties": false,
+  "properties": {
+    "record_schema_version": { "const": "candidate_424_like_v1" },
+    "chart_id": { "type": "string" },
+    "procedure": {
+      "type": "object",
+      "required": ["airport", "approach_ident", "chart_name"],
+      "additionalProperties": false,
+      "properties": {
+        "airport": { "type": "string" },
+        "approach_ident": { "type": "string" },
+        "chart_name": { "type": "string" }
+      }
+    },
+    "missed_approach": {
+      "type": "object",
+      "required": ["leg_count", "legs"],
+      "additionalProperties": false,
+      "properties": {
+        "leg_count": { "type": "integer", "minimum": 0 },
+        "legs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/leg" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "status_enum": {
+      "type": "string",
+      "enum": ["present", "not_applicable", "not_observable", "unknown"]
+    },
+    "answer": {
+      "type": "object",
+      "required": ["status", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "$ref": "#/$defs/status_enum" },
+        "value": true
+      }
+    },
+    "leg": {
+      "type": "object",
+      "required": [
+        "leg_index",
+        "path_terminator",
+        "fix_ident",
+        "altitude_constraint",
+        "turn",
+        "course_or_radial",
+        "hold_params"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "leg_index": { "type": "integer", "minimum": 1 },
+        "path_terminator": { "$ref": "#/$defs/answer" },
+        "fix_ident": { "$ref": "#/$defs/answer" },
+        "altitude_constraint": { "$ref": "#/$defs/answer" },
+        "turn": { "$ref": "#/$defs/answer" },
+        "course_or_radial": { "$ref": "#/$defs/answer" },
+        "hold_params": { "$ref": "#/$defs/answer" }
+      }
+    }
+  }
+}
