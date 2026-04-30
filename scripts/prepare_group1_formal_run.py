@@ -111,9 +111,37 @@ def main() -> int:
         description="Prepare no-leakage Group 1 formal input/scoring manifests without running formal300."
     )
     parser.add_argument("--formal300-dir", type=Path, default=DEFAULT_FORMAL300)
+    parser.add_argument(
+        "--sample-manifest",
+        type=Path,
+        default=None,
+        help="Optional sample manifest to prepare from. Defaults to formal300-dir/sample_manifest.jsonl.",
+    )
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     parser.add_argument("--run-id", default="group1_formal_prepared_20260429_no_eval")
     parser.add_argument("--methods", default=",".join(METHODS))
+    parser.add_argument(
+        "--split-candidate-id",
+        default=None,
+        help="Optional frozen split candidate id recorded in run_plan.json.",
+    )
+    parser.add_argument(
+        "--split-policy",
+        type=Path,
+        default=None,
+        help="Optional split policy/audit file recorded in run_plan.json.",
+    )
+    parser.add_argument(
+        "--split",
+        default=None,
+        help="Optional dataset_split filter such as evaluation, development, or probe. Omit to include all formal300 rows.",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Optional row limit after split filtering, used only for smoke/probe preparation.",
+    )
     parser.add_argument(
         "--ocr1-root",
         type=Path,
@@ -131,7 +159,12 @@ def main() -> int:
     if unknown:
         raise ValueError(f"Unknown Group 1 methods: {unknown}")
 
-    samples = read_jsonl(args.formal300_dir / "sample_manifest.jsonl")
+    sample_manifest = args.sample_manifest or args.formal300_dir / "sample_manifest.jsonl"
+    samples = read_jsonl(sample_manifest)
+    if args.split:
+        samples = [sample for sample in samples if sample.get("dataset_split") == args.split]
+    if args.limit is not None:
+        samples = samples[: args.limit]
     run_dir = args.output_root / args.run_id
     run_dir.mkdir(parents=True, exist_ok=True)
 
@@ -181,6 +214,10 @@ def main() -> int:
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "run_id": args.run_id,
         "formal300_dir": display(args.formal300_dir),
+        "sample_manifest": artifact(sample_manifest),
+        "split_candidate_id": args.split_candidate_id,
+        "split_policy": artifact(args.split_policy) if args.split_policy else None,
+        "split_filter": args.split,
         "sample_count": len(samples),
         "methods": methods,
         "inference_target_access": False,

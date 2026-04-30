@@ -1,0 +1,132 @@
+{
+  "candidate_id": "formal300_50_200_50_seed20260437",
+  "created_at_utc": "2026-04-30T00:38:56.305673+00:00",
+  "balance_score": 35.0,
+  "global_counts": {
+    "samples": 300,
+    "procedure_type": {
+      "ILS": 13,
+      "LOC": 25,
+      "RNAV": 262
+    },
+    "sample_source": {
+      "issue19_rnav_expansion_200": 200,
+      "v2604_existing_100": 100
+    },
+    "sample_type": {
+      "holding": 211,
+      "multi_leg": 62,
+      "simple": 27
+    },
+    "leg_count": {
+      "2": 3,
+      "3": 235,
+      "4": 57,
+      "5": 5
+    },
+    "previous_dataset_split": {
+      "development": 200,
+      "evaluation": 75,
+      "probe": 25
+    }
+  },
+  "split_distributions": {
+    "development": {
+      "samples": 50,
+      "procedure_type": {
+        "ILS": 2,
+        "LOC": 4,
+        "RNAV": 44
+      },
+      "sample_source": {
+        "issue19_rnav_expansion_200": 33,
+        "v2604_existing_100": 17
+      },
+      "sample_type": {
+        "holding": 35,
+        "multi_leg": 10,
+        "simple": 5
+      },
+      "leg_count": {
+        "2": 1,
+        "3": 39,
+        "4": 9,
+        "5": 1
+      }
+    },
+    "evaluation": {
+      "samples": 200,
+      "procedure_type": {
+        "ILS": 9,
+        "LOC": 17,
+        "RNAV": 174
+      },
+      "sample_source": {
+        "issue19_rnav_expansion_200": 134,
+        "v2604_existing_100": 66
+      },
+      "sample_type": {
+        "holding": 141,
+        "multi_leg": 41,
+        "simple": 18
+      },
+      "leg_count": {
+        "2": 2,
+        "3": 157,
+        "4": 38,
+        "5": 3
+      }
+    },
+    "probe": {
+      "samples": 50,
+      "procedure_type": {
+        "ILS": 2,
+        "LOC": 4,
+        "RNAV": 44
+      },
+      "sample_source": {
+        "issue19_rnav_expansion_200": 33,
+        "v2604_existing_100": 17
+      },
+      "sample_type": {
+        "holding": 35,
+        "multi_leg": 11,
+        "simple": 4
+      },
+      "leg_count": {
+        "3": 39,
+        "4": 10,
+        "5": 1
+      }
+    }
+  },
+  "airport_overlap": {
+    "development_vs_evaluation": [],
+    "development_vs_probe": [],
+    "evaluation_vs_probe": []
+  },
+  "old_evaluation_destination_counts": {
+    "evaluation": 51,
+    "development": 12,
+    "probe": 12
+  },
+  "old_split_to_new_split_counts": {
+    "development": {
+      "evaluation": 131,
+      "development": 34,
+      "probe": 35
+    },
+    "evaluation": {
+      "evaluation": 51,
+      "probe": 12,
+      "development": 12
+    },
+    "probe": {
+      "evaluation": 18,
+      "development": 4,
+      "probe": 3
+    }
+  },
+  "formal75_run_status_recommendation": "Treat group1_formal_eval_20260430_r1 as superseded diagnostic evidence only.",
+  "formal_readiness_note": "Use this split only after method configs, scorer, retry policy, and run manifests are frozen against this candidate id."
+}

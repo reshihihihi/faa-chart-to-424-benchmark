@@ -1,0 +1,98 @@
+{
+  "created_at_utc": "2026-04-30T00:47:31.398701+00:00",
+  "run_dir": "formal_runs\\group1\\group1_formal_prepared_50_200_50_seed20260437_no_eval",
+  "expected_split_candidate_id": "formal300_50_200_50_seed20260437",
+  "expected_split": "evaluation",
+  "expected_sample_count": 200,
+  "run_plan_status": "prepared_no_formal300_eval_run",
+  "formal300_evaluation_ran": false,
+  "method_summary": {
+    "A1": {
+      "rows": 200,
+      "sample_ids_match_scoring_manifest": true,
+      "errors": [],
+      "error_count": 0
+    },
+    "A2": {
+      "rows": 200,
+      "sample_ids_match_scoring_manifest": true,
+      "errors": [],
+      "error_count": 0
+    },
+    "B1": {
+      "rows": 200,
+      "sample_ids_match_scoring_manifest": true,
+      "errors": [],
+      "error_count": 0
+    },
+    "B1_prime": {
+      "rows": 200,
+      "sample_ids_match_scoring_manifest": true,
+      "errors": [],
+      "error_count": 0
+    },
+    "B1_prime_link": {
+      "rows": 200,
+      "sample_ids_match_scoring_manifest": true,
+      "errors": [],
+      "error_count": 0
+    },
+    "C1": {
+      "rows": 200,
+      "sample_ids_match_scoring_manifest": true,
+      "errors": [],
+      "error_count": 0
+    },
+    "C2": {
+      "rows": 200,
+      "sample_ids_match_scoring_manifest": true,
+      "errors": [],
+      "error_count": 0
+    },
+    "C3": {
+      "rows": 200,
+      "sample_ids_match_scoring_manifest": true,
+      "errors": [],
+      "error_count": 0
+    },
+    "C4": {
+      "rows": 200,
+      "sample_ids_match_scoring_manifest": true,
+      "errors": [],
+      "error_count": 0
+    },
+    "D_SFT": {
+      "rows": 200,
+      "sample_ids_match_scoring_manifest": true,
+      "errors": [],
+      "error_count": 0
+    }
+  },
+  "scoring_manifest_rows": 200,
+  "split_distribution": {
+    "selected_count": 200,
+    "procedure_type": {
+      "ILS": 9,
+      "LOC": 17,
+      "RNAV": 174
+    },
+    "sample_source": {
+      "v2604_existing_100": 66,
+      "issue19_rnav_expansion_200": 134
+    },
+    "sample_type": {
+      "holding": 141,
+      "multi_leg": 41,
+      "simple": 18
+    },
+    "previous_dataset_split": {
+      "evaluation": 51,
+      "development": 131,
+      "probe": 18
+    }
+  },
+  "warnings": [],
+  "errors": [],
+  "error_count": 0,
+  "ready_for_user_decision_to_run": true
+}
