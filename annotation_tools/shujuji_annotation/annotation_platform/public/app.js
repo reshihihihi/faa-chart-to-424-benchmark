@@ -659,9 +659,6 @@ function suggestedEvidenceEntriesForField(row) {
     return left.rank - right.rank || leftDecision - rightDecision;
   });
   const fine = ranked.filter((item) => item.rank < 50);
-  if (row.field_name === "Q4_course_or_radial" && fine.some((item) => item.rank === 0)) {
-    return fine.filter((item) => item.rank === 0);
-  }
   return fine.length ? fine : ranked;
 }
 
@@ -690,25 +687,6 @@ function evidenceSourceForRegion(region) {
 
 function sourcesForRegionIds(regionIds) {
   return uniqueList(regionIds.map((regionId) => evidenceSourceForRegion(regionById(regionId))));
-}
-
-function evidenceGroupKeyForField(row, regionId) {
-  const region = regionById(regionId);
-  const regionType = region?.region_type || "";
-  const value = expectedAnswerValue(row);
-  if (row?.field_name === "Q4_course_or_radial") {
-    if (value?.type === "navaid_radial" && ["NAVAID_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(regionType)) {
-      return `${row.key}.q4-navaid-radial-text`;
-    }
-    if (value?.type === "course_deg" && ["HEADING_TEXT", "TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT"].includes(regionType)) {
-      return `${row.key}.q4-course-text`;
-    }
-  }
-  return regionId;
-}
-
-function evidenceGroupCountForField(row, evidenceIds) {
-  return uniqueList((evidenceIds || []).map((regionId) => evidenceGroupKeyForField(row, regionId))).length;
 }
 
 function supportModeFromReview(raw, evidenceIds = []) {
@@ -754,7 +732,7 @@ function reviewForField(row) {
       : suggestedIds;
   let supportMode = supportModeFromReview(saved, requiredIds);
   if (!hasSavedReview) supportMode = row.requires_review ? "pending" : "not_applicable";
-  if (supportMode === "direct_visible" && evidenceGroupCountForField(row, requiredIds) > 1 && saved.review_status === "supported_by_chart") {
+  if (supportMode === "direct_visible" && requiredIds.length > 1 && saved.review_status === "supported_by_chart") {
     supportMode = "visible_joint";
   }
   if (supportMode === "not_applicable" || !row.requires_review) {
@@ -1011,7 +989,7 @@ function recommendedSupportModeForField(row, evidenceIds) {
   if (!row) return "";
   if (row.field_name === "Q_terminator") return "visible_joint";
   if (!evidenceIds.length) return "";
-  return evidenceGroupCountForField(row, evidenceIds) > 1 ? "visible_joint" : "direct_visible";
+  return evidenceIds.length > 1 ? "visible_joint" : "direct_visible";
 }
 
 function selectedSupportModeForField(row, evidenceIds, reviewStatus = "pending") {
