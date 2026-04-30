@@ -663,6 +663,41 @@ async function returnClaim(dataset, chartId, annotator, reason) {
   });
 }
 
+async function releaseClaim(dataset, chartId, annotator) {
+  if (!dataset.finalDataset) return null;
+  if (!annotator) {
+    const error = new Error("正式标注请先填写标注人，再换一张图。");
+    error.statusCode = 400;
+    throw error;
+  }
+  return withClaimLock(async () => {
+    const claims = await readClaims(dataset);
+    const existing = claims[chartId];
+    if (!existing) return null;
+    if (existing.annotator !== annotator) {
+      const error = new Error(`这张图由 ${existing.annotator} 领取，不能用 ${annotator} 换图。`);
+      error.statusCode = 409;
+      error.claim = existing;
+      throw error;
+    }
+    if (["submitted", "returned_for_expert_review"].includes(existing.status || "")) {
+      const error = new Error("这张图已经提交或进入专家复核，不能当作普通换图释放。");
+      error.statusCode = 409;
+      error.claim = existing;
+      throw error;
+    }
+    delete claims[chartId];
+    await writeClaims(dataset, claims);
+    return {
+      ...existing,
+      chart_id: chartId,
+      released_by: annotator,
+      released_at: new Date().toISOString(),
+      previous_status: existing.status || "claimed"
+    };
+  });
+}
+
 async function markSubmitted(dataset, chartId, annotator) {
   if (!dataset.finalDataset) return null;
   return withClaimLock(async () => {
@@ -862,6 +897,23 @@ async function returnClaimForRequest(req, requestUrl, dataset, chartId) {
   const payload = JSON.parse(stripBom(await readRequestBody(req)) || "{}");
   const annotator = getAnnotator(requestUrl) || safeAnnotator(payload.annotator || "");
   const claim = await returnClaim(dataset, chartId, annotator, payload.reason || "");
+  return {
+    ok: true,
+    dataset: dataset.key,
+    chart_id: chartId,
+    claim
+  };
+}
+
+async function releaseClaimForRequest(req, requestUrl, dataset, chartId) {
+  if (!isSafeChartId(chartId)) {
+    const error = new Error("Invalid chart_id");
+    error.statusCode = 400;
+    throw error;
+  }
+  const payload = JSON.parse(stripBom(await readRequestBody(req)) || "{}");
+  const annotator = getAnnotator(requestUrl) || safeAnnotator(payload.annotator || "");
+  const claim = await releaseClaim(dataset, chartId, annotator);
   return {
     ok: true,
     dataset: dataset.key,
@@ -1739,6 +1791,14 @@ async function route(req, res) {
     const parts = pathname.split("/");
     const chartId = parts[3];
     sendJson(res, 200, await returnClaimForRequest(req, requestUrl, dataset, chartId));
+    return;
+  }
+
+  if (req.method === "POST" && pathname.startsWith("/api/claims/") && pathname.endsWith("/release")) {
+    requireAccess(req, requestUrl);
+    const parts = pathname.split("/");
+    const chartId = parts[3];
+    sendJson(res, 200, await releaseClaimForRequest(req, requestUrl, dataset, chartId));
     return;
   }
 

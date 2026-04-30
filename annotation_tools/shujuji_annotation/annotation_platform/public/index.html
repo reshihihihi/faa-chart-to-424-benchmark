@@ -37,6 +37,7 @@
           <button id="claimCurrentBtn" class="primary claim-current-btn" type="button">领取并开始</button>
           <div class="final-actions">
             <button id="saveDraftBtn" type="button">暂存</button>
+            <button id="skipClaimBtn" type="button">换一张</button>
             <button id="returnClaimBtn" class="danger" type="button">退回专家复审</button>
             <button id="saveBtn" class="primary" type="button">完成本图</button>
           </div>
@@ -211,7 +212,7 @@
             <h3>主流程</h3>
             <ol>
               <li>正式标注会自动领取下一张可做航图；练习集可在左侧选择航图。</li>
-              <li>如果当前正式航图超出能力范围，点击“提交专家复核”。</li>
+              <li>如果只是想暂时跳过当前正式航图，点击“换一张”；如果确实需要专家判断，点击“提交专家复核”。</li>
               <li>按右侧“当前字段任务”逐个字段判断。</li>
               <li>先找出图上哪些位置支持当前判断：系统会先放入可能相关的位置，可以加入、移除、微调或画新框。</li>
               <li>说明这些位置怎么支持判断：一处直接能看出、多处合起来能看出、图上证据加规则补全、图上看不够或不确定。</li>
@@ -224,7 +225,7 @@
           </section>
           <section>
             <h3>专家复核</h3>
-            <p>领取后发现航图超出能力范围，使用“提交专家复核”。系统会先暂存当前已选的位置和判断，再把该图移出普通标注队列。</p>
+            <p>领取后发现航图超出能力范围，使用“提交专家复核”。系统会先暂存当前已选的位置和判断，再把该图移出普通标注队列。“换一张”只释放当前领取，不进入专家复核。</p>
           </section>
           <section>
             <h3>完整教程</h3>

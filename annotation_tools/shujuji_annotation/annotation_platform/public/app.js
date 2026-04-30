@@ -92,6 +92,7 @@ const els = {
   workflowUndoBtn: document.querySelector("#workflowUndoBtn"),
   returnClaimBtn: document.querySelector("#returnClaimBtn"),
   returnWorkflowBtn: document.querySelector("#returnWorkflowBtn"),
+  skipClaimBtn: document.querySelector("#skipClaimBtn"),
   saveDraftBtn: document.querySelector("#saveDraftBtn"),
   applyAnnotatorBtn: document.querySelector("#applyAnnotatorBtn"),
   pageTitle: document.querySelector(".topbar h1"),
@@ -2052,6 +2053,7 @@ function renderWorkflowPanel() {
   if (els.workflowSaveBtn) els.workflowSaveBtn.disabled = !canFinish || pending.length > 0;
   if (els.saveBtn) els.saveBtn.disabled = !canFinish || pending.length > 0;
   if (els.saveDraftBtn) els.saveDraftBtn.disabled = !canEdit;
+  if (els.skipClaimBtn) els.skipClaimBtn.disabled = !canEdit || currentChartStatus() === "submitted";
   if (els.quickAcceptBtn) els.quickAcceptBtn.disabled = !canEdit;
   if (els.openTargetsBtn) els.openTargetsBtn.disabled = !state.current;
   if (els.drawBtn) els.drawBtn.disabled = !canEdit || !selected;
@@ -2280,6 +2282,46 @@ async function returnCurrentClaim() {
     await advanceFormalQueue({ afterChartId: chartId, successPrefix: "已提交专家复核" });
   } else {
     showToast("已提交专家复核。");
+  }
+}
+
+async function skipCurrentClaim() {
+  if (!state.current) {
+    showToast("请先打开一张已领取航图。");
+    return;
+  }
+  if (!datasetConfig.finalDataset) {
+    showToast("练习集不需要换图。");
+    return;
+  }
+  const chartId = state.current.manifest.chart_id;
+  const claimedBy = state.current.manifest.claimed_by || "";
+  if (claimedBy !== currentAnnotator()) {
+    showToast("只能释放自己领取的航图。");
+    return;
+  }
+  const ok = window.confirm("换一张只释放当前领取，不会提交专家复核。需要保留当前改动时，请先取消并点击“暂存当前图”。继续换图吗？");
+  if (!ok) return;
+
+  await postJson(apiUrl(`/api/claims/${encodeURIComponent(chartId)}/release`), {
+    annotator: currentAnnotator()
+  });
+  const chart = state.charts.find((item) => item.chart_id === chartId);
+  if (chart) {
+    chart.claim_status = "unassigned";
+    chart.claimed_by = "";
+    chart.claimed_at = "";
+    chart.last_saved_at = "";
+  }
+  state.current.manifest.claim_status = "unassigned";
+  state.current.manifest.claimed_by = "";
+  state.current.manifest.claimed_at = "";
+  renderChartList();
+  renderCanonicalPanel();
+  if (formalQueueMode()) {
+    await advanceFormalQueue({ afterChartId: chartId, successPrefix: "已换一张" });
+  } else {
+    showToast("当前图已释放。");
   }
 }
 
@@ -3496,6 +3538,7 @@ function bindEvents() {
   els.workflowUndoBtn?.addEventListener("click", undoLastAction);
   els.returnClaimBtn?.addEventListener("click", () => returnCurrentClaim().catch((error) => showToast(error.message)));
   els.returnWorkflowBtn?.addEventListener("click", () => returnCurrentClaim().catch((error) => showToast(error.message)));
+  els.skipClaimBtn?.addEventListener("click", () => skipCurrentClaim().catch((error) => showToast(error.message)));
   els.claimCurrentBtn?.addEventListener("click", () => claimCurrentChart().catch((error) => showToast(error.message)));
   els.quickAcceptBtn?.addEventListener("click", acceptAllChartPendingMappings);
   els.undoQuickAcceptBtn?.addEventListener("click", undoQuickAccept);
