@@ -69,7 +69,7 @@
     },
     "run_config": {
       "path": "configs/formal_v1_v4_run_config_20260430.json",
-      "sha256": "29EEFB3F47903D52E8E3A13C5C7621F28CCC3939104545B58DDBCCCF1608B66E"
+      "sha256": "840D5F2B29562DBD14D09BD5548E86B6FDB01B3454C6F170CC67071A80B36285"
     },
     "audit_decision_schema": {
       "path": "configs/audit_decision_schema.json",
@@ -89,7 +89,7 @@
     },
     "v2_runner": {
       "path": "scripts/run_v2_direct_vlm_verifier.py",
-      "sha256": "5A52B018F55CE62C0EBFB86A1DE31640D49B1436DD8113B7185775FF09CF1955"
+      "sha256": "88A7DD97ACF2C4C0C8E541D1FF8B893ABF1D437DD55E7DBBA54BBBECE23651B8"
     },
     "v3_runner": {
       "path": "scripts/run_v3_extract_then_compare.py",

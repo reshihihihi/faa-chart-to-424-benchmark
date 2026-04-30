@@ -37,6 +37,9 @@ label-vocabulary issues were fixed before formal runs:
   `consistent` and `error_fields`.
 - V2 runner parsing was tightened to reject markdown/prose wrappers and
   extra keys.
+- V2 runner output control now uses a required `audit_decision` tool call when
+  routed through the OpenAI-compatible Claude API; the tool arguments are then
+  parsed by the same strict two-key JSON parser.
 - `ca_omission` labels were changed from whole-leg paths such as
   `missed_approach.legs[1]` to the sequence-level field
   `missed_approach.legs.sequence`.

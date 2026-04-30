@@ -64,6 +64,25 @@ def allowed_error_fields(candidate_record: Dict[str, Any]) -> List[str]:
     return fields
 
 
+def audit_decision_tool() -> Dict[str, Any]:
+    return {
+        "type": "function",
+        "function": {
+            "name": "audit_decision",
+            "description": "Return the Experiment 6 audit decision JSON.",
+            "parameters": {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["consistent", "error_fields"],
+                "properties": {
+                    "consistent": {"type": "boolean"},
+                    "error_fields": {"type": "array", "items": {"type": "string"}},
+                },
+            },
+        },
+    }
+
+
 def extract_json(raw: str) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
     text = raw.strip()
     try:
@@ -79,6 +98,19 @@ def extract_json(raw: str) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
     if not isinstance(obj.get("error_fields"), list) or not all(isinstance(x, str) for x in obj["error_fields"]):
         return None, "schema_type_error: error_fields must be string array"
     return {"consistent": obj["consistent"], "error_fields": obj["error_fields"]}, None
+
+
+def extract_audit_decision(message: Dict[str, Any]) -> Tuple[str, Optional[Dict[str, Any]], Optional[str], str]:
+    for call in message.get("tool_calls") or []:
+        function = call.get("function") or {}
+        if function.get("name") != "audit_decision":
+            continue
+        raw_args = function.get("arguments") or ""
+        parsed, parse_error = extract_json(raw_args)
+        return raw_args, parsed, parse_error, "tool_call"
+    raw_content = message.get("content") or ""
+    parsed, parse_error = extract_json(raw_content)
+    return raw_content, parsed, parse_error, "content"
 
 
 def make_messages(prompt: str, item: Dict[str, Any], repo_root: Path) -> List[Dict[str, Any]]:
@@ -125,6 +157,8 @@ def call_chat_completion(
         "messages": messages,
         "max_tokens": max_tokens,
         "temperature": temperature,
+        "tools": [audit_decision_tool()],
+        "tool_choice": {"type": "function", "function": {"name": "audit_decision"}},
     }
     data = json.dumps(body, ensure_ascii=False).encode("utf-8")
     request = urllib.request.Request(
@@ -177,8 +211,8 @@ def run_one(item: Dict[str, Any], prompt: str, prompt_hash: str, args: argparse.
                 max_tokens=args.max_tokens,
                 temperature=args.temperature,
             )
-            raw_output = response.get("choices", [{}])[0].get("message", {}).get("content", "")
-            parsed, parse_error = extract_json(raw_output)
+            message = response.get("choices", [{}])[0].get("message", {})
+            raw_output, parsed, parse_error, output_mode = extract_audit_decision(message)
             api_error = None
             break
         except (urllib.error.URLError, TimeoutError, ConnectionError, json.JSONDecodeError) as exc:
@@ -197,6 +231,7 @@ def run_one(item: Dict[str, Any], prompt: str, prompt_hash: str, args: argparse.
         "prompt_hash": prompt_hash,
         "input_hash": stable_hash(item),
         "raw_output": raw_output,
+        "output_mode": locals().get("output_mode", "none"),
         "parsed_output": parsed,
         "parse_ok": parsed is not None,
         "parse_error": parse_error,
@@ -219,7 +254,7 @@ def main() -> int:
     parser.add_argument("--out-jsonl", required=True)
     parser.add_argument("--summary-json", required=True)
     parser.add_argument("--repo-root", required=True)
-    parser.add_argument("--model", default="gpt-5.4-mini")
+    parser.add_argument("--model", default="claude-sonnet-4-5-20250929")
     parser.add_argument("--method-id", default="V2_direct_vlm_openai_compatible")
     parser.add_argument("--base-url", default=os.environ.get("OPENAI_API_BASE", ""))
     parser.add_argument("--api-key", default=os.environ.get("OPENAI_API_KEY", ""))

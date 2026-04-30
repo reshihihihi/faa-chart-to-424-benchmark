@@ -42,7 +42,7 @@
       "temperature": 0.0,
       "max_tokens": 300,
       "api_retries": 1,
-      "output_control": "bare_json_prompt_plus_strict_parser"
+      "output_control": "audit_decision_tool_call_json_plus_strict_parser"
     },
     "V3_extract_then_compare": {
       "input": "frozen Group 1 canonical extraction + candidate_record",
