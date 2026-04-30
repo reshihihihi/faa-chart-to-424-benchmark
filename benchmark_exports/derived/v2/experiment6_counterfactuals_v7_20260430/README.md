@@ -1,50 +1,46 @@
-# Experiment Group 6 Counterfactual Verification Package v7
+# 实验组6反事实验证包 v7
 
-Status: formal freeze candidate, ready for user approval before full V1/V2/V3 runs.
+状态：正式冻结候选包，等待用户确认后再执行完整 V1/V2/V3 正式运行。
 
-Date: 2026-04-30
+日期：2026-04-30
 
-## Scope
+## 范围
 
-This package contains the paper-v2 Experiment Group 6 counterfactual
-verification set and pre-run assets. The task is:
+本包包含 paper-v2 实验组6的反事实验证集合及正式运行前资产。任务形式为：
 
 ```text
-chart evidence + candidate 424-like missed-approach record
--> audit decision JSON
+航图证据 + 候选 424-like missed-approach 记录
+-> 审核判定 JSON
 ```
 
-It is a verification task, not a full canonical JSON extraction task.
+这是一个验证任务，不是完整的 canonical JSON 抽取任务。实验组6关注的是：给定一份候选 missed-approach 记录后，方法能否根据允许的证据判断该候选记录是否与航图一致。
 
-## What Is Included
+## 包含内容
 
 - `cases/verification_counterfactuals_v7_formal300.jsonl`
-  The labeled v7 verification cases. Labels are for scoring only and must not
-  be included in method inputs.
+  v7 版本的带标签验证样本。标签只用于评分，不能进入任何方法输入。
 - `packed_inputs/`
-  Label-free V0/V1/V2/V3 inputs.
+  不含标签的 V0/V1/V2/V3 输入包。
 - `configs/`
-  Schemas, method card, no-leakage policy, construction policy, and the four
-  pre-run freeze policies.
+  schema、method card、no-leakage policy、反事实构造规则，以及正式运行前冻结策略。
 - `prompts/`
-  Formal V0/V1/V2 prompts and V3/V4 specifications.
+  正式 V0/V1/V2 prompt，以及 V3/V4 方法规格说明。
 - `scripts/`
-  Builder, packer, no-leakage checker, validator, runners, and scorer used for
-  this package.
+  本包使用的 builder、packer、no-leakage checker、validator、runner 和 scorer。
 - `qc/`
-  Builder summary, validation report, and no-leakage reports.
+  builder summary、validation report 和 no-leakage reports。
 - `runs/v0_candidate_only/`
-  V0 candidate-only artifact baseline summary and report.
+  V0 candidate-only artifact baseline 的 summary 和 report。
 - `reports/`
-  Strict QC review and formal pre-run steps 1-5 report.
-- `freeze_manifest.json` and `checksums.sha256`
-  Package manifest and file hashes.
+  严格 QC 审查报告，以及正式运行前步骤 1-5 报告。
+- `freeze_manifest.json` 和 `checksums.sha256`
+  本包 manifest 和文件 hash 清单。
 
-## Case Counts
+## 样本数量
 
-Total cases: 3091 from formal300.
+总样本数：3091，来源于 formal300。
 
-| Type | Count |
+| 类型 | 数量 |
 |---|---:|
 | positive | 300 |
 | fix_substitution | 300 |
@@ -59,30 +55,29 @@ Total cases: 3091 from formal300.
 | text_only_trap | 300 |
 | 424_derived_trap | 300 |
 
-## Frozen Method Meanings
+## 冻结方法含义
 
 - V0 candidate-only baseline
-  Candidate record only. Used for artifact control.
+  只输入候选记录，不输入航图证据。用于 artifact control，检查候选记录自身是否可能泄漏答案或带来偏置。
 - V1 text-only verifier
-  Frozen OCR-1 full-chart text plus candidate.
+  输入冻结的 OCR-1 全航图文本和候选记录。
 - V2 direct VLM verifier
-  Full chart image plus candidate.
+  输入完整航图图像和候选记录。
 - V3 extract-then-compare
-  Frozen Group 1 extraction plus symbolic comparer.
+  输入冻结的实验组1抽取结果，再通过符号比较器进行审核。
 - V4 SFT verifier
-  Optional; not run until a no-leakage SFT verifier checkpoint is frozen.
+  可选方法；只有在 no-leakage 的 SFT verifier checkpoint 被冻结后才运行。
 
-## Key Pre-Run Results
+## 关键正式运行前结果
 
-- Case validation: pass.
-- V0/V1/V2/V3 no-leakage: pass.
-- V0 candidate-only artifact score: 0.20315299175922608.
-- V1/V2/V3 smoke tests: 5 of 5 parsed successfully for each method.
-- V2 must use the OpenAI-compatible Claude proxy route, not Anthropic native
-  Messages API, because the native route returned 403 in the smoke test.
+- case validation：通过。
+- V0/V1/V2/V3 no-leakage：通过。
+- V0 candidate-only artifact score：0.20315299175922608。
+- V1/V2/V3 smoke test：每个方法均为 5/5 成功解析。
+- V2 必须使用 OpenAI-compatible Claude proxy route，而不是 Anthropic native Messages API，因为 native route 在 smoke test 中返回 403。
 
-## Formal-Run Rule
+## 正式运行规则
 
-After this package is accepted for freeze, do not modify cases, labels,
-`error_fields`, prompts, method inputs, or retry rules based on model
-performance. Any redesign requires a new builder version and a new package.
+本包一旦被接受为冻结候选包，不得根据模型表现修改 cases、labels、`error_fields`、prompts、method inputs 或 retry rules。
+
+任何重新设计都必须使用新的 builder version，并生成新的实验包。

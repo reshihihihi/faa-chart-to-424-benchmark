@@ -33,7 +33,7 @@
   "key_files": {
     "readme": {
       "path": "README.md",
-      "sha256": "1A4D9F7B94A571E699D8C9218F80801B63E2430AC4E09B036465BC13A2261BF5"
+      "sha256": "9555121AAAE17FB4FBC64D986E96368DE36BBDAB98CC01B48059EF1C33B717CB"
     },
     "cases_jsonl": {
       "path": "cases/verification_counterfactuals_v7_formal300.jsonl",
