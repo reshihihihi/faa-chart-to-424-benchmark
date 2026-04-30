@@ -70,17 +70,17 @@
       "object": "Shujuji annotation web app and bundled annotation datasets",
       "status": "imported",
       "source_pr": 32,
-      "source_commit": "d65c147896f8d62a380d73fdedfcba2491439f63",
+      "source_commit": "58635c0f5e9ae90d414cb3361acfe62213792f6b",
       "source_paths": [
         "tools/shujuji_annotation/"
       ],
       "destination_paths": [
         "annotation_tools/shujuji_annotation/"
       ],
-      "sha256": "62208ba87c8c70e6faf7cb61482e285099cbb19c8563d943ab7cc7ba8b95dfd2",
+      "sha256": "e718c0dad3eab492070cbceaf30745a81a287eafc406b230b9777413334d6dfc",
       "frozen_for_formal_evaluation": false,
       "source_pr_state_at_import": "open",
-      "imported_at_utc": "2026-04-30T05:23:00Z",
+      "imported_at_utc": "2026-04-30T07:04:14Z",
       "import_reason": "Provide the standalone human annotation web app, documentation, prelabels, chart images, and canonical proxy targets used to collect and audit benchmark evidence labels.",
       "excluded_paths": [
         "tools/shujuji_annotation/datasets/formal300/annotations/claims.json",

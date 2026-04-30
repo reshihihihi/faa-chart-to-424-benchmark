@@ -15,6 +15,7 @@ const els = {
   chartImage: document.querySelector("#chartImage"),
   boxOverlay: document.querySelector("#boxOverlay"),
   leaderOverlay: document.querySelector("#leaderOverlay"),
+  resizeHandle: document.querySelector("#showcaseResizeHandle"),
   panelTitle: document.querySelector("#panelTitle"),
   resultSource: document.querySelector("#resultSource"),
   fieldList: document.querySelector("#fieldList"),
@@ -66,7 +67,8 @@ const state = {
   rows: [],
   fieldReviews: {},
   currentLeg: 1,
-  activeFieldKey: ""
+  activeFieldKey: "",
+  resizing: null
 };
 
 function initializeAccessToken() {
@@ -473,11 +475,19 @@ function renderRawRecordMarkers(annotations) {
   return annotations.map((item, lane) => {
     const start = Math.max(0, Number(item.segment.start || 0));
     const length = Math.max(1, Number(item.segment.end || 0) - start);
-    return `<div class="record-marker" style="--start:${start};--len:${length};--lane:${lane}">
+    return `<div class="record-marker" style="--grid-start:${start + 1};--len:${length};--lane:${lane}">
       <span class="record-underline"></span>
       <span class="record-stem"></span>
       <span class="record-label">[${item.number}] ${escapeText(item.segment.label)}</span>
     </div>`;
+  }).join("");
+}
+
+function renderRecordChars(record) {
+  const text = String(record || "").padEnd(132, " ").slice(0, 132);
+  return Array.from(text).map((char, index) => {
+    const content = char === " " ? "&nbsp;" : escapeText(char);
+    return `<span class="record-char" style="--col:${index + 1}">${content}</span>`;
   }).join("");
 }
 
@@ -491,7 +501,7 @@ function renderRawRecordBlock(legIndex) {
     <h2>SEQ ${escapeText(first.source_seq_no || "-")} · ${escapeText(first.source_trans_ident || "-")} · ${escapeText(first.leg_type || "-")}</h2>
     <div class="raw-record-visual" style="--marker-height:${markerHeight}px">
       <div class="raw-record-canvas">
-        <code class="raw-record-text">${escapeText(record || "No raw 424 record")}</code>
+        <code class="raw-record-text" aria-label="${escapeText(record || "No raw 424 record")}">${renderRecordChars(record)}</code>
         ${renderRawRecordMarkers(annotations)}
       </div>
     </div>
@@ -618,6 +628,20 @@ function fitChartToPane() {
   els.chartFrame.style.height = `${Math.floor(naturalHeight * scale)}px`;
 }
 
+function clampPanelWidth(width) {
+  const shellWidth = els.viewerShell.clientWidth || window.innerWidth;
+  const maxWidth = Math.max(360, shellWidth - 470);
+  return Math.round(Math.max(360, Math.min(maxWidth, width)));
+}
+
+function applyRightPanelWidth(width) {
+  const nextWidth = clampPanelWidth(width);
+  document.documentElement.style.setProperty("--showcase-right-width", `${nextWidth}px`);
+  localStorage.setItem("shujuji_showcase_right_width", String(nextWidth));
+  fitChartToPane();
+  renderOverlays();
+}
+
 function renderAll() {
   const manifest = state.current?.manifest || {};
   els.chartMeta.textContent = `${manifest.chart_id || ""} · ${manifest.chart_name || ""}`;
@@ -660,6 +684,8 @@ async function loadChart(chartId) {
 }
 
 function bindEvents() {
+  const savedWidth = Number(localStorage.getItem("shujuji_showcase_right_width") || 0);
+  if (savedWidth) applyRightPanelWidth(savedWidth);
   els.loadChartBtn.addEventListener("click", () => loadChart(els.chartInput.value.trim()).catch((error) => showToast(error.message)));
   els.chartInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") loadChart(els.chartInput.value.trim()).catch((error) => showToast(error.message));
@@ -674,9 +700,37 @@ function bindEvents() {
     renderFieldCards();
     renderOverlays();
   });
+  els.resizeHandle?.addEventListener("pointerdown", (event) => {
+    event.preventDefault();
+    const shellRect = els.viewerShell.getBoundingClientRect();
+    state.resizing = {
+      shellRight: shellRect.right,
+      pointerId: event.pointerId
+    };
+    els.resizeHandle.setPointerCapture(event.pointerId);
+    document.body.classList.add("resizing-columns");
+  });
+  els.resizeHandle?.addEventListener("pointermove", (event) => {
+    if (!state.resizing) return;
+    applyRightPanelWidth(state.resizing.shellRight - event.clientX - 14);
+  });
+  function endResize(event) {
+    if (!state.resizing) return;
+    try {
+      els.resizeHandle.releasePointerCapture(state.resizing.pointerId);
+    } catch {}
+    state.resizing = null;
+    document.body.classList.remove("resizing-columns");
+    fitChartToPane();
+    renderOverlays();
+  }
+  els.resizeHandle?.addEventListener("pointerup", endResize);
+  els.resizeHandle?.addEventListener("pointercancel", endResize);
   els.chartPane.addEventListener("scroll", () => renderOverlays(), { passive: true });
   document.querySelector(".field-pane").addEventListener("scroll", () => renderOverlays(), { passive: true });
   window.addEventListener("resize", () => {
+    const savedWidth = Number(localStorage.getItem("shujuji_showcase_right_width") || 0);
+    if (savedWidth) document.documentElement.style.setProperty("--showcase-right-width", `${clampPanelWidth(savedWidth)}px`);
     fitChartToPane();
     renderOverlays();
   });

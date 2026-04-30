@@ -10,6 +10,8 @@
   --gold: #a96e14;
   --red: #b34b4b;
   --shadow: 0 18px 44px rgba(28, 38, 35, 0.12);
+  --showcase-right-width: 540px;
+  --record-cell: 8px;
 }
 
 * {
@@ -104,11 +106,39 @@ select {
 .viewer-shell {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(520px, 1fr) minmax(360px, 430px);
-  gap: 14px;
+  grid-template-columns: minmax(420px, 1fr) 10px minmax(360px, var(--showcase-right-width));
+  gap: 10px;
   height: calc(100vh - 73px);
   padding: 14px;
   overflow: hidden;
+}
+
+.resize-handle {
+  position: relative;
+  z-index: 4;
+  min-width: 10px;
+  cursor: col-resize;
+}
+
+.resize-handle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 4px;
+  width: 2px;
+  border-radius: 2px;
+  background: #c9bfad;
+}
+
+.resize-handle:hover::before,
+body.resizing-columns .resize-handle::before {
+  background: var(--green);
+}
+
+body.resizing-columns {
+  cursor: col-resize;
+  user-select: none;
 }
 
 .chart-pane {
@@ -330,22 +360,33 @@ select {
 
 .raw-record-canvas {
   position: relative;
-  width: 132ch;
+  display: grid;
+  grid-template-columns: repeat(132, var(--record-cell));
+  grid-template-rows: 20px var(--marker-height, 46px);
+  width: calc(132 * var(--record-cell));
   min-height: calc(1.45em + var(--marker-height, 46px));
   font: 13px/1.45 "Cascadia Mono", "Consolas", monospace;
-  white-space: pre;
 }
 
 .raw-record-text {
-  display: block;
+  display: contents;
+}
+
+.record-char {
+  grid-row: 1;
+  grid-column: var(--col);
+  width: var(--record-cell);
+  overflow: hidden;
+  white-space: pre;
+  text-align: left;
 }
 
 .record-marker {
-  position: absolute;
-  top: calc(1.75em + var(--lane) * 28px);
-  left: calc(var(--start) * 1ch);
-  width: calc(var(--len) * 1ch);
-  min-width: 1ch;
+  position: relative;
+  grid-row: 2;
+  grid-column: var(--grid-start) / span var(--len);
+  top: calc(var(--lane) * 28px);
+  min-width: var(--record-cell);
   color: #f4c65d;
 }
 
@@ -425,6 +466,10 @@ select {
     height: auto;
     min-height: calc(100vh - 130px);
     overflow: visible;
+  }
+
+  .resize-handle {
+    display: none;
   }
 
   .chart-pane,
