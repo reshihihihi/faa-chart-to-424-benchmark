@@ -63,6 +63,7 @@ const state = {
   columnResize: null,
   layoutWidths: null,
   lastQuickAcceptSnapshot: null,
+  formalQueueAdvancing: false,
   zooms: {
     left: 1,
     center: 0.72,
@@ -73,7 +74,10 @@ const state = {
 
 const els = {
   layout: document.querySelector(".layout"),
+  workspaceToolbar: document.querySelector(".workspace-toolbar"),
   sidebarPanel: document.querySelector(".sidebar"),
+  sideActionPanel: document.querySelector(".side-action-panel"),
+  sideActionHint: document.querySelector(".side-action-panel .hint"),
   workspacePanel: document.querySelector(".workspace"),
   inspectorPanel: document.querySelector(".inspector"),
   workflowPanel: document.querySelector(".workflow-rail"),
@@ -1289,6 +1293,10 @@ function currentChartIsPreview() {
   return Boolean(state.current && datasetConfig.finalDataset && currentChartStatus() === "unassigned");
 }
 
+function formalQueueMode() {
+  return datasetConfig.finalDataset;
+}
+
 function apiUrl(path, params = {}) {
   const url = new URL(path, window.location.origin);
   url.searchParams.set("dataset", datasetKey);
@@ -1571,6 +1579,10 @@ function resetCurrentChartView() {
   setUndoQuickAcceptEnabled(false);
   if (els.currentTitle) els.currentTitle.textContent = "请选择航图";
   if (els.currentMeta) els.currentMeta.textContent = "";
+  if (els.chartImage) {
+    els.chartImage.removeAttribute("src");
+    els.chartImage.alt = "暂无航图";
+  }
   renderOverlay();
   renderRegionForm();
   renderTargets();
@@ -1592,6 +1604,10 @@ async function applyAnnotatorIdentity() {
   updateParticipantBadge(participantId);
   resetCurrentChartView();
   await refreshCharts();
+  if (formalQueueMode()) {
+    await advanceFormalQueue({ successPrefix: `已切换到标注人：${participantId}` });
+    return;
+  }
   const first = firstOpenableChart();
   if (first) await loadChart(first.chart_id);
   showToast(`已切换到标注人：${participantId}`);
@@ -2030,7 +2046,7 @@ function renderWorkflowPanel() {
   if (els.returnClaimBtn) els.returnClaimBtn.disabled = !canReturn;
   if (els.returnWorkflowBtn) els.returnWorkflowBtn.disabled = !canReturn;
   if (els.claimCurrentBtn) {
-    els.claimCurrentBtn.classList.toggle("hidden", !state.current || !datasetConfig.finalDataset || !["unassigned", "claimed_by_other", "returned_for_expert_review"].includes(currentChartStatus()));
+    els.claimCurrentBtn.classList.toggle("hidden", formalQueueMode() || !state.current || !datasetConfig.finalDataset || !["unassigned", "claimed_by_other", "returned_for_expert_review"].includes(currentChartStatus()));
     els.claimCurrentBtn.disabled = !canClaimCurrent();
     els.claimCurrentBtn.textContent = canClaimCurrent()
       ? "领取并开始"
@@ -2092,6 +2108,12 @@ function renderWorkflowPanel() {
 }
 
 function renderChartList() {
+  if (!els.chartList) return;
+  if (formalQueueMode()) {
+    els.chartList.innerHTML = "";
+    updateFormalQueueStatus();
+    return;
+  }
   const query = els.chartFilter.value.trim().toLowerCase();
   els.chartList.innerHTML = "";
   state.charts
@@ -2160,7 +2182,7 @@ function updateClaimButton() {
   renderChartList();
 }
 
-async function claimChartFromList(chartId, { openAfter = false } = {}) {
+async function claimChartFromList(chartId, { openAfter = false, silent = false } = {}) {
   ensureParticipantId();
   const result = await postJson(apiUrl(`/api/claims/${encodeURIComponent(chartId)}`), {});
   const claim = result.claim || {};
@@ -2180,14 +2202,15 @@ async function claimChartFromList(chartId, { openAfter = false } = {}) {
     }
   }
   renderChartList();
-  showToast(`已领取：${chartId}`);
+  updateFormalQueueStatus();
+  if (!silent) showToast(`已领取：${chartId}`);
   if (openAfter) await loadChart(chartId);
   renderCanonicalPanel();
 }
 
 async function claimCurrentChart() {
   if (!state.current) {
-    showToast("请先从左侧预览一张航图。");
+    showToast(formalQueueMode() ? "当前没有可领取航图。" : "请先从左侧预览一张航图。");
     return;
   }
   if (!canClaimCurrent()) {
@@ -2234,7 +2257,11 @@ async function returnCurrentClaim() {
   state.current.manifest.return_reason = claim.return_reason || reason || "";
   renderChartList();
   renderCanonicalPanel();
-  showToast("已退回并标记为专家复审。");
+  if (formalQueueMode()) {
+    await advanceFormalQueue({ afterChartId: chartId, successPrefix: "已退回并标记为专家复审" });
+  } else {
+    showToast("已退回并标记为专家复审。");
+  }
 }
 
 async function loadChart(chartId) {
@@ -2272,6 +2299,7 @@ async function loadChart(chartId) {
     applyImageZoom({ render: false });
     renderOverlay();
   };
+  els.chartImage.alt = `航图 ${chartId}`;
   els.chartImage.src = withAccessToken(state.current.image_url);
 
   renderChartList();
@@ -2280,6 +2308,7 @@ async function loadChart(chartId) {
   renderTargets();
   renderCanonicalPanel();
   updateClaimButton();
+  updateFormalQueueStatus();
 }
 
 function getStageSize() {
@@ -3243,7 +3272,9 @@ async function saveCurrentWork(mode = "final") {
       return;
     }
     if (claimedBy !== currentAnnotator() || !["claimed", "claimed_by_me", "submitted"].includes(claimStatus)) {
-      showToast("请先在左侧点击“领取并开始”，领取成功后再保存。");
+      showToast(formalQueueMode()
+        ? "当前图尚未领取成功，请刷新或重新进入正式标注。"
+        : "请先在左侧点击“领取并开始”，领取成功后再保存。");
       updateClaimButton();
       return;
     }
@@ -3274,7 +3305,7 @@ async function saveCurrentWork(mode = "final") {
       chart.draft_saved_at = payload.saved_at || new Date().toISOString();
     }
   } else {
-    showToast("已完成本图。");
+    if (!formalQueueMode()) showToast("已完成本图。");
     if (datasetConfig.finalDataset) {
       state.current.manifest.claim_status = "submitted";
       state.current.manifest.claimed_by = currentAnnotator();
@@ -3290,6 +3321,9 @@ async function saveCurrentWork(mode = "final") {
 
   updateClaimButton();
   renderChartList();
+  if (mode !== "draft" && formalQueueMode()) {
+    await advanceFormalQueue({ afterChartId: chartId, successPrefix: "已完成本图" });
+  }
 }
 
 async function saveDraft() {
@@ -3321,7 +3355,7 @@ function ensureSaveButtons() {
 }
 
 function bindEvents() {
-  els.chartFilter.addEventListener("input", renderChartList);
+  els.chartFilter?.addEventListener("input", renderChartList);
   els.annotatorInput?.addEventListener("input", () => {
     if (els.applyAnnotatorBtn) els.applyAnnotatorBtn.disabled = !cleanParticipantId(els.annotatorInput.value);
   });
@@ -3409,7 +3443,7 @@ function bindEvents() {
     showToast("请在航图上拖出证据框；新框会加入当前字段证据篮子。");
   });
   els.saveDraftBtn?.addEventListener("click", () => saveDraft().catch((error) => showToast(error.message)));
-  els.saveBtn.addEventListener("click", () => saveAnnotation().catch((error) => showToast(error.message)));
+  els.saveBtn?.addEventListener("click", () => saveAnnotation().catch((error) => showToast(error.message)));
   els.workflowDraftBtn?.addEventListener("click", () => saveDraft().catch((error) => showToast(error.message)));
   els.workflowSaveBtn?.addEventListener("click", () => saveAnnotation().catch((error) => showToast(error.message)));
   els.undoBtn?.addEventListener("click", undoLastAction);
@@ -3436,7 +3470,7 @@ function bindEvents() {
   els.openTargetsBtn?.addEventListener("click", openTargetPanel);
   els.acceptFrameAndNextBtn?.addEventListener("click", acceptCurrentAndAdvance);
   els.markFrameUnsureBtn?.addEventListener("click", markCurrentFrameUnsure);
-  els.deleteRegionBtn.addEventListener("click", () => {
+  els.deleteRegionBtn?.addEventListener("click", () => {
     if (!canAnnotateCurrent()) {
       showToast("当前是预览模式，请先领取这张图再删除框。");
       return;
@@ -3547,8 +3581,94 @@ function bindEvents() {
   }
 }
 
+function formalQueueCandidates({ afterChartId = "" } = {}) {
+  if (!formalQueueMode()) return [];
+  return state.charts.filter((chart) => {
+    if (!chart || chart.chart_id === afterChartId) return false;
+    if (chart.has_my_annotation || chart.claim_status === "submitted") return false;
+    return ["claimed", "claimed_by_me", "unassigned"].includes(chart.claim_status || "");
+  });
+}
+
+function nextFormalQueueChart({ afterChartId = "" } = {}) {
+  const candidates = formalQueueCandidates({ afterChartId });
+  return candidates.find((chart) => ["claimed", "claimed_by_me"].includes(chart.claim_status || ""))
+    || candidates.find((chart) => chart.claim_status === "unassigned")
+    || null;
+}
+
+function updateFormalQueueStatus() {
+  if (!formalQueueMode() || !els.sideActionHint) return;
+  const remaining = formalQueueCandidates().length;
+  const current = state.current?.manifest?.chart_id
+    ? `当前 ${state.current.manifest.chart_id}`
+    : "等待下一张";
+  els.sideActionHint.textContent = `${current} · 队列剩余 ${remaining} 张；完成或退回后自动进入下一张。`;
+}
+
+function setupFormalQueueUi() {
+  if (!formalQueueMode()) return;
+  document.body.classList.add("formal-queue-mode");
+  if (els.sideActionPanel && els.workspaceToolbar && !els.sideActionPanel.classList.contains("toolbar-action-panel")) {
+    els.sideActionPanel.classList.add("toolbar-action-panel");
+    const toolbarActions = els.workspaceToolbar.querySelector(".toolbar-actions");
+    els.workspaceToolbar.insertBefore(els.sideActionPanel, toolbarActions || null);
+  }
+  if (els.sideActionPanel?.querySelector("h2")) {
+    els.sideActionPanel.querySelector("h2").textContent = "本图操作";
+  }
+  if (els.saveDraftBtn) els.saveDraftBtn.textContent = "暂存当前图";
+  if (els.returnClaimBtn) els.returnClaimBtn.textContent = "退回并下一张";
+  if (els.saveBtn) els.saveBtn.textContent = "完成并下一张";
+  els.claimCurrentBtn?.classList.add("hidden");
+  updateFormalQueueStatus();
+}
+
+function showFormalQueueEmpty(successPrefix = "") {
+  resetCurrentChartView();
+  if (els.currentTitle) els.currentTitle.textContent = "暂无可分配航图";
+  if (els.currentMeta) els.currentMeta.textContent = "队列已清空，或剩余航图正在由其他参与者处理。";
+  updateFormalQueueStatus();
+  showToast(`${successPrefix ? `${successPrefix}，` : ""}暂无下一张可做航图。`);
+}
+
+async function advanceFormalQueue({ afterChartId = "", successPrefix = "" } = {}) {
+  if (!formalQueueMode()) return;
+  if (state.formalQueueAdvancing) return;
+  state.formalQueueAdvancing = true;
+  try {
+    for (let attempt = 0; attempt < 4; attempt += 1) {
+      await refreshCharts();
+      const next = nextFormalQueueChart({ afterChartId });
+      if (!next) {
+        showFormalQueueEmpty(successPrefix);
+        return;
+      }
+      try {
+        if (next.claim_status === "unassigned") {
+          await claimChartFromList(next.chart_id, { openAfter: true, silent: true });
+        } else {
+          await loadChart(next.chart_id);
+        }
+        showToast(`${successPrefix ? `${successPrefix}，` : ""}已进入下一张：${next.chart_id}`);
+        return;
+      } catch (error) {
+        if (error.status === 409) {
+          afterChartId = "";
+          continue;
+        }
+        throw error;
+      }
+    }
+    showFormalQueueEmpty(successPrefix);
+  } finally {
+    state.formalQueueAdvancing = false;
+  }
+}
+
 function setupDatasetUi() {
   ensureSaveButtons();
+  setupFormalQueueUi();
   const participantId = ensureParticipantId();
   document.title = `${datasetConfig.label} - 复飞航图字段证据标注`;
   if (els.pageTitle) {
@@ -3575,9 +3695,7 @@ async function refreshCharts() {
 function firstOpenableChart() {
   if (!state.charts.length) return null;
   if (!datasetConfig.finalDataset) return state.charts[0];
-  return state.charts.find((chart) => chart.claim_status === "claimed" || chart.claim_status === "submitted")
-    || state.charts.find((chart) => chart.claim_status === "unassigned")
-    || null;
+  return nextFormalQueueChart();
 }
 
 async function init() {
@@ -3588,11 +3706,15 @@ async function init() {
   renderWorkflowPanel();
   applyZooms({ render: false });
   await refreshCharts();
+  if (formalQueueMode()) {
+    await advanceFormalQueue();
+    return;
+  }
   const first = firstOpenableChart();
   if (first) {
     await loadChart(first.chart_id);
   } else if (datasetConfig.finalDataset) {
-    showToast("已自动分配参与者身份。左侧可先预览未领取航图。");
+    showToast("暂无可分配航图。");
   }
 }
 

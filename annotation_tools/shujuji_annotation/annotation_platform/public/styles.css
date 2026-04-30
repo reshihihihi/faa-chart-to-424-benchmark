@@ -173,6 +173,18 @@ h2 {
   user-select: none;
 }
 
+body.formal-queue-mode .layout {
+  grid-template-columns:
+    minmax(620px, var(--center-panel-width))
+    10px
+    minmax(500px, var(--inspector-panel-width));
+}
+
+body.formal-queue-mode .sidebar,
+body.formal-queue-mode [data-resize-handle="left-center"] {
+  display: none;
+}
+
 .sidebar,
 .workspace,
 .workflow-rail,
@@ -248,6 +260,40 @@ h2 {
 .side-action-panel h2 {
   margin: 0;
   font-size: 15px;
+}
+
+.side-action-panel.toolbar-action-panel {
+  display: flex;
+  flex: 1 1 520px;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 8px 10px;
+  box-shadow: none;
+}
+
+.side-action-panel.toolbar-action-panel h2 {
+  white-space: nowrap;
+}
+
+.side-action-panel.toolbar-action-panel .claim-current-btn {
+  display: none;
+}
+
+.side-action-panel.toolbar-action-panel .final-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.side-action-panel.toolbar-action-panel .final-actions button {
+  min-width: 96px;
+}
+
+.side-action-panel.toolbar-action-panel .hint {
+  margin: 0;
+  min-width: 180px;
 }
 
 .chart-list {
@@ -352,6 +398,11 @@ h2 {
   gap: 14px;
   padding: 12px 14px;
   border-bottom: 1px solid var(--line);
+}
+
+body.formal-queue-mode .workspace-toolbar {
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .chart-heading {
@@ -1468,6 +1519,14 @@ h2 {
 @media (max-width: 1180px) {
   .layout {
     grid-template-columns: 260px 1fr;
+  }
+
+  body.formal-queue-mode .layout {
+    grid-template-columns: 1fr;
+  }
+
+  body.formal-queue-mode .inspector {
+    grid-column: 1 / -1;
   }
 
   .resize-handle {
