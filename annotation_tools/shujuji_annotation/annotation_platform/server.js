@@ -127,7 +127,8 @@ function hasValidAccess(req, requestUrl) {
     || ""
   ).trim();
   if (!supplied) return false;
-  return crypto.timingSafeEqual(hashText(supplied), hashText(accessToken));
+  if (crypto.timingSafeEqual(hashText(supplied), hashText(accessToken))) return true;
+  return Boolean(adminToken) && crypto.timingSafeEqual(hashText(supplied), hashText(adminToken));
 }
 
 function requireAccess(req, requestUrl) {
@@ -1151,9 +1152,8 @@ function adminHtml() {
     <p>这个页面只给管理员使用。普通标注人员继续使用正式标注链接，不需要进入这里。</p>
     <section class="card">
       <h2>访问凭证</h2>
-      <p class="muted"><code>admin_token</code> 是后台管理凭证，用于刷新进度、逐图总览和导出；<code>token</code> 是普通访问凭证，只用于打开展示页/标注页。</p>
-      <input id="token" type="password" placeholder="后台管理 token，用于本页管理操作">
-      <input id="accessToken" type="password" placeholder="普通访问 token，用于跳转到展示页/标注页，可选">
+      <p class="muted"><code>admin_token</code> 是后台管理凭证，用于刷新进度、逐图总览、导出，也可以直接打开对应的展示页/标注页。</p>
+      <input id="token" type="password" placeholder="后台管理 token">
       <button type="button" onclick="saveToken()">保存凭证</button>
       <button class="secondary" type="button" onclick="loadProgress()">刷新当前进度</button>
       <button class="secondary" type="button" onclick="loadOverview()">刷新逐图总览</button>
@@ -1185,7 +1185,6 @@ function adminHtml() {
   </main>
   <script>
     const tokenInput = document.getElementById("token");
-    const accessTokenInput = document.getElementById("accessToken");
     const statusBox = document.getElementById("status");
     const progressBox = document.getElementById("progress");
     const overviewBox = document.getElementById("overview");
@@ -1200,26 +1199,16 @@ function adminHtml() {
       sessionStorage.setItem("shujuji_admin_token", tokenFromUrl);
       params.delete("admin_token");
     }
-    const accessTokenFromUrl = params.get("token");
-    if (accessTokenFromUrl) {
-      sessionStorage.setItem("shujuji_access_token", accessTokenFromUrl);
-      params.delete("token");
-    }
-    if (tokenFromUrl || accessTokenFromUrl) {
+    if (tokenFromUrl) {
       history.replaceState(null, "", location.pathname + (params.toString() ? "?" + params.toString() : ""));
     }
     tokenInput.value = sessionStorage.getItem("shujuji_admin_token") || "";
-    accessTokenInput.value = sessionStorage.getItem("shujuji_access_token") || "";
 
     function token() {
       return tokenInput.value.trim();
     }
-    function accessToken() {
-      return accessTokenInput.value.trim();
-    }
     function saveToken() {
       sessionStorage.setItem("shujuji_admin_token", token());
-      sessionStorage.setItem("shujuji_access_token", accessToken());
       statusBox.textContent = "凭证已保存在当前浏览器会话。";
     }
     function show(value) {
@@ -1299,7 +1288,7 @@ function adminHtml() {
       url.searchParams.set("dataset", row.dataset_key);
       url.searchParams.set("chart_id", row.chart_id);
       if (row.annotator) url.searchParams.set("annotator", row.annotator);
-      if (accessToken()) url.searchParams.set("token", accessToken());
+      if (token()) url.searchParams.set("token", token());
       return url.pathname + url.search;
     }
     function formalHref(row) {
@@ -1307,7 +1296,7 @@ function adminHtml() {
       url.searchParams.set("dataset", row.dataset_key);
       url.searchParams.set("chart_id", row.chart_id);
       if (row.annotator) url.searchParams.set("annotator", row.annotator);
-      if (accessToken()) url.searchParams.set("token", accessToken());
+      if (token()) url.searchParams.set("token", token());
       return url.pathname + url.search;
     }
     function filteredOverviewRows() {
