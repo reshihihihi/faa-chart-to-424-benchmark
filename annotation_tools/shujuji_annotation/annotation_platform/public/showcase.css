@@ -207,22 +207,6 @@ select {
   padding: 12px;
 }
 
-.evidence-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 10px 12px 0;
-}
-
-.legend-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.legend-mark,
 .chip-mark {
   --cat: #62706b;
   display: inline-block;
@@ -232,12 +216,10 @@ select {
   background: var(--cat);
 }
 
-.legend-mark.diamond,
 .chip-mark.diamond {
   transform: rotate(45deg);
 }
 
-.legend-mark.triangle,
 .chip-mark.triangle {
   width: 0;
   height: 0;
@@ -247,12 +229,10 @@ select {
   background: transparent;
 }
 
-.legend-mark.circle,
 .chip-mark.circle {
   border-radius: 999px;
 }
 
-.legend-mark.text,
 .chip-mark.text {
   border-radius: 2px;
 }
@@ -321,36 +301,61 @@ select {
   font-size: 12px;
 }
 
-.encoding-card .value {
-  margin-bottom: 10px;
+.arinc-group {
+  display: grid;
+  gap: 10px;
 }
 
-.encoding-table {
-  display: grid;
-  gap: 4px;
-  margin: 10px 0;
+.raw-record-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #17231f;
+  color: #e8f3ef;
+  padding: 12px;
 }
 
-.encoding-row {
-  display: grid;
-  grid-template-columns: minmax(120px, 1fr) minmax(120px, 1.1fr);
-  gap: 8px;
-  align-items: baseline;
-  border-top: 1px solid #eee2cc;
-  padding-top: 5px;
+.raw-record-card h2 {
+  margin: 4px 0 8px;
+  font-size: 16px;
+}
+
+.raw-record-card .meta {
+  color: #b9c9c3;
   font-size: 12px;
 }
 
-.encoding-row span {
-  color: var(--muted);
+.raw-record {
+  overflow-x: auto;
+  margin: 0;
+  border-radius: 6px;
+  background: #0f1815;
+  padding: 10px;
+  color: #f5fff9;
+  font: 13px/1.45 "Cascadia Mono", "Consolas", monospace;
+  white-space: pre;
 }
 
-.encoding-row strong {
+.numbered-field-list {
+  display: grid;
+  gap: 10px;
+}
+
+.arinc-field-card {
+  padding-left: 48px;
+}
+
+.number-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  min-width: 28px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: white;
+  padding: 3px 5px;
+  text-align: center;
+  font-size: 12px;
   font-weight: 700;
-}
-
-.muted-row {
-  opacity: 0.55;
 }
 
 .leader-overlay {

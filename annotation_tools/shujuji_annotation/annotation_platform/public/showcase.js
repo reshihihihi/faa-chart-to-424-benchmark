@@ -19,7 +19,6 @@ const els = {
   leaderOverlay: document.querySelector("#leaderOverlay"),
   panelTitle: document.querySelector("#panelTitle"),
   resultSource: document.querySelector("#resultSource"),
-  evidenceLegend: document.querySelector("#evidenceLegend"),
   fieldList: document.querySelector("#fieldList"),
   toast: document.querySelector("#toast")
 };
@@ -187,6 +186,7 @@ function buildFieldRows() {
         leg_type: leg.leg_type || "",
         source_seq_no: leg.source_seq_no || "",
         source_trans_ident: leg.source_trans_ident || "",
+        raw_record: leg.raw_record || "",
         field_name: fieldName,
         expected_value: field.expected_value ?? field.value ?? "",
         expected_answer: field.expected_answer || null
@@ -197,6 +197,12 @@ function buildFieldRows() {
 
 function answerIsPresent(row) {
   return row.expected_answer?.status === "present";
+}
+
+function padNumber(value, width) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return "";
+  return String(Math.round(number)).padStart(width, "0");
 }
 
 function formatAnswer(answer) {
@@ -223,7 +229,8 @@ function formatAnswer(answer) {
 }
 
 function shortRegionLabel(region) {
-  return region.ocr_text || region.label || region.region_type || region.region_id;
+  const label = String(region.ocr_text || region.label || region.region_type || region.region_id || "");
+  return label.length > 48 ? `${label.slice(0, 45)}...` : label;
 }
 
 function evidenceCategoryForRegion(region) {
@@ -297,28 +304,84 @@ function legRowsForIndex(legIndex) {
   return state.rows.filter((row) => row.canonical_leg_index === legIndex);
 }
 
-function activeLegs() {
-  const legMap = new Map();
-  for (const row of state.rows) {
-    if (!els.showAllLegs.checked && row.canonical_leg_index !== state.currentLeg) continue;
-    if (!legMap.has(row.canonical_leg_index)) {
-      legMap.set(row.canonical_leg_index, {
-        type: "encoding",
-        key: `encoding-leg-${row.canonical_leg_index}`,
-        canonical_leg_index: row.canonical_leg_index,
-        leg_type: row.leg_type || "",
-        source_seq_no: row.source_seq_no || "",
-        source_trans_ident: row.source_trans_ident || "",
-        rows: []
-      });
-    }
-    legMap.get(row.canonical_leg_index).rows.push(row);
+function activeLegIndexes() {
+  return Array.from(new Set(state.rows
+    .filter((row) => els.showAllLegs.checked || row.canonical_leg_index === state.currentLeg)
+    .map((row) => row.canonical_leg_index)
+    .filter(Boolean)));
+}
+
+function rawRecordForLeg(legIndex) {
+  return legRowsForIndex(legIndex).find((row) => row.raw_record)?.raw_record || "";
+}
+
+function findToken(record, token, options = {}) {
+  const source = String(record || "");
+  const text = String(token || "");
+  if (!source || !text) return null;
+  const from = Math.max(0, Number(options.from || 0));
+  const position = source.indexOf(text, from);
+  if (position < 0) return null;
+  return { start: position, end: position + text.length };
+}
+
+function mergedSegment(segments) {
+  const valid = segments.filter(Boolean);
+  if (!valid.length) return null;
+  return {
+    start: Math.min(...valid.map((segment) => segment.start)),
+    end: Math.max(...valid.map((segment) => segment.end))
+  };
+}
+
+function arincSegmentForRow(row) {
+  const record = row.raw_record || rawRecordForLeg(row.canonical_leg_index);
+  const answer = row.expected_answer?.value;
+  if (!record || !answerIsPresent(row)) return null;
+  if (row.field_name === "Q_terminator") {
+    const segment = findToken(record, row.leg_type, { from: 38 });
+    return segment ? { ...segment, label: "PATH TERMINATOR" } : null;
   }
-  return Array.from(legMap.values());
+  if (row.field_name === "Q1_fix_ident") {
+    const segment = findToken(record, answer, { from: 24 });
+    return segment ? { ...segment, label: "FIX IDENT" } : null;
+  }
+  if (row.field_name === "Q2_altitude_constraint") {
+    const token = padNumber(answer?.altitude_ft, 5);
+    const segment = findToken(record, token, { from: 70 });
+    return segment ? { ...segment, label: "ALTITUDE" } : null;
+  }
+  if (row.field_name === "Q4_course_or_radial") {
+    if (answer?.type === "course_deg") {
+      const token = padNumber(Number(answer.course_deg) * 10, 4);
+      const segment = findToken(record, token, { from: 54 });
+      return segment ? { ...segment, label: "COURSE" } : null;
+    }
+    if (answer?.type === "navaid_radial") {
+      const navaid = findToken(record, answer.navaid, { from: 48 });
+      const radial = findToken(record, padNumber(Number(answer.radial_deg) * 10, 4), { from: 54 });
+      const segment = mergedSegment([navaid, radial]);
+      return segment ? { ...segment, label: "NAVAID/RADIAL" } : null;
+    }
+  }
+  if (row.field_name === "Q5_hold_params") {
+    const course = findToken(record, padNumber(Number(answer?.inbound_course_deg) * 10, 4), { from: 54 });
+    const time = answer?.leg_time_min ? findToken(record, `T${padNumber(Number(answer.leg_time_min) * 10, 3)}`, { from: 60 }) : null;
+    const segment = mergedSegment([course, time]);
+    return segment ? { ...segment, label: "HOLD" } : null;
+  }
+  return null;
+}
+
+function activeArincRows() {
+  return state.rows.filter((row) => {
+    if (!els.showAllLegs.checked && row.canonical_leg_index !== state.currentLeg) return false;
+    return Boolean(arincSegmentForRow(row));
+  });
 }
 
 function displayItems() {
-  if (state.mode === "arinc") return activeLegs();
+  if (state.mode === "arinc") return activeArincRows().map((row) => ({ type: "field", key: row.key, row, rows: [row] }));
   return activeRows().map((row) => ({ type: "field", key: row.key, row, rows: [row] }));
 }
 
@@ -354,14 +417,13 @@ function renderFieldCards() {
     ? (state.mode === "arinc" ? "全部航段 · 424 编码" : "全部航段 · 证据结论")
     : (state.mode === "arinc" ? `航段 ${state.currentLeg} · 424 编码` : `航段 ${state.currentLeg} · 证据结论`);
   els.resultSource.textContent = sourceLabel();
-  renderEvidenceLegend();
   if (!items.length) {
     els.fieldList.innerHTML = "<p class='muted'>当前航段没有可展示字段。</p>";
     return;
   }
-  els.fieldList.innerHTML = items.map((item) => {
-    return item.type === "encoding" ? renderEncodingCard(item) : renderEvidenceCard(item.row);
-  }).join("");
+  els.fieldList.innerHTML = state.mode === "arinc"
+    ? renderArincGroups()
+    : items.map((item) => renderEvidenceCard(item.row)).join("");
   els.fieldList.querySelectorAll(".field-card").forEach((card) => {
     card.addEventListener("mouseenter", () => {
       state.activeFieldKey = card.dataset.fieldKey || "";
@@ -374,18 +436,12 @@ function renderFieldCards() {
   });
 }
 
-function renderEvidenceLegend() {
-  els.evidenceLegend.innerHTML = Object.entries(EVIDENCE_CATEGORIES).map(([key, meta]) => {
-    return `<span class="legend-item"><i class="legend-mark ${escapeText(meta.marker)}" style="--cat:${meta.color}"></i>${escapeText(meta.label)}</span>`;
-  }).join("");
-}
-
 function evidenceChipsForIds(evidenceIds) {
   return evidenceIds.map((regionId) => {
     const region = state.regions.find((item) => item.region_id === regionId);
     const meta = evidenceCategoryMeta(region);
     return `<span class="evidence-chip" style="--cat:${meta.color}">
-      <i class="chip-mark ${escapeText(meta.marker)}"></i>${escapeText(shortRegionLabel(region || { region_id: regionId }))}
+      <i class="chip-mark ${escapeText(meta.marker)}"></i>${escapeText(meta.label)} · ${escapeText(shortRegionLabel(region || { region_id: regionId }))}
     </span>`;
   }).join("");
 }
@@ -404,25 +460,53 @@ function renderEvidenceCard(row) {
   </article>`;
 }
 
-function renderEncodingCard(item) {
-  const evidenceIds = evidenceIdsForItem(item);
-  const color = colorForRow(item.rows[0] || { canonical_leg_index: item.canonical_leg_index, field_name: "Q_terminator" });
-  const presentRows = item.rows.filter(answerIsPresent);
-  const fieldLines = item.rows.map((row) => {
-    const present = answerIsPresent(row);
-    return `<div class="encoding-row${present ? "" : " muted-row"}">
-      <span>${escapeText(ARINC_LABELS[row.field_name] || row.field_name)}</span>
-      <strong>${escapeText(formatAnswer(row.expected_answer))}</strong>
-    </div>`;
-  }).join("");
-  return `<article class="field-card encoding-card" data-field-key="${escapeText(item.key)}" style="--accent:${color}">
-    <div class="meta">424 编码记录</div>
-    <h2>SEQ ${escapeText(item.source_seq_no || "-")} · ${escapeText(item.source_trans_ident || "-")} · ${escapeText(item.leg_type || "-")}</h2>
-    <p class="value">映射到证据结论：航段 ${escapeText(item.canonical_leg_index)}。再由该航段的 ${presentRows.length} 个可见字段连到图上证据。</p>
-    <div class="encoding-table">${fieldLines}</div>
+function pointerLine(record, segment, number) {
+  if (!record) return `[${number}] ${segment.label}`;
+  const start = Math.max(0, Math.min(record.length - 1, segment.start));
+  const width = Math.max(1, Math.min(record.length - start, segment.end - segment.start));
+  return `${" ".repeat(start)}${"^".repeat(width)} [${number}] ${segment.label}`;
+}
+
+function renderRawRecordBlock(legIndex, rows) {
+  const record = rawRecordForLeg(legIndex);
+  const first = rows[0] || legRowsForIndex(legIndex)[0] || {};
+  const annotated = rows.map((row, index) => ({
+    row,
+    number: index + 1,
+    segment: arincSegmentForRow(row)
+  })).filter((item) => item.segment);
+  const pointers = annotated.map((item) => pointerLine(record, item.segment, item.number)).join("\n");
+  return `<section class="raw-record-card">
+    <div class="meta">424 132 位编码文本 · 映射到证据结论航段 ${escapeText(legIndex)}</div>
+    <h2>SEQ ${escapeText(first.source_seq_no || "-")} · ${escapeText(first.source_trans_ident || "-")} · ${escapeText(first.leg_type || "-")}</h2>
+    <pre class="raw-record"><code>${escapeText(record)}${pointers ? `\n${escapeText(pointers)}` : ""}</code></pre>
+  </section>`;
+}
+
+function renderArincNumberedCard(row, number) {
+  const evidenceIds = evidenceIdsForRow(row);
+  const color = colorForRow(row);
+  return `<article class="field-card arinc-field-card" data-field-key="${escapeText(row.key)}" style="--accent:${color}">
+    <div class="number-badge">[${number}]</div>
+    <div class="meta">编码字段 → 证据结论航段 ${escapeText(row.canonical_leg_index)}</div>
+    <h2>${escapeText(ARINC_LABELS[row.field_name] || row.field_name)}</h2>
+    <p class="value">${escapeText(formatAnswer(row.expected_answer))}</p>
     <div class="meta">${evidenceIds.length} 处图面证据</div>
     <div class="evidence-list">${evidenceChipsForIds(evidenceIds)}</div>
   </article>`;
+}
+
+function renderArincGroups() {
+  return activeLegIndexes().map((legIndex) => {
+    const rows = activeArincRows().filter((row) => row.canonical_leg_index === legIndex);
+    if (!rows.length) return "";
+    return `<section class="arinc-group">
+      ${renderRawRecordBlock(legIndex, rows)}
+      <div class="numbered-field-list">
+        ${rows.map((row, index) => renderArincNumberedCard(row, index + 1)).join("")}
+      </div>
+    </section>`;
+  }).join("");
 }
 
 function regionRect(region, width, height) {

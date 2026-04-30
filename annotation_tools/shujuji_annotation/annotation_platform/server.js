@@ -623,7 +623,18 @@ async function loadChartDetail(dataset, chartId, annotator) {
     expert_review_required: Boolean(claim?.expert_review_required)
   };
   const targets = await readDatasetJson(dataset, "targets/canonical_targets.json", []);
-  const target = targets.find((item) => item.chart_id === chartId) || null;
+  const rawTarget = targets.find((item) => item.chart_id === chartId) || null;
+  const legIndex = await readDatasetJson(dataset, "targets/canonical_leg_index.json", {});
+  const indexedLegs = legIndex?.[chartId] || {};
+  const target = rawTarget
+    ? {
+      ...rawTarget,
+      candidate_legs: (rawTarget.candidate_legs || []).map((leg) => ({
+        ...leg,
+        ...(indexedLegs[leg.candidate_leg_id] || {})
+      }))
+    }
+    : null;
   const prelabel = await readDatasetJson(dataset, `prelabels/${chartId}.json`, null);
   const canonicalGt = await readDatasetJson(dataset, `targets/canonical_proxy_gt/${chartId}.json`, null);
   const effectiveAnnotator = annotator || (dataset.finalDataset && claim?.annotator ? claim.annotator : "");
