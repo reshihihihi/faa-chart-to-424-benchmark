@@ -1150,11 +1150,11 @@ function adminHtml() {
     <h1>标注管理员控制台</h1>
     <p>这个页面只给管理员使用。普通标注人员继续使用正式标注链接，不需要进入这里。</p>
     <section class="card">
-      <h2>管理员 token</h2>
-      <input id="token" type="password" placeholder="请输入管理员导出 token">
-      <p class="muted">展示页需要普通访问 token；如果本页 URL 带了 <code>token=...</code> 会自动保存，也可以在这里手动填。</p>
-      <input id="accessToken" type="password" placeholder="展示页访问 token，可选">
-      <button type="button" onclick="saveToken()">保存 token</button>
+      <h2>访问凭证</h2>
+      <p class="muted"><code>admin_token</code> 是后台管理凭证，用于刷新进度、逐图总览和导出；<code>token</code> 是普通访问凭证，只用于打开展示页/标注页。</p>
+      <input id="token" type="password" placeholder="后台管理 token，用于本页管理操作">
+      <input id="accessToken" type="password" placeholder="普通访问 token，用于跳转到展示页/标注页，可选">
+      <button type="button" onclick="saveToken()">保存凭证</button>
       <button class="secondary" type="button" onclick="loadProgress()">刷新当前进度</button>
       <button class="secondary" type="button" onclick="loadOverview()">刷新逐图总览</button>
       <button class="secondary" type="button" onclick="createExport()">生成并保存新导出</button>
@@ -1165,7 +1165,7 @@ function adminHtml() {
     <section class="card">
       <h2>当前进度</h2>
       <p class="muted">这里是实时读取服务器当前标注文件和领取状态，不需要先生成导出。</p>
-      <div id="progress">请输入管理员 token 后刷新。</div>
+      <div id="progress">请输入后台管理 token 后刷新。</div>
     </section>
     <section class="card">
       <h2>逐图总览</h2>
@@ -1176,7 +1176,7 @@ function adminHtml() {
         <label>搜索<input id="overviewSearch" type="search" placeholder="chart_id / 机场 / 程序 / 标注人"></label>
         <button type="button" onclick="loadOverview()">刷新</button>
       </div>
-      <div id="overview">请输入管理员 token 后刷新。</div>
+      <div id="overview">请输入后台管理 token 后刷新。</div>
     </section>
     <section class="card">
       <h2>已有导出</h2>
@@ -1220,7 +1220,7 @@ function adminHtml() {
     function saveToken() {
       sessionStorage.setItem("shujuji_admin_token", token());
       sessionStorage.setItem("shujuji_access_token", accessToken());
-      statusBox.textContent = "管理员 token 已保存在当前浏览器会话。";
+      statusBox.textContent = "凭证已保存在当前浏览器会话。";
     }
     function show(value) {
       statusBox.textContent = typeof value === "string" ? value : JSON.stringify(value, null, 2);
@@ -1322,7 +1322,7 @@ function adminHtml() {
     }
     function renderOverviewRows() {
       if (!overviewMeta) {
-        overviewBox.textContent = "请输入管理员 token 后刷新。";
+        overviewBox.textContent = "请输入后台管理 token 后刷新。";
         return;
       }
       const rows = filteredOverviewRows();
@@ -1343,7 +1343,7 @@ function adminHtml() {
         "</tbody></table></div>";
     }
     async function adminFetch(url, options = {}) {
-      if (!token()) throw new Error("请先填写管理员 token");
+      if (!token()) throw new Error("请先填写后台管理 token");
       const headers = new Headers(options.headers || {});
       headers.set("x-shujuji-admin-token", token());
       const response = await fetch(url, { ...options, headers });
