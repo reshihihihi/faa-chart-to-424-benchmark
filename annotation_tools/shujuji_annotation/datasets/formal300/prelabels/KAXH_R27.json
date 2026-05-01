@@ -6,7 +6,7 @@
     "height": 1238
   },
   "prelabel_version": "v0.29-formal300-structure-aware-typed-visible-evidence",
-  "generated_at": "2026-05-01T07:33:38.507959+00:00",
+  "generated_at": "2026-05-01T10:43:07.810226+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -32,7 +32,15 @@
     "practice10_pilot_copy_enabled": false,
     "unmapped_fine_regions_removed": true,
     "all_present_fields_linked_to_coarse_ma_text_and_plan_view": true,
-    "coarse_region_table_line_snap_enabled": true
+    "coarse_region_table_line_snap_enabled": true,
+    "lower_detail_plan_overlap_guard_enabled": true,
+    "lower_detail_runway_inset_clip_enabled": true,
+    "plan_view_long_line_snap_enabled": true,
+    "lower_detail_edges_locked_to_detected_lines": true,
+    "lower_detail_closed_cell_corner_required": true,
+    "lower_detail_vertical_edge_cell_fallback_enabled": true,
+    "lower_detail_connected_corner_required": true,
+    "lower_detail_adjacent_cell_probe_enabled": true
   },
   "review_priority": "normal",
   "target_summary": {
@@ -266,10 +274,10 @@
       "region_id": "KAXH_R27_02_plan_view",
       "region_type": "PLAN_VIEW",
       "bbox": {
-        "x_center": 0.5,
-        "y_center": 0.4362,
-        "width": 0.9058,
-        "height": 0.4806
+        "x_center": 0.5012,
+        "y_center": 0.4566,
+        "width": 0.9083,
+        "height": 0.4397
       },
       "ocr_text": "",
       "label": "coarse plan-view context for missed approach",
@@ -478,16 +486,16 @@
         "review_action": "pending",
         "notes": ""
       },
-      "source_layer": "aip_table_line_snap"
+      "source_layer": "aip_long_line_plan_view_snap+clamped_above_lower_detail"
     },
     {
       "region_id": "KAXH_R27_03_lower_detail_area",
       "region_type": "MISSED_APPROACH_DETAIL_AREA",
       "bbox": {
-        "x_center": 0.4136,
-        "y_center": 0.749,
-        "width": 0.3265,
-        "height": 0.145
+        "x_center": 0.4569,
+        "y_center": 0.7019,
+        "width": 0.2398,
+        "height": 0.0509
       },
       "ocr_text": "",
       "label": "lower/profile missed-approach detail area snapped to AIP table lines",
@@ -499,10 +507,10 @@
         "review_action": "pending",
         "notes": "Generic seed only; add fine-grained boxes as needed."
       },
-      "source_layer": "pdf_text_cluster_icon_area_detector+aip_table_line_snap"
+      "source_layer": "pdf_text_cluster_icon_area_detector+lower_strip_line_refine"
     },
     {
-      "region_id": "KAXH_R27_iconalign_004_altitude_text",
+      "region_id": "KAXH_R27_iconalign_003_altitude_text",
       "region_type": "ALTITUDE_TEXT",
       "bbox": {
         "x_center": 0.3663,
@@ -550,7 +558,7 @@
       "source_field_name": "Q2_altitude_constraint"
     },
     {
-      "region_id": "KAXH_R27_iconalign_002_fix_text",
+      "region_id": "KAXH_R27_iconalign_001_fix_text",
       "region_type": "FIX_TEXT",
       "bbox": {
         "x_center": 0.4291,
@@ -594,7 +602,7 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KAXH_R27_iconalign_003_fix_text",
+      "region_id": "KAXH_R27_iconalign_002_fix_text",
       "region_type": "FIX_TEXT",
       "bbox": {
         "x_center": 0.5486,
@@ -638,7 +646,7 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KAXH_R27_iconalign_005_track_or_radial_text",
+      "region_id": "KAXH_R27_iconalign_004_track_or_radial_text",
       "region_type": "TRACK_OR_RADIAL_TEXT",
       "bbox": {
         "x_center": 0.4916,
@@ -685,54 +693,7 @@
       "source_field_name": "Q4_course_or_radial"
     },
     {
-      "region_id": "KAXH_R27_iconalign_001_heading_text",
-      "region_type": "HEADING_TEXT",
-      "bbox": {
-        "x_center": 0.299,
-        "y_center": 0.7276,
-        "width": 0.0442,
-        "height": 0.0131
-      },
-      "ocr_text": "",
-      "label": "HEADING_TEXT: 269° -> type=course_deg, course_deg=269.3",
-      "confidence": 0.62,
-      "source_layer": "pdf_text_inside_detected_icon_area",
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "is_formal_annotation_candidate": true,
-      "candidate_mappings": [
-        {
-          "candidate_leg_id": "KAXH_R27__ma1",
-          "canonical_leg_index": 1,
-          "leg_type": "CA",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=course_deg, course_deg=269.3",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "course_deg",
-              "course_deg": 269.3
-            }
-          },
-          "match_basis": "PDF text token '269°' inside detected lower missed-approach/icon area",
-          "confidence": 0.62,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAXH_R27.json",
-          "source_seq_no": "040",
-          "source_trans_ident": "R"
-        }
-      ],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      },
-      "source_candidate_leg_id": "KAXH_R27__ma1",
-      "source_leg_type": "CA",
-      "source_field_name": "Q4_course_or_radial"
-    },
-    {
-      "region_id": "KAXH_R27_iconalign_007_fix_symbol",
+      "region_id": "KAXH_R27_iconalign_006_fix_symbol",
       "region_type": "FIX_SYMBOL",
       "bbox": {
         "x_center": 0.5477,
@@ -776,7 +737,7 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KAXH_R27_iconalign_006_fix_symbol",
+      "region_id": "KAXH_R27_iconalign_005_fix_symbol",
       "region_type": "FIX_SYMBOL",
       "bbox": {
         "x_center": 0.4269,

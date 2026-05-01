@@ -17,6 +17,9 @@ COARSE_TYPES = {"MISSED_APPROACH_TEXT", "PLAN_VIEW", "MISSED_APPROACH_DETAIL_ARE
 CLIMB_TYPES = {"CA", "VA", "VD", "VI", "VM", "VR"}
 FIX_SYMBOL_TYPES = {"CF", "DF", "TF", "HA", "HF", "HM"}
 DEFAULT_LOWER_ROI = {"x_center": 0.52, "y_center": 0.705, "width": 0.42, "height": 0.105}
+MAX_DETAIL_CELL_WIDTH = 0.18
+MAX_DETAIL_GROUP_WIDTH = 0.42
+MAX_EMPTY_NEIGHBOR_EXPANSION = 2
 COARSE_SEED_BOXES = {
     "MISSED_APPROACH_TEXT": {"x_center": 0.805, "y_center": 0.142, "width": 0.33, "height": 0.07},
     "PLAN_VIEW": {"x_center": 0.5, "y_center": 0.43, "width": 0.94, "height": 0.48},
@@ -436,6 +439,21 @@ def bbox_from_pixel_edges(x0, y0, x1, y1, image_width, image_height):
     }
 
 
+def bbox_from_norm_edges(left, top, right, bottom):
+    left = max(0.0, min(1.0, left))
+    right = max(0.0, min(1.0, right))
+    top = max(0.0, min(1.0, top))
+    bottom = max(0.0, min(1.0, bottom))
+    if right <= left + 0.004 or bottom <= top + 0.004:
+        return None
+    return {
+        "x_center": round((left + right) / 2, 4),
+        "y_center": round((top + bottom) / 2, 4),
+        "width": round(right - left, 4),
+        "height": round(bottom - top, 4),
+    }
+
+
 def bbox_from_pixels(x, y, w, h, image_width, image_height):
     return bbox((x + w / 2) / image_width, (y + h / 2) / image_height, w / image_width, h / image_height)
 
@@ -483,6 +501,534 @@ def detect_chart_table_lines(image_path):
                 "length": float(height),
             })
     return horizontal_lines, vertical_lines, image_width, image_height
+
+
+def horizontal_line_bands(horizontal_lines, image_width, image_height, y_tolerance_px=8):
+    if not image_width or not image_height:
+        return []
+    bands = []
+    for line in sorted(horizontal_lines, key=lambda item: item["y"]):
+        y_norm = line["y"] / image_height
+        interval = (line["x0"] / image_width, line["x1"] / image_width)
+        target = None
+        for band in bands:
+            if abs(band["y_px"] - line["y"]) <= y_tolerance_px:
+                target = band
+                break
+        if target is None:
+            target = {"y_px": line["y"], "y": y_norm, "intervals": [], "length": 0.0, "count": 0}
+            bands.append(target)
+        target["intervals"].append(interval)
+        target["length"] += line["length"] / image_width
+        target["count"] += 1
+        # Weighted enough for split AIP table lines, but still keeps nearby unrelated
+        # rows separate when they are more than a few pixels apart.
+        target["y_px"] = (target["y_px"] * (target["count"] - 1) + line["y"]) / target["count"]
+        target["y"] = target["y_px"] / image_height
+    for band in bands:
+        band["x0"] = min(interval[0] for interval in band["intervals"])
+        band["x1"] = max(interval[1] for interval in band["intervals"])
+    return bands
+
+
+def vertical_line_bands(vertical_lines, image_width, image_height, x_tolerance_px=6):
+    if not image_width or not image_height:
+        return []
+    bands = []
+    for line in sorted(vertical_lines, key=lambda item: item["x"]):
+        x_norm = line["x"] / image_width
+        interval = (line["y0"] / image_height, line["y1"] / image_height)
+        target = None
+        for band in bands:
+            if abs(band["x_px"] - line["x"]) <= x_tolerance_px:
+                target = band
+                break
+        if target is None:
+            target = {"x_px": line["x"], "x": x_norm, "intervals": [], "length": 0.0, "count": 0}
+            bands.append(target)
+        target["intervals"].append(interval)
+        target["length"] += line["length"] / image_height
+        target["count"] += 1
+        target["x_px"] = (target["x_px"] * (target["count"] - 1) + line["x"]) / target["count"]
+        target["x"] = target["x_px"] / image_width
+    for band in bands:
+        band["y0"] = min(interval[0] for interval in band["intervals"])
+        band["y1"] = max(interval[1] for interval in band["intervals"])
+    return bands
+
+
+def band_contains_x(band, x, pad=0.0):
+    return any(left - pad <= x <= right + pad for left, right in band["intervals"])
+
+
+def vertical_band_overlap_with_span(band, top, bottom):
+    return sum(segment_overlap(interval_top, interval_bottom, top, bottom) for interval_top, interval_bottom in band["intervals"])
+
+
+def band_overlap_with_span(band, left, right):
+    return sum(segment_overlap(interval_left, interval_right, left, right) for interval_left, interval_right in band["intervals"])
+
+
+def horizontal_band_covers_span(band, left, right, pad=0.006, min_ratio=0.82):
+    if not band:
+        return False
+    width = max(right - left, 0.001)
+    if any(interval_left <= left + pad and interval_right >= right - pad for interval_left, interval_right in band["intervals"]):
+        return True
+    return band_overlap_with_span(band, left, right) >= width * min_ratio
+
+
+def vertical_band_spans_edges(band, top, bottom, pad=0.006, min_ratio=0.82):
+    if not band:
+        return False
+    height = max(bottom - top, 0.001)
+    return any(
+        interval_top <= top + pad
+        and interval_bottom >= bottom - pad
+        and segment_overlap(interval_top, interval_bottom, top, bottom) >= height * min_ratio
+        for interval_top, interval_bottom in band["intervals"]
+    )
+
+
+def match_center(item):
+    box = item["word"]["bbox"]
+    return box["x_center"], box["y_center"]
+
+
+def match_inside_edges(item, left, top, right, bottom, pad=0.004):
+    x, y = match_center(item)
+    return left - pad <= x <= right + pad and top - pad <= y <= bottom + pad
+
+
+def closed_detail_cells(horizontal_bands, vertical_bands, top_band):
+    if not top_band:
+        return []
+    top = top_band["y"]
+    output = []
+    bottom_candidates = [
+        band for band in horizontal_bands
+        if top + 0.018 <= band["y"] <= top + 0.15
+        and band["length"] >= 0.035
+    ]
+    for bottom_band in bottom_candidates:
+        bottom = bottom_band["y"]
+        usable_verticals = sorted(
+            [
+                band for band in vertical_bands
+                if vertical_band_spans_edges(band, top, bottom)
+            ],
+            key=lambda band: band["x"],
+        )
+        if len(usable_verticals) < 2:
+            continue
+        for left_band, right_band in zip(usable_verticals, usable_verticals[1:]):
+            left = left_band["x"]
+            right = right_band["x"]
+            width = right - left
+            if width < 0.018 or width > MAX_DETAIL_CELL_WIDTH:
+                continue
+            if not horizontal_band_covers_span(top_band, left, right):
+                continue
+            if not horizontal_band_covers_span(bottom_band, left, right):
+                continue
+            output.append({
+                "left": left,
+                "top": top,
+                "right": right,
+                "bottom": bottom,
+                "top_band": top_band,
+                "bottom_band": bottom_band,
+            })
+    return output
+
+
+def vertical_edge_span_groups(vertical_bands):
+    spans = []
+    for band in vertical_bands:
+        for interval_top, interval_bottom in band["intervals"]:
+            height = interval_bottom - interval_top
+            if not 0.035 <= height <= 0.095:
+                continue
+            if not 0.58 <= interval_top <= 0.76:
+                continue
+            if not 0.62 <= interval_bottom <= 0.82:
+                continue
+            spans.append((interval_top, interval_bottom))
+    groups = []
+    for top, bottom in sorted(spans):
+        target = None
+        for group in groups:
+            if abs(group["top"] - top) <= 0.008 and abs(group["bottom"] - bottom) <= 0.01:
+                target = group
+                break
+        if target is None:
+            target = {"top": top, "bottom": bottom, "count": 0}
+            groups.append(target)
+        target["top"] = (target["top"] * target["count"] + top) / (target["count"] + 1)
+        target["bottom"] = (target["bottom"] * target["count"] + bottom) / (target["count"] + 1)
+        target["count"] += 1
+    return [group for group in groups if group["count"] >= 2]
+
+
+def vertical_edge_detail_cells(horizontal_bands, vertical_bands):
+    output = []
+    for span in vertical_edge_span_groups(vertical_bands):
+        top = span["top"]
+        bottom = span["bottom"]
+        usable_verticals = sorted(
+            [band for band in vertical_bands if vertical_band_spans_edges(band, top, bottom, pad=0.008, min_ratio=0.78)],
+            key=lambda band: band["x"],
+        )
+        if len(usable_verticals) < 2:
+            continue
+        near_top = find_band_near_y(horizontal_bands, top, tolerance=0.01)
+        near_bottom = find_band_near_y(horizontal_bands, bottom, tolerance=0.012)
+        for left_band, right_band in zip(usable_verticals, usable_verticals[1:]):
+            left = left_band["x"]
+            right = right_band["x"]
+            width = right - left
+            if width < 0.018 or width > MAX_DETAIL_CELL_WIDTH:
+                continue
+            top_covered = near_top and horizontal_band_covers_span(near_top, left, right, pad=0.008, min_ratio=0.70)
+            bottom_covered = near_bottom and horizontal_band_covers_span(near_bottom, left, right, pad=0.008, min_ratio=0.70)
+            inferred_top_from_aligned_corners = bool(bottom_covered and span["count"] >= 4)
+            if not (bottom_covered and (top_covered or inferred_top_from_aligned_corners)):
+                continue
+            output.append({
+                "left": left,
+                "top": top,
+                "right": right,
+                "bottom": bottom,
+                "top_band": near_top,
+                "bottom_band": near_bottom,
+            })
+    return output
+
+
+def field_diversity(matches):
+    return len({(item["key"][0], item["meta"]["field_name"]) for item in matches})
+
+
+def cell_width(cell):
+    return cell["right"] - cell["left"]
+
+
+def cell_range_width(row_cells, left_index, right_index):
+    return row_cells[right_index]["right"] - row_cells[left_index]["left"]
+
+
+def expand_adjacent_detail_cells(row_cells, left_index, right_index):
+    for _ in range(MAX_EMPTY_NEIGHBOR_EXPANSION):
+        if left_index <= 0:
+            break
+        candidate = row_cells[left_index - 1]
+        if cell_width(candidate) > MAX_DETAIL_CELL_WIDTH:
+            break
+        if row_cells[right_index]["right"] - candidate["left"] > MAX_DETAIL_GROUP_WIDTH:
+            break
+        left_index -= 1
+    for _ in range(MAX_EMPTY_NEIGHBOR_EXPANSION):
+        if right_index + 1 >= len(row_cells):
+            break
+        candidate = row_cells[right_index + 1]
+        if cell_width(candidate) > MAX_DETAIL_CELL_WIDTH:
+            break
+        if candidate["right"] - row_cells[left_index]["left"] > MAX_DETAIL_GROUP_WIDTH:
+            break
+        right_index += 1
+    return left_index, right_index
+
+
+def choose_cell_group_from_cells(cells, anchor_matches, all_matches):
+    if not cells:
+        return None
+    anchor_matches = anchor_matches or []
+    all_matches = all_matches or anchor_matches
+    candidates = []
+    rows = {}
+    for cell in cells:
+        rows.setdefault(round(cell["bottom"], 4), []).append(cell)
+    for row_cells in rows.values():
+        row_cells = sorted(row_cells, key=lambda cell: cell["left"])
+        anchor_indexes = []
+        all_match_indexes = []
+        for index, cell in enumerate(row_cells):
+            if any(match_inside_edges(item, cell["left"], cell["top"], cell["right"], cell["bottom"], pad=0.006) for item in anchor_matches):
+                anchor_indexes.append(index)
+            if any(match_inside_edges(item, cell["left"], cell["top"], cell["right"], cell["bottom"], pad=0.006) for item in all_matches):
+                all_match_indexes.append(index)
+        if not anchor_indexes:
+            # The text scorer can lock onto profile-view duplicates. If the
+            # actual boxed icon/detail row contains target evidence, prefer the
+            # closed row over a non-cell profile rectangle.
+            anchor_indexes = all_match_indexes[:]
+            if not anchor_indexes:
+                continue
+            seed_from_all_matches = True
+        else:
+            seed_from_all_matches = False
+
+        indexes = sorted(set(anchor_indexes + all_match_indexes))
+        left_index = min(indexes)
+        right_index = max(indexes)
+        if cell_range_width(row_cells, left_index, right_index) > MAX_DETAIL_GROUP_WIDTH:
+            left_index = min(anchor_indexes)
+            right_index = max(anchor_indexes)
+
+        left_index, right_index = expand_adjacent_detail_cells(row_cells, left_index, right_index)
+
+        group = row_cells[left_index:right_index + 1]
+        left = min(cell["left"] for cell in group)
+        right = max(cell["right"] for cell in group)
+        top = group[0]["top"]
+        bottom = group[0]["bottom"]
+        group_matches = [item for item in all_matches if match_inside_edges(item, left, top, right, bottom, pad=0.008)]
+        anchor_hits = [item for item in anchor_matches if match_inside_edges(item, left, top, right, bottom, pad=0.008)]
+        if not group_matches or (not anchor_hits and not seed_from_all_matches):
+            continue
+        width = right - left
+        height = bottom - top
+        score = (
+            len(anchor_hits) * 18.0
+            + len(group_matches) * 7.0
+            + field_diversity(group_matches) * 9.0
+            + len(group) * 1.2
+            - (8.0 if seed_from_all_matches else 0.0)
+            - width * 22.0
+            - height * 18.0
+            - max(0.0, top - 0.72) * 80.0
+        )
+        candidates.append((score, left, top, right, bottom, group_matches))
+    if not candidates:
+        return None
+    _, left, top, right, bottom, group_matches = max(candidates, key=lambda item: item[0])
+    refined = bbox_from_norm_edges(left, top, right, bottom)
+    if not refined:
+        return None
+    return refined, group_matches
+
+
+def choose_closed_detail_roi(horizontal_bands, vertical_bands, top_band, anchor_matches, all_matches):
+    return choose_cell_group_from_cells(closed_detail_cells(horizontal_bands, vertical_bands, top_band), anchor_matches, all_matches)
+
+
+def choose_vertical_edge_detail_roi(horizontal_bands, vertical_bands, anchor_matches, all_matches):
+    return choose_cell_group_from_cells(vertical_edge_detail_cells(horizontal_bands, vertical_bands), anchor_matches, all_matches)
+
+
+def choose_detail_top_band(bands, matches):
+    if not matches:
+        return None
+    boxes = [item["word"]["bbox"] for item in matches]
+    content = bbox_union(boxes, pad_x=0.0, pad_y=0.0)
+    if not content:
+        return None
+    left, top, right, bottom = box_edges(content)
+    span_width = max(right - left, 0.001)
+    median_y = sorted(item["word"]["bbox"]["y_center"] for item in matches)[len(matches) // 2]
+    candidates = []
+    for band in bands:
+        y = band["y"]
+        if not 0.54 <= y <= 0.78:
+            continue
+        overlap_ratio = band_overlap_with_span(band, left, right) / span_width
+        center_hits = sum(1 for item in matches if band_contains_x(band, item["word"]["bbox"]["x_center"], pad=0.012))
+        if overlap_ratio < 0.28 and center_hits == 0:
+            continue
+        window_bottom = y + 0.082
+        below = [
+            item for item in matches
+            if y - 0.002 <= item["word"]["bbox"]["y_center"] <= window_bottom
+            and band_contains_x(band, item["word"]["bbox"]["x_center"], pad=0.012)
+        ]
+        above = [
+            item for item in matches
+            if item["word"]["bbox"]["y_center"] < y - 0.002
+            and left - 0.015 <= item["word"]["bbox"]["x_center"] <= right + 0.015
+        ]
+        outside_window_below = [
+            item for item in matches
+            if item["word"]["bbox"]["y_center"] > window_bottom
+            and band_contains_x(band, item["word"]["bbox"]["x_center"], pad=0.012)
+        ]
+        if not below:
+            continue
+        altitude_hits = sum(1 for item in below if item["meta"]["field_name"] == "Q2_altitude_constraint")
+        score = (
+            len(below) * 12.0
+            + altitude_hits * 5.0
+            - len(above) * 7.0
+            - len(outside_window_below) * 4.0
+            + min(overlap_ratio, 1.0) * 8.0
+            + min(float(band.get("length") or 0.0), 1.0) * 2.0
+            - abs(y - median_y) * 45.0
+        )
+        candidates.append((score, band, below))
+    if not candidates:
+        return None
+    return max(candidates, key=lambda item: item[0])[1]
+
+
+def choose_detail_bottom_band(bands, filtered_matches, top_band):
+    if not filtered_matches or not top_band:
+        return None
+    content = bbox_union([item["word"]["bbox"] for item in filtered_matches], pad_x=0.0, pad_y=0.0)
+    if not content:
+        return None
+    left, top, right, bottom = box_edges(content)
+    span_width = max(right - left, 0.001)
+    min_bottom = max(top_band["y"] + 0.018, bottom - 0.004)
+    candidates = []
+    for band in bands:
+        y = band["y"]
+        if y <= min_bottom or y > top_band["y"] + 0.13:
+            continue
+        overlap_ratio = band_overlap_with_span(band, left, right) / span_width
+        if overlap_ratio < 0.22 and not any(band_contains_x(band, item["word"]["bbox"]["x_center"], pad=0.012) for item in filtered_matches):
+            continue
+        score = -abs(y - bottom) * 95.0 + min(overlap_ratio, 1.0) * 8.0 + min(float(band.get("length") or 0.0), 1.0)
+        candidates.append((score, band))
+    if not candidates:
+        loose = [
+            band for band in bands
+            if top_band["y"] + 0.018 < band["y"] <= top_band["y"] + 0.13
+        ]
+        if not loose:
+            return None
+        return min(loose, key=lambda band: abs(band["y"] - bottom))
+    return max(candidates, key=lambda item: item[0])[1]
+
+
+def line_locked_x_bounds(vertical_bands, top_band, bottom_band, filtered_matches, top, bottom):
+    content = bbox_union([item["word"]["bbox"] for item in filtered_matches], pad_x=0.0, pad_y=0.0)
+    if not content:
+        return None
+    content_left, _, content_right, _ = box_edges(content)
+    span_height = max(bottom - top, 0.001)
+    usable_verticals = [
+        band for band in vertical_bands
+        if vertical_band_overlap_with_span(band, top, bottom) >= span_height * 0.42
+    ]
+    left_candidates = [band for band in usable_verticals if band["x"] <= content_left + 0.004]
+    right_candidates = [band for band in usable_verticals if band["x"] >= content_right - 0.004]
+    left = max(left_candidates, key=lambda band: band["x"])["x"] if left_candidates else None
+    right = min(right_candidates, key=lambda band: band["x"])["x"] if right_candidates else None
+
+    if left is not None and right is not None and right > left + 0.01:
+        return left, right
+
+    intervals = []
+    for band in [top_band, bottom_band]:
+        if not band:
+            continue
+        intervals.extend([
+            interval for interval in band["intervals"]
+            if interval[1] >= content_left - 0.02 and interval[0] <= content_right + 0.02
+        ])
+    if intervals:
+        left = max(interval[0] for interval in intervals if interval[0] <= content_left + 0.004) if any(interval[0] <= content_left + 0.004 for interval in intervals) else min(interval[0] for interval in intervals)
+        right = min(interval[1] for interval in intervals if interval[1] >= content_right - 0.004) if any(interval[1] >= content_right - 0.004 for interval in intervals) else max(interval[1] for interval in intervals)
+        if right > left + 0.01:
+            return left, right
+    return None
+
+
+def find_band_near_y(bands, y, tolerance=0.006):
+    candidates = [band for band in bands if abs(band["y"] - y) <= tolerance]
+    if not candidates:
+        return None
+    return max(candidates, key=lambda band: float(band.get("length") or 0.0))
+
+
+def choose_plan_view_box(image_path):
+    horizontal_lines, vertical_lines, image_width, image_height = detect_chart_table_lines(image_path)
+    bands = horizontal_line_bands(horizontal_lines, image_width, image_height)
+    full_width_candidates = [
+        band for band in bands
+        if 0.14 <= band["y"] <= 0.36
+        and band["length"] >= 0.74
+        and band["x0"] <= 0.075
+        and band["x1"] >= 0.90
+    ]
+    lower_candidates = [
+        band for band in bands
+        if 0.50 <= band["y"] <= 0.74
+        and band["length"] >= 0.54
+    ]
+    if not full_width_candidates or not lower_candidates:
+        return None, None, None
+    top_band = max(full_width_candidates, key=lambda band: band["y"])
+    bottom_band = max(
+        lower_candidates,
+        key=lambda band: (
+            min(float(band.get("length") or 0.0), 0.75) * 4.0
+            - abs(band["y"] - 0.64) * 5.0
+            - max(0.0, top_band["y"] + 0.25 - band["y"]) * 8.0
+        ),
+    )
+    left = min(interval[0] for interval in top_band["intervals"])
+    right = max(interval[1] for interval in top_band["intervals"])
+    plan_box = bbox_from_norm_edges(left, top_band["y"], right, bottom_band["y"])
+    return plan_box, top_band, bottom_band
+
+
+def refine_detail_roi_to_lower_strip(image_path, detail_roi, selected_matches, strip_top_y=None, all_matches=None):
+    horizontal_lines, vertical_lines, image_width, image_height = detect_chart_table_lines(image_path)
+    bands = horizontal_line_bands(horizontal_lines, image_width, image_height)
+    vertical_bands = vertical_line_bands(vertical_lines, image_width, image_height)
+    all_matches = all_matches or selected_matches
+    top_band = find_band_near_y(bands, strip_top_y) if strip_top_y is not None else None
+    if top_band is None:
+        top_band = choose_detail_top_band(bands, selected_matches)
+    if not top_band:
+        vertical_edge_choice = choose_vertical_edge_detail_roi(bands, vertical_bands, selected_matches, all_matches)
+        return vertical_edge_choice or (detail_roi, selected_matches)
+
+    closed_choice = choose_closed_detail_roi(bands, vertical_bands, top_band, selected_matches, all_matches)
+    if closed_choice:
+        return closed_choice
+    vertical_edge_choice = choose_vertical_edge_detail_roi(bands, vertical_bands, selected_matches, all_matches)
+    if vertical_edge_choice:
+        return vertical_edge_choice
+
+    filtered = [
+        item for item in selected_matches
+        if item["word"]["bbox"]["y_center"] >= top_band["y"] - 0.002
+        and band_contains_x(top_band, item["word"]["bbox"]["x_center"], pad=0.012)
+    ]
+    if not filtered:
+        return detail_roi, selected_matches
+
+    content = bbox_union([item["word"]["bbox"] for item in filtered], pad_x=0.0, pad_y=0.0)
+    if not content:
+        return detail_roi, selected_matches
+    content_left, content_top, content_right, content_bottom = box_edges(content)
+    bottom_band = choose_detail_bottom_band(bands, filtered, top_band)
+    if not bottom_band:
+        return detail_roi, selected_matches
+    bottom = bottom_band["y"]
+    x_bounds = line_locked_x_bounds(vertical_bands, top_band, bottom_band, filtered, top_band["y"], bottom)
+    if not x_bounds:
+        return detail_roi, selected_matches
+    left, right = x_bounds
+    refined = bbox_from_norm_edges(left, top_band["y"], right, bottom)
+    if not refined:
+        return detail_roi, selected_matches
+    return refined, filtered
+
+
+def clamp_plan_view_above_detail(coarse_regions, detail_roi):
+    detail_top = detail_roi["y_center"] - detail_roi["height"] / 2
+    for item in coarse_regions:
+        if item.get("region_type") != "PLAN_VIEW":
+            continue
+        left, top, right, bottom = box_edges(item["bbox"])
+        if bottom > detail_top:
+            updated = bbox_from_norm_edges(left, top, right, detail_top)
+            if updated:
+                item["bbox"] = updated
+                item["source_layer"] = f"{item.get('source_layer', 'aip_table_line_snap')}+clamped_above_lower_detail"
+    return coarse_regions
 
 
 def snap_bbox_to_table_lines(image_path, seed_box, content_box=None, search_px=70, content_axes="both"):
@@ -563,6 +1109,7 @@ def words_content_bbox(words, container_box, pad=0.002, max_y_center=None):
 
 
 def snap_coarse_regions_to_chart_boxes(coarse_regions, image_path, words):
+    plan_box, _, _ = choose_plan_view_box(image_path)
     for item in coarse_regions:
         region_type = item.get("region_type")
         if region_type in COARSE_SEED_BOXES:
@@ -575,8 +1122,12 @@ def snap_coarse_regions_to_chart_boxes(coarse_regions, image_path, words):
             item["source_layer"] = "aip_table_line_snap"
             item["confidence"] = max(float(item.get("confidence") or 0), 0.58)
         elif region_type == "PLAN_VIEW":
-            item["bbox"] = snap_bbox_to_table_lines(image_path, item["bbox"], content_box=None, search_px=75)
-            item["source_layer"] = "aip_table_line_snap"
+            if plan_box:
+                item["bbox"] = plan_box
+                item["source_layer"] = "aip_long_line_plan_view_snap"
+            else:
+                item["bbox"] = snap_bbox_to_table_lines(image_path, item["bbox"], content_box=None, search_px=75)
+                item["source_layer"] = "aip_table_line_snap"
             item["confidence"] = max(float(item.get("confidence") or 0), 0.5)
     return coarse_regions
 
@@ -1305,13 +1856,17 @@ def generate_chart(manifest_item, target):
     add_all_present_mappings_to_coarse_regions(coarse, lookup)
     matches = word_matches(words, lookup)
     detail_roi, selected_matches = choose_detail_roi({"regions": coarse}, matches, image_path)
-    detail_content = bbox_union([item["word"]["bbox"] for item in selected_matches], pad_x=0.002, pad_y=0.002)
-    detail_roi = snap_bbox_to_table_lines(image_path, detail_roi, content_box=detail_content, search_px=80, content_axes="both")
+    plan_region = next((item for item in coarse if item.get("region_type") == "PLAN_VIEW"), None)
+    plan_bottom = None
+    if plan_region:
+        plan_bottom = plan_region["bbox"]["y_center"] + plan_region["bbox"]["height"] / 2
+    detail_roi, selected_matches = refine_detail_roi_to_lower_strip(image_path, detail_roi, selected_matches, strip_top_y=plan_bottom, all_matches=matches)
+    clamp_plan_view_above_detail(coarse, detail_roi)
     detail_region = next((item for item in coarse if item.get("region_type") == "MISSED_APPROACH_DETAIL_AREA"), None)
     if detail_region:
         detail_region["bbox"] = detail_roi
         detail_region["label"] = "lower/profile missed-approach detail area snapped to AIP table lines"
-        detail_region["source_layer"] = "pdf_text_cluster_icon_area_detector+aip_table_line_snap"
+        detail_region["source_layer"] = "pdf_text_cluster_icon_area_detector+lower_strip_line_refine"
         detail_region["confidence"] = 0.5 if selected_matches else 0.28
 
     serial = 1
@@ -1355,6 +1910,14 @@ def generate_chart(manifest_item, target):
         "unmapped_fine_regions_removed": True,
         "all_present_fields_linked_to_coarse_ma_text_and_plan_view": True,
         "coarse_region_table_line_snap_enabled": True,
+        "plan_view_long_line_snap_enabled": True,
+        "lower_detail_edges_locked_to_detected_lines": True,
+        "lower_detail_closed_cell_corner_required": True,
+        "lower_detail_vertical_edge_cell_fallback_enabled": True,
+        "lower_detail_connected_corner_required": True,
+        "lower_detail_adjacent_cell_probe_enabled": True,
+        "lower_detail_plan_overlap_guard_enabled": True,
+        "lower_detail_runway_inset_clip_enabled": True,
         "practice10_pilot_copy_enabled": ENABLE_PRACTICE_PILOT_COPY,
         "low_confidence_blank_fallback_boxes_enabled": ENABLE_LOW_CONFIDENCE_FALLBACK_BOXES,
         "source_pdfs_available": True,

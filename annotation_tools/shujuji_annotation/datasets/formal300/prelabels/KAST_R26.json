@@ -6,7 +6,7 @@
     "height": 1188
   },
   "prelabel_version": "v0.29-formal300-structure-aware-typed-visible-evidence",
-  "generated_at": "2026-05-01T07:33:50.781227+00:00",
+  "generated_at": "2026-05-01T10:43:19.444693+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -32,7 +32,15 @@
     "practice10_pilot_copy_enabled": false,
     "unmapped_fine_regions_removed": true,
     "all_present_fields_linked_to_coarse_ma_text_and_plan_view": true,
-    "coarse_region_table_line_snap_enabled": true
+    "coarse_region_table_line_snap_enabled": true,
+    "lower_detail_plan_overlap_guard_enabled": true,
+    "lower_detail_runway_inset_clip_enabled": true,
+    "plan_view_long_line_snap_enabled": true,
+    "lower_detail_edges_locked_to_detected_lines": true,
+    "lower_detail_closed_cell_corner_required": true,
+    "lower_detail_vertical_edge_cell_fallback_enabled": true,
+    "lower_detail_connected_corner_required": true,
+    "lower_detail_adjacent_cell_probe_enabled": true
   },
   "review_priority": "high",
   "target_summary": {
@@ -364,10 +372,10 @@
       "region_id": "KAST_R26_02_plan_view",
       "region_type": "PLAN_VIEW",
       "bbox": {
-        "x_center": 0.4997,
-        "y_center": 0.4226,
-        "width": 0.9052,
-        "height": 0.4672
+        "x_center": 0.5,
+        "y_center": 0.443,
+        "width": 0.9097,
+        "height": 0.4263
       },
       "ocr_text": "",
       "label": "coarse plan-view context for missed approach",
@@ -672,16 +680,16 @@
         "review_action": "pending",
         "notes": ""
       },
-      "source_layer": "aip_table_line_snap"
+      "source_layer": "aip_long_line_plan_view_snap"
     },
     {
       "region_id": "KAST_R26_03_lower_detail_area",
       "region_type": "MISSED_APPROACH_DETAIL_AREA",
       "bbox": {
         "x_center": 0.2471,
-        "y_center": 0.6425,
+        "y_center": 0.6835,
         "width": 0.4,
-        "height": 0.1368
+        "height": 0.0547
       },
       "ocr_text": "",
       "label": "lower/profile missed-approach detail area snapped to AIP table lines",
@@ -693,7 +701,7 @@
         "review_action": "pending",
         "notes": "Generic seed only; add fine-grained boxes as needed."
       },
-      "source_layer": "pdf_text_cluster_icon_area_detector+aip_table_line_snap"
+      "source_layer": "pdf_text_cluster_icon_area_detector+lower_strip_line_refine"
     },
     {
       "region_id": "KAST_R26_iconalign_004_altitude_text",
@@ -742,50 +750,6 @@
       "source_candidate_leg_id": "KAST_R26__ma4",
       "source_leg_type": "TF",
       "source_field_name": "Q2_altitude_constraint"
-    },
-    {
-      "region_id": "KAST_R26_iconalign_003_fix_text",
-      "region_type": "FIX_TEXT",
-      "bbox": {
-        "x_center": 0.2595,
-        "y_center": 0.5989,
-        "width": 0.0575,
-        "height": 0.0131
-      },
-      "ocr_text": "",
-      "label": "FIX_TEXT: KULOA -> KULOA",
-      "confidence": 0.62,
-      "source_layer": "pdf_text_inside_detected_icon_area",
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "is_formal_annotation_candidate": true,
-      "candidate_mappings": [
-        {
-          "candidate_leg_id": "KAST_R26__ma4",
-          "canonical_leg_index": 4,
-          "leg_type": "TF",
-          "field_name": "Q1_fix_ident",
-          "expected_value": "KULOA",
-          "expected_answer": {
-            "status": "present",
-            "value": "KULOA"
-          },
-          "match_basis": "PDF text token 'KULOA' inside detected lower missed-approach/icon area",
-          "confidence": 0.62,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAST_R26.json",
-          "source_seq_no": "070",
-          "source_trans_ident": "R"
-        }
-      ],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      },
-      "source_candidate_leg_id": "KAST_R26__ma4",
-      "source_leg_type": "TF",
-      "source_field_name": "Q1_fix_ident"
     },
     {
       "region_id": "KAST_R26_iconalign_001_fix_text",
@@ -876,42 +840,37 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KAST_R26_iconalign_008_track_or_radial_text",
-      "region_type": "TRACK_OR_RADIAL_TEXT",
+      "region_id": "KAST_R26_iconalign_003_fix_text",
+      "region_type": "FIX_TEXT",
       "bbox": {
-        "x_center": 0.2254,
-        "y_center": 0.6278,
-        "width": 0.0218,
-        "height": 0.0333
+        "x_center": 0.4152,
+        "y_center": 0.6656,
+        "width": 0.0575,
+        "height": 0.0131
       },
       "ocr_text": "",
-      "label": "TRACK_OR_RADIAL_TEXT: 350° -> inbound_course_deg=349.6, leg_time_min=None, leg_distance_nm=5.0, turn=LEFT",
+      "label": "FIX_TEXT: KULOA -> KULOA",
       "confidence": 0.62,
       "source_layer": "pdf_text_inside_detected_icon_area",
       "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
       "is_formal_annotation_candidate": true,
       "candidate_mappings": [
         {
-          "candidate_leg_id": "KAST_R26__ma5",
-          "canonical_leg_index": 5,
-          "leg_type": "HM",
-          "field_name": "Q5_hold_params",
-          "expected_value": "inbound_course_deg=349.6, leg_time_min=None, leg_distance_nm=5.0, turn=LEFT",
+          "candidate_leg_id": "KAST_R26__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "TF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "KULOA",
           "expected_answer": {
             "status": "present",
-            "value": {
-              "inbound_course_deg": 349.6,
-              "leg_time_min": null,
-              "leg_distance_nm": 5,
-              "turn": "LEFT"
-            }
+            "value": "KULOA"
           },
-          "match_basis": "PDF text token '350°' inside detected lower missed-approach/icon area",
+          "match_basis": "PDF text token 'KULOA' inside detected lower missed-approach/icon area",
           "confidence": 0.62,
           "human_decision": "pending",
           "human_notes": "",
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAST_R26.json",
-          "source_seq_no": "080",
+          "source_seq_no": "070",
           "source_trans_ident": "R"
         }
       ],
@@ -920,12 +879,12 @@
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
       },
-      "source_candidate_leg_id": "KAST_R26__ma5",
-      "source_leg_type": "HM",
-      "source_field_name": "Q5_hold_params"
+      "source_candidate_leg_id": "KAST_R26__ma4",
+      "source_leg_type": "TF",
+      "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KAST_R26_iconalign_009_climb_arrow",
+      "region_id": "KAST_R26_iconalign_007_climb_arrow",
       "region_type": "CLIMB_ARROW",
       "bbox": {
         "x_center": 0.1884,
@@ -992,7 +951,51 @@
       }
     },
     {
-      "region_id": "KAST_R26_iconalign_011_fix_symbol",
+      "region_id": "KAST_R26_iconalign_010_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "bbox": {
+        "x_center": 0.4148,
+        "y_center": 0.6877,
+        "width": 0.0194,
+        "height": 0.0101
+      },
+      "ocr_text": "",
+      "label": "detected lower detail: fix symbol",
+      "confidence": 0.48,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAST_R26__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "TF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "KULOA",
+          "expected_answer": {
+            "status": "present",
+            "value": "KULOA"
+          },
+          "match_basis": "detected fix/navaid symbol near fix text",
+          "confidence": 0.48,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAST_R26.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "R"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      },
+      "source_candidate_leg_id": "KAST_R26__ma4",
+      "source_leg_type": "TF",
+      "source_field_name": "Q1_fix_ident"
+    },
+    {
+      "region_id": "KAST_R26_iconalign_009_fix_symbol",
       "region_type": "FIX_SYMBOL",
       "bbox": {
         "x_center": 0.2794,
@@ -1024,70 +1027,6 @@
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAST_R26.json",
           "source_seq_no": "060",
           "source_trans_ident": "R"
-        },
-        {
-          "candidate_leg_id": "KAST_R26__ma4",
-          "canonical_leg_index": 4,
-          "leg_type": "TF",
-          "field_name": "Q1_fix_ident",
-          "expected_value": "KULOA",
-          "expected_answer": {
-            "status": "present",
-            "value": "KULOA"
-          },
-          "match_basis": "detected fix/navaid symbol near fix text",
-          "confidence": 0.48,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAST_R26.json",
-          "source_seq_no": "070",
-          "source_trans_ident": "R"
-        }
-      ],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
-    },
-    {
-      "region_id": "KAST_R26_iconalign_007_dme_distance_text",
-      "region_type": "DME_DISTANCE_TEXT",
-      "bbox": {
-        "x_center": 0.136,
-        "y_center": 0.6391,
-        "width": 0.0091,
-        "height": 0.0131
-      },
-      "ocr_text": "",
-      "label": "DME_DISTANCE_TEXT: 5 -> inbound_course_deg=349.6, leg_time_min=None, leg_distance_nm=5.0, turn=LEFT",
-      "confidence": 0.62,
-      "source_layer": "pdf_text_inside_detected_icon_area",
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "is_formal_annotation_candidate": true,
-      "candidate_mappings": [
-        {
-          "candidate_leg_id": "KAST_R26__ma5",
-          "canonical_leg_index": 5,
-          "leg_type": "HM",
-          "field_name": "Q5_hold_params",
-          "expected_value": "inbound_course_deg=349.6, leg_time_min=None, leg_distance_nm=5.0, turn=LEFT",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "inbound_course_deg": 349.6,
-              "leg_time_min": null,
-              "leg_distance_nm": 5,
-              "turn": "LEFT"
-            }
-          },
-          "match_basis": "PDF text token '5' inside detected lower missed-approach/icon area",
-          "confidence": 0.62,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAST_R26.json",
-          "source_seq_no": "080",
-          "source_trans_ident": "R"
         }
       ],
       "needs_human_decision": true,
@@ -1095,9 +1034,9 @@
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
       },
-      "source_candidate_leg_id": "KAST_R26__ma5",
-      "source_leg_type": "HM",
-      "source_field_name": "Q5_hold_params"
+      "source_candidate_leg_id": "KAST_R26__ma3",
+      "source_leg_type": "TF",
+      "source_field_name": "Q1_fix_ident"
     }
   ]
 }

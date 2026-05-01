@@ -6,7 +6,7 @@
     "height": 1188
   },
   "prelabel_version": "v0.29-formal300-structure-aware-typed-visible-evidence",
-  "generated_at": "2026-05-01T07:34:16.085427+00:00",
+  "generated_at": "2026-05-01T10:43:43.367793+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -32,7 +32,15 @@
     "practice10_pilot_copy_enabled": false,
     "unmapped_fine_regions_removed": true,
     "all_present_fields_linked_to_coarse_ma_text_and_plan_view": true,
-    "coarse_region_table_line_snap_enabled": true
+    "coarse_region_table_line_snap_enabled": true,
+    "lower_detail_plan_overlap_guard_enabled": true,
+    "lower_detail_runway_inset_clip_enabled": true,
+    "plan_view_long_line_snap_enabled": true,
+    "lower_detail_edges_locked_to_detected_lines": true,
+    "lower_detail_closed_cell_corner_required": true,
+    "lower_detail_vertical_edge_cell_fallback_enabled": true,
+    "lower_detail_connected_corner_required": true,
+    "lower_detail_adjacent_cell_probe_enabled": true
   },
   "review_priority": "high",
   "target_summary": {
@@ -290,10 +298,10 @@
       "region_id": "KAIK_R07_02_plan_view",
       "region_type": "PLAN_VIEW",
       "bbox": {
-        "x_center": 0.4997,
-        "y_center": 0.4146,
-        "width": 0.9052,
-        "height": 0.4537
+        "x_center": 0.4994,
+        "y_center": 0.4318,
+        "width": 0.9084,
+        "height": 0.4192
       },
       "ocr_text": "",
       "label": "coarse plan-view context for missed approach",
@@ -526,7 +534,7 @@
         "review_action": "pending",
         "notes": ""
       },
-      "source_layer": "aip_table_line_snap"
+      "source_layer": "aip_long_line_plan_view_snap"
     },
     {
       "region_id": "KAIK_R07_03_lower_detail_area",
@@ -547,7 +555,7 @@
         "review_action": "pending",
         "notes": "Generic seed only; add fine-grained boxes as needed."
       },
-      "source_layer": "pdf_text_cluster_icon_area_detector+aip_table_line_snap"
+      "source_layer": "pdf_text_cluster_icon_area_detector+lower_strip_line_refine"
     },
     {
       "region_id": "KAIK_R07_iconalign_002_altitude_text",

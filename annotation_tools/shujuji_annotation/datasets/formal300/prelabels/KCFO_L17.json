@@ -6,7 +6,7 @@
     "height": 1238
   },
   "prelabel_version": "v0.29-formal300-structure-aware-typed-visible-evidence",
-  "generated_at": "2026-05-01T07:33:31.372963+00:00",
+  "generated_at": "2026-05-01T10:43:01.050490+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -32,7 +32,15 @@
     "practice10_pilot_copy_enabled": false,
     "unmapped_fine_regions_removed": true,
     "all_present_fields_linked_to_coarse_ma_text_and_plan_view": true,
-    "coarse_region_table_line_snap_enabled": true
+    "coarse_region_table_line_snap_enabled": true,
+    "lower_detail_plan_overlap_guard_enabled": true,
+    "lower_detail_runway_inset_clip_enabled": true,
+    "plan_view_long_line_snap_enabled": true,
+    "lower_detail_edges_locked_to_detected_lines": true,
+    "lower_detail_closed_cell_corner_required": true,
+    "lower_detail_vertical_edge_cell_fallback_enabled": true,
+    "lower_detail_connected_corner_required": true,
+    "lower_detail_adjacent_cell_probe_enabled": true
   },
   "review_priority": "normal",
   "target_summary": {
@@ -271,10 +279,10 @@
       "region_id": "KCFO_L17_02_plan_view",
       "region_type": "PLAN_VIEW",
       "bbox": {
-        "x_center": 0.5,
-        "y_center": 0.457,
-        "width": 0.9058,
-        "height": 0.5198
+        "x_center": 0.5012,
+        "y_center": 0.4556,
+        "width": 0.9083,
+        "height": 0.517
       },
       "ocr_text": "",
       "label": "coarse plan-view context for missed approach",
@@ -488,16 +496,16 @@
         "review_action": "pending",
         "notes": ""
       },
-      "source_layer": "aip_table_line_snap"
+      "source_layer": "aip_long_line_plan_view_snap+clamped_above_lower_detail"
     },
     {
       "region_id": "KCFO_L17_03_lower_detail_area",
       "region_type": "MISSED_APPROACH_DETAIL_AREA",
       "bbox": {
-        "x_center": 0.719,
-        "y_center": 0.7088,
-        "width": 0.3426,
-        "height": 0.1204
+        "x_center": 0.859,
+        "y_center": 0.7415,
+        "width": 0.1877,
+        "height": 0.0549
       },
       "ocr_text": "",
       "label": "lower/profile missed-approach detail area snapped to AIP table lines",
@@ -509,7 +517,7 @@
         "review_action": "pending",
         "notes": "Generic seed only; add fine-grained boxes as needed."
       },
-      "source_layer": "pdf_text_cluster_icon_area_detector+aip_table_line_snap"
+      "source_layer": "pdf_text_cluster_icon_area_detector+lower_strip_line_refine"
     },
     {
       "region_id": "KCFO_L17_iconalign_002_altitude_text",
@@ -609,75 +617,6 @@
       "source_field_name": "Q4_course_or_radial"
     },
     {
-      "region_id": "KCFO_L17_iconalign_004_radial_text",
-      "region_type": "RADIAL_TEXT",
-      "bbox": {
-        "x_center": 0.5821,
-        "y_center": 0.702,
-        "width": 0.043,
-        "height": 0.0328
-      },
-      "ocr_text": "",
-      "label": "RADIAL_TEXT: 307° -> type=navaid_radial, navaid=FQF, radial_deg=307.0, direction=inbound; TRACK_OR_RADIAL_TEXT: 307° -> inbound_course_deg=307.0, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
-      "confidence": 0.62,
-      "source_layer": "pdf_text_inside_detected_icon_area",
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "is_formal_annotation_candidate": true,
-      "candidate_mappings": [
-        {
-          "candidate_leg_id": "KCFO_L17__ma2",
-          "canonical_leg_index": 2,
-          "leg_type": "CF",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=navaid_radial, navaid=FQF, radial_deg=307.0, direction=inbound",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "navaid_radial",
-              "navaid": "FQF",
-              "radial_deg": 307,
-              "direction": "inbound"
-            }
-          },
-          "match_basis": "PDF text token '307°' inside detected lower missed-approach/icon area",
-          "confidence": 0.62,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KCFO_L17.json",
-          "source_seq_no": "050",
-          "source_trans_ident": "L"
-        },
-        {
-          "candidate_leg_id": "KCFO_L17__ma3",
-          "canonical_leg_index": 3,
-          "leg_type": "HM",
-          "field_name": "Q5_hold_params",
-          "expected_value": "inbound_course_deg=307.0, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "inbound_course_deg": 307,
-              "leg_time_min": 1,
-              "leg_distance_nm": null,
-              "turn": "RIGHT"
-            }
-          },
-          "match_basis": "PDF text token '307°' inside detected lower missed-approach/icon area",
-          "confidence": 0.62,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KCFO_L17.json",
-          "source_seq_no": "060",
-          "source_trans_ident": "L"
-        }
-      ],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
-    },
-    {
       "region_id": "KCFO_L17_iconalign_001_heading_text",
       "region_type": "HEADING_TEXT",
       "bbox": {
@@ -725,7 +664,7 @@
       "source_field_name": "Q4_course_or_radial"
     },
     {
-      "region_id": "KCFO_L17_iconalign_008_climb_arrow",
+      "region_id": "KCFO_L17_iconalign_006_climb_arrow",
       "region_type": "CLIMB_ARROW",
       "bbox": {
         "x_center": 0.803,
@@ -771,6 +710,50 @@
       "source_candidate_leg_id": "KCFO_L17__ma2",
       "source_leg_type": "CF",
       "source_field_name": "Q2_altitude_constraint"
+    },
+    {
+      "region_id": "KCFO_L17_iconalign_005_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "bbox": {
+        "x_center": 0.9207,
+        "y_center": 0.7472,
+        "width": 0.0173,
+        "height": 0.0097
+      },
+      "ocr_text": "",
+      "label": "detected lower detail: fix symbol",
+      "confidence": 0.48,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KCFO_L17__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "CF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "HUNTN",
+          "expected_answer": {
+            "status": "present",
+            "value": "HUNTN"
+          },
+          "match_basis": "detected fix/navaid symbol near fix text",
+          "confidence": 0.48,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KCFO_L17.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      },
+      "source_candidate_leg_id": "KCFO_L17__ma2",
+      "source_leg_type": "CF",
+      "source_field_name": "Q1_fix_ident"
     }
   ]
 }

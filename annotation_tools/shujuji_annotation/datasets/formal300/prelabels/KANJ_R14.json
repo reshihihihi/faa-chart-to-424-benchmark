@@ -6,7 +6,7 @@
     "height": 1188
   },
   "prelabel_version": "v0.29-formal300-structure-aware-typed-visible-evidence",
-  "generated_at": "2026-05-01T07:33:57.255675+00:00",
+  "generated_at": "2026-05-01T10:43:25.511532+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -32,7 +32,15 @@
     "practice10_pilot_copy_enabled": false,
     "unmapped_fine_regions_removed": true,
     "all_present_fields_linked_to_coarse_ma_text_and_plan_view": true,
-    "coarse_region_table_line_snap_enabled": true
+    "coarse_region_table_line_snap_enabled": true,
+    "lower_detail_plan_overlap_guard_enabled": true,
+    "lower_detail_runway_inset_clip_enabled": true,
+    "plan_view_long_line_snap_enabled": true,
+    "lower_detail_edges_locked_to_detected_lines": true,
+    "lower_detail_closed_cell_corner_required": true,
+    "lower_detail_vertical_edge_cell_fallback_enabled": true,
+    "lower_detail_connected_corner_required": true,
+    "lower_detail_adjacent_cell_probe_enabled": true
   },
   "review_priority": "high",
   "target_summary": {
@@ -348,10 +356,10 @@
       "region_id": "KANJ_R14_02_plan_view",
       "region_type": "PLAN_VIEW",
       "bbox": {
-        "x_center": 0.4997,
-        "y_center": 0.4337,
-        "width": 0.9052,
-        "height": 0.4668
+        "x_center": 0.5,
+        "y_center": 0.4541,
+        "width": 0.9097,
+        "height": 0.4259
       },
       "ocr_text": "",
       "label": "coarse plan-view context for missed approach",
@@ -641,16 +649,16 @@
         "review_action": "pending",
         "notes": ""
       },
-      "source_layer": "aip_table_line_snap"
+      "source_layer": "aip_long_line_plan_view_snap"
     },
     {
       "region_id": "KANJ_R14_03_lower_detail_area",
       "region_type": "MISSED_APPROACH_DETAIL_AREA",
       "bbox": {
-        "x_center": 0.5574,
-        "y_center": 0.6627,
-        "width": 0.3639,
-        "height": 0.1166
+        "x_center": 0.5194,
+        "y_center": 0.6944,
+        "width": 0.2877,
+        "height": 0.0547
       },
       "ocr_text": "",
       "label": "lower/profile missed-approach detail area snapped to AIP table lines",
@@ -662,10 +670,10 @@
         "review_action": "pending",
         "notes": "Generic seed only; add fine-grained boxes as needed."
       },
-      "source_layer": "pdf_text_cluster_icon_area_detector+aip_table_line_snap"
+      "source_layer": "pdf_text_cluster_icon_area_detector+lower_strip_line_refine"
     },
     {
-      "region_id": "KANJ_R14_iconalign_004_altitude_text",
+      "region_id": "KANJ_R14_iconalign_003_altitude_text",
       "region_type": "ALTITUDE_TEXT",
       "bbox": {
         "x_center": 0.4137,
@@ -713,7 +721,7 @@
       "source_field_name": "Q2_altitude_constraint"
     },
     {
-      "region_id": "KANJ_R14_iconalign_003_fix_text",
+      "region_id": "KANJ_R14_iconalign_002_fix_text",
       "region_type": "FIX_TEXT",
       "bbox": {
         "x_center": 0.628,
@@ -757,7 +765,7 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KANJ_R14_iconalign_002_fix_text",
+      "region_id": "KANJ_R14_iconalign_001_fix_text",
       "region_type": "FIX_TEXT",
       "bbox": {
         "x_center": 0.483,
@@ -801,7 +809,7 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KANJ_R14_iconalign_005_track_or_radial_text",
+      "region_id": "KANJ_R14_iconalign_004_track_or_radial_text",
       "region_type": "TRACK_OR_RADIAL_TEXT",
       "bbox": {
         "x_center": 0.5578,
@@ -848,54 +856,7 @@
       "source_field_name": "Q4_course_or_radial"
     },
     {
-      "region_id": "KANJ_R14_iconalign_001_heading_text",
-      "region_type": "HEADING_TEXT",
-      "bbox": {
-        "x_center": 0.715,
-        "y_center": 0.6503,
-        "width": 0.0461,
-        "height": 0.0131
-      },
-      "ocr_text": "",
-      "label": "HEADING_TEXT: 143° -> type=course_deg, course_deg=142.8",
-      "confidence": 0.62,
-      "source_layer": "pdf_text_inside_detected_icon_area",
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "is_formal_annotation_candidate": true,
-      "candidate_mappings": [
-        {
-          "candidate_leg_id": "KANJ_R14__ma1",
-          "canonical_leg_index": 1,
-          "leg_type": "CA",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=course_deg, course_deg=142.8",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "course_deg",
-              "course_deg": 142.8
-            }
-          },
-          "match_basis": "PDF text token '143°' inside detected lower missed-approach/icon area",
-          "confidence": 0.62,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KANJ_R14.json",
-          "source_seq_no": "040",
-          "source_trans_ident": "R"
-        }
-      ],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      },
-      "source_candidate_leg_id": "KANJ_R14__ma1",
-      "source_leg_type": "CA",
-      "source_field_name": "Q4_course_or_radial"
-    },
-    {
-      "region_id": "KANJ_R14_iconalign_011_climb_arrow",
+      "region_id": "KANJ_R14_iconalign_010_climb_arrow",
       "region_type": "CLIMB_ARROW",
       "bbox": {
         "x_center": 0.4116,
@@ -943,7 +904,7 @@
       "source_field_name": "Q2_altitude_constraint"
     },
     {
-      "region_id": "KANJ_R14_iconalign_008_climb_arrow",
+      "region_id": "KANJ_R14_iconalign_007_climb_arrow",
       "region_type": "CLIMB_ARROW",
       "bbox": {
         "x_center": 0.5406,
@@ -991,7 +952,7 @@
       "source_field_name": "Q2_altitude_constraint"
     },
     {
-      "region_id": "KANJ_R14_iconalign_010_fix_symbol",
+      "region_id": "KANJ_R14_iconalign_009_fix_symbol",
       "region_type": "FIX_SYMBOL",
       "bbox": {
         "x_center": 0.6258,
@@ -1035,7 +996,7 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KANJ_R14_iconalign_009_fix_symbol",
+      "region_id": "KANJ_R14_iconalign_008_fix_symbol",
       "region_type": "FIX_SYMBOL",
       "bbox": {
         "x_center": 0.4819,
