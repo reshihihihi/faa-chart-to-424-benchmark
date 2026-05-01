@@ -780,9 +780,8 @@ function directEvidenceIdsForGroup(row, items) {
   if (row.field_name === "Q2_altitude_constraint") {
     const explicitIds = matchingIds((region) => region.region_type === "ALTITUDE_TEXT" && regionHasNumber(region, value?.altitude_ft));
     if (explicitIds.length) return explicitIds;
-    if (row.leg_type === "CA") return coarseIds(["MISSED_APPROACH_TEXT"]);
     if (row.leg_type === "HM") return coarseIds(["MISSED_APPROACH_TEXT", "PLAN_VIEW"]);
-    return coarseIds(["MISSED_APPROACH_TEXT"]);
+    return [];
   }
   if (row.field_name === "Q3_turn") {
     const explicitIds = matchingIds((region) => region.region_type === "TURN_PHRASE" && regionHasToken(region, value));
@@ -1171,6 +1170,14 @@ function hasExplicitCourseRegion(row, regions, types) {
   });
 }
 
+function hasExplicitAltitudeRegion(row, regions) {
+  const value = expectedAnswerValue(row);
+  return regions.some((region) => {
+    return region.region_type === "ALTITUDE_TEXT"
+      && regionHasNumber(region, value?.altitude_ft);
+  });
+}
+
 function holdParamsNeedRuleCompletion(row, regions) {
   const value = expectedAnswerValue(row);
   if (!value || typeof value !== "object") return false;
@@ -1206,6 +1213,9 @@ function recommendedSupportModeForField(row, evidenceIds) {
   }
   if (row.field_name === "Q2_altitude_constraint" && row.leg_type === "HM") {
     return "rule_default_completion";
+  }
+  if (row.field_name === "Q2_altitude_constraint") {
+    return hasExplicitAltitudeRegion(row, regions) ? sameAreaDirectMode(regions) : "rule_default_completion";
   }
   if (
     row.field_name === "Q4_course_or_radial"
