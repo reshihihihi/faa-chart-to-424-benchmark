@@ -151,11 +151,34 @@ function normalizeFieldReviews(source) {
 }
 
 function normalizeRegion(region) {
+  const regionId = region.region_id || region.final_region_id || region.source_region_id || "";
   return {
     ...region,
+    region_id: regionId,
+    final_region_id: region.final_region_id || regionId,
+    source_region_id: region.source_region_id || regionId,
     bbox: region.bbox || { x_center: 0.5, y_center: 0.5, width: 0.1, height: 0.1 },
-    candidate_mappings: Array.isArray(region.candidate_mappings) ? region.candidate_mappings : []
+    candidate_mappings: Array.isArray(region.candidate_mappings)
+      ? region.candidate_mappings
+      : Array.isArray(region.candidate_mappings_reviewed)
+        ? region.candidate_mappings_reviewed
+        : []
   };
+}
+
+function regionMatchesId(region, regionId) {
+  const target = String(regionId || "");
+  if (!target) return false;
+  return uniqueList([region?.region_id, region?.final_region_id, region?.source_region_id]).includes(target);
+}
+
+function findRegion(regionId) {
+  return state.regions.find((region) => regionMatchesId(region, regionId)) || null;
+}
+
+function canonicalRegionId(regionId) {
+  const region = findRegion(regionId);
+  return region?.region_id || String(regionId || "");
 }
 
 function fieldKey(legIndex, fieldName) {
@@ -456,7 +479,7 @@ function renderFieldCards() {
 
 function evidenceChipsForIds(evidenceIds) {
   return evidenceIds.map((regionId) => {
-    const region = state.regions.find((item) => item.region_id === regionId);
+    const region = findRegion(regionId);
     const meta = evidenceCategoryMeta(region);
     return `<span class="evidence-chip" style="--cat:${meta.color}">
       <i class="chip-mark ${escapeText(meta.marker)}"></i>${escapeText(meta.label)} · ${escapeText(shortRegionLabel(region || { region_id: regionId }))}
@@ -558,8 +581,10 @@ function activeEvidenceMap() {
   const map = new Map();
   for (const item of displayItems()) {
     for (const regionId of evidenceIdsForItem(item)) {
-      if (!map.has(regionId)) map.set(regionId, []);
-      map.get(regionId).push(item);
+      const mapKey = canonicalRegionId(regionId);
+      if (!mapKey) continue;
+      if (!map.has(mapKey)) map.set(mapKey, []);
+      map.get(mapKey).push(item);
     }
   }
   return map;
@@ -590,7 +615,7 @@ function renderBoxes() {
   els.boxOverlay.setAttribute("viewBox", `0 0 ${naturalWidth} ${naturalHeight}`);
   const evidenceMap = activeEvidenceMap();
   els.boxOverlay.innerHTML = Array.from(evidenceMap.entries()).map(([regionId, items]) => {
-    const region = state.regions.find((item) => item.region_id === regionId);
+    const region = findRegion(regionId);
     if (!region) return "";
     const rect = regionRect(region, naturalWidth, naturalHeight);
     const active = !state.activeFieldKey || items.some((item) => item.key === state.activeFieldKey);
@@ -622,7 +647,7 @@ function renderLeaders() {
     const endY = cardRect.top - shellRect.top + Math.min(52, Math.max(30, cardRect.height / 2));
     const active = !state.activeFieldKey || state.activeFieldKey === item.key;
     for (const regionId of evidenceIdsForItem(item)) {
-      const region = state.regions.find((item) => item.region_id === regionId);
+      const region = findRegion(regionId);
       if (!region) continue;
       const meta = evidenceCategoryMeta(region);
       const box = region.bbox || {};
