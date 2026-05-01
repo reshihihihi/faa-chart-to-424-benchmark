@@ -639,6 +639,117 @@ async function writeClaims(dataset, claims) {
   await writeJsonFileAtomic(annotationPath(dataset, "claims.json"), claims);
 }
 
+async function removePathIfExists(filePath, removed, label) {
+  if (!await fileExists(filePath)) return;
+  await fs.rm(filePath, { recursive: true, force: true });
+  removed.push(label);
+}
+
+async function removeEmptyDirIfPossible(dirPath) {
+  try {
+    await fs.rmdir(dirPath);
+  } catch (error) {
+    if (!["ENOENT", "ENOTEMPTY"].includes(error.code)) throw error;
+  }
+}
+
+async function removeChartJsonFromAnnotatorRoot(dataset, rootParts, chartId, removed, labelPrefix) {
+  const root = annotationPath(dataset, ...rootParts);
+  let entries;
+  try {
+    entries = await fs.readdir(root, { withFileTypes: true });
+  } catch (error) {
+    if (error.code === "ENOENT") return;
+    throw error;
+  }
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const filePath = safeJoin(root, entry.name, `${chartId}.json`);
+    if (!await fileExists(filePath)) continue;
+    await fs.rm(filePath, { force: true });
+    removed.push(`${labelPrefix}/${entry.name}/${chartId}.json`);
+    await removeEmptyDirIfPossible(safeJoin(root, entry.name));
+  }
+}
+
+async function removeChartAnnotationArtifacts(dataset, chartId) {
+  const removed = [];
+  await removeChartJsonFromAnnotatorRoot(dataset, ["by_annotator"], chartId, removed, "by_annotator");
+  await removeChartJsonFromAnnotatorRoot(dataset, ["drafts", "by_annotator"], chartId, removed, "drafts/by_annotator");
+  await removePathIfExists(annotationPath(dataset, "drafts", "snapshots", chartId), removed, `drafts/snapshots/${chartId}`);
+  await removePathIfExists(annotationPath(dataset, "submissions", chartId), removed, `submissions/${chartId}`);
+  return removed;
+}
+
+async function latestFinalAnnotationForChart(dataset, chartId) {
+  const entries = await readAnnotationEntries(annotationPath(dataset, "by_annotator"));
+  return latestEntry(entries.filter((entry) => chartIdFromAnnotationEntry(entry) === chartId));
+}
+
+async function adminReturnChart(dataset, chartId, options = {}) {
+  if (!dataset.finalDataset) {
+    const error = new Error("只有正式集支持管理员打回。");
+    error.statusCode = 400;
+    throw error;
+  }
+  if (!isSafeChartId(chartId)) {
+    const error = new Error("Invalid chart_id");
+    error.statusCode = 400;
+    throw error;
+  }
+  const target = options.target === "ordinary" ? "ordinary" : "expert";
+  const returnedBy = safeAnnotator(options.returnedBy || "admin") || "admin";
+  const reason = String(options.reason || "").trim().slice(0, 1000);
+
+  if (target === "ordinary") {
+    return withClaimLock(async () => {
+      const claims = await readClaims(dataset);
+      const previousClaim = claims[chartId] || null;
+      const removed_artifacts = await removeChartAnnotationArtifacts(dataset, chartId);
+      delete claims[chartId];
+      await writeClaims(dataset, claims);
+      return {
+        target,
+        claim: null,
+        previous_claim: previousClaim,
+        removed_artifacts
+      };
+    });
+  }
+
+  const latestFinal = await latestFinalAnnotationForChart(dataset, chartId);
+  const finalSummary = annotationSummary(latestFinal);
+  return withClaimLock(async () => {
+    const claims = await readClaims(dataset);
+    const previous = claims[chartId] || {};
+    const now = new Date().toISOString();
+    const annotator = previous.annotator
+      || finalSummary?.annotator
+      || safeAnnotator(options.annotator || "");
+    claims[chartId] = {
+      ...previous,
+      chart_id: chartId,
+      annotator,
+      status: "returned_for_expert_review",
+      expert_review_required: true,
+      expert_reviewer: "",
+      expert_review_claimed_at: "",
+      expert_last_opened_at: "",
+      returned_by: returnedBy,
+      returned_at: now,
+      return_reason: reason,
+      previous_status: previous.status || (latestFinal ? "submitted" : "unassigned")
+    };
+    await writeClaims(dataset, claims);
+    return {
+      target,
+      claim: claims[chartId],
+      previous_claim: previous || null,
+      preserved_annotation: Boolean(latestFinal)
+    };
+  });
+}
+
 async function claimChart(dataset, chartId, annotator) {
   if (!dataset.finalDataset) return null;
   if (!annotator) {
@@ -1075,6 +1186,27 @@ async function releaseClaimForRequest(req, requestUrl, dataset, chartId) {
     dataset: dataset.key,
     chart_id: chartId,
     claim
+  };
+}
+
+async function adminReturnChartForRequest(req, requestUrl, dataset, chartId) {
+  if (!isSafeChartId(chartId)) {
+    const error = new Error("Invalid chart_id");
+    error.statusCode = 400;
+    throw error;
+  }
+  const payload = JSON.parse(stripBom(await readRequestBody(req)) || "{}");
+  const result = await adminReturnChart(dataset, chartId, {
+    target: payload.target,
+    reason: payload.reason,
+    annotator: payload.annotator,
+    returnedBy: payload.returned_by || requestUrl.searchParams.get("admin") || "admin"
+  });
+  return {
+    ok: true,
+    dataset: dataset.key,
+    chart_id: chartId,
+    ...result
   };
 }
 
@@ -1967,6 +2099,14 @@ async function route(req, res) {
   if (req.method === "GET" && pathname === "/api/admin/overview") {
     requireAdminAccess(req, requestUrl);
     sendJson(res, 200, await buildAdminOverview(requestUrl.searchParams.get("dataset")));
+    return;
+  }
+
+  if (req.method === "POST" && pathname.startsWith("/api/admin/charts/") && pathname.endsWith("/return")) {
+    requireAdminAccess(req, requestUrl);
+    const parts = pathname.split("/");
+    const chartId = parts[4];
+    sendJson(res, 200, await adminReturnChartForRequest(req, requestUrl, dataset, chartId));
     return;
   }
 

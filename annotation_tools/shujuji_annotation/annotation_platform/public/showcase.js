@@ -8,6 +8,8 @@ const els = {
   chartInput: document.querySelector("#chartInput"),
   loadChartBtn: document.querySelector("#loadChartBtn"),
   editAnnotationLink: document.querySelector("#editAnnotationLink"),
+  returnExpertBtn: document.querySelector("#returnExpertBtn"),
+  returnOrdinaryBtn: document.querySelector("#returnOrdinaryBtn"),
   legSelect: document.querySelector("#legSelect"),
   showAllLegs: document.querySelector("#showAllLegs"),
   viewerShell: document.querySelector("#viewerShell"),
@@ -87,10 +89,12 @@ const CHART_ZOOM_MAX = 3;
 const CHART_ZOOM_STEP = 0.12;
 
 function initializeAccessToken() {
-  const token = params.get("token");
+  const token = params.get("token") || params.get("admin_token") || params.get("expert_token");
   if (!token) return;
   sessionStorage.setItem(ACCESS_TOKEN_STORAGE_KEY, token);
   params.delete("token");
+  params.delete("admin_token");
+  params.delete("expert_token");
   window.history.replaceState({}, document.title, `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ""}${window.location.hash}`);
 }
 
@@ -125,6 +129,29 @@ async function getJson(url) {
   const token = currentAccessToken();
   const response = await fetch(url, {
     headers: token ? { "x-shujuji-token": token } : {}
+  });
+  const text = await response.text();
+  let data = {};
+  try {
+    data = text ? JSON.parse(text) : {};
+  } catch {
+    data = { raw: text };
+  }
+  if (!response.ok) throw new Error(data.error || response.statusText);
+  return data;
+}
+
+async function postAdminJson(path, payload = {}) {
+  const token = currentAccessToken();
+  if (!token) throw new Error("需要管理员 token 才能打回。");
+  const response = await fetch(apiUrl(path), {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-shujuji-token": token,
+      "x-shujuji-admin-token": token
+    },
+    body: JSON.stringify(payload)
   });
   const text = await response.text();
   let data = {};
@@ -472,6 +499,18 @@ function updateEditAnnotationLink() {
   els.editAnnotationLink.textContent = expertStatus ? "去复核页修改" : "去标注页修改";
 }
 
+function updateAdminActions() {
+  const disabled = datasetKey !== "formal300" || !state.current?.manifest?.chart_id;
+  if (els.returnExpertBtn) {
+    els.returnExpertBtn.disabled = disabled;
+    els.returnExpertBtn.title = disabled ? "正式集航图载入后可用" : "把这张图放入专家复核队列，保留现有标注结果";
+  }
+  if (els.returnOrdinaryBtn) {
+    els.returnOrdinaryBtn.disabled = disabled;
+    els.returnOrdinaryBtn.title = disabled ? "正式集航图载入后可用" : "清空这张图的标注结果并退回普通标注队列";
+  }
+}
+
 function renderLegOptions() {
   const rowsForLegs = Object.keys(state.fieldReviews).length
     ? state.rows.filter((row) => state.fieldReviews[row.key])
@@ -809,6 +848,7 @@ function renderAll() {
   els.chartInput.value = manifest.chart_id || "";
   els.chartSelect.value = manifest.chart_id || "";
   updateEditAnnotationLink();
+  updateAdminActions();
   renderLegOptions();
   fitChartToPane();
   renderFieldCards();
@@ -852,6 +892,36 @@ async function loadChart(chartId) {
   renderAll();
 }
 
+async function returnCurrentChart(target) {
+  const chartId = state.current?.manifest?.chart_id || els.chartInput.value.trim();
+  if (!chartId) throw new Error("请先载入航图。");
+  const currentAnnotator = state.current?.annotation_annotator
+    || state.current?.manifest?.original_annotator
+    || state.current?.manifest?.claimed_by
+    || "";
+  let reason = "";
+  if (target === "expert") {
+    reason = window.prompt("送专家复核的原因（专家会看到当前标注结果）：", state.current?.manifest?.return_reason || "管理员从展示页送专家复核。");
+    if (reason === null) return;
+  } else {
+    const ok = window.confirm(`确认把 ${chartId} 退回普通标注队列？这会删除该图正式结果、草稿和提交快照，无法在页面上恢复。`);
+    if (!ok) return;
+    reason = window.prompt("退回原因（可空）：", "管理员从展示页退回普通标注，清空已有标注结果。");
+    if (reason === null) return;
+  }
+  const data = await postAdminJson(`/api/admin/charts/${chartId}/return`, {
+    target,
+    reason,
+    annotator: currentAnnotator,
+    returned_by: params.get("admin") || "admin"
+  });
+  showToast(target === "expert"
+    ? `${chartId} 已送入专家复核队列。`
+    : `${chartId} 已退回普通标注队列，清理 ${data.removed_artifacts?.length || 0} 项文件。`);
+  await loadCharts();
+  await loadChart(chartId);
+}
+
 function bindEvents() {
   const savedWidth = Number(localStorage.getItem("shujuji_showcase_right_width") || 0);
   if (savedWidth) applyRightPanelWidth(savedWidth);
@@ -869,6 +939,8 @@ function bindEvents() {
     if (event.key === "Enter") loadChart(els.chartInput.value.trim()).catch((error) => showToast(error.message));
   });
   els.chartSelect.addEventListener("change", () => loadChart(els.chartSelect.value).catch((error) => showToast(error.message)));
+  els.returnExpertBtn?.addEventListener("click", () => returnCurrentChart("expert").catch((error) => showToast(error.message)));
+  els.returnOrdinaryBtn?.addEventListener("click", () => returnCurrentChart("ordinary").catch((error) => showToast(error.message)));
   els.legSelect.addEventListener("change", () => {
     state.currentLeg = Number(els.legSelect.value || 1);
     state.activeFieldKey = "";
