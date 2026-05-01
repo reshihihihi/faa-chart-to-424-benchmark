@@ -29,6 +29,16 @@ def write_json(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def resolve_workspace_path(value):
+    candidate = Path(value)
+    if candidate.is_absolute():
+        return candidate
+    root_candidate = ROOT / candidate
+    if root_candidate.exists():
+        return root_candidate
+    return Path.cwd() / candidate
+
+
 def bbox(cx, cy, width, height):
     return {
         "x_center": round(max(0.005, min(0.995, cx)), 4),
@@ -646,6 +656,51 @@ def dedupe_mappings(mappings):
     return output
 
 
+def q5_has_distance(item_mapping):
+    value = (item_mapping.get("expected_answer") or {}).get("value")
+    return isinstance(value, dict) and value.get("leg_distance_nm") is not None
+
+
+def mapping_allowed_for_region_type(region_type, item_mapping):
+    field_name = item_mapping.get("field_name", "")
+    if field_name == "Q_terminator":
+        return True
+    if region_type in COARSE_TYPES:
+        return True
+    if region_type == "ALTITUDE_TEXT":
+        return field_name == "Q2_altitude_constraint"
+    if region_type == "CLIMB_ARROW":
+        return field_name == "Q2_altitude_constraint"
+    if region_type == "TURN_PHRASE":
+        return field_name == "Q3_turn"
+    if region_type in {"FIX_TEXT", "FIX_SYMBOL"}:
+        return field_name == "Q1_fix_ident"
+    if region_type == "NAVAID_TEXT":
+        return field_name in {"Q1_fix_ident", "Q4_course_or_radial"}
+    if region_type in {"RADIAL_TEXT", "HEADING_TEXT", "TRACK_OR_RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"}:
+        return field_name in {"Q4_course_or_radial", "Q5_hold_params"}
+    if region_type in {"HOLDING_PATTERN", "HOLDING_ARC", "HOLDING_TIME_TEXT"}:
+        return field_name == "Q5_hold_params"
+    if region_type == "DME_DISTANCE_TEXT":
+        return field_name == "Q5_hold_params" and q5_has_distance(item_mapping)
+    if region_type in {"PATH_SEGMENT", "MISSED_APPROACH_ICON", "MISSED_APPROACH_STEP_BOX"}:
+        return field_name in {"Q3_turn", "Q4_course_or_radial", "Q5_hold_params"}
+    return True
+
+
+def sanitize_region_mappings(item):
+    region_type = item.get("region_type", "")
+    item["candidate_mappings"] = dedupe_mappings([
+        item_mapping for item_mapping in item.get("candidate_mappings", [])
+        if mapping_allowed_for_region_type(region_type, item_mapping)
+    ])
+    return item
+
+
+def sanitize_region_list(regions):
+    return [sanitize_region_mappings(item) for item in regions]
+
+
 def leg_indices_for_region(item):
     indices = []
     for item_mapping in item.get("candidate_mappings", []):
@@ -702,6 +757,7 @@ def merge_region_pair(base, extra):
     base["label"] = f"{base.get('label', '')}; {extra.get('label', '')}".strip("; ")
     if REGION_TYPE_PRIORITY.get(extra.get("region_type"), 99) < REGION_TYPE_PRIORITY.get(base.get("region_type"), 99):
         base["region_type"] = extra["region_type"]
+    sanitize_region_mappings(base)
     return base
 
 
@@ -733,7 +789,7 @@ def merge_overlapping_regions(regions):
             merge_region_pair(target, item)
         else:
             item = deepcopy(item)
-            item["candidate_mappings"] = dedupe_mappings(item.get("candidate_mappings", []))
+            sanitize_region_mappings(item)
             merged.append(item)
     return merged
 
@@ -817,12 +873,46 @@ def generate_chart(manifest_item, target):
     prelabel = read_json(prelabel_path)
     lookup = target_lookup(target)
     coarse = [item for item in prelabel.get("regions", []) if item.get("region_type") in COARSE_TYPES]
+    existing_fine = [item for item in prelabel.get("regions", []) if item.get("region_type") not in COARSE_TYPES]
     copied = adapt_pilot_regions(chart_id, lookup)
 
     pdf_path = FORMAL / "pdfs" / manifest_item["pdf_file"]
-    words = pdf_words(pdf_path) if pdf_path.exists() else []
+    image_path = resolve_workspace_path(manifest_item["image_path"])
+    if not pdf_path.exists():
+        all_fine = sanitize_region_list(deepcopy(existing_fine))
+        sanitized_regions = coarse + all_fine
+        if sanitized_regions != prelabel.get("regions", []):
+            prelabel["regions"] = sanitized_regions
+            prelabel["prelabel_version"] = "v0.28-formal300-sanitized-existing-evidence"
+            prelabel["generated_at"] = datetime.now(timezone.utc).isoformat()
+            prelabel.setdefault("generation_policy", {})
+            prelabel["generation_policy"].update({
+                "formal300_small_box_prelabels_added": True,
+                "small_box_source": "preserved existing fine boxes because source PDFs are unavailable; sanitized field mappings by region type",
+                "small_box_final_ground_truth": False,
+                "small_box_human_calibration_required": True,
+                "candidate_mappings_are_cifp424_targets_not_independent_predictions": True,
+                "compound_q4_and_q_terminator_candidate_mappings": True,
+                "field_mapping_region_type_sanitizer": True,
+                "source_pdfs_available": False,
+            })
+            write_json(prelabel_path, prelabel)
+        return {
+            "chart_id": chart_id,
+            "coarse_count": len(coarse),
+            "pilot_copy_count": 0,
+            "pdf_text_box_count": 0,
+            "cv_symbol_box_count": 0,
+            "fine_count": len(all_fine),
+            "match_count": 0,
+            "selected_match_count": 0,
+            "detail_roi": next((item["bbox"] for item in coarse if item.get("region_type") == "MISSED_APPROACH_DETAIL_AREA"), None),
+            "source_pdfs_available": False,
+        }
+
+    words = pdf_words(pdf_path)
     matches = word_matches(words, lookup)
-    detail_roi, selected_matches = choose_detail_roi({"regions": coarse}, matches, manifest_item["image_path"])
+    detail_roi, selected_matches = choose_detail_roi({"regions": coarse}, matches, image_path)
     detail_region = next((item for item in coarse if item.get("region_type") == "MISSED_APPROACH_DETAIL_AREA"), None)
     if detail_region:
         detail_region["bbox"] = detail_roi
@@ -832,7 +922,7 @@ def generate_chart(manifest_item, target):
 
     serial = 1
     text_regions, serial = add_text_boxes(chart_id, serial, selected_matches, lookup, detail_roi, copied)
-    symbol_regions, serial = add_symbol_boxes(chart_id, serial, manifest_item["image_path"], detail_roi, lookup, copied + text_regions)
+    symbol_regions, serial = add_symbol_boxes(chart_id, serial, image_path, detail_roi, lookup, copied + text_regions)
 
     # Keep reviewed pilot boxes first, then add detections for fields/visual evidence not already covered.
     all_fine = merge_overlapping_regions(copied + text_regions + symbol_regions)
@@ -842,8 +932,9 @@ def generate_chart(manifest_item, target):
         fallback_regions, serial = add_fallback_for_uncovered(chart_id, serial, target, lookup, detail_roi, all_fine)
     all_fine = merge_overlapping_regions(all_fine + fallback_regions)
     add_compound_support_mappings(coarse + all_fine, lookup)
+    all_fine = sanitize_region_list(all_fine)
     prelabel["regions"] = coarse + all_fine
-    prelabel["prelabel_version"] = "v0.27-formal300-structure-aware-compound-evidence"
+    prelabel["prelabel_version"] = "v0.28-formal300-structure-aware-sanitized-evidence"
     prelabel["generated_at"] = datetime.now(timezone.utc).isoformat()
     prelabel.setdefault("generation_policy", {})
     prelabel["generation_policy"].update({
@@ -855,6 +946,7 @@ def generate_chart(manifest_item, target):
         "boxed_cell_structure_weighted": True,
         "candidate_mappings_are_cifp424_targets_not_independent_predictions": True,
         "compound_q4_and_q_terminator_candidate_mappings": True,
+        "field_mapping_region_type_sanitizer": True,
         "low_confidence_blank_fallback_boxes_enabled": ENABLE_LOW_CONFIDENCE_FALLBACK_BOXES,
     })
     write_json(prelabel_path, prelabel)
@@ -868,6 +960,7 @@ def generate_chart(manifest_item, target):
         "match_count": len(matches),
         "selected_match_count": len(selected_matches),
         "detail_roi": detail_roi,
+        "source_pdfs_available": True,
     }
 
 
