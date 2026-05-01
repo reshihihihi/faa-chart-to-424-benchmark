@@ -1,0 +1,878 @@
+{
+  "run_id": "group1_rescore_scoring_equivalence_v2_20260501_r1",
+  "created_at_utc": "2026-05-01T11:21:11.948918+00:00",
+  "artifact_root": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2",
+  "target_v1": {
+    "path": "benchmark_exports\\derived\\v2\\formal300\\targets\\canonical_proxy_gt_combined.json",
+    "sha256": "9a67277de2d05ee3255eed98c40c9e31060e5d6b6a76ffc576734bf71c3729d4"
+  },
+  "target_v2": {
+    "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2\\canonical_proxy_gt_chart_display_v2.json",
+    "sha256": "309f4c975413e90aa24dafcb4a451ad42ea310d3475e5aff17cb45e171292e36"
+  },
+  "policy_v2": {
+    "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2\\comparison_policy_v2.jsonl",
+    "sha256": "4af3745662429d2f830c49a5d6048e36093ddea9dc646767554164013779124f"
+  },
+  "schema": {
+    "path": "schemas\\missed_approach_leg.schema.json",
+    "sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9"
+  },
+  "scorer_v2": {
+    "path": "scripts/scorers\\group1_canonical_field_scorer_v2.py",
+    "sha256": "847a92ec27f9a067409eeda3097371e07d9431b70aa946285feabfa02f428243"
+  },
+  "method_summaries": [
+    {
+      "method": "A1",
+      "sources": [
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\A1"
+      ],
+      "prediction_files": 200,
+      "unique_charts": 200,
+      "schema_valid_predictions": 200,
+      "schema_invalid_predictions": 0,
+      "old_strict_score": {
+        "correct": 1184,
+        "total": 4052,
+        "accuracy": 0.29220138203356366
+      },
+      "chart_display_v2_score": {
+        "correct": 1184,
+        "total": 4052,
+        "accuracy": 0.29220138203356366
+      },
+      "delta_correct": 0,
+      "delta_accuracy": 0.0,
+      "missing_old_score_count": 0,
+      "missing_old_score": [],
+      "duplicate_charts": [],
+      "invalid_predictions": [],
+      "category_scores": {
+        "course_radial": {
+          "correct": 291,
+          "total": 1284,
+          "accuracy": 0.2266355140186916
+        },
+        "fix_navaid": {
+          "correct": 183,
+          "total": 642,
+          "accuracy": 0.2850467289719626
+        },
+        "strict": {
+          "correct": 710,
+          "total": 2126,
+          "accuracy": 0.3339604891815616
+        }
+      },
+      "policy_scores": {
+        "degree_display_rounding": {
+          "correct": 4,
+          "total": 380,
+          "accuracy": 0.010526315789473684
+        },
+        "exact_status_value": {
+          "correct": 997,
+          "total": 3030,
+          "accuracy": 0.32904290429042904
+        },
+        "normalized_string": {
+          "correct": 183,
+          "total": 642,
+          "accuracy": 0.2850467289719626
+        }
+      },
+      "changed_rows_count": 0
+    },
+    {
+      "method": "A2",
+      "sources": [
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\A2"
+      ],
+      "prediction_files": 200,
+      "unique_charts": 200,
+      "schema_valid_predictions": 200,
+      "schema_invalid_predictions": 0,
+      "old_strict_score": {
+        "correct": 916,
+        "total": 4052,
+        "accuracy": 0.22606120434353405
+      },
+      "chart_display_v2_score": {
+        "correct": 916,
+        "total": 4052,
+        "accuracy": 0.22606120434353405
+      },
+      "delta_correct": 0,
+      "delta_accuracy": 0.0,
+      "missing_old_score_count": 0,
+      "missing_old_score": [],
+      "duplicate_charts": [],
+      "invalid_predictions": [],
+      "category_scores": {
+        "course_radial": {
+          "correct": 234,
+          "total": 1284,
+          "accuracy": 0.1822429906542056
+        },
+        "fix_navaid": {
+          "correct": 88,
+          "total": 642,
+          "accuracy": 0.13707165109034267
+        },
+        "strict": {
+          "correct": 594,
+          "total": 2126,
+          "accuracy": 0.2793979303857008
+        }
+      },
+      "policy_scores": {
+        "degree_display_rounding": {
+          "correct": 2,
+          "total": 380,
+          "accuracy": 0.005263157894736842
+        },
+        "exact_status_value": {
+          "correct": 826,
+          "total": 3030,
+          "accuracy": 0.2726072607260726
+        },
+        "normalized_string": {
+          "correct": 88,
+          "total": 642,
+          "accuracy": 0.13707165109034267
+        }
+      },
+      "changed_rows_count": 0
+    },
+    {
+      "method": "B1",
+      "sources": [
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1"
+      ],
+      "prediction_files": 200,
+      "unique_charts": 200,
+      "schema_valid_predictions": 200,
+      "schema_invalid_predictions": 0,
+      "old_strict_score": {
+        "correct": 1104,
+        "total": 4052,
+        "accuracy": 0.2724580454096742
+      },
+      "chart_display_v2_score": {
+        "correct": 1110,
+        "total": 4052,
+        "accuracy": 0.27393879565646595
+      },
+      "delta_correct": 6,
+      "delta_accuracy": 0.0014807502467917288,
+      "missing_old_score_count": 0,
+      "missing_old_score": [],
+      "duplicate_charts": [],
+      "invalid_predictions": [],
+      "category_scores": {
+        "course_radial": {
+          "correct": 321,
+          "total": 1284,
+          "accuracy": 0.25
+        },
+        "fix_navaid": {
+          "correct": 266,
+          "total": 642,
+          "accuracy": 0.4143302180685358
+        },
+        "strict": {
+          "correct": 523,
+          "total": 2126,
+          "accuracy": 0.24600188146754468
+        }
+      },
+      "policy_scores": {
+        "degree_display_rounding": {
+          "correct": 12,
+          "total": 380,
+          "accuracy": 0.031578947368421054
+        },
+        "exact_status_value": {
+          "correct": 832,
+          "total": 3030,
+          "accuracy": 0.2745874587458746
+        },
+        "normalized_string": {
+          "correct": 266,
+          "total": 642,
+          "accuracy": 0.4143302180685358
+        }
+      },
+      "changed_rows_count": 6
+    },
+    {
+      "method": "B1_prime",
+      "sources": [
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime"
+      ],
+      "prediction_files": 200,
+      "unique_charts": 200,
+      "schema_valid_predictions": 200,
+      "schema_invalid_predictions": 0,
+      "old_strict_score": {
+        "correct": 1303,
+        "total": 4052,
+        "accuracy": 0.32156959526159923
+      },
+      "chart_display_v2_score": {
+        "correct": 1308,
+        "total": 4052,
+        "accuracy": 0.3228035538005923
+      },
+      "delta_correct": 5,
+      "delta_accuracy": 0.0012339585389930519,
+      "missing_old_score_count": 0,
+      "missing_old_score": [],
+      "duplicate_charts": [],
+      "invalid_predictions": [],
+      "category_scores": {
+        "course_radial": {
+          "correct": 384,
+          "total": 1284,
+          "accuracy": 0.29906542056074764
+        },
+        "fix_navaid": {
+          "correct": 301,
+          "total": 642,
+          "accuracy": 0.4688473520249221
+        },
+        "strict": {
+          "correct": 623,
+          "total": 2126,
+          "accuracy": 0.29303857008466605
+        }
+      },
+      "policy_scores": {
+        "degree_display_rounding": {
+          "correct": 9,
+          "total": 380,
+          "accuracy": 0.02368421052631579
+        },
+        "exact_status_value": {
+          "correct": 998,
+          "total": 3030,
+          "accuracy": 0.32937293729372935
+        },
+        "normalized_string": {
+          "correct": 301,
+          "total": 642,
+          "accuracy": 0.4688473520249221
+        }
+      },
+      "changed_rows_count": 5
+    },
+    {
+      "method": "B1_prime_link",
+      "sources": [
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link"
+      ],
+      "prediction_files": 200,
+      "unique_charts": 200,
+      "schema_valid_predictions": 185,
+      "schema_invalid_predictions": 15,
+      "old_strict_score": {
+        "correct": 718,
+        "total": 3683,
+        "accuracy": 0.19494976920988324
+      },
+      "chart_display_v2_score": {
+        "correct": 718,
+        "total": 3683,
+        "accuracy": 0.19494976920988324
+      },
+      "delta_correct": 0,
+      "delta_accuracy": 0.0,
+      "missing_old_score_count": 0,
+      "missing_old_score": [],
+      "duplicate_charts": [],
+      "invalid_predictions": [
+        {
+          "chart_id": "KABE_R24",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KABE_R24.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'type': 'course_deg', 'degrees': 266} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KABY_R17",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KABY_R17.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 226} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KABY_R23",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KABY_R23.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 197} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KACY_R13-Y",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KACY_R13-Y.json",
+          "errors": [
+            "missed_approach.legs.2.answers.Q4_course_or_radial.value: 76 is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KAGC_R28",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KAGC_R28.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 197} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KALB_R10",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KALB_R10.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 91} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KALB_R19-Y",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KALB_R19-Y.json",
+          "errors": [
+            "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'course_deg': 196} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KALN_R17",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KALN_R17.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 122} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KALO_L12",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KALO_L12.json",
+          "errors": [
+            "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'type': 'radial', 'degrees': 96} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KAOO_R03-Z",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KAOO_R03-Z.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 42} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KAOO_R21",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KAOO_R21.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 223} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KAST_R26",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KAST_R26.json",
+          "errors": [
+            "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'course_deg': 189} is not valid under any of the given schemas",
+            "missed_approach.legs.3.answers.Q4_course_or_radial.value: {'course_deg': 113} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KATL_I09R",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KATL_I09R.json",
+          "errors": [
+            "missed_approach.legs.0.answers.Q4_course_or_radial.value: {'heading_deg': 100} is not valid under any of the given schemas",
+            "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'radial_deg': 235, 'nav_fix': 'AHN'} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KAVQ_R21",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KAVQ_R21.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 284} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KCOI_R11",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KCOI_R11.json",
+          "errors": [
+            "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'course_deg': 190} is not valid under any of the given schemas"
+          ]
+        }
+      ],
+      "category_scores": {
+        "course_radial": {
+          "correct": 250,
+          "total": 1166,
+          "accuracy": 0.2144082332761578
+        },
+        "fix_navaid": {
+          "correct": 279,
+          "total": 583,
+          "accuracy": 0.47855917667238423
+        },
+        "strict": {
+          "correct": 189,
+          "total": 1934,
+          "accuracy": 0.09772492244053775
+        }
+      },
+      "policy_scores": {
+        "degree_display_rounding": {
+          "correct": 0,
+          "total": 354,
+          "accuracy": 0.0
+        },
+        "exact_status_value": {
+          "correct": 439,
+          "total": 2746,
+          "accuracy": 0.15986890021849964
+        },
+        "normalized_string": {
+          "correct": 279,
+          "total": 583,
+          "accuracy": 0.47855917667238423
+        }
+      },
+      "changed_rows_count": 0
+    },
+    {
+      "method": "C1",
+      "sources": [
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\C1"
+      ],
+      "prediction_files": 200,
+      "unique_charts": 200,
+      "schema_valid_predictions": 200,
+      "schema_invalid_predictions": 0,
+      "old_strict_score": {
+        "correct": 1503,
+        "total": 4052,
+        "accuracy": 0.3709279368213228
+      },
+      "chart_display_v2_score": {
+        "correct": 1596,
+        "total": 4052,
+        "accuracy": 0.39387956564659427
+      },
+      "delta_correct": 93,
+      "delta_accuracy": 0.022951628825271464,
+      "missing_old_score_count": 0,
+      "missing_old_score": [],
+      "duplicate_charts": [],
+      "invalid_predictions": [],
+      "category_scores": {
+        "course_radial": {
+          "correct": 611,
+          "total": 1284,
+          "accuracy": 0.47585669781931467
+        },
+        "fix_navaid": {
+          "correct": 217,
+          "total": 642,
+          "accuracy": 0.338006230529595
+        },
+        "strict": {
+          "correct": 768,
+          "total": 2126,
+          "accuracy": 0.36124176857949203
+        }
+      },
+      "policy_scores": {
+        "degree_display_rounding": {
+          "correct": 108,
+          "total": 380,
+          "accuracy": 0.28421052631578947
+        },
+        "exact_status_value": {
+          "correct": 1271,
+          "total": 3030,
+          "accuracy": 0.4194719471947195
+        },
+        "normalized_string": {
+          "correct": 217,
+          "total": 642,
+          "accuracy": 0.338006230529595
+        }
+      },
+      "changed_rows_count": 93
+    },
+    {
+      "method": "C2",
+      "sources": [
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_001\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_002\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_003\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_004\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_005\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_006\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_007\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_008\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_009\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_010\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_011\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_012\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_013\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_014\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_015\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_016\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_017\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_018\\C2",
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C2_chunk_019\\C2"
+      ],
+      "prediction_files": 200,
+      "unique_charts": 200,
+      "schema_valid_predictions": 200,
+      "schema_invalid_predictions": 0,
+      "old_strict_score": {
+        "correct": 970,
+        "total": 4052,
+        "accuracy": 0.23938795656465942
+      },
+      "chart_display_v2_score": {
+        "correct": 1074,
+        "total": 4052,
+        "accuracy": 0.2650542941757157
+      },
+      "delta_correct": 104,
+      "delta_accuracy": 0.025666337611056272,
+      "missing_old_score_count": 0,
+      "missing_old_score": [],
+      "duplicate_charts": [],
+      "invalid_predictions": [],
+      "category_scores": {
+        "course_radial": {
+          "correct": 159,
+          "total": 1284,
+          "accuracy": 0.12383177570093458
+        },
+        "fix_navaid": {
+          "correct": 160,
+          "total": 642,
+          "accuracy": 0.24922118380062305
+        },
+        "strict": {
+          "correct": 755,
+          "total": 2126,
+          "accuracy": 0.3551269990592662
+        }
+      },
+      "policy_scores": {
+        "degree_display_rounding": {
+          "correct": 122,
+          "total": 380,
+          "accuracy": 0.32105263157894737
+        },
+        "exact_status_value": {
+          "correct": 792,
+          "total": 3030,
+          "accuracy": 0.2613861386138614
+        },
+        "normalized_string": {
+          "correct": 160,
+          "total": 642,
+          "accuracy": 0.24922118380062305
+        }
+      },
+      "changed_rows_count": 104
+    },
+    {
+      "method": "C3",
+      "sources": [
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C3\\C3"
+      ],
+      "prediction_files": 198,
+      "unique_charts": 198,
+      "schema_valid_predictions": 196,
+      "schema_invalid_predictions": 2,
+      "old_strict_score": {
+        "correct": 1522,
+        "total": 3976,
+        "accuracy": 0.3827967806841046
+      },
+      "chart_display_v2_score": {
+        "correct": 1593,
+        "total": 3976,
+        "accuracy": 0.40065392354124746
+      },
+      "delta_correct": 71,
+      "delta_accuracy": 0.01785714285714285,
+      "missing_old_score_count": 0,
+      "missing_old_score": [],
+      "duplicate_charts": [],
+      "invalid_predictions": [
+        {
+          "chart_id": "KAMN_R09",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C3\\C3\\canonical_json\\KAMN_R09.json",
+          "errors": [
+            "missed_approach.legs.0.answers.Q4_course_or_radial.value: {'course_deg': None, 'type': 'direct'} is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KANQ_R23",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C3\\C3\\canonical_json\\KANQ_R23.json",
+          "errors": [
+            "missed_approach.legs.0.answers.Q4_course_or_radial.value: {'course_deg': None, 'type': 'direct'} is not valid under any of the given schemas"
+          ]
+        }
+      ],
+      "category_scores": {
+        "course_radial": {
+          "correct": 558,
+          "total": 1260,
+          "accuracy": 0.44285714285714284
+        },
+        "fix_navaid": {
+          "correct": 232,
+          "total": 630,
+          "accuracy": 0.3682539682539683
+        },
+        "strict": {
+          "correct": 803,
+          "total": 2086,
+          "accuracy": 0.38494726749760305
+        }
+      },
+      "policy_scores": {
+        "degree_display_rounding": {
+          "correct": 84,
+          "total": 372,
+          "accuracy": 0.22580645161290322
+        },
+        "exact_status_value": {
+          "correct": 1277,
+          "total": 2974,
+          "accuracy": 0.42938802958977806
+        },
+        "normalized_string": {
+          "correct": 232,
+          "total": 630,
+          "accuracy": 0.3682539682539683
+        }
+      },
+      "changed_rows_count": 71
+    },
+    {
+      "method": "C4",
+      "sources": [
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C4\\C4"
+      ],
+      "prediction_files": 200,
+      "unique_charts": 200,
+      "schema_valid_predictions": 200,
+      "schema_invalid_predictions": 0,
+      "old_strict_score": {
+        "correct": 1624,
+        "total": 4052,
+        "accuracy": 0.40078973346495556
+      },
+      "chart_display_v2_score": {
+        "correct": 1638,
+        "total": 4052,
+        "accuracy": 0.40424481737413626
+      },
+      "delta_correct": 14,
+      "delta_accuracy": 0.0034550839091807006,
+      "missing_old_score_count": 0,
+      "missing_old_score": [],
+      "duplicate_charts": [],
+      "invalid_predictions": [],
+      "category_scores": {
+        "course_radial": {
+          "correct": 476,
+          "total": 1284,
+          "accuracy": 0.3707165109034268
+        },
+        "fix_navaid": {
+          "correct": 367,
+          "total": 642,
+          "accuracy": 0.5716510903426791
+        },
+        "strict": {
+          "correct": 795,
+          "total": 2126,
+          "accuracy": 0.37394167450611476
+        }
+      },
+      "policy_scores": {
+        "degree_display_rounding": {
+          "correct": 20,
+          "total": 380,
+          "accuracy": 0.05263157894736842
+        },
+        "exact_status_value": {
+          "correct": 1251,
+          "total": 3030,
+          "accuracy": 0.41287128712871285
+        },
+        "normalized_string": {
+          "correct": 367,
+          "total": 642,
+          "accuracy": 0.5716510903426791
+        }
+      },
+      "changed_rows_count": 14
+    },
+    {
+      "method": "D_SFT",
+      "sources": [
+        "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT"
+      ],
+      "prediction_files": 196,
+      "unique_charts": 196,
+      "schema_valid_predictions": 184,
+      "schema_invalid_predictions": 12,
+      "old_strict_score": {
+        "correct": 2739,
+        "total": 3724,
+        "accuracy": 0.735499462943072
+      },
+      "chart_display_v2_score": {
+        "correct": 2910,
+        "total": 3724,
+        "accuracy": 0.7814178302900108
+      },
+      "delta_correct": 171,
+      "delta_accuracy": 0.04591836734693877,
+      "missing_old_score_count": 0,
+      "missing_old_score": [],
+      "duplicate_charts": [],
+      "invalid_predictions": [
+        {
+          "chart_id": "KAGZ_R09",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KAGZ_R09.json",
+          "errors": [
+            "chart_id: 'KGZ_R09' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+            "procedure.airport: 'KGZ' does not match '^[A-Z]{4}$'"
+          ]
+        },
+        {
+          "chart_id": "KAGZ_R27",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KAGZ_R27.json",
+          "errors": [
+            "chart_id: 'KGZ_R27' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+            "procedure.airport: 'KGZ' does not match '^[A-Z]{4}$'"
+          ]
+        },
+        {
+          "chart_id": "KAIO_R02",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KAIO_R02.json",
+          "errors": [
+            "chart_id: 'KAI02_R02' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+            "procedure.airport: 'KAI02' does not match '^[A-Z]{4}$'"
+          ]
+        },
+        {
+          "chart_id": "KAIO_R20",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KAIO_R20.json",
+          "errors": [
+            "chart_id: 'KAI020' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+            "procedure.airport: 'KAI020' does not match '^[A-Z]{4}$'"
+          ]
+        },
+        {
+          "chart_id": "KAIZ_R04",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KAIZ_R04.json",
+          "errors": [
+            "chart_id: 'KAI_R04' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+            "procedure.airport: 'KAI' does not match '^[A-Z]{4}$'"
+          ]
+        },
+        {
+          "chart_id": "KAIZ_R22",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KAIZ_R22.json",
+          "errors": [
+            "chart_id: 'KAI_L22' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+            "procedure.airport: 'KAI_L22' does not match '^[A-Z]{4}$'"
+          ]
+        },
+        {
+          "chart_id": "KAMG_R34",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KAMG_R34.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q1_fix_ident.value: 'CLUYAT' is not valid under any of the given schemas",
+            "missed_approach.legs.2.answers.Q1_fix_ident.value: 'CLUYAT' is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KAMN_R09",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KAMN_R09.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q1_fix_ident.value: 'CEEGEE' is not valid under any of the given schemas",
+            "missed_approach.legs.2.answers.Q1_fix_ident.value: 'CEEGEE' is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KAMN_R27",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KAMN_R27.json",
+          "errors": [
+            "missed_approach.legs.1.answers.Q1_fix_ident.value: 'CEEGEE' is not valid under any of the given schemas",
+            "missed_approach.legs.2.answers.Q1_fix_ident.value: 'CEEGEE' is not valid under any of the given schemas"
+          ]
+        },
+        {
+          "chart_id": "KAOO_R03-Z",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KAOO_R03-Z.json",
+          "errors": [
+            "chart_id: 'KA00_R03' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+            "procedure.airport: 'KA00' does not match '^[A-Z]{4}$'"
+          ]
+        },
+        {
+          "chart_id": "KBOS_R32",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KBOS_R32.json",
+          "errors": [
+            "$: Additional properties are not allowed ('approach', 'chart_name' were unexpected)"
+          ]
+        },
+        {
+          "chart_id": "KCII_R33",
+          "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json\\KCII_R33.json",
+          "errors": [
+            "chart_id: 'KCI_I33' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+            "procedure.airport: 'KCI' does not match '^[A-Z]{4}$'"
+          ]
+        }
+      ],
+      "category_scores": {
+        "course_radial": {
+          "correct": 902,
+          "total": 1180,
+          "accuracy": 0.764406779661017
+        },
+        "fix_navaid": {
+          "correct": 469,
+          "total": 590,
+          "accuracy": 0.7949152542372881
+        },
+        "strict": {
+          "correct": 1539,
+          "total": 1954,
+          "accuracy": 0.7876151484135108
+        }
+      },
+      "policy_scores": {
+        "degree_display_rounding": {
+          "correct": 188,
+          "total": 349,
+          "accuracy": 0.5386819484240688
+        },
+        "exact_status_value": {
+          "correct": 2253,
+          "total": 2785,
+          "accuracy": 0.8089766606822262
+        },
+        "normalized_string": {
+          "correct": 469,
+          "total": 590,
+          "accuracy": 0.7949152542372881
+        }
+      },
+      "changed_rows_count": 171
+    }
+  ],
+  "outputs": {
+    "old_vs_new_score_delta_csv": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2\\reports\\old_vs_new_score_delta.csv"
+  }
+}

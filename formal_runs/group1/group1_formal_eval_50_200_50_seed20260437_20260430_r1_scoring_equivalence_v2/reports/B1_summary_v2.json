@@ -1,0 +1,61 @@
+{
+  "method": "B1",
+  "sources": [
+    "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1"
+  ],
+  "prediction_files": 200,
+  "unique_charts": 200,
+  "schema_valid_predictions": 200,
+  "schema_invalid_predictions": 0,
+  "old_strict_score": {
+    "correct": 1104,
+    "total": 4052,
+    "accuracy": 0.2724580454096742
+  },
+  "chart_display_v2_score": {
+    "correct": 1110,
+    "total": 4052,
+    "accuracy": 0.27393879565646595
+  },
+  "delta_correct": 6,
+  "delta_accuracy": 0.0014807502467917288,
+  "missing_old_score_count": 0,
+  "missing_old_score": [],
+  "duplicate_charts": [],
+  "invalid_predictions": [],
+  "category_scores": {
+    "course_radial": {
+      "correct": 321,
+      "total": 1284,
+      "accuracy": 0.25
+    },
+    "fix_navaid": {
+      "correct": 266,
+      "total": 642,
+      "accuracy": 0.4143302180685358
+    },
+    "strict": {
+      "correct": 523,
+      "total": 2126,
+      "accuracy": 0.24600188146754468
+    }
+  },
+  "policy_scores": {
+    "degree_display_rounding": {
+      "correct": 12,
+      "total": 380,
+      "accuracy": 0.031578947368421054
+    },
+    "exact_status_value": {
+      "correct": 832,
+      "total": 3030,
+      "accuracy": 0.2745874587458746
+    },
+    "normalized_string": {
+      "correct": 266,
+      "total": 642,
+      "accuracy": 0.4143302180685358
+    }
+  },
+  "changed_rows_count": 6
+}

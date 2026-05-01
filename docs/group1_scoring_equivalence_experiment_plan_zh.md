@@ -2,7 +2,7 @@
 
 版本：v0.2  
 日期：2026-05-01  
-保存目录：`E:\experiment3\v2`
+保存目录：`reports/freeze/group1_scoring_equivalence_v2_20260501_r1`
 
 ## 1. 本版只处理两类问题
 
