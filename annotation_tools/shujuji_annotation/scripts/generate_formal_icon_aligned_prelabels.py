@@ -17,6 +17,11 @@ COARSE_TYPES = {"MISSED_APPROACH_TEXT", "PLAN_VIEW", "MISSED_APPROACH_DETAIL_ARE
 CLIMB_TYPES = {"CA", "VA", "VD", "VI", "VM", "VR"}
 FIX_SYMBOL_TYPES = {"CF", "DF", "TF", "HA", "HF", "HM"}
 DEFAULT_LOWER_ROI = {"x_center": 0.52, "y_center": 0.705, "width": 0.42, "height": 0.105}
+COARSE_SEED_BOXES = {
+    "MISSED_APPROACH_TEXT": {"x_center": 0.805, "y_center": 0.142, "width": 0.33, "height": 0.07},
+    "PLAN_VIEW": {"x_center": 0.5, "y_center": 0.43, "width": 0.94, "height": 0.48},
+    "MISSED_APPROACH_DETAIL_AREA": DEFAULT_LOWER_ROI,
+}
 ENABLE_LOW_CONFIDENCE_FALLBACK_BOXES = False
 ENABLE_PRACTICE_PILOT_COPY = False
 REQUIRE_SOURCE_PDFS_FOR_FINE_PRELABELS = True
@@ -307,6 +312,9 @@ def choose_detail_roi(prelabel, matches, image_path=None):
     text_roi = bbox_union([item["word"]["bbox"] for item in selected], pad_x=0.038, pad_y=0.04)
     if not text_roi:
         return base_roi or DEFAULT_LOWER_ROI, selected
+    # The best row locates the lower-detail strip, but fields in the same strip
+    # can be on adjacent rows (for example "hdg 063" below altitude/fix cells).
+    selected = [item for item in matches if in_roi(item["word"], text_roi, pad=0.0)]
     return text_roi, selected
 
 
@@ -415,8 +423,162 @@ def pixel_rect_from_bbox(box, image_width, image_height):
     return max(0, x0), max(0, y0), min(image_width, x1), min(image_height, y1)
 
 
+def bbox_from_pixel_edges(x0, y0, x1, y1, image_width, image_height):
+    left = max(0.0, min(1.0, x0 / image_width))
+    right = max(0.0, min(1.0, x1 / image_width))
+    top = max(0.0, min(1.0, y0 / image_height))
+    bottom = max(0.0, min(1.0, y1 / image_height))
+    return {
+        "x_center": round((left + right) / 2, 4),
+        "y_center": round((top + bottom) / 2, 4),
+        "width": round(max(0.004, right - left), 4),
+        "height": round(max(0.004, bottom - top), 4),
+    }
+
+
 def bbox_from_pixels(x, y, w, h, image_width, image_height):
     return bbox((x + w / 2) / image_width, (y + h / 2) / image_height, w / image_width, h / image_height)
+
+
+def segment_overlap(a0, a1, b0, b1):
+    return max(0.0, min(a1, b1) - max(a0, b0))
+
+
+def detect_chart_table_lines(image_path):
+    image = cv2.imread(str(image_path), cv2.IMREAD_GRAYSCALE)
+    if image is None:
+        return [], [], 0, 0
+    image_height, image_width = image.shape[:2]
+    dark = cv2.threshold(image, 180, 255, cv2.THRESH_BINARY_INV)[1]
+    horizontal = cv2.morphologyEx(
+        dark,
+        cv2.MORPH_OPEN,
+        cv2.getStructuringElement(cv2.MORPH_RECT, (max(25, image_width // 30), 1)),
+    )
+    vertical = cv2.morphologyEx(
+        dark,
+        cv2.MORPH_OPEN,
+        cv2.getStructuringElement(cv2.MORPH_RECT, (1, max(25, image_height // 45))),
+    )
+    horizontal_lines = []
+    contours, _ = cv2.findContours(horizontal, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    for contour in contours:
+        x, y, width, height = cv2.boundingRect(contour)
+        if width >= 25 and height <= 8:
+            horizontal_lines.append({
+                "x0": float(x),
+                "x1": float(x + width),
+                "y": float(y + height / 2),
+                "length": float(width),
+            })
+    vertical_lines = []
+    contours, _ = cv2.findContours(vertical, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    for contour in contours:
+        x, y, width, height = cv2.boundingRect(contour)
+        if height >= 25 and width <= 8:
+            vertical_lines.append({
+                "x": float(x + width / 2),
+                "y0": float(y),
+                "y1": float(y + height),
+                "length": float(height),
+            })
+    return horizontal_lines, vertical_lines, image_width, image_height
+
+
+def snap_bbox_to_table_lines(image_path, seed_box, content_box=None, search_px=70, content_axes="both"):
+    horizontal_lines, vertical_lines, image_width, image_height = detect_chart_table_lines(image_path)
+    if not image_width or not image_height:
+        return seed_box
+    seed_x0, seed_y0, seed_x1, seed_y1 = pixel_rect_from_bbox(seed_box, image_width, image_height)
+    ref_box = content_box or seed_box
+    ref_x0, ref_y0, ref_x1, ref_y1 = pixel_rect_from_bbox(ref_box, image_width, image_height)
+    seed_width = max(seed_x1 - seed_x0, 1)
+    seed_height = max(seed_y1 - seed_y0, 1)
+    ref_width = max(ref_x1 - ref_x0, 1)
+    ref_height = max(ref_y1 - ref_y0, 1)
+
+    use_content_y = content_box is not None and content_axes in {"both", "y"}
+    use_content_x = content_box is not None and content_axes in {"both", "x"}
+
+    def horizontal_candidates(edge_y, ref_y, want_after):
+        candidates = []
+        for line in horizontal_lines:
+            if abs(line["y"] - edge_y) > search_px and abs(line["y"] - ref_y) > search_px:
+                continue
+            overlap = segment_overlap(line["x0"], line["x1"], seed_x0, seed_x1)
+            ref_overlap = segment_overlap(line["x0"], line["x1"], ref_x0, ref_x1)
+            if overlap < seed_width * 0.30 and ref_overlap < ref_width * 0.60:
+                continue
+            if line["length"] < min(seed_width * 0.30, ref_width * 0.80):
+                continue
+            if use_content_y and want_after and line["y"] < ref_y1 - 3:
+                continue
+            if use_content_y and not want_after and line["y"] > ref_y0 + 3:
+                continue
+            candidates.append(line)
+        if not candidates:
+            return None
+        return min(candidates, key=lambda line: abs(line["y"] - ref_y) if use_content_y else abs(line["y"] - edge_y))
+
+    def vertical_candidates(edge_x, ref_x, want_after):
+        candidates = []
+        for line in vertical_lines:
+            if abs(line["x"] - edge_x) > search_px and abs(line["x"] - ref_x) > search_px:
+                continue
+            overlap = segment_overlap(line["y0"], line["y1"], seed_y0, seed_y1)
+            ref_overlap = segment_overlap(line["y0"], line["y1"], ref_y0, ref_y1)
+            if overlap < seed_height * 0.30 and ref_overlap < ref_height * 0.60:
+                continue
+            if line["length"] < min(seed_height * 0.30, ref_height * 0.80):
+                continue
+            if use_content_x and want_after and line["x"] < ref_x1 - 3:
+                continue
+            if use_content_x and not want_after and line["x"] > ref_x0 + 3:
+                continue
+            candidates.append(line)
+        if not candidates:
+            return None
+        return min(candidates, key=lambda line: abs(line["x"] - ref_x) if use_content_x else abs(line["x"] - edge_x))
+
+    top = horizontal_candidates(seed_y0, ref_y0, False)
+    bottom = horizontal_candidates(seed_y1, ref_y1, True)
+    left = vertical_candidates(seed_x0, ref_x0, False)
+    right = vertical_candidates(seed_x1, ref_x1, True)
+    snapped_x0 = left["x"] if left else seed_x0
+    snapped_x1 = right["x"] if right else seed_x1
+    snapped_y0 = top["y"] if top else seed_y0
+    snapped_y1 = bottom["y"] if bottom else seed_y1
+    if snapped_x1 <= snapped_x0 + 5 or snapped_y1 <= snapped_y0 + 5:
+        return seed_box
+    return bbox_from_pixel_edges(snapped_x0, snapped_y0, snapped_x1, snapped_y1, image_width, image_height)
+
+
+def words_content_bbox(words, container_box, pad=0.002, max_y_center=None):
+    selected = [
+        item["bbox"] for item in words
+        if in_roi(item, container_box, pad=0.0)
+        and (max_y_center is None or item["bbox"]["y_center"] <= max_y_center)
+    ]
+    return bbox_union(selected, pad_x=pad, pad_y=pad) if selected else None
+
+
+def snap_coarse_regions_to_chart_boxes(coarse_regions, image_path, words):
+    for item in coarse_regions:
+        region_type = item.get("region_type")
+        if region_type in COARSE_SEED_BOXES:
+            item["bbox"] = deepcopy(COARSE_SEED_BOXES[region_type])
+        if region_type == "MISSED_APPROACH_TEXT":
+            top = item["bbox"]["y_center"] - item["bbox"]["height"] / 2
+            cutoff = top + item["bbox"]["height"] * 0.75
+            content = words_content_bbox(words, item["bbox"], pad=0.002, max_y_center=cutoff)
+            item["bbox"] = snap_bbox_to_table_lines(image_path, item["bbox"], content_box=content, search_px=75, content_axes="y")
+            item["source_layer"] = "aip_table_line_snap"
+            item["confidence"] = max(float(item.get("confidence") or 0), 0.58)
+        elif region_type == "PLAN_VIEW":
+            item["bbox"] = snap_bbox_to_table_lines(image_path, item["bbox"], content_box=None, search_px=75)
+            item["source_layer"] = "aip_table_line_snap"
+            item["confidence"] = max(float(item.get("confidence") or 0), 0.5)
+    return coarse_regions
 
 
 def detect_symbol_components(image_path, roi):
@@ -482,8 +644,25 @@ def choose_best_word(meta, rtype, candidates, cluster_center):
     )
 
 
-def add_text_boxes(chart_id, serial, selected_matches, lookup, detail_roi, existing_regions):
+def clean_pdf_display_text(text):
+    return str(text or "").replace("Ёу", "°").replace("ЁУ", "°")
+
+
+def heading_prefix_for_word(roi_words, word):
+    candidates = [
+        item for item in roi_words
+        if item.get("norm") == "HDG"
+        and 0.0 < word["bbox"]["x_center"] - item["bbox"]["x_center"] <= 0.08
+        and abs(word["bbox"]["y_center"] - item["bbox"]["y_center"]) <= 0.008
+    ]
+    if not candidates:
+        return None
+    return min(candidates, key=lambda item: word["bbox"]["x_center"] - item["bbox"]["x_center"])
+
+
+def add_text_boxes(chart_id, serial, selected_matches, lookup, detail_roi, existing_regions, roi_words=None):
     output = []
+    roi_words = roi_words or []
     already_covered = covered_region_type_keys(existing_regions)
     eligible = []
     for item in selected_matches:
@@ -510,12 +689,19 @@ def add_text_boxes(chart_id, serial, selected_matches, lookup, detail_roi, exist
             continue
         item = choose_best_word(meta, rtype, candidates, cluster_center)
         word = item["word"]
-        label = f"{rtype}: {word['text']} -> {meta['expected_value']}"
+        region_box = bbox(word["bbox"]["x_center"], word["bbox"]["y_center"], word["bbox"]["width"] * 1.12, word["bbox"]["height"] * 1.25)
+        display_text = clean_pdf_display_text(word["text"])
+        if rtype == "HEADING_TEXT":
+            prefix = heading_prefix_for_word(roi_words, word)
+            if prefix:
+                region_box = bbox_union([prefix["bbox"], word["bbox"]], pad_x=0.003, pad_y=0.001) or region_box
+                display_text = f"{clean_pdf_display_text(prefix['text'])} {display_text}"
+        label = f"{rtype}: {display_text} -> {meta['expected_value']}"
         output.append(region(
             chart_id,
             serial,
             rtype,
-            bbox(word["bbox"]["x_center"], word["bbox"]["y_center"], word["bbox"]["width"] * 1.12, word["bbox"]["height"] * 1.25),
+            region_box,
             label,
             [mapping(meta, f"PDF text token '{word['text']}' inside detected lower missed-approach/icon area", 0.62)],
             confidence=0.62,
@@ -888,6 +1074,24 @@ def add_mapping_if_missing(item, meta, basis, confidence):
     return True
 
 
+def add_all_present_mappings_to_coarse_regions(coarse_regions, lookup):
+    for item in coarse_regions:
+        region_type = item.get("region_type")
+        if region_type not in {"MISSED_APPROACH_TEXT", "PLAN_VIEW"}:
+            continue
+        for key, meta in sorted(lookup.items()):
+            basis = (
+                "coarse MISSED_APPROACH_TEXT evidence region; human must verify whether this full text block supports the field"
+                if region_type == "MISSED_APPROACH_TEXT"
+                else "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field"
+            )
+            confidence = 0.38 if region_type == "MISSED_APPROACH_TEXT" else 0.32
+            add_mapping_if_missing(item, meta, basis, confidence)
+        item["candidate_mappings"] = dedupe_mappings(item.get("candidate_mappings", []))
+        apply_source_hint_from_mappings(item)
+    return coarse_regions
+
+
 def add_compound_support_mappings(regions, lookup):
     for item in regions:
         region_type = item.get("region_type")
@@ -1097,17 +1301,22 @@ def generate_chart(manifest_item, target):
         )
 
     words = pdf_words(pdf_path)
+    snap_coarse_regions_to_chart_boxes(coarse, image_path, words)
+    add_all_present_mappings_to_coarse_regions(coarse, lookup)
     matches = word_matches(words, lookup)
     detail_roi, selected_matches = choose_detail_roi({"regions": coarse}, matches, image_path)
+    detail_content = bbox_union([item["word"]["bbox"] for item in selected_matches], pad_x=0.002, pad_y=0.002)
+    detail_roi = snap_bbox_to_table_lines(image_path, detail_roi, content_box=detail_content, search_px=80, content_axes="both")
     detail_region = next((item for item in coarse if item.get("region_type") == "MISSED_APPROACH_DETAIL_AREA"), None)
     if detail_region:
         detail_region["bbox"] = detail_roi
-        detail_region["label"] = "lower/profile missed-approach detail area detected from PDF text/icon anchors"
-        detail_region["source_layer"] = "pdf_text_cluster_icon_area_detector"
+        detail_region["label"] = "lower/profile missed-approach detail area snapped to AIP table lines"
+        detail_region["source_layer"] = "pdf_text_cluster_icon_area_detector+aip_table_line_snap"
         detail_region["confidence"] = 0.5 if selected_matches else 0.28
 
     serial = 1
-    text_regions, serial = add_text_boxes(chart_id, serial, selected_matches, lookup, detail_roi, copied)
+    roi_words = [word for word in words if in_roi(word, detail_roi, pad=0.01)]
+    text_regions, serial = add_text_boxes(chart_id, serial, selected_matches, lookup, detail_roi, copied, roi_words)
     symbol_regions, serial = add_symbol_boxes(chart_id, serial, image_path, detail_roi, lookup, copied + text_regions)
 
     # Keep reviewed pilot boxes first, then add detections for fields/visual evidence not already covered.
@@ -1119,7 +1328,7 @@ def generate_chart(manifest_item, target):
     all_fine = merge_overlapping_regions(all_fine + fallback_regions)
     add_compound_support_mappings(coarse + all_fine, lookup)
     all_fine = sanitize_region_list(all_fine)
-    pdf_word_regions = [{"bbox": word["bbox"]} for word in words if in_roi(word, detail_roi, pad=0.01)]
+    pdf_word_regions = [{"bbox": word["bbox"]} for word in roi_words]
     all_fine = remove_text_overlapping_symbol_false_positives(all_fine, pdf_word_regions)
     all_fine = remove_unmapped_fine_regions(all_fine)
     all_fine = limit_duplicate_evidence(all_fine, detail_roi)
@@ -1144,8 +1353,11 @@ def generate_chart(manifest_item, target):
         "nested_duplicate_box_merge_enabled": True,
         "text_overlapping_symbol_false_positive_filter": True,
         "unmapped_fine_regions_removed": True,
+        "all_present_fields_linked_to_coarse_ma_text_and_plan_view": True,
+        "coarse_region_table_line_snap_enabled": True,
         "practice10_pilot_copy_enabled": ENABLE_PRACTICE_PILOT_COPY,
         "low_confidence_blank_fallback_boxes_enabled": ENABLE_LOW_CONFIDENCE_FALLBACK_BOXES,
+        "source_pdfs_available": True,
     })
     write_json(prelabel_path, prelabel)
     return {

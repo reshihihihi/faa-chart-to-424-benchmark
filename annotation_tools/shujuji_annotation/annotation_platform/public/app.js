@@ -647,11 +647,16 @@ function isCoarseMissedApproachText(region) {
     );
 }
 
+function isCoarseFieldEvidenceRegion(region) {
+  return ["MISSED_APPROACH_TEXT", "PLAN_VIEW"].includes(region?.region_type || "");
+}
+
 function fieldEvidenceRank(row, region) {
   const regionType = region?.region_type || "";
   const value = expectedAnswerValue(row);
   if (!row || !region) return 99;
-  if (regionType === "MISSED_APPROACH_TEXT") return isCoarseMissedApproachText(region) ? 99 : 60;
+  if (regionType === "MISSED_APPROACH_TEXT") return isCoarseMissedApproachText(region) ? 42 : 45;
+  if (regionType === "PLAN_VIEW") return 44;
   if (row.field_name === "Q1_fix_ident") {
     if (["FIX_TEXT", "NAVAID_TEXT"].includes(regionType) && regionHasToken(region, value)) return 0;
     return 99;
@@ -763,7 +768,15 @@ function directEvidenceIdsForGroup(row, items) {
       return matchingIds((region) => ["HEADING_TEXT", "TRACK_OR_RADIAL_TEXT"].includes(region.region_type) && regionHasNumber(region, value.course_deg));
     }
   }
-  return [];
+  return uniqueList(
+    items
+      .filter(({ region, mapping }) => {
+        return isCoarseFieldEvidenceRegion(region)
+          && mapping
+          && fieldKeyForMapping(mapping) === row.key;
+      })
+      .map(({ region }) => region.region_id)
+  );
 }
 
 function suggestedEvidenceGroupsForField(row) {
@@ -823,10 +836,6 @@ function supportModeFromReview(raw, evidenceIds = []) {
 }
 
 function suggestedEvidenceIdsForField(row) {
-  if (["Q_terminator", "Q5_hold_params"].includes(row.field_name)) return [];
-  if (row.leg_type === "HM" && ["Q1_fix_ident", "Q2_altitude_constraint"].includes(row.field_name)) {
-    return [];
-  }
   const directGroup = suggestedEvidenceGroupsForField(row)[0];
   if (directGroup) return directGroup.directIds;
   return [];
