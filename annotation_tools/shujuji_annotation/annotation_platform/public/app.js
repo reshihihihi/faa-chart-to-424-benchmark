@@ -468,10 +468,10 @@ function friendlyBasis(text) {
 function friendlyRegionNote(region) {
   if (!region) return "";
   if (region.region_type === "MISSED_APPROACH_TEXT") {
-    return "这是上方复飞文字的大框。为了减少标注量，不需要把这段文字拆成很多小框；只要确认它确实覆盖完整复飞文字说明即可。";
+    return "这是上方复飞文字的大框。框可以是粗粒度的，但判断字段时必须看框内具体词句；例如 climb to、turn、direct、radial、hold 等词句各自只支持相应字段。";
   }
   if (region.region_type === "PLAN_VIEW") {
-    return "这是平面图中与复飞有关的大区域。用于说明复飞路径、定位点、径向/航向、等待图形等上下文。";
+    return "这是平面图中与复飞有关的大区域。框可以是粗粒度的，但字段依据应来自框内明确的路径、定位点、径向/航向、等待图形等具体图面元素。";
   }
   if (region.region_type === "MISSED_APPROACH_DETAIL_AREA") {
     return "这是下方复飞细节总框。它只圈住复飞小表格/剖面复飞区域；里面的高度、箭头、fix、radial、holding 等仍要用小框单独确认。";
@@ -618,6 +618,7 @@ function regionHasToken(region, token) {
 }
 
 function regionHasNumber(region, value) {
+  if (value === null || typeof value === "undefined" || value === "") return false;
   const number = Number(value);
   if (!Number.isFinite(number)) return false;
   const candidates = uniqueList([
@@ -655,8 +656,16 @@ function fieldEvidenceRank(row, region) {
   const regionType = region?.region_type || "";
   const value = expectedAnswerValue(row);
   if (!row || !region) return 99;
-  if (regionType === "MISSED_APPROACH_TEXT") return isCoarseMissedApproachText(region) ? 42 : 45;
-  if (regionType === "PLAN_VIEW") return 44;
+  if (regionType === "MISSED_APPROACH_TEXT") {
+    if (row.field_name === "Q5_hold_params") return 99;
+    if (row.field_name === "Q4_course_or_radial" && row.leg_type === "CA") return 99;
+    return isCoarseMissedApproachText(region) ? 42 : 45;
+  }
+  if (regionType === "PLAN_VIEW") {
+    if (row.field_name === "Q5_hold_params" && row.leg_type === "HM") return 12;
+    if (row.field_name === "Q4_course_or_radial" && row.leg_type === "CA" && value?.type === "course_deg") return 12;
+    return 44;
+  }
   if (row.field_name === "Q1_fix_ident") {
     if (["FIX_TEXT", "NAVAID_TEXT"].includes(regionType) && regionHasToken(region, value)) return 0;
     return 99;
@@ -679,6 +688,7 @@ function fieldEvidenceRank(row, region) {
     return 99;
   }
   if (row.field_name === "Q5_hold_params") {
+    if (["HOLDING_PATTERN", "HOLDING_ARC"].includes(regionType)) return 3;
     if (["HOLDING_TIME_TEXT", "DME_DISTANCE_TEXT", "TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(regionType)) return 4;
     return 99;
   }
@@ -693,6 +703,9 @@ function compatibleEvidenceRegionsForField(row) {
       const rank = fieldEvidenceRank(row, region);
       if (rank >= 50) return false;
       if (row.field_name === "Q4_course_or_radial" && expectedAnswerValue(row)?.type !== "navaid_radial") {
+        if (row.leg_type === "CA") {
+          return ["HEADING_TEXT", "TRACK_OR_RADIAL_TEXT", "PLAN_VIEW"].includes(region.region_type);
+        }
         return ["HEADING_TEXT", "TRACK_OR_RADIAL_TEXT"].includes(region.region_type);
       }
       return true;
@@ -749,24 +762,51 @@ function directEvidenceIdsForGroup(row, items) {
       .filter(predicate)
       .map((region) => region.region_id)
   );
+  const coarseIds = (allowedTypes) => uniqueList(
+    items
+      .filter(({ region, mapping }) => {
+        return allowedTypes.includes(region.region_type)
+          && mapping
+          && fieldKeyForMapping(mapping) === row.key;
+      })
+      .map(({ region }) => region.region_id)
+  );
   if (row.field_name === "Q1_fix_ident") {
-    return matchingIds((region) => ["FIX_TEXT", "NAVAID_TEXT"].includes(region.region_type) && regionHasToken(region, value));
+    const explicitIds = matchingIds((region) => ["FIX_TEXT", "NAVAID_TEXT"].includes(region.region_type) && regionHasToken(region, value));
+    if (explicitIds.length) return explicitIds;
+    if (row.leg_type === "HM") return coarseIds(["MISSED_APPROACH_TEXT", "PLAN_VIEW"]);
+    return coarseIds(["MISSED_APPROACH_TEXT"]);
   }
   if (row.field_name === "Q2_altitude_constraint") {
-    return matchingIds((region) => region.region_type === "ALTITUDE_TEXT" && regionHasNumber(region, value?.altitude_ft));
+    const explicitIds = matchingIds((region) => region.region_type === "ALTITUDE_TEXT" && regionHasNumber(region, value?.altitude_ft));
+    if (explicitIds.length) return explicitIds;
+    if (row.leg_type === "CA") return coarseIds(["MISSED_APPROACH_TEXT"]);
+    if (row.leg_type === "HM") return coarseIds(["MISSED_APPROACH_TEXT", "PLAN_VIEW"]);
+    return coarseIds(["MISSED_APPROACH_TEXT"]);
   }
   if (row.field_name === "Q3_turn") {
-    return matchingIds((region) => region.region_type === "TURN_PHRASE" && regionHasToken(region, value));
+    const explicitIds = matchingIds((region) => region.region_type === "TURN_PHRASE" && regionHasToken(region, value));
+    return explicitIds.length ? explicitIds : coarseIds(["MISSED_APPROACH_TEXT", "PLAN_VIEW"]);
   }
   if (row.field_name === "Q4_course_or_radial") {
     if (value?.type === "navaid_radial") {
       const navaidIds = matchingIds((region) => region.region_type === "NAVAID_TEXT" && regionHasToken(region, value.navaid || value.navaid_ident));
       const radialIds = matchingIds((region) => ["RADIAL_TEXT", "TRACK_OR_RADIAL_TEXT"].includes(region.region_type) && regionHasNumber(region, value.radial_deg || value.course_deg));
-      return navaidIds.length && radialIds.length ? uniqueList([...navaidIds, ...radialIds]) : [];
+      return navaidIds.length && radialIds.length ? uniqueList([...navaidIds, ...radialIds]) : coarseIds(["MISSED_APPROACH_TEXT", "PLAN_VIEW"]);
     }
     if (value?.type === "course_deg") {
-      return matchingIds((region) => ["HEADING_TEXT", "TRACK_OR_RADIAL_TEXT"].includes(region.region_type) && regionHasNumber(region, value.course_deg));
+      const explicitIds = matchingIds((region) => ["HEADING_TEXT", "TRACK_OR_RADIAL_TEXT"].includes(region.region_type) && regionHasNumber(region, value.course_deg));
+      if (explicitIds.length) return explicitIds;
+      if (row.leg_type === "CA") return coarseIds(["PLAN_VIEW"]);
+      return explicitIds;
     }
+  }
+  if (row.field_name === "Q5_hold_params") {
+    const explicitIds = matchingIds((region) => {
+      return ["HOLDING_PATTERN", "HOLDING_ARC", "HOLDING_TIME_TEXT", "DME_DISTANCE_TEXT", "TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(region.region_type);
+    });
+    if (explicitIds.length) return explicitIds;
+    return coarseIds(["PLAN_VIEW"]);
   }
   return uniqueList(
     items
@@ -829,7 +869,7 @@ function sourcesForRegionIds(regionIds) {
 
 function supportModeFromReview(raw, evidenceIds = []) {
   const status = raw?.support_mode || raw?.review_status || "pending";
-  if (status === "supported_by_chart") return evidenceIds.length ? (evidenceIds.length > 1 ? "visible_joint" : "direct_visible") : "pending";
+  if (status === "supported_by_chart") return evidenceIds.length ? "direct_visible" : "pending";
   if (status === "no_direct_chart_evidence") return "insufficient_for_encoding";
   if (status === "implicit_or_derived") return "rule_default_completion";
   return status;
@@ -861,9 +901,6 @@ function reviewForField(row) {
       : suggestedIds;
   let supportMode = supportModeFromReview(saved, requiredIds);
   if (!hasSavedReview) supportMode = row.requires_review ? "pending" : "not_applicable";
-  if (supportMode === "direct_visible" && requiredIds.length > 1 && saved.review_status === "supported_by_chart") {
-    supportMode = "visible_joint";
-  }
   if (supportMode === "not_applicable" || !row.requires_review) {
     requiredIds = [];
   }
@@ -1114,10 +1151,81 @@ function removeEvidenceFromSelectedField(regionId) {
   showToast("已移除这处依据。");
 }
 
+function evidenceRegionsForIds(evidenceIds) {
+  return uniqueList(evidenceIds).map((regionId) => regionById(regionId)).filter(Boolean);
+}
+
+function evidenceAreaCount(regions) {
+  return new Set(regions.map((region) => evidenceAreaKey(region))).size;
+}
+
+function sameAreaDirectMode(regions) {
+  return evidenceAreaCount(regions) > 1 ? "visible_joint" : "direct_visible";
+}
+
+function hasExplicitCourseRegion(row, regions, types) {
+  const value = expectedAnswerValue(row);
+  return regions.some((region) => {
+    return types.includes(region.region_type)
+      && regionHasNumber(region, value?.course_deg ?? value?.radial_deg);
+  });
+}
+
+function holdParamsNeedRuleCompletion(row, regions) {
+  const value = expectedAnswerValue(row);
+  if (!value || typeof value !== "object") return false;
+  const hasCourseText = regions.some((region) => {
+    return ["TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(region.region_type)
+      && (
+        region.region_type === "OUTBOUND_INBOUND_MARK"
+        || regionHasNumber(region, value.inbound_course_deg)
+      );
+  });
+  const hasHoldGraphic = regions.some((region) => ["HOLDING_PATTERN", "HOLDING_ARC", "PLAN_VIEW"].includes(region.region_type));
+  const hasTimeText = regions.some((region) => region.region_type === "HOLDING_TIME_TEXT" && regionHasNumber(region, value.leg_time_min));
+  const hasDistanceText = regions.some((region) => region.region_type === "DME_DISTANCE_TEXT" && regionHasNumber(region, value.leg_distance_nm));
+  const onlyUpperText = regions.length > 0 && regions.every((region) => region.region_type === "MISSED_APPROACH_TEXT");
+  if (onlyUpperText) return false;
+  if (value.inbound_course_deg != null && !hasCourseText) return true;
+  if (value.leg_time_min != null && !hasTimeText) return true;
+  if (value.leg_distance_nm != null && !hasDistanceText) return true;
+  if (value.turn && !hasHoldGraphic) return true;
+  return false;
+}
+
 function recommendedSupportModeForField(row, evidenceIds) {
   if (!row) return "";
-  if (!evidenceIds.length) return "";
-  return "direct_visible";
+  const regions = evidenceRegionsForIds(evidenceIds);
+  if (!regions.length) return "";
+  const value = expectedAnswerValue(row);
+  if (row.field_name === "Q_terminator") {
+    return "rule_default_completion";
+  }
+  if (row.field_name === "Q1_fix_ident" && row.leg_type === "HM") {
+    return "rule_default_completion";
+  }
+  if (row.field_name === "Q2_altitude_constraint" && row.leg_type === "HM") {
+    return "rule_default_completion";
+  }
+  if (
+    row.field_name === "Q4_course_or_radial"
+    && row.leg_type === "CA"
+    && value?.type === "course_deg"
+  ) {
+    return hasExplicitCourseRegion(row, regions, ["HEADING_TEXT"]) ? sameAreaDirectMode(regions) : "rule_default_completion";
+  }
+  if (row.field_name === "Q5_hold_params") {
+    const onlyUpperText = regions.every((region) => region.region_type === "MISSED_APPROACH_TEXT");
+    if (onlyUpperText) return "insufficient_for_encoding";
+    return holdParamsNeedRuleCompletion(row, regions) ? "rule_default_completion" : sameAreaDirectMode(regions);
+  }
+  if (row.field_name === "Q4_course_or_radial" && value?.type === "navaid_radial") {
+    const hasNavaid = regions.some((region) => region.region_type === "NAVAID_TEXT" && regionHasToken(region, value.navaid || value.navaid_ident));
+    const hasRadial = regions.some((region) => ["RADIAL_TEXT", "TRACK_OR_RADIAL_TEXT"].includes(region.region_type) && regionHasNumber(region, value.radial_deg));
+    if (hasNavaid && hasRadial) return sameAreaDirectMode(regions);
+    if (regions.some((region) => ["MISSED_APPROACH_TEXT", "PLAN_VIEW"].includes(region.region_type))) return "rule_default_completion";
+  }
+  return sameAreaDirectMode(regions);
 }
 
 function selectedSupportModeForField(row, evidenceIds, reviewStatus = "pending") {
