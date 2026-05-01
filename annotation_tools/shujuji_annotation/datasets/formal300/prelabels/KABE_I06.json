@@ -5,8 +5,8 @@
     "width": 807,
     "height": 1238
   },
-  "prelabel_version": "v0.29-formal300-typed-visible-evidence",
-  "generated_at": "2026-05-01T06:00:22.088807+00:00",
+  "prelabel_version": "v0.29-formal300-structure-aware-typed-visible-evidence",
+  "generated_at": "2026-05-01T06:35:14.234494+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -14,7 +14,7 @@
     "lower_detail_box_is_seed_only": true,
     "candidate_mappings_are_cifp424_targets_not_independent_predictions": true,
     "formal300_small_box_prelabels_added": true,
-    "small_box_source": "preserved existing fine boxes because source PDFs are unavailable; sanitized field mappings by region type and visible label text",
+    "small_box_source": "score lower missed-approach detail candidates with PR28 text anchors, boxed-cell structure, CV icon components, and compound leg evidence; only detected evidence is drawn",
     "small_box_final_ground_truth": false,
     "small_box_human_calibration_required": true,
     "missed_approach_icon_or_detail_area_first": true,
@@ -26,7 +26,11 @@
     "field_mapping_visible_text_sanitizer": true,
     "fine_q_terminator_mappings_removed": true,
     "hm_inherited_fix_alt_fine_mappings_removed": true,
-    "generic_path_hold_graphics_removed_from_q5_params": true
+    "generic_path_hold_graphics_removed_from_q5_params": true,
+    "nested_duplicate_box_merge_enabled": true,
+    "text_overlapping_symbol_false_positive_filter": true,
+    "practice10_pilot_copy_enabled": false,
+    "unmapped_fine_regions_removed": true
   },
   "review_priority": "high",
   "target_summary": {
@@ -199,6 +203,60 @@
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KABE_I06.json",
           "source_seq_no": "060",
           "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KABE_I06__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "VI",
+          "field_name": "Q_terminator",
+          "expected_value": "VI",
+          "expected_answer": {
+            "status": "present",
+            "value": "VI"
+          },
+          "match_basis": "same-leg chart evidence preselected for joint Q_terminator support",
+          "confidence": 0.4,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KABE_I06.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KABE_I06__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "CF",
+          "field_name": "Q_terminator",
+          "expected_value": "CF",
+          "expected_answer": {
+            "status": "present",
+            "value": "CF"
+          },
+          "match_basis": "same-leg chart evidence preselected for joint Q_terminator support",
+          "confidence": 0.4,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KABE_I06.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KABE_I06__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q_terminator",
+          "expected_value": "HM",
+          "expected_answer": {
+            "status": "present",
+            "value": "HM"
+          },
+          "match_basis": "same-leg chart evidence preselected for joint Q_terminator support",
+          "confidence": 0.4,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KABE_I06.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
         }
       ],
       "human_review": {
@@ -248,27 +306,20 @@
       "source_layer": "pdf_text_cluster_icon_area_detector"
     },
     {
-      "region_id": "KABE_I06_pilotcopy_700_altitude_text",
+      "region_id": "KABE_I06_iconalign_002_altitude_text",
       "region_type": "ALTITUDE_TEXT",
       "bbox": {
-        "x_center": 0.4777,
-        "y_center": 0.666,
-        "width": 0.05,
-        "height": 0.018
+        "x_center": 0.4782,
+        "y_center": 0.6671,
+        "width": 0.0442,
+        "height": 0.0131
       },
-      "source_layer": "copied_from_reviewed_pilot10_prelabel",
       "ocr_text": "",
-      "label": "curated lower detail: 3000",
-      "confidence": 0.55,
+      "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
       "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "element_role": "curated_altitude_text",
-      "detection_source": "curated_grid_completion_v0.10",
-      "preserve_curated_box": true,
-      "expected_visual_value": "3000",
-      "profile_sequence_index": null,
-      "source_candidate_leg_id": "KABE_I06__ma2",
-      "source_leg_type": "CF",
-      "source_field_name": "Q2_altitude_constraint",
+      "is_formal_annotation_candidate": true,
       "candidate_mappings": [
         {
           "candidate_leg_id": "KABE_I06__ma2",
@@ -284,8 +335,8 @@
               "altitude_2_ft": null
             }
           },
-          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
-          "confidence": 0.55,
+          "match_basis": "PDF text token '3000' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
           "human_decision": "pending",
           "human_notes": "",
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KABE_I06.json",
@@ -296,57 +347,27 @@
       "needs_human_decision": true,
       "human_review": {
         "review_action": "pending",
-        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
       },
-      "legacy_candidate_mappings": [
-        {
-          "candidate_leg_id": "KABE_I06__ma2",
-          "leg_type": "CF",
-          "field_name": "altitude",
-          "expected_value": "03000",
-          "display_value": "3000",
-          "match_basis": "curated lower/profile grid completion: 3000",
-          "confidence": 0.78,
-          "human_decision": "pending",
-          "human_notes": ""
-        },
-        {
-          "candidate_leg_id": "KABE_I06__ma3",
-          "leg_type": "HM",
-          "field_name": "altitude",
-          "expected_value": "03000",
-          "display_value": "3000",
-          "match_basis": "curated lower/profile grid completion: 3000",
-          "confidence": 0.78,
-          "human_decision": "pending",
-          "human_notes": ""
-        }
-      ],
-      "source_canonical_leg_index": 2,
-      "canonical_mapping_required": true
-    },
-    {
-      "region_id": "KABE_I06_pilotcopy_705_fix_text",
-      "region_type": "FIX_TEXT",
-      "bbox": {
-        "x_center": 0.6252,
-        "y_center": 0.6805,
-        "width": 0.0677,
-        "height": 0.0159
-      },
-      "source_layer": "copied_from_reviewed_pilot10_prelabel",
-      "ocr_text": "",
-      "label": "curated lower detail: MUDRE",
-      "confidence": 0.55,
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "element_role": "curated_fix_text",
-      "detection_source": "curated_grid_completion_v0.10",
-      "preserve_curated_box": true,
-      "expected_visual_value": "MUDRE",
-      "profile_sequence_index": null,
       "source_candidate_leg_id": "KABE_I06__ma2",
       "source_leg_type": "CF",
-      "source_field_name": "Q1_fix_ident",
+      "source_field_name": "Q2_altitude_constraint"
+    },
+    {
+      "region_id": "KABE_I06_iconalign_001_fix_text",
+      "region_type": "FIX_TEXT",
+      "bbox": {
+        "x_center": 0.6268,
+        "y_center": 0.6816,
+        "width": 0.0643,
+        "height": 0.0131
+      },
+      "ocr_text": "",
+      "label": "FIX_TEXT: MUDRE -> MUDRE",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
       "candidate_mappings": [
         {
           "candidate_leg_id": "KABE_I06__ma2",
@@ -358,8 +379,8 @@
             "status": "present",
             "value": "MUDRE"
           },
-          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
-          "confidence": 0.55,
+          "match_basis": "PDF text token 'MUDRE' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
           "human_decision": "pending",
           "human_notes": "",
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KABE_I06.json",
@@ -370,98 +391,27 @@
       "needs_human_decision": true,
       "human_review": {
         "review_action": "pending",
-        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
       },
-      "legacy_candidate_mappings": [
-        {
-          "candidate_leg_id": "KABE_I06__ma2",
-          "leg_type": "CF",
-          "field_name": "fix",
-          "expected_value": "MUDRE",
-          "display_value": "MUDRE",
-          "match_basis": "curated lower/profile grid completion: MUDRE",
-          "confidence": 0.78,
-          "human_decision": "pending",
-          "human_notes": ""
-        },
-        {
-          "candidate_leg_id": "KABE_I06__ma3",
-          "leg_type": "HM",
-          "field_name": "holding_fix",
-          "expected_value": "MUDRE",
-          "display_value": "MUDRE",
-          "match_basis": "curated lower/profile grid completion: MUDRE",
-          "confidence": 0.78,
-          "human_decision": "pending",
-          "human_notes": ""
-        }
-      ],
-      "source_canonical_leg_index": 2,
-      "canonical_mapping_required": true
+      "source_candidate_leg_id": "KABE_I06__ma2",
+      "source_leg_type": "CF",
+      "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KABE_I06_pilotcopy_706_fix_text",
-      "region_type": "FIX_TEXT",
-      "bbox": {
-        "x_center": 0.6252,
-        "y_center": 0.6939,
-        "width": 0.038,
-        "height": 0.0167
-      },
-      "source_layer": "copied_from_reviewed_pilot10_prelabel",
-      "ocr_text": "",
-      "label": "curated lower detail: INT",
-      "confidence": 0.55,
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "element_role": "curated_fix_text",
-      "detection_source": "curated_grid_completion_v0.10",
-      "preserve_curated_box": true,
-      "expected_visual_value": "INT",
-      "profile_sequence_index": null,
-      "candidate_mappings": [],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
-      },
-      "legacy_candidate_mappings": [
-        {
-          "candidate_leg_id": "KABE_I06__ma2",
-          "leg_type": "CF",
-          "field_name": "fix",
-          "expected_value": "MUDRE INT",
-          "display_value": "MUDRE INT",
-          "match_basis": "curated lower/profile grid completion: INT",
-          "confidence": 0.78,
-          "human_decision": "pending",
-          "human_notes": ""
-        }
-      ],
-      "source_canonical_leg_index": 2,
-      "canonical_mapping_required": true
-    },
-    {
-      "region_id": "KABE_I06_pilotcopy_703_navaid_text",
+      "region_id": "KABE_I06_iconalign_003_navaid_text",
       "region_type": "NAVAID_TEXT",
       "bbox": {
-        "x_center": 0.552,
-        "y_center": 0.6813,
-        "width": 0.0454,
-        "height": 0.0159
+        "x_center": 0.5491,
+        "y_center": 0.6825,
+        "width": 0.0311,
+        "height": 0.0131
       },
-      "source_layer": "copied_from_reviewed_pilot10_prelabel",
       "ocr_text": "",
-      "label": "curated lower detail: STW",
-      "confidence": 0.55,
+      "label": "NAVAID_TEXT: STW -> type=navaid_radial, navaid=STW, radial_deg=243.1, direction=inbound",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
       "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "element_role": "curated_navaid_text",
-      "detection_source": "curated_grid_completion_v0.10",
-      "preserve_curated_box": true,
-      "expected_visual_value": "STW",
-      "profile_sequence_index": null,
-      "source_candidate_leg_id": "KABE_I06__ma2",
-      "source_leg_type": "CF",
-      "source_field_name": "Q4_course_or_radial",
+      "is_formal_annotation_candidate": true,
       "candidate_mappings": [
         {
           "candidate_leg_id": "KABE_I06__ma2",
@@ -478,8 +428,8 @@
               "direction": "inbound"
             }
           },
-          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
-          "confidence": 0.55,
+          "match_basis": "PDF text token 'STW' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
           "human_decision": "pending",
           "human_notes": "",
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KABE_I06.json",
@@ -490,46 +440,27 @@
       "needs_human_decision": true,
       "human_review": {
         "review_action": "pending",
-        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
       },
-      "legacy_candidate_mappings": [
-        {
-          "candidate_leg_id": "KABE_I06__ma2",
-          "leg_type": "CF",
-          "field_name": "initial_track",
-          "expected_value": "STW",
-          "display_value": "STW",
-          "match_basis": "curated lower/profile grid completion: STW",
-          "confidence": 0.78,
-          "human_decision": "pending",
-          "human_notes": ""
-        }
-      ],
-      "source_canonical_leg_index": 2,
-      "canonical_mapping_required": true
+      "source_candidate_leg_id": "KABE_I06__ma2",
+      "source_leg_type": "CF",
+      "source_field_name": "Q4_course_or_radial"
     },
     {
-      "region_id": "KABE_I06_pilotcopy_704_radial_text",
+      "region_id": "KABE_I06_iconalign_004_radial_text",
       "region_type": "RADIAL_TEXT",
       "bbox": {
-        "x_center": 0.5527,
-        "y_center": 0.6947,
-        "width": 0.0541,
-        "height": 0.0167
+        "x_center": 0.5532,
+        "y_center": 0.6958,
+        "width": 0.0495,
+        "height": 0.0131
       },
-      "source_layer": "copied_from_reviewed_pilot10_prelabel",
       "ocr_text": "",
-      "label": "curated lower detail: R-243",
-      "confidence": 0.55,
+      "label": "RADIAL_TEXT: R-243 -> type=navaid_radial, navaid=STW, radial_deg=243.1, direction=inbound",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
       "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "element_role": "curated_radial_text",
-      "detection_source": "curated_grid_completion_v0.10",
-      "preserve_curated_box": true,
-      "expected_visual_value": "R-243",
-      "profile_sequence_index": null,
-      "source_candidate_leg_id": "KABE_I06__ma2",
-      "source_leg_type": "CF",
-      "source_field_name": "Q4_course_or_radial",
+      "is_formal_annotation_candidate": true,
       "candidate_mappings": [
         {
           "candidate_leg_id": "KABE_I06__ma2",
@@ -546,8 +477,8 @@
               "direction": "inbound"
             }
           },
-          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
-          "confidence": 0.55,
+          "match_basis": "PDF text token 'R-243' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
           "human_decision": "pending",
           "human_notes": "",
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KABE_I06.json",
@@ -558,92 +489,14 @@
       "needs_human_decision": true,
       "human_review": {
         "review_action": "pending",
-        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
       },
-      "legacy_candidate_mappings": [
-        {
-          "candidate_leg_id": "KABE_I06__ma2",
-          "leg_type": "CF",
-          "field_name": "initial_track",
-          "expected_value": "R-243",
-          "display_value": "R-243",
-          "match_basis": "curated lower/profile grid completion: R-243",
-          "confidence": 0.78,
-          "human_decision": "pending",
-          "human_notes": ""
-        }
-      ],
-      "source_canonical_leg_index": 2,
-      "canonical_mapping_required": true
+      "source_candidate_leg_id": "KABE_I06__ma2",
+      "source_leg_type": "CF",
+      "source_field_name": "Q4_course_or_radial"
     },
     {
-      "region_id": "KABE_I06_pilotcopy_702_heading_text",
-      "region_type": "HEADING_TEXT",
-      "bbox": {
-        "x_center": 0.4771,
-        "y_center": 0.7141,
-        "width": 0.0789,
-        "height": 0.0199
-      },
-      "source_layer": "copied_from_reviewed_pilot10_prelabel",
-      "ocr_text": "",
-      "label": "curated lower detail: hdg 063",
-      "confidence": 0.55,
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "element_role": "curated_heading_text",
-      "detection_source": "curated_grid_completion_v0.10",
-      "preserve_curated_box": true,
-      "expected_visual_value": "hdg 063",
-      "profile_sequence_index": null,
-      "source_candidate_leg_id": "KABE_I06__ma1",
-      "source_leg_type": "VI",
-      "source_field_name": "Q4_course_or_radial",
-      "candidate_mappings": [
-        {
-          "candidate_leg_id": "KABE_I06__ma1",
-          "canonical_leg_index": 1,
-          "leg_type": "VI",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=course_deg, course_deg=63.3",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "course_deg",
-              "course_deg": 63.3
-            }
-          },
-          "match_basis": "copied reviewed pilot10 small box mapped to formal300 PR28 target",
-          "confidence": 0.55,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KABE_I06.json",
-          "source_seq_no": "040",
-          "source_trans_ident": "I"
-        }
-      ],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
-      },
-      "legacy_candidate_mappings": [
-        {
-          "candidate_leg_id": "KABE_I06__ma1",
-          "leg_type": "VI",
-          "field_name": "turn_direction",
-          "expected_value": "hdg 063",
-          "display_value": "hdg 063",
-          "match_basis": "curated lower/profile grid completion: hdg 063",
-          "confidence": 0.78,
-          "human_decision": "pending",
-          "human_notes": ""
-        }
-      ],
-      "source_canonical_leg_index": 1,
-      "canonical_mapping_required": true
-    },
-    {
-      "region_id": "KABE_I06_iconalign_001_climb_arrow",
+      "region_id": "KABE_I06_iconalign_008_climb_arrow",
       "region_type": "CLIMB_ARROW",
       "bbox": {
         "x_center": 0.4752,
@@ -652,7 +505,7 @@
         "height": 0.0097
       },
       "ocr_text": "",
-      "label": "climb arrow for VI; climb arrow for type=course_deg, course_deg=63.3; climb arrow for AT_OR_ABOVE 3000 ft; climb arrow for AT_OR_ABOVE 3000 ft",
+      "label": "detected lower detail: climb arrow",
       "confidence": 0.5,
       "source_layer": "cv_icon_component",
       "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
@@ -689,91 +542,6 @@
       "source_candidate_leg_id": "KABE_I06__ma2",
       "source_leg_type": "CF",
       "source_field_name": "Q2_altitude_constraint"
-    },
-    {
-      "region_id": "KABE_I06_pilotcopy_701_climb_arrow",
-      "region_type": "CLIMB_ARROW",
-      "bbox": {
-        "x_center": 0.4758,
-        "y_center": 0.6902,
-        "width": 0.0169,
-        "height": 0.0417
-      },
-      "source_layer": "copied_from_reviewed_pilot10_prelabel",
-      "ocr_text": "",
-      "label": "curated lower detail: climb arrow",
-      "confidence": 0.55,
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "element_role": "curated_climb_arrow",
-      "detection_source": "curated_grid_completion_v0.10",
-      "preserve_curated_box": true,
-      "expected_visual_value": "climb arrow",
-      "profile_sequence_index": null,
-      "candidate_mappings": [],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Copied from reviewed pilot10 small-box prelabel; verify in formal300 context."
-      },
-      "legacy_candidate_mappings": [
-        {
-          "candidate_leg_id": "KABE_I06__ma1",
-          "leg_type": "VI",
-          "field_name": "climb_altitude",
-          "expected_value": "03000",
-          "display_value": "3000",
-          "match_basis": "curated lower/profile grid completion: climb arrow",
-          "confidence": 0.78,
-          "human_decision": "pending",
-          "human_notes": ""
-        }
-      ],
-      "source_canonical_leg_index": 1,
-      "canonical_mapping_required": true
-    },
-    {
-      "region_id": "KABE_I06_iconalign_003_fix_symbol",
-      "region_type": "FIX_SYMBOL",
-      "bbox": {
-        "x_center": 0.6252,
-        "y_center": 0.6939,
-        "width": 0.026,
-        "height": 0.0097
-      },
-      "ocr_text": "",
-      "label": "fix symbol for MUDRE; fix symbol for MUDRE",
-      "confidence": 0.48,
-      "source_layer": "cv_icon_component",
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "is_formal_annotation_candidate": true,
-      "candidate_mappings": [
-        {
-          "candidate_leg_id": "KABE_I06__ma2",
-          "canonical_leg_index": 2,
-          "leg_type": "CF",
-          "field_name": "Q1_fix_ident",
-          "expected_value": "MUDRE",
-          "expected_answer": {
-            "status": "present",
-            "value": "MUDRE"
-          },
-          "match_basis": "detected fix/navaid symbol near fix text",
-          "confidence": 0.48,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KABE_I06.json",
-          "source_seq_no": "050",
-          "source_trans_ident": "I"
-        }
-      ],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      },
-      "source_candidate_leg_id": "KABE_I06__ma2",
-      "source_leg_type": "CF",
-      "source_field_name": "Q1_fix_ident"
     }
   ]
 }

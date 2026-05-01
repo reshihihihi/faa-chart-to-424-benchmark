@@ -18,6 +18,8 @@ CLIMB_TYPES = {"CA", "VA", "VD", "VI", "VM", "VR"}
 FIX_SYMBOL_TYPES = {"CF", "DF", "TF", "HA", "HF", "HM"}
 DEFAULT_LOWER_ROI = {"x_center": 0.52, "y_center": 0.705, "width": 0.42, "height": 0.105}
 ENABLE_LOW_CONFIDENCE_FALLBACK_BOXES = False
+ENABLE_PRACTICE_PILOT_COPY = False
+REQUIRE_SOURCE_PDFS_FOR_FINE_PRELABELS = True
 
 
 def read_json(path):
@@ -370,6 +372,8 @@ def parse_leg_index(item_mapping):
 
 
 def adapt_pilot_regions(chart_id, lookup):
+    if not ENABLE_PRACTICE_PILOT_COPY:
+        return []
     source_path = PRACTICE_PRELABELS / f"{chart_id}.json"
     if not source_path.exists():
         return []
@@ -636,6 +640,28 @@ def box_iou(a, b):
     return inter / max(area_a + area_b - inter, 1e-9)
 
 
+def box_intersection_over_min(a, b):
+    ax0, ay0, ax1, ay1 = box_edges(a)
+    bx0, by0, bx1, by1 = box_edges(b)
+    ix0 = max(ax0, bx0)
+    iy0 = max(ay0, by0)
+    ix1 = min(ax1, bx1)
+    iy1 = min(ay1, by1)
+    if ix1 <= ix0 or iy1 <= iy0:
+        return 0.0
+    inter = (ix1 - ix0) * (iy1 - iy0)
+    area_a = max(0.0, ax1 - ax0) * max(0.0, ay1 - ay0)
+    area_b = max(0.0, bx1 - bx0) * max(0.0, by1 - by0)
+    return inter / max(min(area_a, area_b), 1e-9)
+
+
+def box_center_inside(inner, outer, pad=0.0):
+    x0, y0, x1, y1 = box_edges(outer)
+    cx = inner["x_center"]
+    cy = inner["y_center"]
+    return x0 - pad <= cx <= x1 + pad and y0 - pad <= cy <= y1 + pad
+
+
 def mapping_key(item_mapping):
     return (
         int(item_mapping.get("canonical_leg_index") or 0),
@@ -795,7 +821,32 @@ def apply_source_hint_from_mappings(item):
     return item
 
 
+def normalize_region_label(item):
+    labels = []
+    for part in str(item.get("label") or "").split(";"):
+        part = part.strip()
+        if part and part not in labels:
+            labels.append(part)
+    region_type = item.get("region_type")
+    if region_type == "CLIMB_ARROW":
+        item["label"] = "curated lower detail: climb arrow" if any("curated lower detail" in label for label in labels) else "detected lower detail: climb arrow"
+        return item
+    if region_type == "FIX_SYMBOL":
+        item["label"] = "detected lower detail: fix symbol"
+        return item
+    if region_type == "PATH_SEGMENT":
+        item["label"] = "detected lower detail: path segment"
+        return item
+    if region_type == "HOLDING_PATTERN":
+        item["label"] = "detected lower detail: holding pattern"
+        return item
+    if labels:
+        item["label"] = "; ".join(labels)
+    return item
+
+
 def sanitize_region_mappings(item):
+    normalize_region_label(item)
     region_type = item.get("region_type", "")
     item["candidate_mappings"] = dedupe_mappings([
         item_mapping for item_mapping in item.get("candidate_mappings", [])
@@ -859,6 +910,13 @@ def add_compound_support_mappings(regions, lookup):
     return regions
 
 
+def is_legacy_pilot_copy_region(item):
+    return (
+        item.get("source_layer") == "copied_from_reviewed_pilot10_prelabel"
+        or "_pilotcopy_" in str(item.get("region_id") or "")
+    )
+
+
 def merge_region_pair(base, extra):
     base["bbox"] = bbox_union([base["bbox"], extra["bbox"]]) or base["bbox"]
     base["confidence"] = max(float(base.get("confidence") or 0), float(extra.get("confidence") or 0))
@@ -878,11 +936,17 @@ def merge_region_pair(base, extra):
 
 def should_merge_regions(a, b):
     iou = box_iou(a["bbox"], b["bbox"])
+    overlap_min = box_intersection_over_min(a["bbox"], b["bbox"])
     if iou >= 0.72 and a.get("region_type") == b.get("region_type"):
+        return True
+    if overlap_min >= 0.78 and a.get("region_type") == b.get("region_type"):
         return True
     if iou >= 0.78 and a.get("region_type") in TEXT_LIKE_TYPES and b.get("region_type") in TEXT_LIKE_TYPES:
         return True
-    if iou >= 0.82 and {a.get("region_type"), b.get("region_type")} <= {"FIX_SYMBOL", "HOLDING_PATTERN", "PATH_SEGMENT", "CLIMB_ARROW"}:
+    if (
+        (iou >= 0.82 or overlap_min >= 0.86)
+        and {a.get("region_type"), b.get("region_type")} <= {"FIX_SYMBOL", "HOLDING_PATTERN", "PATH_SEGMENT", "CLIMB_ARROW"}
+    ):
         return True
     return False
 
@@ -938,6 +1002,35 @@ def limit_duplicate_evidence(regions, detail_roi):
     return [item for item in regions if id(item) in keep_ids]
 
 
+def remove_text_overlapping_symbol_false_positives(regions, extra_text_regions=None):
+    text_regions = [item for item in regions if item.get("region_type") in TEXT_LIKE_TYPES]
+    text_regions.extend(extra_text_regions or [])
+    output = []
+    for item in regions:
+        if item.get("region_type") != "FIX_SYMBOL":
+            output.append(item)
+            continue
+        generated_symbol = (
+            str(item.get("source_layer") or "") == "cv_icon_component"
+            or "_iconalign_" in str(item.get("region_id") or "")
+        )
+        if not generated_symbol:
+            output.append(item)
+            continue
+        overlaps_text = any(
+            box_intersection_over_min(item["bbox"], text_item["bbox"]) >= 0.55
+            or box_center_inside(item["bbox"], text_item["bbox"], pad=0.002)
+            for text_item in text_regions
+        )
+        if not overlaps_text:
+            output.append(item)
+    return output
+
+
+def remove_unmapped_fine_regions(regions):
+    return [item for item in regions if item.get("candidate_mappings")]
+
+
 def fallback_box_for_meta(meta, target, detail_roi):
     legs = target.get("candidate_legs", [])
     leg_count = max(1, len(legs))
@@ -988,49 +1081,20 @@ def generate_chart(manifest_item, target):
     prelabel = read_json(prelabel_path)
     lookup = target_lookup(target)
     coarse = [item for item in prelabel.get("regions", []) if item.get("region_type") in COARSE_TYPES]
-    existing_fine = [item for item in prelabel.get("regions", []) if item.get("region_type") not in COARSE_TYPES]
+    existing_fine = [
+        item for item in prelabel.get("regions", [])
+        if item.get("region_type") not in COARSE_TYPES
+        and not is_legacy_pilot_copy_region(item)
+    ]
     copied = adapt_pilot_regions(chart_id, lookup)
 
     pdf_path = FORMAL / "pdfs" / manifest_item["pdf_file"]
     image_path = resolve_workspace_path(manifest_item["image_path"])
     if not pdf_path.exists():
-        detail_roi = next((item["bbox"] for item in coarse if item.get("region_type") == "MISSED_APPROACH_DETAIL_AREA"), None) or DEFAULT_LOWER_ROI
-        all_fine = merge_overlapping_regions(copied + deepcopy(existing_fine))
-        all_fine = sanitize_region_list(all_fine)
-        all_fine = limit_duplicate_evidence(all_fine, detail_roi)
-        sanitized_regions = coarse + all_fine
-        if sanitized_regions != prelabel.get("regions", []):
-            prelabel["regions"] = sanitized_regions
-            prelabel["prelabel_version"] = "v0.29-formal300-typed-visible-evidence"
-            prelabel["generated_at"] = datetime.now(timezone.utc).isoformat()
-            prelabel.setdefault("generation_policy", {})
-            prelabel["generation_policy"].update({
-                "formal300_small_box_prelabels_added": True,
-                "small_box_source": "preserved existing fine boxes because source PDFs are unavailable; sanitized field mappings by region type and visible label text",
-                "small_box_final_ground_truth": False,
-                "small_box_human_calibration_required": True,
-                "candidate_mappings_are_cifp424_targets_not_independent_predictions": True,
-                "compound_q4_and_q_terminator_candidate_mappings": True,
-                "field_mapping_region_type_sanitizer": True,
-                "field_mapping_visible_text_sanitizer": True,
-                "fine_q_terminator_mappings_removed": True,
-                "hm_inherited_fix_alt_fine_mappings_removed": True,
-                "generic_path_hold_graphics_removed_from_q5_params": True,
-                "source_pdfs_available": False,
-            })
-            write_json(prelabel_path, prelabel)
-        return {
-            "chart_id": chart_id,
-            "coarse_count": len(coarse),
-            "pilot_copy_count": 0,
-            "pdf_text_box_count": 0,
-            "cv_symbol_box_count": 0,
-            "fine_count": len(all_fine),
-            "match_count": 0,
-            "selected_match_count": 0,
-            "detail_roi": detail_roi,
-            "source_pdfs_available": False,
-        }
+        raise FileNotFoundError(
+            f"Source PDF is required for fine prelabels: {pdf_path}. "
+            "Do not preserve/copy lower-detail boxes without the source PDF."
+        )
 
     words = pdf_words(pdf_path)
     matches = word_matches(words, lookup)
@@ -1055,6 +1119,10 @@ def generate_chart(manifest_item, target):
     all_fine = merge_overlapping_regions(all_fine + fallback_regions)
     add_compound_support_mappings(coarse + all_fine, lookup)
     all_fine = sanitize_region_list(all_fine)
+    pdf_word_regions = [{"bbox": word["bbox"]} for word in words if in_roi(word, detail_roi, pad=0.01)]
+    all_fine = remove_text_overlapping_symbol_false_positives(all_fine, pdf_word_regions)
+    all_fine = remove_unmapped_fine_regions(all_fine)
+    all_fine = limit_duplicate_evidence(all_fine, detail_roi)
     prelabel["regions"] = coarse + all_fine
     prelabel["prelabel_version"] = "v0.29-formal300-structure-aware-typed-visible-evidence"
     prelabel["generated_at"] = datetime.now(timezone.utc).isoformat()
@@ -1073,6 +1141,10 @@ def generate_chart(manifest_item, target):
         "fine_q_terminator_mappings_removed": True,
         "hm_inherited_fix_alt_fine_mappings_removed": True,
         "generic_path_hold_graphics_removed_from_q5_params": True,
+        "nested_duplicate_box_merge_enabled": True,
+        "text_overlapping_symbol_false_positive_filter": True,
+        "unmapped_fine_regions_removed": True,
+        "practice10_pilot_copy_enabled": ENABLE_PRACTICE_PILOT_COPY,
         "low_confidence_blank_fallback_boxes_enabled": ENABLE_LOW_CONFIDENCE_FALLBACK_BOXES,
     })
     write_json(prelabel_path, prelabel)
@@ -1092,6 +1164,17 @@ def generate_chart(manifest_item, target):
 
 def main():
     manifest = read_json(FORMAL / "manifest.json")
+    if REQUIRE_SOURCE_PDFS_FOR_FINE_PRELABELS:
+        missing_pdfs = [FORMAL / "pdfs" / item["pdf_file"] for item in manifest if not (FORMAL / "pdfs" / item["pdf_file"]).exists()]
+        if missing_pdfs:
+            examples = "\n".join(f"  - {path}" for path in missing_pdfs[:10])
+            extra = "" if len(missing_pdfs) <= 10 else f"\n  ... and {len(missing_pdfs) - 10} more"
+            raise SystemExit(
+                "Missing source PDFs for formal300 fine prelabel generation.\n"
+                "Put the PDFs under annotation_tools/shujuji_annotation/datasets/formal300/pdfs/ "
+                "using the filenames from manifest.json, then rerun.\n"
+                f"Missing count: {len(missing_pdfs)}\n{examples}{extra}"
+            )
     targets = {item["chart_id"]: item for item in read_json(FORMAL / "targets/canonical_targets.json")}
     report = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
