@@ -564,6 +564,10 @@ body.resizing-columns {
   color: #f5fff9;
 }
 
+.raw-record-line.dimmed .record-label {
+  display: none;
+}
+
 .numbered-field-list {
   display: grid;
   gap: 10px;
