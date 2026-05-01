@@ -563,17 +563,17 @@ function renderEvidenceCard(row) {
 }
 
 function renderRawRecordMarkers(annotations) {
-  return annotations.map((item, lane) => {
+  return annotations.map((item) => {
     const start = Math.max(0, Number(item.segment.start || 0));
     const length = Math.max(1, Number(item.segment.end || 0) - start);
     const active = state.activeFieldKey === item.row.key;
     const dimmed = state.activeFieldKey && !active ? " dimmed" : "";
     const label = `[${item.number}] ${item.segment.label}`;
-    return `<div class="record-marker${active ? " active" : ""}${dimmed}" title="${escapeText(label)}" style="--grid-start:${start + 1};--len:${length};--lane:${lane}">
+    return `<button class="record-marker${active ? " active" : ""}${dimmed}" type="button" data-field-key="${escapeText(item.row.key)}" title="${escapeText(label)}" style="--grid-start:${start + 1};--len:${length}">
       <span class="record-underline"></span>
       <span class="record-stem"></span>
       <span class="record-label">[${item.number}]</span>
-    </div>`;
+    </button>`;
   }).join("");
 }
 
@@ -589,7 +589,7 @@ function renderRawRecordBlock(legIndex) {
   const record = rawRecordForLeg(legIndex);
   const first = legRowsForIndex(legIndex)[0] || {};
   const annotations = recordAnnotationsForLeg(legIndex);
-  const markerHeight = Math.max(1, annotations.length) * 28 + 18;
+  const markerHeight = annotations.length ? 44 : 24;
   return `<section class="raw-record-card">
     <div class="meta">424 132 位编码文本 · 映射到证据结论航段 ${escapeText(legIndex)}</div>
     <h2>SEQ ${escapeText(first.source_seq_no || "-")} · ${escapeText(first.source_trans_ident || "-")} · ${escapeText(first.leg_type || "-")}</h2>
@@ -610,6 +610,20 @@ function renderRecordPanel() {
     return;
   }
   els.recordPanel.innerHTML = legs.map((legIndex) => renderRawRecordBlock(legIndex)).join("");
+  els.recordPanel.querySelectorAll(".record-marker").forEach((marker) => {
+    marker.addEventListener("click", () => {
+      state.activeFieldKey = marker.dataset.fieldKey || "";
+      renderFieldCards();
+      renderRecordPanel();
+      renderOverlays();
+    });
+    marker.addEventListener("mouseenter", () => {
+      state.activeFieldKey = marker.dataset.fieldKey || "";
+      renderFieldCards();
+      renderRecordPanel();
+      renderOverlays();
+    });
+  });
 }
 
 function renderLegEvidenceGroup(legIndex) {

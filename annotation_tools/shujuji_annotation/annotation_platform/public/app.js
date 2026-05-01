@@ -597,10 +597,7 @@ function regionText(region) {
 
 function isHoldingParamRegion(region) {
   const regionType = region?.region_type || "";
-  if (["HOLDING_PATTERN", "HOLDING_ARC", "HOLDING_TIME_TEXT", "DME_DISTANCE_TEXT", "TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(regionType)) {
-    return true;
-  }
-  return regionType === "PATH_SEGMENT" && regionText(region).includes("HOLDING_PATTERN");
+  return ["HOLDING_PATTERN", "HOLDING_ARC", "HOLDING_TIME_TEXT", "DME_DISTANCE_TEXT", "TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(regionType);
 }
 
 function isCoarseMissedApproachText(region) {
@@ -643,7 +640,6 @@ function fieldEvidenceRank(row, region) {
   }
   if (row.field_name === "Q5_hold_params") {
     if (["HOLDING_PATTERN", "HOLDING_ARC"].includes(regionType)) return 0;
-    if (regionType === "PATH_SEGMENT" && regionText(region).includes("HOLDING_PATTERN")) return 0;
     if (["HOLDING_TIME_TEXT", "DME_DISTANCE_TEXT", "TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(regionType)) return 4;
     return 99;
   }

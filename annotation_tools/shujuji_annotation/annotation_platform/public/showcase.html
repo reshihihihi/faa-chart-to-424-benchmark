@@ -17,13 +17,18 @@
         <input id="chartInput" type="text" spellcheck="false" placeholder="chart_id">
         <button id="loadChartBtn" type="button">载入</button>
         <a id="editAnnotationLink" class="edit-link" href="/formal/" target="_blank" rel="noopener">去标注页修改</a>
-        <select id="legSelect" title="选择航段"></select>
-        <label class="checkline"><input id="showAllLegs" type="checkbox"> 全部航段</label>
       </div>
     </header>
 
     <main id="viewerShell" class="viewer-shell">
-      <div id="recordPanel" class="record-panel"></div>
+      <section class="record-dock" aria-label="424 编码">
+        <div class="record-toolbar">
+          <span>424 编码</span>
+          <select id="legSelect" title="选择航段"></select>
+          <label class="checkline"><input id="showAllLegs" type="checkbox"> 全部航段</label>
+        </div>
+        <div id="recordPanel" class="record-panel"></div>
+      </section>
       <section id="chartPane" class="chart-pane">
         <div class="chart-tools" aria-label="航图缩放">
           <button id="chartZoomOut" type="button" aria-label="缩小航图">−</button>

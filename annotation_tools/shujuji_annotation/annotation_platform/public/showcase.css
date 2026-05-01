@@ -276,16 +276,52 @@ body.resizing-columns {
   padding: 12px;
 }
 
-.record-panel {
+.record-dock {
   position: relative;
   grid-column: 1 / -1;
   grid-row: 1;
   z-index: 2;
   display: grid;
   gap: 8px;
-  min-height: 0;
-  max-height: 190px;
-  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #17231f;
+  color: #e8f3ef;
+  padding: 10px 12px;
+  box-shadow: var(--shadow);
+}
+
+.record-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.record-toolbar > span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #d9e8e1;
+}
+
+.record-toolbar select {
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  background: #0f1815;
+  color: #e8f3ef;
+  padding: 0 8px;
+}
+
+.record-toolbar .checkline {
+  height: 30px;
+  color: #b9c9c3;
+  padding: 0;
+}
+
+.record-panel {
+  display: grid;
+  gap: 6px;
   padding: 0;
 }
 
@@ -404,11 +440,11 @@ body.resizing-columns {
 }
 
 .raw-record-card {
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #17231f;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  background: #111c18;
   color: #e8f3ef;
-  padding: 10px 12px;
+  padding: 8px;
 }
 
 .raw-record-card h2 {
@@ -422,21 +458,21 @@ body.resizing-columns {
 }
 
 .raw-record-visual {
-  overflow-x: auto;
+  overflow: visible;
   border-radius: 6px;
   background: #0f1815;
-  padding: 10px;
+  padding: 8px;
   color: #f5fff9;
 }
 
 .raw-record-canvas {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(132, var(--record-cell));
-  grid-template-rows: 20px var(--marker-height, 46px);
-  width: calc(132 * var(--record-cell));
+  grid-template-columns: repeat(132, minmax(0, 1fr));
+  grid-template-rows: 18px var(--marker-height, 44px);
+  width: 100%;
   min-height: calc(1.45em + var(--marker-height, 46px));
-  font: 13px/1.45 "Cascadia Mono", "Consolas", monospace;
+  font: 12px/1.45 "Cascadia Mono", "Consolas", monospace;
 }
 
 .raw-record-text {
@@ -446,28 +482,36 @@ body.resizing-columns {
 .record-char {
   grid-row: 1;
   grid-column: var(--col);
-  width: var(--record-cell);
+  min-width: 0;
   overflow: hidden;
   white-space: pre;
   text-align: left;
 }
 
 .record-marker {
+  --marker-color: #72807c;
   position: relative;
   grid-row: 2;
   grid-column: var(--grid-start) / span var(--len);
-  top: calc(var(--lane) * 28px);
+  align-self: start;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
   min-width: var(--record-cell);
-  color: #f4c65d;
+  color: var(--marker-color);
+  cursor: pointer;
 }
 
 .record-marker.dimmed {
-  opacity: 0.26;
+  --marker-color: #67736f;
+  opacity: 0.54;
 }
 
 .record-marker.active {
   z-index: 2;
-  color: #ffd76d;
+  --marker-color: #ffd76d;
+  opacity: 1;
 }
 
 .record-underline {
@@ -493,7 +537,7 @@ body.resizing-columns {
   transform: translateX(-50%);
   white-space: nowrap;
   border-radius: 6px;
-  background: #f4c65d;
+  background: var(--marker-color);
   color: #17231f;
   padding: 3px 6px;
   font-size: 12px;
@@ -550,15 +594,11 @@ body.resizing-columns {
     overflow: visible;
   }
 
-  .record-panel,
+  .record-dock,
   .chart-pane,
   .field-pane {
     grid-column: 1;
     grid-row: auto;
-  }
-
-  .record-panel {
-    max-height: none;
   }
 
   .resize-handle {
