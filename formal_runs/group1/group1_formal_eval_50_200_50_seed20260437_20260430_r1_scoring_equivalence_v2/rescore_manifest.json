@@ -1,0 +1,31 @@
+{
+  "run_id": "group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2",
+  "source_group1_run_id": "group1_formal_eval_50_200_50_seed20260437_20260430_r1",
+  "comparison_policy": "narrowed_v2",
+  "policy_scope": {
+    "Q1_fix_ident": "status must match; compare present values after normalized display string",
+    "Q4_course_or_radial": "status/type/direction strict; compare navaid normalized; compare course_deg/radial_deg by integer chart-display rounding only",
+    "Q5_hold_params": "status strict; compare inbound_course_deg by integer chart-display rounding only; turn/time/distance strict",
+    "all_other_fields": "strict status/value equality"
+  },
+  "forbidden_relaxations": [
+    "altitude_tolerance",
+    "turn_relaxation",
+    "holding_time_default",
+    "distance_tolerance",
+    "reciprocal_course_equivalence",
+    "leg_alignment_change",
+    "missing_present_status_relaxation"
+  ],
+  "inputs": {
+    "scoring_manifest": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark\\formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\scoring_manifest.jsonl",
+    "schema": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark\\schemas\\missed_approach_leg.schema.json",
+    "source_run_dir": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark\\formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1"
+  },
+  "hashes": {
+    "scorer_sha256": "264fcfb740ec586fa1877cf29a2fb7d6ac064cfbc22577e3b8cc0dc880318f2d",
+    "rescore_script_sha256": "0927ee120f9e3caef2903feab1f3c66f99b865ab26ae1d28e0edd5e39c9f9e7f",
+    "scoring_manifest_sha256": "4eb885e60ae2188360fecc05ce3e018599a01e201ff8616e9e750746042a9ce1",
+    "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9"
+  }
+}

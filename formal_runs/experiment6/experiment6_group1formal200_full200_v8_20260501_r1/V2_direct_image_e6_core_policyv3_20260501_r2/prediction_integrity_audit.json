@@ -1,0 +1,9 @@
+{
+  "case_count": 400,
+  "prediction_count": 400,
+  "missing": [],
+  "extra": [],
+  "duplicates": {},
+  "parse_ok": 400,
+  "api_error": 0
+}

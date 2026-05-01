@@ -1,0 +1,20 @@
+{
+  "source": "benchmark_exports\\derived\\v2\\formal300\\targets\\field_targets.jsonl",
+  "output": "benchmark_exports\\derived\\v2\\formal300\\targets\\comparison_policy_v2.jsonl",
+  "total_rows": 6084,
+  "counts_by_policy": {
+    "exact_status_value": 3192,
+    "normalized_display_string_when_status_present": 964,
+    "narrow_degree_display_rounding_for_course_radial_and_normalized_navaid": 964,
+    "narrow_degree_display_rounding_for_inbound_course_only": 964
+  },
+  "forbidden_relaxations": [
+    "altitude_tolerance",
+    "turn_relaxation",
+    "holding_time_default",
+    "distance_tolerance",
+    "reciprocal_course_equivalence",
+    "leg_alignment_change",
+    "missing_present_status_relaxation"
+  ]
+}
