@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T02:58:31.940805+00:00",
+  "generated_at": "2026-05-01T06:01:42.152663+00:00",
   "dataset": "formal300",
   "method": "structure-aware lower missed-approach detail first: PR28 text anchors + boxed-cell scoring + CV icon/symbol components",
   "final_ground_truth": false,
@@ -8,4802 +8,5102 @@
     {
       "chart_id": "KABE_I06",
       "coarse_count": 3,
-      "pilot_copy_count": 7,
+      "pilot_copy_count": 0,
       "pdf_text_box_count": 0,
-      "cv_symbol_box_count": 6,
-      "fine_count": 8,
-      "match_count": 20,
-      "selected_match_count": 6,
+      "cv_symbol_box_count": 0,
+      "fine_count": 9,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.557,
         "y_center": 0.6815,
         "width": 0.273,
         "height": 0.1192
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALS_I02",
       "coarse_count": 3,
-      "pilot_copy_count": 6,
+      "pilot_copy_count": 0,
       "pdf_text_box_count": 0,
-      "cv_symbol_box_count": 9,
-      "fine_count": 9,
-      "match_count": 13,
-      "selected_match_count": 7,
+      "cv_symbol_box_count": 0,
+      "fine_count": 8,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5734,
         "y_center": 0.6392,
         "width": 0.2316,
         "height": 0.1131
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMA_I04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 14,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5413,
         "y_center": 0.6924,
         "width": 0.3054,
         "height": 0.1105
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPC_I01L",
       "coarse_count": 3,
-      "pilot_copy_count": 10,
+      "pilot_copy_count": 0,
       "pdf_text_box_count": 0,
-      "cv_symbol_box_count": 5,
-      "fine_count": 11,
-      "match_count": 14,
-      "selected_match_count": 7,
+      "cv_symbol_box_count": 0,
+      "fine_count": 12,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.541,
         "y_center": 0.6093,
         "width": 0.3164,
         "height": 0.101
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KATL_I09R",
       "coarse_count": 3,
-      "pilot_copy_count": 8,
-      "pdf_text_box_count": 1,
-      "cv_symbol_box_count": 7,
-      "fine_count": 13,
-      "match_count": 11,
-      "selected_match_count": 8,
+      "pilot_copy_count": 0,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
+      "fine_count": 12,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5691,
         "y_center": 0.6803,
         "width": 0.2636,
         "height": 0.1321
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAUS_I18L",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 8,
-      "cv_symbol_box_count": 12,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 9,
-      "match_count": 15,
-      "selected_match_count": 10,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8363,
         "y_center": 0.6324,
         "width": 0.3002,
         "height": 0.143
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAVL_I17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 5,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 8,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4969,
         "y_center": 0.6668,
         "width": 0.35,
         "height": 0.1175
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAYS_I19-Z",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 9,
-      "match_count": 11,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3483,
         "y_center": 0.6474,
         "width": 0.35,
         "height": 0.1082
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBMI_I29",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 8,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4168,
         "y_center": 0.6833,
         "width": 0.2277,
         "height": 0.0947
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBUY_I06-Z",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 16,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5502,
         "y_center": 0.6822,
         "width": 0.2525,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBWG_I03-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 13,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.539,
         "y_center": 0.6382,
         "width": 0.1715,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCFO_I26",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 19,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4547,
         "y_center": 0.6885,
         "width": 0.2975,
         "height": 0.102
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCMH_I10R",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5501,
         "y_center": 0.6768,
         "width": 0.2397,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAVP_L04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5715,
         "y_center": 0.6825,
         "width": 0.2338,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAXH_L09",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 2,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 5,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6381,
         "y_center": 0.7065,
         "width": 0.2569,
         "height": 0.0943
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBDL_L33",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 9,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4251,
         "y_center": 0.7138,
         "width": 0.234,
         "height": 0.0943
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBDR_L06",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 13,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 11,
-      "match_count": 23,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5536,
         "y_center": 0.7044,
         "width": 0.2924,
         "height": 0.128
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBFF_L12",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 8,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8357,
         "y_center": 0.6836,
         "width": 0.171,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBOS_L15R",
       "coarse_count": 3,
-      "pilot_copy_count": 5,
-      "pdf_text_box_count": 2,
-      "cv_symbol_box_count": 2,
-      "fine_count": 8,
-      "match_count": 13,
-      "selected_match_count": 4,
+      "pilot_copy_count": 0,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
+      "fine_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5856,
         "y_center": 0.7272,
         "width": 0.1982,
         "height": 0.091
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBUR_L08-Z",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 8,
-      "cv_symbol_box_count": 12,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 9,
-      "match_count": 13,
-      "selected_match_count": 8,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8238,
         "y_center": 0.7037,
         "width": 0.223,
         "height": 0.1282
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBYL_L20",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4188,
         "y_center": 0.6962,
         "width": 0.2227,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCEC_L12",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 9,
-      "match_count": 23,
-      "selected_match_count": 8,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5629,
         "y_center": 0.6962,
         "width": 0.35,
         "height": 0.1359
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCFO_L17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 7,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 12,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.723,
         "y_center": 0.7166,
         "width": 0.35,
         "height": 0.1355
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCOE_L06",
       "coarse_count": 3,
-      "pilot_copy_count": 14,
+      "pilot_copy_count": 0,
       "pdf_text_box_count": 0,
-      "cv_symbol_box_count": 4,
+      "cv_symbol_box_count": 0,
       "fine_count": 16,
-      "match_count": 56,
-      "selected_match_count": 25,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4747,
         "y_center": 0.6826,
         "width": 0.35,
         "height": 0.1229
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCRP_L36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 26,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4598,
         "y_center": 0.7203,
         "width": 0.2996,
         "height": 0.1281
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCRW_L05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5729,
         "y_center": 0.6302,
         "width": 0.2292,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALN_L29",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 12,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 9,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4518,
         "y_center": 0.6554,
         "width": 0.3026,
         "height": 0.1292
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALO_L12",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 10,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6062,
         "y_center": 0.6279,
         "width": 0.3219,
         "height": 0.1292
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAWM_L17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 19,
-      "selected_match_count": 9,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1611,
         "y_center": 0.6421,
         "width": 0.2641,
         "height": 0.1166
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBPT_L12",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 7,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8355,
         "y_center": 0.6615,
         "width": 0.1711,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBRD_L34",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 17,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4017,
         "y_center": 0.7088,
         "width": 0.1806,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBTL_L23R",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 13,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4283,
         "y_center": 0.7137,
         "width": 0.2474,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBTP_L08",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 17,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.556,
         "y_center": 0.6285,
         "width": 0.2563,
         "height": 0.0914
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBWI_L15L",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 7,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 21,
-      "selected_match_count": 8,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.7874,
         "y_center": 0.7227,
         "width": 0.35,
         "height": 0.1354
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCAK_L01",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 10,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5569,
         "y_center": 0.7014,
         "width": 0.2524,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCBF_L36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5736,
         "y_center": 0.6398,
         "width": 0.2323,
         "height": 0.0918
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCHA_L20",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 9,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4186,
         "y_center": 0.7041,
         "width": 0.2258,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCJR_L04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 8,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 28,
-      "selected_match_count": 8,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5414,
         "y_center": 0.7302,
         "width": 0.3119,
         "height": 0.1288
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFN_RNV-B",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 12,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6058,
         "y_center": 0.7629,
         "width": 0.1835,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFN_RNV-C",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 13,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4056,
         "y_center": 0.7557,
         "width": 0.1883,
         "height": 0.0943
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIB_RNV-A",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 10,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8818,
         "y_center": 0.7434,
         "width": 0.1986,
         "height": 0.0912
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANP_RNV-A",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 15,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.381,
         "y_center": 0.746,
         "width": 0.266,
         "height": 0.1061
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPT_R04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 7,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5512,
         "y_center": 0.7225,
         "width": 0.2903,
         "height": 0.1125
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPV_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 8,
-      "cv_symbol_box_count": 10,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 11,
-      "match_count": 16,
-      "selected_match_count": 8,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.2036,
         "y_center": 0.6761,
         "width": 0.35,
         "height": 0.1154
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAQW_RNV-A",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 10,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5979,
         "y_center": 0.7378,
         "width": 0.1944,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAQW_RNV-B",
       "coarse_count": 3,
-      "pilot_copy_count": 4,
+      "pilot_copy_count": 0,
       "pdf_text_box_count": 0,
-      "cv_symbol_box_count": 4,
-      "fine_count": 5,
-      "match_count": 10,
-      "selected_match_count": 4,
+      "cv_symbol_box_count": 0,
+      "fine_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4155,
         "y_center": 0.7388,
         "width": 0.1963,
         "height": 0.0911
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAVQ_R12",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 6,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8286,
         "y_center": 0.6825,
         "width": 0.1777,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAVQ_R21",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 10,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4409,
         "y_center": 0.7114,
         "width": 0.35,
         "height": 0.1033
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAXH_R27",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 2,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 7,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4261,
         "y_center": 0.7072,
         "width": 0.35,
         "height": 0.1313
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBDH_R31",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 18,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3992,
         "y_center": 0.6872,
         "width": 0.1778,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBDN_R34",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 6,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4368,
         "y_center": 0.7278,
         "width": 0.2665,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBJC_R12L",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8292,
         "y_center": 0.6956,
         "width": 0.1781,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBLF_R05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 6,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5975,
         "y_center": 0.7399,
         "width": 0.1889,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBMQ_R01",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 6,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6037,
         "y_center": 0.7531,
         "width": 0.1852,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBOS_R32",
       "coarse_count": 3,
-      "pilot_copy_count": 8,
-      "pdf_text_box_count": 1,
-      "cv_symbol_box_count": 9,
-      "fine_count": 11,
-      "match_count": 15,
-      "selected_match_count": 6,
+      "pilot_copy_count": 0,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
+      "fine_count": 10,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4617,
         "y_center": 0.7274,
         "width": 0.3026,
         "height": 0.1164
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBTV_R33-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 13,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4455,
         "y_center": 0.704,
         "width": 0.2831,
         "height": 0.1226
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBUR_R08-Z",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 5,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5375,
         "y_center": 0.6845,
         "width": 0.2968,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBWC_R26",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 10,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3752,
         "y_center": 0.7161,
         "width": 0.2416,
         "height": 0.0932
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCAG_R07",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 7,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 7,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5962,
         "y_center": 0.6841,
         "width": 0.1857,
         "height": 0.0944
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCBE_R05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5985,
         "y_center": 0.694,
         "width": 0.1967,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCEA_RNV-D",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 17,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4135,
         "y_center": 0.7433,
         "width": 0.1948,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCII_R33",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 6,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.405,
         "y_center": 0.7121,
         "width": 0.1863,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCOE_R02",
       "coarse_count": 3,
-      "pilot_copy_count": 4,
+      "pilot_copy_count": 0,
       "pdf_text_box_count": 0,
-      "cv_symbol_box_count": 7,
-      "fine_count": 6,
-      "match_count": 5,
-      "selected_match_count": 4,
+      "cv_symbol_box_count": 0,
+      "fine_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6135,
         "y_center": 0.7138,
         "width": 0.1729,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACT_R32",
       "coarse_count": 3,
-      "pilot_copy_count": 4,
+      "pilot_copy_count": 0,
       "pdf_text_box_count": 0,
-      "cv_symbol_box_count": 8,
-      "fine_count": 6,
-      "match_count": 5,
-      "selected_match_count": 4,
+      "cv_symbol_box_count": 0,
+      "fine_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4076,
         "y_center": 0.6647,
         "width": 0.1896,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADF_R22",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 16,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1174,
         "y_center": 0.6932,
         "width": 0.1872,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAKH_R03",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 10,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 10,
-      "match_count": 7,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5083,
         "y_center": 0.7162,
         "width": 0.35,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANY_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 14,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3325,
         "y_center": 0.6381,
         "width": 0.35,
         "height": 0.093
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAOO_R03-Z",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 10,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5399,
         "y_center": 0.7532,
         "width": 0.3132,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAOO_R21",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 14,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4117,
         "y_center": 0.6623,
         "width": 0.35,
         "height": 0.113
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARG_R04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.608,
         "y_center": 0.6705,
         "width": 0.1804,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KATW_R21",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 12,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3795,
         "y_center": 0.6586,
         "width": 0.2539,
         "height": 0.1072
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAVP_R22",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 9,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4327,
         "y_center": 0.6721,
         "width": 0.2478,
         "height": 0.0914
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAWG_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 17,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6009,
         "y_center": 0.6556,
         "width": 0.1891,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAXN_R22",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 5,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 12,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5013,
         "y_center": 0.6766,
         "width": 0.35,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAXV_R26",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 12,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3817,
         "y_center": 0.6886,
         "width": 0.2572,
         "height": 0.1013
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAZC_R29",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 5,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 17,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4856,
         "y_center": 0.656,
         "width": 0.35,
         "height": 0.1152
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBFD_R14",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 17,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8863,
         "y_center": 0.6654,
         "width": 0.1882,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBJI_R31",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 19,
-      "selected_match_count": 9,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6081,
         "y_center": 0.714,
         "width": 0.35,
         "height": 0.1445
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBKW_R01",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 13,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5981,
         "y_center": 0.6745,
         "width": 0.1851,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBKX_R30",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 10,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4117,
         "y_center": 0.6572,
         "width": 0.1939,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBLV_R32RY",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 2,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 2,
-      "selected_match_count": 2,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5636,
         "y_center": 0.6712,
         "width": 0.1172,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBTR_R04L",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 8,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5947,
         "y_center": 0.6805,
         "width": 0.1884,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBUM_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 14,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4045,
         "y_center": 0.6916,
         "width": 0.1892,
         "height": 0.0918
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBVY_R34",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 9,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4581,
         "y_center": 0.6923,
         "width": 0.2979,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBXA_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 12,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3488,
         "y_center": 0.6559,
         "width": 0.2815,
         "height": 0.1064
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBYH_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 16,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6025,
         "y_center": 0.659,
         "width": 0.1849,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KBYI_R20",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4035,
         "y_center": 0.713,
         "width": 0.1823,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCAO_R02",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 10,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6042,
         "y_center": 0.6584,
         "width": 0.1809,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCBF_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 7,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 10,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6003,
         "y_center": 0.6538,
         "width": 0.1865,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCDI_R04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 19,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5872,
         "y_center": 0.7119,
         "width": 0.1875,
         "height": 0.0911
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCDR_R03",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6044,
         "y_center": 0.6886,
         "width": 0.1836,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCDS_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 15,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5578,
         "y_center": 0.6375,
         "width": 0.2638,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCGI_R10",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 13,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.596,
         "y_center": 0.6487,
         "width": 0.1875,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCHO_R03",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 12,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5758,
         "y_center": 0.68,
         "width": 0.2297,
         "height": 0.0913
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCHQ_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 16,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5669,
         "y_center": 0.6861,
         "width": 0.2406,
         "height": 0.1423
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCIC_R13L",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 2,
-      "cv_symbol_box_count": 2,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 2,
-      "match_count": 8,
-      "selected_match_count": 2,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8588,
         "y_center": 0.6621,
         "width": 0.1155,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCLL_R11",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 11,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5953,
         "y_center": 0.6452,
         "width": 0.1895,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCNC_R10",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 13,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6209,
         "y_center": 0.7185,
         "width": 0.2492,
         "height": 0.092
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCOI_R11",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 15,
-      "selected_match_count": 10,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.501,
         "y_center": 0.692,
         "width": 0.35,
         "height": 0.1305
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KCRS_R32",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 8,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4487,
         "y_center": 0.7329,
         "width": 0.2641,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANB_R05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 8,
-      "cv_symbol_box_count": 11,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 11,
-      "match_count": 18,
-      "selected_match_count": 10,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6489,
         "y_center": 0.704,
         "width": 0.35,
         "height": 0.1128
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAST_R26",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 8,
-      "cv_symbol_box_count": 10,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 11,
-      "match_count": 13,
-      "selected_match_count": 8,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.2497,
         "y_center": 0.6427,
         "width": 0.35,
         "height": 0.1363
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABE_R13",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 10,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5489,
         "y_center": 0.6567,
         "width": 0.2971,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABE_R24",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 11,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4129,
         "y_center": 0.6697,
         "width": 0.3482,
         "height": 0.1029
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABY_R05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 10,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 6,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5346,
         "y_center": 0.6663,
         "width": 0.3114,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABY_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5511,
         "y_center": 0.7086,
         "width": 0.2952,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABY_R23",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 12,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1682,
         "y_center": 0.6453,
         "width": 0.2988,
         "height": 0.1096
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACB_R02",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 10,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5279,
         "y_center": 0.6605,
         "width": 0.3154,
         "height": 0.0914
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACK_R33",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4672,
         "y_center": 0.6642,
         "width": 0.3087,
         "height": 0.0962
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACT_R19",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 12,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4265,
         "y_center": 0.658,
         "width": 0.35,
         "height": 0.1075
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACV_R01",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 10,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.552,
         "y_center": 0.6664,
         "width": 0.2836,
         "height": 0.091
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACY_R13-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 13,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5896,
         "y_center": 0.6694,
         "width": 0.35,
         "height": 0.0927
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACY_R31-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1765,
         "y_center": 0.6864,
         "width": 0.3093,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADS_R16",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 5,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 11,
-      "selected_match_count": 8,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6017,
         "y_center": 0.6605,
         "width": 0.35,
         "height": 0.1419
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAEX_R14",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 11,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.7409,
         "y_center": 0.6386,
         "width": 0.1938,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAEX_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 13,
-      "selected_match_count": 9,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6378,
         "y_center": 0.6798,
         "width": 0.35,
         "height": 0.1185
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFW_R34R",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 9,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.479,
         "y_center": 0.6754,
         "width": 0.3315,
         "height": 0.091
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAGC_R10",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 10,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5542,
         "y_center": 0.6497,
         "width": 0.2817,
         "height": 0.0916
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAGC_R28",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 5,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4974,
         "y_center": 0.6664,
         "width": 0.2509,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAGS_R26",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1643,
         "y_center": 0.7129,
         "width": 0.2896,
         "height": 0.0911
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAHQ_R20",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 14,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1648,
         "y_center": 0.6952,
         "width": 0.2904,
         "height": 0.1153
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAJZ_R03",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 10,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 10,
-      "match_count": 15,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5295,
         "y_center": 0.6732,
         "width": 0.3367,
         "height": 0.1137
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAKH_R21",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 12,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1651,
         "y_center": 0.7158,
         "width": 0.2989,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALB_R10",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 7,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5221,
         "y_center": 0.6761,
         "width": 0.3467,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALB_R19-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 12,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6124,
         "y_center": 0.6518,
         "width": 0.35,
         "height": 0.1096
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALB_R28",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4727,
         "y_center": 0.6731,
         "width": 0.3275,
         "height": 0.0917
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALN_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5216,
         "y_center": 0.7125,
         "width": 0.323,
         "height": 0.0933
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALS_R02",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 5,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8113,
         "y_center": 0.6919,
         "width": 0.24,
         "height": 0.112
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALW_R02",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 10,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5527,
         "y_center": 0.6774,
         "width": 0.2865,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMA_R04-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 7,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5279,
         "y_center": 0.6726,
         "width": 0.3312,
         "height": 0.0915
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMA_R13-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 16,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8186,
         "y_center": 0.643,
         "width": 0.331,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANJ_R14",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 10,
-      "match_count": 13,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5648,
         "y_center": 0.6758,
         "width": 0.35,
         "height": 0.1415
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPC_R01LY",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 5,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.598,
         "y_center": 0.6956,
         "width": 0.1872,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPC_R01LZ",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 5,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.598,
         "y_center": 0.6956,
         "width": 0.1872,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPN_R01",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 8,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.7638,
         "y_center": 0.652,
         "width": 0.1832,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KART_R10",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5442,
         "y_center": 0.6419,
         "width": 0.298,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARV_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 10,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 14,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3882,
         "y_center": 0.6415,
         "width": 0.35,
         "height": 0.1139
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARV_R28",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 7,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4788,
         "y_center": 0.7091,
         "width": 0.3348,
         "height": 0.1142
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KATA_R05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 10,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 9,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.7726,
         "y_center": 0.7331,
         "width": 0.1844,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAAA_R03",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 10,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5956,
         "y_center": 0.7397,
         "width": 0.186,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAAA_R21",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 13,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4118,
         "y_center": 0.7407,
         "width": 0.1965,
         "height": 0.0927
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAAF_R06",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6024,
         "y_center": 0.7129,
         "width": 0.1877,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAAF_R14",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 9,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.581,
         "y_center": 0.7131,
         "width": 0.2348,
         "height": 0.0915
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAAF_R24",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 9,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4352,
         "y_center": 0.7113,
         "width": 0.2427,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAAO_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 16,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1216,
         "y_center": 0.6908,
         "width": 0.1916,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAAO_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 13,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5984,
         "y_center": 0.6823,
         "width": 0.1891,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAAS_R05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5978,
         "y_center": 0.6753,
         "width": 0.1983,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAAS_R23",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 16,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1376,
         "y_center": 0.642,
         "width": 0.2425,
         "height": 0.1396
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAAT_R31",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 8,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1423,
         "y_center": 0.6533,
         "width": 0.2456,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABI_R17L",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.7295,
         "y_center": 0.6551,
         "width": 0.35,
         "height": 0.1156
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABI_R35R",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 11,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4123,
         "y_center": 0.6663,
         "width": 0.1906,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABQ_R03-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5689,
         "y_center": 0.6611,
         "width": 0.2361,
         "height": 0.0945
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABQ_R08-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 15,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6259,
         "y_center": 0.7205,
         "width": 0.2481,
         "height": 0.1037
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABR_R13",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 20,
-      "selected_match_count": 9,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8305,
         "y_center": 0.6292,
         "width": 0.3089,
         "height": 0.1474
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABR_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 15,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6624,
         "y_center": 0.6558,
         "width": 0.3247,
         "height": 0.109
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KABR_R31",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 7,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 16,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5169,
         "y_center": 0.7438,
         "width": 0.35,
         "height": 0.1251
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACJ_R05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6059,
         "y_center": 0.6691,
         "width": 0.1792,
         "height": 0.0914
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACJ_R23",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 15,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3453,
         "y_center": 0.6725,
         "width": 0.2743,
         "height": 0.0987
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACK_R06",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6016,
         "y_center": 0.6525,
         "width": 0.191,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACK_R15",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 9,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3094,
         "y_center": 0.647,
         "width": 0.35,
         "height": 0.1295
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACP_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 8,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1105,
         "y_center": 0.7418,
         "width": 0.1823,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACP_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 2,
-      "cv_symbol_box_count": 2,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 2,
-      "match_count": 4,
-      "selected_match_count": 2,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8617,
         "y_center": 0.7171,
         "width": 0.1155,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACQ_R15",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.661,
         "y_center": 0.6467,
         "width": 0.3027,
         "height": 0.1082
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACQ_R33",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 12,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4104,
         "y_center": 0.6805,
         "width": 0.1914,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACT_R01",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6069,
         "y_center": 0.654,
         "width": 0.1834,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACV_R14",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 5,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.654,
         "y_center": 0.6453,
         "width": 0.2911,
         "height": 0.1139
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACV_R32",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 2,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 10,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3927,
         "y_center": 0.6831,
         "width": 0.1745,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACY_R04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5742,
         "y_center": 0.6477,
         "width": 0.2429,
         "height": 0.091
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACZ_R09",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.61,
         "y_center": 0.6629,
         "width": 0.1775,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KACZ_R27",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3976,
         "y_center": 0.6629,
         "width": 0.1793,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADC_R16",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 16,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6872,
         "y_center": 0.6451,
         "width": 0.35,
         "height": 0.1094
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADC_R34",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4074,
         "y_center": 0.6548,
         "width": 0.1932,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADF_R04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5981,
         "y_center": 0.6293,
         "width": 0.1896,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADG_R05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 14,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5913,
         "y_center": 0.6869,
         "width": 0.1993,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADG_R23",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 13,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3712,
         "y_center": 0.7117,
         "width": 0.2805,
         "height": 0.1007
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADH_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 16,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.7251,
         "y_center": 0.6527,
         "width": 0.35,
         "height": 0.0958
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADH_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 13,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4617,
         "y_center": 0.6453,
         "width": 0.2909,
         "height": 0.1057
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADM_R13",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 16,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8867,
         "y_center": 0.7114,
         "width": 0.1925,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADM_R31",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4141,
         "y_center": 0.6586,
         "width": 0.193,
         "height": 0.0925
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADS_R34",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 7,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4307,
         "y_center": 0.7252,
         "width": 0.2443,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADT_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 18,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8607,
         "y_center": 0.6564,
         "width": 0.242,
         "height": 0.0917
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KADU_R32",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 18,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4374,
         "y_center": 0.7125,
         "width": 0.2533,
         "height": 0.0914
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAEG_R04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 9,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5716,
         "y_center": 0.6623,
         "width": 0.2428,
         "height": 0.091
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAEG_R22",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 12,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1235,
         "y_center": 0.6515,
         "width": 0.194,
         "height": 0.1432
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAEL_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 18,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.553,
         "y_center": 0.738,
         "width": 0.35,
         "height": 0.139
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAEL_R35",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 14,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1213,
         "y_center": 0.6906,
         "width": 0.1914,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAEX_R32",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 6,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4221,
         "y_center": 0.6535,
         "width": 0.2036,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFJ_R09",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 8,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6371,
         "y_center": 0.7242,
         "width": 0.2642,
         "height": 0.1117
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFJ_R27",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 9,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4244,
         "y_center": 0.6541,
         "width": 0.2321,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFK_R15",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 12,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6553,
         "y_center": 0.6509,
         "width": 0.308,
         "height": 0.0999
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFK_R33",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1209,
         "y_center": 0.6555,
         "width": 0.1917,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFO_R34",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 19,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8434,
         "y_center": 0.6863,
         "width": 0.1723,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFP_R16",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 11,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5943,
         "y_center": 0.7377,
         "width": 0.1928,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFP_R34",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 12,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4064,
         "y_center": 0.6692,
         "width": 0.1878,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFW_R16L",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 9,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8584,
         "y_center": 0.6701,
         "width": 0.2509,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAFW_R16R",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 7,
-      "selected_match_count": 3,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8216,
         "y_center": 0.6778,
         "width": 0.1821,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAGO_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 16,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4117,
         "y_center": 0.7123,
         "width": 0.1898,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAGO_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 23,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5955,
         "y_center": 0.7106,
         "width": 0.1875,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAGS_R08-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 20,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5716,
         "y_center": 0.7136,
         "width": 0.2518,
         "height": 0.091
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAGS_R08-Z",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 19,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5677,
         "y_center": 0.6925,
         "width": 0.2458,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAGZ_R09",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 11,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6046,
         "y_center": 0.6543,
         "width": 0.1849,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAGZ_R27",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.399,
         "y_center": 0.6545,
         "width": 0.1826,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAHH_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 18,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6176,
         "y_center": 0.6493,
         "width": 0.35,
         "height": 0.1438
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAHH_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 14,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4103,
         "y_center": 0.693,
         "width": 0.1942,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAHN_R02",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6125,
         "y_center": 0.7142,
         "width": 0.1808,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAHN_R09",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 14,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6109,
         "y_center": 0.6402,
         "width": 0.1828,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAHN_R20",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 10,
-      "match_count": 14,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3776,
         "y_center": 0.6837,
         "width": 0.35,
         "height": 0.0947
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIA_R08",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5861,
         "y_center": 0.7129,
         "width": 0.1945,
         "height": 0.0911
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIA_R12",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 13,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8872,
         "y_center": 0.6575,
         "width": 0.1915,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIA_R26",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 10,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4198,
         "y_center": 0.7129,
         "width": 0.1974,
         "height": 0.0911
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAID_R12",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6027,
         "y_center": 0.6377,
         "width": 0.1962,
         "height": 0.0916
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAID_R30",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4072,
         "y_center": 0.6582,
         "width": 0.1934,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIG_R09",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 11,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5895,
         "y_center": 0.6474,
         "width": 0.1941,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIG_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 16,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.7081,
         "y_center": 0.6464,
         "width": 0.35,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIG_R27",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4096,
         "y_center": 0.6293,
         "width": 0.189,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIK_R07",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6084,
         "y_center": 0.6506,
         "width": 0.1794,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIK_R25",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 15,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3576,
         "y_center": 0.6837,
         "width": 0.243,
         "height": 0.0937
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIO_R02",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 12,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5999,
         "y_center": 0.6537,
         "width": 0.1861,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIO_R20",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 16,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1161,
         "y_center": 0.6233,
         "width": 0.1977,
         "height": 0.1512
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIT_R16",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 18,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6047,
         "y_center": 0.6822,
         "width": 0.1807,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIT_R34",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 14,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3974,
         "y_center": 0.652,
         "width": 0.1799,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIV_R06",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 12,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5979,
         "y_center": 0.7126,
         "width": 0.1909,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIV_R24",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 13,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4058,
         "y_center": 0.7125,
         "width": 0.1853,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIZ_R04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6024,
         "y_center": 0.6827,
         "width": 0.1884,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAIZ_R22",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3599,
         "y_center": 0.6595,
         "width": 0.2826,
         "height": 0.1038
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAJG_R04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 17,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6116,
         "y_center": 0.7257,
         "width": 0.179,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAJG_R22",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4142,
         "y_center": 0.6966,
         "width": 0.1952,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAJG_R31",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 16,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4128,
         "y_center": 0.7409,
         "width": 0.1913,
         "height": 0.091
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAJR_R06",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 16,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3419,
         "y_center": 0.6956,
         "width": 0.35,
         "height": 0.1159
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAJR_R24",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1229,
         "y_center": 0.7017,
         "width": 0.1924,
         "height": 0.1083
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAKO_R11",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 3,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 12,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4968,
         "y_center": 0.7396,
         "width": 0.35,
         "height": 0.1105
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAKO_R29",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4012,
         "y_center": 0.6678,
         "width": 0.1857,
         "height": 0.0913
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAKQ_R21",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 13,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4159,
         "y_center": 0.7007,
         "width": 0.1964,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAKR_R25",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 11,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4063,
         "y_center": 0.7116,
         "width": 0.1897,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALI_R13",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 12,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6292,
         "y_center": 0.681,
         "width": 0.2686,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALI_R31",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 5,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4141,
         "y_center": 0.6475,
         "width": 0.1969,
         "height": 0.0917
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALM_R04",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 17,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5748,
         "y_center": 0.6875,
         "width": 0.2372,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALN_R11",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 12,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6252,
         "y_center": 0.6579,
         "width": 0.2524,
         "height": 0.0952
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALO_R12",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 10,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6381,
         "y_center": 0.6535,
         "width": 0.276,
         "height": 0.0978
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALO_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4331,
         "y_center": 0.6867,
         "width": 0.2537,
         "height": 0.0911
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALS_R20",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1195,
         "y_center": 0.6949,
         "width": 0.1986,
         "height": 0.0911
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALW_R20",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 13,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1149,
         "y_center": 0.6341,
         "width": 0.1835,
         "height": 0.147
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALX_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.7126,
         "y_center": 0.6557,
         "width": 0.35,
         "height": 0.0917
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KALX_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 17,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4252,
         "y_center": 0.6681,
         "width": 0.24,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMG_R16",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 16,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6015,
         "y_center": 0.6784,
         "width": 0.1816,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMG_R34",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 14,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4138,
         "y_center": 0.6435,
         "width": 0.195,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMN_R09",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 13,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6268,
         "y_center": 0.6976,
         "width": 0.2598,
         "height": 0.1127
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMN_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 14,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4025,
         "y_center": 0.7442,
         "width": 0.1796,
         "height": 0.0917
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMN_R27",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 16,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4019,
         "y_center": 0.6934,
         "width": 0.3065,
         "height": 0.1017
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMT_R05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 11,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.594,
         "y_center": 0.7439,
         "width": 0.193,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMT_R23",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1121,
         "y_center": 0.7147,
         "width": 0.1853,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMW_R01",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 11,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6032,
         "y_center": 0.6574,
         "width": 0.1754,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMW_R13",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 12,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5918,
         "y_center": 0.6856,
         "width": 0.1941,
         "height": 0.0911
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAMW_R19",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 12,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4149,
         "y_center": 0.6854,
         "width": 0.1965,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANB_R23",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 2,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 10,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1183,
         "y_center": 0.6713,
         "width": 0.1879,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAND_R05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5934,
         "y_center": 0.6829,
         "width": 0.1919,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAND_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 16,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5482,
         "y_center": 0.6761,
         "width": 0.2882,
         "height": 0.1458
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAND_R23",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 18,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3761,
         "y_center": 0.6678,
         "width": 0.2803,
         "height": 0.1174
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANE_R09",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 6,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5972,
         "y_center": 0.6565,
         "width": 0.1926,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANE_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1224,
         "y_center": 0.715,
         "width": 0.1924,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANE_R27",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 7,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 8,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3952,
         "y_center": 0.6563,
         "width": 0.1704,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANJ_R32",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 11,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4143,
         "y_center": 0.6834,
         "width": 0.1928,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANQ_R05",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 19,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5921,
         "y_center": 0.7145,
         "width": 0.1956,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANQ_R23",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 18,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1439,
         "y_center": 0.7151,
         "width": 0.2278,
         "height": 0.1466
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANW_R13",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 13,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6693,
         "y_center": 0.6462,
         "width": 0.3287,
         "height": 0.1067
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANW_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.7039,
         "y_center": 0.6549,
         "width": 0.35,
         "height": 0.0949
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANW_R31",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4014,
         "y_center": 0.6544,
         "width": 0.1849,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KANY_R36",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 11,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4092,
         "y_center": 0.6805,
         "width": 0.1923,
         "height": 0.0907
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAOH_R10",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 14,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5939,
         "y_center": 0.6962,
         "width": 0.189,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAOH_R28",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 7,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 13,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4133,
         "y_center": 0.692,
         "width": 0.1928,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAOV_R13",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 2,
-      "cv_symbol_box_count": 7,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 12,
-      "selected_match_count": 2,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8524,
         "y_center": 0.7436,
         "width": 0.1155,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAOV_R31",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 13,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.414,
         "y_center": 0.7441,
         "width": 0.1933,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPA_R17LY",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 10,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8505,
         "y_center": 0.7227,
         "width": 0.2564,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPA_R28",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 7,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4311,
         "y_center": 0.6461,
         "width": 0.2486,
         "height": 0.0908
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPA_R35R",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 4,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 7,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4257,
         "y_center": 0.6639,
         "width": 0.2368,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPF_R05-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.575,
         "y_center": 0.6731,
         "width": 0.2437,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPF_R14",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 7,
-      "match_count": 11,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6189,
         "y_center": 0.6697,
         "width": 0.3204,
         "height": 0.1004
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPF_R23-Y",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 5,
-      "match_count": 15,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3709,
         "y_center": 0.6541,
         "width": 0.2633,
         "height": 0.1002
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPN_R07",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 12,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.8888,
         "y_center": 0.652,
         "width": 0.1931,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPN_R19",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1154,
         "y_center": 0.681,
         "width": 0.1901,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPS_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 10,
-      "match_count": 14,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5258,
         "y_center": 0.694,
         "width": 0.3231,
         "height": 0.1492
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAPS_R35",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 14,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4123,
         "y_center": 0.6553,
         "width": 0.1958,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAQO_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 7,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 10,
-      "match_count": 14,
-      "selected_match_count": 7,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5131,
         "y_center": 0.7093,
         "width": 0.35,
         "height": 0.1516
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAQO_R35",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 11,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4122,
         "y_center": 0.7591,
         "width": 0.1928,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAQP_R13",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 16,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.599,
         "y_center": 0.7284,
         "width": 0.1948,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAQX_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 11,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5498,
         "y_center": 0.6857,
         "width": 0.2646,
         "height": 0.0916
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KAQX_R35",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 18,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4166,
         "y_center": 0.7045,
         "width": 0.1906,
         "height": 0.0916
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARA_R17",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 8,
-      "match_count": 9,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6146,
         "y_center": 0.6432,
         "width": 0.3199,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARA_R35",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 15,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.1318,
         "y_center": 0.6513,
         "width": 0.2295,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARB_R06",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 8,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5977,
         "y_center": 0.6672,
         "width": 0.1987,
         "height": 0.091
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARB_R24",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 12,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3806,
         "y_center": 0.6702,
         "width": 0.2661,
         "height": 0.097
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARG_R18",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 14,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6876,
         "y_center": 0.6481,
         "width": 0.35,
         "height": 0.1031
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARG_R22",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 3,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 3,
-      "match_count": 14,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4107,
         "y_center": 0.6533,
         "width": 0.1874,
         "height": 0.091
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARM_R14",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 15,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.596,
         "y_center": 0.683,
         "width": 0.2005,
         "height": 0.0909
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARM_R32",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 10,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4124,
         "y_center": 0.6831,
         "width": 0.1909,
         "height": 0.0911
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARR_R09",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5924,
         "y_center": 0.6427,
         "width": 0.1982,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARR_R15",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 6,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 11,
-      "selected_match_count": 6,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.6438,
         "y_center": 0.6561,
         "width": 0.2521,
         "height": 0.106
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KARR_R27",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 9,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.4164,
         "y_center": 0.6403,
         "width": 0.1989,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KART_R07",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 5,
-      "cv_symbol_box_count": 9,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 6,
-      "match_count": 18,
-      "selected_match_count": 5,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.5677,
         "y_center": 0.6404,
         "width": 0.2511,
         "height": 0.0906
-      }
+      },
+      "source_pdfs_available": false
     },
     {
       "chart_id": "KART_R28",
       "coarse_count": 3,
       "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 8,
+      "pdf_text_box_count": 0,
+      "cv_symbol_box_count": 0,
       "fine_count": 4,
-      "match_count": 7,
-      "selected_match_count": 4,
+      "match_count": 0,
+      "selected_match_count": 0,
       "detail_roi": {
         "x_center": 0.3992,
         "y_center": 0.6746,
         "width": 0.1796,
         "height": 0.0905
-      }
+      },
+      "source_pdfs_available": false
     }
   ]
 }

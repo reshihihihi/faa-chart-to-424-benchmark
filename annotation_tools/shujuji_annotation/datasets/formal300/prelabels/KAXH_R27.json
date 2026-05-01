@@ -5,8 +5,8 @@
     "width": 807,
     "height": 1238
   },
-  "prelabel_version": "v0.26-formal300-structure-aware-prelabels",
-  "generated_at": "2026-04-25T02:58:40.084255+00:00",
+  "prelabel_version": "v0.29-formal300-typed-visible-evidence",
+  "generated_at": "2026-05-01T05:57:18.205192+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -14,12 +14,19 @@
     "lower_detail_box_is_seed_only": true,
     "candidate_mappings_are_cifp424_targets_not_independent_predictions": true,
     "formal300_small_box_prelabels_added": true,
-    "small_box_source": "score lower missed-approach detail candidates with PR28 text anchors, boxed-cell structure, and CV icon components; only detected evidence is drawn",
+    "small_box_source": "preserved existing fine boxes because source PDFs are unavailable; sanitized field mappings by region type and visible label text",
     "small_box_final_ground_truth": false,
     "small_box_human_calibration_required": true,
     "missed_approach_icon_or_detail_area_first": true,
     "low_confidence_blank_fallback_boxes_enabled": false,
-    "boxed_cell_structure_weighted": true
+    "boxed_cell_structure_weighted": true,
+    "compound_q4_and_q_terminator_candidate_mappings": true,
+    "field_mapping_region_type_sanitizer": true,
+    "field_mapping_visible_text_sanitizer": true,
+    "fine_q_terminator_mappings_removed": true,
+    "hm_inherited_fix_alt_fine_mappings_removed": true,
+    "generic_path_hold_graphics_removed_from_q5_params": true,
+    "source_pdfs_available": false
   },
   "review_priority": "normal",
   "target_summary": {
@@ -278,7 +285,10 @@
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
+      },
+      "source_candidate_leg_id": "KAXH_R27__ma3",
+      "source_leg_type": "TF",
+      "source_field_name": "Q2_altitude_constraint"
     },
     {
       "region_id": "KAXH_R27_iconalign_002_fix_text",
@@ -319,7 +329,10 @@
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
+      },
+      "source_candidate_leg_id": "KAXH_R27__ma2",
+      "source_leg_type": "DF",
+      "source_field_name": "Q1_fix_ident"
     },
     {
       "region_id": "KAXH_R27_iconalign_003_fix_text",
@@ -360,7 +373,10 @@
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
+      },
+      "source_candidate_leg_id": "KAXH_R27__ma3",
+      "source_leg_type": "TF",
+      "source_field_name": "Q1_fix_ident"
     },
     {
       "region_id": "KAXH_R27_iconalign_005_track_or_radial_text",
@@ -404,7 +420,10 @@
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
+      },
+      "source_candidate_leg_id": "KAXH_R27__ma3",
+      "source_leg_type": "TF",
+      "source_field_name": "Q4_course_or_radial"
     },
     {
       "region_id": "KAXH_R27_iconalign_001_heading_text",
@@ -448,7 +467,10 @@
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
+      },
+      "source_candidate_leg_id": "KAXH_R27__ma1",
+      "source_leg_type": "CA",
+      "source_field_name": "Q4_course_or_radial"
     },
     {
       "region_id": "KAXH_R27_iconalign_007_fix_symbol",
@@ -489,7 +511,10 @@
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
+      },
+      "source_candidate_leg_id": "KAXH_R27__ma3",
+      "source_leg_type": "TF",
+      "source_field_name": "Q1_fix_ident"
     },
     {
       "region_id": "KAXH_R27_iconalign_006_fix_symbol",
@@ -530,7 +555,10 @@
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
+      },
+      "source_candidate_leg_id": "KAXH_R27__ma2",
+      "source_leg_type": "DF",
+      "source_field_name": "Q1_fix_ident"
     }
   ]
 }

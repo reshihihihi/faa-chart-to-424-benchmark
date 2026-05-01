@@ -5,8 +5,8 @@
     "width": 807,
     "height": 1238
   },
-  "prelabel_version": "v0.26-formal300-structure-aware-prelabels",
-  "generated_at": "2026-04-25T02:58:34.436432+00:00",
+  "prelabel_version": "v0.29-formal300-typed-visible-evidence",
+  "generated_at": "2026-05-01T05:57:18.113965+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -14,12 +14,19 @@
     "lower_detail_box_is_seed_only": true,
     "candidate_mappings_are_cifp424_targets_not_independent_predictions": true,
     "formal300_small_box_prelabels_added": true,
-    "small_box_source": "score lower missed-approach detail candidates with PR28 text anchors, boxed-cell structure, and CV icon components; only detected evidence is drawn",
+    "small_box_source": "preserved existing fine boxes because source PDFs are unavailable; sanitized field mappings by region type and visible label text",
     "small_box_final_ground_truth": false,
     "small_box_human_calibration_required": true,
     "missed_approach_icon_or_detail_area_first": true,
     "low_confidence_blank_fallback_boxes_enabled": false,
-    "boxed_cell_structure_weighted": true
+    "boxed_cell_structure_weighted": true,
+    "compound_q4_and_q_terminator_candidate_mappings": true,
+    "field_mapping_region_type_sanitizer": true,
+    "source_pdfs_available": false,
+    "field_mapping_visible_text_sanitizer": true,
+    "fine_q_terminator_mappings_removed": true,
+    "hm_inherited_fix_alt_fine_mappings_removed": true,
+    "generic_path_hold_graphics_removed_from_q5_params": true
   },
   "review_priority": "normal",
   "target_summary": {
@@ -256,7 +263,10 @@
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
+      },
+      "source_candidate_leg_id": "KAXH_L09__ma2",
+      "source_leg_type": "DF",
+      "source_field_name": "Q2_altitude_constraint"
     },
     {
       "region_id": "KAXH_L09_iconalign_002_fix_text",
@@ -297,7 +307,10 @@
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
+      },
+      "source_candidate_leg_id": "KAXH_L09__ma2",
+      "source_leg_type": "DF",
+      "source_field_name": "Q1_fix_ident"
     },
     {
       "region_id": "KAXH_L09_iconalign_001_heading_text",
@@ -314,29 +327,7 @@
       "source_layer": "pdf_text_inside_detected_icon_area",
       "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
       "is_formal_annotation_candidate": true,
-      "candidate_mappings": [
-        {
-          "candidate_leg_id": "KAXH_L09__ma1",
-          "canonical_leg_index": 1,
-          "leg_type": "CA",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=course_deg, course_deg=89.2",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "course_deg",
-              "course_deg": 89.2
-            }
-          },
-          "match_basis": "PDF text token '089°' inside detected lower missed-approach/icon area",
-          "confidence": 0.62,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAXH_L09.json",
-          "source_seq_no": "040",
-          "source_trans_ident": "L"
-        }
-      ],
+      "candidate_mappings": [],
       "needs_human_decision": true,
       "human_review": {
         "review_action": "pending",
@@ -376,31 +367,16 @@
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAXH_L09.json",
           "source_seq_no": "050",
           "source_trans_ident": "L"
-        },
-        {
-          "candidate_leg_id": "KAXH_L09__ma2",
-          "canonical_leg_index": 2,
-          "leg_type": "DF",
-          "field_name": "Q3_turn",
-          "expected_value": "RIGHT",
-          "expected_answer": {
-            "status": "present",
-            "value": "RIGHT"
-          },
-          "match_basis": "detected path/holding icon component inside lower missed-approach area",
-          "confidence": 0.46,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAXH_L09.json",
-          "source_seq_no": "050",
-          "source_trans_ident": "L"
         }
       ],
       "needs_human_decision": true,
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      }
+      },
+      "source_candidate_leg_id": "KAXH_L09__ma2",
+      "source_leg_type": "DF",
+      "source_field_name": "Q1_fix_ident"
     }
   ]
 }

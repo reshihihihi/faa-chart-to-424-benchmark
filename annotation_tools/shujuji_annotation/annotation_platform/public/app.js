@@ -622,6 +622,7 @@ function regionHasNumber(region, value) {
   if (!Number.isFinite(number)) return false;
   const candidates = uniqueList([
     String(Math.round(number)),
+    number >= 0 && number < 360 ? String(Math.round(number) % 360).padStart(3, "0") : "",
     Number.isInteger(number) ? "" : number.toFixed(1).replace(/\.0$/, ""),
     Number.isInteger(number) ? "" : String(Math.floor(number)),
     Number.isInteger(number) ? "" : String(Math.ceil(number))

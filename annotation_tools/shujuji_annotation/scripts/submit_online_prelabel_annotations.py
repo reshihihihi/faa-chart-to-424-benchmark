@@ -229,6 +229,7 @@ def region_has_number(region: dict[str, Any], value: Any) -> bool:
     candidates = unique_list(
         [
             str(round(number)),
+            f"{round(number) % 360:03d}" if 0 <= number < 360 else "",
             "" if number.is_integer() else f"{number:.1f}".rstrip("0").rstrip("."),
             "" if number.is_integer() else str(int(number // 1)),
             "" if number.is_integer() else str(int(number // 1 + 1)),

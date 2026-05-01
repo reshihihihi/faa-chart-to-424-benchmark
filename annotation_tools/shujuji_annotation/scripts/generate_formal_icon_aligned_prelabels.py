@@ -661,6 +661,92 @@ def q5_has_distance(item_mapping):
     return isinstance(value, dict) and value.get("leg_distance_nm") is not None
 
 
+def visible_label_text(item):
+    label = str(item.get("label") or "")
+    visible = " ".join(part.split("->", 1)[0] for part in label.split(";"))
+    return " ".join([
+        str(item.get("region_type") or ""),
+        visible,
+        str(item.get("ocr_text") or ""),
+        str(item.get("element_role") or ""),
+    ]).upper()
+
+
+def has_token(item, token):
+    wanted = str(token or "").strip().upper()
+    if not wanted:
+        return False
+    return re.search(rf"(^|[^A-Z0-9]){re.escape(wanted)}([^A-Z0-9]|$)", visible_label_text(item)) is not None
+
+
+def has_number(item, value):
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return False
+    candidates = {
+        str(round(number)),
+        f"{int(round(number)) % 360:03d}" if 0 <= number < 360 else "",
+        "" if number.is_integer() else f"{number:.1f}".rstrip("0").rstrip("."),
+        "" if number.is_integer() else str(int(number // 1)),
+        "" if number.is_integer() else str(int(number // 1 + 1)),
+    }
+    text = visible_label_text(item)
+    return any(
+        candidate and re.search(rf"(^|[^0-9]){re.escape(candidate)}([^0-9]|$)", text)
+        for candidate in candidates
+    )
+
+
+def mapping_value(item_mapping):
+    return (item_mapping.get("expected_answer") or {}).get("value")
+
+
+def fine_mapping_matches_visible_text(item, item_mapping):
+    region_type = item.get("region_type", "")
+    field_name = item_mapping.get("field_name", "")
+    value = mapping_value(item_mapping)
+    if region_type in COARSE_TYPES:
+        return True
+    if field_name == "Q_terminator":
+        return False
+    if item_mapping.get("leg_type") == "HM" and field_name in {"Q1_fix_ident", "Q2_altitude_constraint"}:
+        # HM fix/altitude are usually inherited from the hold anchor/procedure logic, not directly
+        # stated by a separate HM fine box. Leave them for runtime reasoning.
+        return False
+    if region_type == "ALTITUDE_TEXT":
+        return field_name == "Q2_altitude_constraint" and isinstance(value, dict) and has_number(item, value.get("altitude_ft"))
+    if region_type == "CLIMB_ARROW":
+        return field_name == "Q2_altitude_constraint"
+    if region_type == "TURN_PHRASE":
+        return field_name == "Q3_turn" and has_token(item, value)
+    if region_type == "FIX_TEXT":
+        return field_name == "Q1_fix_ident" and has_token(item, value)
+    if region_type == "FIX_SYMBOL":
+        return field_name == "Q1_fix_ident"
+    if region_type == "NAVAID_TEXT":
+        if field_name == "Q1_fix_ident":
+            return has_token(item, value)
+        if field_name == "Q4_course_or_radial" and isinstance(value, dict) and value.get("type") == "navaid_radial":
+            return has_token(item, value.get("navaid") or value.get("navaid_ident"))
+        return False
+    if region_type in {"RADIAL_TEXT", "HEADING_TEXT", "TRACK_OR_RADIAL_TEXT"}:
+        if field_name == "Q4_course_or_radial" and isinstance(value, dict):
+            return has_number(item, value.get("radial_deg") or value.get("course_deg"))
+        if field_name == "Q5_hold_params" and isinstance(value, dict):
+            return has_number(item, value.get("inbound_course_deg"))
+        return False
+    if region_type == "OUTBOUND_INBOUND_MARK":
+        return field_name in {"Q4_course_or_radial", "Q5_hold_params"}
+    if region_type == "HOLDING_TIME_TEXT":
+        return field_name == "Q5_hold_params" and isinstance(value, dict) and value.get("leg_time_min") is not None
+    if region_type == "DME_DISTANCE_TEXT":
+        return field_name == "Q5_hold_params" and isinstance(value, dict) and value.get("leg_distance_nm") is not None and has_number(item, value.get("leg_distance_nm"))
+    if region_type in {"HOLDING_PATTERN", "HOLDING_ARC", "PATH_SEGMENT", "MISSED_APPROACH_ICON", "MISSED_APPROACH_STEP_BOX"}:
+        return False
+    return True
+
+
 def mapping_allowed_for_region_type(region_type, item_mapping):
     field_name = item_mapping.get("field_name", "")
     if field_name == "Q_terminator":
@@ -688,12 +774,35 @@ def mapping_allowed_for_region_type(region_type, item_mapping):
     return True
 
 
+def apply_source_hint_from_mappings(item):
+    if item.get("region_type") in COARSE_TYPES:
+        return item
+    mappings = item.get("candidate_mappings") or []
+    keys = {
+        (item_mapping.get("candidate_leg_id") or "", item_mapping.get("field_name") or "")
+        for item_mapping in mappings
+    }
+    keys.discard(("", ""))
+    if len(keys) == 1:
+        candidate_leg_id, field_name = next(iter(keys))
+        item["source_candidate_leg_id"] = candidate_leg_id
+        item["source_leg_type"] = mappings[0].get("leg_type") or ""
+        item["source_field_name"] = field_name
+    else:
+        item.pop("source_candidate_leg_id", None)
+        item.pop("source_leg_type", None)
+        item.pop("source_field_name", None)
+    return item
+
+
 def sanitize_region_mappings(item):
     region_type = item.get("region_type", "")
     item["candidate_mappings"] = dedupe_mappings([
         item_mapping for item_mapping in item.get("candidate_mappings", [])
         if mapping_allowed_for_region_type(region_type, item_mapping)
+        and fine_mapping_matches_visible_text(item, item_mapping)
     ])
+    apply_source_hint_from_mappings(item)
     return item
 
 
@@ -754,7 +863,13 @@ def merge_region_pair(base, extra):
     base["bbox"] = bbox_union([base["bbox"], extra["bbox"]]) or base["bbox"]
     base["confidence"] = max(float(base.get("confidence") or 0), float(extra.get("confidence") or 0))
     base["candidate_mappings"] = dedupe_mappings(base.get("candidate_mappings", []) + extra.get("candidate_mappings", []))
-    base["label"] = f"{base.get('label', '')}; {extra.get('label', '')}".strip("; ")
+    labels = []
+    for label in [base.get("label", ""), extra.get("label", "")]:
+        for part in str(label or "").split(";"):
+            part = part.strip()
+            if part and part not in labels:
+                labels.append(part)
+    base["label"] = "; ".join(labels)
     if REGION_TYPE_PRIORITY.get(extra.get("region_type"), 99) < REGION_TYPE_PRIORITY.get(base.get("region_type"), 99):
         base["region_type"] = extra["region_type"]
     sanitize_region_mappings(base)
@@ -879,21 +994,28 @@ def generate_chart(manifest_item, target):
     pdf_path = FORMAL / "pdfs" / manifest_item["pdf_file"]
     image_path = resolve_workspace_path(manifest_item["image_path"])
     if not pdf_path.exists():
-        all_fine = sanitize_region_list(deepcopy(existing_fine))
+        detail_roi = next((item["bbox"] for item in coarse if item.get("region_type") == "MISSED_APPROACH_DETAIL_AREA"), None) or DEFAULT_LOWER_ROI
+        all_fine = merge_overlapping_regions(copied + deepcopy(existing_fine))
+        all_fine = sanitize_region_list(all_fine)
+        all_fine = limit_duplicate_evidence(all_fine, detail_roi)
         sanitized_regions = coarse + all_fine
         if sanitized_regions != prelabel.get("regions", []):
             prelabel["regions"] = sanitized_regions
-            prelabel["prelabel_version"] = "v0.28-formal300-sanitized-existing-evidence"
+            prelabel["prelabel_version"] = "v0.29-formal300-typed-visible-evidence"
             prelabel["generated_at"] = datetime.now(timezone.utc).isoformat()
             prelabel.setdefault("generation_policy", {})
             prelabel["generation_policy"].update({
                 "formal300_small_box_prelabels_added": True,
-                "small_box_source": "preserved existing fine boxes because source PDFs are unavailable; sanitized field mappings by region type",
+                "small_box_source": "preserved existing fine boxes because source PDFs are unavailable; sanitized field mappings by region type and visible label text",
                 "small_box_final_ground_truth": False,
                 "small_box_human_calibration_required": True,
                 "candidate_mappings_are_cifp424_targets_not_independent_predictions": True,
                 "compound_q4_and_q_terminator_candidate_mappings": True,
                 "field_mapping_region_type_sanitizer": True,
+                "field_mapping_visible_text_sanitizer": True,
+                "fine_q_terminator_mappings_removed": True,
+                "hm_inherited_fix_alt_fine_mappings_removed": True,
+                "generic_path_hold_graphics_removed_from_q5_params": True,
                 "source_pdfs_available": False,
             })
             write_json(prelabel_path, prelabel)
@@ -906,7 +1028,7 @@ def generate_chart(manifest_item, target):
             "fine_count": len(all_fine),
             "match_count": 0,
             "selected_match_count": 0,
-            "detail_roi": next((item["bbox"] for item in coarse if item.get("region_type") == "MISSED_APPROACH_DETAIL_AREA"), None),
+            "detail_roi": detail_roi,
             "source_pdfs_available": False,
         }
 
@@ -934,7 +1056,7 @@ def generate_chart(manifest_item, target):
     add_compound_support_mappings(coarse + all_fine, lookup)
     all_fine = sanitize_region_list(all_fine)
     prelabel["regions"] = coarse + all_fine
-    prelabel["prelabel_version"] = "v0.28-formal300-structure-aware-sanitized-evidence"
+    prelabel["prelabel_version"] = "v0.29-formal300-structure-aware-typed-visible-evidence"
     prelabel["generated_at"] = datetime.now(timezone.utc).isoformat()
     prelabel.setdefault("generation_policy", {})
     prelabel["generation_policy"].update({
@@ -947,6 +1069,10 @@ def generate_chart(manifest_item, target):
         "candidate_mappings_are_cifp424_targets_not_independent_predictions": True,
         "compound_q4_and_q_terminator_candidate_mappings": True,
         "field_mapping_region_type_sanitizer": True,
+        "field_mapping_visible_text_sanitizer": True,
+        "fine_q_terminator_mappings_removed": True,
+        "hm_inherited_fix_alt_fine_mappings_removed": True,
+        "generic_path_hold_graphics_removed_from_q5_params": True,
         "low_confidence_blank_fallback_boxes_enabled": ENABLE_LOW_CONFIDENCE_FALLBACK_BOXES,
     })
     write_json(prelabel_path, prelabel)
