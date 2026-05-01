@@ -90,8 +90,10 @@ function apiUrl(path, extra = {}) {
   url.searchParams.set("dataset", datasetKey);
   const token = currentAccessToken();
   if (token) url.searchParams.set("token", token);
-  const annotator = params.get("annotator") || "";
-  if (annotator) url.searchParams.set("annotator", annotator);
+  if (!Object.prototype.hasOwnProperty.call(extra, "annotator")) {
+    const annotator = params.get("annotator") || "";
+    if (annotator) url.searchParams.set("annotator", annotator);
+  }
   Object.entries(extra).forEach(([key, value]) => {
     if (value !== undefined && value !== null && value !== "") url.searchParams.set(key, value);
   });
@@ -706,7 +708,7 @@ function renderAll() {
 }
 
 async function loadCharts() {
-  const data = await getJson(apiUrl("/api/charts", { scope: "queue" }));
+  const data = await getJson(apiUrl("/api/charts", { scope: "queue", annotator: "" }));
   state.charts = data.charts || [];
   els.chartSelect.innerHTML = state.charts.map((chart) => {
     const extra = chart.claim_status === "submitted" ? " · 已提交" : chart.claimed_by ? ` · ${chart.claimed_by}` : "";
@@ -716,7 +718,9 @@ async function loadCharts() {
 
 async function loadChart(chartId) {
   if (!chartId) throw new Error("请先选择 chart_id");
-  const data = await getJson(apiUrl("/api/chart", { chart_id: chartId }));
+  const chartRow = state.charts.find((chart) => chart.chart_id === chartId) || {};
+  const rowAnnotator = chartRow.original_annotator || chartRow.claimed_by || "";
+  const data = await getJson(apiUrl("/api/chart", { chart_id: chartId, annotator: rowAnnotator }));
   state.current = data;
   const sourceRegions = data.annotation?.regions || data.draft?.regions || [];
   state.regions = sourceRegions.map(normalizeRegion);
