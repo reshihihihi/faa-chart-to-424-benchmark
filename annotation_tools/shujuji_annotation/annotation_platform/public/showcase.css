@@ -153,15 +153,53 @@ body.resizing-columns {
 }
 
 .chart-pane {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: auto;
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #ebe3d5;
   box-shadow: var(--shadow);
+  overscroll-behavior: contain;
+}
+
+.chart-pane.zoomed {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.chart-tools {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(24, 33, 31, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 6px;
+  box-shadow: 0 10px 26px rgba(24, 33, 31, 0.12);
+}
+
+.chart-tools button {
+  min-width: 34px;
+  height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.chart-tools strong {
+  min-width: 48px;
+  text-align: center;
+  font-size: 13px;
 }
 
 .chart-frame {
@@ -227,6 +265,12 @@ body.resizing-columns {
   display: grid;
   gap: 10px;
   padding: 12px;
+}
+
+.record-panel {
+  display: grid;
+  gap: 10px;
+  padding: 12px 12px 0;
 }
 
 .chip-mark {
@@ -399,6 +443,15 @@ body.resizing-columns {
   top: calc(var(--lane) * 28px);
   min-width: var(--record-cell);
   color: #f4c65d;
+}
+
+.record-marker.dimmed {
+  opacity: 0.26;
+}
+
+.record-marker.active {
+  z-index: 2;
+  color: #ffd76d;
 }
 
 .record-underline {

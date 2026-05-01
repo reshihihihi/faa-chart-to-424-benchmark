@@ -16,9 +16,15 @@ const els = {
   chartImage: document.querySelector("#chartImage"),
   boxOverlay: document.querySelector("#boxOverlay"),
   leaderOverlay: document.querySelector("#leaderOverlay"),
+  chartZoomOut: document.querySelector("#chartZoomOut"),
+  chartZoomIn: document.querySelector("#chartZoomIn"),
+  chartZoomFit: document.querySelector("#chartZoomFit"),
+  chartZoomActual: document.querySelector("#chartZoomActual"),
+  chartZoomValue: document.querySelector("#chartZoomValue"),
   resizeHandle: document.querySelector("#showcaseResizeHandle"),
   panelTitle: document.querySelector("#panelTitle"),
   resultSource: document.querySelector("#resultSource"),
+  recordPanel: document.querySelector("#recordPanel"),
   fieldList: document.querySelector("#fieldList"),
   toast: document.querySelector("#toast")
 };
@@ -70,8 +76,15 @@ const state = {
   fieldReviews: {},
   currentLeg: 1,
   activeFieldKey: "",
+  chartZoom: 1,
+  fitZoom: 1,
+  zoomMode: "fit",
   resizing: null
 };
+
+const CHART_ZOOM_MIN = 0.25;
+const CHART_ZOOM_MAX = 3;
+const CHART_ZOOM_STEP = 0.12;
 
 function initializeAccessToken() {
   const token = params.get("token");
@@ -142,6 +155,14 @@ function escapeText(value) {
 
 function uniqueList(values) {
   return Array.from(new Set((values || []).filter(Boolean).map(String)));
+}
+
+function clamp(value, min = 0, max = 1) {
+  return Math.max(min, Math.min(max, Number(value)));
+}
+
+function zoomText(value) {
+  return `${Math.round(Number(value || 0) * 100)}%`;
 }
 
 function normalizeFieldReviews(source) {
@@ -392,6 +413,17 @@ function displayItems() {
   return activeRows().map((row) => ({ type: "field", key: row.key, row, rows: [row] }));
 }
 
+function ensureActiveField(items = displayItems()) {
+  if (!items.length) {
+    state.activeFieldKey = "";
+    return "";
+  }
+  if (!items.some((item) => item.key === state.activeFieldKey)) {
+    state.activeFieldKey = items[0].key;
+  }
+  return state.activeFieldKey;
+}
+
 function evidenceIdsForItem(item) {
   if (item.type === "field") return evidenceIdsForRow(item.row);
   return uniqueList((item.rows || [])
@@ -458,6 +490,7 @@ function renderLegOptions() {
 
 function renderFieldCards() {
   const items = displayItems();
+  const activeKey = ensureActiveField(items);
   els.panelTitle.textContent = els.showAllLegs.checked
     ? "全部航段 · 证据结论"
     : `航段 ${state.currentLeg} · 证据结论`;
@@ -468,12 +501,19 @@ function renderFieldCards() {
   }
   els.fieldList.innerHTML = activeLegIndexes().map((legIndex) => renderLegEvidenceGroup(legIndex)).join("");
   els.fieldList.querySelectorAll(".field-card").forEach((card) => {
+    card.classList.toggle("active", card.dataset.fieldKey === activeKey);
     card.addEventListener("mouseenter", () => {
       state.activeFieldKey = card.dataset.fieldKey || "";
+      els.fieldList.querySelectorAll(".field-card").forEach((item) => {
+        item.classList.toggle("active", item.dataset.fieldKey === state.activeFieldKey);
+      });
+      renderRecordPanel();
       renderOverlays();
     });
-    card.addEventListener("mouseleave", () => {
-      state.activeFieldKey = "";
+    card.addEventListener("click", () => {
+      state.activeFieldKey = card.dataset.fieldKey || "";
+      renderFieldCards();
+      renderRecordPanel();
       renderOverlays();
     });
   });
@@ -526,7 +566,9 @@ function renderRawRecordMarkers(annotations) {
   return annotations.map((item, lane) => {
     const start = Math.max(0, Number(item.segment.start || 0));
     const length = Math.max(1, Number(item.segment.end || 0) - start);
-    return `<div class="record-marker" style="--grid-start:${start + 1};--len:${length};--lane:${lane}">
+    const active = state.activeFieldKey === item.row.key;
+    const dimmed = state.activeFieldKey && !active ? " dimmed" : "";
+    return `<div class="record-marker${active ? " active" : ""}${dimmed}" style="--grid-start:${start + 1};--len:${length};--lane:${lane}">
       <span class="record-underline"></span>
       <span class="record-stem"></span>
       <span class="record-label">[${item.number}] ${escapeText(item.segment.label)}</span>
@@ -559,11 +601,20 @@ function renderRawRecordBlock(legIndex) {
   </section>`;
 }
 
+function renderRecordPanel() {
+  if (!els.recordPanel) return;
+  const legs = activeLegIndexes();
+  if (!legs.length) {
+    els.recordPanel.innerHTML = "";
+    return;
+  }
+  els.recordPanel.innerHTML = legs.map((legIndex) => renderRawRecordBlock(legIndex)).join("");
+}
+
 function renderLegEvidenceGroup(legIndex) {
   const rows = activeRows().filter((row) => row.canonical_leg_index === legIndex);
   if (!rows.length) return "";
   return `<section class="evidence-group">
-    ${renderRawRecordBlock(legIndex)}
     <div class="numbered-field-list">
       ${rows.map((row) => renderEvidenceCard(row)).join("")}
     </div>
@@ -616,16 +667,17 @@ function renderBoxes() {
   const naturalHeight = els.chartImage.naturalHeight || state.current?.manifest?.image_dimensions?.height || 1;
   els.boxOverlay.setAttribute("viewBox", `0 0 ${naturalWidth} ${naturalHeight}`);
   const evidenceMap = activeEvidenceMap();
+  const activeKey = ensureActiveField();
   els.boxOverlay.innerHTML = Array.from(evidenceMap.entries()).map(([regionId, items]) => {
     const region = findRegion(regionId);
     if (!region) return "";
     const rect = regionRect(region, naturalWidth, naturalHeight);
-    const active = !state.activeFieldKey || items.some((item) => item.key === state.activeFieldKey);
+    const active = Boolean(activeKey && items.some((item) => item.key === activeKey));
     const meta = evidenceCategoryMeta(region);
-    const opacity = active ? 0.96 : 0.22;
+    const opacity = active ? 0.96 : 0.16;
     const markerX = Math.max(2, rect.x - 4);
     const markerY = Math.max(2, rect.y - 22);
-    return `<g>
+    return `<g opacity="${active ? 1 : 0.28}">
       <rect x="${rect.x}" y="${rect.y}" width="${rect.w}" height="${rect.h}" rx="4"
         fill="${meta.color}" fill-opacity="0.11" stroke="${meta.color}" stroke-width="${active ? 3 : 2}" stroke-opacity="${opacity}" stroke-dasharray="${meta.dash}"></rect>
       ${markerSvg(meta, markerX, markerY, 18)}
@@ -640,6 +692,7 @@ function renderLeaders() {
   const shellHeight = els.viewerShell.clientHeight;
   els.leaderOverlay.setAttribute("viewBox", `0 0 ${shellWidth} ${shellHeight}`);
   const paths = [];
+  const activeKey = ensureActiveField();
   for (const item of displayItems()) {
     const card = els.fieldList.querySelector(`[data-field-key="${CSS.escape(item.key)}"]`);
     if (!card) continue;
@@ -647,7 +700,7 @@ function renderLeaders() {
     if (cardRect.bottom < shellRect.top || cardRect.top > shellRect.bottom) continue;
     const endX = cardRect.left - shellRect.left + 2;
     const endY = cardRect.top - shellRect.top + Math.min(52, Math.max(30, cardRect.height / 2));
-    const active = !state.activeFieldKey || state.activeFieldKey === item.key;
+    const active = Boolean(activeKey && activeKey === item.key);
     for (const regionId of evidenceIdsForItem(item)) {
       const region = findRegion(regionId);
       if (!region) continue;
@@ -669,16 +722,56 @@ function renderOverlays() {
   renderLeaders();
 }
 
-function fitChartToPane() {
+function chartNaturalSize() {
   const dimensions = state.current?.manifest?.image_dimensions || {};
-  const naturalWidth = els.chartImage.naturalWidth || Number(dimensions.width || 0);
-  const naturalHeight = els.chartImage.naturalHeight || Number(dimensions.height || 0);
-  if (!naturalWidth || !naturalHeight) return;
+  return {
+    width: els.chartImage.naturalWidth || Number(dimensions.width || 0),
+    height: els.chartImage.naturalHeight || Number(dimensions.height || 0)
+  };
+}
+
+function computeFitZoom() {
+  const { width, height } = chartNaturalSize();
+  if (!width || !height) return 1;
   const paneWidth = Math.max(320, els.chartPane.clientWidth - 24);
   const paneHeight = Math.max(360, els.chartPane.clientHeight - 24);
-  const scale = Math.min(paneWidth / naturalWidth, paneHeight / naturalHeight);
-  els.chartFrame.style.width = `${Math.floor(naturalWidth * scale)}px`;
-  els.chartFrame.style.height = `${Math.floor(naturalHeight * scale)}px`;
+  return clamp(Math.min(paneWidth / width, paneHeight / height), CHART_ZOOM_MIN, CHART_ZOOM_MAX);
+}
+
+function applyChartZoom({ render = true } = {}) {
+  const { width, height } = chartNaturalSize();
+  if (!width || !height) return;
+  state.chartZoom = clamp(state.chartZoom || state.fitZoom || 1, CHART_ZOOM_MIN, CHART_ZOOM_MAX);
+  els.chartFrame.style.width = `${Math.round(width * state.chartZoom)}px`;
+  els.chartFrame.style.height = `${Math.round(height * state.chartZoom)}px`;
+  els.chartPane.classList.toggle("zoomed", state.chartZoom > state.fitZoom * 1.01);
+  if (els.chartZoomValue) els.chartZoomValue.textContent = zoomText(state.chartZoom);
+  if (render) window.requestAnimationFrame(renderOverlays);
+}
+
+function fitChartToPane() {
+  state.fitZoom = computeFitZoom();
+  if (state.zoomMode === "fit") state.chartZoom = state.fitZoom;
+  applyChartZoom();
+}
+
+function setChartZoom(value, mode = "manual") {
+  state.zoomMode = mode;
+  state.chartZoom = clamp(value, CHART_ZOOM_MIN, CHART_ZOOM_MAX);
+  applyChartZoom();
+}
+
+function adjustChartZoom(direction) {
+  setChartZoom((state.chartZoom || state.fitZoom || 1) + direction * CHART_ZOOM_STEP);
+}
+
+function fitChartZoom() {
+  state.zoomMode = "fit";
+  fitChartToPane();
+}
+
+function actualSizeChartZoom() {
+  setChartZoom(1, "manual");
 }
 
 function clampPanelWidth(width) {
@@ -704,6 +797,7 @@ function renderAll() {
   renderLegOptions();
   fitChartToPane();
   renderFieldCards();
+  renderRecordPanel();
   renderOverlays();
 }
 
@@ -722,6 +816,8 @@ async function loadChart(chartId) {
   const rowAnnotator = chartRow.original_annotator || chartRow.claimed_by || "";
   const data = await getJson(apiUrl("/api/chart", { chart_id: chartId, annotator: rowAnnotator }));
   state.current = data;
+  state.activeFieldKey = "";
+  state.zoomMode = "fit";
   const sourceRegions = data.annotation?.regions || data.draft?.regions || [];
   state.regions = sourceRegions.map(normalizeRegion);
   state.fieldReviews = normalizeFieldReviews(data.annotation?.field_reviews || data.draft?.field_reviews || {});
@@ -744,6 +840,15 @@ async function loadChart(chartId) {
 function bindEvents() {
   const savedWidth = Number(localStorage.getItem("shujuji_showcase_right_width") || 0);
   if (savedWidth) applyRightPanelWidth(savedWidth);
+  els.chartZoomOut?.addEventListener("click", () => adjustChartZoom(-1));
+  els.chartZoomIn?.addEventListener("click", () => adjustChartZoom(1));
+  els.chartZoomFit?.addEventListener("click", fitChartZoom);
+  els.chartZoomActual?.addEventListener("click", actualSizeChartZoom);
+  els.chartPane.addEventListener("wheel", (event) => {
+    if (!event.ctrlKey && !event.metaKey) return;
+    event.preventDefault();
+    adjustChartZoom(event.deltaY < 0 ? 1 : -1);
+  }, { passive: false });
   els.loadChartBtn.addEventListener("click", () => loadChart(els.chartInput.value.trim()).catch((error) => showToast(error.message)));
   els.chartInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") loadChart(els.chartInput.value.trim()).catch((error) => showToast(error.message));
@@ -751,11 +856,15 @@ function bindEvents() {
   els.chartSelect.addEventListener("change", () => loadChart(els.chartSelect.value).catch((error) => showToast(error.message)));
   els.legSelect.addEventListener("change", () => {
     state.currentLeg = Number(els.legSelect.value || 1);
+    state.activeFieldKey = "";
     renderFieldCards();
+    renderRecordPanel();
     renderOverlays();
   });
   els.showAllLegs.addEventListener("change", () => {
+    state.activeFieldKey = "";
     renderFieldCards();
+    renderRecordPanel();
     renderOverlays();
   });
   els.resizeHandle?.addEventListener("pointerdown", (event) => {
