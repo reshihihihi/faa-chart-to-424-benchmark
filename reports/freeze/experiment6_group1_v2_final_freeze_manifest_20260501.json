@@ -1,0 +1,154 @@
+{
+  "created_date": "2026-05-01",
+  "purpose": "Final package for Group 1 scoring-equivalence v2 fix and Experiment 6 completion after Group 1 v2.",
+  "primary_reports": [
+    "reports/freeze/group1_scoring_equivalence_v2_formal200_zh_20260501.md",
+    "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/reports/experiment6_final_completion_after_group1_v2_zh_20260501.md"
+  ],
+  "artifact_count": 23,
+  "artifacts": [
+    {
+      "path": "scripts/scorers/group1_canonical_field_scorer.py",
+      "exists": true,
+      "sha256": "264fcfb740ec586fa1877cf29a2fb7d6ac064cfbc22577e3b8cc0dc880318f2d",
+      "bytes": 14848
+    },
+    {
+      "path": "scripts/rescore_group1_formal200_equivalence_v2.py",
+      "exists": true,
+      "sha256": "0927ee120f9e3caef2903feab1f3c66f99b865ab26ae1d28e0edd5e39c9f9e7f",
+      "bytes": 13578
+    },
+    {
+      "path": "reports/freeze/group1_scoring_equivalence_v2_formal200_zh_20260501.md",
+      "exists": true,
+      "sha256": "59a1e9f9ec50e90b9eb330a1811495c211adf5f2af21961ff57c5e308991b934",
+      "bytes": 5266
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/targets/comparison_policy_v2.jsonl",
+      "exists": true,
+      "sha256": "43847a3b80fb8b539f727998aa8338f3997c7dfee43f5d7180c1a2e3f395ff09",
+      "bytes": 2585554
+    },
+    {
+      "path": "benchmark_exports/derived/v2/formal300/targets/comparison_policy_v2_summary.json",
+      "exists": true,
+      "sha256": "277d812f429a23a3c461418e8756f0e6ae75aa4c7c0d2bfca0e0e5467558009d",
+      "bytes": 736
+    },
+    {
+      "path": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/prompts/formal_v2_direct_vlm_verifier_policy_v3.md",
+      "exists": true,
+      "sha256": "1f350dbe46445076239612095cc6755879ee222786becce0774f95caaba4756b",
+      "bytes": 3312
+    },
+    {
+      "path": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/prompts/formal_v2_direct_vlm_verifier_policy_v2.md",
+      "exists": true,
+      "sha256": "4d53b39c1c192fb8522e388c9b7fd68baf7c91591c6e13189186eadd97130202",
+      "bytes": 2882
+    },
+    {
+      "path": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/prompts/formal_v2_direct_vlm_verifier_policy_v4.md",
+      "exists": true,
+      "sha256": "d1a2b34498b50dc9008a2e166f3994688b83db9e64271454562cdf71b617b4e3",
+      "bytes": 3621
+    },
+    {
+      "path": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/configs/formal_v2_e6_core_run_config_20260501_r2_policyv3.json",
+      "exists": true,
+      "sha256": "454f9b9fa5060019e5519d99f05bcee8545b225a984412e6724bdac3dab87971",
+      "bytes": 3934
+    },
+    {
+      "path": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/scripts/normalize_experiment6_error_fields.py",
+      "exists": true,
+      "sha256": "702e5e78ad4608bd4a6530a704c9d0416e460bf7a2932dc25ede4786f0848596",
+      "bytes": 6221
+    },
+    {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/combined_summary_table.csv",
+      "exists": true,
+      "sha256": "936fb52993ecda81fb9509521ebe5ad94f5e861f7fd8031d3a8d3d44b89e2467",
+      "bytes": 1012
+    },
+    {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/strict_vs_v2_delta_by_method.csv",
+      "exists": true,
+      "sha256": "b45c6a193fe2269f0d10db1f13a96489ea17618182a3794590c45a2a304cea4b",
+      "bytes": 1205
+    },
+    {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/policy_scope_audit.json",
+      "exists": true,
+      "sha256": "acda73ebd90625833607842e1df2902e34357d517143c5ca2bff83df4a867105",
+      "bytes": 420
+    },
+    {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/rescore_manifest.json",
+      "exists": true,
+      "sha256": "a78fc03a50428dafa3dc35c26c9724ca61ddeaba072223d24b5650e9d225b0b9",
+      "bytes": 1823
+    },
+    {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/V2_direct_image_e6_core_policyv3_20260501_r2/run_config.json",
+      "exists": true,
+      "sha256": "454f9b9fa5060019e5519d99f05bcee8545b225a984412e6724bdac3dab87971",
+      "bytes": 3934
+    },
+    {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/V2_direct_image_e6_core_policyv3_20260501_r2/run_summary.json",
+      "exists": true,
+      "sha256": "864f4a8bb77d230c27358177bb7794a55bc2da662d2aeeb103b73ac7985b1c24",
+      "bytes": 924
+    },
+    {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/V2_direct_image_e6_core_policyv3_20260501_r2/prediction_integrity_audit.json",
+      "exists": true,
+      "sha256": "c44db35b2179adcef7811ffa88452a0aafcacfdd196e38f098d9e93666776775",
+      "bytes": 149
+    },
+    {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/V2_direct_image_e6_core_policyv3_20260501_r2/error_field_normalization_audit.json",
+      "exists": true,
+      "sha256": "99d66cdcd43b96cd4e1850adeb624e8e340bd1ba9f4c05f1dad2dcc826904c55",
+      "bytes": 15572
+    },
+    {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/V2_direct_image_e6_core_policyv3_20260501_r2/score_summary.normalized_error_fields.json",
+      "exists": true,
+      "sha256": "b002260cbae0a9c240544933bb361b038576b487e25d2591031684f82f0b12a0",
+      "bytes": 12091
+    },
+    {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/V2_direct_image_e6_core_policyv3_20260501_r2/score_report.normalized_error_fields.md",
+      "exists": true,
+      "sha256": "2a4609c8f04685d500965f3ee84415a2595a980a5b0a5e2e5c2756bf13c7f0a9",
+      "bytes": 2066
+    },
+    {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/reports/experiment6_final_completion_after_group1_v2_zh_20260501.md",
+      "exists": true,
+      "sha256": "7d769f59642ff7460500b2fabedbf3780bb027babe717e8509455ff5009e77fe",
+      "bytes": 9563
+    },
+    {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/reports/experiment6_e6_core_final_comparison_after_group1_v2_20260501.csv",
+      "exists": true,
+      "sha256": "c7bd8e25a9b90b3080d4ae2875eed7c271832dd136cfe7fd17911f3569004488",
+      "bytes": 3115
+    },
+    {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/reports/experiment6_core_final_integrity_audit_after_normalization_20260501.json",
+      "exists": true,
+      "sha256": "81cc1683d6901664220a4c8634a11a328cb175c45c2af393279e4bc6c42824b0",
+      "bytes": 4545
+    }
+  ],
+  "notes": [
+    "Large images/PDFs and full prediction JSONL files are intentionally not listed as PR-minimal artifacts unless needed for archival.",
+    "V2 r2 raw/normalized predictions remain saved locally under the run directory.",
+    "D-SFT invalid extraction remains counted as method failure and is not repaired with target leakage."
+  ]
+}

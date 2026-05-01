@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
+import re
 from pathlib import Path
 from typing import Any
 
@@ -99,16 +101,153 @@ def score_answer(pred: Any, target: Any) -> bool:
     return pred == target
 
 
-def score_canonical(pred: dict[str, Any], target: dict[str, Any]) -> dict[str, Any]:
+def normalize_display_string(value: Any) -> Any:
+    if not isinstance(value, str):
+        return value
+    return re.sub(r"[\s.\-_/']", "", value.upper())
+
+
+def is_number(value: Any) -> bool:
+    return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
+
+
+def is_display_integer(value: Any) -> bool:
+    return is_number(value) and abs(float(value) - round(float(value))) < 1e-9
+
+
+def round_half_up_to_int(value: Any) -> int | None:
+    if not is_number(value):
+        return None
+    return int(math.floor(float(value) + 0.5))
+
+
+def score_degree_display_value(pred_value: Any, target_value: Any) -> bool:
+    if pred_value == target_value:
+        return True
+    if not (is_number(pred_value) and is_number(target_value)):
+        return False
+    pred_is_int = is_display_integer(pred_value)
+    target_is_int = is_display_integer(target_value)
+    if pred_is_int and not target_is_int:
+        return int(round(float(pred_value))) == round_half_up_to_int(target_value)
+    if target_is_int and not pred_is_int:
+        return round_half_up_to_int(pred_value) == int(round(float(target_value)))
+    return False
+
+
+def score_dict_with_relaxed_keys(
+    pred_value: Any,
+    target_value: Any,
+    *,
+    normalized_string_keys: set[str] | None = None,
+    degree_display_keys: set[str] | None = None,
+) -> bool:
+    if not isinstance(pred_value, dict) or not isinstance(target_value, dict):
+        return pred_value == target_value
+
+    if set(pred_value) != set(target_value):
+        return False
+
+    normalized_string_keys = normalized_string_keys or set()
+    degree_display_keys = degree_display_keys or set()
+    for key in target_value:
+        pred_item = pred_value.get(key)
+        target_item = target_value.get(key)
+        if key in normalized_string_keys:
+            if normalize_display_string(pred_item) != normalize_display_string(target_item):
+                return False
+        elif key in degree_display_keys:
+            if not score_degree_display_value(pred_item, target_item):
+                return False
+        elif pred_item != target_item:
+            return False
+    return True
+
+
+def score_answer_narrowed_v2(pred: Any, target: Any, *, question_field: str) -> tuple[bool, str]:
+    """Narrow display-equivalence policy for PR #25.
+
+    This deliberately does not relax altitude, turn, leg alignment, hold time/distance,
+    reciprocal courses, or missing/present status mismatches.
+    """
+    strict_ok = score_answer(pred, target)
+    if strict_ok:
+        return True, "strict_equal"
+
+    if not isinstance(pred, dict) or not isinstance(target, dict):
+        return False, "strict_non_answer"
+    if pred.get("status") != target.get("status"):
+        return False, "strict_status_mismatch"
+    if pred.get("status") != "present":
+        return False, "strict_non_present_value"
+
+    pred_value = pred.get("value")
+    target_value = target.get("value")
+    if question_field == "Q1_fix_ident":
+        ok = normalize_display_string(pred_value) == normalize_display_string(target_value)
+        return ok, "normalized_string" if ok else "normalized_string_mismatch"
+    if question_field == "Q4_course_or_radial":
+        ok = score_dict_with_relaxed_keys(
+            pred_value,
+            target_value,
+            normalized_string_keys={"navaid"},
+            degree_display_keys={"course_deg", "radial_deg"},
+        )
+        return ok, "degree_display_rounding" if ok else "degree_display_rounding_mismatch"
+    if question_field == "Q5_hold_params":
+        ok = score_dict_with_relaxed_keys(
+            pred_value,
+            target_value,
+            degree_display_keys={"inbound_course_deg"},
+        )
+        return ok, "hold_inbound_course_display_rounding" if ok else "hold_params_strict_mismatch"
+    return False, "strict_only_field"
+
+
+def score_answer_with_policy(
+    pred: Any,
+    target: Any,
+    *,
+    question_field: str,
+    comparison_policy: str,
+) -> tuple[bool, str, bool]:
+    strict_ok = score_answer(pred, target)
+    if comparison_policy == "strict":
+        return strict_ok, "strict_equal" if strict_ok else "strict_mismatch", strict_ok
+    if comparison_policy == "narrowed_v2":
+        ok, reason = score_answer_narrowed_v2(pred, target, question_field=question_field)
+        return ok, reason, strict_ok
+    raise ValueError(f"unknown comparison_policy: {comparison_policy}")
+
+
+def score_canonical(
+    pred: dict[str, Any],
+    target: dict[str, Any],
+    *,
+    comparison_policy: str = "strict",
+) -> dict[str, Any]:
     rows = []
     total = 0
     correct = 0
 
     pred_leg_count = pred.get("missed_approach", {}).get("leg_count")
     target_leg_count = target.get("missed_approach", {}).get("leg_count")
-    ok = score_answer(pred_leg_count, target_leg_count)
+    ok, reason, strict_ok = score_answer_with_policy(
+        pred_leg_count,
+        target_leg_count,
+        question_field="leg_count",
+        comparison_policy=comparison_policy,
+    )
     rows.append(
-        {"field": "leg_count", "correct": ok, "pred": pred_leg_count, "target": target_leg_count}
+        {
+            "field": "leg_count",
+            "question_field": "leg_count",
+            "correct": ok,
+            "strict_correct": strict_ok,
+            "match_policy": reason,
+            "pred": pred_leg_count,
+            "target": target_leg_count,
+        }
     )
     total += 1
     correct += int(ok)
@@ -125,11 +264,19 @@ def score_canonical(pred: dict[str, Any], target: dict[str, Any]) -> dict[str, A
         for field in QUESTION_FIELDS:
             pred_answer = pred_answers.get(field)
             target_answer = target_answers.get(field)
-            ok = score_answer(pred_answer, target_answer)
+            ok, reason, strict_ok = score_answer_with_policy(
+                pred_answer,
+                target_answer,
+                question_field=field,
+                comparison_policy=comparison_policy,
+            )
             rows.append(
                 {
                     "field": f"leg_{idx}.{field}",
+                    "question_field": field,
                     "correct": ok,
+                    "strict_correct": strict_ok,
+                    "match_policy": reason,
                     "pred": pred_answer,
                     "target": target_answer,
                 }
@@ -142,6 +289,7 @@ def score_canonical(pred: dict[str, Any], target: dict[str, Any]) -> dict[str, A
         "total": total,
         "accuracy": correct / total if total else None,
         "rows": rows,
+        "comparison_policy": comparison_policy,
     }
 
 
@@ -197,6 +345,12 @@ def main() -> int:
         "--failure-type",
         choices=["parse_failure", "schema_failure", "api_failure", "missing_prediction"],
     )
+    parser.add_argument(
+        "--comparison-policy",
+        default="strict",
+        choices=["strict", "narrowed_v2"],
+        help="Field comparison policy. Default strict preserves the original scorer.",
+    )
     args = parser.parse_args()
 
     schema = load_json(args.schema)
@@ -217,6 +371,7 @@ def main() -> int:
         "prediction_validation_errors": pred_errors,
         "prediction_schema_valid": bool(prediction is not None and not pred_errors),
         "invalid_output_policy": args.invalid_output_policy,
+        "comparison_policy": args.comparison_policy,
     }
 
     exit_code = 0
@@ -244,7 +399,11 @@ def main() -> int:
                 failure_detail=pred_errors,
             )
         elif not pred_errors and not target_errors and prediction is not None:
-            result["score"] = score_canonical(prediction, target)
+            result["score"] = score_canonical(
+                prediction,
+                target,
+                comparison_policy=args.comparison_policy,
+            )
         else:
             result["score"] = None
 

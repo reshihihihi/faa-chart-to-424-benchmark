@@ -1,0 +1,22 @@
+{
+  "corrected_rows": 439,
+  "by_method": {
+    "B1": 6,
+    "B1_prime": 5,
+    "C1": 93,
+    "C2": 104,
+    "C3": 71,
+    "C4": 14,
+    "D_SFT": 146
+  },
+  "by_question_field": {
+    "Q4_course_or_radial": 370,
+    "Q5_hold_params": 69
+  },
+  "by_match_policy": {
+    "degree_display_rounding": 370,
+    "hold_inbound_course_display_rounding": 69
+  },
+  "violation_count": 0,
+  "violations": []
+}
