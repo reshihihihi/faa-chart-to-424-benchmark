@@ -568,10 +568,11 @@ function renderRawRecordMarkers(annotations) {
     const length = Math.max(1, Number(item.segment.end || 0) - start);
     const active = state.activeFieldKey === item.row.key;
     const dimmed = state.activeFieldKey && !active ? " dimmed" : "";
-    return `<div class="record-marker${active ? " active" : ""}${dimmed}" style="--grid-start:${start + 1};--len:${length};--lane:${lane}">
+    const label = `[${item.number}] ${item.segment.label}`;
+    return `<div class="record-marker${active ? " active" : ""}${dimmed}" title="${escapeText(label)}" style="--grid-start:${start + 1};--len:${length};--lane:${lane}">
       <span class="record-underline"></span>
       <span class="record-stem"></span>
-      <span class="record-label">[${item.number}] ${escapeText(item.segment.label)}</span>
+      <span class="record-label">[${item.number}]</span>
     </div>`;
   }).join("");
 }

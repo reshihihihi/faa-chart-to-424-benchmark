@@ -588,11 +588,34 @@ function sameSourceLeg(row, region) {
   return (region.candidate_mappings || []).some((mapping) => canonicalLegIndexForMapping(mapping) === row.canonical_leg_index);
 }
 
+function regionText(region) {
+  return ["region_type", "label", "ocr_text", "expected_visual_value", "element_role"]
+    .map((key) => String(region?.[key] || ""))
+    .join(" ")
+    .toUpperCase();
+}
+
+function isHoldingParamRegion(region) {
+  const regionType = region?.region_type || "";
+  if (["HOLDING_PATTERN", "HOLDING_ARC", "HOLDING_TIME_TEXT", "DME_DISTANCE_TEXT", "TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(regionType)) {
+    return true;
+  }
+  return regionType === "PATH_SEGMENT" && regionText(region).includes("HOLDING_PATTERN");
+}
+
+function isCoarseMissedApproachText(region) {
+  return (region?.region_type || "") === "MISSED_APPROACH_TEXT"
+    && (
+      region.annotation_scope === "upper_coarse_formal_annotation"
+      || regionText(region).includes("UPPER COARSE FORMAL ANNOTATION")
+    );
+}
+
 function fieldEvidenceRank(row, region) {
   const regionType = region?.region_type || "";
   const value = expectedAnswerValue(row);
   if (!row || !region) return 99;
-  if (regionType === "MISSED_APPROACH_TEXT") return 60;
+  if (regionType === "MISSED_APPROACH_TEXT") return isCoarseMissedApproachText(region) ? 99 : 60;
   if (row.field_name === "Q1_fix_ident") {
     if (["FIX_TEXT", "NAVAID_TEXT"].includes(regionType)) return 0;
     if (regionType === "FIX_SYMBOL") return 8;
@@ -620,8 +643,8 @@ function fieldEvidenceRank(row, region) {
   }
   if (row.field_name === "Q5_hold_params") {
     if (["HOLDING_PATTERN", "HOLDING_ARC"].includes(regionType)) return 0;
+    if (regionType === "PATH_SEGMENT" && regionText(region).includes("HOLDING_PATTERN")) return 0;
     if (["HOLDING_TIME_TEXT", "DME_DISTANCE_TEXT", "TRACK_OR_RADIAL_TEXT", "RADIAL_TEXT", "OUTBOUND_INBOUND_MARK"].includes(regionType)) return 4;
-    if (["FIX_TEXT", "NAVAID_TEXT", "FIX_SYMBOL"].includes(regionType)) return 12;
     return 99;
   }
   return 50;
@@ -668,6 +691,33 @@ function suggestedEvidenceEntriesForField(row) {
   return fine.length ? fine : ranked;
 }
 
+function holdingEvidenceEntriesForField(row) {
+  const holdRankRow = { ...row, field_name: "Q5_hold_params" };
+  const direct = candidateMappingsForField(row)
+    .filter(({ region }) => isHoldingParamRegion(region))
+    .map(({ region, mapping }) => ({
+      region,
+      mapping,
+      rank: fieldEvidenceRank(holdRankRow, region),
+      source: "candidate-mapping"
+    }));
+  const compatible = state.regions
+    .filter((region) => sameSourceLeg(row, region) && isHoldingParamRegion(region))
+    .map((region) => ({
+      region,
+      rank: fieldEvidenceRank(holdRankRow, region),
+      source: "compatible-region"
+    }));
+  const byRegion = new Map();
+  [...direct, ...compatible].forEach((item) => {
+    const existing = byRegion.get(item.region.region_id);
+    if (!existing || item.rank < existing.rank) byRegion.set(item.region.region_id, item);
+  });
+  return Array.from(byRegion.values())
+    .filter((item) => item.rank < 50)
+    .sort((left, right) => left.rank - right.rank);
+}
+
 function uniqueList(values) {
   return Array.from(new Set((values || []).filter(Boolean).map(String)));
 }
@@ -704,6 +754,14 @@ function supportModeFromReview(raw, evidenceIds = []) {
 }
 
 function suggestedEvidenceIdsForField(row) {
+  if (row.field_name === "Q5_hold_params") {
+    return uniqueList(holdingEvidenceEntriesForField(row).map(({ region }) => region.region_id));
+  }
+  if (row.leg_type === "HM" && ["Q1_fix_ident", "Q2_altitude_constraint"].includes(row.field_name)) {
+    const directIds = suggestedEvidenceEntriesForField(row).map(({ region }) => region.region_id);
+    const holdingIds = holdingEvidenceEntriesForField(row).map(({ region }) => region.region_id);
+    return uniqueList([...directIds, ...holdingIds]);
+  }
   if (row.field_name === "Q_terminator") {
     const legFieldIds = buildFieldRows()
       .filter((item) => item.requires_review && item.canonical_leg_index === row.canonical_leg_index && item.field_name !== "Q_terminator")
@@ -995,6 +1053,10 @@ function recommendedSupportModeForField(row, evidenceIds) {
   if (!row) return "";
   if (row.field_name === "Q_terminator") return "visible_joint";
   if (!evidenceIds.length) return "";
+  if (row.leg_type === "HM" && ["Q1_fix_ident", "Q2_altitude_constraint"].includes(row.field_name)) {
+    return "rule_default_completion";
+  }
+  if (row.field_name === "Q5_hold_params") return "rule_default_completion";
   return evidenceIds.length > 1 ? "visible_joint" : "direct_visible";
 }
 
@@ -2402,9 +2464,11 @@ function applyLoadedChart(chartData, fallbackChartId = "") {
   state.current = chartData;
   state.dataset = state.current.dataset || datasetConfig;
   const chartId = state.current.manifest?.chart_id || fallbackChartId;
-  const sourceRegions = state.current.draft?.regions || state.current.annotation?.regions || state.current.prelabel?.regions || [];
+  const withdrawnBatchAnnotation = /AI batch submission withdrawn/i.test(state.current.manifest?.return_reason || "");
+  const usableAnnotation = withdrawnBatchAnnotation ? null : state.current.annotation;
+  const sourceRegions = state.current.draft?.regions || usableAnnotation?.regions || state.current.prelabel?.regions || [];
   state.regions = sourceRegions.map(normalizeRegion);
-  state.fieldReviews = normalizeFieldReviews(state.current.draft?.field_reviews || state.current.annotation?.field_reviews || {});
+  state.fieldReviews = normalizeFieldReviews(state.current.draft?.field_reviews || usableAnnotation?.field_reviews || {});
   state.confirmModeDrafts = {};
   state.selectedFieldKey = null;
   state.pendingLinkFieldKey = null;

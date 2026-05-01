@@ -10,7 +10,7 @@
   --gold: #a96e14;
   --red: #b34b4b;
   --shadow: 0 18px 44px rgba(28, 38, 35, 0.12);
-  --showcase-right-width: 540px;
+  --showcase-right-width: 430px;
   --record-cell: 8px;
 }
 
@@ -118,6 +118,7 @@ select {
   position: relative;
   display: grid;
   grid-template-columns: minmax(420px, 1fr) 10px minmax(360px, var(--showcase-right-width));
+  grid-template-rows: auto minmax(0, 1fr);
   gap: 10px;
   height: calc(100vh - 73px);
   padding: 14px;
@@ -126,6 +127,8 @@ select {
 
 .resize-handle {
   position: relative;
+  grid-column: 2;
+  grid-row: 2;
   z-index: 4;
   min-width: 10px;
   cursor: col-resize;
@@ -154,6 +157,9 @@ body.resizing-columns {
 
 .chart-pane {
   position: relative;
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -226,8 +232,11 @@ body.resizing-columns {
 
 .field-pane {
   position: relative;
+  grid-column: 3;
+  grid-row: 2;
   z-index: 2;
   overflow: auto;
+  min-height: 0;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -268,9 +277,16 @@ body.resizing-columns {
 }
 
 .record-panel {
+  position: relative;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  z-index: 2;
   display: grid;
-  gap: 10px;
-  padding: 12px 12px 0;
+  gap: 8px;
+  min-height: 0;
+  max-height: 190px;
+  overflow: auto;
+  padding: 0;
 }
 
 .chip-mark {
@@ -392,12 +408,12 @@ body.resizing-columns {
   border-radius: 8px;
   background: #17231f;
   color: #e8f3ef;
-  padding: 12px;
+  padding: 10px 12px;
 }
 
 .raw-record-card h2 {
-  margin: 4px 0 8px;
-  font-size: 16px;
+  margin: 3px 0 7px;
+  font-size: 14px;
 }
 
 .raw-record-card .meta {
@@ -473,7 +489,8 @@ body.resizing-columns {
 .record-label {
   position: absolute;
   top: 17px;
-  left: calc(50% - 8px);
+  left: 50%;
+  transform: translateX(-50%);
   white-space: nowrap;
   border-radius: 6px;
   background: #f4c65d;
@@ -527,9 +544,21 @@ body.resizing-columns {
 
   .viewer-shell {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
     height: auto;
     min-height: calc(100vh - 130px);
     overflow: visible;
+  }
+
+  .record-panel,
+  .chart-pane,
+  .field-pane {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .record-panel {
+    max-height: none;
   }
 
   .resize-handle {
