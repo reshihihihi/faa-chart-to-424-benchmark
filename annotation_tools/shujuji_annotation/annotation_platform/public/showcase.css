@@ -299,47 +299,21 @@ body.resizing-columns {
   grid-row: 1;
   z-index: 2;
   display: grid;
-  gap: 8px;
+  gap: 0;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 6px;
   background: #17231f;
   color: #e8f3ef;
-  padding: 10px 12px;
+  padding: 4px 6px;
   box-shadow: var(--shadow);
-}
-
-.record-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
-
-.record-toolbar > span {
-  font-size: 13px;
-  font-weight: 700;
-  color: #d9e8e1;
-}
-
-.record-toolbar select {
-  height: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 6px;
-  background: #0f1815;
-  color: #e8f3ef;
-  padding: 0 8px;
-}
-
-.record-toolbar .checkline {
-  height: 30px;
-  color: #b9c9c3;
-  padding: 0;
+  overflow: visible;
 }
 
 .record-panel {
   display: grid;
-  gap: 6px;
+  gap: 2px;
   padding: 0;
+  overflow: visible;
 }
 
 .chip-mark {
@@ -456,29 +430,38 @@ body.resizing-columns {
   gap: 10px;
 }
 
-.raw-record-card {
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 6px;
-  background: #111c18;
+.raw-record-line {
+  position: relative;
+  border: 0;
+  border-radius: 4px;
+  background: #0f1815;
   color: #e8f3ef;
-  padding: 8px;
+  cursor: pointer;
+  outline: 0;
+  overflow: visible;
 }
 
-.raw-record-card h2 {
-  margin: 3px 0 7px;
-  font-size: 14px;
+.raw-record-line.dimmed {
+  opacity: 1;
 }
 
-.raw-record-card .meta {
-  color: #b9c9c3;
-  font-size: 12px;
+.raw-record-line.dimmed .record-char {
+  opacity: 0.3;
+}
+
+.raw-record-line.active,
+.raw-record-line:hover,
+.raw-record-line:focus-visible {
+  opacity: 1;
+  background: #16251f;
+  box-shadow: inset 0 0 0 1px rgba(255, 215, 109, 0.34);
 }
 
 .raw-record-visual {
   overflow: visible;
-  border-radius: 6px;
-  background: #0f1815;
-  padding: 8px;
+  border-radius: 4px;
+  background: transparent;
+  padding: 0 3px;
   color: #f5fff9;
 }
 
@@ -486,10 +469,11 @@ body.resizing-columns {
   position: relative;
   display: grid;
   grid-template-columns: repeat(132, minmax(0, 1fr));
-  grid-template-rows: 18px var(--marker-height, 44px);
+  grid-template-rows: 22px;
   width: 100%;
-  min-height: calc(1.45em + var(--marker-height, 46px));
-  font: 12px/1.45 "Cascadia Mono", "Consolas", monospace;
+  min-height: 22px;
+  font: 11px/22px "Cascadia Mono", "Consolas", monospace;
+  overflow: visible;
 }
 
 .raw-record-text {
@@ -503,62 +487,81 @@ body.resizing-columns {
   overflow: hidden;
   white-space: pre;
   text-align: left;
+  opacity: 0.92;
 }
 
 .record-marker {
   --marker-color: #72807c;
   position: relative;
-  grid-row: 2;
+  z-index: 2;
+  grid-row: 1;
   grid-column: var(--grid-start) / span var(--len);
-  align-self: start;
+  align-self: stretch;
   appearance: none;
   border: 0;
-  background: transparent;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--marker-color), transparent 84%);
   padding: 0;
   min-width: var(--record-cell);
   color: var(--marker-color);
   cursor: pointer;
+  overflow: visible;
 }
 
 .record-marker.dimmed {
   --marker-color: #67736f;
-  opacity: 0.54;
+  opacity: 1;
 }
 
 .record-marker.active {
-  z-index: 2;
+  z-index: 3;
   --marker-color: #ffd76d;
   opacity: 1;
 }
 
 .record-underline {
   display: block;
-  height: 7px;
+  position: absolute;
+  inset: 0;
+  height: auto;
   border-bottom: 2px solid currentColor;
-  border-left: 2px solid currentColor;
-  border-right: 2px solid currentColor;
+  border-left: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  background: color-mix(in srgb, currentColor, transparent 88%);
+}
+
+.record-marker.dimmed .record-underline {
+  opacity: 0.28;
 }
 
 .record-stem {
-  display: block;
-  width: 2px;
-  height: 10px;
-  margin-left: calc(50% - 1px);
-  background: currentColor;
+  display: none;
 }
 
 .record-label {
   position: absolute;
+  z-index: 10;
   top: 17px;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  border-radius: 6px;
+  border-radius: 3px;
   background: var(--marker-color);
   color: #17231f;
-  padding: 3px 6px;
-  font-size: 12px;
+  padding: 0 3px;
+  font-size: 10px;
+  line-height: 13px;
   font-weight: 700;
+  pointer-events: none;
+  min-width: max-content;
+  max-width: none;
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(15, 24, 21, 0.4);
+}
+
+.record-marker.dimmed .record-label {
+  background: #53615d;
+  color: #f5fff9;
 }
 
 .numbered-field-list {

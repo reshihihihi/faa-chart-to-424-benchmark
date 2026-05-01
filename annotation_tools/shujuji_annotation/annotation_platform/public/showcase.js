@@ -10,8 +10,6 @@ const els = {
   editAnnotationLink: document.querySelector("#editAnnotationLink"),
   returnExpertBtn: document.querySelector("#returnExpertBtn"),
   returnOrdinaryBtn: document.querySelector("#returnOrdinaryBtn"),
-  legSelect: document.querySelector("#legSelect"),
-  showAllLegs: document.querySelector("#showAllLegs"),
   viewerShell: document.querySelector("#viewerShell"),
   chartPane: document.querySelector("#chartPane"),
   chartFrame: document.querySelector("#chartFrame"),
@@ -351,12 +349,13 @@ function colorForRow(row) {
   return COLORS[index % COLORS.length];
 }
 
-function activeRows() {
+function reviewedRows() {
   if (!Object.keys(state.fieldReviews).length) return [];
-  return state.rows.filter((row) => {
-    if (!els.showAllLegs.checked && row.canonical_leg_index !== state.currentLeg) return false;
-    return answerIsPresent(row) && Boolean(state.fieldReviews[row.key]);
-  });
+  return state.rows.filter((row) => answerIsPresent(row) && Boolean(state.fieldReviews[row.key]));
+}
+
+function activeRows() {
+  return reviewedRows().filter((row) => row.canonical_leg_index === state.currentLeg);
 }
 
 function legRowsForIndex(legIndex) {
@@ -365,7 +364,12 @@ function legRowsForIndex(legIndex) {
 
 function activeLegIndexes() {
   return Array.from(new Set(activeRows()
-    .filter((row) => els.showAllLegs.checked || row.canonical_leg_index === state.currentLeg)
+    .map((row) => row.canonical_leg_index)
+    .filter(Boolean)));
+}
+
+function recordLegIndexes() {
+  return Array.from(new Set(reviewedRows()
     .map((row) => row.canonical_leg_index)
     .filter(Boolean)));
 }
@@ -512,27 +516,18 @@ function updateAdminActions() {
 }
 
 function renderLegOptions() {
-  const rowsForLegs = Object.keys(state.fieldReviews).length
-    ? state.rows.filter((row) => state.fieldReviews[row.key])
-    : state.rows;
+  const rowsForLegs = reviewedRows().length ? reviewedRows() : state.rows;
   const legs = Array.from(new Map(rowsForLegs.map((row) => [row.canonical_leg_index, row])).values())
     .filter((row) => row.canonical_leg_index);
-  els.legSelect.innerHTML = legs.map((row) => {
-    const label = `航段 ${row.canonical_leg_index} · ${row.leg_type || "-"}`;
-    return `<option value="${row.canonical_leg_index}">${escapeText(label)}</option>`;
-  }).join("");
   if (!legs.some((row) => row.canonical_leg_index === state.currentLeg)) {
     state.currentLeg = legs[0]?.canonical_leg_index || 1;
   }
-  els.legSelect.value = String(state.currentLeg);
 }
 
 function renderFieldCards() {
   const items = displayItems();
   const activeKey = ensureActiveField(items);
-  els.panelTitle.textContent = els.showAllLegs.checked
-    ? "全部航段 · 证据结论"
-    : `航段 ${state.currentLeg} · 证据结论`;
+  els.panelTitle.textContent = `航段 ${state.currentLeg} · 证据结论`;
   els.resultSource.textContent = sourceLabel();
   if (!items.length) {
     els.fieldList.innerHTML = "<p class='muted'>这张图还没有可展示的人工标注结果。</p>";
@@ -569,7 +564,9 @@ function evidenceChipsForIds(evidenceIds) {
 }
 
 function recordAnnotationsForLeg(legIndex) {
-  const rows = activeArincRows().filter((row) => row.canonical_leg_index === legIndex);
+  const rows = reviewedRows()
+    .filter((row) => row.canonical_leg_index === legIndex)
+    .filter((row) => Boolean(arincSegmentForRow(row)));
   return rows.map((row, index) => ({
     row,
     number: index + 1,
@@ -626,13 +623,10 @@ function renderRecordChars(record) {
 
 function renderRawRecordBlock(legIndex) {
   const record = rawRecordForLeg(legIndex);
-  const first = legRowsForIndex(legIndex)[0] || {};
   const annotations = recordAnnotationsForLeg(legIndex);
-  const markerHeight = annotations.length ? 44 : 24;
-  return `<section class="raw-record-card">
-    <div class="meta">424 132 位编码文本 · 映射到证据结论航段 ${escapeText(legIndex)}</div>
-    <h2>SEQ ${escapeText(first.source_seq_no || "-")} · ${escapeText(first.source_trans_ident || "-")} · ${escapeText(first.leg_type || "-")}</h2>
-    <div class="raw-record-visual" style="--marker-height:${markerHeight}px">
+  const active = legIndex === state.currentLeg;
+  return `<section class="raw-record-line${active ? " active" : " dimmed"}" role="button" tabindex="0" data-leg-index="${escapeText(legIndex)}" aria-label="424 航段 ${escapeText(legIndex)}">
+    <div class="raw-record-visual">
       <div class="raw-record-canvas">
         <code class="raw-record-text" aria-label="${escapeText(record || "No raw 424 record")}">${renderRecordChars(record)}</code>
         ${renderRawRecordMarkers(annotations)}
@@ -643,21 +637,47 @@ function renderRawRecordBlock(legIndex) {
 
 function renderRecordPanel() {
   if (!els.recordPanel) return;
-  const legs = activeLegIndexes();
+  const legs = recordLegIndexes();
   if (!legs.length) {
     els.recordPanel.innerHTML = "";
     return;
   }
   els.recordPanel.innerHTML = legs.map((legIndex) => renderRawRecordBlock(legIndex)).join("");
+  els.recordPanel.querySelectorAll(".raw-record-line").forEach((line) => {
+    const activateLine = () => {
+      state.currentLeg = Number(line.dataset.legIndex || 1);
+      state.activeFieldKey = "";
+      renderLegOptions();
+      renderFieldCards();
+      renderRecordPanel();
+      renderOverlays();
+    };
+    line.addEventListener("click", (event) => {
+      if (event.target.closest(".record-marker")) return;
+      activateLine();
+    });
+    line.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      activateLine();
+    });
+  });
   els.recordPanel.querySelectorAll(".record-marker").forEach((marker) => {
-    marker.addEventListener("click", () => {
+    marker.addEventListener("click", (event) => {
+      event.stopPropagation();
       state.activeFieldKey = marker.dataset.fieldKey || "";
+      const row = state.rows.find((item) => item.key === state.activeFieldKey);
+      if (row?.canonical_leg_index) state.currentLeg = row.canonical_leg_index;
+      renderLegOptions();
       renderFieldCards();
       renderRecordPanel();
       renderOverlays();
     });
     marker.addEventListener("mouseenter", () => {
-      state.activeFieldKey = marker.dataset.fieldKey || "";
+      const fieldKey = marker.dataset.fieldKey || "";
+      const row = state.rows.find((item) => item.key === fieldKey);
+      if (!row || row.canonical_leg_index !== state.currentLeg) return;
+      state.activeFieldKey = fieldKey;
       renderFieldCards();
       renderRecordPanel();
       renderOverlays();
@@ -941,19 +961,6 @@ function bindEvents() {
   els.chartSelect.addEventListener("change", () => loadChart(els.chartSelect.value).catch((error) => showToast(error.message)));
   els.returnExpertBtn?.addEventListener("click", () => returnCurrentChart("expert").catch((error) => showToast(error.message)));
   els.returnOrdinaryBtn?.addEventListener("click", () => returnCurrentChart("ordinary").catch((error) => showToast(error.message)));
-  els.legSelect.addEventListener("change", () => {
-    state.currentLeg = Number(els.legSelect.value || 1);
-    state.activeFieldKey = "";
-    renderFieldCards();
-    renderRecordPanel();
-    renderOverlays();
-  });
-  els.showAllLegs.addEventListener("change", () => {
-    state.activeFieldKey = "";
-    renderFieldCards();
-    renderRecordPanel();
-    renderOverlays();
-  });
   els.resizeHandle?.addEventListener("pointerdown", (event) => {
     event.preventDefault();
     const shellRect = els.viewerShell.getBoundingClientRect();
