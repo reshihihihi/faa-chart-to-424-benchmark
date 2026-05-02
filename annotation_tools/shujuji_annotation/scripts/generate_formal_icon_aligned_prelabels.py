@@ -1281,6 +1281,41 @@ def nearest_line_segment(segments, anchor_box, predicate):
     )
 
 
+def boxes_are_same_arrow_parts(a, b):
+    ax0, ay0, ax1, ay1 = box_edges(a)
+    bx0, by0, bx1, by1 = box_edges(b)
+    gap_x = max(0.0, bx0 - ax1, ax0 - bx1)
+    gap_y = max(0.0, by0 - ay1, ay0 - by1)
+    union = bbox_union([a, b])
+    if not union:
+        return False
+    close_or_touching = box_intersection_over_min(a, b) >= 0.12 or (gap_x <= 0.014 and gap_y <= 0.018)
+    return close_or_touching and union["width"] <= 0.085 and union["height"] <= 0.06
+
+
+def merge_turn_graphic_into_same_leg_climb(output, meta, graphic_box):
+    leg_index = int(meta.get("canonical_leg_index") or 0)
+    if not leg_index:
+        return False
+    for item in output:
+        if item.get("region_type") != "CLIMB_ARROW":
+            continue
+        if not any(
+            int(item_mapping.get("canonical_leg_index") or 0) == leg_index
+            and item_mapping.get("field_name") == "Q2_altitude_constraint"
+            for item_mapping in item.get("candidate_mappings", [])
+        ):
+            continue
+        if not boxes_are_same_arrow_parts(item["bbox"], graphic_box):
+            continue
+        item["bbox"] = bbox_union([item["bbox"], graphic_box]) or item["bbox"]
+        item.setdefault("candidate_mappings", []).append(mapping(meta, "same visual turn/climb arrow supports this turn field", 0.46))
+        item["candidate_mappings"] = dedupe_mappings(item.get("candidate_mappings", []))
+        item["label"] = f"{item.get('label', 'detected climb arrow')}; turn/path graphic for {meta['expected_value']}"
+        return True
+    return False
+
+
 def choose_best_word(meta, rtype, candidates, cluster_center):
     if len(candidates) == 1:
         return candidates[0]
@@ -1460,8 +1495,9 @@ def add_symbol_boxes(chart_id, serial, image_path, detail_roi, lookup, text_regi
                 )
             graphic_box = line["bbox"] if line else comp["bbox"] if comp else None
             if graphic_box:
-                output.append(region(chart_id, serial, "PATH_SEGMENT", graphic_box, f"PATH_SEGMENT for {meta['expected_value']}", [mapping(meta, "detected turn/path line graphic inside lower missed-approach area", 0.46)], 0.46, "cv_icon_component"))
-                serial += 1
+                if not merge_turn_graphic_into_same_leg_climb(output, meta, graphic_box):
+                    output.append(region(chart_id, serial, "PATH_SEGMENT", graphic_box, f"PATH_SEGMENT for {meta['expected_value']}", [mapping(meta, "detected turn/path line graphic inside lower missed-approach area", 0.46)], 0.46, "cv_icon_component"))
+                    serial += 1
     return output, serial
 
 
@@ -2081,6 +2117,7 @@ def generate_chart(manifest_item, target):
         "reciprocal_inbound_radial_tokens_enabled": True,
         "hold_params_radial_text_tokens_enabled": True,
         "curved_climb_arrow_segments_enabled": True,
+        "same_leg_turn_climb_arrow_merge_enabled": True,
         "nested_duplicate_box_merge_enabled": True,
         "text_overlapping_symbol_false_positive_filter": True,
         "unmapped_fine_regions_removed": True,

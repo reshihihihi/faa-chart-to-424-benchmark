@@ -6,7 +6,7 @@
     "height": 1188
   },
   "prelabel_version": "v0.30-formal300-ca-hm-visible-vs-derived",
-  "generated_at": "2026-05-02T01:31:46.425337+00:00",
+  "generated_at": "2026-05-02T02:20:11.320125+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -45,7 +45,8 @@
     "q5_generic_hough_graphics_disabled": true,
     "reciprocal_inbound_radial_tokens_enabled": true,
     "hold_params_radial_text_tokens_enabled": true,
-    "curved_climb_arrow_segments_enabled": true
+    "curved_climb_arrow_segments_enabled": true,
+    "same_leg_turn_climb_arrow_merge_enabled": true
   },
   "review_priority": "high",
   "target_summary": {

@@ -6,7 +6,7 @@
     "height": 1238
   },
   "prelabel_version": "v0.30-formal300-ca-hm-visible-vs-derived",
-  "generated_at": "2026-05-02T01:31:13.196704+00:00",
+  "generated_at": "2026-05-02T02:19:38.508323+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -45,7 +45,8 @@
     "q5_generic_hough_graphics_disabled": true,
     "reciprocal_inbound_radial_tokens_enabled": true,
     "hold_params_radial_text_tokens_enabled": true,
-    "curved_climb_arrow_segments_enabled": true
+    "curved_climb_arrow_segments_enabled": true,
+    "same_leg_turn_climb_arrow_merge_enabled": true
   },
   "review_priority": "high",
   "target_summary": {
@@ -698,10 +699,10 @@
       "region_id": "KCHA_L20_iconalign_007_climb_arrow",
       "region_type": "CLIMB_ARROW",
       "bbox": {
-        "x_center": 0.4399,
-        "y_center": 0.7326,
-        "width": 0.0149,
-        "height": 0.0162
+        "x_center": 0.4635,
+        "y_center": 0.7198,
+        "width": 0.0621,
+        "height": 0.0419
       },
       "ocr_text": "",
       "label": "detected lower detail: climb arrow",
@@ -731,16 +732,31 @@
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KCHA_L20.json",
           "source_seq_no": "050",
           "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KCHA_L20__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q3_turn",
+          "expected_value": "LEFT",
+          "expected_answer": {
+            "status": "present",
+            "value": "LEFT"
+          },
+          "match_basis": "same visual turn/climb arrow supports this turn field",
+          "confidence": 0.46,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KCHA_L20.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
         }
       ],
       "needs_human_decision": true,
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      },
-      "source_candidate_leg_id": "KCHA_L20__ma2",
-      "source_leg_type": "DF",
-      "source_field_name": "Q2_altitude_constraint"
+      }
     }
   ]
 }

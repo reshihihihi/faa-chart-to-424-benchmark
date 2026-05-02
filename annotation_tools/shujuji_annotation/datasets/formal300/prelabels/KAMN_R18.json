@@ -6,7 +6,7 @@
     "height": 1188
   },
   "prelabel_version": "v0.30-formal300-ca-hm-visible-vs-derived",
-  "generated_at": "2026-05-02T01:32:05.044212+00:00",
+  "generated_at": "2026-05-02T02:20:29.557258+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -45,7 +45,8 @@
     "q5_generic_hough_graphics_disabled": true,
     "reciprocal_inbound_radial_tokens_enabled": true,
     "hold_params_radial_text_tokens_enabled": true,
-    "curved_climb_arrow_segments_enabled": true
+    "curved_climb_arrow_segments_enabled": true,
+    "same_leg_turn_climb_arrow_merge_enabled": true
   },
   "review_priority": "high",
   "target_summary": {
@@ -647,13 +648,13 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KAMN_R18_iconalign_007_climb_arrow",
+      "region_id": "KAMN_R18_iconalign_009_climb_arrow",
       "region_type": "CLIMB_ARROW",
       "bbox": {
-        "x_center": 0.3619,
+        "x_center": 0.369,
         "y_center": 0.7597,
-        "width": 0.0374,
-        "height": 0.0227
+        "width": 0.0517,
+        "height": 0.0228
       },
       "ocr_text": "",
       "label": "detected lower detail: climb arrow",
@@ -683,16 +684,31 @@
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAMN_R18.json",
           "source_seq_no": "050",
           "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAMN_R18__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q3_turn",
+          "expected_value": "RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": "RIGHT"
+          },
+          "match_basis": "same visual turn/climb arrow supports this turn field",
+          "confidence": 0.46,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAMN_R18.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "R"
         }
       ],
       "needs_human_decision": true,
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      },
-      "source_candidate_leg_id": "KAMN_R18__ma2",
-      "source_leg_type": "DF",
-      "source_field_name": "Q2_altitude_constraint"
+      }
     },
     {
       "region_id": "KAMN_R18_iconalign_005_climb_arrow",
@@ -785,50 +801,6 @@
       "source_candidate_leg_id": "KAMN_R18__ma2",
       "source_leg_type": "DF",
       "source_field_name": "Q1_fix_ident"
-    },
-    {
-      "region_id": "KAMN_R18_iconalign_008_path_segment",
-      "region_type": "PATH_SEGMENT",
-      "bbox": {
-        "x_center": 0.3768,
-        "y_center": 0.7559,
-        "width": 0.0361,
-        "height": 0.0152
-      },
-      "ocr_text": "",
-      "label": "detected lower detail: path segment",
-      "confidence": 0.46,
-      "source_layer": "cv_icon_component",
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "is_formal_annotation_candidate": true,
-      "candidate_mappings": [
-        {
-          "candidate_leg_id": "KAMN_R18__ma2",
-          "canonical_leg_index": 2,
-          "leg_type": "DF",
-          "field_name": "Q3_turn",
-          "expected_value": "RIGHT",
-          "expected_answer": {
-            "status": "present",
-            "value": "RIGHT"
-          },
-          "match_basis": "detected turn/path line graphic inside lower missed-approach area",
-          "confidence": 0.46,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAMN_R18.json",
-          "source_seq_no": "050",
-          "source_trans_ident": "R"
-        }
-      ],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      },
-      "source_candidate_leg_id": "KAMN_R18__ma2",
-      "source_leg_type": "DF",
-      "source_field_name": "Q3_turn"
     }
   ]
 }

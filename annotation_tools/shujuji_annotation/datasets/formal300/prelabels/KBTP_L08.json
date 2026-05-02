@@ -6,7 +6,7 @@
     "height": 1238
   },
   "prelabel_version": "v0.30-formal300-ca-hm-visible-vs-derived",
-  "generated_at": "2026-05-02T01:31:12.066150+00:00",
+  "generated_at": "2026-05-02T02:19:37.378639+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -45,7 +45,8 @@
     "q5_generic_hough_graphics_disabled": true,
     "reciprocal_inbound_radial_tokens_enabled": true,
     "hold_params_radial_text_tokens_enabled": true,
-    "curved_climb_arrow_segments_enabled": true
+    "curved_climb_arrow_segments_enabled": true,
+    "same_leg_turn_climb_arrow_merge_enabled": true
   },
   "review_priority": "high",
   "target_summary": {
@@ -695,6 +696,69 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
+      "region_id": "KBTP_L08_iconalign_008_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "bbox": {
+        "x_center": 0.557,
+        "y_center": 0.6503,
+        "width": 0.0384,
+        "height": 0.021
+      },
+      "ocr_text": "",
+      "label": "detected lower detail: climb arrow",
+      "confidence": 0.52,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KBTP_L08__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "detected climb/missed-approach arrow graphic near altitude text",
+          "confidence": 0.52,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBTP_L08.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
+        },
+        {
+          "candidate_leg_id": "KBTP_L08__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q3_turn",
+          "expected_value": "LEFT",
+          "expected_answer": {
+            "status": "present",
+            "value": "LEFT"
+          },
+          "match_basis": "same visual turn/climb arrow supports this turn field",
+          "confidence": 0.46,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBTP_L08.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
       "region_id": "KBTP_L08_iconalign_006_climb_arrow",
       "region_type": "CLIMB_ARROW",
       "bbox": {
@@ -743,54 +807,6 @@
       "source_field_name": "Q2_altitude_constraint"
     },
     {
-      "region_id": "KBTP_L08_iconalign_008_climb_arrow",
-      "region_type": "CLIMB_ARROW",
-      "bbox": {
-        "x_center": 0.5644,
-        "y_center": 0.6523,
-        "width": 0.0235,
-        "height": 0.017
-      },
-      "ocr_text": "",
-      "label": "detected lower detail: climb arrow",
-      "confidence": 0.52,
-      "source_layer": "cv_icon_component",
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "is_formal_annotation_candidate": true,
-      "candidate_mappings": [
-        {
-          "candidate_leg_id": "KBTP_L08__ma2",
-          "canonical_leg_index": 2,
-          "leg_type": "DF",
-          "field_name": "Q2_altitude_constraint",
-          "expected_value": "AT_OR_ABOVE 3000 ft",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "desc": "AT_OR_ABOVE",
-              "altitude_ft": 3000,
-              "altitude_2_ft": null
-            }
-          },
-          "match_basis": "detected climb/missed-approach arrow graphic near altitude text",
-          "confidence": 0.52,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBTP_L08.json",
-          "source_seq_no": "050",
-          "source_trans_ident": "L"
-        }
-      ],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      },
-      "source_candidate_leg_id": "KBTP_L08__ma2",
-      "source_leg_type": "DF",
-      "source_field_name": "Q2_altitude_constraint"
-    },
-    {
       "region_id": "KBTP_L08_iconalign_007_fix_symbol",
       "region_type": "FIX_SYMBOL",
       "bbox": {
@@ -833,50 +849,6 @@
       "source_candidate_leg_id": "KBTP_L08__ma2",
       "source_leg_type": "DF",
       "source_field_name": "Q1_fix_ident"
-    },
-    {
-      "region_id": "KBTP_L08_iconalign_009_path_segment",
-      "region_type": "PATH_SEGMENT",
-      "bbox": {
-        "x_center": 0.5539,
-        "y_center": 0.6458,
-        "width": 0.0322,
-        "height": 0.0121
-      },
-      "ocr_text": "",
-      "label": "detected lower detail: path segment",
-      "confidence": 0.46,
-      "source_layer": "cv_icon_component",
-      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
-      "is_formal_annotation_candidate": true,
-      "candidate_mappings": [
-        {
-          "candidate_leg_id": "KBTP_L08__ma2",
-          "canonical_leg_index": 2,
-          "leg_type": "DF",
-          "field_name": "Q3_turn",
-          "expected_value": "LEFT",
-          "expected_answer": {
-            "status": "present",
-            "value": "LEFT"
-          },
-          "match_basis": "detected turn/path line graphic inside lower missed-approach area",
-          "confidence": 0.46,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBTP_L08.json",
-          "source_seq_no": "050",
-          "source_trans_ident": "L"
-        }
-      ],
-      "needs_human_decision": true,
-      "human_review": {
-        "review_action": "pending",
-        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      },
-      "source_candidate_leg_id": "KBTP_L08__ma2",
-      "source_leg_type": "DF",
-      "source_field_name": "Q3_turn"
     }
   ]
 }
