@@ -1178,6 +1178,35 @@ function hasExplicitAltitudeRegion(row, regions) {
   });
 }
 
+function altitudeIsInheritedFromPriorLeg(row) {
+  if (!row || !Number.isInteger(row.canonical_leg_index) || row.canonical_leg_index <= 1) return false;
+  const value = expectedAnswerValue(row);
+  if (!value || typeof value.altitude_ft !== "number") return false;
+  const target = state.current?.target;
+  if (!target?.candidate_legs) return false;
+  const priorLegs = (target.candidate_legs || [])
+    .map((leg) => ({
+      leg,
+      idx: leg.canonical_leg_index || canonicalLegIndexForMapping({ candidate_leg_id: leg.candidate_leg_id }),
+    }))
+    .filter((x) => Number.isInteger(x.idx) && x.idx < row.canonical_leg_index)
+    .sort((a, b) => a.idx - b.idx);
+  let lastLegHadQ2 = false;
+  let intervingLegMissingQ2 = false;
+  for (const { leg } of priorLegs) {
+    const altField = (leg.target_fields || []).find((f) => (f.field_name || f.name) === "Q2_altitude_constraint");
+    if (altField) {
+      const altValue = altField.expected_answer?.value;
+      if (altValue && altValue.altitude_ft === value.altitude_ft) return true;
+      lastLegHadQ2 = true;
+      intervingLegMissingQ2 = false;
+    } else {
+      intervingLegMissingQ2 = true;
+    }
+  }
+  return intervingLegMissingQ2;
+}
+
 function holdParamsNeedRuleCompletion(row, regions) {
   const value = expectedAnswerValue(row);
   if (!value || typeof value !== "object") return false;
@@ -1215,6 +1244,7 @@ function recommendedSupportModeForField(row, evidenceIds) {
     return "rule_default_completion";
   }
   if (row.field_name === "Q2_altitude_constraint") {
+    if (altitudeIsInheritedFromPriorLeg(row)) return "rule_default_completion";
     return hasExplicitAltitudeRegion(row, regions) ? sameAreaDirectMode(regions) : "rule_default_completion";
   }
   if (
