@@ -1283,6 +1283,14 @@ function selectedSupportModeForField(row, evidenceIds, reviewStatus = "pending")
 function setSupportModeDraft(row, supportMode) {
   if (!row || !supportMode) return;
   state.confirmModeDrafts[row.key] = supportMode;
+  if (FIELD_SUPPORT_REQUIRES_EVIDENCE.has(supportMode)) {
+    const review = reviewForField(row);
+    const hasEvidence = (review.required_evidence_region_ids || []).length > 0;
+    const region = selectedRegion();
+    if (!hasEvidence && region && canAnnotateCurrent()) {
+      linkSelectedFieldToRegion({ accept: true });
+    }
+  }
   renderWorkflowPanel();
 }
 
