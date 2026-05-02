@@ -1,0 +1,99 @@
+{
+  "run_id": "group1_scoring_equivalence_v2_20260501_r1",
+  "created_at_utc": "2026-05-01T13:12:06.870529+00:00",
+  "artifact_root": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2",
+  "source_inputs": {
+    "canonical_proxy_gt_combined": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/canonical_proxy_gt_combined.json",
+      "sha256": "a4720c011dd37d611fb323bc02e269908a0cb7241fbb010c2a04d382c52f2c44"
+    },
+    "field_targets": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/field_targets.jsonl",
+      "sha256": "47b5d1dc00e338c1bec0e11c0ea89f65a15cb310377005a68dd4b1160992ee91"
+    },
+    "evidence_provenance": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/evidence_provenance.jsonl",
+      "sha256": "be27469981e723dd17252a7425134a84671d342eebe4c8426291cfc6097564ca"
+    },
+    "schema": {
+      "path": "schemas/missed_approach_leg.schema.json",
+      "sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9"
+    }
+  },
+  "outputs": {
+    "canonical_proxy_gt_chart_display_v2.json": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/canonical_proxy_gt_chart_display_v2.json",
+      "sha256": "309f4c975413e90aa24dafcb4a451ad42ea310d3475e5aff17cb45e171292e36",
+      "bytes": 1070195
+    },
+    "field_targets_chart_display_v2.jsonl": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/field_targets_chart_display_v2.jsonl",
+      "sha256": "bd107e272cff8d50a5f3c789f0bb07294f860cbc7a4efe29e1c5edd52ce0f914",
+      "bytes": 1446775
+    },
+    "comparison_policy_v2.jsonl": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/comparison_policy_v2.jsonl",
+      "sha256": "4af3745662429d2f830c49a5d6048e36093ddea9dc646767554164013779124f",
+      "bytes": 3170077
+    },
+    "risk_field_inventory.jsonl": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/risk_field_inventory.jsonl",
+      "sha256": "1dbc46351549ef7c3764c099143aabe7efe750822015de8b5d884620881bce3b",
+      "bytes": 742853
+    },
+    "target_v1_to_v2_diff.jsonl": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/target_v1_to_v2_diff.jsonl",
+      "sha256": "e696b2da821f162c225e62e3da6f6888f21a3f2ba93f9cc38b1fd3f69478bc75",
+      "bytes": 339961
+    },
+    "manual_review_required_fields.jsonl": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/manual_review_required_fields.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "counts": {
+    "charts": 300,
+    "field_rows_v1": 6084,
+    "field_rows_v2": 6084,
+    "policy_rows": 6084,
+    "risk_rows": 1225,
+    "diff_rows": 513,
+    "manual_review_required_rows": 0,
+    "schema_valid_count": 300,
+    "schema_invalid_count": 0
+  },
+  "policy_counts": {
+    "exact_status_value": 4554,
+    "normalized_string": 964,
+    "degree_display_rounding": 566
+  },
+  "field_category_counts": {
+    "strict": 3192,
+    "fix_navaid": 964,
+    "course_radial": 1928
+  },
+  "risk_type_counts": {
+    "degree_decimal_display_rounding": 566,
+    "fix_navaid_format_normalization": 659
+  },
+  "question_field_counts": {
+    "leg_count": 300,
+    "Q_terminator": 964,
+    "Q1_fix_ident": 964,
+    "Q2_altitude_constraint": 964,
+    "Q3_turn": 964,
+    "Q4_course_or_radial": 964,
+    "Q5_hold_params": 964
+  },
+  "diff_by_question_field": {
+    "Q4_course_or_radial": 280,
+    "Q5_hold_params": 233
+  },
+  "manual_review_by_question_field": {},
+  "validation": {
+    "schema_valid_count": 300,
+    "schema_invalid_count": 0,
+    "invalid": []
+  }
+}

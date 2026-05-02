@@ -1,0 +1,169 @@
+{
+  "method": "B1_prime_link",
+  "sources": [
+    "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link"
+  ],
+  "prediction_files": 200,
+  "unique_charts": 200,
+  "schema_valid_predictions": 185,
+  "schema_invalid_predictions": 15,
+  "old_strict_score": {
+    "correct": 718,
+    "total": 3683,
+    "accuracy": 0.19494976920988324
+  },
+  "chart_display_v2_score": {
+    "correct": 718,
+    "total": 3683,
+    "accuracy": 0.19494976920988324
+  },
+  "delta_correct": 0,
+  "delta_accuracy": 0.0,
+  "missing_old_score_count": 0,
+  "missing_old_score": [],
+  "duplicate_charts": [],
+  "invalid_predictions": [
+    {
+      "chart_id": "KABE_R24",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KABE_R24.json",
+      "errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'type': 'course_deg', 'degrees': 266} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KABY_R17",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KABY_R17.json",
+      "errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 226} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KABY_R23",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KABY_R23.json",
+      "errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 197} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KACY_R13-Y",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KACY_R13-Y.json",
+      "errors": [
+        "missed_approach.legs.2.answers.Q4_course_or_radial.value: 76 is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KAGC_R28",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KAGC_R28.json",
+      "errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 197} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KALB_R10",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KALB_R10.json",
+      "errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 91} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KALB_R19-Y",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KALB_R19-Y.json",
+      "errors": [
+        "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'course_deg': 196} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KALN_R17",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KALN_R17.json",
+      "errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 122} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KALO_L12",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KALO_L12.json",
+      "errors": [
+        "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'type': 'radial', 'degrees': 96} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KAOO_R03-Z",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KAOO_R03-Z.json",
+      "errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 42} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KAOO_R21",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KAOO_R21.json",
+      "errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 223} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KAST_R26",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KAST_R26.json",
+      "errors": [
+        "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'course_deg': 189} is not valid under any of the given schemas",
+        "missed_approach.legs.3.answers.Q4_course_or_radial.value: {'course_deg': 113} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KATL_I09R",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KATL_I09R.json",
+      "errors": [
+        "missed_approach.legs.0.answers.Q4_course_or_radial.value: {'heading_deg': 100} is not valid under any of the given schemas",
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'radial_deg': 235, 'nav_fix': 'AHN'} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KAVQ_R21",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KAVQ_R21.json",
+      "errors": [
+        "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'course_deg': 284} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KCOI_R11",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\B1_prime_link\\canonical_json\\KCOI_R11.json",
+      "errors": [
+        "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'course_deg': 190} is not valid under any of the given schemas"
+      ]
+    }
+  ],
+  "category_scores": {
+    "course_radial": {
+      "correct": 250,
+      "total": 1166,
+      "accuracy": 0.2144082332761578
+    },
+    "fix_navaid": {
+      "correct": 279,
+      "total": 583,
+      "accuracy": 0.47855917667238423
+    },
+    "strict": {
+      "correct": 189,
+      "total": 1934,
+      "accuracy": 0.09772492244053775
+    }
+  },
+  "policy_scores": {
+    "degree_display_rounding": {
+      "correct": 0,
+      "total": 354,
+      "accuracy": 0.0
+    },
+    "exact_status_value": {
+      "correct": 439,
+      "total": 2746,
+      "accuracy": 0.15986890021849964
+    },
+    "normalized_string": {
+      "correct": 279,
+      "total": 583,
+      "accuracy": 0.47855917667238423
+    }
+  },
+  "changed_rows_count": 0
+}

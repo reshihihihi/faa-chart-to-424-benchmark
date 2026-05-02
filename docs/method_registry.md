@@ -1,6 +1,6 @@
 # Method Registry
 
-Status: partial registry freeze for B1 and C3 on 2026-04-27, with Group 1 candidate boundary audit added on 2026-04-28 and B1_prime_link added as a Group 1 candidate on 2026-04-29.
+Status: partial registry freeze for B1 and C3 on 2026-04-27, with Group 1 candidate boundary audit added on 2026-04-28, B1_prime_link added as a Group 1 candidate on 2026-04-29, and D1 added as the D-SFT canonical-output interface method on 2026-05-02.
 
 This registry is the source of truth for method boundaries, allowed inputs, forbidden inputs, intermediate artifacts, and final output types. Only B1 and C3 are frozen in this revision. Other methods are candidate definitions until a later formal freeze step.
 
@@ -28,7 +28,8 @@ B1_prime_link Group 1 candidate report:
 | C2 | 1 | candidate, not frozen | yes | per-question QA JSON | canonical JSON |
 | C3 | 1 | boundary frozen | yes | questionnaire JSON | canonical JSON |
 | C4 | 1 | candidate, not frozen | yes | image + OCR-1 side input | canonical JSON |
-| D_SFT | 1 | frozen after pilot100 feasibility | yes | full chart image only | canonical JSON |
+| D_SFT | 1 | frozen after pilot100 feasibility | yes | full chart image only | raw/canonical JSON before D1 interface enforcement |
+| D1 | 1 | formal200 output interface added | yes | D-SFT raw output only | fixed canonical JSON |
 | B1_link | 5 | setup started, not frozen | no | field-to-leg candidate table | canonical JSON |
 
 ## Group 1 Candidate Addendum - 2026-04-28

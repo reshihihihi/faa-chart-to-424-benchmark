@@ -1,0 +1,14 @@
+{
+  "expected_chart_id": "KACK_R33",
+  "raw_output_chart_id": "KACK_R33",
+  "output_chart_id": "KACK_R33",
+  "schema_valid": true,
+  "final_chart_id_matches_expected": true,
+  "validation_errors": [],
+  "actions": [
+    "strip_outer_whitespace",
+    "extract_json_object_candidates:1",
+    "wrap_short_raw_format_to_canonical",
+    "selected_candidate_index:0"
+  ]
+}

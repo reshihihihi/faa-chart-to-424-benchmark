@@ -1,0 +1,76 @@
+{
+  "method": "C3",
+  "sources": [
+    "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C3\\C3"
+  ],
+  "prediction_files": 198,
+  "unique_charts": 198,
+  "schema_valid_predictions": 196,
+  "schema_invalid_predictions": 2,
+  "old_strict_score": {
+    "correct": 1522,
+    "total": 3976,
+    "accuracy": 0.3827967806841046
+  },
+  "chart_display_v2_score": {
+    "correct": 1593,
+    "total": 3976,
+    "accuracy": 0.40065392354124746
+  },
+  "delta_correct": 71,
+  "delta_accuracy": 0.01785714285714285,
+  "missing_old_score_count": 0,
+  "missing_old_score": [],
+  "duplicate_charts": [],
+  "invalid_predictions": [
+    {
+      "chart_id": "KAMN_R09",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C3\\C3\\canonical_json\\KAMN_R09.json",
+      "errors": [
+        "missed_approach.legs.0.answers.Q4_course_or_radial.value: {'course_deg': None, 'type': 'direct'} is not valid under any of the given schemas"
+      ]
+    },
+    {
+      "chart_id": "KANQ_R23",
+      "prediction_path": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C3\\C3\\canonical_json\\KANQ_R23.json",
+      "errors": [
+        "missed_approach.legs.0.answers.Q4_course_or_radial.value: {'course_deg': None, 'type': 'direct'} is not valid under any of the given schemas"
+      ]
+    }
+  ],
+  "category_scores": {
+    "course_radial": {
+      "correct": 558,
+      "total": 1260,
+      "accuracy": 0.44285714285714284
+    },
+    "fix_navaid": {
+      "correct": 232,
+      "total": 630,
+      "accuracy": 0.3682539682539683
+    },
+    "strict": {
+      "correct": 803,
+      "total": 2086,
+      "accuracy": 0.38494726749760305
+    }
+  },
+  "policy_scores": {
+    "degree_display_rounding": {
+      "correct": 84,
+      "total": 372,
+      "accuracy": 0.22580645161290322
+    },
+    "exact_status_value": {
+      "correct": 1277,
+      "total": 2974,
+      "accuracy": 0.42938802958977806
+    },
+    "normalized_string": {
+      "correct": 232,
+      "total": 630,
+      "accuracy": 0.3682539682539683
+    }
+  },
+  "changed_rows_count": 71
+}
