@@ -355,12 +355,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -808,12 +806,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -1555,12 +1551,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -1782,12 +1776,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -2009,12 +2001,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -2236,12 +2226,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -2463,12 +2451,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -2987,12 +2973,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -3214,12 +3198,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -3441,12 +3423,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -3595,12 +3575,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -4119,12 +4097,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -4802,12 +4778,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -6085,12 +6059,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -7069,12 +7041,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -7296,12 +7266,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -7523,12 +7491,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -7750,12 +7716,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -8203,12 +8167,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -8430,12 +8392,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -8657,12 +8617,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -9181,12 +9139,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -9408,12 +9364,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -9635,12 +9589,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -9862,12 +9814,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -10085,12 +10035,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -10376,12 +10324,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -10741,12 +10687,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -10968,12 +10912,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -11195,12 +11137,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -11418,12 +11358,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -11709,12 +11647,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -11934,12 +11870,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -12157,12 +12091,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -12452,12 +12384,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -12679,12 +12609,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -12906,12 +12834,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -13129,12 +13055,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -13420,12 +13344,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -13711,12 +13633,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -14006,12 +13926,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -14233,12 +14151,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -14460,12 +14376,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -14687,12 +14601,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -14914,12 +14826,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -15141,12 +15051,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -15368,12 +15276,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -15595,12 +15501,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -15818,12 +15722,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -16177,12 +16079,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -16400,12 +16300,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -16691,12 +16589,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -16986,12 +16882,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -17213,12 +17107,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -17440,12 +17332,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -17667,12 +17557,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -17890,12 +17778,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -18249,12 +18135,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -18472,12 +18356,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -18770,12 +18652,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -18997,12 +18877,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -19224,12 +19102,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -19451,12 +19327,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -19678,12 +19552,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -19905,12 +19777,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -20132,12 +20002,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -20355,12 +20223,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -20650,12 +20516,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -20877,12 +20741,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -21104,12 +20966,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -21331,12 +21191,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -21558,12 +21416,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -21785,12 +21641,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -22012,12 +21866,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -22239,12 +22091,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -22466,12 +22316,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -22693,12 +22541,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -22920,12 +22766,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -23147,12 +22991,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -23374,12 +23216,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -23601,12 +23441,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -23824,12 +23662,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -24119,12 +23955,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -24342,12 +24176,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -24703,12 +24535,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -25058,12 +24888,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -25349,12 +25177,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -25640,12 +25466,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -25931,12 +25755,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -26222,12 +26044,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -26513,12 +26333,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -26804,12 +26622,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -27095,12 +26911,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -27386,12 +27200,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -27677,12 +27489,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -27968,12 +27778,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -28259,12 +28067,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -28550,12 +28356,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -28841,12 +28645,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -29132,12 +28934,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -29423,12 +29223,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -29714,12 +29512,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -30005,12 +29801,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -30296,12 +30090,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -30587,12 +30379,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -30881,12 +30671,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -31172,12 +30960,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -31463,12 +31249,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -31754,12 +31538,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -32045,12 +31827,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -32336,12 +32116,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -32627,12 +32405,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -32918,12 +32694,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -33209,12 +32983,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -33500,12 +33272,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -33794,12 +33564,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -34085,12 +33853,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -34376,12 +34142,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -34667,12 +34431,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -34958,12 +34720,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -35252,12 +35012,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -35546,12 +35304,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -35841,12 +35597,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -36068,12 +35822,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -36295,12 +36047,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -36522,12 +36272,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -36749,12 +36497,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -36976,12 +36722,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -37203,12 +36947,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -37430,12 +37172,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -37657,12 +37397,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -37884,12 +37622,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -38111,12 +37847,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -38338,12 +38072,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -38565,12 +38297,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -38792,12 +38522,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -39019,12 +38747,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -39246,12 +38972,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -39473,12 +39197,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -39700,12 +39422,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -39927,12 +39647,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -40154,12 +39872,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -40381,12 +40097,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -40608,12 +40322,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -40835,12 +40547,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -41062,12 +40772,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -41289,12 +40997,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -41516,12 +41222,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -41743,12 +41447,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -41970,12 +41672,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -42197,12 +41897,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -42424,12 +42122,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -42651,12 +42347,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -42878,12 +42572,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -43105,12 +42797,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -43332,12 +43022,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -43559,12 +43247,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -43786,12 +43472,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -44013,12 +43697,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -44240,12 +43922,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -44467,12 +44147,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -44694,12 +44372,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -44921,12 +44597,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -45148,12 +44822,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -45375,12 +45047,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -45602,12 +45272,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -45829,12 +45497,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -46056,12 +45722,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -46283,12 +45947,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -46510,12 +46172,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -46737,12 +46397,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -46964,12 +46622,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -47191,12 +46847,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -47418,12 +47072,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -47645,12 +47297,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -47872,12 +47522,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -48099,12 +47747,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -48326,12 +47972,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -48553,12 +48197,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -48780,12 +48422,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -49007,12 +48647,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -49234,12 +48872,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -49461,12 +49097,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -49688,12 +49322,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -49915,12 +49547,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -50142,12 +49772,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -50369,12 +49997,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -50596,12 +50222,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -50823,12 +50447,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -51050,12 +50672,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -51277,12 +50897,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -51504,12 +51122,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -51731,12 +51347,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -51958,12 +51572,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -52185,12 +51797,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -52412,12 +52022,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -52639,12 +52247,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -52866,12 +52472,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -53093,12 +52697,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -53320,12 +52922,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -53547,12 +53147,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -53774,12 +53372,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -54001,12 +53597,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -54228,12 +53822,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -54455,12 +54047,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -54682,12 +54272,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -54909,12 +54497,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -55136,12 +54722,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -55363,12 +54947,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -55590,12 +55172,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -55817,12 +55397,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -56044,12 +55622,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -56271,12 +55847,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -56498,12 +56072,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -56725,12 +56297,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -56952,12 +56522,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -57179,12 +56747,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -57406,12 +56972,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -57633,12 +57197,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -57860,12 +57422,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -58087,12 +57647,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -58314,12 +57872,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -58541,12 +58097,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -58768,12 +58322,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -58995,12 +58547,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -59222,12 +58772,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -59449,12 +58997,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -59676,12 +59222,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -59903,12 +59447,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -60130,12 +59672,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -60357,12 +59897,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -60584,12 +60122,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -60811,12 +60347,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -61038,12 +60572,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -61265,12 +60797,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -61492,12 +61022,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -61719,12 +61247,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -61946,12 +61472,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -62173,12 +61697,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -62400,12 +61922,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -62627,12 +62147,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -62854,12 +62372,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -63081,12 +62597,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -63308,12 +62822,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -63535,12 +63047,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -63762,12 +63272,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -63989,12 +63497,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -64216,12 +63722,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -64443,12 +63947,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -64670,12 +64172,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -64897,12 +64397,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -65124,12 +64622,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -65351,12 +64847,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -65578,12 +65072,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -65805,12 +65297,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -66032,12 +65522,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -66259,12 +65747,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -66486,12 +65972,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -66713,12 +66197,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -66940,12 +66422,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -67167,12 +66647,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -67394,12 +66872,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -67621,12 +67097,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -67848,12 +67322,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -68075,12 +67547,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -68302,12 +67772,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -68529,12 +67997,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -68756,12 +68222,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -68983,12 +68447,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -69210,12 +68672,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -69437,12 +68897,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -69664,12 +69122,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -69891,12 +69347,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -70118,12 +69572,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -70345,12 +69797,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -70572,12 +70022,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -70799,12 +70247,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -71026,12 +70472,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -71253,12 +70697,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -71480,12 +70922,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -71707,12 +71147,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -71934,12 +71372,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },
@@ -72161,12 +71597,10 @@
           },
           {
             "field_name": "Q4_course_or_radial",
-            "expected_value": "type=direct",
+            "expected_value": "not_applicable",
             "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
           },

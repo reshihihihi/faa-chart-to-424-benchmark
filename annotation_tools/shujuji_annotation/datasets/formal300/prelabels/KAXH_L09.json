@@ -153,26 +153,6 @@
           "source_trans_ident": "L"
         },
         {
-          "candidate_leg_id": "KAXH_L09__ma2",
-          "canonical_leg_index": 2,
-          "leg_type": "DF",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=direct",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "direct"
-            }
-          },
-          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
-          "confidence": 0.35,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAXH_L09.json",
-          "source_seq_no": "050",
-          "source_trans_ident": "L"
-        },
-        {
           "candidate_leg_id": "KAXH_L09__ma1",
           "canonical_leg_index": 1,
           "leg_type": "CA",
@@ -340,26 +320,6 @@
           "expected_answer": {
             "status": "present",
             "value": "RIGHT"
-          },
-          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
-          "confidence": 0.32,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAXH_L09.json",
-          "source_seq_no": "050",
-          "source_trans_ident": "L"
-        },
-        {
-          "candidate_leg_id": "KAXH_L09__ma2",
-          "canonical_leg_index": 2,
-          "leg_type": "DF",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=direct",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "direct"
-            }
           },
           "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
           "confidence": 0.32,

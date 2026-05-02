@@ -230,7 +230,7 @@ AT, AT_OR_ABOVE, AT_OR_BELOW, BETWEEN
 
 `status` 可以是 `present`、`not_applicable`、`not_observable` 或 `unknown`。
 
-当 `status = "present"` 时，`value` 必须且只能是以下三种结构之一：
+当 `status = "present"` 时，`value` 必须且只能是以下两种结构之一：
 
 
 {"type": "course_deg", "course_deg": 70.0}
@@ -239,9 +239,9 @@ AT, AT_OR_ABOVE, AT_OR_BELOW, BETWEEN
 {"type": "navaid_radial", "navaid": "ABC", "radial_deg": 123.0, "direction": "outbound"}
 
 
-{"type": "direct"}
-
 `direction` 只能是 `outbound` 或 `inbound`。
+
+DF / direct-to-fix 航段没有单独的 Q4 值；直飞含义由 `Q_terminator = DF` 和 `Q1_fix_ident` 表达，Q4 应标为 `not_applicable`。
 
 ### Q5_hold_params
 
@@ -300,5 +300,4 @@ This section overrides any formatting habit from examples above. The final answe
 - Do NOT output json as a wrapper or label.
 - Do NOT add explanation before or after the JSON.
 - The evaluator will run strict JSON parsing on the raw response. Any Markdown fence or extra text is a format violation.
-
 

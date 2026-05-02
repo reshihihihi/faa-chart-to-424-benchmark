@@ -1,7 +1,7 @@
 TASK: For missed-approach leg <LEG_INDEX>, identify the course / heading / radial that
 governs the ground track of this leg.
 
-Three answer variants (discriminated by "type"):
+Two answer variants (discriminated by "type"):
 
 VARIANT A — magnetic course (CA / VA / TF / CF without explicit radial reference):
   { "type": "course_deg", "course_deg": <0.0 .. 359.9> }
@@ -14,14 +14,11 @@ VARIANT B — navaid radial (FA / CF when text says "on <navaid> R-NNN outbound/
     "direction": "outbound" | "inbound"
   }
 
-VARIANT C — direct (DF legs where no course is specified):
-  { "type": "direct" }
-
 Chart cues:
 - "Climb to N on heading <deg>" → course_deg (record the heading value)
 - "Climb to N, course <deg>" → course_deg
 - "On <navaid> R-NNN outbound/inbound to <fix>" → navaid_radial
-- "Direct <fix>" → direct
+- "Direct <fix>" / DF with no course or radial reference → not_applicable; the direct-to fix is captured by Q_terminator + Q1_fix_ident
 - Hold legs do NOT populate Q4; their inbound course lives in Q5_hold_params
 
 OUTPUT (single JSON object):

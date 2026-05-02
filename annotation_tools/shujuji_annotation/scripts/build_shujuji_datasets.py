@@ -236,7 +236,7 @@ def q4_course_answer(record):
     if terminator in HOLD_TYPES or terminator == "IF":
         return answer("not_applicable", None)
     if terminator == "DF":
-        return answer("present", {"type": "direct"})
+        return answer("not_applicable", None)
 
     navaid = record["recommended_navaid"]
     course = record["course_deg"]

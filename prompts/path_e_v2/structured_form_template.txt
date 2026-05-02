@@ -41,13 +41,12 @@ Q3. Turn direction during this leg:
   [ ] unknown
 
 Q4. Course / radial reference  (COMPOSITE — pick one variant):
-  [ ] not_applicable  (hold leg; no course reference)
+  [ ] not_applicable  (hold leg, DF/direct-to-fix leg, or no course/radial reference)
   [ ] Variant A — course_deg = _________ (magnetic, 0.0-359.9)
   [ ] Variant B — navaid_radial:
         navaid    = _______________
         radial_deg = _________
         direction  = [ ] outbound  [ ] inbound
-  [ ] Variant C — direct  (DF legs; terminator fix fully determines geometry)
   [ ] not_observable
   [ ] unknown
 

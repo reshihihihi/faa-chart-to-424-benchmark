@@ -136,26 +136,6 @@
           "source_trans_ident": "R"
         },
         {
-          "candidate_leg_id": "KARG_R22__ma2",
-          "canonical_leg_index": 2,
-          "leg_type": "DF",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=direct",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "direct"
-            }
-          },
-          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
-          "confidence": 0.35,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KARG_R22.json",
-          "source_seq_no": "050",
-          "source_trans_ident": "R"
-        },
-        {
           "candidate_leg_id": "KARG_R22__ma3",
           "canonical_leg_index": 3,
           "leg_type": "HM",
@@ -362,26 +342,6 @@
               "desc": "AT_OR_ABOVE",
               "altitude_ft": 2700,
               "altitude_2_ft": null
-            }
-          },
-          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
-          "confidence": 0.32,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KARG_R22.json",
-          "source_seq_no": "050",
-          "source_trans_ident": "R"
-        },
-        {
-          "candidate_leg_id": "KARG_R22__ma2",
-          "canonical_leg_index": 2,
-          "leg_type": "DF",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=direct",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "direct"
             }
           },
           "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",

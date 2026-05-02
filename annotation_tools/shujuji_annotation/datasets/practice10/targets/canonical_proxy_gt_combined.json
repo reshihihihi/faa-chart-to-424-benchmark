@@ -196,10 +196,8 @@
               "value": "RIGHT"
             },
             "Q4_course_or_radial": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "Q5_hold_params": {
               "status": "not_applicable",
@@ -317,10 +315,8 @@
               "value": "LEFT"
             },
             "Q4_course_or_radial": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "Q5_hold_params": {
               "status": "not_applicable",
@@ -819,10 +815,8 @@
               "value": "LEFT"
             },
             "Q4_course_or_radial": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "Q5_hold_params": {
               "status": "not_applicable",
@@ -940,10 +934,8 @@
               "value": null
             },
             "Q4_course_or_radial": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "Q5_hold_params": {
               "status": "not_applicable",
@@ -1098,10 +1090,8 @@
               "value": null
             },
             "Q4_course_or_radial": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "Q5_hold_params": {
               "status": "not_applicable",
@@ -1223,10 +1213,8 @@
               "value": null
             },
             "Q4_course_or_radial": {
-              "status": "present",
-              "value": {
-                "type": "direct"
-              }
+              "status": "not_applicable",
+              "value": null
             },
             "Q5_hold_params": {
               "status": "not_applicable",
