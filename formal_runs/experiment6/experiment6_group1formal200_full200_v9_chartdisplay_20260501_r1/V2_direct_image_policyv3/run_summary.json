@@ -1,0 +1,17 @@
+{
+  "api_error": 0,
+  "base_url": "https://api.claudecode.uk",
+  "completed_now": 400,
+  "elapsed_sec": 916.242,
+  "input_jsonl": "benchmark_exports\\derived\\v2\\experiment6_counterfactuals_v8_group1formal200_full200_20260501\\packed_inputs\\v2_direct_vlm_inputs_v9_chartdisplay_e6core.jsonl",
+  "method": "V2_direct_image_policyv3_chartdisplay_v2",
+  "model": "claude-sonnet-4-5-20250929",
+  "out_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V2_direct_image_policyv3\\predictions.jsonl",
+  "parse_fail": 0,
+  "parse_ok": 400,
+  "previously_done": 0,
+  "prompt": "benchmark_exports\\derived\\v2\\experiment6_counterfactuals_v8_group1formal200_full200_20260501\\prompts\\formal_v2_direct_vlm_verifier_policy_v3.md",
+  "prompt_hash": "1f350dbe46445076239612095cc6755879ee222786becce0774f95caaba4756b",
+  "requested_records": 400,
+  "total_outputs_for_request": 400
+}

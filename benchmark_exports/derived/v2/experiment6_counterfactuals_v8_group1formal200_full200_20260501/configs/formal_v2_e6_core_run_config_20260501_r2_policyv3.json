@@ -1,0 +1,68 @@
+{
+  "config_id": "formal_v2_e6_core_direct_image_policyv3_20260501_r2",
+  "status": "completed_after_group1_scoring_equivalence_v2",
+  "created_date": "2026-05-01",
+  "experiment_group": "experiment6",
+  "method_id": "V2_direct_image_e6_core_policyv3_20260501_r2",
+  "method_name": "V2 direct-image verifier on E6-core, policy v3",
+  "reason_for_rerun": "PR #25 / Group 1 scoring-equivalence v2 exposed chart-display vs 424-derived field boundary issues in Experiment 6 V2 r1.",
+  "task": "chart image + candidate 424-like record -> audit decision JSON",
+  "scope": {
+    "split": "E6-core balanced subset",
+    "case_count": 400,
+    "positive_cases": 200,
+    "negative_cases": 200,
+    "input_cases_jsonl": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/selection/e6_core_200pos_200neg_seed20260501.jsonl",
+    "input_cases_sha256": "e8ae421394998ff36c195ddefec08f84cdefcc4ef62818e220a1cf3e277e0ae6"
+  },
+  "allowed_inputs": [
+    "full FAA chart image referenced by image_path",
+    "candidate_record",
+    "verification_case_id",
+    "chart_id",
+    "sample_id",
+    "allowed_error_fields vocabulary derived from candidate_record"
+  ],
+  "forbidden_inputs": [
+    "OCR text or OCR side files",
+    "canonical target JSON",
+    "raw CIFP records",
+    "label.consistent",
+    "label.error_fields",
+    "counterfactual_type",
+    "score files",
+    "QC decisions",
+    "outputs from V1/V3/V4 or any other method",
+    "manual answers"
+  ],
+  "model": {
+    "provider": "Anthropic-compatible endpoint",
+    "model_id": "claude-sonnet-4-5-20250929",
+    "temperature": 0.0,
+    "max_tokens": 300
+  },
+  "prompt": {
+    "path": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/prompts/formal_v2_direct_vlm_verifier_policy_v3.md",
+    "sha256": "1f350dbe46445076239612095cc6755879ee222786becce0774f95caaba4756b",
+    "selected_over": "policy_v2 and policy_v4 smoke tests; v3 best preserved positive acceptance without collapsing negative rejection."
+  },
+  "runner": {
+    "script": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/scripts/run_v2_direct_vlm_anthropic_tooluse.py",
+    "script_sha256": "2fd78291e5cc1b4a00630e96732204b9aec7d647923682f3d5b79edb3c9ecd29",
+    "workers_initial": 1,
+    "workers_resume": 3,
+    "resume_policy": "preserved 15 completed rows from workers=1 start, then resumed missing rows with identical model/prompt/temperature/max_tokens and workers=3."
+  },
+  "postprocessing": {
+    "error_field_normalizer": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/scripts/normalize_experiment6_error_fields.py",
+    "error_field_normalizer_sha256": "702e5e78ad4608bd4a6530a704c9d0416e460bf7a2932dc25ede4786f0848596",
+    "policy": "normalize over-specific error_fields to allowed vocabulary only; do not change consistent boolean; do not inspect labels/targets/scores."
+  },
+  "outputs": {
+    "run_dir": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/V2_direct_image_e6_core_policyv3_20260501_r2",
+    "raw_predictions": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/V2_direct_image_e6_core_policyv3_20260501_r2/predictions.jsonl",
+    "normalized_predictions": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/V2_direct_image_e6_core_policyv3_20260501_r2/predictions.normalized_error_fields.jsonl",
+    "score_summary": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/V2_direct_image_e6_core_policyv3_20260501_r2/score_summary.normalized_error_fields.json",
+    "integrity_audit": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/V2_direct_image_e6_core_policyv3_20260501_r2/prediction_integrity_audit.json"
+  }
+}

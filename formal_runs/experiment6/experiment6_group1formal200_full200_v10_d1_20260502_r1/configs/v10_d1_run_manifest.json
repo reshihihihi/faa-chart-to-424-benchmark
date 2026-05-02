@@ -1,0 +1,21 @@
+﻿{
+  "run_id": "experiment6_group1formal200_full200_v10_d1_20260502_r1",
+  "base_experiment6_run": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1",
+  "d1_source_root": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1",
+  "unchanged_inputs": [
+    "E6-core cases/candidate records",
+    "V1 OCR text results",
+    "V2 direct image results",
+    "V3/V4 C4 extraction-then-compare results",
+    "control/oracle results"
+  ],
+  "rerun_scope": [
+    "V3_D1_SFT_group1v2_neutralized",
+    "V4_D1_SFT_tolerant"
+  ],
+  "reports": {
+    "comparison_csv": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\reports\\experiment6_v10_d1_comparison_table.csv",
+    "audit_json": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\reports\\experiment6_v10_d1_integrity_audit.json",
+    "update_report_zh": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\reports\\experiment6_v10_d1_update_report_zh.md"
+  }
+}

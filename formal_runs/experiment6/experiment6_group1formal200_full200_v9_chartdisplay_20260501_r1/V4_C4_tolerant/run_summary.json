@@ -1,0 +1,14 @@
+{
+  "api_error": 0,
+  "cases_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\E6_core\\cases\\e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+  "compare_policy": "configs/v4_tolerant_compare_policy.md",
+  "elapsed_sec": 0.285,
+  "extraction_dir": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C4\\C4\\canonical_json",
+  "method": "V4_tolerant_extract_then_compare_C4",
+  "mismatch_threshold": 4.0,
+  "out_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V4_C4_tolerant\\predictions.jsonl",
+  "parse_fail": 0,
+  "parse_ok": 400,
+  "requested_records": 400,
+  "validation_dir": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_C4\\C4\\validation"
+}

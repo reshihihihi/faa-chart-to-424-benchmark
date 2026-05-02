@@ -1,0 +1,203 @@
+﻿{
+  "created_at": "2026-05-02T02:15:43.855694+00:00",
+  "run_id": "experiment6_group1formal200_full200_v10_d1_20260502_r1",
+  "status": "complete",
+  "scope": "Only D-SFT-dependent Experiment 6 branches were re-evaluated with D1 canonicalized D-SFT outputs.",
+  "cases": {
+    "path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\E6_core\\cases\\e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+    "rows": 400,
+    "unique_charts": 200,
+    "sha256": "1dcd42b76254bde525ff59fad97cbf2a8b47897e0ffae4d4ac6be294abf5c180"
+  },
+  "d1_source": {
+    "root": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1",
+    "canonical_json_dir": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1/canonical_json",
+    "summary_json": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1\\reports\\D1_summary.json",
+    "summary": {
+      "created_at": "2026-05-02T00:56:19.241998+00:00",
+      "run_id": "group1_formal200_D1_20260502_r4",
+      "method": "D1",
+      "policy_id": "d1_output_canonicalization_20260502_r4",
+      "purpose": "canonicalize D-SFT raw outputs into the same fixed hierarchical canonical JSON format as the CIFP/424-derived targets",
+      "samples_total": 200,
+      "raw_outputs_found": 200,
+      "canonical_json_written": 200,
+      "schema_valid": 200,
+      "schema_invalid": 0,
+      "samples_scored": 200,
+      "field_level_v2_score": {
+        "correct": 3158,
+        "total": 4052,
+        "accuracy": 0.7793682132280355
+      },
+      "raw_chart_id_mismatch_count": 54,
+      "final_chart_id_mismatch_count": 0,
+      "action_counts": {
+        "drop_extra_top_level_fields:approach,chart_name": 1,
+        "extract_json_object_candidates:1": 3,
+        "extract_json_object_candidates:2": 1,
+        "fallback_invalid_fix_ident:missed_approach.legs[2].answers.Q1_fix_ident": 3,
+        "fallback_invalid_fix_ident:missed_approach.legs[3].answers.Q1_fix_ident": 3,
+        "merge_raw_internal_metadata_and_body": 1,
+        "parse_entire_raw_as_json_object": 196,
+        "raw_object_not_convertible_to_canonical_shape": 1,
+        "selected_candidate_index:0": 199,
+        "selected_candidate_index:1": 1,
+        "set_manifest_chart_id_envelope": 55,
+        "strip_outer_whitespace": 200,
+        "wrap_short_raw_format_to_canonical": 3
+      },
+      "hashes": {
+        "script": "b2db22be0134d9e657b03d5385c9740fcf3cf30a04fdd486453a63b2c60cb1fe",
+        "policy": "a945453556735424513818539690e70e0c413040b6ff7bcacd717d4cc4b30bed",
+        "method_card": "e83c00d900a1519c177be5a7cbe108ac33c7db26acf60adb1e04b54cd116dc30",
+        "schema": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+        "scorer_validate_only": "bbcbe08fda2482dd90eee28526f0bbd36bce71c82baf4c5054b3608d46a5d500"
+      },
+      "paths": {
+        "out_root": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1",
+        "raw_text": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1\\raw_text",
+        "canonical_json": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1/canonical_json",
+        "scores": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1\\scores",
+        "validation": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1\\validation",
+        "reports": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1\\reports"
+      },
+      "failures": []
+    },
+    "missing_e6_core_charts_count": 0,
+    "missing_e6_core_charts": []
+  },
+  "methods": {
+    "V3_D_SFT_pre_D1_group1v2_neutralized": {
+      "score_summary_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V3_D_SFT_group1v2_neutralized\\score_summary.json",
+      "predictions_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V3_D_SFT_group1v2_neutralized\\predictions.jsonl",
+      "run_summary_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V3_D_SFT_group1v2_neutralized\\run_summary.json",
+      "run_summary": {
+        "api_error": 0,
+        "cases_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\E6_core\\cases\\e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+        "compare_policy": "group1_scoring_equivalence_v2_neutralized",
+        "elapsed_sec": 0.263,
+        "extraction_dir": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json",
+        "method": "V3_D_SFT_group1v2_neutralized",
+        "out_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V3_D_SFT_group1v2_neutralized\\predictions.jsonl",
+        "parse_fail": 30,
+        "parse_ok": 370,
+        "requested_records": 400,
+        "validation_dir": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\validation"
+      },
+      "prediction_integrity": {
+        "rows": 400,
+        "expected_cases": 400,
+        "missing_count": 0,
+        "missing_examples": [],
+        "unexpected_count": 0,
+        "unexpected_examples": [],
+        "duplicate_count": 0,
+        "duplicate_examples": [],
+        "parse_fail_count": 30,
+        "api_error_count": 0,
+        "malformed_parsed_output_count": 30
+      }
+    },
+    "V3_D1_SFT_group1v2_neutralized": {
+      "score_summary_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\V3_D1_SFT_group1v2_neutralized\\score_summary.json",
+      "predictions_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\V3_D1_SFT_group1v2_neutralized\\predictions.jsonl",
+      "run_summary_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\V3_D1_SFT_group1v2_neutralized\\run_summary.json",
+      "run_summary": {
+        "api_error": 0,
+        "cases_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\E6_core\\cases\\e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+        "compare_policy": "group1_scoring_equivalence_v2_neutralized_after_D1",
+        "elapsed_sec": 3.103,
+        "extraction_dir": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1/canonical_json",
+        "method": "V3_D1_SFT_group1v2_neutralized",
+        "out_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\V3_D1_SFT_group1v2_neutralized\\predictions.jsonl",
+        "parse_fail": 0,
+        "parse_ok": 400,
+        "requested_records": 400,
+        "validation_dir": null
+      },
+      "prediction_integrity": {
+        "rows": 400,
+        "expected_cases": 400,
+        "missing_count": 0,
+        "missing_examples": [],
+        "unexpected_count": 0,
+        "unexpected_examples": [],
+        "duplicate_count": 0,
+        "duplicate_examples": [],
+        "parse_fail_count": 0,
+        "api_error_count": 0,
+        "malformed_parsed_output_count": 0
+      }
+    },
+    "V4_D_SFT_pre_D1_tolerant": {
+      "score_summary_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V4_D_SFT_tolerant\\score_summary.json",
+      "predictions_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V4_D_SFT_tolerant\\predictions.jsonl",
+      "run_summary_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V4_D_SFT_tolerant\\run_summary.json",
+      "run_summary": {
+        "api_error": 0,
+        "cases_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\E6_core\\cases\\e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+        "compare_policy": "configs/v4_tolerant_compare_policy.md",
+        "elapsed_sec": 0.307,
+        "extraction_dir": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\canonical_json",
+        "method": "V4_tolerant_extract_then_compare_D_SFT",
+        "mismatch_threshold": 4.0,
+        "out_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V4_D_SFT_tolerant\\predictions.jsonl",
+        "parse_fail": 30,
+        "parse_ok": 370,
+        "requested_records": 400,
+        "validation_dir": "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT\\D_SFT\\predictions\\group1_formal_eval_50_200_50_seed20260437_20260430_r1_D_SFT_D_SFT\\validation"
+      },
+      "prediction_integrity": {
+        "rows": 400,
+        "expected_cases": 400,
+        "missing_count": 0,
+        "missing_examples": [],
+        "unexpected_count": 0,
+        "unexpected_examples": [],
+        "duplicate_count": 0,
+        "duplicate_examples": [],
+        "parse_fail_count": 30,
+        "api_error_count": 0,
+        "malformed_parsed_output_count": 30
+      }
+    },
+    "V4_D1_SFT_tolerant": {
+      "score_summary_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\V4_D1_SFT_tolerant\\score_summary.json",
+      "predictions_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\V4_D1_SFT_tolerant\\predictions.jsonl",
+      "run_summary_path": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\V4_D1_SFT_tolerant\\run_summary.json",
+      "run_summary": {
+        "api_error": 0,
+        "cases_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\E6_core\\cases\\e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+        "compare_policy": "configs/v4_tolerant_compare_policy.md",
+        "elapsed_sec": 0.181,
+        "extraction_dir": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1/canonical_json",
+        "method": "V4_tolerant_extract_then_compare_D1_SFT",
+        "mismatch_threshold": 4.0,
+        "out_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\V4_D1_SFT_tolerant\\predictions.jsonl",
+        "parse_fail": 0,
+        "parse_ok": 400,
+        "requested_records": 400,
+        "validation_dir": null
+      },
+      "prediction_integrity": {
+        "rows": 400,
+        "expected_cases": 400,
+        "missing_count": 0,
+        "missing_examples": [],
+        "unexpected_count": 0,
+        "unexpected_examples": [],
+        "duplicate_count": 0,
+        "duplicate_examples": [],
+        "parse_fail_count": 0,
+        "api_error_count": 0,
+        "malformed_parsed_output_count": 0
+      }
+    }
+  },
+  "generated_reports": {
+    "comparison_csv": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\reports\\experiment6_v10_d1_comparison_table.csv",
+    "audit_json": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\reports\\experiment6_v10_d1_integrity_audit.json",
+    "update_report_zh": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\reports\\experiment6_v10_d1_update_report_zh.md"
+  }
+}
