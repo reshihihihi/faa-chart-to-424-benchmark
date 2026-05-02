@@ -1263,6 +1263,9 @@ function recommendedSupportModeForField(row, evidenceIds) {
     const hasNavaid = regions.some((region) => region.region_type === "NAVAID_TEXT" && regionHasToken(region, value.navaid || value.navaid_ident));
     const hasRadial = regions.some((region) => ["RADIAL_TEXT", "TRACK_OR_RADIAL_TEXT"].includes(region.region_type) && regionHasNumber(region, value.radial_deg));
     if (hasNavaid && hasRadial) return sameAreaDirectMode(regions);
+    const reciprocalRadial = (((value.radial_deg || 0) + 180) % 360 + 360) % 360;
+    const hasReciprocalRadial = regions.some((region) => ["RADIAL_TEXT", "TRACK_OR_RADIAL_TEXT"].includes(region.region_type) && regionHasNumber(region, reciprocalRadial));
+    if (hasReciprocalRadial) return "rule_default_completion";
     if (regions.some((region) => ["MISSED_APPROACH_TEXT", "PLAN_VIEW"].includes(region.region_type))) return "rule_default_completion";
   }
   return sameAreaDirectMode(regions);
