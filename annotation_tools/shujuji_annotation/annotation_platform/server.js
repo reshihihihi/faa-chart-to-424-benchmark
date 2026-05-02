@@ -481,6 +481,13 @@ function isExpertReviewClaimStatus(status) {
   return ["returned_for_expert_review", "expert_review_claimed"].includes(status || "");
 }
 
+function orderedAfterChart(manifest, afterChartId = "") {
+  if (!afterChartId) return manifest;
+  const index = manifest.findIndex((item) => item?.chart_id === afterChartId);
+  if (index < 0) return manifest;
+  return manifest.slice(index + 1).concat(manifest.slice(0, index));
+}
+
 async function buildDatasetProgress(dataset) {
   const manifest = await readDatasetJson(dataset, "manifest.json", []);
   const claims = dataset.finalDataset ? await readClaims(dataset) : {};
@@ -1219,9 +1226,10 @@ async function claimNextExpertReviewChart(dataset, reviewer, afterChartId = "") 
   }
   return withClaimLock(async () => {
     const manifest = await readDatasetJson(dataset, "manifest.json", []);
+    const orderedManifest = orderedAfterChart(manifest, afterChartId);
     const claims = await readClaims(dataset);
     const now = new Date().toISOString();
-    const openForMe = manifest.find((item) => {
+    const openForMe = orderedManifest.find((item) => {
       const chartId = item.chart_id;
       const claim = claims[chartId];
       return chartId !== afterChartId
@@ -1238,7 +1246,7 @@ async function claimNextExpertReviewChart(dataset, reviewer, afterChartId = "") 
       return { chartId, claim: claims[chartId] };
     }
 
-    const available = manifest.find((item) => {
+    const available = orderedManifest.find((item) => {
       const chartId = item.chart_id;
       const claim = claims[chartId];
       return chartId !== afterChartId && claim?.status === "returned_for_expert_review";
@@ -1272,9 +1280,10 @@ async function claimNextChart(dataset, annotator, afterChartId = "") {
   }
   return withClaimLock(async () => {
     const manifest = await readDatasetJson(dataset, "manifest.json", []);
+    const orderedManifest = orderedAfterChart(manifest, afterChartId);
     const claims = await readClaims(dataset);
     const now = new Date().toISOString();
-    const openForMe = manifest.find((item) => {
+    const openForMe = orderedManifest.find((item) => {
       const chartId = item.chart_id;
       const claim = claims[chartId];
       return chartId !== afterChartId
@@ -1295,7 +1304,7 @@ async function claimNextChart(dataset, annotator, afterChartId = "") {
       return { chartId, claim: claims[chartId] };
     }
 
-    const unassigned = manifest.find((item) => item.chart_id !== afterChartId && !claims[item.chart_id]);
+    const unassigned = orderedManifest.find((item) => item.chart_id !== afterChartId && !claims[item.chart_id]);
     if (!unassigned) return { chartId: "", claim: null };
 
     const chartId = unassigned.chart_id;

@@ -3983,7 +3983,12 @@ function bindEvents() {
 
 function formalQueueCandidates({ afterChartId = "" } = {}) {
   if (!formalQueueMode()) return [];
-  return state.charts.filter((chart) => {
+  const charts = state.charts || [];
+  const startIndex = afterChartId ? charts.findIndex((chart) => chart?.chart_id === afterChartId) : -1;
+  const orderedCharts = startIndex >= 0
+    ? charts.slice(startIndex + 1).concat(charts.slice(0, startIndex))
+    : charts;
+  return orderedCharts.filter((chart) => {
     if (!chart || chart.chart_id === afterChartId) return false;
     if (chart.has_my_annotation || chart.claim_status === "submitted") return false;
     if (expertReviewMode()) {

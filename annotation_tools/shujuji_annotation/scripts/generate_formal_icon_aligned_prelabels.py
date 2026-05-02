@@ -82,6 +82,16 @@ def angle_tokens(value):
     return [f"{rounded:03d}", str(rounded)]
 
 
+def radial_tokens(value):
+    return [token for angle in angle_tokens(value) for token in (f"R-{angle.zfill(3)}", f"R{angle.zfill(3)}", angle.zfill(3), str(int(angle)))]
+
+
+def reciprocal_angle(value):
+    if value is None:
+        return None
+    return (int(round(float(value))) + 180) % 360
+
+
 def answer_display(answer_obj):
     status = answer_obj.get("status")
     value = answer_obj.get("value")
@@ -199,8 +209,11 @@ def tokens_for_meta(meta):
             if value.get("navaid"):
                 tokens.append(norm_text(value["navaid"]))
             if value.get("radial_deg") is not None:
-                rounded = int(round(float(value["radial_deg"]))) % 360
-                tokens.extend([f"R-{rounded:03d}", f"R{rounded:03d}", f"{rounded:03d}"])
+                tokens.extend(radial_tokens(value["radial_deg"]))
+                if str(value.get("direction") or "").upper().startswith("IN"):
+                    # FAA graphics often print the reciprocal radial while the 424-derived
+                    # target stores the inbound course/radial direction.
+                    tokens.extend(radial_tokens(reciprocal_angle(value["radial_deg"])))
             if value.get("direction"):
                 direction = str(value["direction"]).upper()
                 tokens.append("INBND" if direction.startswith("IN") else "OUTBND")
@@ -208,6 +221,7 @@ def tokens_for_meta(meta):
             tokens.extend(angle_tokens(value["course_deg"]))
     elif field == "Q5_hold_params" and isinstance(value, dict):
         tokens.extend(angle_tokens(value.get("inbound_course_deg")))
+        tokens.extend(radial_tokens(value.get("inbound_course_deg")))
         if value.get("leg_distance_nm") is not None:
             tokens.append(str(int(round(float(value["leg_distance_nm"])))))
         if value.get("leg_time_min") is not None:
@@ -1164,6 +1178,84 @@ def detect_symbol_components(image_path, roi):
     return components
 
 
+def detect_path_line_segments(image_path, roi, text_regions=None):
+    image = cv2.imread(str(image_path), cv2.IMREAD_GRAYSCALE)
+    if image is None:
+        return []
+    image_height, image_width = image.shape[:2]
+    x0, y0, x1, y1 = pixel_rect_from_bbox(roi, image_width, image_height)
+    crop = image[y0:y1, x0:x1]
+    if crop.size == 0:
+        return []
+    crop_h, crop_w = crop.shape[:2]
+    edges = cv2.Canny(crop, 50, 150)
+    min_length = max(12, int(crop_w * 0.08))
+    lines = cv2.HoughLinesP(edges, 1, np.pi / 180, threshold=12, minLineLength=min_length, maxLineGap=4)
+    if lines is None:
+        return []
+
+    text_regions = text_regions or []
+    segments = []
+    for raw in lines[:, 0, :]:
+        lx0, ly0, lx1, ly1 = [int(value) for value in raw]
+        dx = lx1 - lx0
+        dy = ly1 - ly0
+        length = float((dx * dx + dy * dy) ** 0.5)
+        if length < min_length:
+            continue
+        angle = abs(np.degrees(np.arctan2(dy, dx)))
+        if angle > 90:
+            angle = 180 - angle
+        near_boundary = (
+            min(lx0, lx1) <= 3
+            or max(lx0, lx1) >= crop_w - 4
+            or min(ly0, ly1) <= 3
+            or max(ly0, ly1) >= crop_h - 4
+        )
+        if near_boundary and (angle <= 8 or angle >= 82):
+            continue
+        if angle <= 5 and abs(lx1 - lx0) >= crop_w * 0.72:
+            continue
+        if angle >= 85 and abs(ly1 - ly0) >= crop_h * 0.72:
+            continue
+        pad = 4
+        box = bbox_from_pixel_edges(
+            x0 + min(lx0, lx1) - pad,
+            y0 + min(ly0, ly1) - pad,
+            x0 + max(lx0, lx1) + pad,
+            y0 + max(ly0, ly1) + pad,
+            image_width,
+            image_height,
+        )
+        if any(box_intersection_over_min(box, text_item["bbox"]) >= 0.72 for text_item in text_regions):
+            continue
+        segments.append({
+            "bbox": box,
+            "pixel": (x0 + lx0, y0 + ly0, x0 + lx1, y0 + ly1),
+            "length": length / max(image_width, image_height),
+            "angle": float(angle),
+            "near_boundary": near_boundary,
+        })
+    return merge_line_segments(segments)
+
+
+def merge_line_segments(segments):
+    merged = []
+    for segment in sorted(segments, key=lambda item: (-item["length"], item["bbox"]["y_center"], item["bbox"]["x_center"])):
+        target = next((
+            item for item in merged
+            if abs(item["angle"] - segment["angle"]) <= 8
+            and box_intersection_over_min(item["bbox"], segment["bbox"]) >= 0.35
+        ), None)
+        if target:
+            target["bbox"] = bbox_union([target["bbox"], segment["bbox"]]) or target["bbox"]
+            target["length"] = max(target["length"], segment["length"])
+            target["near_boundary"] = target["near_boundary"] and segment["near_boundary"]
+        else:
+            merged.append(deepcopy(segment))
+    return merged
+
+
 def nearest_component(components, anchor_box, predicate):
     candidates = [item for item in components if predicate(item)]
     if not candidates:
@@ -1171,6 +1263,22 @@ def nearest_component(components, anchor_box, predicate):
     ax = anchor_box["x_center"]
     ay = anchor_box["y_center"]
     return min(candidates, key=lambda item: abs(item["bbox"]["x_center"] - ax) * 1.4 + abs(item["bbox"]["y_center"] - ay))
+
+
+def nearest_line_segment(segments, anchor_box, predicate):
+    candidates = [item for item in segments if predicate(item)]
+    if not candidates:
+        return None
+    ax = anchor_box["x_center"]
+    ay = anchor_box["y_center"]
+    return min(
+        candidates,
+        key=lambda item: (
+            abs(item["bbox"]["x_center"] - ax) * 1.2
+            + abs(item["bbox"]["y_center"] - ay)
+            - min(float(item.get("length") or 0), 0.08)
+        ),
+    )
 
 
 def choose_best_word(meta, rtype, candidates, cluster_center):
@@ -1264,6 +1372,7 @@ def add_text_boxes(chart_id, serial, selected_matches, lookup, detail_roi, exist
 
 def add_symbol_boxes(chart_id, serial, image_path, detail_roi, lookup, text_regions):
     components = detect_symbol_components(image_path, detail_roi)
+    line_segments = detect_path_line_segments(image_path, detail_roi, text_regions)
     output = []
     text_by_key = {}
     for item in text_regions:
@@ -1276,13 +1385,34 @@ def add_symbol_boxes(chart_id, serial, image_path, detail_roi, lookup, text_regi
         anchors = text_by_key.get(key, [])
         anchor = anchors[0]["bbox"] if anchors else detail_roi
         if field == "Q2_altitude_constraint":
-            comp = nearest_component(
-                components,
+            line = nearest_line_segment(
+                line_segments,
                 anchor,
-                lambda item: item["aspect"] > 1.65 and item["bbox"]["height"] > 0.009 and item["bbox"]["width"] < 0.025 and item["bbox"]["y_center"] >= anchor["y_center"] - 0.01,
+                lambda item: (
+                    (
+                        item["angle"] >= 65
+                        or (
+                            30 <= item["angle"] <= 75
+                            and item["bbox"]["width"] >= 0.022
+                            and item["bbox"]["height"] >= 0.014
+                        )
+                    )
+                    and item["bbox"]["height"] >= 0.012
+                    and item["bbox"]["width"] <= 0.06
+                    and abs(item["bbox"]["x_center"] - anchor["x_center"]) <= 0.055
+                    and item["bbox"]["y_center"] >= anchor["y_center"] + 0.004
+                ),
             )
-            if comp:
-                output.append(region(chart_id, serial, "CLIMB_ARROW", comp["bbox"], f"climb arrow for {meta['expected_value']}", [mapping(meta, "detected climb/missed-approach icon near altitude text", 0.5)], 0.5, "cv_icon_component"))
+            comp = None
+            if not line:
+                comp = nearest_component(
+                    components,
+                    anchor,
+                    lambda item: item["aspect"] > 1.55 and item["bbox"]["height"] > 0.008 and item["bbox"]["width"] < 0.028 and item["bbox"]["y_center"] >= anchor["y_center"] - 0.01,
+                )
+            climb_box = line["bbox"] if line else comp["bbox"] if comp else None
+            if climb_box:
+                output.append(region(chart_id, serial, "CLIMB_ARROW", climb_box, f"climb arrow for {meta['expected_value']}", [mapping(meta, "detected climb/missed-approach arrow graphic near altitude text", 0.52)], 0.52, "cv_icon_component"))
                 serial += 1
         if field == "Q1_fix_ident" and leg_type in FIX_SYMBOL_TYPES:
             fix_anchor = anchor
@@ -1302,23 +1432,35 @@ def add_symbol_boxes(chart_id, serial, image_path, detail_roi, lookup, text_regi
                 output.append(region(chart_id, serial, "FIX_SYMBOL", comp["bbox"], f"fix symbol for {meta['expected_value']}", [mapping(meta, "detected fix/navaid symbol near fix text", 0.48)], 0.48, "cv_icon_component"))
                 serial += 1
         if is_navaid_radial_meta(meta):
-            comp = nearest_component(
-                components,
+            line = nearest_line_segment(
+                line_segments,
                 anchor,
-                lambda item: item["bbox"]["width"] > 0.022 and item["bbox"]["height"] > 0.006 and item["area"] >= 26,
+                lambda item: (
+                    item["bbox"]["width"] >= 0.025
+                    and item["bbox"]["height"] <= 0.035
+                    and item["bbox"]["y_center"] >= detail_roi["y_center"] - detail_roi["height"] * 0.35
+                    and abs(item["bbox"]["y_center"] - anchor["y_center"]) <= 0.055
+                ),
             )
-            if comp:
-                output.append(region(chart_id, serial, "PATH_SEGMENT", comp["bbox"], f"radial/path graphic for {meta['expected_value']}", [mapping(meta, "detected radial/path graphic near navaid-radial text", 0.44)], 0.44, "cv_icon_component"))
+            if line:
+                output.append(region(chart_id, serial, "PATH_SEGMENT", line["bbox"], f"radial/path graphic for {meta['expected_value']}", [mapping(meta, "detected radial/path line graphic near navaid-radial text", 0.5)], 0.5, "cv_icon_component"))
                 serial += 1
-        if field in {"Q3_turn", "Q5_hold_params"}:
-            comp = nearest_component(
-                components,
+        if field == "Q3_turn":
+            line = nearest_line_segment(
+                line_segments,
                 anchor,
-                lambda item: item["bbox"]["width"] > 0.025 and item["bbox"]["height"] > 0.018,
+                lambda item: item["bbox"]["width"] > 0.025 and item["bbox"]["height"] > 0.012 and abs(item["bbox"]["y_center"] - anchor["y_center"]) <= 0.075,
             )
-            if comp:
-                rtype = "HOLDING_PATTERN" if field == "Q5_hold_params" else "PATH_SEGMENT"
-                output.append(region(chart_id, serial, rtype, comp["bbox"], f"{rtype} for {meta['expected_value']}", [mapping(meta, "detected path/holding icon component inside lower missed-approach area", 0.46)], 0.46, "cv_icon_component"))
+            comp = None
+            if not line:
+                comp = nearest_component(
+                    components,
+                    anchor,
+                    lambda item: item["bbox"]["width"] > 0.025 and item["bbox"]["height"] > 0.018,
+                )
+            graphic_box = line["bbox"] if line else comp["bbox"] if comp else None
+            if graphic_box:
+                output.append(region(chart_id, serial, "PATH_SEGMENT", graphic_box, f"PATH_SEGMENT for {meta['expected_value']}", [mapping(meta, "detected turn/path line graphic inside lower missed-approach area", 0.46)], 0.46, "cv_icon_component"))
                 serial += 1
     return output, serial
 
@@ -1480,7 +1622,7 @@ def fine_mapping_matches_visible_text(item, item_mapping):
     if region_type == "ALTITUDE_TEXT":
         return field_name == "Q2_altitude_constraint" and isinstance(value, dict) and has_number(item, value.get("altitude_ft"))
     if region_type == "CLIMB_ARROW":
-        return field_name == "Q2_altitude_constraint"
+        return field_name in {"Q2_altitude_constraint", "Q3_turn"}
     if region_type == "TURN_PHRASE":
         return field_name == "Q3_turn" and has_token(item, value)
     if region_type == "FIX_TEXT":
@@ -1495,7 +1637,12 @@ def fine_mapping_matches_visible_text(item, item_mapping):
         return False
     if region_type in {"RADIAL_TEXT", "HEADING_TEXT", "TRACK_OR_RADIAL_TEXT"}:
         if field_name == "Q4_course_or_radial" and isinstance(value, dict):
-            return has_number(item, value.get("radial_deg") or value.get("course_deg"))
+            if value.get("type") == "navaid_radial":
+                return has_number(item, value.get("radial_deg")) or (
+                    str(value.get("direction") or "").upper().startswith("IN")
+                    and has_number(item, reciprocal_angle(value.get("radial_deg")))
+                )
+            return has_number(item, value.get("course_deg"))
         if field_name == "Q5_hold_params" and isinstance(value, dict):
             return has_number(item, value.get("inbound_course_deg"))
         return False
@@ -1505,8 +1652,12 @@ def fine_mapping_matches_visible_text(item, item_mapping):
         return field_name == "Q5_hold_params" and isinstance(value, dict) and value.get("leg_time_min") is not None
     if region_type == "DME_DISTANCE_TEXT":
         return field_name == "Q5_hold_params" and isinstance(value, dict) and value.get("leg_distance_nm") is not None and has_number(item, value.get("leg_distance_nm"))
-    if region_type in {"HOLDING_PATTERN", "HOLDING_ARC", "PATH_SEGMENT", "MISSED_APPROACH_ICON", "MISSED_APPROACH_STEP_BOX"}:
-        return False
+    if region_type == "PATH_SEGMENT":
+        return field_name in {"Q3_turn", "Q4_course_or_radial"}
+    if region_type in {"HOLDING_PATTERN", "HOLDING_ARC"}:
+        return field_name == "Q5_hold_params"
+    if region_type in {"MISSED_APPROACH_ICON", "MISSED_APPROACH_STEP_BOX"}:
+        return field_name in {"Q3_turn", "Q4_course_or_radial", "Q5_hold_params"}
     return True
 
 
@@ -1519,7 +1670,7 @@ def mapping_allowed_for_region_type(region_type, item_mapping):
     if region_type == "ALTITUDE_TEXT":
         return field_name == "Q2_altitude_constraint"
     if region_type == "CLIMB_ARROW":
-        return field_name == "Q2_altitude_constraint"
+        return field_name in {"Q2_altitude_constraint", "Q3_turn"}
     if region_type == "TURN_PHRASE":
         return field_name == "Q3_turn"
     if region_type in {"FIX_TEXT", "FIX_SYMBOL"}:
@@ -1625,12 +1776,33 @@ def add_mapping_if_missing(item, meta, basis, confidence):
     return True
 
 
+def coarse_region_allows_mapping(region_type, meta):
+    field = meta.get("field_name", "")
+    leg_type = meta.get("leg_type", "")
+    if region_type == "MISSED_APPROACH_TEXT":
+        # The missed-approach prose can say "hold" or "climb to ...", but that
+        # does not by itself encode holding parameters or the CA course value.
+        # Keep these as plan/detail evidence tasks instead of pre-binding the
+        # upper text block to a fully encoded 424 field.
+        if field == "Q5_hold_params":
+            return False
+        if field == "Q4_course_or_radial" and leg_type == "CA":
+            return False
+    return True
+
+
 def add_all_present_mappings_to_coarse_regions(coarse_regions, lookup):
     for item in coarse_regions:
         region_type = item.get("region_type")
         if region_type not in {"MISSED_APPROACH_TEXT", "PLAN_VIEW"}:
             continue
+        item["candidate_mappings"] = [
+            item_mapping for item_mapping in item.get("candidate_mappings", [])
+            if coarse_region_allows_mapping(region_type, item_mapping)
+        ]
         for key, meta in sorted(lookup.items()):
+            if not coarse_region_allows_mapping(region_type, meta):
+                continue
             basis = (
                 "coarse MISSED_APPROACH_TEXT evidence region; human must verify whether this full text block supports the field"
                 if region_type == "MISSED_APPROACH_TEXT"
@@ -1888,7 +2060,7 @@ def generate_chart(manifest_item, target):
     all_fine = remove_unmapped_fine_regions(all_fine)
     all_fine = limit_duplicate_evidence(all_fine, detail_roi)
     prelabel["regions"] = coarse + all_fine
-    prelabel["prelabel_version"] = "v0.29-formal300-structure-aware-typed-visible-evidence"
+    prelabel["prelabel_version"] = "v0.30-formal300-ca-hm-visible-vs-derived"
     prelabel["generated_at"] = datetime.now(timezone.utc).isoformat()
     prelabel.setdefault("generation_policy", {})
     prelabel["generation_policy"].update({
@@ -1905,10 +2077,15 @@ def generate_chart(manifest_item, target):
         "fine_q_terminator_mappings_removed": True,
         "hm_inherited_fix_alt_fine_mappings_removed": True,
         "generic_path_hold_graphics_removed_from_q5_params": True,
+        "q5_generic_hough_graphics_disabled": True,
+        "reciprocal_inbound_radial_tokens_enabled": True,
+        "hold_params_radial_text_tokens_enabled": True,
+        "curved_climb_arrow_segments_enabled": True,
         "nested_duplicate_box_merge_enabled": True,
         "text_overlapping_symbol_false_positive_filter": True,
         "unmapped_fine_regions_removed": True,
         "all_present_fields_linked_to_coarse_ma_text_and_plan_view": True,
+        "upper_text_excludes_hm_hold_params_and_ca_course": True,
         "coarse_region_table_line_snap_enabled": True,
         "plan_view_long_line_snap_enabled": True,
         "lower_detail_edges_locked_to_detected_lines": True,

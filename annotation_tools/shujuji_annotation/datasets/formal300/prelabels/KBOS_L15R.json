@@ -5,8 +5,8 @@
     "width": 807,
     "height": 1238
   },
-  "prelabel_version": "v0.29-formal300-structure-aware-typed-visible-evidence",
-  "generated_at": "2026-05-01T10:42:59.960645+00:00",
+  "prelabel_version": "v0.30-formal300-ca-hm-visible-vs-derived",
+  "generated_at": "2026-05-02T01:31:07.266617+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -40,7 +40,12 @@
     "lower_detail_closed_cell_corner_required": true,
     "lower_detail_vertical_edge_cell_fallback_enabled": true,
     "lower_detail_connected_corner_required": true,
-    "lower_detail_adjacent_cell_probe_enabled": true
+    "lower_detail_adjacent_cell_probe_enabled": true,
+    "upper_text_excludes_hm_hold_params_and_ca_course": true,
+    "q5_generic_hough_graphics_disabled": true,
+    "reciprocal_inbound_radial_tokens_enabled": true,
+    "hold_params_radial_text_tokens_enabled": true,
+    "curved_climb_arrow_segments_enabled": true
   },
   "review_priority": "normal",
   "target_summary": {
@@ -159,29 +164,6 @@
               "desc": "AT_OR_ABOVE",
               "altitude_ft": 3000,
               "altitude_2_ft": null
-            }
-          },
-          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
-          "confidence": 0.35,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBOS_L15R.json",
-          "source_seq_no": "050",
-          "source_trans_ident": "L"
-        },
-        {
-          "candidate_leg_id": "KBOS_L15R__ma2",
-          "canonical_leg_index": 2,
-          "leg_type": "HM",
-          "field_name": "Q5_hold_params",
-          "expected_value": "inbound_course_deg=334.0, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "inbound_course_deg": 334,
-              "leg_time_min": 1,
-              "leg_distance_nm": null,
-              "turn": "RIGHT"
             }
           },
           "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
@@ -582,17 +564,66 @@
       "source_field_name": "Q4_course_or_radial"
     },
     {
-      "region_id": "KBOS_L15R_iconalign_007_climb_arrow",
+      "region_id": "KBOS_L15R_iconalign_004_radial_text",
+      "region_type": "RADIAL_TEXT",
+      "bbox": {
+        "x_center": 0.5629,
+        "y_center": 0.7735,
+        "width": 0.047,
+        "height": 0.0131
+      },
+      "ocr_text": "",
+      "label": "RADIAL_TEXT: R-154 -> type=navaid_radial, navaid=BOS, radial_deg=334.0, direction=inbound",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KBOS_L15R__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CF",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=navaid_radial, navaid=BOS, radial_deg=334.0, direction=inbound",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "navaid_radial",
+              "navaid": "BOS",
+              "radial_deg": 334,
+              "direction": "inbound"
+            }
+          },
+          "match_basis": "PDF text token 'R-154' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBOS_L15R.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      },
+      "source_candidate_leg_id": "KBOS_L15R__ma1",
+      "source_leg_type": "CF",
+      "source_field_name": "Q4_course_or_radial"
+    },
+    {
+      "region_id": "KBOS_L15R_iconalign_008_climb_arrow",
       "region_type": "CLIMB_ARROW",
       "bbox": {
-        "x_center": 0.5576,
-        "y_center": 0.7722,
-        "width": 0.005,
-        "height": 0.0097
+        "x_center": 0.544,
+        "y_center": 0.7569,
+        "width": 0.0099,
+        "height": 0.0323
       },
       "ocr_text": "",
       "label": "detected lower detail: climb arrow",
-      "confidence": 0.5,
+      "confidence": 0.52,
       "source_layer": "cv_icon_component",
       "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
       "is_formal_annotation_candidate": true,
@@ -611,8 +642,8 @@
               "altitude_2_ft": null
             }
           },
-          "match_basis": "detected climb/missed-approach icon near altitude text",
-          "confidence": 0.5,
+          "match_basis": "detected climb/missed-approach arrow graphic near altitude text",
+          "confidence": 0.52,
           "human_decision": "pending",
           "human_notes": "",
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBOS_L15R.json",
@@ -628,6 +659,55 @@
       "source_candidate_leg_id": "KBOS_L15R__ma1",
       "source_leg_type": "CF",
       "source_field_name": "Q2_altitude_constraint"
+    },
+    {
+      "region_id": "KBOS_L15R_iconalign_009_path_segment",
+      "region_type": "PATH_SEGMENT",
+      "bbox": {
+        "x_center": 0.5192,
+        "y_center": 0.769,
+        "width": 0.0372,
+        "height": 0.0097
+      },
+      "ocr_text": "",
+      "label": "detected lower detail: path segment",
+      "confidence": 0.5,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KBOS_L15R__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CF",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=navaid_radial, navaid=BOS, radial_deg=334.0, direction=inbound",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "navaid_radial",
+              "navaid": "BOS",
+              "radial_deg": 334,
+              "direction": "inbound"
+            }
+          },
+          "match_basis": "detected radial/path line graphic near navaid-radial text",
+          "confidence": 0.5,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBOS_L15R.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "L"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      },
+      "source_candidate_leg_id": "KBOS_L15R__ma1",
+      "source_leg_type": "CF",
+      "source_field_name": "Q4_course_or_radial"
     }
   ]
 }

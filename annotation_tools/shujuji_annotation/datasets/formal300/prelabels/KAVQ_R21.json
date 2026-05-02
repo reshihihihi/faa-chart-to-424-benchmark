@@ -5,8 +5,8 @@
     "width": 807,
     "height": 1238
   },
-  "prelabel_version": "v0.29-formal300-structure-aware-typed-visible-evidence",
-  "generated_at": "2026-05-01T10:43:07.649079+00:00",
+  "prelabel_version": "v0.30-formal300-ca-hm-visible-vs-derived",
+  "generated_at": "2026-05-02T01:31:16.080701+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -40,7 +40,12 @@
     "lower_detail_closed_cell_corner_required": true,
     "lower_detail_vertical_edge_cell_fallback_enabled": true,
     "lower_detail_connected_corner_required": true,
-    "lower_detail_adjacent_cell_probe_enabled": true
+    "lower_detail_adjacent_cell_probe_enabled": true,
+    "upper_text_excludes_hm_hold_params_and_ca_course": true,
+    "q5_generic_hough_graphics_disabled": true,
+    "reciprocal_inbound_radial_tokens_enabled": true,
+    "hold_params_radial_text_tokens_enabled": true,
+    "curved_climb_arrow_segments_enabled": true
   },
   "review_priority": "high",
   "target_summary": {
@@ -80,27 +85,6 @@
               "desc": "AT_OR_ABOVE",
               "altitude_ft": 2340,
               "altitude_2_ft": null
-            }
-          },
-          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
-          "confidence": 0.35,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAVQ_R21.json",
-          "source_seq_no": "040",
-          "source_trans_ident": "R"
-        },
-        {
-          "candidate_leg_id": "KAVQ_R21__ma1",
-          "canonical_leg_index": 1,
-          "leg_type": "CA",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=course_deg, course_deg=198.6",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "course_deg",
-              "course_deg": 198.6
             }
           },
           "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
@@ -219,29 +203,6 @@
               "desc": "AT_OR_ABOVE",
               "altitude_ft": 6700,
               "altitude_2_ft": null
-            }
-          },
-          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
-          "confidence": 0.35,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAVQ_R21.json",
-          "source_seq_no": "070",
-          "source_trans_ident": "R"
-        },
-        {
-          "candidate_leg_id": "KAVQ_R21__ma4",
-          "canonical_leg_index": 4,
-          "leg_type": "HM",
-          "field_name": "Q5_hold_params",
-          "expected_value": "inbound_course_deg=111.0, leg_time_min=None, leg_distance_nm=6.0, turn=LEFT",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "inbound_course_deg": 111,
-              "leg_time_min": null,
-              "leg_distance_nm": 6,
-              "turn": "LEFT"
             }
           },
           "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",

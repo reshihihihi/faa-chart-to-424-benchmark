@@ -5,8 +5,8 @@
     "width": 775,
     "height": 1188
   },
-  "prelabel_version": "v0.29-formal300-structure-aware-typed-visible-evidence",
-  "generated_at": "2026-05-01T10:43:23.510916+00:00",
+  "prelabel_version": "v0.30-formal300-ca-hm-visible-vs-derived",
+  "generated_at": "2026-05-02T01:31:34.348322+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -40,7 +40,12 @@
     "lower_detail_closed_cell_corner_required": true,
     "lower_detail_vertical_edge_cell_fallback_enabled": true,
     "lower_detail_connected_corner_required": true,
-    "lower_detail_adjacent_cell_probe_enabled": true
+    "lower_detail_adjacent_cell_probe_enabled": true,
+    "upper_text_excludes_hm_hold_params_and_ca_course": true,
+    "q5_generic_hough_graphics_disabled": true,
+    "reciprocal_inbound_radial_tokens_enabled": true,
+    "hold_params_radial_text_tokens_enabled": true,
+    "curved_climb_arrow_segments_enabled": true
   },
   "review_priority": "high",
   "target_summary": {
@@ -80,27 +85,6 @@
               "desc": "AT_OR_ABOVE",
               "altitude_ft": 7000,
               "altitude_2_ft": null
-            }
-          },
-          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
-          "confidence": 0.35,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAJZ_R03.json",
-          "source_seq_no": "040",
-          "source_trans_ident": "R"
-        },
-        {
-          "candidate_leg_id": "KAJZ_R03__ma1",
-          "canonical_leg_index": 1,
-          "leg_type": "CA",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=course_deg, course_deg=31.6",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "course_deg",
-              "course_deg": 31.6
             }
           },
           "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
@@ -258,29 +242,6 @@
               "desc": "AT_OR_ABOVE",
               "altitude_ft": 11600,
               "altitude_2_ft": null
-            }
-          },
-          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
-          "confidence": 0.35,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAJZ_R03.json",
-          "source_seq_no": "070",
-          "source_trans_ident": "R"
-        },
-        {
-          "candidate_leg_id": "KAJZ_R03__ma4",
-          "canonical_leg_index": 4,
-          "leg_type": "HM",
-          "field_name": "Q5_hold_params",
-          "expected_value": "inbound_course_deg=220.0, leg_time_min=None, leg_distance_nm=7.0, turn=LEFT",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "inbound_course_deg": 220,
-              "leg_time_min": null,
-              "leg_distance_nm": 7,
-              "turn": "LEFT"
             }
           },
           "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
@@ -943,14 +904,14 @@
       "region_id": "KAJZ_R03_iconalign_012_climb_arrow",
       "region_type": "CLIMB_ARROW",
       "bbox": {
-        "x_center": 0.4555,
-        "y_center": 0.6604,
-        "width": 0.0052,
-        "height": 0.0093
+        "x_center": 0.4845,
+        "y_center": 0.6675,
+        "width": 0.0348,
+        "height": 0.0253
       },
       "ocr_text": "",
       "label": "detected lower detail: climb arrow",
-      "confidence": 0.5,
+      "confidence": 0.52,
       "source_layer": "cv_icon_component",
       "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
       "is_formal_annotation_candidate": true,
@@ -969,12 +930,30 @@
               "altitude_2_ft": null
             }
           },
-          "match_basis": "detected climb/missed-approach icon near altitude text",
-          "confidence": 0.5,
+          "match_basis": "detected climb/missed-approach arrow graphic near altitude text",
+          "confidence": 0.52,
           "human_decision": "pending",
           "human_notes": "",
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAJZ_R03.json",
           "source_seq_no": "060",
+          "source_trans_ident": "R"
+        },
+        {
+          "candidate_leg_id": "KAJZ_R03__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q3_turn",
+          "expected_value": "RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": "RIGHT"
+          },
+          "match_basis": "detected turn/path line graphic inside lower missed-approach area",
+          "confidence": 0.46,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAJZ_R03.json",
+          "source_seq_no": "050",
           "source_trans_ident": "R"
         }
       ],
@@ -982,23 +961,20 @@
       "human_review": {
         "review_action": "pending",
         "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
-      },
-      "source_candidate_leg_id": "KAJZ_R03__ma3",
-      "source_leg_type": "TF",
-      "source_field_name": "Q2_altitude_constraint"
+      }
     },
     {
       "region_id": "KAJZ_R03_iconalign_008_climb_arrow",
       "region_type": "CLIMB_ARROW",
       "bbox": {
-        "x_center": 0.4161,
-        "y_center": 0.6747,
-        "width": 0.009,
-        "height": 0.0126
+        "x_center": 0.4142,
+        "y_center": 0.6864,
+        "width": 0.0103,
+        "height": 0.0345
       },
       "ocr_text": "",
       "label": "detected lower detail: climb arrow",
-      "confidence": 0.5,
+      "confidence": 0.52,
       "source_layer": "cv_icon_component",
       "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
       "is_formal_annotation_candidate": true,
@@ -1017,8 +993,8 @@
               "altitude_2_ft": null
             }
           },
-          "match_basis": "detected climb/missed-approach icon near altitude text",
-          "confidence": 0.5,
+          "match_basis": "detected climb/missed-approach arrow graphic near altitude text",
+          "confidence": 0.52,
           "human_decision": "pending",
           "human_notes": "",
           "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAJZ_R03.json",

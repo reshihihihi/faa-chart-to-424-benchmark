@@ -5,8 +5,8 @@
     "width": 807,
     "height": 1238
   },
-  "prelabel_version": "v0.29-formal300-structure-aware-typed-visible-evidence",
-  "generated_at": "2026-05-01T10:43:13.039946+00:00",
+  "prelabel_version": "v0.30-formal300-ca-hm-visible-vs-derived",
+  "generated_at": "2026-05-02T01:31:22.386367+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,
@@ -40,7 +40,12 @@
     "lower_detail_closed_cell_corner_required": true,
     "lower_detail_vertical_edge_cell_fallback_enabled": true,
     "lower_detail_connected_corner_required": true,
-    "lower_detail_adjacent_cell_probe_enabled": true
+    "lower_detail_adjacent_cell_probe_enabled": true,
+    "upper_text_excludes_hm_hold_params_and_ca_course": true,
+    "q5_generic_hough_graphics_disabled": true,
+    "reciprocal_inbound_radial_tokens_enabled": true,
+    "hold_params_radial_text_tokens_enabled": true,
+    "curved_climb_arrow_segments_enabled": true
   },
   "review_priority": "high",
   "target_summary": {
@@ -81,27 +86,6 @@
               "desc": "AT_OR_ABOVE",
               "altitude_ft": 1677,
               "altitude_2_ft": null
-            }
-          },
-          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
-          "confidence": 0.35,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAXN_R22.json",
-          "source_seq_no": "040",
-          "source_trans_ident": "R"
-        },
-        {
-          "candidate_leg_id": "KAXN_R22__ma1",
-          "canonical_leg_index": 1,
-          "leg_type": "CA",
-          "field_name": "Q4_course_or_radial",
-          "expected_value": "type=course_deg, course_deg=225.4",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "type": "course_deg",
-              "course_deg": 225.4
             }
           },
           "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
@@ -238,29 +222,6 @@
               "desc": "AT_OR_ABOVE",
               "altitude_ft": 3500,
               "altitude_2_ft": null
-            }
-          },
-          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
-          "confidence": 0.35,
-          "human_decision": "pending",
-          "human_notes": "",
-          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAXN_R22.json",
-          "source_seq_no": "080",
-          "source_trans_ident": "R"
-        },
-        {
-          "candidate_leg_id": "KAXN_R22__ma5",
-          "canonical_leg_index": 5,
-          "leg_type": "HM",
-          "field_name": "Q5_hold_params",
-          "expected_value": "inbound_course_deg=121.9, leg_time_min=None, leg_distance_nm=4.0, turn=RIGHT",
-          "expected_answer": {
-            "status": "present",
-            "value": {
-              "inbound_course_deg": 121.9,
-              "leg_time_min": null,
-              "leg_distance_nm": 4,
-              "turn": "RIGHT"
             }
           },
           "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
@@ -884,7 +845,103 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KAXN_R22_iconalign_007_fix_symbol",
+      "region_id": "KAXN_R22_iconalign_011_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "bbox": {
+        "x_center": 0.3599,
+        "y_center": 0.6991,
+        "width": 0.0136,
+        "height": 0.0397
+      },
+      "ocr_text": "",
+      "label": "detected lower detail: climb arrow",
+      "confidence": 0.52,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAXN_R22__ma4",
+          "canonical_leg_index": 4,
+          "leg_type": "TF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3500 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3500,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "detected climb/missed-approach arrow graphic near altitude text",
+          "confidence": 0.52,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAXN_R22.json",
+          "source_seq_no": "070",
+          "source_trans_ident": "R"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      },
+      "source_candidate_leg_id": "KAXN_R22__ma4",
+      "source_leg_type": "TF",
+      "source_field_name": "Q2_altitude_constraint"
+    },
+    {
+      "region_id": "KAXN_R22_iconalign_007_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "bbox": {
+        "x_center": 0.4572,
+        "y_center": 0.7015,
+        "width": 0.0223,
+        "height": 0.0234
+      },
+      "ocr_text": "",
+      "label": "detected lower detail: climb arrow",
+      "confidence": 0.52,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KAXN_R22__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 1677 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 1677,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "detected climb/missed-approach arrow graphic near altitude text",
+          "confidence": 0.52,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAXN_R22.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "R"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      },
+      "source_candidate_leg_id": "KAXN_R22__ma1",
+      "source_leg_type": "CA",
+      "source_field_name": "Q2_altitude_constraint"
+    },
+    {
+      "region_id": "KAXN_R22_iconalign_008_fix_symbol",
       "region_type": "FIX_SYMBOL",
       "bbox": {
         "x_center": 0.4164,
@@ -928,7 +985,7 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KAXN_R22_iconalign_008_fix_symbol",
+      "region_id": "KAXN_R22_iconalign_009_fix_symbol",
       "region_type": "FIX_SYMBOL",
       "bbox": {
         "x_center": 0.5378,
@@ -972,7 +1029,7 @@
       "source_field_name": "Q1_fix_ident"
     },
     {
-      "region_id": "KAXN_R22_iconalign_009_fix_symbol",
+      "region_id": "KAXN_R22_iconalign_010_fix_symbol",
       "region_type": "FIX_SYMBOL",
       "bbox": {
         "x_center": 0.64,
