@@ -2247,32 +2247,6 @@
       "raw_record": "SUSAP KBKXK3FR30   R      060CYMOLK3PC0EE  R   HM                     11540040    + 03500                           A JS   360871410"
     }
   },
-  "KBLV_R32RY": {
-    "KBLV_R32RY__ma1": {
-      "canonical_leg_index": 1,
-      "source_seq_no": "040",
-      "source_trans_ident": "R",
-      "leg_type": "CA",
-      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBLV_R32RY.json",
-      "raw_record": "SUSAP KBLVK5FR32RY R      040         0  M     CA                     3186        + 01500                           A JS   367962512"
-    },
-    "KBLV_R32RY__ma2": {
-      "canonical_leg_index": 2,
-      "source_seq_no": "050",
-      "source_trans_ident": "R",
-      "leg_type": "DF",
-      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBLV_R32RY.json",
-      "raw_record": "SUSAP KBLVK5FR32RY R      050COFEYK5EA0EY   010DF                                 + 03000                           A JS   367972512"
-    },
-    "KBLV_R32RY__ma3": {
-      "canonical_leg_index": 3,
-      "source_seq_no": "060",
-      "source_trans_ident": "R",
-      "leg_type": "HM",
-      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBLV_R32RY.json",
-      "raw_record": "SUSAP KBLVK5FR32RY R      060COFEYK5EA0EE  R   HM                     28350040    + 03000                           A JS   367982512"
-    }
-  },
   "KBTR_R04L": {
     "KBTR_R04L__ma1": {
       "canonical_leg_index": 1,
@@ -3885,74 +3859,6 @@
       "leg_type": "HM",
       "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KANJ_R14.json",
       "raw_record": "SUSAP KANJK5FR14   R      070ALVUSK5EA0EE  R   HM                     12930040    + 03000                           A JS   210321109"
-    }
-  },
-  "KAPC_R01LY": {
-    "KAPC_R01LY__ma1": {
-      "canonical_leg_index": 1,
-      "source_seq_no": "040",
-      "source_trans_ident": "R",
-      "leg_type": "CA",
-      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LY.json",
-      "raw_record": "SUSAP KAPCK2FR01LY R      040         0  M     CA                     0057        + 00436                           A JS   221881911"
-    },
-    "KAPC_R01LY__ma2": {
-      "canonical_leg_index": 2,
-      "source_seq_no": "050",
-      "source_trans_ident": "R",
-      "leg_type": "DF",
-      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LY.json",
-      "raw_record": "SUSAP KAPCK2FR01LY R      050CIVDAK2PC0E    010DF                                                                   A JS   221891911"
-    },
-    "KAPC_R01LY__ma3": {
-      "canonical_leg_index": 3,
-      "source_seq_no": "060",
-      "source_trans_ident": "R",
-      "leg_type": "TF",
-      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LY.json",
-      "raw_record": "SUSAP KAPCK2FR01LY R      060POPESK2EA0EY   010TF                                 + 05000                           A JS   221902108"
-    },
-    "KAPC_R01LY__ma4": {
-      "canonical_leg_index": 4,
-      "source_seq_no": "070",
-      "source_trans_ident": "R",
-      "leg_type": "HM",
-      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LY.json",
-      "raw_record": "SUSAP KAPCK2FR01LY R      070POPESK2EA0EE  R   HM                     33040050    + 05000                           A JS   221911911"
-    }
-  },
-  "KAPC_R01LZ": {
-    "KAPC_R01LZ__ma1": {
-      "canonical_leg_index": 1,
-      "source_seq_no": "040",
-      "source_trans_ident": "R",
-      "leg_type": "CA",
-      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LZ.json",
-      "raw_record": "SUSAP KAPCK2FR01LZ R      040         0  M     CA                     0057        + 00217                           A JS   222091911"
-    },
-    "KAPC_R01LZ__ma2": {
-      "canonical_leg_index": 2,
-      "source_seq_no": "050",
-      "source_trans_ident": "R",
-      "leg_type": "DF",
-      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LZ.json",
-      "raw_record": "SUSAP KAPCK2FR01LZ R      050CIVDAK2PC0E    010DF                                                                   A JS   222102108"
-    },
-    "KAPC_R01LZ__ma3": {
-      "canonical_leg_index": 3,
-      "source_seq_no": "060",
-      "source_trans_ident": "R",
-      "leg_type": "TF",
-      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LZ.json",
-      "raw_record": "SUSAP KAPCK2FR01LZ R      060POPESK2EA0EY   010TF                                 + 05000                           A JS   222112108"
-    },
-    "KAPC_R01LZ__ma4": {
-      "canonical_leg_index": 4,
-      "source_seq_no": "070",
-      "source_trans_ident": "R",
-      "leg_type": "HM",
-      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LZ.json",
-      "raw_record": "SUSAP KAPCK2FR01LZ R      070POPESK2EA0EE  R   HM                     33040050    + 05000                           A JS   222121911"
     }
   },
   "KAPN_R01": {
@@ -8309,6 +8215,100 @@
       "leg_type": "HM",
       "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KART_R28.json",
       "raw_record": "SUSAP KARTK6FR28   R      060TAREEK6PC0EE  R   HM                     10480040    + 02400                           A JS   237071310"
+    }
+  },
+  "KAPC_R01LY": {
+    "KAPC_R01LY__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "R",
+      "leg_type": "CA",
+      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LY.json",
+      "raw_record": "SUSAP KAPCK2FR01LY R      040         0  M     CA                     0057        + 00436                           A JS   221881911"
+    },
+    "KAPC_R01LY__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "R",
+      "leg_type": "DF",
+      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LY.json",
+      "raw_record": "SUSAP KAPCK2FR01LY R      050CIVDAK2PC0E    010DF                                                                   A JS   221891911"
+    },
+    "KAPC_R01LY__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "R",
+      "leg_type": "TF",
+      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LY.json",
+      "raw_record": "SUSAP KAPCK2FR01LY R      060POPESK2EA0EY   010TF                                 + 05000                           A JS   221902108"
+    },
+    "KAPC_R01LY__ma4": {
+      "canonical_leg_index": 4,
+      "source_seq_no": "070",
+      "source_trans_ident": "R",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LY.json",
+      "raw_record": "SUSAP KAPCK2FR01LY R      070POPESK2EA0EE  R   HM                     33040050    + 05000                           A JS   221911911"
+    }
+  },
+  "KAPC_R01LZ": {
+    "KAPC_R01LZ__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "R",
+      "leg_type": "CA",
+      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LZ.json",
+      "raw_record": "SUSAP KAPCK2FR01LZ R      040         0  M     CA                     0057        + 00217                           A JS   222091911"
+    },
+    "KAPC_R01LZ__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "R",
+      "leg_type": "DF",
+      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LZ.json",
+      "raw_record": "SUSAP KAPCK2FR01LZ R      050CIVDAK2PC0E    010DF                                                                   A JS   222102108"
+    },
+    "KAPC_R01LZ__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "R",
+      "leg_type": "TF",
+      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LZ.json",
+      "raw_record": "SUSAP KAPCK2FR01LZ R      060POPESK2EA0EY   010TF                                 + 05000                           A JS   222112108"
+    },
+    "KAPC_R01LZ__ma4": {
+      "canonical_leg_index": 4,
+      "source_seq_no": "070",
+      "source_trans_ident": "R",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LZ.json",
+      "raw_record": "SUSAP KAPCK2FR01LZ R      070POPESK2EA0EE  R   HM                     33040050    + 05000                           A JS   222121911"
+    }
+  },
+  "KBLV_R32RY": {
+    "KBLV_R32RY__ma1": {
+      "canonical_leg_index": 1,
+      "source_seq_no": "040",
+      "source_trans_ident": "R",
+      "leg_type": "CA",
+      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBLV_R32RY.json",
+      "raw_record": "SUSAP KBLVK5FR32RY R      040         0  M     CA                     3186        + 01500                           A JS   367962512"
+    },
+    "KBLV_R32RY__ma2": {
+      "canonical_leg_index": 2,
+      "source_seq_no": "050",
+      "source_trans_ident": "R",
+      "leg_type": "DF",
+      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBLV_R32RY.json",
+      "raw_record": "SUSAP KBLVK5FR32RY R      050COFEYK5EA0EY   010DF                                 + 03000                           A JS   367972512"
+    },
+    "KBLV_R32RY__ma3": {
+      "canonical_leg_index": 3,
+      "source_seq_no": "060",
+      "source_trans_ident": "R",
+      "leg_type": "HM",
+      "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBLV_R32RY.json",
+      "raw_record": "SUSAP KBLVK5FR32RY R      060COFEYK5EA0EE  R   HM                     28350040    + 03000                           A JS   367982512"
     }
   }
 }

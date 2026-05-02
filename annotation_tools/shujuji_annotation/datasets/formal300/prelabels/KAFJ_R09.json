@@ -6,7 +6,7 @@
     "height": 1188
   },
   "prelabel_version": "v0.30-formal300-ca-hm-visible-vs-derived",
-  "generated_at": "2026-05-02T02:20:14.821538+00:00",
+  "generated_at": "2026-05-02T15:33:59.573179+00:00",
   "generation_policy": {
     "final_ground_truth": false,
     "human_calibration_required": true,

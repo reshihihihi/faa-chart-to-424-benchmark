@@ -1920,30 +1920,6 @@
     "needs_priority_review": true
   },
   {
-    "chart_id": "KBLV_R32RY",
-    "airport": "KBLV",
-    "proc_ident": "R32RY",
-    "chart_name": "RNAV (RNP) Z RWY 14L",
-    "kind": "RNAV",
-    "holding_required": true,
-    "ma_leg_count": 3,
-    "source_ma_leg_count": 3,
-    "dataset_split": "development",
-    "sample_source": "v2604_existing_100",
-    "image_path": "datasets/formal300/images/081__KBLV_R32RY__00046RRZ14L_p0.png",
-    "image_file": "081__KBLV_R32RY__00046RRZ14L_p0.png",
-    "pdf_file": "00046RRZ14L.PDF",
-    "pdf_source": "local_existing",
-    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00046RRZ14L.PDF",
-    "image_dimensions": {
-      "width": 807,
-      "height": 1238
-    },
-    "sample_type": "holding",
-    "selection_reason": "Selected according to issue-driven 2604 dataset plan.",
-    "needs_priority_review": true
-  },
-  {
     "chart_id": "KBTR_R04L",
     "airport": "KBTR",
     "proc_ident": "R04L",
@@ -3159,54 +3135,6 @@
     "pdf_file": "00503R14.PDF",
     "pdf_source": "local_existing",
     "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00503R14.PDF",
-    "image_dimensions": {
-      "width": 775,
-      "height": 1188
-    },
-    "sample_type": "multi_leg",
-    "selection_reason": "Selected according to issue-driven 2604 dataset plan.",
-    "needs_priority_review": true
-  },
-  {
-    "chart_id": "KAPC_R01LY",
-    "airport": "KAPC",
-    "proc_ident": "R01LY",
-    "chart_name": "RNAV (GPS) RWY 06",
-    "kind": "RNAV",
-    "holding_required": true,
-    "ma_leg_count": 4,
-    "source_ma_leg_count": 4,
-    "dataset_split": "development",
-    "sample_source": "issue19_rnav_expansion_200",
-    "image_path": "datasets/formal300/images/133__KAPC_R01LY__00281R6_p0.png",
-    "image_file": "133__KAPC_R01LY__00281R6_p0.png",
-    "pdf_file": "00281R6.PDF",
-    "pdf_source": "local_existing",
-    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00281R6.PDF",
-    "image_dimensions": {
-      "width": 775,
-      "height": 1188
-    },
-    "sample_type": "multi_leg",
-    "selection_reason": "Selected according to issue-driven 2604 dataset plan.",
-    "needs_priority_review": true
-  },
-  {
-    "chart_id": "KAPC_R01LZ",
-    "airport": "KAPC",
-    "proc_ident": "R01LZ",
-    "chart_name": "RNAV (GPS) RWY 06",
-    "kind": "RNAV",
-    "holding_required": true,
-    "ma_leg_count": 4,
-    "source_ma_leg_count": 4,
-    "dataset_split": "development",
-    "sample_source": "issue19_rnav_expansion_200",
-    "image_path": "datasets/formal300/images/134__KAPC_R01LZ__00281R6_p0.png",
-    "image_file": "134__KAPC_R01LZ__00281R6_p0.png",
-    "pdf_file": "00281R6.PDF",
-    "pdf_source": "local_existing",
-    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00281R6.PDF",
     "image_dimensions": {
       "width": 775,
       "height": 1188
@@ -7196,6 +7124,78 @@
       "height": 1188
     },
     "sample_type": "holding",
+    "selection_reason": "Selected according to issue-driven 2604 dataset plan.",
+    "needs_priority_review": true
+  },
+  {
+    "chart_id": "KBLV_R32RY",
+    "airport": "KBLV",
+    "proc_ident": "R32RY",
+    "chart_name": "RNAV (GPS) Y RWY 32R",
+    "kind": "RNAV",
+    "holding_required": true,
+    "ma_leg_count": 3,
+    "source_ma_leg_count": 3,
+    "dataset_split": "development",
+    "sample_source": "v2604_existing_100",
+    "image_path": "datasets/formal300/images/081__KBLV_R32RY__00046RY32R_p0.png",
+    "image_file": "081__KBLV_R32RY__00046RY32R_p0.png",
+    "pdf_file": "00046RY32R.PDF",
+    "pdf_source": "local_existing",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00046RY32R.PDF",
+    "image_dimensions": {
+      "width": 775,
+      "height": 1188
+    },
+    "sample_type": "holding",
+    "selection_reason": "Selected according to issue-driven 2604 dataset plan.",
+    "needs_priority_review": true
+  },
+  {
+    "chart_id": "KAPC_R01LY",
+    "airport": "KAPC",
+    "proc_ident": "R01LY",
+    "chart_name": "RNAV (GPS) Y RWY 01L",
+    "kind": "RNAV",
+    "holding_required": true,
+    "ma_leg_count": 4,
+    "source_ma_leg_count": 4,
+    "dataset_split": "development",
+    "sample_source": "issue19_rnav_expansion_200",
+    "image_path": "datasets/formal300/images/133__KAPC_R01LY__00281RY1L_p0.png",
+    "image_file": "133__KAPC_R01LY__00281RY1L_p0.png",
+    "pdf_file": "00281RY1L.PDF",
+    "pdf_source": "local_existing",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00281RY1L.PDF",
+    "image_dimensions": {
+      "width": 775,
+      "height": 1188
+    },
+    "sample_type": "multi_leg",
+    "selection_reason": "Selected according to issue-driven 2604 dataset plan.",
+    "needs_priority_review": true
+  },
+  {
+    "chart_id": "KAPC_R01LZ",
+    "airport": "KAPC",
+    "proc_ident": "R01LZ",
+    "chart_name": "RNAV (GPS) Z RWY 01L",
+    "kind": "RNAV",
+    "holding_required": true,
+    "ma_leg_count": 4,
+    "source_ma_leg_count": 4,
+    "dataset_split": "development",
+    "sample_source": "issue19_rnav_expansion_200",
+    "image_path": "datasets/formal300/images/134__KAPC_R01LZ__00281RZ1L_p0.png",
+    "image_file": "134__KAPC_R01LZ__00281RZ1L_p0.png",
+    "pdf_file": "00281RZ1L.PDF",
+    "pdf_source": "local_existing",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00281RZ1L.PDF",
+    "image_dimensions": {
+      "width": 775,
+      "height": 1188
+    },
+    "sample_type": "multi_leg",
     "selection_reason": "Selected according to issue-driven 2604 dataset plan.",
     "needs_priority_review": true
   }

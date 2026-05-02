@@ -19423,231 +19423,6 @@
     "target_use_policy": "Canonical CIFP424 proxy target. Annotation boxes should map to candidate_leg_id + leg_type + Q-field."
   },
   {
-    "chart_id": "KBLV_R32RY",
-    "image_path": "datasets/formal300/images/081__KBLV_R32RY__00046RRZ14L_p0.png",
-    "sample_type": "holding",
-    "dataset_split": "development",
-    "main_transition_candidate": "R",
-    "candidate_missed_approach_leg_count": 3,
-    "canonical_schema_version": "missed_approach_leg_v1_pr28",
-    "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBLV_R32RY.json",
-    "candidate_legs": [
-      {
-        "candidate_leg_id": "KBLV_R32RY__ma1",
-        "canonical_leg_index": 1,
-        "source_seq_no": "040",
-        "source_trans_ident": "R",
-        "leg_type": "CA",
-        "target_fields": [
-          {
-            "field_name": "Q_terminator",
-            "expected_value": "CA",
-            "expected_answer": {
-              "status": "present",
-              "value": "CA"
-            },
-            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q1_fix_ident",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q2_altitude_constraint",
-            "expected_value": "AT_OR_ABOVE 1500 ft",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "desc": "AT_OR_ABOVE",
-                "altitude_ft": 1500,
-                "altitude_2_ft": null
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q3_turn",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q4_course_or_radial",
-            "expected_value": "type=course_deg, course_deg=318.6",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "course_deg",
-                "course_deg": 318.6
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q5_hold_params",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
-          }
-        ],
-        "review_status": "cifp424_canonical_proxy"
-      },
-      {
-        "candidate_leg_id": "KBLV_R32RY__ma2",
-        "canonical_leg_index": 2,
-        "source_seq_no": "050",
-        "source_trans_ident": "R",
-        "leg_type": "DF",
-        "target_fields": [
-          {
-            "field_name": "Q_terminator",
-            "expected_value": "DF",
-            "expected_answer": {
-              "status": "present",
-              "value": "DF"
-            },
-            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q1_fix_ident",
-            "expected_value": "COFEY",
-            "expected_answer": {
-              "status": "present",
-              "value": "COFEY"
-            },
-            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q2_altitude_constraint",
-            "expected_value": "AT_OR_ABOVE 3000 ft",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "desc": "AT_OR_ABOVE",
-                "altitude_ft": 3000,
-                "altitude_2_ft": null
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q3_turn",
-            "expected_value": "unknown",
-            "expected_answer": {
-              "status": "unknown",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q4_course_or_radial",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q5_hold_params",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
-          }
-        ],
-        "review_status": "cifp424_canonical_proxy"
-      },
-      {
-        "candidate_leg_id": "KBLV_R32RY__ma3",
-        "canonical_leg_index": 3,
-        "source_seq_no": "060",
-        "source_trans_ident": "R",
-        "leg_type": "HM",
-        "target_fields": [
-          {
-            "field_name": "Q_terminator",
-            "expected_value": "HM",
-            "expected_answer": {
-              "status": "present",
-              "value": "HM"
-            },
-            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q1_fix_ident",
-            "expected_value": "COFEY",
-            "expected_answer": {
-              "status": "present",
-              "value": "COFEY"
-            },
-            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q2_altitude_constraint",
-            "expected_value": "AT_OR_ABOVE 3000 ft",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "desc": "AT_OR_ABOVE",
-                "altitude_ft": 3000,
-                "altitude_2_ft": null
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q3_turn",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q4_course_or_radial",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q5_hold_params",
-            "expected_value": "inbound_course_deg=283.5, leg_time_min=None, leg_distance_nm=4.0, turn=RIGHT",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "inbound_course_deg": 283.5,
-                "leg_time_min": null,
-                "leg_distance_nm": 4,
-                "turn": "RIGHT"
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
-          }
-        ],
-        "review_status": "cifp424_canonical_proxy"
-      }
-    ],
-    "target_use_policy": "Canonical CIFP424 proxy target. Annotation boxes should map to candidate_leg_id + leg_type + Q-field."
-  },
-  {
     "chart_id": "KBTR_R04L",
     "image_path": "datasets/formal300/images/082__KBTR_R04L__00040R4L_p0.png",
     "sample_type": "holding",
@@ -33427,584 +33202,6 @@
                 "inbound_course_deg": 129.3,
                 "leg_time_min": null,
                 "leg_distance_nm": 4,
-                "turn": "RIGHT"
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
-          }
-        ],
-        "review_status": "cifp424_canonical_proxy"
-      }
-    ],
-    "target_use_policy": "Canonical CIFP424 proxy target. Annotation boxes should map to candidate_leg_id + leg_type + Q-field."
-  },
-  {
-    "chart_id": "KAPC_R01LY",
-    "image_path": "datasets/formal300/images/133__KAPC_R01LY__00281R6_p0.png",
-    "sample_type": "multi_leg",
-    "dataset_split": "development",
-    "main_transition_candidate": "R",
-    "candidate_missed_approach_leg_count": 4,
-    "canonical_schema_version": "missed_approach_leg_v1_pr28",
-    "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LY.json",
-    "candidate_legs": [
-      {
-        "candidate_leg_id": "KAPC_R01LY__ma1",
-        "canonical_leg_index": 1,
-        "source_seq_no": "040",
-        "source_trans_ident": "R",
-        "leg_type": "CA",
-        "target_fields": [
-          {
-            "field_name": "Q_terminator",
-            "expected_value": "CA",
-            "expected_answer": {
-              "status": "present",
-              "value": "CA"
-            },
-            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q1_fix_ident",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q2_altitude_constraint",
-            "expected_value": "AT_OR_ABOVE 436 ft",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "desc": "AT_OR_ABOVE",
-                "altitude_ft": 436,
-                "altitude_2_ft": null
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q3_turn",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q4_course_or_radial",
-            "expected_value": "type=course_deg, course_deg=5.7",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "course_deg",
-                "course_deg": 5.7
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q5_hold_params",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
-          }
-        ],
-        "review_status": "cifp424_canonical_proxy"
-      },
-      {
-        "candidate_leg_id": "KAPC_R01LY__ma2",
-        "canonical_leg_index": 2,
-        "source_seq_no": "050",
-        "source_trans_ident": "R",
-        "leg_type": "DF",
-        "target_fields": [
-          {
-            "field_name": "Q_terminator",
-            "expected_value": "DF",
-            "expected_answer": {
-              "status": "present",
-              "value": "DF"
-            },
-            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q1_fix_ident",
-            "expected_value": "CIVDA",
-            "expected_answer": {
-              "status": "present",
-              "value": "CIVDA"
-            },
-            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q2_altitude_constraint",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q3_turn",
-            "expected_value": "unknown",
-            "expected_answer": {
-              "status": "unknown",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q4_course_or_radial",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q5_hold_params",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
-          }
-        ],
-        "review_status": "cifp424_canonical_proxy"
-      },
-      {
-        "candidate_leg_id": "KAPC_R01LY__ma3",
-        "canonical_leg_index": 3,
-        "source_seq_no": "060",
-        "source_trans_ident": "R",
-        "leg_type": "TF",
-        "target_fields": [
-          {
-            "field_name": "Q_terminator",
-            "expected_value": "TF",
-            "expected_answer": {
-              "status": "present",
-              "value": "TF"
-            },
-            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q1_fix_ident",
-            "expected_value": "POPES",
-            "expected_answer": {
-              "status": "present",
-              "value": "POPES"
-            },
-            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q2_altitude_constraint",
-            "expected_value": "AT_OR_ABOVE 5000 ft",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "desc": "AT_OR_ABOVE",
-                "altitude_ft": 5000,
-                "altitude_2_ft": null
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q3_turn",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q4_course_or_radial",
-            "expected_value": "unknown",
-            "expected_answer": {
-              "status": "unknown",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q5_hold_params",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
-          }
-        ],
-        "review_status": "cifp424_canonical_proxy"
-      },
-      {
-        "candidate_leg_id": "KAPC_R01LY__ma4",
-        "canonical_leg_index": 4,
-        "source_seq_no": "070",
-        "source_trans_ident": "R",
-        "leg_type": "HM",
-        "target_fields": [
-          {
-            "field_name": "Q_terminator",
-            "expected_value": "HM",
-            "expected_answer": {
-              "status": "present",
-              "value": "HM"
-            },
-            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q1_fix_ident",
-            "expected_value": "POPES",
-            "expected_answer": {
-              "status": "present",
-              "value": "POPES"
-            },
-            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q2_altitude_constraint",
-            "expected_value": "AT_OR_ABOVE 5000 ft",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "desc": "AT_OR_ABOVE",
-                "altitude_ft": 5000,
-                "altitude_2_ft": null
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q3_turn",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q4_course_or_radial",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q5_hold_params",
-            "expected_value": "inbound_course_deg=330.4, leg_time_min=None, leg_distance_nm=5.0, turn=RIGHT",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "inbound_course_deg": 330.4,
-                "leg_time_min": null,
-                "leg_distance_nm": 5,
-                "turn": "RIGHT"
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
-          }
-        ],
-        "review_status": "cifp424_canonical_proxy"
-      }
-    ],
-    "target_use_policy": "Canonical CIFP424 proxy target. Annotation boxes should map to candidate_leg_id + leg_type + Q-field."
-  },
-  {
-    "chart_id": "KAPC_R01LZ",
-    "image_path": "datasets/formal300/images/134__KAPC_R01LZ__00281R6_p0.png",
-    "sample_type": "multi_leg",
-    "dataset_split": "development",
-    "main_transition_candidate": "R",
-    "candidate_missed_approach_leg_count": 4,
-    "canonical_schema_version": "missed_approach_leg_v1_pr28",
-    "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LZ.json",
-    "candidate_legs": [
-      {
-        "candidate_leg_id": "KAPC_R01LZ__ma1",
-        "canonical_leg_index": 1,
-        "source_seq_no": "040",
-        "source_trans_ident": "R",
-        "leg_type": "CA",
-        "target_fields": [
-          {
-            "field_name": "Q_terminator",
-            "expected_value": "CA",
-            "expected_answer": {
-              "status": "present",
-              "value": "CA"
-            },
-            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q1_fix_ident",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q2_altitude_constraint",
-            "expected_value": "AT_OR_ABOVE 217 ft",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "desc": "AT_OR_ABOVE",
-                "altitude_ft": 217,
-                "altitude_2_ft": null
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q3_turn",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q4_course_or_radial",
-            "expected_value": "type=course_deg, course_deg=5.7",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "type": "course_deg",
-                "course_deg": 5.7
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q5_hold_params",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
-          }
-        ],
-        "review_status": "cifp424_canonical_proxy"
-      },
-      {
-        "candidate_leg_id": "KAPC_R01LZ__ma2",
-        "canonical_leg_index": 2,
-        "source_seq_no": "050",
-        "source_trans_ident": "R",
-        "leg_type": "DF",
-        "target_fields": [
-          {
-            "field_name": "Q_terminator",
-            "expected_value": "DF",
-            "expected_answer": {
-              "status": "present",
-              "value": "DF"
-            },
-            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q1_fix_ident",
-            "expected_value": "CIVDA",
-            "expected_answer": {
-              "status": "present",
-              "value": "CIVDA"
-            },
-            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q2_altitude_constraint",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q3_turn",
-            "expected_value": "unknown",
-            "expected_answer": {
-              "status": "unknown",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q4_course_or_radial",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q5_hold_params",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
-          }
-        ],
-        "review_status": "cifp424_canonical_proxy"
-      },
-      {
-        "candidate_leg_id": "KAPC_R01LZ__ma3",
-        "canonical_leg_index": 3,
-        "source_seq_no": "060",
-        "source_trans_ident": "R",
-        "leg_type": "TF",
-        "target_fields": [
-          {
-            "field_name": "Q_terminator",
-            "expected_value": "TF",
-            "expected_answer": {
-              "status": "present",
-              "value": "TF"
-            },
-            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q1_fix_ident",
-            "expected_value": "POPES",
-            "expected_answer": {
-              "status": "present",
-              "value": "POPES"
-            },
-            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q2_altitude_constraint",
-            "expected_value": "AT_OR_ABOVE 5000 ft",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "desc": "AT_OR_ABOVE",
-                "altitude_ft": 5000,
-                "altitude_2_ft": null
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q3_turn",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q4_course_or_radial",
-            "expected_value": "unknown",
-            "expected_answer": {
-              "status": "unknown",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q5_hold_params",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
-          }
-        ],
-        "review_status": "cifp424_canonical_proxy"
-      },
-      {
-        "candidate_leg_id": "KAPC_R01LZ__ma4",
-        "canonical_leg_index": 4,
-        "source_seq_no": "070",
-        "source_trans_ident": "R",
-        "leg_type": "HM",
-        "target_fields": [
-          {
-            "field_name": "Q_terminator",
-            "expected_value": "HM",
-            "expected_answer": {
-              "status": "present",
-              "value": "HM"
-            },
-            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q1_fix_ident",
-            "expected_value": "POPES",
-            "expected_answer": {
-              "status": "present",
-              "value": "POPES"
-            },
-            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q2_altitude_constraint",
-            "expected_value": "AT_OR_ABOVE 5000 ft",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "desc": "AT_OR_ABOVE",
-                "altitude_ft": 5000,
-                "altitude_2_ft": null
-              }
-            },
-            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q3_turn",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q4_course_or_radial",
-            "expected_value": "not_applicable",
-            "expected_answer": {
-              "status": "not_applicable",
-              "value": null
-            },
-            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
-          },
-          {
-            "field_name": "Q5_hold_params",
-            "expected_value": "inbound_course_deg=330.4, leg_time_min=None, leg_distance_nm=5.0, turn=RIGHT",
-            "expected_answer": {
-              "status": "present",
-              "value": {
-                "inbound_course_deg": 330.4,
-                "leg_time_min": null,
-                "leg_distance_nm": 5,
                 "turn": "RIGHT"
               }
             },
@@ -71681,6 +70878,809 @@
                 "inbound_course_deg": 104.8,
                 "leg_time_min": null,
                 "leg_distance_nm": 4,
+                "turn": "RIGHT"
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
+          }
+        ],
+        "review_status": "cifp424_canonical_proxy"
+      }
+    ],
+    "target_use_policy": "Canonical CIFP424 proxy target. Annotation boxes should map to candidate_leg_id + leg_type + Q-field."
+  },
+  {
+    "chart_id": "KBLV_R32RY",
+    "image_path": "datasets/formal300/images/081__KBLV_R32RY__00046RRZ14L_p0.png",
+    "sample_type": "holding",
+    "dataset_split": "development",
+    "main_transition_candidate": "R",
+    "candidate_missed_approach_leg_count": 3,
+    "canonical_schema_version": "missed_approach_leg_v1_pr28",
+    "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBLV_R32RY.json",
+    "candidate_legs": [
+      {
+        "candidate_leg_id": "KBLV_R32RY__ma1",
+        "canonical_leg_index": 1,
+        "source_seq_no": "040",
+        "source_trans_ident": "R",
+        "leg_type": "CA",
+        "target_fields": [
+          {
+            "field_name": "Q_terminator",
+            "expected_value": "CA",
+            "expected_answer": {
+              "status": "present",
+              "value": "CA"
+            },
+            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q1_fix_ident",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q2_altitude_constraint",
+            "expected_value": "AT_OR_ABOVE 1500 ft",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "desc": "AT_OR_ABOVE",
+                "altitude_ft": 1500,
+                "altitude_2_ft": null
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q3_turn",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q4_course_or_radial",
+            "expected_value": "type=course_deg, course_deg=318.6",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "type": "course_deg",
+                "course_deg": 318.6
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q5_hold_params",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
+          }
+        ],
+        "review_status": "cifp424_canonical_proxy"
+      },
+      {
+        "candidate_leg_id": "KBLV_R32RY__ma2",
+        "canonical_leg_index": 2,
+        "source_seq_no": "050",
+        "source_trans_ident": "R",
+        "leg_type": "DF",
+        "target_fields": [
+          {
+            "field_name": "Q_terminator",
+            "expected_value": "DF",
+            "expected_answer": {
+              "status": "present",
+              "value": "DF"
+            },
+            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q1_fix_ident",
+            "expected_value": "COFEY",
+            "expected_answer": {
+              "status": "present",
+              "value": "COFEY"
+            },
+            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q2_altitude_constraint",
+            "expected_value": "AT_OR_ABOVE 3000 ft",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "desc": "AT_OR_ABOVE",
+                "altitude_ft": 3000,
+                "altitude_2_ft": null
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q3_turn",
+            "expected_value": "unknown",
+            "expected_answer": {
+              "status": "unknown",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q4_course_or_radial",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q5_hold_params",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
+          }
+        ],
+        "review_status": "cifp424_canonical_proxy"
+      },
+      {
+        "candidate_leg_id": "KBLV_R32RY__ma3",
+        "canonical_leg_index": 3,
+        "source_seq_no": "060",
+        "source_trans_ident": "R",
+        "leg_type": "HM",
+        "target_fields": [
+          {
+            "field_name": "Q_terminator",
+            "expected_value": "HM",
+            "expected_answer": {
+              "status": "present",
+              "value": "HM"
+            },
+            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q1_fix_ident",
+            "expected_value": "COFEY",
+            "expected_answer": {
+              "status": "present",
+              "value": "COFEY"
+            },
+            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q2_altitude_constraint",
+            "expected_value": "AT_OR_ABOVE 3000 ft",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "desc": "AT_OR_ABOVE",
+                "altitude_ft": 3000,
+                "altitude_2_ft": null
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q3_turn",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q4_course_or_radial",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q5_hold_params",
+            "expected_value": "inbound_course_deg=283.5, leg_time_min=None, leg_distance_nm=4.0, turn=RIGHT",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "inbound_course_deg": 283.5,
+                "leg_time_min": null,
+                "leg_distance_nm": 4,
+                "turn": "RIGHT"
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
+          }
+        ],
+        "review_status": "cifp424_canonical_proxy"
+      }
+    ],
+    "target_use_policy": "Canonical CIFP424 proxy target. Annotation boxes should map to candidate_leg_id + leg_type + Q-field."
+  },
+  {
+    "chart_id": "KAPC_R01LY",
+    "image_path": "datasets/formal300/images/133__KAPC_R01LY__00281R6_p0.png",
+    "sample_type": "multi_leg",
+    "dataset_split": "development",
+    "main_transition_candidate": "R",
+    "candidate_missed_approach_leg_count": 4,
+    "canonical_schema_version": "missed_approach_leg_v1_pr28",
+    "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LY.json",
+    "candidate_legs": [
+      {
+        "candidate_leg_id": "KAPC_R01LY__ma1",
+        "canonical_leg_index": 1,
+        "source_seq_no": "040",
+        "source_trans_ident": "R",
+        "leg_type": "CA",
+        "target_fields": [
+          {
+            "field_name": "Q_terminator",
+            "expected_value": "CA",
+            "expected_answer": {
+              "status": "present",
+              "value": "CA"
+            },
+            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q1_fix_ident",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q2_altitude_constraint",
+            "expected_value": "AT_OR_ABOVE 436 ft",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "desc": "AT_OR_ABOVE",
+                "altitude_ft": 436,
+                "altitude_2_ft": null
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q3_turn",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q4_course_or_radial",
+            "expected_value": "type=course_deg, course_deg=5.7",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "type": "course_deg",
+                "course_deg": 5.7
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q5_hold_params",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
+          }
+        ],
+        "review_status": "cifp424_canonical_proxy"
+      },
+      {
+        "candidate_leg_id": "KAPC_R01LY__ma2",
+        "canonical_leg_index": 2,
+        "source_seq_no": "050",
+        "source_trans_ident": "R",
+        "leg_type": "DF",
+        "target_fields": [
+          {
+            "field_name": "Q_terminator",
+            "expected_value": "DF",
+            "expected_answer": {
+              "status": "present",
+              "value": "DF"
+            },
+            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q1_fix_ident",
+            "expected_value": "CIVDA",
+            "expected_answer": {
+              "status": "present",
+              "value": "CIVDA"
+            },
+            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q2_altitude_constraint",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q3_turn",
+            "expected_value": "unknown",
+            "expected_answer": {
+              "status": "unknown",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q4_course_or_radial",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q5_hold_params",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
+          }
+        ],
+        "review_status": "cifp424_canonical_proxy"
+      },
+      {
+        "candidate_leg_id": "KAPC_R01LY__ma3",
+        "canonical_leg_index": 3,
+        "source_seq_no": "060",
+        "source_trans_ident": "R",
+        "leg_type": "TF",
+        "target_fields": [
+          {
+            "field_name": "Q_terminator",
+            "expected_value": "TF",
+            "expected_answer": {
+              "status": "present",
+              "value": "TF"
+            },
+            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q1_fix_ident",
+            "expected_value": "POPES",
+            "expected_answer": {
+              "status": "present",
+              "value": "POPES"
+            },
+            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q2_altitude_constraint",
+            "expected_value": "AT_OR_ABOVE 5000 ft",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "desc": "AT_OR_ABOVE",
+                "altitude_ft": 5000,
+                "altitude_2_ft": null
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q3_turn",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q4_course_or_radial",
+            "expected_value": "unknown",
+            "expected_answer": {
+              "status": "unknown",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q5_hold_params",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
+          }
+        ],
+        "review_status": "cifp424_canonical_proxy"
+      },
+      {
+        "candidate_leg_id": "KAPC_R01LY__ma4",
+        "canonical_leg_index": 4,
+        "source_seq_no": "070",
+        "source_trans_ident": "R",
+        "leg_type": "HM",
+        "target_fields": [
+          {
+            "field_name": "Q_terminator",
+            "expected_value": "HM",
+            "expected_answer": {
+              "status": "present",
+              "value": "HM"
+            },
+            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q1_fix_ident",
+            "expected_value": "POPES",
+            "expected_answer": {
+              "status": "present",
+              "value": "POPES"
+            },
+            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q2_altitude_constraint",
+            "expected_value": "AT_OR_ABOVE 5000 ft",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "desc": "AT_OR_ABOVE",
+                "altitude_ft": 5000,
+                "altitude_2_ft": null
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q3_turn",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q4_course_or_radial",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q5_hold_params",
+            "expected_value": "inbound_course_deg=330.4, leg_time_min=None, leg_distance_nm=5.0, turn=RIGHT",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "inbound_course_deg": 330.4,
+                "leg_time_min": null,
+                "leg_distance_nm": 5,
+                "turn": "RIGHT"
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
+          }
+        ],
+        "review_status": "cifp424_canonical_proxy"
+      }
+    ],
+    "target_use_policy": "Canonical CIFP424 proxy target. Annotation boxes should map to candidate_leg_id + leg_type + Q-field."
+  },
+  {
+    "chart_id": "KAPC_R01LZ",
+    "image_path": "datasets/formal300/images/134__KAPC_R01LZ__00281R6_p0.png",
+    "sample_type": "multi_leg",
+    "dataset_split": "development",
+    "main_transition_candidate": "R",
+    "candidate_missed_approach_leg_count": 4,
+    "canonical_schema_version": "missed_approach_leg_v1_pr28",
+    "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KAPC_R01LZ.json",
+    "candidate_legs": [
+      {
+        "candidate_leg_id": "KAPC_R01LZ__ma1",
+        "canonical_leg_index": 1,
+        "source_seq_no": "040",
+        "source_trans_ident": "R",
+        "leg_type": "CA",
+        "target_fields": [
+          {
+            "field_name": "Q_terminator",
+            "expected_value": "CA",
+            "expected_answer": {
+              "status": "present",
+              "value": "CA"
+            },
+            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q1_fix_ident",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q2_altitude_constraint",
+            "expected_value": "AT_OR_ABOVE 217 ft",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "desc": "AT_OR_ABOVE",
+                "altitude_ft": 217,
+                "altitude_2_ft": null
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q3_turn",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q4_course_or_radial",
+            "expected_value": "type=course_deg, course_deg=5.7",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "type": "course_deg",
+                "course_deg": 5.7
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q5_hold_params",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
+          }
+        ],
+        "review_status": "cifp424_canonical_proxy"
+      },
+      {
+        "candidate_leg_id": "KAPC_R01LZ__ma2",
+        "canonical_leg_index": 2,
+        "source_seq_no": "050",
+        "source_trans_ident": "R",
+        "leg_type": "DF",
+        "target_fields": [
+          {
+            "field_name": "Q_terminator",
+            "expected_value": "DF",
+            "expected_answer": {
+              "status": "present",
+              "value": "DF"
+            },
+            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q1_fix_ident",
+            "expected_value": "CIVDA",
+            "expected_answer": {
+              "status": "present",
+              "value": "CIVDA"
+            },
+            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q2_altitude_constraint",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q3_turn",
+            "expected_value": "unknown",
+            "expected_answer": {
+              "status": "unknown",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q4_course_or_radial",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q5_hold_params",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
+          }
+        ],
+        "review_status": "cifp424_canonical_proxy"
+      },
+      {
+        "candidate_leg_id": "KAPC_R01LZ__ma3",
+        "canonical_leg_index": 3,
+        "source_seq_no": "060",
+        "source_trans_ident": "R",
+        "leg_type": "TF",
+        "target_fields": [
+          {
+            "field_name": "Q_terminator",
+            "expected_value": "TF",
+            "expected_answer": {
+              "status": "present",
+              "value": "TF"
+            },
+            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q1_fix_ident",
+            "expected_value": "POPES",
+            "expected_answer": {
+              "status": "present",
+              "value": "POPES"
+            },
+            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q2_altitude_constraint",
+            "expected_value": "AT_OR_ABOVE 5000 ft",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "desc": "AT_OR_ABOVE",
+                "altitude_ft": 5000,
+                "altitude_2_ft": null
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q3_turn",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q4_course_or_radial",
+            "expected_value": "unknown",
+            "expected_answer": {
+              "status": "unknown",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q5_hold_params",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q5_hold_params; verify chart evidence for this leg."
+          }
+        ],
+        "review_status": "cifp424_canonical_proxy"
+      },
+      {
+        "candidate_leg_id": "KAPC_R01LZ__ma4",
+        "canonical_leg_index": 4,
+        "source_seq_no": "070",
+        "source_trans_ident": "R",
+        "leg_type": "HM",
+        "target_fields": [
+          {
+            "field_name": "Q_terminator",
+            "expected_value": "HM",
+            "expected_answer": {
+              "status": "present",
+              "value": "HM"
+            },
+            "evidence_hint": "Canonical PR #28 field Q_terminator; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q1_fix_ident",
+            "expected_value": "POPES",
+            "expected_answer": {
+              "status": "present",
+              "value": "POPES"
+            },
+            "evidence_hint": "Canonical PR #28 field Q1_fix_ident; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q2_altitude_constraint",
+            "expected_value": "AT_OR_ABOVE 5000 ft",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "desc": "AT_OR_ABOVE",
+                "altitude_ft": 5000,
+                "altitude_2_ft": null
+              }
+            },
+            "evidence_hint": "Canonical PR #28 field Q2_altitude_constraint; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q3_turn",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q3_turn; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q4_course_or_radial",
+            "expected_value": "not_applicable",
+            "expected_answer": {
+              "status": "not_applicable",
+              "value": null
+            },
+            "evidence_hint": "Canonical PR #28 field Q4_course_or_radial; verify chart evidence for this leg."
+          },
+          {
+            "field_name": "Q5_hold_params",
+            "expected_value": "inbound_course_deg=330.4, leg_time_min=None, leg_distance_nm=5.0, turn=RIGHT",
+            "expected_answer": {
+              "status": "present",
+              "value": {
+                "inbound_course_deg": 330.4,
+                "leg_time_min": null,
+                "leg_distance_nm": 5,
                 "turn": "RIGHT"
               }
             },

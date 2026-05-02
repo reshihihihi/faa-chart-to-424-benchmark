@@ -3,7 +3,7 @@
   "procedure": {
     "airport": "KBLV",
     "approach_ident": "R32RY",
-    "chart_name": "RNAV (RNP) Z RWY 14L"
+    "chart_name": "RNAV (GPS) Y RWY 32R"
   },
   "missed_approach": {
     "leg_count": {

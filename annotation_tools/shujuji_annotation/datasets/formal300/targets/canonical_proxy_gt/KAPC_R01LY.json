@@ -3,7 +3,7 @@
   "procedure": {
     "airport": "KAPC",
     "approach_ident": "R01LY",
-    "chart_name": "RNAV (GPS) RWY 06"
+    "chart_name": "RNAV (GPS) Y RWY 01L"
   },
   "missed_approach": {
     "leg_count": {

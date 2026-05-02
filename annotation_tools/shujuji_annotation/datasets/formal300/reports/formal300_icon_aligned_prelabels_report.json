@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-02T02:19:27.185393+00:00",
+  "generated_at": "2026-05-02T15:33:25.768867+00:00",
   "dataset": "formal300",
   "method": "structure-aware lower missed-approach detail first: PR28 text anchors + boxed-cell scoring + CV icon/symbol components",
   "final_ground_truth": false,
@@ -1366,23 +1366,6 @@
       "source_pdfs_available": true
     },
     {
-      "chart_id": "KBLV_R32RY",
-      "coarse_count": 3,
-      "pilot_copy_count": 0,
-      "pdf_text_box_count": 2,
-      "cv_symbol_box_count": 5,
-      "fine_count": 3,
-      "match_count": 2,
-      "selected_match_count": 2,
-      "detail_roi": {
-        "x_center": 0.5632,
-        "y_center": 0.688,
-        "width": 0.1995,
-        "height": 0.0545
-      },
-      "source_pdfs_available": true
-    },
-    {
       "chart_id": "KBTR_R04L",
       "coarse_count": 3,
       "pilot_copy_count": 0,
@@ -2246,40 +2229,6 @@
         "y_center": 0.6944,
         "width": 0.2877,
         "height": 0.0547
-      },
-      "source_pdfs_available": true
-    },
-    {
-      "chart_id": "KAPC_R01LY",
-      "coarse_count": 3,
-      "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 6,
-      "fine_count": 4,
-      "match_count": 5,
-      "selected_match_count": 4,
-      "detail_roi": {
-        "x_center": 0.5945,
-        "y_center": 0.7136,
-        "width": 0.1374,
-        "height": 0.0551
-      },
-      "source_pdfs_available": true
-    },
-    {
-      "chart_id": "KAPC_R01LZ",
-      "coarse_count": 3,
-      "pilot_copy_count": 0,
-      "pdf_text_box_count": 4,
-      "cv_symbol_box_count": 6,
-      "fine_count": 4,
-      "match_count": 5,
-      "selected_match_count": 4,
-      "detail_roi": {
-        "x_center": 0.5945,
-        "y_center": 0.7136,
-        "width": 0.1374,
-        "height": 0.0551
       },
       "source_pdfs_available": true
     },
@@ -5102,6 +5051,57 @@
         "y_center": 0.6949,
         "width": 0.1174,
         "height": 0.0564
+      },
+      "source_pdfs_available": true
+    },
+    {
+      "chart_id": "KBLV_R32RY",
+      "coarse_count": 3,
+      "pilot_copy_count": 0,
+      "pdf_text_box_count": 5,
+      "cv_symbol_box_count": 5,
+      "fine_count": 6,
+      "match_count": 10,
+      "selected_match_count": 5,
+      "detail_roi": {
+        "x_center": 0.4368,
+        "y_center": 0.6311,
+        "width": 0.2,
+        "height": 0.0543
+      },
+      "source_pdfs_available": true
+    },
+    {
+      "chart_id": "KAPC_R01LY",
+      "coarse_count": 3,
+      "pilot_copy_count": 0,
+      "pdf_text_box_count": 5,
+      "cv_symbol_box_count": 6,
+      "fine_count": 6,
+      "match_count": 13,
+      "selected_match_count": 5,
+      "detail_roi": {
+        "x_center": 0.5529,
+        "y_center": 0.6891,
+        "width": 0.2206,
+        "height": 0.0532
+      },
+      "source_pdfs_available": true
+    },
+    {
+      "chart_id": "KAPC_R01LZ",
+      "coarse_count": 3,
+      "pilot_copy_count": 0,
+      "pdf_text_box_count": 5,
+      "cv_symbol_box_count": 6,
+      "fine_count": 6,
+      "match_count": 14,
+      "selected_match_count": 5,
+      "detail_roi": {
+        "x_center": 0.5552,
+        "y_center": 0.718,
+        "width": 0.2161,
+        "height": 0.053
       },
       "source_pdfs_available": true
     }
