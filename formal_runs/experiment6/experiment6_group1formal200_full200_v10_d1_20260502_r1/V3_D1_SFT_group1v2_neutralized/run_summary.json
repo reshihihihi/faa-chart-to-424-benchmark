@@ -1,4 +1,4 @@
-﻿{
+{
   "api_error": 0,
   "cases_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\E6_core\\cases\\e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
   "compare_policy": "group1_scoring_equivalence_v2_neutralized_after_D1",

@@ -534,11 +534,8 @@ def prediction_integrity(path: Path, expected_ids: set[str]) -> dict[str, Any]:
 
 def scan_for_local_paths(paths: list[Path]) -> dict[str, Any]:
     hits: list[dict[str, Any]] = []
-    patterns = (
-        "E:\\experiment3",
-        "C:\\Users",
-        "E:\\experiment3\\v2\\D1_20260502_r4",
-    )
+    # Detect Windows drive-rooted host paths without embedding a specific host path.
+    patterns = tuple(f"{drive}:\\" for drive in "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
     for path in paths:
         if not path.exists() or path.is_dir():
             continue

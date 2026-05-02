@@ -1,6 +1,6 @@
 {
   "artifact_id": "experiment6_v11_pr25_dependency_manifest_20260502",
-  "created_at": "2026-05-02T05:28:11.862018+00:00",
+  "created_at": "2026-05-02T05:36:13.807137+00:00",
   "depends_on": {
     "github_pr": "reshihihihi/faa-chart-to-424-benchmark#25",
     "pr_head_sha": "36e978348b4966a1a6f789acedb78e18381d13dd",

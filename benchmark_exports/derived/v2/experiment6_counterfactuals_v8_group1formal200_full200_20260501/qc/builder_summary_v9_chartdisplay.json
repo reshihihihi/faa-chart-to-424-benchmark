@@ -18,8 +18,8 @@
     "text_only_trap": 200,
     "turn_direction_flip": 52
   },
-  "repo_root": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark",
-  "sample_manifest": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark\\benchmark_exports\\derived\\v2\\experiment6_counterfactuals_v8_group1formal200_full200_20260501\\selection\\sample_manifest_group1formal200_full200_v8.jsonl",
+  "repo_root": ".",
+  "sample_manifest": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/selection/sample_manifest_group1formal200_full200_v8.jsonl",
   "skipped_by_type": {
     "424_derived_trap": 0,
     "altitude_perturbation": 6,
