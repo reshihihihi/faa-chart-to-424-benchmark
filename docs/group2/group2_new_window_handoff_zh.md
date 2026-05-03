@@ -108,22 +108,22 @@ E:\experiment3\group2_annotation_status_20260503\annotation_completion_check_202
 ```text
 正式集总数：300 张
 已提交：296 张
-已领取但未提交：4 张
-未领取：0 张
+已领取但未提交：0 张
+未领取：4 张
 当前草稿：0 张
 正式标注文件：296 张
 提交快照覆盖：296 张
 后台显示进度：99%
 ```
 
-还没提交的 4 张是：
+当前后台显示未提交的 4 张是：
 
 | 序号 | 航图 | 程序 | 类型 | 当前状态 | 标注人 |
 |---|---|---|---|---|---|
-| 1 | KABE_I06 | ILS OR LOC RWY 06 | ILS | 已领取未提交 | A05 |
-| 2 | KALS_I02 | ILS OR LOC RWY 02 | ILS | 已领取未提交 | A06 |
-| 10 | KBUY_I06-Z | ILS Z OR LOC Z RWY 06 | ILS | 已领取未提交 | A07 |
-| 88 | KCBF_R36 | RNAV (GPS) RWY 36 | RNAV | 已领取未提交 | A20 |
+| 1 | KABE_I06 | ILS OR LOC RWY 06 | ILS | 未领取/未提交 |  |
+| 2 | KALS_I02 | ILS OR LOC RWY 02 | ILS | 未领取/未提交 |  |
+| 10 | KBUY_I06-Z | ILS Z OR LOC Z RWY 06 | ILS | 未领取/未提交 |  |
+| 88 | KCBF_R36 | RNAV (GPS) RWY 36 | RNAV | 未领取/未提交 |  |
 
 注意：后台管理员口令不要写入仓库文件或公开文档。需要刷新时，在本地或浏览器里临时使用即可。
 
@@ -580,22 +580,27 @@ E:\experiment3\zu2+3\scripts\run_group2_group3_direct_q4_fix.py
 ```
 
 但这个脚本目前是针对 pilot30/complete19 的修复验证脚本。
-
-正式全量跑之前，建议新建正式脚本，例如：
+本分支已经新增正式/已提交标注 runner：
 
 ```text
-E:\experiment3\zu2+3\scripts\run_group2_formal300_v1.py
+scripts\group2\run_group2_formal_submitted_v1.py
 ```
 
-或者：
+推荐输出目录仍使用：
 
 ```text
-E:\experiment3\zu2+3\scripts\run_group2_formal_submitted_v1.py
+E:\experiment3\zu2+3\group2_formal\<run_id>\
 ```
 
 如果 300 张全部完成，用 `formal300` 命名。
 
 如果只用 296 张已提交子集，用 `formal_submitted296` 命名，避免误写成完整 300。
+
+示例命令见：
+
+```text
+docs/group2/run_on_second_machine_zh.md
+```
 
 ### 第五步：保留四类输出
 
@@ -677,4 +682,3 @@ E:\experiment3\zu2+3\group2_formal\
 关键的跨航段证据错误已经修复；
 下一步是等待正式标注完成后扩展到全量。
 ```
-
