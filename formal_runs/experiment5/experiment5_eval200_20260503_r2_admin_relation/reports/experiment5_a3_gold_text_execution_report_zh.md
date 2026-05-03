@@ -34,13 +34,13 @@
 - hard_leakage_detected: `False`
 - forbidden_key_hits: `{}`
 
-## B2 当前状态
+## B2/B3 后续状态
 
-- B2a/B2b: `not_run_pending_model_server`
-- 原因: B2a/B2b require an OpenAI-compatible model server. No successful model-server call is recorded by run_experiment5_gold_text_a3.py; run B2 only after service readiness is confirmed.
+- B2a/B2b/B3/B4/G 已在同一 eval200 admin-relation 线中跑齐。
+- 本文件只记录 A3 单方法结果；完整汇总见 `experiment5_eval200_admin_relation_combined_summary.json`。
 
 ## 解释边界
 
-- 这是 smoke20 诊断结果，不是 formal200 结论。
+- 这是 eval200 admin-relation 诊断结果。
 - A3 消除了 MA prose OCR 错误，但仍不提供图形区 gold observable，也不提供 target 字段答案。
 - rule_registry 尚未完成正式审查，因此该结果可以用于诊断下一步，不宜直接作为论文 formal claim。

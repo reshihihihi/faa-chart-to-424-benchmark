@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_d0ad7647-8d00-4ef2-a8fb-b0f6b0b96cf7",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_7f1B6lWEbFedJQc28MDG5dy3",
+            "function": {
+              "arguments": "{\"chart_id\":\"KAWM_L17\",\"procedure\":{\"airport\":\"KAWM\",\"approach_ident\":\"L17\",\"chart_name\":\"ILS OR LOC RWY 17\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777825200,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

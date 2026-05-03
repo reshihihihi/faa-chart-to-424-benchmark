@@ -8,6 +8,12 @@
     "field_candidates_schema_validation_error_count": 0,
     "serialized_method_payload_forbidden_key_hit_count": 0
   },
+  "llm_endpoint": {
+    "base_url": "http://127.0.0.1:10531/v1",
+    "provider": "openai-oauth",
+    "model": "gpt-5.4",
+    "status": "completed_after_resume"
+  },
   "methods": {
     "A3_GoldText_Rules": {
       "status": "completed",
@@ -17,39 +23,40 @@
       "failure_count": 0
     },
     "B2a_GoldText_LLM": {
-      "status": "not_run_model_proxy_oauth_blocked",
-      "schema_valid": null,
+      "status": "completed",
+      "schema_valid": 200,
       "samples_total": 200,
-      "score_v2": null,
-      "failure_count": null
+      "score_v2": {"correct": 2552, "total": 4052, "accuracy": 0.629812438302073},
+      "failure_count": 0
     },
     "B2b_GoldText_FieldCandidates_LLM": {
-      "status": "not_run_model_proxy_oauth_blocked",
-      "schema_valid": null,
+      "status": "completed",
+      "schema_valid": 200,
       "samples_total": 200,
-      "score_v2": null,
-      "failure_count": null
+      "samples_scored": 200,
+      "score_v2": {"correct": 1963, "total": 4052, "accuracy": 0.48445212240868707},
+      "failure_count": 0
     },
     "B3_T": {
-      "status": "not_run_model_proxy_oauth_blocked",
-      "schema_valid": null,
+      "status": "completed",
+      "schema_valid": 200,
       "samples_total": 200,
-      "score_v2": null,
-      "failure_count": null
+      "score_v2": {"correct": 2930, "total": 4052, "accuracy": 0.7230997038499506},
+      "failure_count": 0
     },
     "B3_PD": {
-      "status": "not_run_model_proxy_oauth_blocked",
-      "schema_valid": null,
+      "status": "completed",
+      "schema_valid": 200,
       "samples_total": 200,
-      "score_v2": null,
-      "failure_count": null
+      "score_v2": {"correct": 719, "total": 4052, "accuracy": 0.1774432379072063},
+      "failure_count": 0
     },
     "B3_TPD": {
-      "status": "not_run_model_proxy_oauth_blocked",
-      "schema_valid": null,
+      "status": "completed",
+      "schema_valid": 200,
       "samples_total": 200,
-      "score_v2": null,
-      "failure_count": null
+      "score_v2": {"correct": 2657, "total": 4052, "accuracy": 0.6557255676209279},
+      "failure_count": 0
     },
     "B4_TPD": {
       "status": "completed",
@@ -80,16 +87,6 @@
       "failure_count": 0
     }
   },
-  "model_proxy_error": {
-    "endpoint": "http://127.0.0.1:8080/v1/chat/completions",
-    "http_status": 500,
-    "message": "Encountered invalidated oauth token for user, failing request",
-    "blocked_methods": [
-      "B2a_GoldText_LLM",
-      "B2b_GoldText_FieldCandidates_LLM",
-      "B3_T",
-      "B3_PD",
-      "B3_TPD"
-    ]
-  }
+  "blocking_error": null,
+  "completion_note": "B2b initially stopped after 23/200 samples because the upstream account returned a usage-limit error. After openai-oauth recovered, B2b and B3_T/B3_PD/B3_TPD were completed with --resume-existing; final failure_count is 0 for all A/B/G methods."
 }

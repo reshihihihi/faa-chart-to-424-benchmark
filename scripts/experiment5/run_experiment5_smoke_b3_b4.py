@@ -6,6 +6,7 @@ import os
 import re
 import sys
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -525,6 +526,7 @@ def run_llm_method(
     max_tokens: int,
     temperature: float,
     schema_retry_count: int,
+    resume_existing: bool = False,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     profile = METHOD_TO_PROFILE[method]
     out_rows: list[dict[str, Any]] = []
@@ -532,6 +534,47 @@ def run_llm_method(
     for chart_id in rows:
         sample = samples[chart_id]
         input_row = candidate_inputs[(chart_id, profile)]
+        existing_canonical_path = run_dir / method / "canonical_json" / f"{chart_id}.json"
+        if resume_existing and existing_canonical_path.exists():
+            try:
+                pred = json.loads(existing_canonical_path.read_text(encoding="utf-8"))
+                errors = validate_canonical(pred, validator)
+                write_json(run_dir / method / "validation" / f"{chart_id}.json", errors)
+                item = {
+                    "method": method,
+                    "chart_id": chart_id,
+                    "sample_id": sample["sample_id"],
+                    "region_profile": profile,
+                    "attempt_count": 0,
+                    "schema_retry_count": 0,
+                    "uses_field_candidates": True,
+                    "reused_existing": True,
+                    "field_candidates_path": rel(Path(input_row["field_candidates_path"])),
+                    "field_candidates_sha256": input_row.get("field_candidates_sha256"),
+                    "roi_ocr_input_text_path": rel(Path(input_row["roi_ocr_input_text_path"])),
+                    "roi_ocr_input_text_sha256": input_row.get("roi_ocr_input_text_sha256"),
+                    "validation_error_count": len(errors),
+                    "validation_errors": errors,
+                    "score": (
+                        score_and_write(
+                            method=method,
+                            chart_id=chart_id,
+                            pred=pred,
+                            target=targets[chart_id],
+                            policies=policies,
+                            run_dir=run_dir,
+                        )
+                        if not errors
+                        else None
+                    ),
+                }
+                out_rows.append(item)
+                if errors:
+                    failures.append({"method": method, "chart_id": chart_id, "error": "schema_validation_failed"})
+                continue
+            except Exception as exc:  # noqa: BLE001
+                write_text(run_dir / method / "errors" / f"{chart_id}.resume_existing.txt", repr(exc))
+
         roi_text = Path(input_row["roi_ocr_input_text_path"]).read_text(encoding="utf-8")
         field_candidates = json.loads(Path(input_row["field_candidates_path"]).read_text(encoding="utf-8"))
         prompt = prompt_for(
@@ -707,6 +750,8 @@ def main() -> int:
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--max-tokens", type=int, default=4096)
     parser.add_argument("--schema-retry-count", type=int, default=1)
+    parser.add_argument("--max-workers", type=int, default=1)
+    parser.add_argument("--resume-existing", action="store_true")
     args = parser.parse_args()
 
     methods = [item.strip() for item in args.methods.split(",") if item.strip()]
@@ -767,6 +812,8 @@ def main() -> int:
         "temperature": args.temperature,
         "max_tokens": args.max_tokens,
         "schema_retry_count": args.schema_retry_count,
+        "max_workers": args.max_workers,
+        "resume_existing": args.resume_existing,
         "target_used_for_prediction": False,
         "score_used_for_prediction": False,
         "cifp_or_arinc_424_used_for_prediction": False,
@@ -798,26 +845,66 @@ def main() -> int:
             continue
         if client is None:
             raise RuntimeError("Model client was not initialized.")
-        results, failures = run_llm_method(
-            method=method,
-            rows=chart_ids,
-            samples=samples,
-            candidate_inputs=candidate_inputs,
-            targets=targets,
-            policies=policies,
-            validator=validator,
-            canonical_schema=canonical_schema,
-            run_dir=args.run_dir,
-            client=client,
-            provider=provider,
-            model=args.text_model,
-            max_tokens=args.max_tokens,
-            temperature=args.temperature,
-            schema_retry_count=args.schema_retry_count,
-        )
+        if args.max_workers > 1 and len(chart_ids) > 1:
+            results = []
+            failures = []
+            with ThreadPoolExecutor(max_workers=args.max_workers) as executor:
+                future_to_chart_id = {
+                    executor.submit(
+                        run_llm_method,
+                        method=method,
+                        rows=[chart_id],
+                        samples=samples,
+                        candidate_inputs=candidate_inputs,
+                        targets=targets,
+                        policies=policies,
+                        validator=validator,
+                        canonical_schema=canonical_schema,
+                        run_dir=args.run_dir,
+                        client=client,
+                        provider=provider,
+                        model=args.text_model,
+                        max_tokens=args.max_tokens,
+                        temperature=args.temperature,
+                        schema_retry_count=args.schema_retry_count,
+                        resume_existing=args.resume_existing,
+                    ): chart_id
+                    for chart_id in chart_ids
+                }
+                for future in as_completed(future_to_chart_id):
+                    chart_id = future_to_chart_id[future]
+                    try:
+                        row_results, row_failures = future.result()
+                    except Exception as exc:  # noqa: BLE001
+                        row_results = []
+                        row_failures = [{"method": method, "chart_id": chart_id, "error": repr(exc)}]
+                    results.extend(row_results)
+                    failures.extend(row_failures)
+                    print(f"{method} {len(results) + len(failures)}/{len(chart_ids)} {chart_id}", flush=True)
+        else:
+            results, failures = run_llm_method(
+                method=method,
+                rows=chart_ids,
+                samples=samples,
+                candidate_inputs=candidate_inputs,
+                targets=targets,
+                policies=policies,
+                validator=validator,
+                canonical_schema=canonical_schema,
+                run_dir=args.run_dir,
+                client=client,
+                provider=provider,
+                model=args.text_model,
+                max_tokens=args.max_tokens,
+                temperature=args.temperature,
+                schema_retry_count=args.schema_retry_count,
+                resume_existing=args.resume_existing,
+            )
         all_results.extend(results)
         all_failures.extend(failures)
 
+    all_results.sort(key=lambda row: (row.get("method", ""), row.get("chart_id", "")))
+    all_failures.sort(key=lambda row: (row.get("method", ""), row.get("chart_id", "")))
     write_jsonl(args.run_dir / "reports" / "b3_b4_smoke_results.jsonl", all_results)
     write_jsonl(args.run_dir / "reports" / "b3_b4_smoke_failures.jsonl", all_failures)
     summary = {

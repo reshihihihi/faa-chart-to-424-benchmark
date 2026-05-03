@@ -2,6 +2,9 @@
   "run_id": "experiment5_eval200_20260503_r2_admin_relation",
   "experiment_group": 5,
   "methods": [
+    "B3_T",
+    "B3_PD",
+    "B3_TPD",
     "B4_TPD"
   ],
   "method_descriptions": {
@@ -10,7 +13,7 @@
     "B3_TPD": "MISSED_APPROACH_TEXT + PLAN_VIEW + MISSED_APPROACH_DETAIL_AREA ROI OCR + region-aware ROI field_candidates + LLM -> canonical JSON",
     "B4_TPD": "MISSED_APPROACH_TEXT + PLAN_VIEW + MISSED_APPROACH_DETAIL_AREA ROI OCR + region-aware ROI field_candidates + deterministic rules -> canonical JSON"
   },
-  "created_at_utc": "2026-05-03T12:45:27.597575+00:00",
+  "created_at_utc": "2026-05-03T16:46:40.354824+00:00",
   "sample_scope": "experiment5_eval200_admin_relation",
   "limit": 200,
   "chart_ids": [
@@ -231,7 +234,7 @@
   "rule_registry_sha256": "26d9779675a3040d4955f2d134ac9a419a1d70b75b6300ab22666bf2eb82fd18",
   "model_api": {
     "provider": "openai_compatible",
-    "base_url": "http://127.0.0.1:8080/v1",
+    "base_url": "http://127.0.0.1:10531/v1",
     "base_url_env_candidates": [
       "OPENAI_BASE_URL",
       "OPENAI_COMPAT_BASE_URL",
@@ -252,12 +255,14 @@
   "temperature": 0.0,
   "max_tokens": 4096,
   "schema_retry_count": 1,
+  "max_workers": 3,
+  "resume_existing": true,
   "target_used_for_prediction": false,
   "score_used_for_prediction": false,
   "cifp_or_arinc_424_used_for_prediction": false,
   "gold_observable_used_for_prediction": false,
   "gold_ma_text_used_for_prediction": false,
   "b4_uses_field_candidates": true,
-  "b3_pd_withholds_missed_approach_text": false,
+  "b3_pd_withholds_missed_approach_text": true,
   "env_openai_base_url": null
 }

@@ -1,1 +1,1 @@
-RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {"error":{"message":"Encountered invalidated oauth token for user, failing request","type":"server_error"}}')
+RuntimeError('HTTP 500 from http://127.0.0.1:10531/v1/chat/completions: {"error":{"message":"terminated","type":"server_error"}}')

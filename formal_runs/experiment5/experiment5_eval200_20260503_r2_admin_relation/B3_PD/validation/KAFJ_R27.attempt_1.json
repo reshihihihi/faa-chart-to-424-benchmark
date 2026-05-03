@@ -1,0 +1,4 @@
+[
+  "missed_approach.legs.2.answers.Q_terminator.status: 'HM' is not one of ['present', 'not_applicable', 'not_observable', 'unknown']",
+  "missed_approach.legs[2].answers.Q_terminator: value must be null when status is 'HM'"
+]

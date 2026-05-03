@@ -1,0 +1,82 @@
+{
+  "chart_id": "KBYL_L20",
+  "procedure": {
+    "airport": "KBYL",
+    "approach_ident": "L20",
+    "chart_name": "LOC RWY 20"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 2
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q1_fix_ident": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT",
+              "altitude_ft": 1800,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "LOZ"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 4000,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "unknown",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

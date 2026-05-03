@@ -1,6 +1,9 @@
 {
-  "created_at_utc": "2026-05-03T12:37:58.052384+00:00",
+  "created_at_utc": "2026-05-03T16:46:42.003275+00:00",
   "methods": [
+    "B3_T",
+    "B3_PD",
+    "B3_TPD",
     "B4_TPD"
   ],
   "chart_ids": [
@@ -56,6 +59,63 @@
     "KCOE_R02"
   ],
   "summaries": {
+    "B3_PD": {
+      "samples_total": 50,
+      "schema_valid": 50,
+      "samples_scored": 50,
+      "score_v2": {
+        "correct": 171,
+        "total": 1010,
+        "accuracy": 0.16930693069306932
+      },
+      "score_strict": {
+        "correct": 170,
+        "total": 1010,
+        "accuracy": 0.16831683168316833
+      },
+      "v2_minus_strict_correct": 1,
+      "v2_minus_strict_accuracy": 0.000990099009900991,
+      "schema_retry_total": 0,
+      "uses_field_candidates": true
+    },
+    "B3_T": {
+      "samples_total": 50,
+      "schema_valid": 50,
+      "samples_scored": 50,
+      "score_v2": {
+        "correct": 722,
+        "total": 1010,
+        "accuracy": 0.7148514851485148
+      },
+      "score_strict": {
+        "correct": 655,
+        "total": 1010,
+        "accuracy": 0.6485148514851485
+      },
+      "v2_minus_strict_correct": 67,
+      "v2_minus_strict_accuracy": 0.06633663366336628,
+      "schema_retry_total": 0,
+      "uses_field_candidates": true
+    },
+    "B3_TPD": {
+      "samples_total": 50,
+      "schema_valid": 50,
+      "samples_scored": 50,
+      "score_v2": {
+        "correct": 660,
+        "total": 1010,
+        "accuracy": 0.6534653465346535
+      },
+      "score_strict": {
+        "correct": 593,
+        "total": 1010,
+        "accuracy": 0.5871287128712871
+      },
+      "v2_minus_strict_correct": 67,
+      "v2_minus_strict_accuracy": 0.0663366336633664,
+      "schema_retry_total": 0,
+      "uses_field_candidates": true
+    },
     "B4_TPD": {
       "samples_total": 50,
       "schema_valid": 50,

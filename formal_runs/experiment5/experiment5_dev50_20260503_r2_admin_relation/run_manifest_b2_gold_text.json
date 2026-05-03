@@ -5,7 +5,7 @@
     "B2a_GoldText_LLM",
     "B2b_GoldText_FieldCandidates_LLM"
   ],
-  "created_at_utc": "2026-05-03T12:36:15.839281+00:00",
+  "created_at_utc": "2026-05-03T13:34:42.497654+00:00",
   "sample_scope": "experiment5_smoke20_gold_ma_prose",
   "limit": 50,
   "chart_ids": [
@@ -61,7 +61,7 @@
     "KART_R28"
   ],
   "model": "gpt-5.4",
-  "base_url": "http://127.0.0.1:8080/v1",
+  "base_url": "http://127.0.0.1:10531/v1",
   "temperature": 0.0,
   "max_tokens": 4096,
   "schema_retry_count": 1,
@@ -78,7 +78,7 @@
   "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
   "model_api": {
     "provider": "openai_compatible_via_openai_oauth",
-    "base_url": "http://127.0.0.1:8080/v1",
+    "base_url": "http://127.0.0.1:10531/v1",
     "token_value_recorded": false
   },
   "target_used_for_prediction": false,

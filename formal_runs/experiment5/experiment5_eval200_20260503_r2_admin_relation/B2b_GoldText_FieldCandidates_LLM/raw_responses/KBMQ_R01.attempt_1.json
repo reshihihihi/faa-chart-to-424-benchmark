@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_425c18c1-e3b0-49c5-a34c-263d02ec5296",
+  "object": "chat.completion",
+  "created": 1777820720,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_4DDYfyEX6nyQhDzNXKjC6rM4",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KBMQ_R01\",\"procedure\":{\"airport\":\"KBMQ\",\"approach_ident\":\"R01\",\"chart_name\":\"RNAV (GPS) RWY 01\"},\"missed_approach\":{\"leg_count\":{\"status\":\"present\",\"value\":2},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":null},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"DLORA\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":3500,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"not_observable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"present\",\"value\":{\"type\":\"course_deg\",\"course_deg\":13.1}},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}},{\"leg_index\":2,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":null},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"DLORA\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":3500,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"not_observable\",\"value\":null},\"Q5_hold_params\":{\"status\":\"present\",\"value\":{\"inbound_course_deg\":193.2,\"leg_time_min\":null,\"leg_distance_nm\":4,\"turn\":\"RIGHT\"}}}}]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

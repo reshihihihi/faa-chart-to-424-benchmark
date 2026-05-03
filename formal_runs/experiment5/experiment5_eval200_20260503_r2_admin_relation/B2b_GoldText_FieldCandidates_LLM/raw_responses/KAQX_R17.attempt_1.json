@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_95dfcfc7-2f18-4ea2-866a-a72be759d001",
+  "object": "chat.completion",
+  "created": 1777821522,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_Fdi9EZ29w7jp2XvwbcZK4tsK",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAQX_R17\",\"procedure\":{\"airport\":\"KAQX\",\"approach_ident\":\"R17\",\"chart_name\":\"RNAV (GPS) RWY 17\"},\"missed_approach\":{\"leg_count\":{\"status\":\"present\",\"value\":3},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":null},\"Q1_fix_ident\":{\"status\":\"not_applicable\",\"value\":null},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":1000,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"present\",\"value\":{\"type\":\"course_deg\",\"course_deg\":168.1}},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}},{\"leg_index\":2,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":null},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"IXTIN\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":2100,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"present\",\"value\":\"RIGHT\"},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}},{\"leg_index\":3,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":null},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"IXTIN\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":2100,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"present\",\"value\":{\"inbound_course_deg\":78.1,\"leg_time_min\":null,\"leg_distance_nm\":4,\"turn\":\"RIGHT\"}}}}]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

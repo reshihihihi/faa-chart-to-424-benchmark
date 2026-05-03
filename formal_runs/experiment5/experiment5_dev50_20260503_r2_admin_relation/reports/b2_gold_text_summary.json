@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-05-03T12:36:39.374782+00:00",
+  "created_at_utc": "2026-05-03T13:40:09.744153+00:00",
   "run_id": "experiment5_dev50_20260503_r2_admin_relation",
   "methods": [
     "B2a_GoldText_LLM",
@@ -58,549 +58,134 @@
     "KART_R28"
   ],
   "model": "gpt-5.4",
-  "base_url": "http://127.0.0.1:8080/v1",
+  "base_url": "http://127.0.0.1:10531/v1",
   "max_workers": 4,
   "summaries": {
     "B2a_GoldText_LLM": {
       "samples_total": 50,
-      "schema_valid": 0,
-      "samples_scored": 0,
+      "schema_valid": 50,
+      "samples_scored": 50,
       "score_v2": {
-        "correct": 0,
-        "total": 0,
-        "accuracy": null
+        "correct": 606,
+        "total": 1010,
+        "accuracy": 0.6
       },
       "score_strict": {
-        "correct": 0,
-        "total": 0,
-        "accuracy": null
+        "correct": 535,
+        "total": 1010,
+        "accuracy": 0.5297029702970297
       },
-      "v2_minus_strict_correct": 0,
-      "v2_minus_strict_accuracy": null,
-      "schema_retry_total": 50,
-      "field_family": []
+      "v2_minus_strict_correct": 71,
+      "v2_minus_strict_accuracy": 0.07029702970297025,
+      "schema_retry_total": 12,
+      "field_family": [
+        {
+          "field": "Q1_fix_ident",
+          "correct": 139,
+          "total": 160,
+          "accuracy": 0.86875
+        },
+        {
+          "field": "Q2_altitude_constraint",
+          "correct": 1,
+          "total": 160,
+          "accuracy": 0.00625
+        },
+        {
+          "field": "Q3_turn",
+          "correct": 147,
+          "total": 160,
+          "accuracy": 0.91875
+        },
+        {
+          "field": "Q4_course_or_radial",
+          "correct": 103,
+          "total": 160,
+          "accuracy": 0.64375
+        },
+        {
+          "field": "Q5_hold_params",
+          "correct": 150,
+          "total": 160,
+          "accuracy": 0.9375
+        },
+        {
+          "field": "Q_terminator",
+          "correct": 21,
+          "total": 160,
+          "accuracy": 0.13125
+        },
+        {
+          "field": "leg_count",
+          "correct": 45,
+          "total": 50,
+          "accuracy": 0.9
+        }
+      ]
     },
     "B2b_GoldText_FieldCandidates_LLM": {
       "samples_total": 50,
-      "schema_valid": 0,
-      "samples_scored": 0,
+      "schema_valid": 50,
+      "samples_scored": 50,
       "score_v2": {
-        "correct": 0,
-        "total": 0,
-        "accuracy": null
+        "correct": 509,
+        "total": 1010,
+        "accuracy": 0.503960396039604
       },
       "score_strict": {
-        "correct": 0,
-        "total": 0,
-        "accuracy": null
+        "correct": 451,
+        "total": 1010,
+        "accuracy": 0.44653465346534654
       },
-      "v2_minus_strict_correct": 0,
-      "v2_minus_strict_accuracy": null,
-      "schema_retry_total": 50,
-      "field_family": []
+      "v2_minus_strict_correct": 58,
+      "v2_minus_strict_accuracy": 0.05742574257425742,
+      "schema_retry_total": 5,
+      "field_family": [
+        {
+          "field": "Q1_fix_ident",
+          "correct": 119,
+          "total": 160,
+          "accuracy": 0.74375
+        },
+        {
+          "field": "Q2_altitude_constraint",
+          "correct": 8,
+          "total": 160,
+          "accuracy": 0.05
+        },
+        {
+          "field": "Q3_turn",
+          "correct": 132,
+          "total": 160,
+          "accuracy": 0.825
+        },
+        {
+          "field": "Q4_course_or_radial",
+          "correct": 73,
+          "total": 160,
+          "accuracy": 0.45625
+        },
+        {
+          "field": "Q5_hold_params",
+          "correct": 122,
+          "total": 160,
+          "accuracy": 0.7625
+        },
+        {
+          "field": "Q_terminator",
+          "correct": 24,
+          "total": 160,
+          "accuracy": 0.15
+        },
+        {
+          "field": "leg_count",
+          "correct": 31,
+          "total": 50,
+          "accuracy": 0.62
+        }
+      ]
     }
   },
-  "failure_count": 100,
-  "failures": [
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAVP_L04",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KBYL_L20",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAVL_I17",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KCFO_L17",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KCOE_R02",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KBWC_R26",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KCOE_L06",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KANY_R18",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KATW_R21",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KCFO_I26",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAVP_R22",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KACT_R32",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KBKW_R01",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KBYI_R20",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAXN_R22",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KCIC_R13L",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KCLL_R11",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KACT_R19",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAEX_R14",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KACV_R01",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAEX_R18",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAGS_R26",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAPN_R01",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KACT_R01",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KACV_R14",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAGS_R08-Y",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KACV_R32",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAGS_R08-Z",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KART_R10",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAEX_R32",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAJG_R04",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAJG_R22",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAND_R05",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAND_R17",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAND_R23",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAJG_R31",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KANE_R27",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KANE_R18",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KANE_R09",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KANY_R36",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAPA_R17LY",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAPA_R35R",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAPA_R28",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAPN_R07",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KAPN_R19",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KARR_R09",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KARR_R27",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KART_R07",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAVL_I17",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KART_R28",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2a_GoldText_LLM",
-      "chart_id": "KARR_R15",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KCFO_I26",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAVP_L04",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KBYL_L20",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KCFO_L17",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KBWC_R26",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KCOE_R02",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KCOE_L06",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KANY_R18",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KATW_R21",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAVP_R22",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KACT_R32",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAXN_R22",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KBKW_R01",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KBYI_R20",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KACV_R01",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KCIC_R13L",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KCLL_R11",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KACT_R19",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAEX_R14",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KART_R10",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAEX_R18",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KACT_R01",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAGS_R26",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KACV_R14",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KACV_R32",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAGS_R08-Z",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAEX_R32",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAJG_R04",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAJG_R31",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAGS_R08-Y",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAJG_R22",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAND_R05",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAND_R17",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAND_R23",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KANE_R09",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KANE_R18",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KANE_R27",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KANY_R36",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAPA_R28",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAPA_R35R",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAPN_R19",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAPN_R07",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KARR_R09",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAPA_R17LY",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KARR_R15",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KARR_R27",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KAPN_R01",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KART_R28",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    },
-    {
-      "method": "B2b_GoldText_FieldCandidates_LLM",
-      "chart_id": "KART_R07",
-      "error": "RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {\"error\":{\"message\":\"Encountered invalidated oauth token for user, failing request\",\"type\":\"server_error\"}}')"
-    }
-  ]
+  "failure_count": 0,
+  "failures": []
 }

@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_6f969a06-67c7-49af-97f1-6342b1b57cda",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_rTfXX3K0AqhjCKFJmY9sv2DO",
+            "function": {
+              "arguments": "{\"chart_id\":\"KAKH_R21\",\"procedure\":{\"airport\":\"KAKH\",\"approach_ident\":\"R21\",\"chart_name\":\"RNAV (GPS) RWY 21\"},\"missed_approach\":{\"leg_count\":{\"status\":\"present\",\"value\":2},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":null},\"Q1_fix_ident\":{\"status\":\"unknown\",\"value\":null},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT_OR_ABOVE\",\"altitude_ft\":3200,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}},{\"leg_index\":2,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":null},\"Q1_fix_ident\":{\"status\":\"unknown\",\"value\":null},\"Q2_altitude_constraint\":{\"status\":\"unknown\",\"value\":null},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"present\",\"value\":{\"inbound_course_deg\":260.7,\"leg_time_min\":null,\"leg_distance_nm\":4,\"turn\":\"RIGHT\"}}}}]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777824614,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}
