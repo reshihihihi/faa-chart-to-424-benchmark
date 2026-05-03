@@ -245,6 +245,42 @@ def build_evidence_record(annotation: dict[str, Any]) -> dict[str, Any]:
     return {"chart_id": annotation["chart_id"], "evidence_items": items}
 
 
+def region_to_semantics_evidence_item(region: dict[str, Any]) -> dict[str, Any] | None:
+    links = accepted_field_links(region)
+    if not links:
+        return None
+    region_type = str(region.get("region_type") or "OTHER")
+    label = normalize_spaces(region.get("label"))
+    text = normalize_spaces(region.get("ocr_text")) or visible_text_from_label(label)
+    value: dict[str, Any] = {"linked_fields": links}
+    rid = region_id(region)
+    if rid:
+        value["region_id"] = rid
+    if text:
+        value["visible_text"] = text
+    return {
+        "source_region": REGION_MAP.get(region_type, "OTHER"),
+        "item_type": ITEM_MAP.get(region_type, region_type.lower() or "region"),
+        "text": text,
+        "value": value,
+    }
+
+
+def build_semantics_evidence_record(annotation: dict[str, Any]) -> dict[str, Any]:
+    items = []
+    seen = set()
+    for region in annotation.get("regions") or []:
+        rid = region_id(region)
+        if rid and rid in seen:
+            continue
+        if rid:
+            seen.add(rid)
+        item = region_to_semantics_evidence_item(region)
+        if item is not None:
+            items.append(item)
+    return {"chart_id": annotation["chart_id"], "evidence_items": items}
+
+
 def field_evidence_links(annotation: dict[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for review in annotation.get("field_reviews") or []:
@@ -272,7 +308,7 @@ def field_evidence_links(annotation: dict[str, Any]) -> list[dict[str, Any]]:
 def build_semantics_input_bundle(annotation: dict[str, Any]) -> dict[str, Any]:
     return {
         "chart_id": annotation["chart_id"],
-        "evidence_record": build_evidence_record(annotation),
+        "evidence_record": build_semantics_evidence_record(annotation),
         "field_evidence_links": field_evidence_links(annotation),
         "input_boundary": {
             "contains_human_confirmed_evidence": True,
