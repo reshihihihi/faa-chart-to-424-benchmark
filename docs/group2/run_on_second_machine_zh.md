@@ -16,8 +16,9 @@ E:\experiment3
 E:\experiment3\github_work\faa-chart-to-424-benchmark
 E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM
 E:\experiment3\github_work\faa-chart-to-424-benchmark\formal_runs\group1\group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2
-E:\experiment3\github_work\faa-chart-to-424-benchmark\benchmark_exports\derived\v2\formal300\targets\scoring_equivalence_v2\field_targets_chart_display_v2.jsonl
 ```
+
+其中 `benchmark_exports\derived\v2\formal300\targets\scoring_equivalence_v2` 已放入本分支。
 
 如果另一台电脑不用 `E:\experiment3`，需要先把脚本里的本地路径改成新机器路径，或者后续改造成命令行参数。
 
