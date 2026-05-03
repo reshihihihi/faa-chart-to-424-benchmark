@@ -1,0 +1,15 @@
+{
+  "chart_id": "KBKX_R30",
+  "procedure": {
+    "airport": "KBKX",
+    "approach_ident": "R30",
+    "chart_name": "RNAV (GPS) RWY 30"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

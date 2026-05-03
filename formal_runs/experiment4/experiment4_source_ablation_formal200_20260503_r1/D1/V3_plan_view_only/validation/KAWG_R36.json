@@ -1,0 +1,17 @@
+{
+  "expected_chart_id": "KAWG_R36",
+  "raw_output_chart_id": "KZAA_L18",
+  "output_chart_id": "KAWG_R36",
+  "schema_valid": true,
+  "final_chart_id_matches_expected": true,
+  "validation_errors": [],
+  "actions": [
+    "strip_outer_whitespace",
+    "parse_entire_raw_as_json_object",
+    "raw_object_not_convertible_to_canonical_shape",
+    "set_manifest_chart_id_envelope",
+    "fallback_missing_missed_approach",
+    "fallback_missing_legs",
+    "selected_candidate_index:0"
+  ]
+}

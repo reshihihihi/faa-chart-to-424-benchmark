@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAFW_R16L",
+  "procedure": {
+    "airport": "KAFW",
+    "approach_ident": "R16L",
+    "chart_name": "RNAV (GPS) RWY 16L"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

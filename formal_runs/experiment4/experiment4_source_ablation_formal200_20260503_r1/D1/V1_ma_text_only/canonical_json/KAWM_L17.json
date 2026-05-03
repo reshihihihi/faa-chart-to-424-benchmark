@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAWM_L17",
+  "procedure": {
+    "airport": "KAWM",
+    "approach_ident": "L17",
+    "chart_name": "ILS OR LOC RWY 17"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

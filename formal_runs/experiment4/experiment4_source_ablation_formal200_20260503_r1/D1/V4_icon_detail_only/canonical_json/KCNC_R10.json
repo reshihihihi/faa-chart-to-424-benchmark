@@ -1,0 +1,15 @@
+{
+  "chart_id": "KCNC_R10",
+  "procedure": {
+    "airport": "KCNC",
+    "approach_ident": "R10",
+    "chart_name": "RNAV (GPS) RWY 10"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

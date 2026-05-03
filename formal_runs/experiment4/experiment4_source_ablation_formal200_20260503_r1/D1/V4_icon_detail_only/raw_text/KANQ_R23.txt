@@ -1,0 +1,13 @@
+{  
+  "chart_id":"KFEL_3000","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KFEL_3000","approach_ident":"3000","chart_name":"KFEL_3000","approach_ident":"3000"},"  
+  },  
+  "missed_approach":{  
+    "status":"present","  
+    "value":{"leg_count":3,"leg_count":{"status":"present","value":3},"  
+    "leg_count":{"status":"present","value":3},"  
+  },  
+  "procedure":{"status":"present","value":{"airport":"KFEL","approach_ident":"3000","chart_name":"KFEL_3000"}}  
+}

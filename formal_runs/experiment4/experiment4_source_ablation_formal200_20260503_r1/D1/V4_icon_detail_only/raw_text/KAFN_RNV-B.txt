@@ -1,0 +1,13 @@
+{  
+  "chart_id":"KQOS_3400","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KQOS_3400","approach_ident":"3400","chart_name":"KQOS_3400","approach_ident":"3400"},"  
+  },  
+  "missed_approach":{  
+    "status":"present","  
+    "value":{"leg_count":3,"leg_count":{"status":"present","value":3},"  
+    "leg_count":{"status":"present","value":3},"  
+  },  
+  "procedure":{"status":"present","value":{"airport":"KQOS","approach_ident":"3400","chart_name":"KQOS_3400"}}  
+}

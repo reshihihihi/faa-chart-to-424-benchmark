@@ -1,0 +1,14 @@
+{
+  "expected_chart_id": "KAKH_R03",
+  "raw_output_chart_id": "KSAV_R03",
+  "output_chart_id": "KAKH_R03",
+  "schema_valid": true,
+  "final_chart_id_matches_expected": true,
+  "validation_errors": [],
+  "actions": [
+    "strip_outer_whitespace",
+    "parse_entire_raw_as_json_object",
+    "set_manifest_chart_id_envelope",
+    "selected_candidate_index:0"
+  ]
+}

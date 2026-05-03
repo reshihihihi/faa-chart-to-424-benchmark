@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAIV_R24",
+  "procedure": {
+    "airport": "KAIV",
+    "approach_ident": "R24",
+    "chart_name": "RNAV (GPS) RWY 24"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

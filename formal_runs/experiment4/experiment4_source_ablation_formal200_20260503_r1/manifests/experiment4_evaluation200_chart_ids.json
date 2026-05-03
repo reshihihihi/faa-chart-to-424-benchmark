@@ -1,0 +1,3610 @@
+{
+  "chart_count": 200,
+  "chart_ids": [
+    "KABE_I06",
+    "KALS_I02",
+    "KAMA_I04",
+    "KAPC_I01L",
+    "KATL_I09R",
+    "KAUS_I18L",
+    "KBUY_I06-Z",
+    "KBWG_I03-Y",
+    "KCMH_I10R",
+    "KAXH_L09",
+    "KBDL_L33",
+    "KBFF_L12",
+    "KBOS_L15R",
+    "KBUR_L08-Z",
+    "KCEC_L12",
+    "KCRW_L05",
+    "KALN_L29",
+    "KALO_L12",
+    "KAWM_L17",
+    "KBRD_L34",
+    "KBTL_L23R",
+    "KBTP_L08",
+    "KBWI_L15L",
+    "KCAK_L01",
+    "KCBF_L36",
+    "KCJR_L04",
+    "KAFN_RNV-B",
+    "KAFN_RNV-C",
+    "KANP_RNV-A",
+    "KAPT_R04",
+    "KAQW_RNV-A",
+    "KAQW_RNV-B",
+    "KAVQ_R12",
+    "KAVQ_R21",
+    "KAXH_R27",
+    "KBDN_R34",
+    "KBJC_R12L",
+    "KBLF_R05",
+    "KBMQ_R01",
+    "KBOS_R32",
+    "KBUR_R08-Z",
+    "KCEA_RNV-D",
+    "KCII_R33",
+    "KADF_R22",
+    "KAKH_R03",
+    "KAOO_R03-Z",
+    "KAOO_R21",
+    "KARG_R04",
+    "KAWG_R36",
+    "KAXV_R26",
+    "KBFD_R14",
+    "KBKX_R30",
+    "KBLV_R32RY",
+    "KBTR_R04L",
+    "KBUM_R18",
+    "KBXA_R18",
+    "KBYH_R36",
+    "KCAO_R02",
+    "KCBF_R36",
+    "KCDI_R04",
+    "KCDS_R36",
+    "KCGI_R10",
+    "KCHO_R03",
+    "KCNC_R10",
+    "KCOI_R11",
+    "KCRS_R32",
+    "KANB_R05",
+    "KAST_R26",
+    "KABE_R13",
+    "KABE_R24",
+    "KABY_R05",
+    "KABY_R17",
+    "KABY_R23",
+    "KACK_R33",
+    "KACY_R13-Y",
+    "KACY_R31-Y",
+    "KAFW_R34R",
+    "KAGC_R10",
+    "KAGC_R28",
+    "KAKH_R21",
+    "KALB_R10",
+    "KALB_R19-Y",
+    "KALB_R28",
+    "KALN_R17",
+    "KALS_R02",
+    "KALW_R02",
+    "KAMA_R04-Y",
+    "KAMA_R13-Y",
+    "KANJ_R14",
+    "KAPC_R01LY",
+    "KAPC_R01LZ",
+    "KARV_R18",
+    "KARV_R28",
+    "KAAA_R03",
+    "KAAA_R21",
+    "KAAF_R06",
+    "KAAF_R14",
+    "KAAF_R24",
+    "KAAS_R05",
+    "KAAS_R23",
+    "KABI_R17L",
+    "KABI_R35R",
+    "KABR_R13",
+    "KABR_R17",
+    "KABR_R31",
+    "KACJ_R05",
+    "KACJ_R23",
+    "KACK_R06",
+    "KACK_R15",
+    "KACP_R18",
+    "KACP_R36",
+    "KACQ_R15",
+    "KACQ_R33",
+    "KACY_R04",
+    "KADC_R16",
+    "KADC_R34",
+    "KADF_R04",
+    "KADH_R18",
+    "KADH_R36",
+    "KADM_R13",
+    "KADM_R31",
+    "KAEG_R04",
+    "KAEG_R22",
+    "KAEL_R17",
+    "KAEL_R35",
+    "KAFJ_R09",
+    "KAFJ_R27",
+    "KAFP_R16",
+    "KAFP_R34",
+    "KAFW_R16L",
+    "KAFW_R16R",
+    "KAGO_R18",
+    "KAGO_R36",
+    "KAGZ_R09",
+    "KAGZ_R27",
+    "KAHN_R02",
+    "KAHN_R09",
+    "KAHN_R20",
+    "KAIA_R08",
+    "KAIA_R12",
+    "KAIA_R26",
+    "KAIG_R09",
+    "KAIG_R17",
+    "KAIG_R27",
+    "KAIK_R07",
+    "KAIK_R25",
+    "KAIO_R02",
+    "KAIO_R20",
+    "KAIT_R16",
+    "KAIT_R34",
+    "KAIV_R06",
+    "KAIV_R24",
+    "KAIZ_R04",
+    "KAIZ_R22",
+    "KAJR_R06",
+    "KAJR_R24",
+    "KAKO_R11",
+    "KAKO_R29",
+    "KALI_R13",
+    "KALI_R31",
+    "KALM_R04",
+    "KALN_R11",
+    "KALO_R12",
+    "KALO_R18",
+    "KALS_R20",
+    "KALW_R20",
+    "KALX_R18",
+    "KALX_R36",
+    "KAMG_R16",
+    "KAMG_R34",
+    "KAMN_R09",
+    "KAMN_R18",
+    "KAMN_R27",
+    "KAMT_R05",
+    "KAMT_R23",
+    "KAMW_R01",
+    "KAMW_R13",
+    "KAMW_R19",
+    "KANB_R23",
+    "KANJ_R32",
+    "KANQ_R05",
+    "KANQ_R23",
+    "KANW_R13",
+    "KANW_R17",
+    "KANW_R31",
+    "KAOV_R13",
+    "KAOV_R31",
+    "KAPF_R05-Y",
+    "KAPF_R14",
+    "KAPF_R23-Y",
+    "KAQO_R17",
+    "KAQO_R35",
+    "KAQX_R17",
+    "KAQX_R35",
+    "KARA_R17",
+    "KARA_R35",
+    "KARB_R06",
+    "KARB_R24",
+    "KARG_R18",
+    "KARG_R22"
+  ],
+  "created_at_utc": "2026-05-01T17:07:42.177780+00:00",
+  "rows": [
+    {
+      "airport": "KABE",
+      "chart_id": "KABE_I06",
+      "chart_name": "ILS OR LOC RWY 06",
+      "dataset_split": "evaluation",
+      "proc_ident": "I06",
+      "sample_id": "formal300_001",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALS",
+      "chart_id": "KALS_I02",
+      "chart_name": "ILS OR LOC RWY 02",
+      "dataset_split": "evaluation",
+      "proc_ident": "I02",
+      "sample_id": "formal300_002",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMA",
+      "chart_id": "KAMA_I04",
+      "chart_name": "ILS OR LOC RWY 04",
+      "dataset_split": "evaluation",
+      "proc_ident": "I04",
+      "sample_id": "formal300_003",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAPC",
+      "chart_id": "KAPC_I01L",
+      "chart_name": "ILS OR LOC Z RWY 01L",
+      "dataset_split": "evaluation",
+      "proc_ident": "I01L",
+      "sample_id": "formal300_004",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KATL",
+      "chart_id": "KATL_I09R",
+      "chart_name": "ILS OR LOC RWY 09R",
+      "dataset_split": "evaluation",
+      "proc_ident": "I09R",
+      "sample_id": "formal300_005",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAUS",
+      "chart_id": "KAUS_I18L",
+      "chart_name": "ILS OR LOC RWY 18L",
+      "dataset_split": "evaluation",
+      "proc_ident": "I18L",
+      "sample_id": "formal300_006",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBUY",
+      "chart_id": "KBUY_I06-Z",
+      "chart_name": "ILS Z OR LOC Z RWY 06",
+      "dataset_split": "evaluation",
+      "proc_ident": "I06-Z",
+      "sample_id": "formal300_010",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBWG",
+      "chart_id": "KBWG_I03-Y",
+      "chart_name": "ILS Y OR LOC Y RWY 03",
+      "dataset_split": "evaluation",
+      "proc_ident": "I03-Y",
+      "sample_id": "formal300_011",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCMH",
+      "chart_id": "KCMH_I10R",
+      "chart_name": "ILS OR LOC RWY 10R",
+      "dataset_split": "evaluation",
+      "proc_ident": "I10R",
+      "sample_id": "formal300_013",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAXH",
+      "chart_id": "KAXH_L09",
+      "chart_name": "LOC RWY 09",
+      "dataset_split": "evaluation",
+      "proc_ident": "L09",
+      "sample_id": "formal300_015",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBDL",
+      "chart_id": "KBDL_L33",
+      "chart_name": "ILS OR LOC RWY 33",
+      "dataset_split": "evaluation",
+      "proc_ident": "L33",
+      "sample_id": "formal300_016",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBFF",
+      "chart_id": "KBFF_L12",
+      "chart_name": "ILS OR LOC/DME RWY 12",
+      "dataset_split": "evaluation",
+      "proc_ident": "L12",
+      "sample_id": "formal300_018",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBOS",
+      "chart_id": "KBOS_L15R",
+      "chart_name": "ILS OR LOC RWY 15R",
+      "dataset_split": "evaluation",
+      "proc_ident": "L15R",
+      "sample_id": "formal300_019",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBUR",
+      "chart_id": "KBUR_L08-Z",
+      "chart_name": "ILS Z OR LOC Z RWY 08",
+      "dataset_split": "evaluation",
+      "proc_ident": "L08-Z",
+      "sample_id": "formal300_020",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCEC",
+      "chart_id": "KCEC_L12",
+      "chart_name": "ILS OR LOC RWY 12",
+      "dataset_split": "evaluation",
+      "proc_ident": "L12",
+      "sample_id": "formal300_022",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCRW",
+      "chart_id": "KCRW_L05",
+      "chart_name": "ILS OR LOC RWY 05",
+      "dataset_split": "evaluation",
+      "proc_ident": "L05",
+      "sample_id": "formal300_026",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALN",
+      "chart_id": "KALN_L29",
+      "chart_name": "ILS OR LOC RWY 29",
+      "dataset_split": "evaluation",
+      "proc_ident": "L29",
+      "sample_id": "formal300_027",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALO",
+      "chart_id": "KALO_L12",
+      "chart_name": "ILS OR LOC RWY 12",
+      "dataset_split": "evaluation",
+      "proc_ident": "L12",
+      "sample_id": "formal300_028",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAWM",
+      "chart_id": "KAWM_L17",
+      "chart_name": "ILS OR LOC RWY 17",
+      "dataset_split": "evaluation",
+      "proc_ident": "L17",
+      "sample_id": "formal300_029",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBRD",
+      "chart_id": "KBRD_L34",
+      "chart_name": "ILS OR LOC RWY 34",
+      "dataset_split": "evaluation",
+      "proc_ident": "L34",
+      "sample_id": "formal300_031",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBTL",
+      "chart_id": "KBTL_L23R",
+      "chart_name": "ILS OR LOC RWY 23R",
+      "dataset_split": "evaluation",
+      "proc_ident": "L23R",
+      "sample_id": "formal300_032",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBTP",
+      "chart_id": "KBTP_L08",
+      "chart_name": "ILS OR LOC RWY 08",
+      "dataset_split": "evaluation",
+      "proc_ident": "L08",
+      "sample_id": "formal300_033",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBWI",
+      "chart_id": "KBWI_L15L",
+      "chart_name": "ILS OR LOC RWY 15L",
+      "dataset_split": "evaluation",
+      "proc_ident": "L15L",
+      "sample_id": "formal300_034",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCAK",
+      "chart_id": "KCAK_L01",
+      "chart_name": "ILS OR LOC RWY 01",
+      "dataset_split": "evaluation",
+      "proc_ident": "L01",
+      "sample_id": "formal300_035",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCBF",
+      "chart_id": "KCBF_L36",
+      "chart_name": "ILS OR LOC RWY 36",
+      "dataset_split": "evaluation",
+      "proc_ident": "L36",
+      "sample_id": "formal300_036",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCJR",
+      "chart_id": "KCJR_L04",
+      "chart_name": "LOC RWY 04",
+      "dataset_split": "evaluation",
+      "proc_ident": "L04",
+      "sample_id": "formal300_038",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAFN",
+      "chart_id": "KAFN_RNV-B",
+      "chart_name": "RNAV (GPS)-B",
+      "dataset_split": "evaluation",
+      "proc_ident": "RNV-B",
+      "sample_id": "formal300_039",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAFN",
+      "chart_id": "KAFN_RNV-C",
+      "chart_name": "RNAV (GPS)-C",
+      "dataset_split": "evaluation",
+      "proc_ident": "RNV-C",
+      "sample_id": "formal300_040",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KANP",
+      "chart_id": "KANP_RNV-A",
+      "chart_name": "RNAV (GPS)-A",
+      "dataset_split": "evaluation",
+      "proc_ident": "RNV-A",
+      "sample_id": "formal300_042",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAPT",
+      "chart_id": "KAPT_R04",
+      "chart_name": "RNAV (GPS) RWY 04",
+      "dataset_split": "evaluation",
+      "proc_ident": "R04",
+      "sample_id": "formal300_043",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAQW",
+      "chart_id": "KAQW_RNV-A",
+      "chart_name": "RNAV (GPS)-A",
+      "dataset_split": "evaluation",
+      "proc_ident": "RNV-A",
+      "sample_id": "formal300_045",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAQW",
+      "chart_id": "KAQW_RNV-B",
+      "chart_name": "RNAV (GPS)-B",
+      "dataset_split": "evaluation",
+      "proc_ident": "RNV-B",
+      "sample_id": "formal300_046",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAVQ",
+      "chart_id": "KAVQ_R12",
+      "chart_name": "RNAV (GPS) RWY 12",
+      "dataset_split": "evaluation",
+      "proc_ident": "R12",
+      "sample_id": "formal300_047",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAVQ",
+      "chart_id": "KAVQ_R21",
+      "chart_name": "RNAV (GPS) RWY 21",
+      "dataset_split": "evaluation",
+      "proc_ident": "R21",
+      "sample_id": "formal300_048",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAXH",
+      "chart_id": "KAXH_R27",
+      "chart_name": "RNAV (GPS) RWY 27",
+      "dataset_split": "evaluation",
+      "proc_ident": "R27",
+      "sample_id": "formal300_049",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBDN",
+      "chart_id": "KBDN_R34",
+      "chart_name": "RNAV (GPS) RWY 34",
+      "dataset_split": "evaluation",
+      "proc_ident": "R34",
+      "sample_id": "formal300_051",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBJC",
+      "chart_id": "KBJC_R12L",
+      "chart_name": "RNAV (GPS) RWY 12L",
+      "dataset_split": "evaluation",
+      "proc_ident": "R12L",
+      "sample_id": "formal300_052",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBLF",
+      "chart_id": "KBLF_R05",
+      "chart_name": "RNAV (GPS) RWY 05",
+      "dataset_split": "evaluation",
+      "proc_ident": "R05",
+      "sample_id": "formal300_053",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBMQ",
+      "chart_id": "KBMQ_R01",
+      "chart_name": "RNAV (GPS) RWY 01",
+      "dataset_split": "evaluation",
+      "proc_ident": "R01",
+      "sample_id": "formal300_054",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBOS",
+      "chart_id": "KBOS_R32",
+      "chart_name": "RNAV (GPS) RWY 32",
+      "dataset_split": "evaluation",
+      "proc_ident": "R32",
+      "sample_id": "formal300_055",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBUR",
+      "chart_id": "KBUR_R08-Z",
+      "chart_name": "RNAV (GPS) Z RWY 08",
+      "dataset_split": "evaluation",
+      "proc_ident": "R08-Z",
+      "sample_id": "formal300_057",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCEA",
+      "chart_id": "KCEA_RNV-D",
+      "chart_name": "RNAV (GPS)-D",
+      "dataset_split": "evaluation",
+      "proc_ident": "RNV-D",
+      "sample_id": "formal300_061",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCII",
+      "chart_id": "KCII_R33",
+      "chart_name": "RNAV (GPS) RWY 33",
+      "dataset_split": "evaluation",
+      "proc_ident": "R33",
+      "sample_id": "formal300_062",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KADF",
+      "chart_id": "KADF_R22",
+      "chart_name": "RNAV (GPS) RWY 22",
+      "dataset_split": "evaluation",
+      "proc_ident": "R22",
+      "sample_id": "formal300_065",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAKH",
+      "chart_id": "KAKH_R03",
+      "chart_name": "RNAV (GPS) RWY 03",
+      "dataset_split": "evaluation",
+      "proc_ident": "R03",
+      "sample_id": "formal300_066",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAOO",
+      "chart_id": "KAOO_R03-Z",
+      "chart_name": "RNAV (GPS) Z RWY 03",
+      "dataset_split": "evaluation",
+      "proc_ident": "R03-Z",
+      "sample_id": "formal300_068",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAOO",
+      "chart_id": "KAOO_R21",
+      "chart_name": "RNAV (GPS) RWY 21",
+      "dataset_split": "evaluation",
+      "proc_ident": "R21",
+      "sample_id": "formal300_069",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KARG",
+      "chart_id": "KARG_R04",
+      "chart_name": "RNAV (GPS) RWY 04",
+      "dataset_split": "evaluation",
+      "proc_ident": "R04",
+      "sample_id": "formal300_070",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAWG",
+      "chart_id": "KAWG_R36",
+      "chart_name": "RNAV (GPS) RWY 36",
+      "dataset_split": "evaluation",
+      "proc_ident": "R36",
+      "sample_id": "formal300_073",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAXV",
+      "chart_id": "KAXV_R26",
+      "chart_name": "RNAV (GPS) RWY 26",
+      "dataset_split": "evaluation",
+      "proc_ident": "R26",
+      "sample_id": "formal300_075",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBFD",
+      "chart_id": "KBFD_R14",
+      "chart_name": "RNAV (GPS) RWY 14",
+      "dataset_split": "evaluation",
+      "proc_ident": "R14",
+      "sample_id": "formal300_077",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBKX",
+      "chart_id": "KBKX_R30",
+      "chart_name": "RNAV (GPS) RWY 30",
+      "dataset_split": "evaluation",
+      "proc_ident": "R30",
+      "sample_id": "formal300_080",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBLV",
+      "chart_id": "KBLV_R32RY",
+      "chart_name": "RNAV (RNP) Z RWY 14L",
+      "dataset_split": "evaluation",
+      "proc_ident": "R32RY",
+      "sample_id": "formal300_081",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBTR",
+      "chart_id": "KBTR_R04L",
+      "chart_name": "RNAV (GPS) RWY 04L",
+      "dataset_split": "evaluation",
+      "proc_ident": "R04L",
+      "sample_id": "formal300_082",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBUM",
+      "chart_id": "KBUM_R18",
+      "chart_name": "RNAV (GPS) RWY 18",
+      "dataset_split": "evaluation",
+      "proc_ident": "R18",
+      "sample_id": "formal300_083",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBXA",
+      "chart_id": "KBXA_R18",
+      "chart_name": "RNAV (GPS) RWY 18",
+      "dataset_split": "evaluation",
+      "proc_ident": "R18",
+      "sample_id": "formal300_085",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KBYH",
+      "chart_id": "KBYH_R36",
+      "chart_name": "RNAV (GPS) RWY 36",
+      "dataset_split": "evaluation",
+      "proc_ident": "R36",
+      "sample_id": "formal300_086",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCAO",
+      "chart_id": "KCAO_R02",
+      "chart_name": "RNAV (GPS) RWY 02",
+      "dataset_split": "evaluation",
+      "proc_ident": "R02",
+      "sample_id": "formal300_088",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCBF",
+      "chart_id": "KCBF_R36",
+      "chart_name": "RNAV (GPS) RWY 36",
+      "dataset_split": "evaluation",
+      "proc_ident": "R36",
+      "sample_id": "formal300_089",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCDI",
+      "chart_id": "KCDI_R04",
+      "chart_name": "RNAV (GPS) RWY 04",
+      "dataset_split": "evaluation",
+      "proc_ident": "R04",
+      "sample_id": "formal300_090",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCDS",
+      "chart_id": "KCDS_R36",
+      "chart_name": "RNAV (GPS) RWY 36",
+      "dataset_split": "evaluation",
+      "proc_ident": "R36",
+      "sample_id": "formal300_092",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCGI",
+      "chart_id": "KCGI_R10",
+      "chart_name": "RNAV (GPS) RWY 10",
+      "dataset_split": "evaluation",
+      "proc_ident": "R10",
+      "sample_id": "formal300_093",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCHO",
+      "chart_id": "KCHO_R03",
+      "chart_name": "RNAV (GPS) RWY 03",
+      "dataset_split": "evaluation",
+      "proc_ident": "R03",
+      "sample_id": "formal300_094",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCNC",
+      "chart_id": "KCNC_R10",
+      "chart_name": "RNAV (GPS) RWY 10",
+      "dataset_split": "evaluation",
+      "proc_ident": "R10",
+      "sample_id": "formal300_098",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCOI",
+      "chart_id": "KCOI_R11",
+      "chart_name": "RNAV (GPS) RWY 11",
+      "dataset_split": "evaluation",
+      "proc_ident": "R11",
+      "sample_id": "formal300_099",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KCRS",
+      "chart_id": "KCRS_R32",
+      "chart_name": "RNAV (GPS) RWY 32",
+      "dataset_split": "evaluation",
+      "proc_ident": "R32",
+      "sample_id": "formal300_100",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KANB",
+      "chart_id": "KANB_R05",
+      "chart_name": "RNAV (GPS) RWY 05",
+      "dataset_split": "evaluation",
+      "proc_ident": "R05",
+      "sample_id": "formal300_101",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAST",
+      "chart_id": "KAST_R26",
+      "chart_name": "RNAV (GPS) RWY 26",
+      "dataset_split": "evaluation",
+      "proc_ident": "R26",
+      "sample_id": "formal300_102",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KABE",
+      "chart_id": "KABE_R13",
+      "chart_name": "RNAV (GPS) RWY 13",
+      "dataset_split": "evaluation",
+      "proc_ident": "R13",
+      "sample_id": "formal300_103",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KABE",
+      "chart_id": "KABE_R24",
+      "chart_name": "RNAV (GPS) RWY 24",
+      "dataset_split": "evaluation",
+      "proc_ident": "R24",
+      "sample_id": "formal300_104",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KABY",
+      "chart_id": "KABY_R05",
+      "chart_name": "RNAV (GPS) RWY 05",
+      "dataset_split": "evaluation",
+      "proc_ident": "R05",
+      "sample_id": "formal300_105",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KABY",
+      "chart_id": "KABY_R17",
+      "chart_name": "RNAV (GPS) RWY 17",
+      "dataset_split": "evaluation",
+      "proc_ident": "R17",
+      "sample_id": "formal300_106",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KABY",
+      "chart_id": "KABY_R23",
+      "chart_name": "RNAV (GPS) RWY 23",
+      "dataset_split": "evaluation",
+      "proc_ident": "R23",
+      "sample_id": "formal300_107",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACK",
+      "chart_id": "KACK_R33",
+      "chart_name": "RNAV (GPS) RWY 33",
+      "dataset_split": "evaluation",
+      "proc_ident": "R33",
+      "sample_id": "formal300_109",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACY",
+      "chart_id": "KACY_R13-Y",
+      "chart_name": "RNAV (GPS) Y RWY 13",
+      "dataset_split": "evaluation",
+      "proc_ident": "R13-Y",
+      "sample_id": "formal300_112",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACY",
+      "chart_id": "KACY_R31-Y",
+      "chart_name": "RNAV (GPS) Y RWY 31",
+      "dataset_split": "evaluation",
+      "proc_ident": "R31-Y",
+      "sample_id": "formal300_113",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAFW",
+      "chart_id": "KAFW_R34R",
+      "chart_name": "RNAV (GPS) RWY 34R",
+      "dataset_split": "evaluation",
+      "proc_ident": "R34R",
+      "sample_id": "formal300_117",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAGC",
+      "chart_id": "KAGC_R10",
+      "chart_name": "RNAV (GPS) RWY 10",
+      "dataset_split": "evaluation",
+      "proc_ident": "R10",
+      "sample_id": "formal300_118",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAGC",
+      "chart_id": "KAGC_R28",
+      "chart_name": "RNAV (GPS) RWY 28",
+      "dataset_split": "evaluation",
+      "proc_ident": "R28",
+      "sample_id": "formal300_119",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAKH",
+      "chart_id": "KAKH_R21",
+      "chart_name": "RNAV (GPS) RWY 21",
+      "dataset_split": "evaluation",
+      "proc_ident": "R21",
+      "sample_id": "formal300_123",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALB",
+      "chart_id": "KALB_R10",
+      "chart_name": "RNAV (GPS) RWY 10",
+      "dataset_split": "evaluation",
+      "proc_ident": "R10",
+      "sample_id": "formal300_124",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALB",
+      "chart_id": "KALB_R19-Y",
+      "chart_name": "RNAV (GPS) Y RWY 19",
+      "dataset_split": "evaluation",
+      "proc_ident": "R19-Y",
+      "sample_id": "formal300_125",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALB",
+      "chart_id": "KALB_R28",
+      "chart_name": "RNAV (GPS) RWY 28",
+      "dataset_split": "evaluation",
+      "proc_ident": "R28",
+      "sample_id": "formal300_126",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALN",
+      "chart_id": "KALN_R17",
+      "chart_name": "RNAV (GPS) RWY 17",
+      "dataset_split": "evaluation",
+      "proc_ident": "R17",
+      "sample_id": "formal300_127",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALS",
+      "chart_id": "KALS_R02",
+      "chart_name": "RNAV (GPS) RWY 02",
+      "dataset_split": "evaluation",
+      "proc_ident": "R02",
+      "sample_id": "formal300_128",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALW",
+      "chart_id": "KALW_R02",
+      "chart_name": "RNAV (GPS) RWY 02",
+      "dataset_split": "evaluation",
+      "proc_ident": "R02",
+      "sample_id": "formal300_129",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMA",
+      "chart_id": "KAMA_R04-Y",
+      "chart_name": "RNAV (GPS) Y RWY 04",
+      "dataset_split": "evaluation",
+      "proc_ident": "R04-Y",
+      "sample_id": "formal300_130",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMA",
+      "chart_id": "KAMA_R13-Y",
+      "chart_name": "RNAV (GPS) Y RWY 13",
+      "dataset_split": "evaluation",
+      "proc_ident": "R13-Y",
+      "sample_id": "formal300_131",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KANJ",
+      "chart_id": "KANJ_R14",
+      "chart_name": "RNAV (GPS) RWY 14",
+      "dataset_split": "evaluation",
+      "proc_ident": "R14",
+      "sample_id": "formal300_132",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAPC",
+      "chart_id": "KAPC_R01LY",
+      "chart_name": "RNAV (GPS) RWY 06",
+      "dataset_split": "evaluation",
+      "proc_ident": "R01LY",
+      "sample_id": "formal300_133",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAPC",
+      "chart_id": "KAPC_R01LZ",
+      "chart_name": "RNAV (GPS) RWY 06",
+      "dataset_split": "evaluation",
+      "proc_ident": "R01LZ",
+      "sample_id": "formal300_134",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KARV",
+      "chart_id": "KARV_R18",
+      "chart_name": "RNAV (GPS) RWY 18",
+      "dataset_split": "evaluation",
+      "proc_ident": "R18",
+      "sample_id": "formal300_137",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KARV",
+      "chart_id": "KARV_R28",
+      "chart_name": "RNAV (GPS) RWY 28",
+      "dataset_split": "evaluation",
+      "proc_ident": "R28",
+      "sample_id": "formal300_138",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAAA",
+      "chart_id": "KAAA_R03",
+      "chart_name": "RNAV (GPS) RWY 03",
+      "dataset_split": "evaluation",
+      "proc_ident": "R03",
+      "sample_id": "formal300_140",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAAA",
+      "chart_id": "KAAA_R21",
+      "chart_name": "RNAV (GPS) RWY 21",
+      "dataset_split": "evaluation",
+      "proc_ident": "R21",
+      "sample_id": "formal300_141",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAAF",
+      "chart_id": "KAAF_R06",
+      "chart_name": "RNAV (GPS) RWY 06",
+      "dataset_split": "evaluation",
+      "proc_ident": "R06",
+      "sample_id": "formal300_142",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAAF",
+      "chart_id": "KAAF_R14",
+      "chart_name": "RNAV (GPS) RWY 14",
+      "dataset_split": "evaluation",
+      "proc_ident": "R14",
+      "sample_id": "formal300_143",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAAF",
+      "chart_id": "KAAF_R24",
+      "chart_name": "RNAV (GPS) RWY 24",
+      "dataset_split": "evaluation",
+      "proc_ident": "R24",
+      "sample_id": "formal300_144",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAAS",
+      "chart_id": "KAAS_R05",
+      "chart_name": "RNAV (GPS) RWY 05",
+      "dataset_split": "evaluation",
+      "proc_ident": "R05",
+      "sample_id": "formal300_147",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAAS",
+      "chart_id": "KAAS_R23",
+      "chart_name": "RNAV (GPS) RWY 23",
+      "dataset_split": "evaluation",
+      "proc_ident": "R23",
+      "sample_id": "formal300_148",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KABI",
+      "chart_id": "KABI_R17L",
+      "chart_name": "RNAV (GPS) RWY 17L",
+      "dataset_split": "evaluation",
+      "proc_ident": "R17L",
+      "sample_id": "formal300_150",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KABI",
+      "chart_id": "KABI_R35R",
+      "chart_name": "RNAV (GPS) RWY 35R",
+      "dataset_split": "evaluation",
+      "proc_ident": "R35R",
+      "sample_id": "formal300_151",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KABR",
+      "chart_id": "KABR_R13",
+      "chart_name": "RNAV (GPS) RWY 13",
+      "dataset_split": "evaluation",
+      "proc_ident": "R13",
+      "sample_id": "formal300_154",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KABR",
+      "chart_id": "KABR_R17",
+      "chart_name": "RNAV (GPS) RWY 17",
+      "dataset_split": "evaluation",
+      "proc_ident": "R17",
+      "sample_id": "formal300_155",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KABR",
+      "chart_id": "KABR_R31",
+      "chart_name": "RNAV (GPS) RWY 31",
+      "dataset_split": "evaluation",
+      "proc_ident": "R31",
+      "sample_id": "formal300_156",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACJ",
+      "chart_id": "KACJ_R05",
+      "chart_name": "RNAV (GPS) RWY 05",
+      "dataset_split": "evaluation",
+      "proc_ident": "R05",
+      "sample_id": "formal300_157",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACJ",
+      "chart_id": "KACJ_R23",
+      "chart_name": "RNAV (GPS) RWY 23",
+      "dataset_split": "evaluation",
+      "proc_ident": "R23",
+      "sample_id": "formal300_158",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACK",
+      "chart_id": "KACK_R06",
+      "chart_name": "RNAV (GPS) RWY 06",
+      "dataset_split": "evaluation",
+      "proc_ident": "R06",
+      "sample_id": "formal300_159",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACK",
+      "chart_id": "KACK_R15",
+      "chart_name": "RNAV (GPS) RWY 15",
+      "dataset_split": "evaluation",
+      "proc_ident": "R15",
+      "sample_id": "formal300_160",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACP",
+      "chart_id": "KACP_R18",
+      "chart_name": "RNAV (GPS) RWY 18",
+      "dataset_split": "evaluation",
+      "proc_ident": "R18",
+      "sample_id": "formal300_161",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACP",
+      "chart_id": "KACP_R36",
+      "chart_name": "RNAV (GPS) RWY 36",
+      "dataset_split": "evaluation",
+      "proc_ident": "R36",
+      "sample_id": "formal300_162",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACQ",
+      "chart_id": "KACQ_R15",
+      "chart_name": "RNAV (GPS) RWY 15",
+      "dataset_split": "evaluation",
+      "proc_ident": "R15",
+      "sample_id": "formal300_163",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACQ",
+      "chart_id": "KACQ_R33",
+      "chart_name": "RNAV (GPS) RWY 33",
+      "dataset_split": "evaluation",
+      "proc_ident": "R33",
+      "sample_id": "formal300_164",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KACY",
+      "chart_id": "KACY_R04",
+      "chart_name": "RNAV (GPS) RWY 04",
+      "dataset_split": "evaluation",
+      "proc_ident": "R04",
+      "sample_id": "formal300_168",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KADC",
+      "chart_id": "KADC_R16",
+      "chart_name": "RNAV (GPS) RWY 16",
+      "dataset_split": "evaluation",
+      "proc_ident": "R16",
+      "sample_id": "formal300_171",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KADC",
+      "chart_id": "KADC_R34",
+      "chart_name": "RNAV (GPS) RWY 34",
+      "dataset_split": "evaluation",
+      "proc_ident": "R34",
+      "sample_id": "formal300_172",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KADF",
+      "chart_id": "KADF_R04",
+      "chart_name": "RNAV (GPS) RWY 04",
+      "dataset_split": "evaluation",
+      "proc_ident": "R04",
+      "sample_id": "formal300_173",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KADH",
+      "chart_id": "KADH_R18",
+      "chart_name": "RNAV (GPS) RWY 18",
+      "dataset_split": "evaluation",
+      "proc_ident": "R18",
+      "sample_id": "formal300_176",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KADH",
+      "chart_id": "KADH_R36",
+      "chart_name": "RNAV (GPS) RWY 36",
+      "dataset_split": "evaluation",
+      "proc_ident": "R36",
+      "sample_id": "formal300_177",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KADM",
+      "chart_id": "KADM_R13",
+      "chart_name": "RNAV (GPS) RWY 13",
+      "dataset_split": "evaluation",
+      "proc_ident": "R13",
+      "sample_id": "formal300_178",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KADM",
+      "chart_id": "KADM_R31",
+      "chart_name": "RNAV (GPS) RWY 31",
+      "dataset_split": "evaluation",
+      "proc_ident": "R31",
+      "sample_id": "formal300_179",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAEG",
+      "chart_id": "KAEG_R04",
+      "chart_name": "RNAV (GPS) RWY 04",
+      "dataset_split": "evaluation",
+      "proc_ident": "R04",
+      "sample_id": "formal300_183",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAEG",
+      "chart_id": "KAEG_R22",
+      "chart_name": "RNAV (GPS) RWY 22",
+      "dataset_split": "evaluation",
+      "proc_ident": "R22",
+      "sample_id": "formal300_184",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAEL",
+      "chart_id": "KAEL_R17",
+      "chart_name": "RNAV (GPS) RWY 17",
+      "dataset_split": "evaluation",
+      "proc_ident": "R17",
+      "sample_id": "formal300_185",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAEL",
+      "chart_id": "KAEL_R35",
+      "chart_name": "RNAV (GPS) RWY 35",
+      "dataset_split": "evaluation",
+      "proc_ident": "R35",
+      "sample_id": "formal300_186",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAFJ",
+      "chart_id": "KAFJ_R09",
+      "chart_name": "RNAV (GPS) RWY 09",
+      "dataset_split": "evaluation",
+      "proc_ident": "R09",
+      "sample_id": "formal300_188",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAFJ",
+      "chart_id": "KAFJ_R27",
+      "chart_name": "RNAV (GPS) RWY 27",
+      "dataset_split": "evaluation",
+      "proc_ident": "R27",
+      "sample_id": "formal300_189",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAFP",
+      "chart_id": "KAFP_R16",
+      "chart_name": "RNAV (GPS) RWY 16",
+      "dataset_split": "evaluation",
+      "proc_ident": "R16",
+      "sample_id": "formal300_193",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAFP",
+      "chart_id": "KAFP_R34",
+      "chart_name": "RNAV (GPS) RWY 34",
+      "dataset_split": "evaluation",
+      "proc_ident": "R34",
+      "sample_id": "formal300_194",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAFW",
+      "chart_id": "KAFW_R16L",
+      "chart_name": "RNAV (GPS) RWY 16L",
+      "dataset_split": "evaluation",
+      "proc_ident": "R16L",
+      "sample_id": "formal300_195",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAFW",
+      "chart_id": "KAFW_R16R",
+      "chart_name": "RNAV (GPS) RWY 16R",
+      "dataset_split": "evaluation",
+      "proc_ident": "R16R",
+      "sample_id": "formal300_196",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAGO",
+      "chart_id": "KAGO_R18",
+      "chart_name": "RNAV (GPS) RWY 18",
+      "dataset_split": "evaluation",
+      "proc_ident": "R18",
+      "sample_id": "formal300_197",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAGO",
+      "chart_id": "KAGO_R36",
+      "chart_name": "RNAV (GPS) RWY 36",
+      "dataset_split": "evaluation",
+      "proc_ident": "R36",
+      "sample_id": "formal300_198",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAGZ",
+      "chart_id": "KAGZ_R09",
+      "chart_name": "RNAV (GPS) RWY 09",
+      "dataset_split": "evaluation",
+      "proc_ident": "R09",
+      "sample_id": "formal300_201",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAGZ",
+      "chart_id": "KAGZ_R27",
+      "chart_name": "RNAV (GPS) RWY 27",
+      "dataset_split": "evaluation",
+      "proc_ident": "R27",
+      "sample_id": "formal300_202",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAHN",
+      "chart_id": "KAHN_R02",
+      "chart_name": "RNAV (GPS) RWY 02",
+      "dataset_split": "evaluation",
+      "proc_ident": "R02",
+      "sample_id": "formal300_205",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAHN",
+      "chart_id": "KAHN_R09",
+      "chart_name": "RNAV (GPS) RWY 09",
+      "dataset_split": "evaluation",
+      "proc_ident": "R09",
+      "sample_id": "formal300_206",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAHN",
+      "chart_id": "KAHN_R20",
+      "chart_name": "RNAV (GPS) RWY 20",
+      "dataset_split": "evaluation",
+      "proc_ident": "R20",
+      "sample_id": "formal300_207",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIA",
+      "chart_id": "KAIA_R08",
+      "chart_name": "RNAV (GPS) RWY 08",
+      "dataset_split": "evaluation",
+      "proc_ident": "R08",
+      "sample_id": "formal300_208",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIA",
+      "chart_id": "KAIA_R12",
+      "chart_name": "RNAV (GPS) RWY 12",
+      "dataset_split": "evaluation",
+      "proc_ident": "R12",
+      "sample_id": "formal300_209",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIA",
+      "chart_id": "KAIA_R26",
+      "chart_name": "RNAV (GPS) RWY 26",
+      "dataset_split": "evaluation",
+      "proc_ident": "R26",
+      "sample_id": "formal300_210",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIG",
+      "chart_id": "KAIG_R09",
+      "chart_name": "RNAV (GPS) RWY 09",
+      "dataset_split": "evaluation",
+      "proc_ident": "R09",
+      "sample_id": "formal300_213",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIG",
+      "chart_id": "KAIG_R17",
+      "chart_name": "RNAV (GPS) RWY 17",
+      "dataset_split": "evaluation",
+      "proc_ident": "R17",
+      "sample_id": "formal300_214",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIG",
+      "chart_id": "KAIG_R27",
+      "chart_name": "RNAV (GPS) RWY 27",
+      "dataset_split": "evaluation",
+      "proc_ident": "R27",
+      "sample_id": "formal300_215",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIK",
+      "chart_id": "KAIK_R07",
+      "chart_name": "RNAV (GPS) RWY 07",
+      "dataset_split": "evaluation",
+      "proc_ident": "R07",
+      "sample_id": "formal300_216",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIK",
+      "chart_id": "KAIK_R25",
+      "chart_name": "RNAV (GPS) RWY 25",
+      "dataset_split": "evaluation",
+      "proc_ident": "R25",
+      "sample_id": "formal300_217",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIO",
+      "chart_id": "KAIO_R02",
+      "chart_name": "RNAV (GPS) RWY 02",
+      "dataset_split": "evaluation",
+      "proc_ident": "R02",
+      "sample_id": "formal300_218",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIO",
+      "chart_id": "KAIO_R20",
+      "chart_name": "RNAV (GPS) RWY 20",
+      "dataset_split": "evaluation",
+      "proc_ident": "R20",
+      "sample_id": "formal300_219",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIT",
+      "chart_id": "KAIT_R16",
+      "chart_name": "RNAV (GPS) RWY 16",
+      "dataset_split": "evaluation",
+      "proc_ident": "R16",
+      "sample_id": "formal300_220",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIT",
+      "chart_id": "KAIT_R34",
+      "chart_name": "RNAV (GPS) RWY 34",
+      "dataset_split": "evaluation",
+      "proc_ident": "R34",
+      "sample_id": "formal300_221",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIV",
+      "chart_id": "KAIV_R06",
+      "chart_name": "RNAV (GPS) RWY 06",
+      "dataset_split": "evaluation",
+      "proc_ident": "R06",
+      "sample_id": "formal300_222",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIV",
+      "chart_id": "KAIV_R24",
+      "chart_name": "RNAV (GPS) RWY 24",
+      "dataset_split": "evaluation",
+      "proc_ident": "R24",
+      "sample_id": "formal300_223",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIZ",
+      "chart_id": "KAIZ_R04",
+      "chart_name": "RNAV (GPS) RWY 04",
+      "dataset_split": "evaluation",
+      "proc_ident": "R04",
+      "sample_id": "formal300_224",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAIZ",
+      "chart_id": "KAIZ_R22",
+      "chart_name": "RNAV (GPS) RWY 22",
+      "dataset_split": "evaluation",
+      "proc_ident": "R22",
+      "sample_id": "formal300_225",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAJR",
+      "chart_id": "KAJR_R06",
+      "chart_name": "RNAV (GPS) RWY 06",
+      "dataset_split": "evaluation",
+      "proc_ident": "R06",
+      "sample_id": "formal300_229",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAJR",
+      "chart_id": "KAJR_R24",
+      "chart_name": "RNAV (GPS) RWY 24",
+      "dataset_split": "evaluation",
+      "proc_ident": "R24",
+      "sample_id": "formal300_230",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAKO",
+      "chart_id": "KAKO_R11",
+      "chart_name": "RNAV (GPS) RWY 11",
+      "dataset_split": "evaluation",
+      "proc_ident": "R11",
+      "sample_id": "formal300_231",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAKO",
+      "chart_id": "KAKO_R29",
+      "chart_name": "RNAV (GPS) RWY 29",
+      "dataset_split": "evaluation",
+      "proc_ident": "R29",
+      "sample_id": "formal300_232",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALI",
+      "chart_id": "KALI_R13",
+      "chart_name": "RNAV (GPS) RWY 13",
+      "dataset_split": "evaluation",
+      "proc_ident": "R13",
+      "sample_id": "formal300_235",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALI",
+      "chart_id": "KALI_R31",
+      "chart_name": "RNAV (GPS) RWY 31",
+      "dataset_split": "evaluation",
+      "proc_ident": "R31",
+      "sample_id": "formal300_236",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALM",
+      "chart_id": "KALM_R04",
+      "chart_name": "RNAV (GPS) RWY 04",
+      "dataset_split": "evaluation",
+      "proc_ident": "R04",
+      "sample_id": "formal300_237",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALN",
+      "chart_id": "KALN_R11",
+      "chart_name": "RNAV (GPS) RWY 11",
+      "dataset_split": "evaluation",
+      "proc_ident": "R11",
+      "sample_id": "formal300_238",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALO",
+      "chart_id": "KALO_R12",
+      "chart_name": "RNAV (GPS) RWY 12",
+      "dataset_split": "evaluation",
+      "proc_ident": "R12",
+      "sample_id": "formal300_239",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALO",
+      "chart_id": "KALO_R18",
+      "chart_name": "RNAV (GPS) RWY 18",
+      "dataset_split": "evaluation",
+      "proc_ident": "R18",
+      "sample_id": "formal300_240",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALS",
+      "chart_id": "KALS_R20",
+      "chart_name": "RNAV (GPS) RWY 20",
+      "dataset_split": "evaluation",
+      "proc_ident": "R20",
+      "sample_id": "formal300_241",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALW",
+      "chart_id": "KALW_R20",
+      "chart_name": "RNAV (GPS) RWY 20",
+      "dataset_split": "evaluation",
+      "proc_ident": "R20",
+      "sample_id": "formal300_242",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALX",
+      "chart_id": "KALX_R18",
+      "chart_name": "RNAV (GPS) RWY 18",
+      "dataset_split": "evaluation",
+      "proc_ident": "R18",
+      "sample_id": "formal300_243",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KALX",
+      "chart_id": "KALX_R36",
+      "chart_name": "RNAV (GPS) RWY 36",
+      "dataset_split": "evaluation",
+      "proc_ident": "R36",
+      "sample_id": "formal300_244",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMG",
+      "chart_id": "KAMG_R16",
+      "chart_name": "RNAV (GPS) RWY 16",
+      "dataset_split": "evaluation",
+      "proc_ident": "R16",
+      "sample_id": "formal300_245",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMG",
+      "chart_id": "KAMG_R34",
+      "chart_name": "RNAV (GPS) RWY 34",
+      "dataset_split": "evaluation",
+      "proc_ident": "R34",
+      "sample_id": "formal300_246",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMN",
+      "chart_id": "KAMN_R09",
+      "chart_name": "RNAV (GPS) RWY 09",
+      "dataset_split": "evaluation",
+      "proc_ident": "R09",
+      "sample_id": "formal300_247",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMN",
+      "chart_id": "KAMN_R18",
+      "chart_name": "RNAV (GPS) RWY 18",
+      "dataset_split": "evaluation",
+      "proc_ident": "R18",
+      "sample_id": "formal300_248",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMN",
+      "chart_id": "KAMN_R27",
+      "chart_name": "RNAV (GPS) RWY 27",
+      "dataset_split": "evaluation",
+      "proc_ident": "R27",
+      "sample_id": "formal300_249",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMT",
+      "chart_id": "KAMT_R05",
+      "chart_name": "RNAV (GPS) RWY 05",
+      "dataset_split": "evaluation",
+      "proc_ident": "R05",
+      "sample_id": "formal300_250",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMT",
+      "chart_id": "KAMT_R23",
+      "chart_name": "RNAV (GPS) RWY 23",
+      "dataset_split": "evaluation",
+      "proc_ident": "R23",
+      "sample_id": "formal300_251",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMW",
+      "chart_id": "KAMW_R01",
+      "chart_name": "RNAV (GPS) RWY 01",
+      "dataset_split": "evaluation",
+      "proc_ident": "R01",
+      "sample_id": "formal300_252",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMW",
+      "chart_id": "KAMW_R13",
+      "chart_name": "RNAV (GPS) RWY 13",
+      "dataset_split": "evaluation",
+      "proc_ident": "R13",
+      "sample_id": "formal300_253",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAMW",
+      "chart_id": "KAMW_R19",
+      "chart_name": "RNAV (GPS) RWY 19",
+      "dataset_split": "evaluation",
+      "proc_ident": "R19",
+      "sample_id": "formal300_254",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KANB",
+      "chart_id": "KANB_R23",
+      "chart_name": "RNAV (GPS) RWY 23",
+      "dataset_split": "evaluation",
+      "proc_ident": "R23",
+      "sample_id": "formal300_255",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KANJ",
+      "chart_id": "KANJ_R32",
+      "chart_name": "RNAV (GPS) RWY 32",
+      "dataset_split": "evaluation",
+      "proc_ident": "R32",
+      "sample_id": "formal300_262",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KANQ",
+      "chart_id": "KANQ_R05",
+      "chart_name": "RNAV (GPS) RWY 05",
+      "dataset_split": "evaluation",
+      "proc_ident": "R05",
+      "sample_id": "formal300_263",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KANQ",
+      "chart_id": "KANQ_R23",
+      "chart_name": "RNAV (GPS) RWY 23",
+      "dataset_split": "evaluation",
+      "proc_ident": "R23",
+      "sample_id": "formal300_264",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KANW",
+      "chart_id": "KANW_R13",
+      "chart_name": "RNAV (GPS) RWY 13",
+      "dataset_split": "evaluation",
+      "proc_ident": "R13",
+      "sample_id": "formal300_265",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KANW",
+      "chart_id": "KANW_R17",
+      "chart_name": "RNAV (GPS) RWY 17",
+      "dataset_split": "evaluation",
+      "proc_ident": "R17",
+      "sample_id": "formal300_266",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KANW",
+      "chart_id": "KANW_R31",
+      "chart_name": "RNAV (GPS) RWY 31",
+      "dataset_split": "evaluation",
+      "proc_ident": "R31",
+      "sample_id": "formal300_267",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAOV",
+      "chart_id": "KAOV_R13",
+      "chart_name": "RNAV (GPS) RWY 13",
+      "dataset_split": "evaluation",
+      "proc_ident": "R13",
+      "sample_id": "formal300_271",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAOV",
+      "chart_id": "KAOV_R31",
+      "chart_name": "RNAV (GPS) RWY 31",
+      "dataset_split": "evaluation",
+      "proc_ident": "R31",
+      "sample_id": "formal300_272",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAPF",
+      "chart_id": "KAPF_R05-Y",
+      "chart_name": "RNAV (GPS) Y RWY 05",
+      "dataset_split": "evaluation",
+      "proc_ident": "R05-Y",
+      "sample_id": "formal300_276",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAPF",
+      "chart_id": "KAPF_R14",
+      "chart_name": "RNAV (GPS) RWY 14",
+      "dataset_split": "evaluation",
+      "proc_ident": "R14",
+      "sample_id": "formal300_277",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAPF",
+      "chart_id": "KAPF_R23-Y",
+      "chart_name": "RNAV (GPS) Y RWY 23",
+      "dataset_split": "evaluation",
+      "proc_ident": "R23-Y",
+      "sample_id": "formal300_278",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAQO",
+      "chart_id": "KAQO_R17",
+      "chart_name": "RNAV (GPS) RWY 17",
+      "dataset_split": "evaluation",
+      "proc_ident": "R17",
+      "sample_id": "formal300_283",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAQO",
+      "chart_id": "KAQO_R35",
+      "chart_name": "RNAV (GPS) RWY 35",
+      "dataset_split": "evaluation",
+      "proc_ident": "R35",
+      "sample_id": "formal300_284",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAQX",
+      "chart_id": "KAQX_R17",
+      "chart_name": "RNAV (GPS) RWY 17",
+      "dataset_split": "evaluation",
+      "proc_ident": "R17",
+      "sample_id": "formal300_286",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KAQX",
+      "chart_id": "KAQX_R35",
+      "chart_name": "RNAV (GPS) RWY 35",
+      "dataset_split": "evaluation",
+      "proc_ident": "R35",
+      "sample_id": "formal300_287",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KARA",
+      "chart_id": "KARA_R17",
+      "chart_name": "RNAV (GPS) RWY 17",
+      "dataset_split": "evaluation",
+      "proc_ident": "R17",
+      "sample_id": "formal300_288",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KARA",
+      "chart_id": "KARA_R35",
+      "chart_name": "RNAV (GPS) RWY 35",
+      "dataset_split": "evaluation",
+      "proc_ident": "R35",
+      "sample_id": "formal300_289",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KARB",
+      "chart_id": "KARB_R06",
+      "chart_name": "RNAV (GPS) RWY 06",
+      "dataset_split": "evaluation",
+      "proc_ident": "R06",
+      "sample_id": "formal300_290",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KARB",
+      "chart_id": "KARB_R24",
+      "chart_name": "RNAV (GPS) RWY 24",
+      "dataset_split": "evaluation",
+      "proc_ident": "R24",
+      "sample_id": "formal300_291",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KARG",
+      "chart_id": "KARG_R18",
+      "chart_name": "RNAV (GPS) RWY 18",
+      "dataset_split": "evaluation",
+      "proc_ident": "R18",
+      "sample_id": "formal300_292",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    },
+    {
+      "airport": "KARG",
+      "chart_id": "KARG_R22",
+      "chart_name": "RNAV (GPS) RWY 22",
+      "dataset_split": "evaluation",
+      "proc_ident": "R22",
+      "sample_id": "formal300_293",
+      "source_view_variants_available": [
+        "V0_full_chart",
+        "V1_ma_text_only",
+        "V2_full_minus_ma_prose",
+        "V3_plan_view_only",
+        "V4_icon_detail_only",
+        "V5_plan_detail_no_ma"
+      ],
+      "split_candidate_id": "formal300_50_200_50_seed20260437"
+    }
+  ],
+  "source_split_manifest": ".\\benchmark_exports\\derived\\v2\\formal300\\split_candidates\\split_50_200_50_seed20260437\\sample_manifest_50_200_50_seed20260437.jsonl",
+  "source_split_manifest_sha256": "a9f66283fa61a8e7ee9822ef205e886a9925c3eea1c092de60c93d407f84c402"
+}

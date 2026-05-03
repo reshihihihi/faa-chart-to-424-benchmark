@@ -1,0 +1,12 @@
+{  
+  "chart_id":"KKEY_3000","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KKEY_3000","approach_ident":"3000","chart_name":"KKEY_3000","approach_ident":"3000"},"  
+  },  
+  "missed_approach":{  
+    "status":"present","  
+    "value":{"leg_count":{"status":"present","value":3},"  
+  },  
+  "procedure":{"status":"present","value":{"airport":"KKEY","approach_ident":"3000","chart_name":"KKEY_3000"}},"  
+}

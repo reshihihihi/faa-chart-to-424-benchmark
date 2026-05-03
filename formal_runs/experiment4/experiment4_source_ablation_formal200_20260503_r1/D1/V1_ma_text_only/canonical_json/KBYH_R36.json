@@ -1,0 +1,15 @@
+{
+  "chart_id": "KBYH_R36",
+  "procedure": {
+    "airport": "KBYH",
+    "approach_ident": "R36",
+    "chart_name": "RNAV (GPS) RWY 36"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

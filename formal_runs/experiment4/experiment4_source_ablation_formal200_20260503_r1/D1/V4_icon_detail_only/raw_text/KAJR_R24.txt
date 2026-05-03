@@ -1,0 +1,12 @@
+{  
+  "chart_id":"KETY_I04","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KETY_I04","airport":"KETY","approach_ident":"I04","chart_name":"KETY_I04"},"  
+  },  
+  "missed_approach":{  
+    "status":"present","  
+    "value":{"leg_count":{"status":"present","value":3},"  
+  },  
+  "procedure":{"status":"present","value":{"airport":"KETY","approach_ident":"I04","chart_name":"KETY_I04"}},"  
+}

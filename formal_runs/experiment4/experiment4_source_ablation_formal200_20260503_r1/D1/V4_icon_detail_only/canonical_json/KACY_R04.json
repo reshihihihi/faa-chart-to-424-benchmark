@@ -1,0 +1,15 @@
+{
+  "chart_id": "KACY_R04",
+  "procedure": {
+    "airport": "KACY",
+    "approach_ident": "R04",
+    "chart_name": "RNAV (GPS) RWY 04"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "expected_chart_id": "KBMQ_R01",
+  "raw_output_chart_id": "KBMQ_R01",
+  "output_chart_id": "KBMQ_R01",
+  "schema_valid": true,
+  "final_chart_id_matches_expected": true,
+  "validation_errors": [],
+  "actions": [
+    "strip_outer_whitespace",
+    "parse_entire_raw_as_json_object",
+    "selected_candidate_index:0"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAXH_L09",
+  "procedure": {
+    "airport": "KAXH",
+    "approach_ident": "L09",
+    "chart_name": "LOC RWY 09"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}
