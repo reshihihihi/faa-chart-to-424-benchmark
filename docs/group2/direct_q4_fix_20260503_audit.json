@@ -1,0 +1,50 @@
+{
+  "run_id": "direct_q4_fix_20260503",
+  "created_at": "2026-05-03T13:25:14",
+  "purpose": "修复直接飞向字段没有进入字段级证据表的问题；只补同一航段的直接飞向字段。",
+  "selected_count": 30,
+  "complete19_count": 19,
+  "original_evidence_rows": 347,
+  "fixed_evidence_rows": 357,
+  "added_direct_q4_evidence_rows": 10,
+  "added_direct_q4_rule_counts": {
+    "同一航段的直接飞向区域映射补成字段证据": 3,
+    "同一航段的直接飞向航段类型推出航向/航迹/径向为直接飞向": 7
+  },
+  "skipped_direct_q4_rows": 6,
+  "old_complete19_question_fallback_rows": 70,
+  "fixed_complete19_question_fallback_rows": 0,
+  "fixed_direct_q4_question_fallback_rows": 0,
+  "added_charts": [
+    "KAPC_I01L",
+    "KAXH_L09",
+    "KBFF_L12",
+    "KBMI_I29",
+    "KBPT_L12",
+    "KBRD_L34",
+    "KBTL_L23R",
+    "KBTP_L08",
+    "KBYL_L20",
+    "KCRW_L05"
+  ],
+  "added_score_fields": [
+    "KAPC_I01L:leg_2.Q4_course_or_radial",
+    "KAXH_L09:leg_2.Q4_course_or_radial",
+    "KBFF_L12:leg_2.Q4_course_or_radial",
+    "KBMI_I29:leg_2.Q4_course_or_radial",
+    "KBPT_L12:leg_2.Q4_course_or_radial",
+    "KBRD_L34:leg_2.Q4_course_or_radial",
+    "KBTL_L23R:leg_2.Q4_course_or_radial",
+    "KBTP_L08:leg_2.Q4_course_or_radial",
+    "KBYL_L20:leg_2.Q4_course_or_radial",
+    "KCRW_L05:leg_2.Q4_course_or_radial"
+  ],
+  "output_files": {
+    "fixed_evidence": "<GROUP23_ROOT>/group2/evidence_provenance_pilot30_direct_q4_fix_20260503.jsonl",
+    "added_evidence": "<GROUP23_ROOT>/group2/direct_q4_added_evidence_direct_q4_fix_20260503.jsonl",
+    "fixed_joined": "<GROUP23_ROOT>/group2/group2_joined_field_scores_pilot30_direct_q4_fix_20260503.jsonl",
+    "complete19_group2_audit": "<GROUP23_ROOT>/group2/group2_complete19_direct_q4_fix_20260503_audit.json",
+    "complete19_group3_audit": "<GROUP23_ROOT>/group3/group3_complete19_direct_q4_fix_20260503_audit.json"
+  }
+}
+

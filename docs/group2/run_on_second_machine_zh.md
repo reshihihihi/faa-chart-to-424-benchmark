@@ -1,0 +1,157 @@
+# 实验组2二机运行说明
+
+本分支只通过 Git 同步实验组2代码和说明文件。正式数据、人工标注后台导出、实验组1全量结果通常较大或可能包含敏感信息，不建议直接提交到 Git。
+
+## 另一台电脑需要准备的输入
+
+建议保持和当前机器相同的根目录：
+
+```text
+<EXPERIMENT_ROOT>
+```
+
+至少需要准备：
+
+```text
+<FAA_BENCH_REPO>
+<GROUP2_ANNOTATION_STATUS_ROOT>
+<GROUP1_RUN>
+```
+
+其中 `benchmark_exports\derived\v2\formal300\targets\scoring_equivalence_v2` 已放入本分支。
+
+如果另一台电脑不用 `<EXPERIMENT_ROOT>`，需要先把脚本里的本地路径改成新机器路径，或者后续改造成命令行参数。
+
+## 已同步到 Git 的关键文件
+
+```text
+scripts\group2\run_group2_group3_pilot30.py
+scripts\group2\run_group2_group3_complete19_v3.py
+scripts\group2\run_group2_group3_direct_q4_fix.py
+scripts\group2\run_group2_formal_submitted_v1.py
+docs\group2\group2_new_window_handoff_zh.md
+docs\group2\direct_q4_fix_20260503_report_zh.md
+docs\group2\direct_q4_fix_20260503_audit.json
+```
+
+这三个脚本默认读取和写入 `<EXPERIMENT_ROOT>` 下的路径。如果新机器路径不同，可以设置：
+
+```powershell
+$env:EXPERIMENT3_ROOT = "<EXPERIMENT_ROOT>"
+$env:FAA_BENCH_REPO = "<FAA_BENCH_REPO>"
+$env:GROUP23_ROOT = "<GROUP23_ROOT>"
+$env:GROUP2_EXPORT_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>/shujuji_annotation_export_xxx.json"
+$env:GROUP2_OVERVIEW_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>/admin_overview_formal300.json"
+$env:GROUP1_RUN = "<GROUP1_RUN>"
+```
+
+如果新机器仍使用 `<EXPERIMENT_ROOT>`，通常只需要设置最新人工导出的两个路径：
+
+```powershell
+$env:GROUP2_EXPORT_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>\shujuji_annotation_export_xxx.json"
+$env:GROUP2_OVERVIEW_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>\admin_overview_formal300.json"
+```
+
+## 正式全量前的判断
+
+如果人工标注仍是 `296/300`，不要把结果写成 formal300 正式结论。
+
+如果已完成 `300/300`，应先生成新的后台导出，再基于新导出迁移 direct Q4 修复逻辑并跑正式实验组2。
+
+## 正式/已提交标注运行命令
+
+本分支已新增正式 runner：
+
+```text
+scripts\group2\run_group2_formal_submitted_v1.py
+```
+
+它会做以下事情：
+
+```text
+读取最新人工标注导出
+读取 admin overview
+读取 Group1 scoring-equivalence v2 字段分数
+读取 scoring-equivalence v2 target/policy
+选择全部 submitted/final 且属于 Group1 已评分样本的航图
+必要时把 Group1 内 schema-invalid 导致缺 score 的方法输出按 method failure 计入
+迁移 direct-Q4 同航段补证据规则
+输出正类证据来源主表、不适用字段负类表、异常审计和中文报告
+```
+
+如果 300 张已经全部提交，推荐命令：
+
+```powershell
+$env:GROUP2_EXPORT_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>\shujuji_annotation_export_xxx.json"
+$env:GROUP2_OVERVIEW_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>\admin_overview_formal300.json"
+$env:GROUP2_RUN_ID = "group2_formal300_paired200_methodfailure_v1_YYYYMMDD_HHMM"
+$env:GROUP2_OUTPUT_ROOT = "<GROUP2_FORMAL_ROOT>/group2_formal300_paired200_methodfailure_v1_YYYYMMDD_HHMM"
+python scripts\group2\run_group2_formal_submitted_v1.py `
+  --expected-analysis-count 200 `
+  --count-missing-scores-as-method-failure
+```
+
+这个口径对应 Group1 的 200 张正式样本。`D1` 使用 scoring-equivalence v2 中的 `D1\scores` 目录；如果其他方法在这 200 张内没有 score JSON，则按该方法在该图上失败处理，而不是把整张图排除。
+
+如果明确先跑 296 张已提交子集，不能冒充 formal300，命令必须显式写 `submitted296` 和 `--expected-submitted-count 296`：
+
+```powershell
+$env:GROUP2_RUN_ID = "group2_formal_submitted296_v1_YYYYMMDD_HHMM"
+$env:GROUP2_OUTPUT_ROOT = "<GROUP2_FORMAL_ROOT>/group2_formal_submitted296_v1_YYYYMMDD_HHMM"
+python scripts\group2\run_group2_formal_submitted_v1.py --expected-submitted-count 296
+```
+
+跑完后先看：
+
+```text
+group2\group2_formal_submitted_v1_audit.json
+group2\reports\group2_formal_submitted_v1_report_zh.md
+reports\run_summary.json
+```
+
+只有 `ready_for_group2_main_claim = true`，且以下数量都合理，才进入论文结论：
+
+```text
+positive_question_fallback_rows = 0
+unmatched_present_rows = 0
+submitted_annotation_count = 300  （除非明确写 submitted 子集）
+analysis_chart_count 符合预期
+missing_score_as_failure_chart_method_count 符合预期
+```
+
+## 后续标注改动定位
+
+正式 runner 每次都会写三层标注快照：
+
+```text
+inputs\annotation_chart_snapshot.jsonl
+inputs\annotation_field_snapshot.jsonl
+inputs\annotation_region_snapshot.jsonl
+```
+
+如果后续补了剩余 4 张，或修改了已提交标注，下一次运行时带上旧 run 目录：
+
+```powershell
+python scripts\group2\run_group2_formal_submitted_v1.py `
+  --previous-run-root "<GROUP2_FORMAL_ROOT>/group2_formal_submitted296_v1_YYYYMMDD_HHMM"
+```
+
+脚本会输出：
+
+```text
+inputs\annotation_change_audit.json
+inputs\annotation_changed_charts.jsonl
+inputs\annotation_changed_fields.jsonl
+inputs\annotation_changed_regions.jsonl
+```
+
+这些文件用于定位后续改动：
+
+```text
+哪张 chart 新增/删除/变更
+哪个 score_field 的证据、support_mode、review_status 或 region id 变化
+哪个 region 的 OCR、bbox、accepted mapping 或 reviewed mapping 变化
+```
+
+发现变更后，优先检查 `annotation_changed_fields.jsonl`；确认无误后以最新 run 输出覆盖旧结论。旧 run 不删除，保留为可追踪基线。
+
