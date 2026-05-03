@@ -27,6 +27,10 @@ training/group1_sft/prompts/evidence_to_questionnaire.zh.md
 training/group1_sft/prompts/chart_to_evidence.zh.md
 scripts/group1_sft/validate_group1_sft_workspace.py
 scripts/group1_sft/write_group1_sft_run_manifest.py
+scripts/group1_sft/prepare_group1_sft_run_package.py
+scripts/group1_sft/run_qwen2vl_group1_sft_inference.py
+training/group1_sft/manifests/evidence_record.schema.json
+training/group1_sft/manifests/evidence_questionnaire.schema.json
 ```
 
 ## 另一台电脑需要单独准备什么
@@ -47,7 +51,7 @@ CUDA / PyTorch / transformers / peft 等运行环境
 建议本地大文件目录：
 
 ```text
-E:\experiment3\group1_sft\
+<GROUP1_SFT_ROOT>\
   data\
   images\
   train_jsonl\
@@ -89,7 +93,45 @@ python scripts\group1_sft\validate_group1_sft_workspace.py --paths training\grou
 生成一次运行清单：
 
 ```powershell
-python scripts\group1_sft\write_group1_sft_run_manifest.py --paths training\group1_sft\configs\local_paths.local.json --out E:\experiment3\group1_sft\reports\run_manifest.json
+python scripts\group1_sft\write_group1_sft_run_manifest.py --paths training\group1_sft\configs\local_paths.local.json --out $env:GROUP1_SFT_ROOT\reports\run_manifest.json
+```
+
+生成 formal200 SFT 扩展 run package：
+
+```powershell
+python scripts\group1_sft\prepare_group1_sft_run_package.py --paths training\group1_sft\configs\local_paths.local.json
+```
+
+该 package 会优先使用 `benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/` 下的 chart-display v2 target 和 `comparison_policy_v2.jsonl`，只在 v2 target 不存在时回退到原始 scoring manifest。
+
+如需先跑小样本冒烟：
+
+```powershell
+python scripts\group1_sft\prepare_group1_sft_run_package.py --paths training\group1_sft\configs\local_paths.local.json --limit 5 --run-id group1_sft_smoke5
+```
+
+run package 会写出：
+
+```text
+scoring_manifest.jsonl
+D_BASE_SAME_BACKBONE/input_manifest.jsonl
+D1/input_manifest.jsonl
+EVIDENCE_TO_SEMANTICS_SFT/input_manifest.jsonl
+CHART_TO_EVIDENCE_SFT/input_manifest.jsonl
+TWO_STAGE_AUTO_SFT/input_manifest.jsonl
+reports/preflight_report.json
+reports/preflight_report_zh.md
+RUN_COMMANDS.md
+```
+
+同底座未微调对照和 D1 复跑使用统一入口：
+
+```powershell
+python scripts\group1_sft\run_qwen2vl_group1_sft_inference.py --method D_BASE_SAME_BACKBONE --input-manifest $env:GROUP1_SFT_ROOT\runs\group1_sft_smoke5\D_BASE_SAME_BACKBONE\input_manifest.jsonl --model-dir $env:QWEN2_VL_2B_BASE --prompt training\d_sft\prompts\d_sft_image_to_canonical.v2.md --json-schema schemas\missed_approach_leg.schema.json --scoring-manifest $env:GROUP1_SFT_ROOT\runs\group1_sft_smoke5\scoring_manifest.jsonl --output-root $env:GROUP1_SFT_ROOT\runs\group1_sft_smoke5\D_BASE_SAME_BACKBONE
+```
+
+```powershell
+python scripts\group1_sft\run_qwen2vl_group1_sft_inference.py --method D1 --input-manifest $env:GROUP1_SFT_ROOT\runs\group1_sft_smoke5\D1\input_manifest.jsonl --model-dir $env:QWEN2_VL_2B_BASE --adapter-checkpoint $env:D1_CHECKPOINT --prompt training\d_sft\prompts\d_sft_image_to_canonical.v2.md --json-schema schemas\missed_approach_leg.schema.json --scoring-manifest $env:GROUP1_SFT_ROOT\runs\group1_sft_smoke5\scoring_manifest.jsonl --output-root $env:GROUP1_SFT_ROOT\runs\group1_sft_smoke5\D1
 ```
 
 ## 当前还没有提交到 Git 的内容
@@ -102,12 +144,13 @@ python scripts\group1_sft\write_group1_sft_run_manifest.py --paths training\grou
 
 1. 先跑同底座未微调对照的小样本冒烟测试。
 2. 确认 D1 权重能加载，并跑同一小样本。
-3. 生成“人工确认图上证据到复飞程序语义”的训练/开发清单。
-4. 跑该诊断 SFT 的小样本训练。
-5. 生成“完整航图到图上证据记录”的训练/开发清单。
-6. 跑该诊断 SFT 的小样本训练。
-7. 串起自动两阶段系统。
-8. 最后再进入正式 split 推理和评分。
+3. 生成并检查 formal200 run package 的 preflight blocker。
+4. 生成“人工确认图上证据到复飞程序语义”的训练/开发/评估清单。
+5. 跑该诊断 SFT 的小样本训练。
+6. 生成“完整航图到图上证据记录”的训练/开发清单。
+7. 跑该诊断 SFT 的小样本训练。
+8. 串起自动两阶段系统。
+9. 最后再进入正式 split 推理和评分。
 
 ## 方法边界
 
@@ -124,4 +167,3 @@ python scripts\group1_sft\write_group1_sft_run_manifest.py --paths training\grou
 ```
 
 诊断实验如果使用人工确认图上证据，必须在报告中标明它是诊断/上界类实验，不能和端到端方法直接公平排名。
-

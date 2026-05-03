@@ -9,12 +9,15 @@ TRACKED_PATH_KEYS = [
     "formal_manifest",
     "canonical_targets_dir",
     "group1_formal_split",
+    "group1_formal_scoring_manifest",
     "base_vlm_model_dir",
     "d1_lora_or_checkpoint_dir",
     "evidence_to_semantics_train_jsonl",
     "evidence_to_semantics_dev_jsonl",
+    "evidence_to_semantics_eval_jsonl",
     "chart_to_evidence_train_jsonl",
     "chart_to_evidence_dev_jsonl",
+    "chart_to_evidence_eval_jsonl",
 ]
 
 
@@ -76,4 +79,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

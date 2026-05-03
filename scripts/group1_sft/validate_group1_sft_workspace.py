@@ -5,10 +5,14 @@ from pathlib import Path
 
 REQUIRED_KEYS = [
     "local_root",
+    "repo_root",
     "formal_manifest",
     "formal_images_dir",
     "canonical_targets_dir",
+    "group1_formal_split",
+    "group1_formal_scoring_manifest",
     "base_vlm_model_dir",
+    "d1_lora_or_checkpoint_dir",
     "output_root",
     "reports_dir",
 ]
@@ -50,4 +54,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

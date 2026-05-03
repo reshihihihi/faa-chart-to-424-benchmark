@@ -5,13 +5,15 @@
   "formal_images_dir": "E:/experiment3/group1_sft/images/formal300",
   "canonical_targets_dir": "CHANGE_ME/benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2",
   "group1_formal_split": "CHANGE_ME/formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/formal_run_manifest.json",
+  "group1_formal_scoring_manifest": "CHANGE_ME/formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/scoring_manifest.jsonl",
   "base_vlm_model_dir": "E:/models/qwen2_vl_2b_base",
   "d1_lora_or_checkpoint_dir": "E:/experiment3/group1_sft/checkpoints/d1",
   "evidence_to_semantics_train_jsonl": "E:/experiment3/group1_sft/train_jsonl/evidence_to_semantics_train.jsonl",
   "evidence_to_semantics_dev_jsonl": "E:/experiment3/group1_sft/train_jsonl/evidence_to_semantics_dev.jsonl",
+  "evidence_to_semantics_eval_jsonl": "E:/experiment3/group1_sft/eval_jsonl/evidence_to_semantics_formal200.jsonl",
   "chart_to_evidence_train_jsonl": "E:/experiment3/group1_sft/train_jsonl/chart_to_evidence_train.jsonl",
   "chart_to_evidence_dev_jsonl": "E:/experiment3/group1_sft/train_jsonl/chart_to_evidence_dev.jsonl",
+  "chart_to_evidence_eval_jsonl": "E:/experiment3/group1_sft/eval_jsonl/chart_to_evidence_formal200.jsonl",
   "output_root": "E:/experiment3/group1_sft/runs",
   "reports_dir": "E:/experiment3/group1_sft/reports"
 }
-
