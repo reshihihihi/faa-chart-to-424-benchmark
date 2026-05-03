@@ -92,38 +92,37 @@ Q5_hold_params = 等待程序参数
 最近一次用于检查的后台状态保存在：
 
 ```text
-E:\experiment3\group2_annotation_status_20260503
+C:\Users\admin\Documents\New project\group2_annotation_status_20260503_152409
 ```
 
 其中：
 
 ```text
-E:\experiment3\group2_annotation_status_20260503\admin_progress_latest_20260503_check.json
-E:\experiment3\group2_annotation_status_20260503\admin_overview_formal300_latest_20260503_check.json
-E:\experiment3\group2_annotation_status_20260503\annotation_completion_check_20260503_summary.json
+C:\Users\admin\Documents\New project\group2_annotation_status_20260503_152409\admin_overview_formal300_latest_20260503.json
+C:\Users\admin\Documents\New project\group2_annotation_status_20260503_152409\shujuji_annotation_export_2026-05-03T07-24-24-338Z.json
 ```
 
 当前后台标注状态是：
 
 ```text
 正式集总数：300 张
-已提交：296 张
+已提交：300 张
 已领取但未提交：0 张
-未领取：4 张
+未领取：0 张
 当前草稿：0 张
-正式标注文件：296 张
-提交快照覆盖：296 张
-后台显示进度：99%
+正式标注文件：300 张
+提交快照覆盖：300 张
+后台显示进度：100%
 ```
 
-当前后台显示未提交的 4 张是：
+最后补齐的 4 张是：
 
 | 序号 | 航图 | 程序 | 类型 | 当前状态 | 标注人 |
 |---|---|---|---|---|---|
-| 1 | KABE_I06 | ILS OR LOC RWY 06 | ILS | 未领取/未提交 |  |
-| 2 | KALS_I02 | ILS OR LOC RWY 02 | ILS | 未领取/未提交 |  |
-| 10 | KBUY_I06-Z | ILS Z OR LOC Z RWY 06 | ILS | 未领取/未提交 |  |
-| 88 | KCBF_R36 | RNAV (GPS) RWY 36 | RNAV | 未领取/未提交 |  |
+| 1 | KABE_I06 | ILS OR LOC RWY 06 | ILS | 已提交 | A21 |
+| 2 | KALS_I02 | ILS OR LOC RWY 02 | ILS | 已提交 | A21 |
+| 10 | KBUY_I06-Z | ILS Z OR LOC Z RWY 06 | ILS | 已提交 | A21 |
+| 88 | KCBF_R36 | RNAV (GPS) RWY 36 | RNAV | 已提交 | A21 |
 
 注意：后台管理员口令不要写入仓库文件或公开文档。需要刷新时，在本地或浏览器里临时使用即可。
 
@@ -464,27 +463,39 @@ E:\experiment3\zu2+3\group2\group2_positive_question_fallback_complete19_direct_
 
 ## 9. 当前还存在的问题
 
-### 9.1 正式 300 张还没全部标完
+### 9.1 正式 300 张已完成
 
-目前正式集 300 张中，已提交 296 张，还差 4 张。
+目前正式集 300 张已经全部提交。
 
-因此现在还不能说实验组2正式全量完成。
+正式全量 runner 已经执行，审计通过。
 
-必须等 300 张全部提交，或明确决定正式实验组2只用 296 张已完成子集。
-
-如果论文计划写 formal300，建议等 300 张补齐。
-
-### 9.2 需要生成新的正式导出
-
-目前检查只是读取了后台进度和逐图总览。
-
-等 300 张完成后，应该生成一次新的后台导出，并保存到本地，例如：
+paired 主表口径：
 
 ```text
-E:\experiment3\group2_annotation_status_20260503
+C:\Users\admin\Documents\New project\group2_formal\group2_formal300_v1_20260503_152409
 ```
 
-或新建一个带时间戳的新目录。
+available-score 补充口径：
+
+```text
+C:\Users\admin\Documents\New project\group2_formal\group2_formal300_available_scores_v1_20260503_152409
+```
+
+paired 主表用于严格方法间比较；available-score 表覆盖全部 300 张，但不同方法分母不完全一致，只作为补充。
+
+### 9.2 已生成新的正式导出
+
+正式导出已保存到：
+
+```text
+C:\Users\admin\Documents\New project\group2_annotation_status_20260503_152409
+```
+
+其中 export 文件：
+
+```text
+shujuji_annotation_export_2026-05-03T07-24-24-338Z.json
+```
 
 ### 9.3 修复规则需要写进正式实验方案
 
@@ -592,7 +603,11 @@ scripts\group2\run_group2_formal_submitted_v1.py
 E:\experiment3\zu2+3\group2_formal\<run_id>\
 ```
 
-如果 300 张全部完成，用 `formal300` 命名。
+如果 300 张全部完成，用 `formal300` 命名。当前正式输出已经采用该命名：
+
+```text
+group2_formal300_v1_20260503_152409
+```
 
 如果只用 296 张已提交子集，用 `formal_submitted296` 命名，避免误写成完整 300。
 此时命令应显式使用：
@@ -603,7 +618,16 @@ E:\experiment3\zu2+3\group2_formal\<run_id>\
 
 这样报告会把结论限定在 submitted296 口径内，而不是 formal300。
 
-正式 runner 每次会写 chart / field / region 三层标注快照。后续如果补齐剩余 4 张，或修改已有标注，下一次运行时传入：
+正式 runner 每次会写 chart / field / region 三层标注快照。当前 formal300 run 已经用 submitted296 run 作为基线完成变更定位：
+
+```text
+changed_chart_count = 4
+changed_field_count = 42
+changed_region_count = 34
+changed_chart_ids = KABE_I06, KALS_I02, KBUY_I06-Z, KCBF_R36
+```
+
+后续如果修改已有标注，下一次运行时传入：
 
 ```text
 --previous-run-root <旧的 group2_formal run 目录>
@@ -690,19 +714,17 @@ E:\experiment3\zu2+3\group2_formal\
 
 现在最推荐的动作是：
 
-1. 先确认 4 张未提交航图是否已经完成。
-2. 如果未完成，先等或催完成。
-3. 如果已完成，生成新的正式导出。
-4. 基于新导出，把 `direct_q4_fix_20260503` 的修复逻辑迁移到正式实验组2脚本。
-5. 对 300 张全量重跑实验组2。
-6. 跑完后先看审计文件，不急着写结论。
+1. 使用 `group2_formal300_v1_20260503_152409` 作为实验组2 paired 主表结论来源。
+2. 使用 `group2_formal300_available_scores_v1_20260503_152409` 作为覆盖全部 300 张的补充分析，注意不用于严格 paired 方法比较。
+3. 先写实验组2正式结果摘要，明确输入是 300/300 人工标注、Group1 scoring-equivalence v2 字段分数。
+4. 报告审计数字：`positive_question_fallback_rows = 0`，`unmatched_present_rows = 0`，`evidence_on_not_applicable_rows = 0`。
+5. 后续如有任何标注修改，必须用 `--previous-run-root` 对比当前 formal300 run，并审查 `annotation_changed_*` 文件。
 
-当前不能直接做正式论文结论，因为标注还不是 300/300。
-
-但可以说：
+当前可以说：
 
 ```text
-实验组2的流程已经在 19 张完整可比样本上跑通；
-关键的跨航段证据错误已经修复；
-下一步是等待正式标注完成后扩展到全量。
+实验组2已经在 formal300 全量人工标注上完成；
+paired 主表覆盖 168 张 Group1 全方法字段分数完整的航图；
+证据对齐审计通过，没有跨航段 fallback 和应填写字段缺证据问题；
+available-score 版本覆盖全部 300 张，但只作为补充。
 ```
