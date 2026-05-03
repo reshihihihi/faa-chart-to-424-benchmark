@@ -472,7 +472,7 @@ E:\experiment3\zu2+3\group2\group2_positive_question_fallback_complete19_direct_
 paired 主表口径：
 
 ```text
-C:\Users\admin\Documents\New project\group2_formal\group2_formal300_v1_20260503_152409
+C:\Users\admin\Documents\New project\group2_formal\group2_formal300_paired200_methodfailure_v1_20260503_155704
 ```
 
 available-score 补充口径：
@@ -481,7 +481,7 @@ available-score 补充口径：
 C:\Users\admin\Documents\New project\group2_formal\group2_formal300_available_scores_v1_20260503_152409
 ```
 
-paired 主表用于严格方法间比较；available-score 表覆盖全部 300 张，但不同方法分母不完全一致，只作为补充。
+paired 主表用于严格方法间比较：300 张标注中选取 Group1 已评分的 200 张；若某个方法在这 200 张内因 schema invalid 没有 score JSON，则按 method failure 计入，而不是丢弃整张图。available-score 表覆盖全部 300 张，但不同方法分母不完全一致，只作为补充。
 
 ### 9.2 已生成新的正式导出
 
@@ -603,11 +603,20 @@ scripts\group2\run_group2_formal_submitted_v1.py
 E:\experiment3\zu2+3\group2_formal\<run_id>\
 ```
 
-如果 300 张全部完成，用 `formal300` 命名。当前正式输出已经采用该命名：
+如果 300 张全部完成，用 `formal300` 命名。当前正式 paired 主输出已经采用 200 张 Group1 交集口径：
 
 ```text
-group2_formal300_v1_20260503_152409
+group2_formal300_paired200_methodfailure_v1_20260503_155704
 ```
+
+该 run 显式使用：
+
+```text
+--expected-analysis-count 200
+--count-missing-scores-as-method-failure
+```
+
+其中 D1 修正后是 200 张；`B1_prime_link` 有 15 张 schema-invalid/无 score，`C3` 有 4 张 schema-invalid/无 score，已按 method failure 计入。
 
 如果只用 296 张已提交子集，用 `formal_submitted296` 命名，避免误写成完整 300。
 此时命令应显式使用：
@@ -714,7 +723,7 @@ E:\experiment3\zu2+3\group2_formal\
 
 现在最推荐的动作是：
 
-1. 使用 `group2_formal300_v1_20260503_152409` 作为实验组2 paired 主表结论来源。
+1. 使用 `group2_formal300_paired200_methodfailure_v1_20260503_155704` 作为实验组2 paired 主表结论来源。
 2. 使用 `group2_formal300_available_scores_v1_20260503_152409` 作为覆盖全部 300 张的补充分析，注意不用于严格 paired 方法比较。
 3. 先写实验组2正式结果摘要，明确输入是 300/300 人工标注、Group1 scoring-equivalence v2 字段分数。
 4. 报告审计数字：`positive_question_fallback_rows = 0`，`unmatched_present_rows = 0`，`evidence_on_not_applicable_rows = 0`。
@@ -724,7 +733,7 @@ E:\experiment3\zu2+3\group2_formal\
 
 ```text
 实验组2已经在 formal300 全量人工标注上完成；
-paired 主表覆盖 168 张 Group1 全方法字段分数完整的航图；
+paired 主表覆盖 Group1 已评分的 200 张航图；
 证据对齐审计通过，没有跨航段 fallback 和应填写字段缺证据问题；
 available-score 版本覆盖全部 300 张，但只作为补充。
 ```

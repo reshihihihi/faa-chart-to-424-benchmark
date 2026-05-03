@@ -109,6 +109,15 @@ def parse_args():
         help="Include submitted charts even when at least one Group 1 method score is missing.",
     )
     parser.add_argument(
+        "--count-missing-scores-as-method-failure",
+        action="store_true",
+        help=(
+            "Select charts that belong to the Group1 run even if some methods have "
+            "no score JSON, and count those method/chart cells as all-field failures. "
+            "Use this for the formal 200-chart paired denominator."
+        ),
+    )
+    parser.add_argument(
         "--copy-export",
         action="store_true",
         help="Copy the annotation export into the local output directory. Leave off for sensitive exports.",
@@ -149,10 +158,17 @@ def configure_paths(args):
 
 
 def score_file_path(method_source, chart_id):
-    candidates = [
-        base.GROUP1_RUN / method_source / "scores" / f"{chart_id}.json",
-        base.GROUP1_RUN / "scores" / method_source / f"{chart_id}.json",
-    ]
+    method_sources = [method_source]
+    if method_source == "D_SFT":
+        # Group1 scoring-equivalence v2 keeps the final canonicalized D result
+        # under D1/, while older group2 scripts still label the source as D_SFT.
+        method_sources = ["D1", "D_SFT"]
+    candidates = []
+    for source in method_sources:
+        candidates.extend([
+            base.GROUP1_RUN / source / "scores" / f"{chart_id}.json",
+            base.GROUP1_RUN / "scores" / source / f"{chart_id}.json",
+        ])
     for path in candidates:
         if path.exists():
             return path
@@ -183,11 +199,15 @@ def load_score_rows_compatible(method_source, chart_id):
 
 
 def load_method_summary_compatible(method_source):
-    candidates = [
-        base.GROUP1_RUN / method_source / "method_summary.json",
-        base.GROUP1_RUN / "reports" / f"{method_source}_summary_v2.json",
-        base.GROUP1_RUN / "reports" / f"{'D1' if method_source == 'D_SFT' else method_source}_summary_v2.json",
-    ]
+    method_sources = [method_source]
+    if method_source == "D_SFT":
+        method_sources = ["D1", "D_SFT"]
+    candidates = []
+    for source in method_sources:
+        candidates.extend([
+            base.GROUP1_RUN / source / "method_summary.json",
+            base.GROUP1_RUN / "reports" / f"{source}_summary_v2.json",
+        ])
     for path in candidates:
         if path.exists():
             return base.load_json(path)
@@ -464,12 +484,17 @@ def latest_annotations(export_obj, overview_obj):
     return submitted, excluded, by_chart, row_index, overview_meta
 
 
-def build_selection(submitted, row_index, overview_meta, include_missing_score_charts):
+def build_selection(submitted, row_index, overview_meta, include_missing_score_charts, count_missing_as_failure):
     selected = []
     skipped_missing = []
     for entry in submitted:
         data = entry.get("data") or {}
         chart_id = data.get("chart_id")
+        available_methods = [
+            label
+            for source, label in base.METHOD_SOURCES
+            if score_file_path(source, chart_id).exists()
+        ]
         missing_methods = [
             label
             for source, label in base.METHOD_SOURCES
@@ -482,6 +507,7 @@ def build_selection(submitted, row_index, overview_meta, include_missing_score_c
             "saved_at": data.get("saved_at"),
             "relative_path": entry.get("relative_path"),
             "field_review_count": len(data.get("field_reviews") or []),
+            "available_group1_methods": available_methods,
             "missing_group1_methods": missing_methods,
             "has_all_group1_method_scores": not missing_methods,
             "airport": overview_meta.get(chart_id, {}).get("airport", ""),
@@ -489,11 +515,126 @@ def build_selection(submitted, row_index, overview_meta, include_missing_score_c
             "chart_name": overview_meta.get(chart_id, {}).get("chart_name", ""),
             "kind": overview_meta.get(chart_id, {}).get("kind", ""),
         }
-        if include_missing_score_charts or not missing_methods:
+        if include_missing_score_charts or not missing_methods or (count_missing_as_failure and available_methods):
             selected.append(item)
         else:
             skipped_missing.append(item)
     return selected, skipped_missing
+
+
+def build_missing_score_failure_rows(method_source, label, chart_id, target_rows):
+    chart_score = {
+        "method": label,
+        "source_method": method_source,
+        "chart_id": chart_id,
+        "score_available": False,
+        "schema_valid": False,
+        "validation_error_count": None,
+        "method_failure": True,
+        "missing_score_as_failure": True,
+        "correct": 0,
+        "total": len(target_rows),
+        "accuracy": 0.0 if target_rows else None,
+        "comparison_policy": None,
+    }
+    field_scores = []
+    for target_row in target_rows:
+        question_field = target_row.get("question_field")
+        score_field = base.flatten_field_key(target_row.get("leg_index"), question_field)
+        field_scores.append({
+            "method": label,
+            "source_method": method_source,
+            "chart_id": chart_id,
+            "score_field": score_field,
+            "question_field": question_field,
+            "field_family": base.field_family(question_field),
+            "correct": False,
+            "strict_correct": False,
+            "v2_corrected": False,
+            "match_policy": None,
+            "pred": {"status": None, "value": None},
+            "target": target_row.get("target"),
+            "error_type": "method_failure_no_score",
+            "score_available": False,
+            "method_failure": True,
+            "missing_score_as_failure": True,
+        })
+    return chart_score, field_scores
+
+
+def build_score_indices_compatible(selected, field_targets, count_missing_as_failure):
+    selected_ids = {x["chart_id"] for x in selected}
+    target_rows_by_chart = {}
+    for row in field_targets:
+        chart_id = row.get("chart_id")
+        if chart_id in selected_ids:
+            target_rows_by_chart.setdefault(chart_id, []).append(row)
+
+    chart_scores = []
+    field_scores = []
+    for source, label in base.METHOD_SOURCES:
+        summary = base.load_method_summary(source)
+        result_by_chart = {r.get("chart_id"): r for r in summary.get("results", [])}
+        for chart_id in sorted(selected_ids):
+            score = base.load_score_rows(source, chart_id)
+            result = result_by_chart.get(chart_id, {})
+            if score is None:
+                if count_missing_as_failure:
+                    chart_row, field_rows = build_missing_score_failure_rows(
+                        source,
+                        label,
+                        chart_id,
+                        target_rows_by_chart.get(chart_id, []),
+                    )
+                    chart_scores.append(chart_row)
+                    field_scores.extend(field_rows)
+                else:
+                    chart_scores.append({
+                        "method": label,
+                        "source_method": source,
+                        "chart_id": chart_id,
+                        "score_available": False,
+                        "schema_valid": False,
+                        "method_failure": True,
+                        "correct": 0,
+                        "total": 0,
+                        "accuracy": None,
+                    })
+                continue
+            chart_scores.append({
+                "method": label,
+                "source_method": source,
+                "chart_id": chart_id,
+                "score_available": True,
+                "schema_valid": result.get("schema_valid", True),
+                "validation_error_count": result.get("validation_error_count", 0),
+                "method_failure": not result.get("schema_valid", True),
+                "correct": score.get("correct"),
+                "total": score.get("total"),
+                "accuracy": score.get("accuracy"),
+                "comparison_policy": score.get("comparison_policy"),
+            })
+            for r in score.get("rows") or []:
+                question_field = r.get("question_field")
+                field_scores.append({
+                    "method": label,
+                    "source_method": source,
+                    "chart_id": chart_id,
+                    "score_field": r.get("field"),
+                    "question_field": question_field,
+                    "field_family": base.field_family(question_field),
+                    "correct": bool(r.get("correct")),
+                    "strict_correct": bool(r.get("strict_correct")),
+                    "v2_corrected": bool(r.get("correct")) and not bool(r.get("strict_correct")),
+                    "match_policy": r.get("match_policy"),
+                    "pred": r.get("pred"),
+                    "target": r.get("target"),
+                    "error_type": base.error_type(r),
+                    "score_available": True,
+                    "method_failure": False,
+                    "missing_score_as_failure": False,
+                })
+    return chart_scores, field_scores
 
 
 def split_group2_rows(joined):
@@ -620,6 +761,7 @@ def main():
         row_index,
         overview_meta,
         include_missing_score_charts=args.include_missing_score_charts,
+        count_missing_as_failure=args.count_missing_scores_as_method_failure,
     )
     if len(selected) < args.min_analysis_count:
         raise SystemExit(f"Only {len(selected)} analysis charts selected; minimum is {args.min_analysis_count}.")
@@ -642,6 +784,7 @@ def main():
             "expected_submitted_count": args.expected_submitted_count,
             "allow_submitted_subset": args.allow_submitted_subset,
             "include_missing_score_charts": args.include_missing_score_charts,
+            "count_missing_scores_as_method_failure": args.count_missing_scores_as_method_failure,
             "expected_analysis_count": args.expected_analysis_count,
         },
         "constraints": [
@@ -677,7 +820,11 @@ def main():
         key=lambda r: (r["chart_id"], str(r["canonical_leg_index"]), r["field_name"], r.get("source_schema", "")),
     )
 
-    chart_scores, field_scores = base.build_score_indices(selected)
+    chart_scores, field_scores = build_score_indices_compatible(
+        selected,
+        field_targets,
+        count_missing_as_failure=args.count_missing_scores_as_method_failure,
+    )
     joined, unmatched_scores, unmatched_evidence = base.join_group2(field_scores, fixed_evidence)
     split = split_group2_rows(joined)
     tables = write_group2_tables(output_root, split)
@@ -700,8 +847,15 @@ def main():
     write_jsonl(output_root / "group2" / "unmatched_not_applicable_fields.jsonl", split["unmatched_not_applicable"])
     write_jsonl(output_root / "group2" / "evidence_on_not_applicable_audit.jsonl", split["evidence_on_negative"])
 
-    missing_method_chart_counts = Counter(
-        method for item in submitted for method in item.get("missing_group1_methods", [])
+    selected_missing_method_chart_counts = Counter(
+        method
+        for item in selected
+        for method in item.get("missing_group1_methods", [])
+    )
+    skipped_missing_method_chart_counts = Counter(
+        method
+        for item in skipped_missing_scores
+        for method in item.get("missing_group1_methods", [])
     )
     audit = {
         "run_id": args.run_id,
@@ -719,6 +873,8 @@ def main():
         "added_direct_q4_rule_counts": Counter(row.get("derived_rule") for row in added_direct_q4),
         "field_score_rows": len(field_scores),
         "chart_score_rows": len(chart_scores),
+        "missing_score_as_failure_chart_method_count": sum(1 for row in chart_scores if row.get("missing_score_as_failure")),
+        "missing_score_as_failure_field_rows": sum(1 for row in field_scores if row.get("missing_score_as_failure")),
         "joined_rows": len(joined),
         "unmatched_score_rows": len(unmatched_scores),
         "unmatched_evidence_rows": len(unmatched_evidence),
@@ -730,7 +886,8 @@ def main():
         "unmatched_present_rows": len(split["unmatched_present"]),
         "unmatched_not_applicable_rows": len(split["unmatched_not_applicable"]),
         "evidence_on_not_applicable_rows": len(split["evidence_on_negative"]),
-        "missing_group1_method_chart_counts": missing_method_chart_counts,
+        "missing_group1_method_chart_counts": selected_missing_method_chart_counts,
+        "skipped_missing_group1_method_chart_counts": skipped_missing_method_chart_counts,
         "positive_evidence_bucket_counts": Counter(row.get("evidence_evidence_bucket") for row in split["positive"]),
         "negative_error_type_counts": Counter(row.get("negative_error_type") for row in split["negative"]),
         "output_root": str(output_root),
@@ -740,7 +897,10 @@ def main():
     if args.expected_submitted_count < 300:
         warnings.append("this run intentionally uses a submitted subset; do not label it formal300")
     if audit["skipped_missing_group1_score_chart_count"] > 0:
-        warnings.append("some submitted charts were excluded from the paired main table because at least one Group 1 method score file is missing")
+        if args.count_missing_scores_as_method_failure:
+            warnings.append("some submitted charts were excluded because they are outside the Group 1 scored chart set")
+        else:
+            warnings.append("some submitted charts were excluded from the paired main table because at least one Group 1 method score file is missing")
     if args.include_missing_score_charts:
         warnings.append("available-score mode uses unequal per-method denominators; do not use it as paired method comparison")
     if change_audit.get("has_previous_snapshot") and change_audit.get("changed_chart_count", 0) > 0:
@@ -780,6 +940,8 @@ def main():
         f"- 原字段级证据行：{len(original_evidence)}",
         f"- direct-Q4 同航段补证据后字段级证据行：{len(fixed_evidence)}",
         f"- 新增 direct-Q4 证据行：{len(added_direct_q4)}",
+        f"- 缺失 score 按 method failure 计入的 chart×method：{audit['missing_score_as_failure_chart_method_count']}",
+        f"- 缺失 score 按 method failure 计入的字段行：{audit['missing_score_as_failure_field_rows']}",
         f"- 正类主表行：{len(split['positive'])}",
         f"- 跨航段/同字段 fallback 行：{len(split['positive_question_fallback'])}",
         f"- 应填写但无同航段证据行：{len(split['unmatched_present'])}",

@@ -73,7 +73,8 @@ scripts\group2\run_group2_formal_submitted_v1.py
 读取 admin overview
 读取 Group1 scoring-equivalence v2 字段分数
 读取 scoring-equivalence v2 target/policy
-选择全部 submitted/final 且 Group1 分数完整的航图
+选择全部 submitted/final 且属于 Group1 已评分样本的航图
+必要时把 Group1 内 schema-invalid 导致缺 score 的方法输出按 method failure 计入
 迁移 direct-Q4 同航段补证据规则
 输出正类证据来源主表、不适用字段负类表、异常审计和中文报告
 ```
@@ -83,9 +84,14 @@ scripts\group2\run_group2_formal_submitted_v1.py
 ```powershell
 $env:GROUP2_EXPORT_PATH = "E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\shujuji_annotation_export_xxx.json"
 $env:GROUP2_OVERVIEW_PATH = "E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\admin_overview_formal300.json"
-$env:GROUP2_OUTPUT_ROOT = "E:\experiment3\zu2+3\group2_formal\group2_formal300_v1_YYYYMMDD_HHMM"
-python scripts\group2\run_group2_formal_submitted_v1.py
+$env:GROUP2_RUN_ID = "group2_formal300_paired200_methodfailure_v1_YYYYMMDD_HHMM"
+$env:GROUP2_OUTPUT_ROOT = "E:\experiment3\zu2+3\group2_formal\group2_formal300_paired200_methodfailure_v1_YYYYMMDD_HHMM"
+python scripts\group2\run_group2_formal_submitted_v1.py `
+  --expected-analysis-count 200 `
+  --count-missing-scores-as-method-failure
 ```
+
+这个口径对应 Group1 的 200 张正式样本。`D1` 使用 scoring-equivalence v2 中的 `D1\scores` 目录；如果其他方法在这 200 张内没有 score JSON，则按该方法在该图上失败处理，而不是把整张图排除。
 
 如果明确先跑 296 张已提交子集，不能冒充 formal300，命令必须显式写 `submitted296` 和 `--expected-submitted-count 296`：
 
@@ -110,6 +116,7 @@ positive_question_fallback_rows = 0
 unmatched_present_rows = 0
 submitted_annotation_count = 300  （除非明确写 submitted 子集）
 analysis_chart_count 符合预期
+missing_score_as_failure_chart_method_count 符合预期
 ```
 
 ## 后续标注改动定位
