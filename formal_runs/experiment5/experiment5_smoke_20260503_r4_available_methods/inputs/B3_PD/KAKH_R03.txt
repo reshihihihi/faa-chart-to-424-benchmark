@@ -1,0 +1,47 @@
+[PLAN_VIEW]
+HIVSI
+A
+2754
+1484
+SAVKE
+1090
+1690
+1065
+RW03
+997
+4 NM
+Procedure NA for arrivals
+at GAFFE
+081°
+(FAF)
+via V54 westbound.
+ACLAC
+3000
+3800
+(IAF)
+109°
+GAFFE
+(15.1)
+(IF)
+SIDAR
+ELEV
+798
+TDZE
+798
+3000
+S
+Procedure NA for arrivals
+at LOCKS
+via V454 southwest bound.
+(IAF)
+LOCKS
+
+[MISSED_APPROACH_DETAIL_AREA]
+3200
+SAVKE
+HIVSI
+GAFFE
+tr
+tr
+289°
+202

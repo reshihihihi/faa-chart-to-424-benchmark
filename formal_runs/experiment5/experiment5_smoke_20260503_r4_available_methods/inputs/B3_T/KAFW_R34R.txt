@@ -1,0 +1,6 @@
+[MISSED_APPROACH_TEXT]
+MALSR
+MISSED APPROACH: Climb to
+3000 direct WIGZU and on track
+A3
+283° to OBLON and hold.

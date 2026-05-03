@@ -1,0 +1,35 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KAFW_R34R",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "PD",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [],
+    "altitude_candidates": [],
+    "turn_candidates": [],
+    "course_candidates": [],
+    "hold_candidates": [],
+    "instruction_snippets": [],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [],
+    "climb_phrase_snippets": []
+  }
+}

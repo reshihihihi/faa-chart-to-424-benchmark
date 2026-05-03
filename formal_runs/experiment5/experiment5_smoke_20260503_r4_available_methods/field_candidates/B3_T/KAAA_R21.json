@@ -1,0 +1,143 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KAAA_R21",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "T",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [
+      {
+        "value": "PIMKE",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climbing left turn to 2700 direct PIMKE and hold.",
+        "source_start_char": 74,
+        "source_end_char": 79,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 51,
+        "region_local_end_char": 56,
+        "global_start_char": 74,
+        "global_end_char": 79
+      }
+    ],
+    "altitude_candidates": [
+      {
+        "value": 2700,
+        "field_type": "altitude_ft",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climbing left turn to 2700 direct PIMKE and hold.",
+        "source_start_char": 62,
+        "source_end_char": 66,
+        "rule_id": "altitude_ft_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 39,
+        "region_local_end_char": 43,
+        "global_start_char": 62,
+        "global_end_char": 66
+      }
+    ],
+    "turn_candidates": [
+      {
+        "value": "LEFT",
+        "field_type": "turn_direction",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climbing left turn to 2700 direct PIMKE and hold.",
+        "source_start_char": 49,
+        "source_end_char": 53,
+        "rule_id": "turn_direction_regex_v8",
+        "confidence": 0.45,
+        "notes": "other_chart_text_procedure_word_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 26,
+        "region_local_end_char": 30,
+        "global_start_char": 49,
+        "global_end_char": 53
+      }
+    ],
+    "course_candidates": [],
+    "hold_candidates": [
+      {
+        "value": "MISSED APPROACH: Climbing left turn to 2700 direct PIMKE and hold.",
+        "field_type": "hold_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climbing left turn to 2700 direct PIMKE and hold.",
+        "source_start_char": 84,
+        "source_end_char": 88,
+        "rule_id": "hold_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 61,
+        "region_local_end_char": 65,
+        "global_start_char": 84,
+        "global_end_char": 88
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "value": "turn to 2700 direct PIMKE and hold.",
+        "field_type": "missed_approach_instruction",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "turn to 2700 direct PIMKE and hold.",
+        "source_start_char": 54,
+        "source_end_char": 89,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "confidence": 0.95,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 31,
+        "region_local_end_char": 66,
+        "global_start_char": 54,
+        "global_end_char": 89
+      }
+    ],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [
+      {
+        "value": "MISSED APPROACH: Climbing left turn to 2700 direct PIMKE and hold.",
+        "field_type": "direct_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climbing left turn to 2700 direct PIMKE and hold.",
+        "source_start_char": 67,
+        "source_end_char": 73,
+        "rule_id": "direct_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 44,
+        "region_local_end_char": 50,
+        "global_start_char": 67,
+        "global_end_char": 73
+      }
+    ],
+    "climb_phrase_snippets": []
+  }
+}

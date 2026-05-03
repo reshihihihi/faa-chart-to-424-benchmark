@@ -1,0 +1,3 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: Climb to 3000 direct SURGE
+and on track 266° to ETX VOR/DME and hold.

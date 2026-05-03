@@ -1,0 +1,212 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KAGC_R28",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "T",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [
+      {
+        "value": "MESIE",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MALS MISSED APPROACH Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-i",
+        "source_start_char": 65,
+        "source_end_char": 70,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 42,
+        "region_local_end_char": 47,
+        "global_start_char": 65,
+        "global_end_char": 70
+      },
+      {
+        "value": "AGC",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "ED APPROACH Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 3000.",
+        "source_start_char": 92,
+        "source_end_char": 95,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 69,
+        "region_local_end_char": 72,
+        "global_start_char": 92,
+        "global_end_char": 95
+      }
+    ],
+    "altitude_candidates": [
+      {
+        "value": 3000,
+        "field_type": "altitude_ft",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MALS MISSED APPROACH Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, con",
+        "source_start_char": 53,
+        "source_end_char": 57,
+        "rule_id": "altitude_ft_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 30,
+        "region_local_end_char": 34,
+        "global_start_char": 53,
+        "global_end_char": 57
+      }
+    ],
+    "turn_candidates": [],
+    "course_candidates": [
+      {
+        "value": 197,
+        "field_type": "course_deg",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MALS MISSED APPROACH Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to",
+        "source_start_char": 78,
+        "source_end_char": 81,
+        "rule_id": "degree_value_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 55,
+        "region_local_end_char": 58,
+        "global_start_char": 78,
+        "global_end_char": 81
+      }
+    ],
+    "hold_candidates": [
+      {
+        "value": "MISSED APPROACH Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 3000.",
+        "field_type": "hold_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 3000.",
+        "source_start_char": 108,
+        "source_end_char": 112,
+        "rule_id": "hold_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 85,
+        "region_local_end_char": 89,
+        "global_start_char": 108,
+        "global_end_char": 112
+      },
+      {
+        "value": "3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 3000.",
+        "field_type": "hold_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 3000.",
+        "source_start_char": 133,
+        "source_end_char": 137,
+        "rule_id": "hold_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 110,
+        "region_local_end_char": 114,
+        "global_start_char": 133,
+        "global_end_char": 137
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "value": "Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 3000.",
+        "field_type": "missed_approach_instruction",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 3000.",
+        "source_start_char": 44,
+        "source_end_char": 146,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "confidence": 0.95,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 21,
+        "region_local_end_char": 123,
+        "global_start_char": 44,
+        "global_end_char": 146
+      }
+    ],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [
+      {
+        "value": "MALS MISSED APPROACH Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 300",
+        "field_type": "direct_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MALS MISSED APPROACH Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 300",
+        "source_start_char": 58,
+        "source_end_char": 64,
+        "rule_id": "direct_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 35,
+        "region_local_end_char": 41,
+        "global_start_char": 58,
+        "global_end_char": 64
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "value": "MALS MISSED APPROACH Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-",
+        "field_type": "climb_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MALS MISSED APPROACH Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-",
+        "source_start_char": 44,
+        "source_end_char": 49,
+        "rule_id": "climb_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 21,
+        "region_local_end_char": 26,
+        "global_start_char": 44,
+        "global_end_char": 49
+      },
+      {
+        "value": "Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 3000.",
+        "field_type": "climb_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 3000.",
+        "source_start_char": 123,
+        "source_end_char": 128,
+        "rule_id": "climb_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 100,
+        "region_local_end_char": 105,
+        "global_start_char": 123,
+        "global_end_char": 128
+      }
+    ]
+  }
+}

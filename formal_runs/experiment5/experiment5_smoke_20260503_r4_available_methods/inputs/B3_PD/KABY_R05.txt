@@ -1,0 +1,40 @@
+[PLAN_VIEW]
+PECAN
+Procedure NA for arrival at PZD VOR/DME
+PZD
+on V35-159 northbound.
+,061
+(9.5)
+UNIKE
+4 NM
+O 
+…………
+319±
+RW05
+(IAF)
+(FAF)
+JIPVO
+2200
+ZITIR
+1370
+(5)
+2200
+047
+2600
+(6.2)
+(IF)
+NOGPE
+ELEV 196
+D
+TDZE 196
+(IAF)
+ELMOE
+2
+
+[MISSED_APPROACH_DETAIL_AREA]
+2000
+UNIKE
+PZD
+tr
+D
+291°

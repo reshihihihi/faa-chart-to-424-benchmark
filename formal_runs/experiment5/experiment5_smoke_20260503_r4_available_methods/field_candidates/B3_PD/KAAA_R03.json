@@ -1,0 +1,122 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KAAA_R03",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "PD",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [
+      {
+        "value": "PIMKE",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "25 NM MISSED APCH FIX 4 NM 3100 $, PIMKE RW03 810 (IAF) GROWL (FAF) 2500 NoPT RUCON -116° (11.7) (IF",
+        "source_start_char": 47,
+        "source_end_char": 52,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.25,
+        "notes": "weak_other_chart_text_candidate",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 35,
+        "region_local_end_char": 40,
+        "global_start_char": 47,
+        "global_end_char": 52
+      },
+      {
+        "value": "GROWL",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "25 NM MISSED APCH FIX 4 NM 3100 $, PIMKE RW03 810 (IAF) GROWL (FAF) 2500 NoPT RUCON -116° (11.7) (IF/IAF) 2300 03 TENCU (",
+        "source_start_char": 68,
+        "source_end_char": 73,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.25,
+        "notes": "weak_other_chart_text_candidate",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 56,
+        "region_local_end_char": 61,
+        "global_start_char": 68,
+        "global_end_char": 73
+      }
+    ],
+    "altitude_candidates": [],
+    "turn_candidates": [],
+    "course_candidates": [],
+    "hold_candidates": [],
+    "instruction_snippets": [],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [
+      {
+        "value": "25 NM MISSED APCH FIX 4 NM 3100 $, PIMKE RW03 810 (IAF) GROWL (FAF) 2500 NoPT RUCON -116° (11.7) (IF/IAF) 2300 03 TENCU (6.3) 2500 NoPT 305° (4.4) Procedure NA for arrivals at (IAF) SPI VORTAC on V173 and -215° OBACO on V9-69 southwest bound. 4 NM 2500 NoPT ELEV 594 TDZE 593 (18.1) 315 2500 NoPT 043° (13) (I",
+        "field_type": "route_sequence_snippet",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "25 NM MISSED APCH FIX 4 NM 3100 $, PIMKE RW03 810 (IAF) GROWL (FAF) 2500 NoPT RUCON -116° (11.7) (IF/IAF) 2300 03 TENCU (6.3) 2500 NoPT 305° (4.4) Procedure NA for arrivals at (IAF) SPI VORTAC on V173 and -215° OBACO on V9-69 southwest bound. 4 NM 2500 NoPT ELEV 594 TDZE 593 (18.1) 315 2500 NoPT 043° (13) (I",
+        "source_start_char": 12,
+        "source_end_char": 321,
+        "rule_id": "route_sequence_snippet_regex_v8",
+        "confidence": 0.72,
+        "notes": "flat_ocr_route_sequence_snippet_no_leg_binding",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 0,
+        "region_local_end_char": 309,
+        "global_start_char": 12,
+        "global_end_char": 321
+      },
+      {
+        "value": "25 NM MISSED APCH FIX 4 NM 3100 $, PIMKE RW03 810 (IAF) GROWL (FAF) 2500 NoPT RUCON -116° (11.7) (IF/IAF) 2300 03 TENCU (6.3) 2500 NoPT 305° (4.4) Procedure NA for arrivals at (IAF) SPI VORTAC on V173 and -215° OBACO on V9-69 southwest bound. 4 NM 2500 NoPT ELEV 594 TDZE 593 (18.1) 315 2500 NoPT 043° (13) (IAF) 21 SPINNER SPI (IAF) LATHA",
+        "field_type": "route_sequence_snippet",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "25 NM MISSED APCH FIX 4 NM 3100 $, PIMKE RW03 810 (IAF) GROWL (FAF) 2500 NoPT RUCON -116° (11.7) (IF/IAF) 2300 03 TENCU (6.3) 2500 NoPT 305° (4.4) Procedure NA for arrivals at (IAF) SPI VORTAC on V173 and -215° OBACO on V9-69 southwest bound. 4 NM 2500 NoPT ELEV 594 TDZE 593 (18.1) 315 2500 NoPT 043° (13) (IAF) 21 SPINNER SPI (IAF) LATHA",
+        "source_start_char": 12,
+        "source_end_char": 351,
+        "rule_id": "route_sequence_snippet_regex_v8",
+        "confidence": 0.72,
+        "notes": "flat_ocr_route_sequence_snippet_no_leg_binding",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 0,
+        "region_local_end_char": 339,
+        "global_start_char": 12,
+        "global_end_char": 351
+      },
+      {
+        "value": "500 NoPT RUCON -116° (11.7) (IF/IAF) 2300 03 TENCU (6.3) 2500 NoPT 305° (4.4) Procedure NA for arrivals at (IAF) SPI VORTAC on V173 and -215° OBACO on V9-69 southwest bound. 4 NM 2500 NoPT ELEV 594 TDZE 593 (18.1) 315 2500 NoPT 043° (13) (IAF) 21 SPINNER SPI (IAF) LATHA",
+        "field_type": "route_sequence_snippet",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "500 NoPT RUCON -116° (11.7) (IF/IAF) 2300 03 TENCU (6.3) 2500 NoPT 305° (4.4) Procedure NA for arrivals at (IAF) SPI VORTAC on V173 and -215° OBACO on V9-69 southwest bound. 4 NM 2500 NoPT ELEV 594 TDZE 593 (18.1) 315 2500 NoPT 043° (13) (IAF) 21 SPINNER SPI (IAF) LATHA",
+        "source_start_char": 81,
+        "source_end_char": 351,
+        "rule_id": "route_sequence_snippet_regex_v8",
+        "confidence": 0.72,
+        "notes": "flat_ocr_route_sequence_snippet_no_leg_binding",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 69,
+        "region_local_end_char": 339,
+        "global_start_char": 81,
+        "global_end_char": 351
+      }
+    ],
+    "direct_phrase_snippets": [],
+    "climb_phrase_snippets": []
+  }
+}

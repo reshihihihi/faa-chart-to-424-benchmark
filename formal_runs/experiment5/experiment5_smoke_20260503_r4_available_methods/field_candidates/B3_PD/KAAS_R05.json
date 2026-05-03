@@ -1,0 +1,106 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KAAS_R05",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "PD",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [
+      {
+        "value": "LEXKO",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "145°. 3000 KANOA -145° -325° > RW05 KANOA 3000 -325°- (FAF) LEXKO (IF/IAF) 2500 055° KANOA (6.8) ELEV 921 TDZE 904 HOLD 6000",
+        "source_start_char": 104,
+        "source_end_char": 109,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.45,
+        "notes": "other_chart_text_procedure_word_context",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 92,
+        "region_local_end_char": 97,
+        "global_start_char": 104,
+        "global_end_char": 109
+      },
+      {
+        "value": "KANOA",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "25° > RW05 KANOA 3000 -325°- (FAF) LEXKO (IF/IAF) 2500 055° KANOA (6.8) ELEV 921 TDZE 904 HOLD 6000 3000 4 NM",
+        "source_start_char": 129,
+        "source_end_char": 134,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.45,
+        "notes": "other_chart_text_procedure_word_context",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 117,
+        "region_local_end_char": 122,
+        "global_start_char": 129,
+        "global_end_char": 134
+      }
+    ],
+    "altitude_candidates": [],
+    "turn_candidates": [],
+    "course_candidates": [],
+    "hold_candidates": [
+      {
+        "value": "KANOA 3000 -325°- (FAF) LEXKO (IF/IAF) 2500 055° KANOA (6.8) ELEV 921 TDZE 904 HOLD 6000 3000 4 NM",
+        "field_type": "hold_phrase",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "KANOA 3000 -325°- (FAF) LEXKO (IF/IAF) 2500 055° KANOA (6.8) ELEV 921 TDZE 904 HOLD 6000 3000 4 NM",
+        "source_start_char": 159,
+        "source_end_char": 163,
+        "rule_id": "hold_phrase_regex_v8",
+        "confidence": 0.45,
+        "notes": "other_chart_text_procedure_word_context",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 147,
+        "region_local_end_char": 151,
+        "global_start_char": 159,
+        "global_end_char": 163
+      }
+    ],
+    "instruction_snippets": [],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [
+      {
+        "value": "4 NM 055° -235 DOODA 3300 15 NM 145°. 3000 KANOA -145° -325° > RW05 KANOA 3000 -325°- (FAF) LEXKO (IF/IAF) 2500 055° KANOA (6.8) ELEV 921 TDZE 904 HOLD 6000 3000 4 NM",
+        "field_type": "route_sequence_snippet",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "4 NM 055° -235 DOODA 3300 15 NM 145°. 3000 KANOA -145° -325° > RW05 KANOA 3000 -325°- (FAF) LEXKO (IF/IAF) 2500 055° KANOA (6.8) ELEV 921 TDZE 904 HOLD 6000 3000 4 NM",
+        "source_start_char": 12,
+        "source_end_char": 178,
+        "rule_id": "route_sequence_snippet_regex_v8",
+        "confidence": 0.72,
+        "notes": "flat_ocr_route_sequence_snippet_no_leg_binding",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 0,
+        "region_local_end_char": 166,
+        "global_start_char": 12,
+        "global_end_char": 178
+      }
+    ],
+    "direct_phrase_snippets": [],
+    "climb_phrase_snippets": []
+  }
+}

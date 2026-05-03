@@ -1,0 +1,3 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: Climb to
+3000 direct ONBOE and hold.

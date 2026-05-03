@@ -1,0 +1,212 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KAAF_R24",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "T",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [
+      {
+        "value": "ASVOY",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "ROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 93,
+        "source_end_char": 98,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 70,
+        "region_local_end_char": 75,
+        "global_start_char": 93,
+        "global_end_char": 98
+      }
+    ],
+    "altitude_candidates": [
+      {
+        "value": 600,
+        "field_type": "altitude_ft",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, con",
+        "source_start_char": 49,
+        "source_end_char": 52,
+        "rule_id": "altitude_ft_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 26,
+        "region_local_end_char": 29,
+        "global_start_char": 49,
+        "global_end_char": 52
+      },
+      {
+        "value": 3000,
+        "field_type": "altitude_ft",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 81,
+        "source_end_char": 85,
+        "rule_id": "altitude_ft_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 58,
+        "region_local_end_char": 62,
+        "global_start_char": 81,
+        "global_end_char": 85
+      }
+    ],
+    "turn_candidates": [
+      {
+        "value": "RIGHT",
+        "field_type": "turn_direction",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold",
+        "source_start_char": 67,
+        "source_end_char": 72,
+        "rule_id": "turn_direction_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 44,
+        "region_local_end_char": 49,
+        "global_start_char": 67,
+        "global_end_char": 72
+      }
+    ],
+    "course_candidates": [],
+    "hold_candidates": [
+      {
+        "value": "MISSED APPROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "field_type": "hold_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 103,
+        "source_end_char": 107,
+        "rule_id": "hold_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 80,
+        "region_local_end_char": 84,
+        "global_start_char": 103,
+        "global_end_char": 107
+      },
+      {
+        "value": "o 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "field_type": "hold_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "o 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 127,
+        "source_end_char": 131,
+        "rule_id": "hold_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 104,
+        "region_local_end_char": 108,
+        "global_start_char": 127,
+        "global_end_char": 131
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "value": "Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "field_type": "missed_approach_instruction",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 40,
+        "source_end_char": 140,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "confidence": 0.95,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 17,
+        "region_local_end_char": 117,
+        "global_start_char": 40,
+        "global_end_char": 140
+      }
+    ],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [
+      {
+        "value": "MISSED APPROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "field_type": "direct_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 86,
+        "source_end_char": 92,
+        "rule_id": "direct_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 63,
+        "region_local_end_char": 69,
+        "global_start_char": 86,
+        "global_end_char": 92
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "value": "MISSED APPROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-i",
+        "field_type": "climb_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-i",
+        "source_start_char": 40,
+        "source_end_char": 45,
+        "rule_id": "climb_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 17,
+        "region_local_end_char": 22,
+        "global_start_char": 40,
+        "global_end_char": 45
+      },
+      {
+        "value": ": Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "field_type": "climb_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": ": Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 118,
+        "source_end_char": 123,
+        "rule_id": "climb_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 95,
+        "region_local_end_char": 100,
+        "global_start_char": 118,
+        "global_end_char": 123
+      }
+    ]
+  }
+}
