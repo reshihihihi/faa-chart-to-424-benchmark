@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 3000 on BOS R-334 INBOUND to CELTS; hold at CELTS, inbound course 334, right turns, 1 minute, maintain 3000.

@@ -1,0 +1,95 @@
+{
+  "created_at_local": "2026-05-03",
+  "run_dir": "formal_runs/experiment5/experiment5_eval200_20260503_r2_admin_relation",
+  "input_classification": "admin_relation_oracle_textualized_inputs",
+  "input_status": {
+    "charts": 200,
+    "profile_rows": 600,
+    "field_candidates_schema_validation_error_count": 0,
+    "serialized_method_payload_forbidden_key_hit_count": 0
+  },
+  "methods": {
+    "A3_GoldText_Rules": {
+      "status": "completed",
+      "schema_valid": 200,
+      "samples_total": 200,
+      "score_v2": {"correct": 1245, "total": 4052, "accuracy": 0.30725567620927935},
+      "failure_count": 0
+    },
+    "B2a_GoldText_LLM": {
+      "status": "not_run_model_proxy_oauth_blocked",
+      "schema_valid": null,
+      "samples_total": 200,
+      "score_v2": null,
+      "failure_count": null
+    },
+    "B2b_GoldText_FieldCandidates_LLM": {
+      "status": "not_run_model_proxy_oauth_blocked",
+      "schema_valid": null,
+      "samples_total": 200,
+      "score_v2": null,
+      "failure_count": null
+    },
+    "B3_T": {
+      "status": "not_run_model_proxy_oauth_blocked",
+      "schema_valid": null,
+      "samples_total": 200,
+      "score_v2": null,
+      "failure_count": null
+    },
+    "B3_PD": {
+      "status": "not_run_model_proxy_oauth_blocked",
+      "schema_valid": null,
+      "samples_total": 200,
+      "score_v2": null,
+      "failure_count": null
+    },
+    "B3_TPD": {
+      "status": "not_run_model_proxy_oauth_blocked",
+      "schema_valid": null,
+      "samples_total": 200,
+      "score_v2": null,
+      "failure_count": null
+    },
+    "B4_TPD": {
+      "status": "completed",
+      "schema_valid": 200,
+      "samples_total": 200,
+      "score_v2": {"correct": 1245, "total": 4052, "accuracy": 0.30725567620927935},
+      "failure_count": 0
+    },
+    "G0_Direct": {
+      "status": "completed_in_experiment5_eval200_20260503_r1",
+      "schema_valid": 200,
+      "samples_total": 200,
+      "score_v2": {"correct": 1079, "total": 4052, "accuracy": 0.2662882527147088},
+      "failure_count": 0
+    },
+    "G1_Rules": {
+      "status": "completed_in_experiment5_eval200_20260503_r1",
+      "schema_valid": 200,
+      "samples_total": 200,
+      "score_v2": {"correct": 2380, "total": 4052, "accuracy": 0.5873642645607108},
+      "failure_count": 0
+    },
+    "G3_LLM_Rules": {
+      "status": "completed_in_experiment5_eval200_20260503_r1",
+      "schema_valid": 200,
+      "samples_total": 200,
+      "score_v2": {"correct": 284, "total": 4052, "accuracy": 0.0700888450148075},
+      "failure_count": 0
+    }
+  },
+  "model_proxy_error": {
+    "endpoint": "http://127.0.0.1:8080/v1/chat/completions",
+    "http_status": 500,
+    "message": "Encountered invalidated oauth token for user, failing request",
+    "blocked_methods": [
+      "B2a_GoldText_LLM",
+      "B2b_GoldText_FieldCandidates_LLM",
+      "B3_T",
+      "B3_PD",
+      "B3_TPD"
+    ]
+  }
+}

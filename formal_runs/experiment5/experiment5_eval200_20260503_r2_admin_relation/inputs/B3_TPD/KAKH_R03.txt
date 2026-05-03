@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 34.3; to SAVKE; to HIVSI; climb to 3200 to GAFFE; hold at GAFFE, inbound course 260.7, right turns, 4 NM, maintain 3200.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3200 -> AT_OR_ABOVE 3200 ft
+- FIX_TEXT: GAFFE -> GAFFE
+- FIX_TEXT: SAVKE -> SAVKE
+- FIX_TEXT: HIVSI -> HIVSI
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

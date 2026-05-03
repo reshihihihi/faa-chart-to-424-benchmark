@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 2600 on heading 138.4; left turn climb to 6500 to PICLI; hold at PICLI, inbound course 128.1, right turns, 6 NM, maintain 6500.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2600 -> AT_OR_ABOVE 2600 ft
+- ALTITUDE_TEXT: 6500 -> AT_OR_ABOVE 6500 ft
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

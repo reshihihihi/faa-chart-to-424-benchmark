@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 8700 on heading 22.8; right turn climb to 11000 to ALS; hold at ALS, inbound course 142, right turns, 1 minute, maintain 11000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 11000 -> AT_OR_ABOVE 11000 ft
+- ALTITUDE_TEXT: 8700 -> AT_OR_ABOVE 8700 ft
+- FIX_TEXT: ALS -> ALS
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

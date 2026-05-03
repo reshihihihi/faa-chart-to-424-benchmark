@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 2000 on heading 187.8; right turn climb to 3200 to QOGQU; hold at QOGQU, inbound course 187.8, right turns, 4 NM, maintain 3200.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3200 -> AT_OR_ABOVE 3200 ft
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- FIX_TEXT: QOGQU -> QOGQU
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

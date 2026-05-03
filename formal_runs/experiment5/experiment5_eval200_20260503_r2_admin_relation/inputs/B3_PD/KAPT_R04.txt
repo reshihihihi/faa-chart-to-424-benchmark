@@ -1,0 +1,10 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- FIX_TEXT: FARAD -> FARAD
+- FIX_TEXT: CUYAS -> CUYAS
+- 航迹/径向文字
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

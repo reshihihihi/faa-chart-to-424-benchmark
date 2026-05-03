@@ -1,0 +1,8 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 5100 -> AT_OR_ABOVE 5100 ft
+- FIX_TEXT: FUGLE -> FUGLE
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

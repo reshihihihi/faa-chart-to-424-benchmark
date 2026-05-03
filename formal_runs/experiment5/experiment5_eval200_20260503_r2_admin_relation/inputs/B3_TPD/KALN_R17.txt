@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 174.3; to OGOVE; climb to 3000 to TOY; hold at TOY, inbound course 082, right turns, 4 NM, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: OGOVE -> OGOVE
+- FIX_TEXT: TOY -> TOY
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

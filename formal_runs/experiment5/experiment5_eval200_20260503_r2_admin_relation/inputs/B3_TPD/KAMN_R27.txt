@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1900 on heading 275.3; right turn climb to 2600 to CEGEE; hold at CEGEE, inbound course 275.4, right turns, 4 NM, maintain 2600.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1900 -> AT_OR_ABOVE 1900 ft
+- ALTITUDE_TEXT: 2600 -> AT_OR_ABOVE 2600 ft
+- FIX_TEXT: CEGEE -> CEGEE
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

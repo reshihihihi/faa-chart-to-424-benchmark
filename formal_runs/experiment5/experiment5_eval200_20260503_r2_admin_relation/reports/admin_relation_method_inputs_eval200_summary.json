@@ -1,0 +1,19 @@
+{
+  "created_at_utc": "2026-05-03T12:45:10.666784+00:00",
+  "artifact_label": "eval200",
+  "chart_count": 200,
+  "profile_row_count": 600,
+  "gold_text_path": "formal_runs/experiment5/experiment5_eval200_20260503_r2_admin_relation/inputs/gold_ma_text_eval200_admin_relation.jsonl",
+  "input_manifest_path": "formal_runs/experiment5/experiment5_eval200_20260503_r2_admin_relation/manifests/roi_admin_relation_candidate_input_manifest_eval200.jsonl",
+  "admin_gold_answer": "formal_runs/experiment5/experiment5_eval200_20260503_r1/admin_artifacts/admin_gold_answer_eval200.jsonl",
+  "admin_field_review": "formal_runs/experiment5/experiment5_eval200_20260503_r1/admin_artifacts/admin_field_review_eval200.jsonl",
+  "admin_regions": "formal_runs/experiment5/experiment5_eval200_20260503_r1/admin_artifacts/admin_regions_eval200.jsonl",
+  "field_candidate_schema_validation_error_count": 0,
+  "method_payload_forbidden_key_hit_count": 0,
+  "classification": "admin_relation_oracle_textualized_inputs",
+  "notes": [
+    "The serialized method inputs omit the forbidden key names.",
+    "The text/candidates are derived from the audited admin relation graph, including final reviewed field values.",
+    "Use this run as the backend-relation diagnostic lane, not as a blind no-leak OCR lane."
+  ]
+}

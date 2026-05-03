@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 279.8; left turn climb to 3600 to BECNA; hold at BECNA, inbound course 279.9, right turns, 5 NM, maintain 3600.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3600 -> AT_OR_ABOVE 3600 ft
+- FIX_TEXT: BECNA -> BECNA
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

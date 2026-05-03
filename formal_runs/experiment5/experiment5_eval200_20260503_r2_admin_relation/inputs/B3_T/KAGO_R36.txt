@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 0.8; climb to 2000 to ZEPEX; hold at ZEPEX, inbound course 180.8, right turns, 4 NM, maintain 2000.

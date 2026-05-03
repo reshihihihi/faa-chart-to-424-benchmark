@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 229.9; climb to 2600 to JIMOP; hold at JIMOP, inbound course 49.8, right turns, 4 NM, maintain 2600.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2600 -> AT_OR_ABOVE 2600 ft
+- FIX_TEXT: JIMOP -> JIMOP
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 197.8; climb to 4000 to YODUG; hold at YODUG, inbound course 17.7, right turns, 4 NM, maintain 4000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- FIX_TEXT: YODUG -> YODUG
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

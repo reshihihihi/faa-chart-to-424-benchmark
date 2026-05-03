@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1000 on heading 179.6; right turn climb to 2000 on GQE R-147 INBOUND to GQE; hold at GQE, inbound course 122, right turns, 1 minute, maintain 2000.

@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 243.4; to SURGE; climb to 3000 to ETX; hold at ETX, inbound course 239, right turns, 4 NM, maintain 3000.

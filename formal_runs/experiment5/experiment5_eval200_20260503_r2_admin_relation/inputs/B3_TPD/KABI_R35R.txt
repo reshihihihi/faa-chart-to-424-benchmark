@@ -1,0 +1,10 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 354.8; climb to 4000 to GOFDO; hold at GOFDO, inbound course 174.8, right turns, 4 NM, maintain 4000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- FIX_TEXT: GOFDO -> GOFDO
+- detected lower detail: climb arrow

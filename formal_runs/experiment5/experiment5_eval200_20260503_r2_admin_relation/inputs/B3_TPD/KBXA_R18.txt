@@ -1,0 +1,10 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 182.8; climb to 2000 to LOCHS; hold at LOCHS, inbound course 2.8, right turns, 4 NM, maintain 2000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- FIX_TEXT: LOCHS -> LOCHS
+- detected lower detail: climb arrow

@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1400 on heading 101.2; right turn climb to 3000 direct BU; hold at BU, inbound course 038, left turns, 1 minute, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1400 -> AT_OR_ABOVE 1400 ft
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: BU -> BU
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

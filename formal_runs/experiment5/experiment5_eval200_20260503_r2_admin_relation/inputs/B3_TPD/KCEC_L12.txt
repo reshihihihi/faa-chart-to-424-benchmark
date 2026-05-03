@@ -1,0 +1,14 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 700 on heading 119.2; climb to 3000 on CEC R-345.8 INBOUND to CHIDE; hold at CHIDE, inbound course 345.8, left turns, 4 NM, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 700 -> AT_OR_ABOVE 700 ft
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: CHIDE -> CHIDE
+- NAVAID_TEXT: CEC -> type=navaid_radial, navaid=CEC, radial_deg=345.8, direction=inbound
+- RADIAL_TEXT: R-166 -> type=navaid_radial, navaid=CEC, radial_deg=345.8, direction=inbound
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

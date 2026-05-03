@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 114.3; climb to 2100 to QUNIE; hold at QUNIE, inbound course 294.5, right turns, 4 NM, maintain 2100.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2100 -> AT_OR_ABOVE 2100 ft
+- FIX_TEXT: QUNIE -> QUNIE
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

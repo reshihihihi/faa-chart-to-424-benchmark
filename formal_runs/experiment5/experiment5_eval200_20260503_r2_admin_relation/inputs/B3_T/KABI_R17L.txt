@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 174.8; climb to 4000 to IBRIF; hold at IBRIF, inbound course 354.8, right turns, 4 NM, maintain 4000.

@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 101.1; to SIMAY; climb to 5000 to WARUV; hold at WARUV, inbound course 277, right turns, 5 NM, maintain 5000.

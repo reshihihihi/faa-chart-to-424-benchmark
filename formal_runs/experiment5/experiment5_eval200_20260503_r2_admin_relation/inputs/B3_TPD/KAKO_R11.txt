@@ -1,0 +1,10 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 109.3; climb to 7500 to JUBOS; hold at JUBOS, inbound course 289.5, right turns, 7 NM, maintain 7500.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 7500 -> AT_OR_ABOVE 7500 ft
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

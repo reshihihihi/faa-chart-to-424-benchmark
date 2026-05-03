@@ -1,0 +1,11 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2500 -> AT_OR_ABOVE 2500 ft
+- FIX_TEXT: DUDDS -> DUDDS
+- NAVAID_TEXT: BAL -> type=navaid_radial, navaid=BAL, radial_deg=332.9, direction=inbound
+- RADIAL_TEXT: R-153 -> type=navaid_radial, navaid=BAL, radial_deg=332.9, direction=inbound
+- HEADING_TEXT: hdg 155° -> type=course_deg, course_deg=155.0
+- detected lower detail: climb arrow
+- detected lower detail: path segment

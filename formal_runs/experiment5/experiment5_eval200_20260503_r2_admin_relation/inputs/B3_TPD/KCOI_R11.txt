@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 114.3; to YONUS; climb to 3000 to MLB; hold at MLB, inbound course 018, left turns, 4 NM, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: MLB -> MLB
+- FIX_TEXT: YONUS -> YONUS
+- detected lower detail: fix symbol

@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 2000 on heading 30.1; right turn climb to 4000 to GVE; hold at GVE, inbound course 033, right turns, 4 NM, maintain 4000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- FIX_TEXT: GVE -> GVE
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 348.2; climb to 2100 to APTIF; hold at APTIF, inbound course 168.1, right turns, 4 NM, maintain 2100.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2100 -> AT_OR_ABOVE 2100 ft
+- FIX_TEXT: APTIF -> APTIF
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

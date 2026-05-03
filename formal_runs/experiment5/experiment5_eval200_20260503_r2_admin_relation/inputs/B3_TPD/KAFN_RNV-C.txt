@@ -1,0 +1,10 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 203; climb to 3000 to SCROB; hold at SCROB, inbound course 22.9, left turns, 4 NM, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: SCROB -> SCROB
+- detected lower detail: climb arrow

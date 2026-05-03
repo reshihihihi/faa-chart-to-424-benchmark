@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 180.8; climb to 2000 to REPAE; hold at REPAE, inbound course 0.8, right turns, 4 NM, maintain 2000.

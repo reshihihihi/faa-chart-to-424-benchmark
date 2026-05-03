@@ -1,0 +1,15 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 142.8; to YIRUC; climb to 3000 on heading 146.7 to ALVUS; hold at ALVUS, inbound course 129.3, right turns, 4 NM, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: ALVUS -> ALVUS
+- FIX_TEXT: YIRUC -> YIRUC
+- TRACK_OR_RADIAL_TEXT: 147° -> type=course_deg, course_deg=146.7
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: fix symbol

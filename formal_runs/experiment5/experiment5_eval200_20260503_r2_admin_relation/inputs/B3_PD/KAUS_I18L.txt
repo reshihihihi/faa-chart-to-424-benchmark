@@ -1,0 +1,13 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1000 -> AT_OR_ABOVE 1000 ft
+- 高度文字
+- FIX_TEXT: HOOKK -> HOOKK
+- NAVAID_TEXT: CWK -> type=navaid_radial, navaid=CWK, radial_deg=267.7, direction=inbound
+- RADIAL_TEXT: R-088 -> type=navaid_radial, navaid=CWK, radial_deg=267.7, direction=inbound
+- HEADING_TEXT: 040° -> type=course_deg, course_deg=40.0
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

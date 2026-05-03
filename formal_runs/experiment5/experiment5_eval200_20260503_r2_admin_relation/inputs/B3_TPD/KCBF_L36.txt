@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 3000 on heading 356.5; right turn climb to 3000 to OVR; hold at OVR, inbound course 284, right turns, 1 minute, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: OVR -> OVR
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: path segment

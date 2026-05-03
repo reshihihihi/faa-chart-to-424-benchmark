@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 100; climb to 4000 on AHN R-234.6 INBOUND to CONNI; hold at CONNI, inbound course 54.6, right turns, 1 minute, maintain 4000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- 高度文字
+- FIX_TEXT: CONNI -> CONNI
+- NAVAID_TEXT: AHN -> type=navaid_radial, navaid=AHN, radial_deg=234.6, direction=inbound
+- RADIAL_TEXT: R-235 -> type=navaid_radial, navaid=AHN, radial_deg=234.6, direction=inbound
+- HEADING_TEXT: hdg 100° -> type=course_deg, course_deg=100.0
+- detected lower detail: climb arrow

@@ -1,0 +1,11 @@
+{
+  "status": "not_run_model_proxy_oauth_blocked",
+  "reason": "B2a/B2b require /v1/chat/completions. A readiness probe on 2026-05-03 returned HTTP 500 with an invalidated OAuth token error, so eval200 B2 was not run to avoid recording 200 repeated service failures per method.",
+  "default_expected_base_url": "http://127.0.0.1:8080/v1",
+  "probe_error": {
+    "endpoint": "http://127.0.0.1:8080/v1/chat/completions",
+    "http_status": 500,
+    "message": "Encountered invalidated oauth token for user, failing request",
+    "type": "server_error"
+  }
+}

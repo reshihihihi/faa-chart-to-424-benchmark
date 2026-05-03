@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 308.4; climb to 5000 to FEDPI; hold at FEDPI, inbound course 128.2, right turns, 5 NM, maintain 5000.

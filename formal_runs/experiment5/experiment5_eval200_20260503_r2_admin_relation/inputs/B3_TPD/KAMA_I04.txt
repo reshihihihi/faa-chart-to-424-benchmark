@@ -1,0 +1,16 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 4100 on heading 038; climb to 5000 on PNH R-298.3 INBOUND to CAUDE; hold at CAUDE, inbound course 298.3, right turns, 1 minute, maintain 5000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 5000 -> AT_OR_ABOVE 5000 ft
+- ALTITUDE_TEXT: 4100 -> AT_OR_ABOVE 4100 ft
+- FIX_TEXT: CAUDE -> CAUDE
+- NAVAID_TEXT: PNH -> type=navaid_radial, navaid=PNH, radial_deg=298.3, direction=inbound
+- RADIAL_TEXT: R-118 -> type=navaid_radial, navaid=PNH, radial_deg=298.3, direction=inbound
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: path segment

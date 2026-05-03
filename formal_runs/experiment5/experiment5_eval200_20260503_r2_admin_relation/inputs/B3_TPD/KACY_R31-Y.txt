@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 308.1; to WEREK; climb to 2000 to KOVEC; hold at KOVEC, inbound course 37.8, right turns, 6 NM, maintain 2000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- FIX_TEXT: WEREK -> WEREK
+- FIX_TEXT: KOVEC -> KOVEC
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
