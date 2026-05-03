@@ -49,6 +49,14 @@ formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation/manifests/r
   - B3/B4 manifest：`manifests/roi_admin_relation_candidate_input_manifest_dev50.jsonl`
   - field_candidates schema validation errors：0
   - serialized method payload forbidden key hits：0
+- dev50 admin-relation 可运行部分已跑：
+  - A3_GoldText_Rules：303/1010 = 30.00%，50/50 schema-valid，0 failures。
+  - B4_TPD：303/1010 = 30.00%，50/50 schema-valid，0 failures。
+- dev50 B2/B3 的 LLM 方法被本地模型代理 OAuth 失效阻塞：
+  - `/models` 能返回模型列表。
+  - `/chat/completions` 返回 HTTP 500：`Encountered invalidated oauth token for user, failing request`。
+  - B2a/B2b 已记录 100 个 proxy failures。
+  - B3_T/B3_PD/B3_TPD 尚未运行，以免把同一个代理错误刷满结果目录。
 
 非常重要：
 
@@ -57,15 +65,9 @@ formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation/manifests/r
 - 方法输入文件本身没有 `target`、`score`、`canonical_answer`、`canonical_leg_index`、`Q_terminator`、`leg_type`、`field_review_v2` 这些禁用键。
 - 但这些输入是从后台完整人工审核关系图派生出来的，包含最终字段答案关系的文本化结果，所以它是 admin-relation diagnostic/oracle lane。
 
-下一步先让我确认输入是否正确。如果我确认，就依次运行 dev50 A3/B2/B3/B4：
+下一步先修复/刷新本地模型代理 OAuth。确认 `/chat/completions` 能成功后，继续运行 dev50 B2/B3：
 
 ```powershell
-python scripts/experiment5/run_experiment5_gold_text_a3.py `
-  --run-dir formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation `
-  --gold-text formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation/inputs/gold_ma_text_dev50_admin_relation.jsonl `
-  --limit 50 `
-  --force
-
 python scripts/experiment5/run_experiment5_gold_text_b2.py `
   --run-dir formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation `
   --gold-text formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation/inputs/gold_ma_text_dev50_admin_relation.jsonl `
@@ -83,7 +85,7 @@ python scripts/experiment5/run_experiment5_smoke_b3_b4.py `
   --run-dir formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation `
   --input-manifest formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation/manifests/roi_admin_relation_candidate_input_manifest_dev50.jsonl `
   --sample-scope experiment5_dev50_admin_relation `
-  --methods B3_T,B3_PD,B3_TPD,B4_TPD `
+  --methods B3_T,B3_PD,B3_TPD `
   --limit 50 `
   --text-model gpt-5.4 `
   --openai-base-url http://127.0.0.1:8080/v1 `
@@ -96,4 +98,3 @@ python scripts/experiment5/run_experiment5_smoke_b3_b4.py `
 - 每个方法的 schema-valid、accuracy、failure_count。
 - 哪些方法是 blind/no-leak，哪些方法是 admin-relation oracle diagnostic。
 - 若有错误，列出具体 chart_id、方法、错误文件路径。
-

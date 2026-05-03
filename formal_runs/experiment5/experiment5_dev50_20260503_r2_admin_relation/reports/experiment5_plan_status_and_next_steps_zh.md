@@ -189,24 +189,39 @@ G 系列结果：
 
 ## 4. 当前没有完成的内容
 
-### 4.1 A3/B2/B3/B4 dev50 尚未正式跑新版输入
+### 4.1 2026-05-03 运行更新
 
-已经生成并展示了新版 admin-relation 输入，但还没有在用户确认后继续跑：
+在用户要求继续后，已用新版 admin-relation 输入运行了可运行部分：
 
-- A3_GoldText_Rules
+- `A3_GoldText_Rules`：50/50 schema-valid，303/1010，30.00%，0 failures。
+- `B4_TPD`：50/50 schema-valid，303/1010，30.00%，0 failures。
+- `B2a_GoldText_LLM`：被本地模型代理 OAuth 失效阻塞，50 failures。
+- `B2b_GoldText_FieldCandidates_LLM`：被本地模型代理 OAuth 失效阻塞，50 failures。
+- `B3_T/B3_PD/B3_TPD`：同样依赖 `/chat/completions`，因本地模型代理 OAuth 失效暂未运行。
+
+详细状态见：
+
+- `formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation/reports/experiment5_dev50_admin_relation_run_status_zh.md`
+- `formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation/reports/experiment5_dev50_admin_relation_combined_summary.json`
+
+模型代理错误：
+
+```text
+HTTP 500
+Encountered invalidated oauth token for user, failing request
+```
+
+### 4.2 B3 和 B2 的 LLM 方法仍未完成
+
+仍待本地模型代理恢复后继续：
+
 - B2a_GoldText_LLM
 - B2b_GoldText_FieldCandidates_LLM
 - B3_T
 - B3_PD
 - B3_TPD
-- B4_TPD
 
-原因：
-
-- 用户要求先看输入和图片，由用户判断是否正确。
-- 当前应等待用户确认输入方向。
-
-### 4.2 eval200 的 A/B/B3/B4 尚未跑
+### 4.3 eval200 的 A/B/B3/B4 尚未跑
 
 eval200 目前只完成了 admin artifacts、gold observable 和 G 系列。
 
@@ -232,17 +247,11 @@ eval200 目前只完成了 admin artifacts、gold observable 和 G 系列。
 - B3_PD 是否应该只使用 PLAN_VIEW/DETAIL 中的框和关系，还是也允许从 field_review 派生更多文本候选。
 - B3_TPD/B4_TPD 是否接受当前 T+P+D 合并方式。
 
-### 第二步：运行 dev50 A/B/B3/B4
+### 第二步：恢复模型代理后运行 dev50 B2/B3
 
-确认后建议命令：
+`A3_GoldText_Rules` 和 `B4_TPD` 已完成。模型代理恢复后，建议先重跑 B2，再跑 B3：
 
 ```powershell
-python scripts/experiment5/run_experiment5_gold_text_a3.py `
-  --run-dir formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation `
-  --gold-text formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation/inputs/gold_ma_text_dev50_admin_relation.jsonl `
-  --limit 50 `
-  --force
-
 python scripts/experiment5/run_experiment5_gold_text_b2.py `
   --run-dir formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation `
   --gold-text formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation/inputs/gold_ma_text_dev50_admin_relation.jsonl `
@@ -260,7 +269,7 @@ python scripts/experiment5/run_experiment5_smoke_b3_b4.py `
   --run-dir formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation `
   --input-manifest formal_runs/experiment5/experiment5_dev50_20260503_r2_admin_relation/manifests/roi_admin_relation_candidate_input_manifest_dev50.jsonl `
   --sample-scope experiment5_dev50_admin_relation `
-  --methods B3_T,B3_PD,B3_TPD,B4_TPD `
+  --methods B3_T,B3_PD,B3_TPD `
   --limit 50 `
   --text-model gpt-5.4 `
   --openai-base-url http://127.0.0.1:8080/v1 `
@@ -310,4 +319,3 @@ dev50 输入和结果确认后，按同样流程生成 eval200 的 admin-relatio
 - `downloads/` 下原始后台 export。
 - admin token。
 - 无关旧临时目录，除非明确需要保留对应 smoke 运行结果。
-

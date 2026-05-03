@@ -1,0 +1,81 @@
+{
+  "created_at_utc": "2026-05-03T12:37:58.052384+00:00",
+  "methods": [
+    "B4_TPD"
+  ],
+  "chart_ids": [
+    "KACT_R01",
+    "KACT_R19",
+    "KACT_R32",
+    "KACV_R01",
+    "KACV_R14",
+    "KACV_R32",
+    "KAEX_R14",
+    "KAEX_R18",
+    "KAEX_R32",
+    "KAGS_R08-Y",
+    "KAGS_R08-Z",
+    "KAGS_R26",
+    "KAJG_R04",
+    "KAJG_R22",
+    "KAJG_R31",
+    "KAND_R05",
+    "KAND_R17",
+    "KAND_R23",
+    "KANE_R09",
+    "KANE_R18",
+    "KANE_R27",
+    "KANY_R18",
+    "KANY_R36",
+    "KAPA_R17LY",
+    "KAPA_R28",
+    "KAPA_R35R",
+    "KAPN_R01",
+    "KAPN_R07",
+    "KAPN_R19",
+    "KARR_R09",
+    "KARR_R15",
+    "KARR_R27",
+    "KART_R07",
+    "KART_R10",
+    "KART_R28",
+    "KATW_R21",
+    "KAVL_I17",
+    "KAVP_L04",
+    "KAVP_R22",
+    "KAXN_R22",
+    "KBKW_R01",
+    "KBWC_R26",
+    "KBYI_R20",
+    "KBYL_L20",
+    "KCFO_I26",
+    "KCFO_L17",
+    "KCIC_R13L",
+    "KCLL_R11",
+    "KCOE_L06",
+    "KCOE_R02"
+  ],
+  "summaries": {
+    "B4_TPD": {
+      "samples_total": 50,
+      "schema_valid": 50,
+      "samples_scored": 50,
+      "score_v2": {
+        "correct": 303,
+        "total": 1010,
+        "accuracy": 0.3
+      },
+      "score_strict": {
+        "correct": 303,
+        "total": 1010,
+        "accuracy": 0.3
+      },
+      "v2_minus_strict_correct": 0,
+      "v2_minus_strict_accuracy": 0.0,
+      "schema_retry_total": 0,
+      "uses_field_candidates": true
+    }
+  },
+  "failure_count": 0,
+  "failures": []
+}

@@ -1,0 +1,16 @@
+{
+  "created_at_utc": "2026-05-03T12:36:39.374278+00:00",
+  "methods": [
+    "B2a_GoldText_LLM",
+    "B2b_GoldText_FieldCandidates_LLM"
+  ],
+  "target_used_for_prediction": false,
+  "score_used_for_prediction": false,
+  "cifp_or_arinc_424_used_for_prediction": false,
+  "gold_observable_used_for_prediction": false,
+  "gold_ma_text_used_for_prediction": true,
+  "field_review_v2_used_for_prediction": false,
+  "forbidden_key_hits": {},
+  "hard_leakage_detected": false,
+  "note": "B2 intentionally uses gold_ma_prose; B2b field candidates are automatic regex candidates from the same gold prose."
+}

@@ -1,0 +1,93 @@
+{
+  "chart_id": "KAPN_R07",
+  "airport": "KAPN",
+  "approach_ident": "R07",
+  "chart_name": "RNAV (GPS) RWY 07",
+  "gold_ma_prose": "MISSED APPROACH: on heading 66.7; climb to 3000 to MUNCN; hold at MUNCN, inbound course 247, right turns, 4 NM, maintain 3000.",
+  "field_candidates": {
+    "schema_version": "experiment5_gold_ma_prose_field_candidates_schema_v1",
+    "chart_id": "KAPN_R07",
+    "candidate_source": "experiment5_gold_ma_prose_regex_candidates_v1",
+    "source_contract": {
+      "source": "adjudicated_gold_ma_prose",
+      "allows_canonical_target": false,
+      "allows_gold_observable_evidence": false,
+      "allows_field_review_v2": false,
+      "allows_cifp_or_arinc_424": false
+    },
+    "leakage_policy": {
+      "uses_canonical_target": false,
+      "uses_expected_value": false,
+      "uses_gold_field_to_leg_mapping": false,
+      "uses_human_evidence_provenance": false,
+      "uses_gold_observable_evidence": false,
+      "uses_cifp_or_arinc_424": false,
+      "uses_scorer_output": false,
+      "uses_field_review_v2": false
+    },
+    "field_candidates": {
+      "fix_candidates": [],
+      "altitude_candidates": [
+        {
+          "value": 3000,
+          "field_type": "altitude_ft",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "3000",
+          "source_start_char": 43,
+          "source_end_char": 47,
+          "rule_id": "gold_ma_altitude_ft_regex_v1",
+          "confidence": 0.95,
+          "notes": "climb_to_altitude_context"
+        }
+      ],
+      "turn_candidates": [],
+      "course_candidates": [],
+      "hold_candidates": [
+        {
+          "value": "MISSED APPROACH: on heading 66.7; climb to 3000 to MUNCN; hold at MUNCN, inbound course 247, right turns, 4 NM, maintain 3000.",
+          "field_type": "hold_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: on heading 66.7; climb to 3000 to MUNCN; hold at MUNCN, inbound course 247, right turns, 4 NM, maintain 3000.",
+          "source_start_char": 58,
+          "source_end_char": 62,
+          "rule_id": "gold_ma_hold_phrase_regex_v1",
+          "confidence": 0.95,
+          "notes": "hold_phrase_context_no_leg_binding"
+        }
+      ],
+      "instruction_snippets": [
+        {
+          "value": "on heading 66.7; climb to 3000 to MUNCN; hold at MUNCN, inbound course 247, right turns, 4 NM, maintain 3000.",
+          "field_type": "missed_approach_instruction",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: on heading 66.7; climb to 3000 to MUNCN; hold at MUNCN, inbound course 247, right turns, 4 NM, maintain 3000.",
+          "source_start_char": 0,
+          "source_end_char": 126,
+          "rule_id": "gold_ma_instruction_span_regex_v1",
+          "confidence": 0.99,
+          "notes": "automatic_candidate_from_adjudicated_gold_ma_prose_no_target_or_leg_binding"
+        }
+      ],
+      "track_to_fix_snippets": [],
+      "route_sequence_snippets": [],
+      "direct_phrase_snippets": [],
+      "climb_phrase_snippets": [
+        {
+          "value": "CLIMB TO 3000 TO MUNCN",
+          "field_type": "climb_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CLIMB TO 3000 TO MUNCN",
+          "source_start_char": 34,
+          "source_end_char": 56,
+          "rule_id": "gold_ma_climb_phrase_regex_v1",
+          "confidence": 0.9,
+          "notes": "climb_phrase_context"
+        }
+      ]
+    }
+  }
+}
