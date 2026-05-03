@@ -8,6 +8,8 @@
   "group1_formal_scoring_manifest": "CHANGE_ME/formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/scoring_manifest.jsonl",
   "base_vlm_model_dir": "E:/models/qwen2_vl_2b_base",
   "d1_lora_or_checkpoint_dir": "E:/experiment3/group1_sft/checkpoints/d1",
+  "chart_to_evidence_lora_or_checkpoint_dir": "E:/experiment3/group1_sft/checkpoints/CHART_TO_EVIDENCE_SFT/chart_to_evidence_sft_dev50_20260503_r1/checkpoint-final",
+  "evidence_to_semantics_lora_or_checkpoint_dir": "E:/experiment3/group1_sft/checkpoints/EVIDENCE_TO_SEMANTICS_SFT/evidence_to_semantics_sft_dev50_20260503_r1/checkpoint-final",
   "evidence_to_semantics_train_jsonl": "E:/experiment3/group1_sft/train_jsonl/evidence_to_semantics_train.jsonl",
   "evidence_to_semantics_dev_jsonl": "E:/experiment3/group1_sft/train_jsonl/evidence_to_semantics_dev.jsonl",
   "evidence_to_semantics_eval_jsonl": "E:/experiment3/group1_sft/eval_jsonl/evidence_to_semantics_formal200.jsonl",

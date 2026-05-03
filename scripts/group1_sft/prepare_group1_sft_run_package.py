@@ -37,6 +37,9 @@ DEFAULT_METHODS = [
     "TWO_STAGE_AUTO_SFT",
 ]
 
+CHART_TO_EVIDENCE_TRAIN_RUN_ID = "chart_to_evidence_sft_dev50_with_field_links_20260503_r1"
+EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID = "evidence_to_semantics_sft_dev50_with_field_links_20260503_r1"
+
 IMAGE_METHODS = {"D_BASE_SAME_BACKBONE", "D1", "CHART_TO_EVIDENCE_SFT", "TWO_STAGE_AUTO_SFT"}
 OPTIONAL_EVIDENCE_METHODS = {"EVIDENCE_TO_SEMANTICS_SFT"}
 
@@ -163,6 +166,26 @@ def formal_manifest_from_config(config: dict[str, str], *, repo_root: Path) -> P
     if value and not is_placeholder(value):
         return resolve_path(value, repo_root=repo_root)
     return repo_root / "benchmark_exports" / "derived" / "v2" / "formal300" / "manifest.json"
+
+
+def checkpoint_path_from_config(
+    config: dict[str, str],
+    *,
+    key: str,
+    method: str,
+    default_run_id: str,
+    repo_root: Path,
+) -> Path:
+    value = config.get(key)
+    if value and not is_placeholder(value):
+        return resolve_path(value, repo_root=repo_root)
+    local_root = config.get("local_root")
+    if local_root and not is_placeholder(local_root):
+        root = resolve_path(local_root, repo_root=repo_root)
+    else:
+        output_root = resolve_path(config.get("output_root", "formal_runs/group1_sft"), repo_root=repo_root)
+        root = output_root.parent
+    return root / "checkpoints" / method / default_run_id / "checkpoint-final"
 
 
 def image_path_for_sample(sample: dict[str, Any], config: dict[str, str], *, repo_root: Path) -> Path:
@@ -345,6 +368,21 @@ def method_prompt_and_schema(method: str) -> tuple[Path, Path]:
 def write_commands(run_dir: Path, config: dict[str, str], methods: list[str]) -> None:
     base_model = config.get("base_vlm_model_dir", "<BASE_MODEL_DIR>")
     adapter = config.get("d1_lora_or_checkpoint_dir", "<D1_LORA_OR_CHECKPOINT_DIR>")
+    repo_root = resolve_path(config.get("repo_root", str(ROOT)), repo_root=ROOT) if not is_placeholder(config.get("repo_root")) else ROOT
+    chart_adapter = checkpoint_path_from_config(
+        config,
+        key="chart_to_evidence_lora_or_checkpoint_dir",
+        method="CHART_TO_EVIDENCE_SFT",
+        default_run_id=CHART_TO_EVIDENCE_TRAIN_RUN_ID,
+        repo_root=repo_root,
+    )
+    semantics_adapter = checkpoint_path_from_config(
+        config,
+        key="evidence_to_semantics_lora_or_checkpoint_dir",
+        method="EVIDENCE_TO_SEMANTICS_SFT",
+        default_run_id=EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID,
+        repo_root=repo_root,
+    )
     lines = [
         "# Group 1 SFT extension run commands",
         "",
@@ -361,11 +399,31 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str]) ->
         + str(run_dir),
         "```",
         "",
+        "## 3. Train CHART_TO_EVIDENCE_SFT on the development-50 train split",
+        "",
+        "```powershell",
+        "python scripts\\group1_sft\\train_qwen2vl_group1_sft_lora.py "
+        + "--method CHART_TO_EVIDENCE_SFT "
+        + "--paths training\\group1_sft\\configs\\local_paths.local.json "
+        + f"--run-id {CHART_TO_EVIDENCE_TRAIN_RUN_ID} "
+        + "--epochs 1",
+        "```",
+        "",
+        "## 4. Train EVIDENCE_TO_SEMANTICS_SFT on the development-50 train split",
+        "",
+        "```powershell",
+        "python scripts\\group1_sft\\train_qwen2vl_group1_sft_lora.py "
+        + "--method EVIDENCE_TO_SEMANTICS_SFT "
+        + "--paths training\\group1_sft\\configs\\local_paths.local.json "
+        + f"--run-id {EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID} "
+        + "--epochs 1",
+        "```",
+        "",
     ]
     if "D_BASE_SAME_BACKBONE" in methods:
         lines.extend(
             [
-                "## 3. Same-backbone unfinetuned control",
+                "## 5. Same-backbone unfinetuned control",
                 "",
                 "```powershell",
                 "python scripts\\group1_sft\\run_qwen2vl_group1_sft_inference.py "
@@ -383,7 +441,7 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str]) ->
     if "D1" in methods:
         lines.extend(
             [
-                "## 4. D1 rerun with the same entry point",
+                "## 6. D1 rerun with the same entry point",
                 "",
                 "```powershell",
                 "python scripts\\group1_sft\\run_qwen2vl_group1_sft_inference.py "
@@ -402,17 +460,56 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str]) ->
     if "CHART_TO_EVIDENCE_SFT" in methods:
         lines.extend(
             [
-                "## 5. Chart-to-evidence diagnostic inference",
+                "## 7. CHART_TO_EVIDENCE_SFT inference",
                 "",
                 "```powershell",
                 "python scripts\\group1_sft\\run_qwen2vl_group1_sft_inference.py "
                 + "--method CHART_TO_EVIDENCE_SFT "
                 + f"--input-manifest {run_dir / 'CHART_TO_EVIDENCE_SFT' / 'input_manifest.jsonl'} "
                 + f"--model-dir {base_model} "
-                + "--adapter-checkpoint <CHART_TO_EVIDENCE_CHECKPOINT> "
+                + f"--adapter-checkpoint {chart_adapter} "
                 + "--prompt training\\group1_sft\\prompts\\chart_to_evidence.zh.md "
                 + "--json-schema training\\group1_sft\\manifests\\evidence_record.schema.json "
                 + f"--output-root {run_dir / 'CHART_TO_EVIDENCE_SFT'}",
+                "```",
+                "",
+            ]
+        )
+    if "EVIDENCE_TO_SEMANTICS_SFT" in methods:
+        lines.extend(
+            [
+                "## 8. EVIDENCE_TO_SEMANTICS_SFT inference with declared human evidence records",
+                "",
+                "```powershell",
+                "python scripts\\group1_sft\\run_qwen2vl_group1_sft_text_inference.py "
+                + "--method EVIDENCE_TO_SEMANTICS_SFT "
+                + f"--input-manifest {run_dir / 'EVIDENCE_TO_SEMANTICS_SFT' / 'input_manifest.jsonl'} "
+                + f"--model-dir {base_model} "
+                + f"--adapter-checkpoint {semantics_adapter} "
+                + "--json-schema training\\group1_sft\\manifests\\evidence_questionnaire.schema.json "
+                + f"--scoring-manifest {run_dir / 'scoring_manifest.jsonl'} "
+                + f"--output-root {run_dir / 'EVIDENCE_TO_SEMANTICS_SFT'}",
+                "```",
+                "",
+            ]
+        )
+    if "TWO_STAGE_AUTO_SFT" in methods:
+        lines.extend(
+            [
+                "## 9. TWO_STAGE_AUTO_SFT full automatic two-stage inference",
+                "",
+                "```powershell",
+                "python scripts\\group1_sft\\run_group1_sft_two_stage_auto.py "
+                + f"--input-manifest {run_dir / 'TWO_STAGE_AUTO_SFT' / 'input_manifest.jsonl'} "
+                + f"--model-dir {base_model} "
+                + f"--chart-to-evidence-adapter-checkpoint {chart_adapter} "
+                + f"--evidence-to-semantics-adapter-checkpoint {semantics_adapter} "
+                + "--chart-to-evidence-prompt training\\group1_sft\\prompts\\chart_to_evidence.zh.md "
+                + "--evidence-to-semantics-prompt training\\group1_sft\\prompts\\evidence_to_questionnaire.zh.md "
+                + "--evidence-schema training\\group1_sft\\manifests\\evidence_record.schema.json "
+                + "--questionnaire-schema training\\group1_sft\\manifests\\evidence_questionnaire.schema.json "
+                + f"--scoring-manifest {run_dir / 'scoring_manifest.jsonl'} "
+                + f"--output-root {run_dir / 'TWO_STAGE_AUTO_SFT'}",
                 "```",
                 "",
             ]
@@ -423,7 +520,8 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str]) ->
             "",
             "- Do not pass target JSON, score files, raw 424 records, or other method predictions to inference.",
             "- `scoring_manifest.jsonl` is for post-prediction scoring only.",
-            "- `EVIDENCE_TO_SEMANTICS_SFT` needs a separate evidence-record text runner or training harness; this package only audits its eval JSONL boundary.",
+            "- `EVIDENCE_TO_SEMANTICS_SFT` uses declared human evidence records and must be reported as diagnostic/oracle second-stage input.",
+            "- `TWO_STAGE_AUTO_SFT` uses only the automatically generated evidence record from its first stage at inference time.",
             "",
         ]
     )
@@ -554,12 +652,36 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
     d1_checkpoint = config.get("d1_lora_or_checkpoint_dir")
     if "D1" in methods and (is_placeholder(d1_checkpoint) or not resolve_path(str(d1_checkpoint), repo_root=repo_root).exists()):
         blockers.append({"method": "D1", "blocker": "d1_lora_or_checkpoint_dir_missing", "path": d1_checkpoint})
-    if "TWO_STAGE_AUTO_SFT" in methods:
+    chart_checkpoint = checkpoint_path_from_config(
+        config,
+        key="chart_to_evidence_lora_or_checkpoint_dir",
+        method="CHART_TO_EVIDENCE_SFT",
+        default_run_id=CHART_TO_EVIDENCE_TRAIN_RUN_ID,
+        repo_root=repo_root,
+    )
+    semantics_checkpoint = checkpoint_path_from_config(
+        config,
+        key="evidence_to_semantics_lora_or_checkpoint_dir",
+        method="EVIDENCE_TO_SEMANTICS_SFT",
+        default_run_id=EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID,
+        repo_root=repo_root,
+    )
+    if any(method in methods for method in ["CHART_TO_EVIDENCE_SFT", "TWO_STAGE_AUTO_SFT"]) and not chart_checkpoint.exists():
         blockers.append(
             {
-                "method": "TWO_STAGE_AUTO_SFT",
-                "blocker": "requires_chart_to_evidence_outputs_before_stage2",
-                "detail": "Run CHART_TO_EVIDENCE_SFT first, then feed its parsed evidence records to the second-stage model.",
+                "method": "CHART_TO_EVIDENCE_SFT",
+                "blocker": "chart_to_evidence_lora_or_checkpoint_dir_missing",
+                "path": str(chart_checkpoint),
+                "detail": "Train CHART_TO_EVIDENCE_SFT or set chart_to_evidence_lora_or_checkpoint_dir in local_paths.local.json.",
+            }
+        )
+    if any(method in methods for method in ["EVIDENCE_TO_SEMANTICS_SFT", "TWO_STAGE_AUTO_SFT"]) and not semantics_checkpoint.exists():
+        blockers.append(
+            {
+                "method": "EVIDENCE_TO_SEMANTICS_SFT",
+                "blocker": "evidence_to_semantics_lora_or_checkpoint_dir_missing",
+                "path": str(semantics_checkpoint),
+                "detail": "Train EVIDENCE_TO_SEMANTICS_SFT or set evidence_to_semantics_lora_or_checkpoint_dir in local_paths.local.json.",
             }
         )
 
@@ -583,6 +705,14 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
                 "path": d1_checkpoint,
                 "exists": False if is_placeholder(d1_checkpoint) else resolve_path(str(d1_checkpoint), repo_root=repo_root).exists(),
             },
+            "chart_to_evidence_lora_or_checkpoint_dir": {
+                "path": str(chart_checkpoint),
+                "exists": chart_checkpoint.exists(),
+            },
+            "evidence_to_semantics_lora_or_checkpoint_dir": {
+                "path": str(semantics_checkpoint),
+                "exists": semantics_checkpoint.exists(),
+            },
         },
         "policy": {
             "input_manifests_exclude_targets": True,
@@ -605,7 +735,7 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
     return package_manifest
 
 
-def write_preflight_markdown(path: Path, manifest: dict[str, Any]) -> None:
+def _write_preflight_markdown_legacy_unused(path: Path, manifest: dict[str, Any]) -> None:
     lines = [
         "# 实验组1 SFT 扩展 run package preflight",
         "",
@@ -632,6 +762,41 @@ def write_preflight_markdown(path: Path, manifest: dict[str, Any]) -> None:
             "- input manifests 不包含 target JSON、score、CIFP/424 原始记录或其它方法预测。",
             "- scoring manifest 只允许在预测完成后用于评分。",
             "- 人工证据方法必须在报告中标成 oracle/diagnostic second-stage SFT。",
+            "",
+        ]
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_preflight_markdown(path: Path, manifest: dict[str, Any]) -> None:
+    lines = [
+        "# 实验组 1 SFT 扩展 run package preflight",
+        "",
+        f"- run_id: `{manifest['run_id']}`",
+        f"- ready_for_remote_execution: `{manifest['ready_for_remote_execution']}`",
+        f"- blockers: `{len(manifest['blockers'])}`",
+        "",
+        "## 方法清单",
+        "",
+    ]
+    for method, report in manifest["methods"].items():
+        lines.append(f"- `{method}`: rows={report['rows']}, manifest=`{report['input_manifest']}`")
+    lines.extend(["", "## Blockers", ""])
+    if manifest["blockers"]:
+        for blocker in manifest["blockers"]:
+            lines.append(f"- `{blocker.get('method')}` / `{blocker.get('blocker')}`: {json.dumps(blocker, ensure_ascii=False)}")
+    else:
+        lines.append("- None")
+    lines.extend(
+        [
+            "",
+            "## 边界",
+            "",
+            "- input manifests 不包含 target JSON、score、CIFP/424 原始记录或其他方法预测。",
+            "- scoring manifest 只允许在预测完成后用于评分。",
+            "- `EVIDENCE_TO_SEMANTICS_SFT` 使用人工确认图上证据，报告中必须标成 diagnostic/oracle second-stage SFT。",
+            "- `TWO_STAGE_AUTO_SFT` 推理时只能使用第一阶段自动生成的证据记录。",
             "",
         ]
     )

@@ -13,6 +13,15 @@ ROOT = Path(__file__).resolve().parents[2]
 SCORER_DIR = ROOT / "scripts" / "scorers"
 sys.path.insert(0, str(SCORER_DIR))
 
+QUESTION_FIELDS = [
+    "Q_terminator",
+    "Q1_fix_ident",
+    "Q2_altitude_constraint",
+    "Q3_turn",
+    "Q4_course_or_radial",
+    "Q5_hold_params",
+]
+
 
 def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8-sig"))
@@ -58,7 +67,7 @@ def strict_json(text: str) -> dict[str, Any]:
 
 
 def dependency_versions() -> dict[str, Any]:
-    packages = ["torch", "transformers", "peft", "bitsandbytes", "Pillow", "jsonschema"]
+    packages = ["torch", "transformers", "peft", "bitsandbytes", "jsonschema"]
     versions: dict[str, Any] = {"python": sys.version}
     for package in packages:
         try:
@@ -66,15 +75,6 @@ def dependency_versions() -> dict[str, Any]:
         except importlib.metadata.PackageNotFoundError:
             versions[package] = None
     return versions
-
-
-def image_path_from_row(row: dict[str, Any]) -> Path:
-    image = row.get("image")
-    if isinstance(image, dict) and image.get("path"):
-        return repo_path(str(image["path"]))
-    if row.get("image_path"):
-        return repo_path(str(row["image_path"]))
-    raise ValueError(f"Missing image path for {row.get('sample_id') or row.get('chart_id')}")
 
 
 def load_schema_validator(schema_path: Path | None):
@@ -109,6 +109,30 @@ def load_scorer(policy_path: Path | None):
     from group1_canonical_field_scorer_v2 import load_policy, score_canonical
 
     return load_policy(policy_path), score_canonical
+
+
+def content_text(content: Any) -> str:
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        return "\n".join(str(item.get("text", "")) for item in content if isinstance(item, dict) and item.get("type") == "text")
+    raise ValueError("Unsupported text content shape")
+
+
+def messages_from_row(row: dict[str, Any]) -> list[dict[str, Any]]:
+    messages = row.get("messages")
+    if isinstance(messages, list) and messages:
+        return [messages[0]]
+    prompt_text = row.get("prompt_text")
+    if prompt_text:
+        return [{"role": "user", "content": [{"type": "text", "text": str(prompt_text)}]}]
+    evidence_record = row.get("evidence_record")
+    if evidence_record is not None:
+        prompt = row.get("prompt") or ""
+        text = str(prompt).strip()
+        text += "\n\n图上证据记录：\n" + json.dumps(evidence_record, ensure_ascii=False, separators=(",", ":"))
+        return [{"role": "user", "content": [{"type": "text", "text": text}]}]
+    raise ValueError(f"Missing text prompt for {row.get('sample_id') or row.get('chart_id')}")
 
 
 def load_model(args: argparse.Namespace):
@@ -147,35 +171,58 @@ def load_model(args: argparse.Namespace):
     return model, processor
 
 
-def build_messages(image_path: Path, prompt_text: str) -> list[dict[str, Any]]:
-    return [
-        {
-            "role": "user",
-            "content": [
-                {"type": "image", "image": str(image_path)},
-                {"type": "text", "text": prompt_text},
-            ],
-        }
-    ]
+def questionnaire_to_canonical(row: dict[str, Any], questionnaire: dict[str, Any]) -> dict[str, Any]:
+    chart_id = str(row["chart_id"])
+    approach_ident = chart_id.split("_", 1)[1] if "_" in chart_id else chart_id
+    leg_count = questionnaire.get("leg_count")
+    if isinstance(leg_count, int):
+        leg_count_answer = {"status": "present", "value": leg_count}
+    else:
+        leg_count_answer = {"status": "unknown", "value": None}
+    legs = []
+    for leg in questionnaire.get("legs", []):
+        if not isinstance(leg, dict):
+            continue
+        legs.append(
+            {
+                "leg_index": leg.get("leg_index"),
+                "answers": {
+                    field: leg.get(field, {"status": "unknown", "value": None})
+                    for field in QUESTION_FIELDS
+                },
+            }
+        )
+    return {
+        "chart_id": chart_id,
+        "procedure": {
+            "airport": str(row.get("airport") or chart_id[:4]),
+            "approach_ident": str(row.get("proc_ident") or approach_ident),
+            "chart_name": str(row.get("chart_name") or "UNKNOWN"),
+        },
+        "missed_approach": {
+            "leg_count": leg_count_answer,
+            "legs": legs,
+        },
+    }
+
+
+def processor_call(processor: Any, text: str) -> dict[str, Any]:
+    return processor(text=[text], padding=True, return_tensors="pt")
 
 
 def infer_one(
     *,
     model: Any,
     processor: Any,
-    image_path: Path,
-    prompt_text: str,
+    messages: list[dict[str, Any]],
     max_new_tokens: int,
     assistant_prefill: str,
 ) -> str:
     import torch
-    from PIL import Image
 
-    image = Image.open(image_path).convert("RGB")
-    messages = build_messages(image_path, prompt_text)
     text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
     text = text + assistant_prefill
-    inputs = processor(text=[text], images=[image], padding=True, return_tensors="pt")
+    inputs = processor_call(processor, text)
     device = next(model.parameters()).device
     inputs = {key: value.to(device) if torch.is_tensor(value) else value for key, value in inputs.items()}
     generated = model.generate(
@@ -192,12 +239,12 @@ def infer_one(
 
 def run(args: argparse.Namespace) -> dict[str, Any]:
     rows = read_jsonl(args.input_manifest, args.limit)
-    prompt_text = args.prompt.read_text(encoding="utf-8").strip()
     run_id = args.run_id or f"{args.method}_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}"
     run_dir = args.output_root / "predictions" / run_id
     if run_dir.exists() and not args.overwrite:
         raise RuntimeError(f"Prediction run directory already exists: {run_dir}")
     run_dir.mkdir(parents=True, exist_ok=args.overwrite)
+
     validator = load_schema_validator(args.json_schema)
     model, processor = load_model(args)
 
@@ -208,21 +255,19 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     for row in rows:
         sample_id = row.get("sample_id")
         chart_id = row["chart_id"]
-        image_path = image_path_from_row(row)
         item: dict[str, Any] = {
             "method": args.method,
             "sample_id": sample_id,
             "chart_id": chart_id,
-            "image_path": str(image_path),
             "score": None,
             "validation_error_count": None,
         }
         try:
+            messages = messages_from_row(row)
             text = infer_one(
                 model=model,
                 processor=processor,
-                image_path=image_path,
-                prompt_text=prompt_text,
+                messages=messages,
                 max_new_tokens=args.max_new_tokens,
                 assistant_prefill=args.assistant_prefill,
             )
@@ -236,7 +281,11 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             if errors:
                 failures.append({"sample_id": sample_id, "chart_id": chart_id, "stage": "schema_validation", "error": errors[0]})
             else:
-                valid_predictions.append({"sample_id": sample_id, "chart_id": chart_id, "parsed": parsed, "item": item})
+                canonical = questionnaire_to_canonical(row, parsed)
+                write_json(run_dir / "canonical_json" / f"{chart_id}.json", canonical)
+                valid_predictions.append(
+                    {"sample_id": sample_id, "chart_id": chart_id, "canonical": canonical, "item": item}
+                )
         except Exception as exc:  # noqa: BLE001
             err = repr(exc)
             write_text(run_dir / "errors" / f"{chart_id}.txt", err)
@@ -251,7 +300,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             chart_id = prediction["chart_id"]
             if chart_id in targets and policies is not None and score_canonical is not None:
                 target = read_json(targets[chart_id])
-                score = score_canonical(prediction["parsed"], target, chart_id=chart_id, policies=policies)
+                score = score_canonical(prediction["canonical"], target, chart_id=chart_id, policies=policies)
                 write_json(run_dir / "scores" / f"{chart_id}.json", score)
                 item = prediction["item"]
                 item["score"] = {key: score[key] for key in ["correct", "total", "accuracy"]}
@@ -260,14 +309,13 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     correct = sum(row["correct"] for row in score_rows)
     total = sum(row["total"] for row in score_rows)
     summary = {
-        "schema": "group1_sft_qwen2vl_inference_summary_v1",
+        "schema": "group1_sft_qwen2vl_text_inference_summary_v1",
         "created_at": datetime.now(timezone.utc).isoformat(),
         "run_id": run_id,
         "method_id": args.method,
         "input_manifest": str(args.input_manifest),
         "model_dir": str(args.model_dir),
         "adapter_checkpoint": str(args.adapter_checkpoint) if args.adapter_checkpoint else None,
-        "prompt": str(args.prompt),
         "json_schema": str(args.json_schema) if args.json_schema else None,
         "scoring_manifest": str(args.scoring_manifest) if args.scoring_manifest else None,
         "comparison_policy": str(args.comparison_policy) if args.scoring_manifest else None,
@@ -280,12 +328,13 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "input_boundary": {
             "target_used_for_prompt_or_parsing": False,
             "scoring_manifest_used_after_prediction_only": bool(args.scoring_manifest),
+            "inference_input": ["visible_evidence_record", "evidence_to_questionnaire_prompt"],
             "forbidden_inference_inputs": [
                 "target_json",
                 "raw_424_record",
+                "raw_cifp_record",
                 "score_file",
                 "other_method_prediction",
-                "human_answer",
             ],
         },
         "samples_total": len(rows),
@@ -302,15 +351,18 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Run Qwen2-VL inference for Group 1 SFT extension methods.")
-    parser.add_argument("--method", required=True, choices=["D_BASE_SAME_BACKBONE", "D1", "CHART_TO_EVIDENCE_SFT"])
+    parser = argparse.ArgumentParser(description="Run Qwen2-VL text inference for Group 1 evidence-to-semantics SFT.")
+    parser.add_argument("--method", required=True, choices=["EVIDENCE_TO_SEMANTICS_SFT"])
     parser.add_argument("--input-manifest", required=True, type=Path)
     parser.add_argument("--model-dir", required=True, type=Path)
-    parser.add_argument("--adapter-checkpoint", type=Path, default=None)
-    parser.add_argument("--prompt", required=True, type=Path)
-    parser.add_argument("--json-schema", type=Path, default=None)
+    parser.add_argument("--adapter-checkpoint", required=True, type=Path)
+    parser.add_argument("--json-schema", required=True, type=Path)
     parser.add_argument("--scoring-manifest", type=Path, default=None)
-    parser.add_argument("--comparison-policy", type=Path, default=ROOT / "benchmark_exports" / "derived" / "v2" / "formal300" / "targets" / "scoring_equivalence_v2" / "comparison_policy_v2.jsonl")
+    parser.add_argument(
+        "--comparison-policy",
+        type=Path,
+        default=ROOT / "benchmark_exports" / "derived" / "v2" / "formal300" / "targets" / "scoring_equivalence_v2" / "comparison_policy_v2.jsonl",
+    )
     parser.add_argument("--output-root", required=True, type=Path)
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--limit", type=int, default=None)
