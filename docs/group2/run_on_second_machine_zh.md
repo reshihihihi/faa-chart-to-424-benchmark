@@ -24,10 +24,30 @@ E:\experiment3\github_work\faa-chart-to-424-benchmark\benchmark_exports\derived\
 ## 已同步到 Git 的关键文件
 
 ```text
+scripts\group2\run_group2_group3_pilot30.py
+scripts\group2\run_group2_group3_complete19_v3.py
 scripts\group2\run_group2_group3_direct_q4_fix.py
 docs\group2\group2_new_window_handoff_zh.md
 docs\group2\direct_q4_fix_20260503_report_zh.md
 docs\group2\direct_q4_fix_20260503_audit.json
+```
+
+这三个脚本默认读取和写入 `E:\experiment3` 下的路径。如果新机器路径不同，可以设置：
+
+```powershell
+$env:EXPERIMENT3_ROOT = "D:\experiment3"
+$env:FAA_BENCH_REPO = "D:\experiment3\github_work\faa-chart-to-424-benchmark"
+$env:GROUP23_ROOT = "D:\experiment3\zu2+3"
+$env:GROUP2_EXPORT_PATH = "D:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\shujuji_annotation_export_xxx.json"
+$env:GROUP2_OVERVIEW_PATH = "D:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\admin_overview_formal300.json"
+$env:GROUP1_RUN = "D:\experiment3\github_work\faa-chart-to-424-benchmark\formal_runs\group1\group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2"
+```
+
+如果新机器仍使用 `E:\experiment3`，通常只需要设置最新人工导出的两个路径：
+
+```powershell
+$env:GROUP2_EXPORT_PATH = "E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\shujuji_annotation_export_xxx.json"
+$env:GROUP2_OVERVIEW_PATH = "E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\admin_overview_formal300.json"
 ```
 
 ## 正式全量前的判断
