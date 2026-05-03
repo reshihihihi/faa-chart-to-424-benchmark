@@ -24,3 +24,10 @@ downloads/
 # Do not commit ad hoc local runs unless explicitly registered.
 local_runs/
 
+# Group 1 SFT local machine material
+training/group1_sft/configs/local_paths.local.json
+training/group1_sft/runs/
+training/group1_sft/checkpoints/
+training/group1_sft/raw_outputs/
+training/group1_sft/parsed_predictions/
+training/group1_sft/train_jsonl/

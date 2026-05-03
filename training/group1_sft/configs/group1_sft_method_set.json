@@ -1,0 +1,51 @@
+{
+  "schema": "group1_sft_method_set_v1",
+  "methods": [
+    {
+      "method_id": "D_BASE_SAME_BACKBONE",
+      "name_zh": "同底座未微调对照",
+      "input": "完整航图图像",
+      "output": "固定格式 canonical JSON",
+      "allowed_inputs": ["chart_image"],
+      "forbidden_inputs": ["ocr_text", "target_json", "raw_424_record", "score_file", "other_method_prediction"],
+      "purpose": "判断 D1 的提升是否来自 SFT，而不是底座模型本身。"
+    },
+    {
+      "method_id": "D1",
+      "name_zh": "当前端到端 SFT 方法",
+      "input": "完整航图图像",
+      "output": "固定格式 canonical JSON",
+      "allowed_inputs": ["chart_image"],
+      "forbidden_inputs": ["ocr_text", "target_json", "raw_424_record", "score_file", "other_method_prediction"],
+      "purpose": "保留当前实验组1的主 SFT baseline。"
+    },
+    {
+      "method_id": "EVIDENCE_TO_SEMANTICS_SFT",
+      "name_zh": "人工确认图上证据到复飞程序语义 SFT",
+      "input": "人工确认图上证据记录",
+      "output": "问卷或固定格式 canonical JSON",
+      "allowed_inputs": ["human_confirmed_visible_evidence_record"],
+      "forbidden_inputs": ["target_json", "raw_424_record", "score_file", "other_method_prediction"],
+      "purpose": "诊断证据已知时，模型能否组织出复飞程序语义。"
+    },
+    {
+      "method_id": "CHART_TO_EVIDENCE_SFT",
+      "name_zh": "完整航图到图上证据记录 SFT",
+      "input": "完整航图图像",
+      "output": "图上证据记录",
+      "allowed_inputs": ["chart_image"],
+      "forbidden_inputs": ["target_json", "raw_424_record", "score_file", "canonical_json_answer"],
+      "purpose": "诊断模型能否先从航图中找到复飞相关图上证据。"
+    },
+    {
+      "method_id": "TWO_STAGE_AUTO_SFT",
+      "name_zh": "自动两阶段系统",
+      "input": "完整航图图像",
+      "output": "固定格式 canonical JSON",
+      "allowed_inputs": ["chart_image", "auto_generated_evidence_record"],
+      "forbidden_inputs": ["human_confirmed_evidence_at_inference", "target_json", "raw_424_record", "score_file"],
+      "purpose": "判断显式拆分图上证据获取和程序语义组织是否优于端到端 D1。"
+    }
+  ]
+}
+
