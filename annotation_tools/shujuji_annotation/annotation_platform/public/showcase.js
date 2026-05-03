@@ -292,9 +292,10 @@ function formatAnswer(answer) {
   if (value.hold_fix || value.inbound_course_deg || value.turn_direction) {
     return [
       value.hold_fix,
-      value.inbound_course_deg ? `inbound ${Math.round(Number(value.inbound_course_deg))} deg` : "",
-      value.turn_direction,
-      value.leg_time_min ? `${value.leg_time_min} min` : ""
+      value.inbound_course_deg != null ? `inbound ${Math.round(Number(value.inbound_course_deg))} deg` : "",
+      value.turn_direction || value.turn,
+      value.leg_time_min != null ? `${value.leg_time_min} min` : "",
+      value.leg_distance_nm != null ? `${value.leg_distance_nm} NM` : ""
     ].filter(Boolean).join(" · ");
   }
   return Object.entries(value).map(([key, item]) => `${key}=${item}`).join(", ");
@@ -397,6 +398,22 @@ function mergedSegment(segments) {
   };
 }
 
+function holdMeasureToken(answer) {
+  if (answer?.leg_time_min != null) return `T${padNumber(Number(answer.leg_time_min) * 10, 3)}`;
+  if (answer?.leg_distance_nm != null) return padNumber(Number(answer.leg_distance_nm) * 10, 4);
+  return "";
+}
+
+function holdMeasureSegment(record, answer, courseSegment) {
+  const token = holdMeasureToken(answer);
+  if (!token) return null;
+  if (courseSegment) {
+    const adjacent = String(record || "").slice(courseSegment.end, courseSegment.end + token.length);
+    if (adjacent === token) return { start: courseSegment.end, end: courseSegment.end + token.length };
+  }
+  return findToken(record, token, { from: courseSegment?.end || 60 });
+}
+
 function arincSegmentForRow(row) {
   const record = row.raw_record || rawRecordForLeg(row.canonical_leg_index);
   const answer = row.expected_answer?.value;
@@ -429,8 +446,8 @@ function arincSegmentForRow(row) {
   }
   if (row.field_name === "Q5_hold_params") {
     const course = findToken(record, padNumber(Number(answer?.inbound_course_deg) * 10, 4), { from: 54 });
-    const time = answer?.leg_time_min ? findToken(record, `T${padNumber(Number(answer.leg_time_min) * 10, 3)}`, { from: 60 }) : null;
-    const segment = mergedSegment([course, time]);
+    const measure = holdMeasureSegment(record, answer, course);
+    const segment = mergedSegment([course, measure]);
     return segment ? { ...segment, label: "HOLD" } : null;
   }
   return null;
