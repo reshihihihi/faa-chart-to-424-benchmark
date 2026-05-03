@@ -1,0 +1,174 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KANE_R18",
+  "procedure": {
+    "airport": "KANE",
+    "approach_ident": "R18",
+    "chart_name": "RNAV (GPS) RWY 18"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0581,
+        "width": 0.3548,
+        "x_center": 0.7748,
+        "y_center": 0.1397
+      },
+      "chart_id": "KANE_R18",
+      "evidence_region_id": "KANE_R18_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KANE_R18_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.496,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.458
+      },
+      "chart_id": "KANE_R18",
+      "evidence_region_id": "KANE_R18_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KANE_R18_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0543,
+        "width": 0.1413,
+        "x_center": 0.1171,
+        "y_center": 0.733
+      },
+      "chart_id": "KANE_R18",
+      "evidence_region_id": "KANE_R18_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KANE_R18_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.084,
+        "y_center": 0.7151
+      },
+      "chart_id": "KANE_R18",
+      "evidence_region_id": "KANE_R18_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 2600 -> AT_OR_ABOVE 2600 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 2600,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "2600"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0585,
+        "x_center": 0.1545,
+        "y_center": 0.715
+      },
+      "chart_id": "KANE_R18",
+      "evidence_region_id": "KANE_R18_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: RUNRR -> RUNRR",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "RUNRR",
+        "raw_text": "RUNRR"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0143,
+        "width": 0.0297,
+        "x_center": 0.0871,
+        "y_center": 0.7336
+      },
+      "chart_id": "KANE_R18",
+      "evidence_region_id": "KANE_R18_iconalign_007_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.021,
+        "width": 0.0181,
+        "x_center": 0.1045,
+        "y_center": 0.7487
+      },
+      "chart_id": "KANE_R18",
+      "evidence_region_id": "KANE_R18_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0227,
+        "width": 0.0348,
+        "x_center": 0.1529,
+        "y_center": 0.7395
+      },
+      "chart_id": "KANE_R18",
+      "evidence_region_id": "KANE_R18_iconalign_006_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

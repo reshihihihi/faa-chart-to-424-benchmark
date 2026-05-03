@@ -1,0 +1,163 @@
+                                   MOUNT CARMEL, ILLINOIS                                      AL-6159 (FAA)                                                                              22363
+
+                                             Rwy Idg  4000
+                                   APP CRS
+                                             TDZE      429                                                                        RNAV (GPS) RWY 4
+                                    043°
+                                             Apt Elev  429                                                                             MOUNT CARMEL MUNI(AJG)
+                                    RNP APCH.
+
+                                    T                                                                                                         MISSED APPROACH: Climb to
+                                         Rwy 4 helicopter visibility reduction below34 SM NA.
+                                                                                                                                              2500 direct RUOFF and hold.
+                                         For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -15°C or above 54°C.
+
+
+
+                                                 AWOS-3                                  EVANSVILLE APP CON                                              UNICOM
+                                                   134.9                                     125.6 343.7                                          122.7(CTAF)L
+
+
+
+                                                                                                                                                              4 NM
+
+
+
+
+                                                                                                                                                                        3°
+
+
+                                                                                                                                                                                    3°
+                                                                                                                                                                      04
+
+
+                                                                                                                                                                                  22
+                                                                                                                                  1028                                 RUOFF
+EC-3, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                   EC-3, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                                                                         1076
+
+
+                                                                                                                           614
+                                                                                                             QUIRE
+                                                                                                           2.6 NM to             RW04
+                                                                                                             RW04                                                           W0425N
+                                                                                                                                                                           R
+                                                                                                                                                                      SA          M
+                                                                                                                                                                  M
+                                                                                                                                 735
+                                                                                                     (FAF)                                                                   2500
+                                                                                                     POLNE
+                                                                                                 0 00
+                                                                                                 .1 °
+                                                                                               (6 3
+                                                                                                     1
+                                                                                                   2
+
+                                                                                                  4
+                                                                                                   )
+
+
+
+
+                                                                                 (IF/IAF)
+                                                                                 SURDY
+                                                                                                                                       ELEV   429                            TDZE        429
+                                                                                               °
+                                                                                              3
+                                                                                    3°
+
+
+                                                                                             2
+                                                                                            2
+                                                                                  04
+
+
+
+
+                                                                    6000
+                                                             HOLD
+                                                                                      4 NM
+                                                                                                                                         13
+
+
+
+
+                                                                    2500
+                                                                                                                                              V
+                                                                                                                                              2
+
+
+
+
+                                                                                                                                                                                              22
+                                                                                                                                                  45
+                                                                                                                                                    00                                        2
+                                                                                                                                                         X                                    V
+                                                                  VGSI and RNAV glidepath not coincident 2500 RUOFF                                          75
+                                                                                                                                                                                    0
+
+
+
+
+                                        4 NM
+                                                                                                                                                                                  10
+
+
+
+
+                                    Holding Pattern     SURDY                     (VGSI Angle 3.00/TCH 23).
+                                                                                                                                                                              X
+                                                                                                                                                                             00
+                                                                                                                                                                           40
+
+
+
+
+                                                                                    POLNE
+                                               223°                                             QUIRE
+                                    6000
+                                                                                              2.6 NM to
+                                    2500         043°             0                  2100                             *LNAV only
+                                                                   43°
+                                                                                                RW04
+                                                                                                                                                    V
+                                                                                                                                                    2
+                                                                                                         *1.5 NM to
+                                                                                                                                                                                  2
+                                                                                                                                                                                  V
+
+
+
+                                                                                                                                                                                         31
+
+
+
+
+                                                                                                             RW04                                   4
+                                         GP 3.00°                                                                     RW04
+                                          TCH 40                     2100                *1300
+                                                                    6.1 NM                  2.5 NM       1.1 NM   1.5 NM
+
+                                    CATEGORY             A                   B                       C                      D                        043°
+
+                                   LNAV/
+                                            DA                  937-134               3
+                                                                             508 (600-1 4 )                                NA
+                                   VNAV
+
+                                                                                              920-114                                         REIL Rwys 4, 13, 22 and 31 L
+                                   LNAV MDA             920-1 491 (500-1)                            1
+                                                                                                                           NA
+                                                                                                                                              MIRL Rwys 4-22 and 13-31 L
+                                                                                            491 (500-14 )
+
+
+                                   MOUNT CARMEL, ILLINOIS                                                                              MOUNT CARMEL MUNI(AJG)
+                                   Orig-C 07NOV19
+                                                                                             38°36'N-87°44'W
+                                                                                                                                  RNAV (GPS) RWY 4

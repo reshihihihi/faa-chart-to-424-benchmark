@@ -1,0 +1,182 @@
+[
+  {
+    "chart_id": "KABE_R13",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 3000 direct KOCEC and on track 084° to LIZZI and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00015R13.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to T For uncompensated Baro-VNAV systems, LNAV/VNAV NA below 3000 direct KOCEC and on A -16°C or above 54°C. For inop ALS, increase LNAV Cat C/D visibility track 084° to LIZZI and hold. to 118 SM.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 3000 direct KOCEC and on track 084° to LIZZI and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KALN_L29",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 1000 then climbing right turn to 2200 on heading 310° and on TOY VORTAC R-322 to TOPAZ INT/TOY 16 DME and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/05178IL29.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 1000",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 1000 then climbing right turn to 2200 on heading 310° and on TOY VORTAC R-322 to TOPAZ INT/TOY 16 DME and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KABY_R05",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 2000 direct UNIKE and left turn on track 291° to PZD VOR/DME and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00008R5.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 2000 T For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -7°C or direct UNIKE and left turn on track A above 54°C. For inop ALS, increase LNAV Cat D visibility to RVR 6000. A5 291° to PZD VOR/DME and hold. **RVR 1800 authorized with use of FD or AP or HUD to DA. N 48.6 122.95",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 2000 direct UNIKE and left turn on track 291° to PZD VOR/DME and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KAPC_I01L",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 500 then climbing left turn to 3200 direct SGD VORTAC and on SGD VORTAC R-230 to BURDE INT/SGD 11.3 DME and hold, continue climb-in-hold to 3200.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00281ILZ1L.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 500 then climbing MALS left turn to 3200 direct SGD VORTAC and on SGD A VORTAC R-230 to BURDE INT/SGD 11.3 DME A 4 and hold, continue climb-in-hold to 3200.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 500 then climbing left turn to 3200 direct SGD VORTAC and on SGD VORTAC R-230 to BURDE INT/SGD 11 .3 DME and hold, continue climb-in-hold to 3200.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KABE_R24",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 3000 direct SURGE and on track 266° to ETX VOR/DME and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00015R24.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 3000 direct SURGE For uncompensated Baro-VNAV systems, LNAV/VNAV and on track 266° to ETX VOR/DME and hold. A NA below -8°C or above 54°C.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 3000 direct SURGE and on track 266° to ETX VOR/DME and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KABY_R17",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 3000 direct TUPGE and on track 226° to ELMOE and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00008R17.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 3000 direct TUPGE and on track 226° to ELMOE and hold. A Baro-VNAV systems, LNAV/VNAV NA below -7°C or above 54°C.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 3000 direct TUPGE and on track 226° to ELMOE and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KABY_R23",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 3000 direct ZITIR and on track 197° to ELMOE and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00008R23.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 3000 direct ZITIR and on For uncompensated Baro-VNAV systems, LNAV/VNAV NA track 197° to ELMOE and hold. A below -7°C or above 54°C.",
+    "roi_ocr_ma_text": "APPROACH: Climb to 3000 direct ZITIR and on 97° to ELMOE and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KACK_R33",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 2500 direct CEROD and on track 258° to CLAMY and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00659R33.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 2500 direct CEROD and on track 258° to For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -12°C A or above 54°C. Rwy 33 helicopter visibility reduction below 3 CLAMY and hold.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 2500 direct CEROD and on track 258° to CLAMY and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KACY_R13-Y",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00669RY13.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 2000",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KACY_R31-Y",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 2000 direct WEREK and on track 259° to KOVEC and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00669RY31.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 2000 direct WEREK For uncompensated Baro-VNAV systems, LNAV/VNAV NA below and on track 259° to KOVEC and hold. -15°C or above 54°C.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 2000 direct WEREK and on track 259° to KOVEC and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KAFW_R34R",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 3000 direct WIGZU and on track 283° to OBLON and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/06918R34R.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to above 54°C (130°F). Circling NA east of Rwy 16L-34R. DME/DME RNP-0.3 NA. 3000 direct WIGZU and on track For inop ALS, increase LPV Cat E visibility to RVR 4000, increase LNAV/VNAV all 283° to OBLON and hold. Cats visibility to 2 SM, increase LNAV Cat E visibility to 5 18 SM.",
+    "roi_ocr_ma_text": "MALSR MISSED APPROACH: Climb to 3000 direct WIGZU and on track A3 283° to OBLON and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KAGC_R10",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 3100 direct LENLE and on track 166° to NESTO and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00326R10.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 3100 direct T For uncompensated Baro-VNAV systems, LNAV/VNAV NA below LENLE and on track 166° to NESTO and hold. A -16°C or above 54°C. Circling Rwy 13 NA at night.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 3100 direct LENLE and on track 166° to NESTO and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KAGC_R28",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in-hold to 3000.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/00326R28.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 3000 direct MESIE and on For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -16°C or above 197° track to AGC VOR/DME and hold, continue climb-in- for inop ALS increase LNAV/VNAV all Cats to RVR 4500. Circling Rwy 13 NA at night. hold to 3000.",
+    "roi_ocr_ma_text": "MALS MISSED APPROACH Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME and hold, continue climb-in- hold to 3000.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KAKH_R03",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 3200 direct SAVKE and via 289° track to HIVSI and 202° track to GAFFE and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/06081R3.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 3200 direct T If local altimeter setting not received, use Charlotte Douglas Intl SAVKE and via 289° track to HIVSI and altimeter setting and increase all DAs/MDAs 40 feet. 202° track to GAFFE and hold. Inoperative table does not apply.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 3200 direct SAVKE and via 289° track to HIVSI and 202° track to GAFFE and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KAAA_R03",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 2700 direct PIMKE and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/05697R3.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to 2700 direct PIMKE and hold. setting. Rwy 3 helicopter visibility reduction below34 SM NA.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 2700 direct PIMKE and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KAAA_R21",
+    "gold_ma_prose": "MISSED APPROACH: Climbing left turn to 2700 direct PIMKE and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/05697R21.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climbing left turn to 2700 direct PIMKE and hold. setting. Rwy 21 helicopter visibility reduction below34 SM NA.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climbing left turn to 2700 direct PIMKE and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KAAF_R06",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 3000 direct ONBOE and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/05600R6.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to A received, use ECP altimeter setting and increase all MDAs 140 feet and LNAV visibility 3000 direct ONBOE and hold. Cat C/D 38SM, and Circling visibility Cat C/D 12 SM. Straight-in Rwy 6 NA at night, Circling Rwy 6, 18, 24, 32, 36 NA at night.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 3000 direct ONBOE and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KAAF_R14",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/05600R14.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb 3 to 500 then climbing left turn to 3000 direct ONBOE and 1 hold, continue climb-in-hold to 3000.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KAAF_R24",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/05600R24.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: Climb to A Rwy 24 helicopter visibility reduction below 1 SM NA. Straight-in Rwy 24 NA at night, 600 then climbing right turn to Circling Rwy 6, 18, 24, 32, 36 NA at night. When local altimeter setting not received, use 3 3000 direct ASVOY and hold, ECP altimeter setting and increase all MDAs 140 feet and LNAV visibility Cat C/D 8 SM, continue climb-in-hold to 3000.",
+    "roi_ocr_ma_text": "MISSED APPROACH: Climb to 600 then climbing right turn to 3000 direct ASVOY and hold, continue climb-in-hold to 3000.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  },
+  {
+    "chart_id": "KAAS_R05",
+    "gold_ma_prose": "MISSED APPROACH: Climb to 3000 direct DOODA and hold.",
+    "pdf_url": "https://aeronav.faa.gov/d-tpp/2604/05210R5.PDF",
+    "pdf_text_candidate_raw": "MISSED APPROACH: T Climb to 3000 direct DOODA and hold. systems, LNAV/VNAV NA below -16°C or above 54°C.",
+    "roi_ocr_ma_text": "MISSED APPROACH: ed Baro-VNAV Climb to 3000 direct DOODA and hold.",
+    "adjudication_basis": "FAA PDF text layer plus MA_TEXT ROI OCR cross-check; excluded target/score/canonical/field_review.",
+    "review_status": "adjudicated"
+  }
+]

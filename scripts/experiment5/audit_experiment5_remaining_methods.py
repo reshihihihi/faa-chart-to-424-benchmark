@@ -193,14 +193,59 @@ def audit_annotations(latest: dict[str, dict[str, Any]], chart_ids: list[str]) -
     }
 
 
-def build_method_readiness(gold_ma_status: dict[str, Any], gold_obs_status: dict[str, Any]) -> dict[str, Any]:
+def build_method_readiness(
+    gold_ma_status: dict[str, Any],
+    gold_obs_status: dict[str, Any],
+    *,
+    run_dir: Path,
+) -> dict[str, Any]:
     gold_ma_ready = gold_ma_status["filled_count"] == gold_ma_status["rows"] and gold_ma_status["rows"] > 0
     gold_obs_ready = gold_obs_status["filled_count"] == gold_obs_status["rows"] and gold_obs_status["rows"] > 0
+    a3_summary = run_dir / "reports" / "a3_gold_text_summary.json"
+    a3_completed = False
+    if a3_summary.exists():
+        try:
+            summary = json.loads(a3_summary.read_text(encoding="utf-8"))
+            a3_completed = (
+                summary.get("method") == "A3_GoldText_Rules"
+                and summary.get("samples_total") == gold_ma_status["rows"]
+                and summary.get("schema_valid") == summary.get("samples_total")
+                and summary.get("failure_count", 0) == 0
+            )
+        except json.JSONDecodeError:
+            a3_completed = False
+    b2_summary = run_dir / "reports" / "b2_gold_text_summary.json"
+    completed_b2_methods: set[str] = set()
+    if b2_summary.exists():
+        try:
+            summary = json.loads(b2_summary.read_text(encoding="utf-8"))
+            if summary.get("failure_count", 0) == 0:
+                for method, item in (summary.get("summaries") or {}).items():
+                    if (
+                        method in {"B2a_GoldText_LLM", "B2b_GoldText_FieldCandidates_LLM"}
+                        and item.get("samples_total") == gold_ma_status["rows"]
+                        and item.get("schema_valid") == item.get("samples_total")
+                    ):
+                        completed_b2_methods.add(method)
+        except json.JSONDecodeError:
+            completed_b2_methods = set()
     return {
         "A3_GoldText_Rules": {
-            "status": "blocked",
+            "status": (
+                "completed_smoke20_candidate_rules_formal_claim_needs_rule_review"
+                if a3_completed
+                else "blocked"
+                if not gold_ma_ready
+                else "ready_after_rule_registry_review"
+            ),
             "required_input": "adjudicated gold_ma_prose only",
-            "reason": "gold_ma_text template is not completed" if not gold_ma_ready else "rule_registry still requires formal review",
+            "reason": (
+                "A3 smoke run completed; rule_registry still requires formal review before formal claim"
+                if a3_completed
+                else "gold_ma_text template is not completed"
+                if not gold_ma_ready
+                else "gold text exists; rule_registry still requires formal review before formal claim"
+            ),
             "must_not_use": [
                 "field_review_v2",
                 "canonical_answer",
@@ -211,15 +256,39 @@ def build_method_readiness(gold_ma_status: dict[str, Any], gold_obs_status: dict
             ],
         },
         "B2a_GoldText_LLM": {
-            "status": "blocked" if not gold_ma_ready else "ready_after_prompt_freeze",
+            "status": (
+                "completed_smoke20"
+                if "B2a_GoldText_LLM" in completed_b2_methods
+                else "blocked"
+                if not gold_ma_ready
+                else "ready_after_prompt_freeze"
+            ),
             "required_input": "adjudicated gold_ma_prose only",
-            "reason": "gold_ma_text template is not completed" if not gold_ma_ready else "gold text exists",
+            "reason": (
+                "B2a smoke run completed"
+                if "B2a_GoldText_LLM" in completed_b2_methods
+                else "gold_ma_text template is not completed"
+                if not gold_ma_ready
+                else "gold text exists"
+            ),
             "must_not_use": ["field_review_v2", "canonical target", "score", "candidate_mappings"],
         },
         "B2b_GoldText_FieldCandidates_LLM": {
-            "status": "blocked" if not gold_ma_ready else "ready_after_candidate_scope_freeze",
+            "status": (
+                "completed_smoke20"
+                if "B2b_GoldText_FieldCandidates_LLM" in completed_b2_methods
+                else "blocked"
+                if not gold_ma_ready
+                else "ready_after_candidate_scope_freeze"
+            ),
             "required_input": "adjudicated gold_ma_prose + automatic field candidates",
-            "reason": "gold_ma_text template is not completed" if not gold_ma_ready else "gold text exists",
+            "reason": (
+                "B2b smoke run completed"
+                if "B2b_GoldText_FieldCandidates_LLM" in completed_b2_methods
+                else "gold_ma_text template is not completed"
+                if not gold_ma_ready
+                else "gold text exists"
+            ),
             "must_not_use": ["field_review_v2", "canonical target", "support_mode", "human decision"],
         },
         "B3_T": {"status": "completed_smoke20_r4", "required_input": "MA_TEXT ROI OCR + automatic candidates"},
@@ -254,6 +323,14 @@ def build_method_readiness(gold_ma_status: dict[str, Any], gold_obs_status: dict
 
 
 def render_markdown(audit: dict[str, Any]) -> str:
+    annotation_audit = audit["annotation_audit"]
+    annotation_status = annotation_audit.get("status", "available")
+    a3_status = audit["method_readiness"]["A3_GoldText_Rules"]["status"]
+    a3_completed = str(a3_status).startswith("completed")
+    b2_completed = all(
+        str(audit["method_readiness"][method]["status"]).startswith("completed")
+        for method in ["B2a_GoldText_LLM", "B2b_GoldText_FieldCandidates_LLM"]
+    )
     lines = [
         "# 实验组5剩余方法输入合规审计",
         "",
@@ -263,8 +340,17 @@ def render_markdown(audit: dict[str, Any]) -> str:
         "",
         "## 结论",
         "",
-        "- 已经可以合法执行并已跑通：`B3_T`、`B3_TPD`、`B3_PD`、`B4_TPD`。",
-        "- 现在不能直接执行：`A3`、`B2a`、`B2b`、`G0`、`G1`、`G2`、`G3`。",
+        "- 已经可以合法执行并已跑通：`B3_T`、`B3_TPD`、`B3_PD`、`B4_TPD`。"
+        + ("`A3_GoldText_Rules` 也已完成 smoke20 candidate run。" if a3_completed else "")
+        + ("`B2a_GoldText_LLM` / `B2b_GoldText_FieldCandidates_LLM` 也已完成 smoke20 run。" if b2_completed else ""),
+        "- 现在不能直接执行："
+        + (
+            "`G0`、`G1`、`G2`、`G3`。"
+            if b2_completed
+            else "`B2a`、`B2b`、`G0`、`G1`、`G2`、`G3`。"
+            if a3_completed
+            else "`A3`、`B2a`、`B2b`、`G0`、`G1`、`G2`、`G3`。"
+        ),
         "- 原因不是没有标注文件，而是现有标注导出属于字段级 evidence review，里面混有 `canonical_answer`、`canonical_leg_index`、`Q_terminator/leg_type`、`support_mode` 等方法输入禁用项。",
         "- 因此不能把这些字段审查记录直接当作 gold MA text 或 gold observable 输入；否则会把答案结构带给方法，破坏实验组5的 oracle 诊断边界。",
         "",
@@ -285,12 +371,13 @@ def render_markdown(audit: dict[str, Any]) -> str:
         "",
         "## 标注导出中发现了什么",
         "",
-        f"- smoke20 中有最新 submission 的样本: {audit['annotation_audit']['latest_submission_chart_count']} / {len(audit['chart_ids'])}",
-        f"- 字段审查记录总数: {audit['annotation_audit']['total_field_reviews']}",
-        f"- 非空 region OCR 数量: {audit['annotation_audit']['nonempty_region_ocr_count']}",
-        f"- 如果直接作为方法输入会命中的禁用字段: `{audit['annotation_audit']['prohibited_payload_hits_if_used_as_method_input']}`",
+        f"- annotation audit status: `{annotation_status}`",
+        f"- smoke20 中有最新 submission 的样本: {annotation_audit.get('latest_submission_chart_count', 0)} / {len(audit['chart_ids'])}",
+        f"- 字段审查记录总数: {annotation_audit.get('total_field_reviews', 'unknown_missing_export')}",
+        f"- 非空 region OCR 数量: {annotation_audit.get('nonempty_region_ocr_count', 'unknown_missing_export')}",
+        f"- 如果直接作为方法输入会命中的禁用字段: `{annotation_audit.get('prohibited_payload_hits_if_used_as_method_input', {})}`",
         "",
-        "这说明标注导出对实验组2/3分析很有价值，但不能原样喂给实验组5的 A3/B2/G 方法。",
+        "这说明标注导出对实验组2/3分析很有价值，但不能原样喂给实验组5的 A3/B2/G 方法。若 annotation export 缺失，本节只保留方法边界判断，不能复现字段审查计数。",
         "",
         "## 方法 readiness",
         "",
@@ -306,7 +393,7 @@ def render_markdown(audit: dict[str, Any]) -> str:
             "",
             "## 下一步",
             "",
-            "1. 先把 `gold_ma_text_smoke20_template.jsonl` 按航图人工填写为纯 MA prose；完成后再跑 A3/B2a/B2b。",
+            "1. `gold_ma_text_smoke20_template.jsonl` 已填写；A3/B2 已跑通。",
             "2. 单独建立符合 schema 的 `gold_observable_smoke20.jsonl`，只写可观察事实和显式缺失，不写 canonical answer 或 target leg index；完成后再跑 G0/G1/G3。",
             "3. 在跑 G1/G3 前审查并冻结 `rule_registry.yaml`，明确哪些规则属于 direct fill、convention default、424-derived 程序语义。",
             "4. 已跑通的 B3/B4 层可以先用于 smoke 诊断报告，但正式结论仍需要扩展到 formal200 或冻结的 diagnostic subset。",
@@ -323,12 +410,14 @@ def main() -> int:
     parser.add_argument("--gold-ma-template", type=Path, default=GOLD_MA_TEMPLATE)
     parser.add_argument("--gold-observable-template", type=Path, default=GOLD_OBSERVABLE_TEMPLATE)
     parser.add_argument("--run-dir", type=Path, required=True)
+    parser.add_argument("--report-prefix", default="experiment5_remaining_methods_input_audit")
     args = parser.parse_args()
 
     chart_ids = [row["chart_id"] for row in read_jsonl(args.smoke_manifest)]
     gold_ma_rows = read_jsonl(args.gold_ma_template)
     gold_obs_rows = read_jsonl(args.gold_observable_template)
-    latest = latest_submissions(args.annotation_export, chart_ids)
+    annotation_export_exists = args.annotation_export.exists()
+    latest = latest_submissions(args.annotation_export, chart_ids) if annotation_export_exists else {}
     gold_ma_status = template_status(
         gold_ma_rows,
         "gold_ma_prose",
@@ -339,16 +428,24 @@ def main() -> int:
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "chart_ids": chart_ids,
         "annotation_export": str(args.annotation_export),
+        "annotation_export_exists": annotation_export_exists,
         "annotation_export_sha256": sha256_file(args.annotation_export),
         "smoke_manifest": str(args.smoke_manifest),
         "smoke_manifest_sha256": sha256_file(args.smoke_manifest),
         "gold_ma_text_template": gold_ma_status,
         "gold_observable_template": gold_obs_status,
-        "annotation_audit": audit_annotations(latest, chart_ids),
-        "method_readiness": build_method_readiness(gold_ma_status, gold_obs_status),
+        "annotation_audit": audit_annotations(latest, chart_ids)
+        if annotation_export_exists
+        else {
+            "status": "blocked_missing_annotation_export",
+            "latest_submission_chart_count": 0,
+            "missing_latest_submission_chart_ids": chart_ids,
+            "note": "Annotation export is required only to reproduce the prior field-review audit; template readiness can still be checked.",
+        },
+        "method_readiness": build_method_readiness(gold_ma_status, gold_obs_status, run_dir=args.run_dir),
     }
-    write_json(args.run_dir / "reports" / "experiment5_remaining_methods_input_audit.json", audit)
-    write_text(args.run_dir / "reports" / "experiment5_remaining_methods_input_audit_zh.md", render_markdown(audit))
+    write_json(args.run_dir / "reports" / f"{args.report_prefix}.json", audit)
+    write_text(args.run_dir / "reports" / f"{args.report_prefix}_zh.md", render_markdown(audit))
     print(json.dumps(audit["method_readiness"], ensure_ascii=False, indent=2))
     return 0
 

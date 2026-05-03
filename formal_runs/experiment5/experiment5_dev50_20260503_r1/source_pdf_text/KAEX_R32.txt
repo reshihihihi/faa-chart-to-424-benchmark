@@ -1,0 +1,165 @@
+                                   ALEXANDRIA, LOUISIANA                                                              AL-13 (FAA)                                                                    25163
+
+                                        WAAS                                           Rwy Ldg 9352
+                                    CH 50110
+                                                           APP CRS
+                                                                                       TDZE        89                                                  RNAV (GPS) RWY 32
+                                                                321°                                                                                                  ALEXANDRIA INTL(AEX)
+                                        W32A                                           Apt Elev    89
+                                   RNP APCH-GPS.
+                                                                                                                                                                  MISSED APPROACH: Climb to 3000
+                                    T    Rwy 32 helicopter visibility reduction below34 SM NA. Baro-VNAV NA below -15°C.
+                                                                                                                                                                  direct EBYAJ WP and hold.
+                                    A    When R-3801A-B active, RADAR required.
+
+                                         ASOS                            POLK APP CON                           ALEXANDRIA TOWER                                 GND CON                    CLNC DEL
+
+                                        123.975                       125.4              254.8                 127.35 (CTAF) 269.2                            121.9 372.0                    121.9
+
+                                                                                                                                                                                 W322
+                                                 14
+
+
+
+
+                                                                                                                                                                                R    5N
+                                                                                                                                                                           SA          M
+                                                   1°
+
+
+
+
+                                                                                                                                                                       M
+                                           32
+
+
+
+
+                                   4 NM                              EBYAJ
+                                             1°
+
+
+
+
+                                                                                                                                                                                    2800
+SC-4, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                             SC-4, 16 APR 2026 to 14 MAY 2026
+                                                                                                                 252
+
+                                                                                                  116
+                                                                                                               193
+                                                                                                                               493
+                                                                                                               RW32
+                                                                                                    236
+                                                                                                                                           649
+
+                                                                                                           268
+                                                                                                                              368
+                                                                                                           (FAF)
+                                                                                                                                                              (IAF)
+                                                                                                          AJBOJ                     688
+                                                                                                                                                             OTQAB              Procedure NA for arrivals
+                                                                                                                                                                                at MUSHE
+                                                                                                                                17
+                                                                                                                                  00
+                                                                                                                              326)
+
+
+
+
+                                                                                                                                                                                via V566 Eastbound.
+                                                                     R-3801 A-B                                                                       00
+                                                                                                                          (
+                                                                                                                                     1°
+
+
+
+
+                                                                                                                                                    20 31°
+                                                                                                                                                      2 )                                2
+                                                                                                                                                        5
+                                                                                                                                                        (                                 000
+                                                                                                                                                                                         29       MUSHE
+                                                                                                                                                                                           0°
+                                                                                                                                                                                       (
+                                                                                                                                                                                       10
+                                    ELEV         89                  D        TDZE          89                                   (IF)                                                    .3)
+                                                                                                                               MEJVE
+
+
+                                                                                                        3000        EBYAJ        VGSI and RNAV glidepath not coincident.                      Procedure
+                                   14
+                                                                                                                                 (VGSI Angle 3.00/TCH 80).                                      Turn
+                                                                                                                                                                                       MEJVE     NA
+                                             P                           18
+                                                                                                                                                       AJBOJ
+                                                                               P
+                                        A5
+                                                                                                                      1.2 NM to
+                                                                                                                                                                                           2000
+                                                                               X 150
+
+
+
+
+                                                                                                                        RW32
+                                                        93
+
+
+
+
+                                                                                                                                                                         21°
+                                                          52
+
+
+
+
+                                                                                                                                                                        3
+                                                                          7001
+                                                           X
+                                                               15
+
+
+
+
+                                                                                                                 RW32
+                                                                 0
+
+
+
+
+                                                                                                                                                                                             GP 3.00°
+                                                                                                                                                                 1700
+                                                                                       WR
+                                                                                       T                                                                                                      TCH 55
+
+                                                                                                                     1.2 NM               3.6 NM                       6 NM
+                                                                 P
+                                                                                                    CATEGORY                    A                      B                        C                D
+                                                                                  P
+                                                                 36
+                                                                                       32           LPV        DA                                  340/50        251 (300-1)
+
+                                                                                                    LNAV/                                                                 1
+                                                                                                          DA                                       460/60        371 (400-14 )
+                                                                                                    VNAV
+                                                                          321°
+                                                                                                                                                                        520-114              520-112
+                                    TDZL Rwy 14                                                     LNAV MDA                  520/55 431 (500-1)                               1                    1
+                                                                                                                                                                      431 (500-14 )        431 (500-1 2 )
+                                    REIL Rwys 18, 32 and 36
+                                                                                                                          540-1                      560-1                  3
+                                                                                                                                                                        700-14               860-212
+                                    HIRL Rwys 18-36 and 14-32                                       CIRCLING
+                                                                                                                       451 (500-1)                 471 (500-1)                 3
+                                                                                                                                                                      611 (700-1 4 )       771 (800-212 )
+
+                                   ALEXANDRIA, LOUISIANA
+                                                                                                                                                                      ALEXANDRIA INTL(AEX)
+                                   Amdt 1D 05SEP24
+                                                                                                                  31°20'N-92°33'W
+                                                                                                                                                       RNAV (GPS) RWY 32

@@ -1,0 +1,207 @@
+                                   APPLETON, WISCONSIN                                                        AL-5216 (FAA)                                                                     25219
+
+                                         WAAS                                Rwy Ldg         8002
+                                   CH     93517
+                                                               APP CRS
+                                                                             TDZE             879
+                                                                                                                                              RNAV (GPS) RWY 21
+                                                                208°
+                                         W21A                                Apt Elev         918                                                             APPLETON INTL(ATW)
+                                   RNP APCH - GPS.
+
+                                    T                                                                                                            MISSED APPROACH:Climb to
+                                                       For uncompensated Baro-VNAV systems,
+                                    A                                                                                                            2900 direct APIXE and hold.
+                                                       LNAV/VNAV NA below -16°C or above 47°C.
+
+
+                                              ATIS                   GREEN BAY APP CON                      APPLETON TOWER                       GND CON                            UNICOM
+                                          127.15                             126.3 338.2                       119.6(CTAF)L                        121.7                            122.95
+
+
+
+
+                                                                                                                          4 NM
+                                                                                                                                                         6000
+                                                                                                                                                 HOLD
+                                                                                                                                                         2700
+
+
+
+
+                                                                                                                                 8°
+
+                                                                                                                                        8°
+                                                                                                                27
+                                                                                                   (IAF)          00
+
+
+
+
+                                                                                                                               02
+
+                                                                                                                                      20
+                                                                                                                    No
+                                                                                                   TIDME         11   PT
+                                                                                                                   8°                        (IF/IAF)
+                                                                                                                 (
+                                                                                                                 5)                          ASIGE
+                                                                                                                                          27
+                                                                                                                                            00
+                                                                                                                                              N
+                                                                                                                                           29 oP
+                                                                                                                                             8° T
+                                                                                                                            8°
+                                                                                                                          20 0
+
+                                                                                                                                           (
+                                                                                                                                           5)
+                                                                                                                         0
+                                                                                                                       27
+
+
+                                                                                                                          6    )
+EC-3, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                        EC-3, 16 APR 2026 to 14 MAY 2026
+                                                                                                                          (
+
+
+
+
+                                                                                                                                                     (IAF)                           3100
+                                                                                                                                                  WUPON                             291°
+                                                                                                                                                                                   (
+                                                                                                                                                                                   25
+                                                                                                                             (FAF)                                                   .2)
+                                                                                                                          SEMOE
+                                                                                                                                                                                                RABEE
+
+
+
+                                                                                                                     TUCNY
+                                                                                                                  1.6 NM to
+                                    MISSED APCH FIX                                                                  RW21
+                                                                                                   RW21
+                                                                                                              1010
+                                     APIXE
+                                                                                                                                                                                    W2125N
+                                                                                                                                                                                   R
+                                                                                                                                                                              SA          M
+                                                      8°
+
+
+
+
+                                                                                                                                                                          M
+                                            8°
+
+                                                    20
+                                          02
+
+
+
+
+                                                                                                                                                                                     3100
+                                                         4 NM
+
+                                   ELEV       918                D   TDZE 879
+
+
+
+                                                                                    208°
+
+                                                                         21                   2900      APIXE     VGSI and RNAV glidepath not coincident
+                                                                                                                                                                                       4 NM
+                                                                                                                  (VGSI Angle 3.00/TCH 47).
+                                                                                                                                                                                   Holding Pattern
+                                                                         P
+                                                                                                                                SEMOE                          ASIGE
+
+
+                                                                                                                                   2700
+                                                                                                           TUCNY
+                                                                                                                                                                              028°           6000
+                                    12
+
+
+
+
+                                                                                                        1.6 NM to                                    208°
+                                          P
+
+
+
+
+                                              65
+                                                02                                                         RW21                                                               208°           2700
+                                                  X
+                                                   15
+                                                     0                        TWR                  RW21
+                                                                                                                                             2700                                        GP 3.00°
+                                                           0
+
+
+
+
+                                                                                                               1440
+                                                         15
+
+
+
+
+                                                                                                                                                                                            TCH 50
+                                                                         0.
+                                                       X
+
+
+
+
+                                                                          9%                            1.6           3.9 NM                     6 NM
+                                                    03
+
+
+
+
+                                                                               UP
+                                                                                        30
+                                                  80
+
+
+
+
+                                                                                             CATEGORY                 A                      B                  C                           D
+                                                                               P
+
+
+
+
+                                                                                                                                              3                  3
+                                              P
+                                                                                   A5        LPV     DA                                   1129- 4       250 (300- 4   )
+
+
+                                                                                             LNAV/                                          1                    1
+                                                  A5
+                                                                                                   DA                                  1261-18          382 (400-1 8 )
+                                                                                             VNAV
+                                         3
+                                                                                             LNAV MDA                1280-1 401 (400-1)                           1
+                                                                                                                                                             1280-1                         1
+                                                                                                                                                                                   401 (400-1 8 )
+                                                                                                                                                                   8
+
+                                   REIL Rwys 12 and 21 L
+                                                                                                                 1340-1                1380-1                1400-112                  1480-2
+                                   HIRL Rwys 12-30 and 3-21 L                                CIRCLING
+                                                                                                                                                                   1
+                                                                                                                422 (500-1)           462 (500-1)         482 (500-1 2 )              562 (600-2)
+
+                                   APPLETON, WISCONSIN
+                                                                                                                                                              APPLETON INTL(ATW)
+                                   Amdt 2F 28DEC23
+                                                                                                           44°15'N-88°31'W
+                                                                                                                                              RNAV (GPS) RWY 21

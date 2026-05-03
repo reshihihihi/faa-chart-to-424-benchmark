@@ -1,0 +1,187 @@
+                                   ALBANY, GEORGIA                                                  AL-8 (FAA)
+                                                                                                                                                                                 25219
+                                        WAAS                   Rwy Ldg  6601
+                                   CH 78000
+                                                  APP CRS
+                                                               TDZE      196                                                      RNAV (GPS) RWY 5
+                                                    047°       Apt Elev                                                       SOUTHWEST GEORGIA RGNL (ABY)
+                                        W05A                             196
+                                   RNP APCH.
+                                                                                                                          MALSR       MISSED APPROACH: Climb to 2000
+                                    T For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -7°C or
+                                                                                                                                      direct UNIKE and left turn on track
+                                    A   above 54°C. For inop ALS, increase LNAV Cat D visibility to RVR 6000.             A5
+                                                                                                                                      291° to PZD VOR/DME and hold.
+                                        **RVR 1800 authorized with use of FD or AP or HUD to DA.
+                                             ATIS             JACKSONVILLE CENTER             ALBANY TOWER                      GND CON                            UNICOM
+                                           133.05               125.75 363.075             120.25 (CTAF)L 336.4                121.9 348.6                          122.95
+
+
+                                                                                           PECAN
+                                                                                            PZD
+                                     Procedure NA for arrival at PZD VOR/DME
+                                     on V35-159 northbound.
+                                                                                              1°
+                                                                                            06       1°
+                                                                                                   24                         291               UNIKE
+                                                                                                                                 °
+                                                                                                                              (
+                                                                                                                              9.5)
+                                                                                              4 NM
+                                                                                     21 0
+                                                                                       3°
+                                                                                        0
+
+
+                                                                                       )
+                                                                                      22
+
+
+                                                                                    15
+                                                                                    (
+
+
+
+
+                                                                                                             319              RW05
+SE-4, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                          SE-4, 16 APR 2026 to 14 MAY 2026
+                                                                                                           (FAF)
+                                                         (IAF)                                                                                                     W0525N
+                                                                                                           ZITIR                                                  R
+                                                        JIPVO             2                                                                                  SA          M
+                                                                                         0 200
+                                                                                         .2 °
+
+
+
+
+                                                                           2                                                                             M
+                                                                        1 0
+                                                                                       (6 47
+
+
+
+
+                                                                         3 0
+                                                                                           2
+
+
+                                                                                           )
+
+
+
+
+                                                                       (5 7°                                                                                       2600
+                                                                         )
+
+
+                                                                          (IF)
+                                                                         NOGPE
+                                                                                    22
+                                                                                     34
+                                                                                      (
+
+
+                                                                                      00
+                                                                                      5.
+                                                                                        5°
+                                                                                         9)
+
+
+
+
+                                                                                                                                     ELEV   196                D      TDZE 196
+                                                                                                   (IAF)
+                                                                                               ELMOE
+                                                                                                                                                                                  3
+                                                                                                                                                                                 2
+
+
+
+
+                                                                                                                                            17
+                                           VGSI and RNAV glidepath not coincident           2000      UNIKE                    PZD                                               P
+                                                                                                                                                 V
+                                                        (VGSI Angle 3.00/TCH 55).
+                                                                                                                    tr
+                                                                                                                   291°
+                                                                                                                                                                            0
+
+
+
+
+                                                  NOGPE                 ZITIR
+                                                                                                                                                                           5
+                                                                                                                                                                          1
+                                                                                                                                                                      X
+                                                                                                                                                520
+
+
+
+
+                                                                                                                                                                      1
+
+
+
+
+                                                                                                                                                         TWR
+                                                                                                                                                                     0
+
+
+
+
+                                                                        2200
+                                                                                                                    *LNAV only.
+                                                                                                                                                                    6
+                                                                                                                                                                   6
+                                                                                                                                                   0X
+
+
+
+
+                                                                                            *1 NM to
+                                              2200
+                                                                                                                                                   150
+
+
+
+
+                                                         047°                                 RW05
+                                                                                                         RW05
+                                    GP 3.00°               2200                                                                             P
+                                     TCH 60
+                                                                                                                                       A5
+
+                                                              6.2 NM                5 NM            1 NM
+                                                                                                                                             5
+                                                                                                                                                          V
+
+                                    CATEGORY              A                     B                    C                    D                                   35
+
+                                                                                                     1
+                                   LPV DA **                              396/24 200 (200- )          2
+
+
+                                                                                                                                       047°
+                                   LNAV/
+                                             DA                           635/50           439 (500-1)
+                                   VNAV
+
+                                                                                                                    580/50                                         HIRL Rwy 5-23 L
+                                   LNAV MDA                      580/24 384 (400-12 )                                                                             MIRL Rwy 17-35 L
+                                                                                                                   384 (400-1)
+                                                                                                                                                                          REIL Rwy 35 L
+                                                       640-1              660-1               940-214               940-212
+                                   CIRCLING
+                                                    444 (500-1)         464 (500-1)          744 (800-214 )        744 (800-212 )                             REIL Rwys 17 and 23
+
+                                   ALBANY, GEORGIA                                                                            SOUTHWEST GEORGIA RGNL (ABY)
+                                   Amdt 1D 26MAR20
+                                                                                              31°32'N-84°12'W
+                                                                                                                                  RNAV (GPS) RWY 5
+

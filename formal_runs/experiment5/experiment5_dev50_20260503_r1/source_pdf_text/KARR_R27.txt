@@ -1,0 +1,182 @@
+                                   CHICAGO/AURORA, ILLINOIS                                                        AL-5103 (FAA)                                                                          25275
+                                     WAAS                                           Rwy Ldg  6460
+                                   CH 48822
+                                                          APP CRS
+                                                                                    TDZE      707                                                   RNAV (GPS) RWY 27
+                                                              270°
+                                     W27A                                           Apt Elev  712                                                                       AURORA MUNI(ARR)
+                                   RNP APCH - GPS.
+                                                                                                                                                                              MISSED APPROACH:
+                                    T                                                                                                                                         Climb to 2700 direct
+                                              For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -16°C or above 54°C.
+                                                                                                                                                                              TOBBY and hold.
+
+
+                                                          ATIS                                CHICAGO APP CON                         AURORA TOWER                                GND CON
+                                                    125.85                                         133.5 349.0                         120.6 (CTAF)L                                   121.7
+
+
+
+                                                                                                                                                          DUPAGE
+                                                                                                                                                           DPA
+
+
+
+
+                                                                                                                                                               2 37 )
+                                                                                                                                                                5
+                                                                                                                                                                 0 °
+                                                                                                                                                                 1 .8
+
+                                                                                                                                                                  0
+                                                                                                                                                                   (9
+                                                                                                                                                                                                         10000
+                                                                                                                                                                                                  HOLD
+                                                                                                                                                                                                          2500
+                                                                                                                                                  (FAF)                         (IF/IAF)
+                                                                                                                                   819            KAREY                         HOGIE
+                                                TOBBY                                                                    RW27                                   2300
+                                                                                                                                                                270°                                270°
+                                     090°
+                                                                                                                                                                 7
+                                                                                                                                                                 ()
+                                                                                                                                     NECLY                                                        090°
+                                              270°
+EC-3, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                  EC-3, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                   1.6 NM to
+                                    4 NM                                                                                             RW27                                                                4 NM
+
+
+
+
+                                                                                                                                                                                      2500 NoPT
+                                                                                                                                                                                        360°
+                                                                                                                                                                                 (
+                                                                                                                                                                                 7)
+                                               W2725N
+                                              R
+                                         SA          M
+                                                                                                                                                                                              (IAF)
+                                     M
+                                                                                                                                                                                           CIMKO
+                                                2600
+                                                                                                                                                                  04 00
+                                                                                                                                                                (8 1°
+                                                                                                                                                                    25
+
+
+                                                                                                                                                                    )
+                                                                                                                                                                  .6
+
+
+
+
+                                                                                                                       Procedure NA for arrival
+                                                                                                                       on JOT VOR/DME airway                     JOLIET
+                                    ELEV            712           D                TDZE   707                          radials 314 CW 091.                        JOT
+
+                                                                                                      2700      TOBBY
+                                                                                                                                                                                            4 NM
+                                                                                                                                                                    HOGIE        Holding Pattern
+                                    15
+                                         P                                                                                             KAREY
+                                                                    18
+                                                                       X
+                                                                                                      *LNAV only.       NECLY
+                                                                                                                                                                                                   10000
+                                             55
+
+
+
+
+                                                                                          270°                         1.6 NM to                                               090°
+                                               03
+
+
+
+
+                                                                  3198 X 75
+
+
+
+
+                                                                               P
+
+                                                                                                                         RW27              2300                                                    2500
+                                                X
+
+
+
+
+                                                                                                                                                                               270°
+                                                    10
+
+
+
+
+                                                                                                                                                          0°
+                                                                                                                *1 NM to                                 7
+                                                      0
+
+
+
+
+                                                                                                                                                        2
+                                                                                                                  RW27
+                                          P
+
+
+
+
+                                                                                              27
+
+
+
+
+                                               6501           X 100
+                                                                                                             RW27
+                                         9
+
+
+
+
+                                                                                          P
+
+
+
+
+                                                          P                                                                                                                                 GP 3.00°
+                                        A5
+                                                                  V
+                                                                                                                                                    2300
+                                                           33                 X TWR                                           1260
+                                                                                                                              *                                                               TCH 45
+                                                                      36
+                                                           A5
+                                                                                                                1 NM    0.6       3.3 NM                7 NM
+
+                                                                                                     CATEGORY                 A                     B                     C                           D
+
+                                                                                                     LPV     DA                                   907-34         200 (200-34 )
+
+                                                                                                     LNAV/
+                                                                                                           DA                                     1002-1         295 (300-1)
+                                                                                                     VNAV
+
+
+                                                                                                     LNAV MDA                                     1080-1         373 (400-1)
+                                   MIRL Rwys 18-36 L
+                                   HIRL Rwys 15-33 and 9-27 L                                                                                                       1300-112                       1320-2
+                                   REIL Rwys 15, 18, 27, and 36 L                                    CIRCLING             1200-1            488 (500-1)                     1
+                                                                                                                                                                   588 (600-1 2 )                 608 (700-2)
+
+                                   CHICAGO/AURORA, ILLINOIS
+                                                                                                                                                                        AURORA MUNI(ARR)
+                                   Amdt 1C 08SEP22
+                                                                                                                 41°46'N-88°29'W
+                                                                                                                                                    RNAV (GPS) RWY 27

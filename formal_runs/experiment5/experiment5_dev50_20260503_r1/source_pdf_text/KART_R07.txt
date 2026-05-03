@@ -1,0 +1,241 @@
+                                   WATERTOWN, NEW YORK                                                   AL-666 (FAA)                                                                       25219
+
+                                        WAAS                           Rwy Ldg 4784
+                                   CH 82510
+                                                         APP CRS
+                                                                       TDZE        319                                                        RNAV (GPS) RWY 7
+                                                            065°                   331                                                                    WATERTOWN INTL (ART)
+                                       W07A                            Apt Elev
+
+                                   RNP APCH - GPS.
+                                                                                                                                              MALSR           MISSED APPROACH: Climb to
+                                    T                  For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -20°C                                          900 then climbing left turn to
+                                                       or above 54°C. For inop ALS, increase LNAV/VNAV visibilities all Cats                  A5
+                                    A                                                                                                                         3500 direct NOYAQ and hold.
+                                                       to 138 SM and LNAV Cat C/D visibilities to 3
+                                                                                                  18 SM.
+
+                                                 ASOS                      KGTB ATIS                WHEELER-SACK APP CON                       CLNC DEL                          UNICOM
+
+                                                132.325                    119.525                  124.875          307.125                       120.8                     123.0 (CTAF) L
+                                                             ES
+                                                             A
+
+                                                           AT
+                                                          AD
+
+                                                         ST
+                                                        N
+                                                      CA
+
+
+                                                              D
+                                                            TE
+                                                            I
+                                                         UN
+
+
+
+
+                                                                                                                                              RW07
+
+
+
+                                                                                                                       (FAF)
+                                                                                                                       KRUPP
+
+                                                                                                                                    455
+NE-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                     NE-2, 16 APR 2026 to 14 MAY 2026
+                                                                                                         00
+                                                                                                       20 5°
+                                                                                                        06.9)
+                                                  15
+
+
+
+
+                                                                                   (IF/IAF)               9
+                                                                                                          (
+                                                    5°
+
+
+
+
+                                                                                   NOYAQ                                     30
+                                   30 N M
+
+
+
+
+                                                                                                                                    N
+                                                                                                                     4500            M
+                                                                                                          15
+
+
+
+
+                                                                                      5°
+                                                                                                                      15N
+                                                                                                                                          t
+                                                                                                                                          o
+
+
+
+
+                                                                                                                         M
+                                                                                    06         5°
+                                                                                                            5°
+
+
+
+
+                                                      NOYAQ
+                                                                                                                                              NO
+
+
+
+
+                                                                                             24
+                                                                                                                               t
+                                                                                                                               o
+
+
+
+
+                                                                                                                      3500
+                                     t
+                                     o
+
+
+
+
+                                                                                                                                               YAQ
+                                                                                                                                   NO
+                                                                    33
+
+
+
+
+                                                         3500                                                          NOYAQ
+                                            N
+
+
+
+
+                                                                      5°
+                                            O
+
+
+
+
+                                                                                                                                    YAQ
+
+
+
+
+                                                Y                                      4 NM
+                                                 A
+                                                  Q
+                                                      (
+                                                      No
+                                                        PT)                       6000
+                                                                           HOLD
+                                                                                  3500
+                                                                                                                             33
+                                                                                                                               5°
+
+
+
+
+                                                                                                                                                   ELEV         331          D       TDZE   319
+                                                                                                               900    3500      NOYAQ
+                                                  4 NM
+                                            Holding Pattern
+
+                                                                    NOYAQ
+
+
+                                                            245°
+                                                                                                                                                                                     25
+
+
+
+
+                                        6000                                                  KRUPP
+                                                                                                                                                                                 0
+                                                                                                                                                                               15
+                                        3500                065°                                                                                                              X
+                                                                                                                                                                                 P
+
+
+
+
+                                                                                  0                       1.4 NM to
+                                                                                   6                                                                                        99
+                                                                                                                                                          P
+
+
+
+
+                                                                                    5          2000
+                                                                                     °                      RW07                                              0.          49
+                                                                                                                                                     10
+
+
+
+
+                                                                                                                                                               3%UP                             A5
+
+                                                                                                                                                                         70
+                                                                                                                                                                                                28
+
+
+
+
+                                                                                                                       RW07                                                01X150
+                                                                                                                                                                                            P
+
+
+
+
+                                                                                                                                                                     P
+                                                                                                                                                          P
+
+
+
+
+                                            GP 3.00°                                                                                                                U
+                                                                                                                                                               3%
+                                            TCH 55                                   2000                                                                     0.
+                                                                                                                                                     7
+
+
+
+
+                                                                                  9.9 NM              3.8 NM     1.4 NM                                   A5
+
+                                    CATEGORY                       A                     B                 C                    D
+                                                                                                                                                     065°
+                                    LPV           DA                                519-12 200 (200-12 )
+
+                                    LNAV/
+                                                  DA                                   800-1 481 (500-1)
+                                    VNAV
+
+                                    LNAV MDA                      800-12              1
+                                                                              481 (500- 2 )             800-1         481 (500-1)                  REIL Rwy 25 L
+                                                                                                                                                   HIRL Rwy 7-25 L
+                                                                                                       980-134             1080-212
+                                     CIRCLING                     960-1 629 (700-1)                                                                MIRL Rwy 10-28 L
+                                                                                                    649 (700-134 )        749 (800-212 )
+
+                                   WATERTOWN, NEW YORK
+                                                                                                                                                          WATERTOWN INTL (ART)
+                                   Amdt 4 07AUG25
+                                                                                                      44°00'N-76°01'W
+                                                                                                                                              RNAV (GPS) RWY 7

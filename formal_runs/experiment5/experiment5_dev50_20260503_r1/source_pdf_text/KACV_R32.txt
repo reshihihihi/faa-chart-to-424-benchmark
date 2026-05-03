@@ -1,0 +1,308 @@
+                                   ARCATA/EUREKA, CALIFORNIA                                                           AL-519 (FAA)                                                                    25275
+
+                                     WAAS                                        Rwy Ldg 5846
+                                   CH 63108
+                                                              APP CRS
+                                                                                 TDZE         221                                                         RNAV (GPS) RWY 32
+                                                               316°
+                                     W32A                                        Apt Elev     222             CALIFORNIA REDWOOD COAST-HUMBOLDT COUNTY (ACV)
+                                    T                                                                                           MALSR
+                                                 Baro-VNAV NA. Circling NA northeast of Rwy 14-32.                                            MISSED APPROACH: Climb to 3000 direct CULDU
+                                    A
+                                                 DME/DME RNP-0.3 NA.                                                            A5            and hold.
+
+
+                                                              ASOS                                               SEATTLE CENTER                                                  UNICOM
+                                                          118.525                                             124.85 306.3                                                  123.0(CTAF)L
+
+                                        MISSED APCH FIX
+
+                                                                                                                             5700 to VOMAC
+
+
+
+
+                                                                                                                                                                  30
+                                                        13
+
+
+
+
+                                                                                                       ARCATA                  136° (18.7)
+                                   4 NM                                           HOCUT
+
+
+
+
+                                                                                                                                                                    00
+                                                          6°
+
+
+
+
+                                                                                                           ACV
+                                                 31
+
+
+
+
+                                                                CULDU
+                                                   6°
+
+
+
+
+                                                                                                            RW32
+                                                                                              57
+                                                                                                00
+
+
+
+
+                                                                                                                                          10
+                                                                                                                               648
+                                                                                                 t
+
+
+
+
+                                                                                                                                            00
+                                                                                                 o
+                                                                                              V °
+                                                                                              12 .7
+
+                                                                                               O
+                                                                                               (2
+
+                                                                                                2 )
+
+
+
+
+                                                                                                                                     ULAMY
+                                                                                                 M
+                                                                                                 1
+
+
+
+                                                                                                   A
+
+
+
+
+                                                                                                                                     5 NM to
+                                                                                                    C
+
+
+
+
+                                                                                                                                       RW32
+
+                                                                                                                                           ZUVKU
+                                                                                                                                         6.4 NM to
+                                                                                                                                            RW32
+SW-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                SW-2, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                (FAF)
+                                                                                                                              VOLEW
+
+
+
+
+                                                                                                                                                                    10
+                                                                                                                         3200                       SAWGU
+
+
+
+                                                                                                                                                                      00
+                                                                                                                      316° (2.1)
+
+
+
+
+                                                                                                                                                                                      30
+                                                                                                                                                                                        00
+                                                                                                                               3700
+                                                  W3225N                                                                     316° (3.3)                   JEBGA
+                                                 R
+                                            SA          M
+                                        M
+                                                                                                                                                          47
+                                                                                                                                                           31 )
+
+
+
+
+                                                   7200
+                                                                                                                                                              00
+                                                                                                                                                      (
+                                                                                                                                                      3.
+
+                                                                                                                                                             6°
+                                                                                                                                                        4
+
+
+
+
+                                                                                                                                                                    (IF/IAF)
+                                                                                   FORTUNA                                                                         VOMAC
+                                                                                                            5700
+                                                                                        FOT
+                                                                                                               °
+                                                                                                                                                       13
+
+
+
+
+                                                                                                            065
+                                                                                                                                                                 31
+
+
+
+
+                                                                                                              .4)
+                                                                                                                                                         6°
+
+
+
+
+                                                                                                            1
+                                                                                                            (4
+                                                                                                                                                                   6°
+
+
+
+
+                                                                                                                             10
+                                                                                                                               00
+                                                                                                                                                                        57 316
+
+
+
+
+                                    ELEV 222                     D          TDZE      221                                                             5 NM
+                                                                                                                                                                          00
+                                                                                                                                                                             (
+
+
+                                                                                                                                                                             No
+                                                                                                                                                                             9.
+                                                                                                                                                                               9)
+                                                                                                                                                                               °
+                                                                                                                                                                               PT
+
+
+
+
+                                            14                                                                                                                                        (IAF)
+                                                                                                                                                                                    YAGER
+                                                    P
+                                                                      19                         3000 CULDU VGSI and RNAV glidepath not coincident    VOMAC
+                                                                                                                                                JEBGA                                             5 NM
+                                                                                                            (VGSI Angle 3.00/TCH 43).
+                                             0.
+
+
+
+
+                                                                                                                                                                                              Holding Pattern
+                                              7%
+
+
+
+
+                                                                                                                                                          SAWGU
+                                                 UP
+
+
+
+
+                                                                                                                                            VOLEW
+                                                                                                                                    ZUVKU                                               136°
+                                                                                                 *LNAV only.             6.4 NM to
+                                                                                                                                                                                °                 5700
+                                                                                                                   ULAMY
+                                                                                                                           RW32 3200                                         316              316°
+                                                          0
+
+
+                                                               60
+
+
+
+
+                                                                                                                   5 NM to
+                                                        15
+
+
+
+
+                                                                                                           *2 NM to RW32                                                    4700
+                                                                 46
+                                                      X
+
+
+
+
+                                                                                                                                                              3700
+                                                                  X
+                                                   01
+
+
+
+
+                                                                                                             RW32
+                                                                      15
+                                                 45
+
+                                                        UP
+
+
+
+
+                                                                        0
+
+
+
+
+                                             V                                                         RW32
+                                                                                                                                  2300*
+                                                    5%
+
+
+
+
+                                                                                                                                                                                                   GP 3.00°
+                                                   0.
+
+
+
+
+                                             1                                                                               1860*      3200                                                       TCH 47
+                                                                       P
+                                                                                                            2 NM      3 NM    1.4 NM    2.8 NM      2.1 NM       3.3 NM      3.4 NM
+
+                                                                                                     CATEGORY                   A                     B                      C                     D
+                                                                            A5
+                                                                                 32                  LPV      DA                                   441/18         220 (300-12 )
+                                   CL Rwy 14 L                                                       LNAV/
+                                                                                                     VNAV
+                                                                                                                 DA                              1056-212         835 (900-212 )
+                                   TDZ/CL Rwy 32 L
+                                   MIRL Rwy 1-19                                                                             900/24               900/40
+                                                                                                     LNAV MDA                                                              900-112 679 (700-112 )
+                                   HIRL Rwy 14-32 L                                                                      679 (700-12 )           679 (700-34 )
+                                                                                 316°
+                                   REIL Rwy 14 L                                                                                                                           900-2               900-214
+                                                                                                     CIRCLING                  900-1 678 (700-1)
+                                   REIL Rwy 1                                                                                                                            678 (700-2)          678 (700-214 )
+
+                                   ARCATA/EUREKA, CALIFORNIA
+                                                                                                              CALIFORNIA REDWOOD COAST-HUMBOLDT COUNTY (ACV)
+                                   Amdt 2A 26APR18
+                                                                                                                   40°59'N-124°07'W
+                                                                                                                                                          RNAV (GPS) RWY 32

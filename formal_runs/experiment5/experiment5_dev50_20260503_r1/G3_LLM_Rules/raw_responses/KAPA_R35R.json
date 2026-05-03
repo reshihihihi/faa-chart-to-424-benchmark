@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_12c3272a-0020-48b7-abef-5315a2e3bded",
+  "object": "chat.completion",
+  "created": 1777804731,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_7Sq9feNCNp57KNpDOmC1j17X",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAPA_R35R\",\"procedure\":{\"airport\":\"KAPA\",\"approach_ident\":\"R35R\",\"chart_name\":\"RNAV (GPS) RWY 35R\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

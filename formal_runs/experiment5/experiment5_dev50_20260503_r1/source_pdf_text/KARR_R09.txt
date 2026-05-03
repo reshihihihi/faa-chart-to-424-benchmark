@@ -1,0 +1,209 @@
+                                   CHICAGO/AURORA, ILLINOIS                                          AL-5103 (FAA)                                                                              25275
+                                     WAAS                       Rwy Ldg 6501
+                                   CH 45522
+                                                   APP CRS
+                                                                TDZE     707                                                         RNAV (GPS) RWY 9
+                                                    090°
+                                     W09A                       Apt Elev 712                                                                         AURORA MUNI(ARR)
+                                   RNP APCH - GPS.
+                                                                                                                                                MALSR                 MISSED APPROACH:
+                                    T
+                                          For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -20°C or above 54°C.                                                Climb to 2500 direct
+                                                                                                     3                                           A5
+                                          For inop ALS, increase LNAV Cat C/D visibility to 18 SM.                                                                    HOGIE and hold.
+
+
+                                                  ATIS                      CHICAGO APP CON                             AURORA TOWER                                  GND CON
+                                              125.85                            133.5 349.0                             120.6 (CTAF)L                                      121.7
+
+                                                                                                                                                                     MISSED APCH FIX
+                                                                                                   NUELG
+
+                                                                                                                                                                     HOGIE
+                                                                                    21 00
+                                                                                   9. °                  Procedure NA for arrivals at NUELG on
+                                                                                     27
+
+
+
+                                                                                                                                                                                               270°
+                                                                                      5
+                                                                                     8)
+                                                                                                         V177 northwest bound, V172 eastbound.
+                                                                                   (
+
+
+
+                                                                                                                                                                                         090°
+
+                                                                                                                                                                                               4 NM
+
+
+
+
+                                                             (IAF)
+                                                           DECAK
+                                     Procedure NA
+                                     for arrivals at
+                                                                    2700
+
+
+
+
+                                     HERVY on V6
+                                                                       170°
+
+
+
+
+                                     southwest bound.
+                                                                        (
+
+
+
+
+                                                                                       (IF/IAF)
+                                                                        5.
+EC-3, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                           EC-3, 16 APR 2026 to 14 MAY 2026
+                                                                         NoPT
+                                                                          1)
+
+
+
+
+                                                                                       TOBBY
+                                    (IAF)                                              230K
+                                   HERVY 2700NoPT
+                                                                                       2700                                  RW09
+                                           096°
+                                           (
+                                           6.9)   090°                                 090°
+                                                                                        (6)
+                                                                                                     (FAF)
+                                                                270°                               WOLFF                                                                     92
+                                                                                                                                                                          RW0  5N
+                                            10000      4NM                                                                                                           SA          M
+                                    HOLD                                        2700 NoPT                                                                        M
+                                            2700
+                                                                                010° (5.1)                                                                                    2600
+
+                                                            (IAF)
+                                                           JUGER
+                                                                    00
+                                                                   1°
+                                                                   9)
+                                                                  27
+
+
+                                                                   .
+                                                                 02
+                                                                11
+                                                                (
+
+
+
+
+                                                                           Procedure NA for arrivals at AHMED on
+                                                                           V10 southwest bound, V8 westbound.                            ELEV    712                   D               TDZE    707
+                                                   AHMED
+
+                                                                                                                      2500       HOGIE
+
+
+                                            4 NM
+                                                             TOBBY                            WOLFF                                       15
+                                        Holding Pattern
+                                                                                                                                                P
+                                                                                                                                                                             18
+                                                                                              2700                         *LNAV only.                                          X
+                                                                                                                                                    55
+                                                                                                                                                      03
+
+
+
+
+                                                                                                                                                                           3198 X 75
+
+
+
+
+                                                                                                                                                                                        P
+                                   10000            270°                                                          *1.5 NM to
+                                                                                                                                                       X
+
+
+
+
+                                                                          090°
+                                                                                                                                                           10
+
+
+
+
+                                    2700                                                                            RW09
+                                                    090°
+                                                                                                                                                             0
+
+
+
+
+                                                                                                                             RW09
+                                                                                                                                                 P
+
+
+
+
+                                                                                2700
+                                                                                                                                                                                                      27
+
+
+
+
+                                                                                                                                                      6501           X 100
+                                     GP 3.00°
+                                                                                                                                                9
+
+
+
+
+                                                                                                                                                                                                 P
+
+
+
+
+                                                                                                                                                                 P
+                                     TCH 45                                                                                                                                V
+                                                                                                                                            A5
+                                                                                                                                                                     33                X TWR
+                                                                                6 NM                     4.6 NM         1.5 NM                                                 36
+                                                                                                                                                                     A5
+                                    CATEGORY                A                      B                       C                     D
+                                                                                                                                         090°
+
+
+                                                                                   1           250 (300-12 )
+                                    LPV      DA                                 957- 2
+
+
+                                    LNAV/                                           1
+                                             DA                                 1035- 2        328 (400-12 )
+                                    VNAV
+
+                                                              1           1
+                                    LNAV MDA              1220- 2 513 (600- 2 )                          1220-1 513 (600-1)
+                                                                                                                                                                          MIRL Rwys 18-36 L
+
+                                                                                                   1300-112                1320-2                     HIRL Rwys 15-33 and 9-27 L
+                                    CIRCLING               1220-1 508 (600-1)                              1                                     REIL Rwys 15, 18, 27, and 36 L
+                                                                                                  588 (600-1 2 )         608 (700-2)
+
+                                   CHICAGO/AURORA, ILLINOIS
+                                                                                                                                                       AURORA MUNI(ARR)
+                                   Amdt 2A 08SEP22
+                                                                                                   41°46'N-88°29'W
+                                                                                                                                         RNAV (GPS) RWY 9

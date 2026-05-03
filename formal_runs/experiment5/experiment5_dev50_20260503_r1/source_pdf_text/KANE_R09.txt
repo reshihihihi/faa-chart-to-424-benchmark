@@ -1,0 +1,142 @@
+                                   MINNEAPOLIS, MINNESOTA                                          AL-5202 (FAA)                                                                            25331
+
+                                     WAAS                      Rwy Ldg     5000
+                                   CH 82312
+                                                   APP CRS
+                                                               TDZE         910                                                         RNAV (GPS) RWY 9
+                                                    089°                                                                  ANOKA COUNTY/BLAINE (JANES FLD)(ANE)
+                                     W09A                      Apt Elev     912
+                                    RNP APCH - GPS.
+
+                                    T      When local altimeter setting not received, use Crystal altimeter setting: increase LPV DA
+                                           to 1246 feet and all visibilities 18 SM; increase LNAV/VNAV DA to 1373 feet; increase                    MISSED APPROACH: Climb to
+                                           all MDA 40 feet and LNAV Cat C/D visibility18 SM and Circling Cat D visibility14 SM.                     3100 direct JUDAL and hold.
+                                           Baro-VNAV and VDP NA when using Crystal altimeter setting. For uncompensated
+                                           Baro-VNAV systems, LNAV/VNAV NA below -16°C or above 54°C.
+
+                                           ATIS                MINNEAPOLIS APP CON                      ANOKA TOWER                        GND CON                               UNICOM
+                                          120.625                 126.5 335.65                              132.4(CTAF)L                    121.85                               122.95
+
+                                      (IAF)        Procedure NA for arrivals at SODIE                                                                             MISSED APCH FIX
+                                     SODIE         on V2 northwest bound.                                                                                                               4 NM
+                                                                                                                                                                                   089°
+
+                                                  30
+                                                                                                                                                                                    269°
+                                                12 00
+                                              20 7°
+                                              (                                                                                                              JUDAL
+                                                .9)
+NC-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                      NC-1, 16 APR 2026 to 14 MAY 2026
+                                                                           (IF)              2700                                   RW09
+                                                                          HUFFR           089°
+                                                                                              (
+                                                                                              6)
+                                                                                                             (FAF)
+                                                                                                             CIRAP
+
+
+
+                                                                                                                                                                              W0925N
+                                                                                                                                                                             R
+                                                                                                                                                                 SA                 M
+                                                                                                                                                            M
+                                                                                                                                                                                 3500
+                                                               02 0
+                                                             21 °
+                                                                  0
+
+                                                                6)
+                                                                 3
+                                                               30
+
+
+                                                                .
+                                                             (
+
+
+
+
+                                                                             Procedure NA for arrivals at JONNA
+                                                                             on V171 southeast bound.
+                                                                                                                                         ELEV   912                          TDZE   910
+                                                (IAF)
+                                               JONNA
+                                                                                                                                                             18
+                                                                VGSI and RNAV glidepath not coincident               3100      JUDAL
+                                               HUFFR
+                                                                                                                                                                             V
+                                                                              (VGSI Angle 3.00/TCH 25).
+                                                                                                                                                                4855 X 100
+
+
+
+
+                                                                                                                                         089°
+                                                                                      CIRAP
+                                          3000                                                                                                                                              A5
+                                                                                                                           *LNAV only.
+                                                                                                                                                    P
+
+
+
+
+                                                                                                                                                                             5000X100
+                                                                                                                                                9
+
+
+
+
+                                                                08                    2700          *1.3 NM to
+                                                                  9
+                                                                                                                                                                                        P
+
+
+
+
+                                                                   °
+                                                                                                                                                                                                 27
+
+
+
+
+                                                                                                        RW09
+                                                                                                                                                         TWR
+                                                                                                                    RW09
+
+
+                                    GP 3.00°                          2700                                                                                   V
+
+
+                                    TCH 40                                                                                                                      36
+                                                                  6 NM                         4.2 NM            1.3 NM
+
+                                    CATEGORY               A                      B                     C                     D
+
+                                                                                  7                     7
+                                    LPV       DA                              1225- 8         315 (400-  8   )
+
+
+                                    LNAV/                                          3            3
+                                    VNAV
+                                          DA                                  1352-1 8 442 (500-1 8 )
+
+
+                                                                                                       1           1
+                                    LNAV MDA              1340-1 430 (500-1)                      1340-14 430 (500-14 )                                                      HIRL Rwy 9-27 L
+
+                                                                                                      1                                                                  MIRL Rwy 18-36 L
+                                                                                                 1460-1 2                  1580-2
+                                    CIRCLING              1400-1 488 (500-1)                             1                                              REIL Rwys 9, 18 and 36 L
+                                                                                                548 (600-1 2 )            668 (700-2)
+
+                                   MINNEAPOLIS, MINNESOTA
+                                                                                                                      ANOKA COUNTY/BLAINE (JANES FLD)(ANE)
+                                   Amdt 1A 03NOV22
+                                                                                                 45°09'N-93°13'W
+                                                                                                                                        RNAV (GPS) RWY 9

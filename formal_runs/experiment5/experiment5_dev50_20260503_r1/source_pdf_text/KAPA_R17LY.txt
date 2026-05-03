@@ -1,0 +1,201 @@
+                                   DENVER, COLORADO                                                                                  AL-5715 (FAA)                                                                  25219
+
+                                    APP CRS                            Rwy Ldg              10001
+                                                                       TDZE                  5823                                                         RNAV (RNP) Z RWY 17L
+                                     170°
+                                                                       Apt Elev              5885                                                                                           CENTENNIAL(APA)
+                                   RNP AR APCH - GPS. Authorization required. From PALZI:RF and NIKDY:RF.
+                                                                                                                                                          MISSED APPROACH: Climb to 6300 then climbing
+                                    T
+                                                          For uncompensated Baro-VNAV systems, procedure NA                                               right turn to 10400 direct HOHUM and hold,
+                                                          below -21°C or above 54°C.                                                                      continue climb-in-hold to 10400.
+
+
+                                                              ATIS                                  DENVER APP CON                 CENTENNIAL TOWER                GND CON                          CLNC DEL
+
+                                                          120.3                                     132.75 269.3                          118.9                     121.8                               128.6
+
+                                                                                                                                                                                                         W17L25N
+                                        (IAF)                                                                                                                                                           R
+                                                                                           80                                                                                                      SA           M
+                                     AAYES                                                   00                                                                                                M
+                                                                                          099                                                                            (IF)
+                                        9000                                                 °
+                                                                                          (
+                                                                                          4                                                                                                             12700
+                                                                                           .6)                                                                      LOWRE
+
+                                                                                                                                    7                              7800 210K
+                                                                                                                                     000
+                                                                                                                (IF)               099°
+                                                                                                              GRAME                (                   NIKDY
+                                                                                                                                   4.6)
+                                                                                                             8000 210K
+
+
+
+
+                                                                                                                                                                            6900
+                                                                                                                                                                            170°
+                                                                                                                                                                    (
+                                                                                                                                                                    3)
+                                                                                                                                          0
+                                                                                                                                        0                     6
+                                                                                                                                       0                       9
+                                                                                                                                      7 .5)                     0
+                                                                                                                                                             (3 0
+                                                                                                                                         (4                    )
+
+
+                                                                                                                                                                                    (FAF)
+                                                                                                                                                                                   MOSCA
+SW-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                            SW-1, 16 APR 2026 to 14 MAY 2026
+                                                                                                                         PALZI
+                                                                                                                         8000
+
+                                                                                                                                                                            170°
+                                                                                                                                                                     (
+                                                                                                                                                                     3.3)
+                                                                                                                                   8000
+                                                                                                                                   350°
+                                                                                                                            (
+                                                                                                                            3.9)
+
+
+
+
+                                                                                                                                                                                   RW17L
+                                        MISSED APCH FIX
+
+                                                                                                                          (IF)
+                                                                0°
+
+
+
+
+                                                                                                                        SPRUG
+                                                              20
+
+
+
+
+                                                                                         7 NM                            9000
+                                                                               0°
+
+
+
+
+                                   HOHUM
+                                                                             02
+
+
+
+
+                                                                                                                              9000
+
+
+
+
+                                    ELEV        5885                                       TDZE      5823
+                                                                                                                              350°
+                                                                                                                              (3.
+                                                                                                                                9)
+
+
+
+
+                                                                             170°
+
+
+                                                    17L
+                                                                                                                          (IAF)
+                                                              P                                                         NSYNC
+                                                                                                                       10000 210K
+                                                              1.
+
+
+
+
+                                          17R
+                                                               0% UP
+
+
+
+
+                                                                                                                               MOSCA        See planview for multiple IF locations. 6300            10400       HOHUM
+                                           0.
+
+
+
+
+                                                          P
+                                            9% UP
+
+
+
+
+                                                                               TWR
+                                                                                                H
+                                                                     10
+
+
+
+
+                                                                                                                                   6900
+                                                                                    P
+                                                               10001 X 100
+
+
+
+
+                                                                                        4    06
+                                                                                           0X .
+                                                                                         80     %U
+                                                                                                                 6900
+                                              7001 X 75
+
+
+
+
+                                                                                             75   P
+                                                                                                        28
+                                                                                                    P
+
+
+
+
+                                                                                                                                                        170                                              RW17L
+                                                                                                                                                           °
+                                                                  DOW N
+
+
+
+
+                                                                                                                 GP 3.00°
+                                                                             0.
+                                                                              8%
+
+
+
+
+                                                              P
+                                                                                                                  TCH 47
+                                                    35L                                                                                                         3.3 NM
+                                                              P
+                                                                                    A5                            CATEGORY                  A                  B                        C                       D
+
+                                                                         35R
+                                                                                                                 RNP 0.30 DA                              6123-78           300 (300- 7
+                                                                                                                                                                                       8   )
+
+                                    MIRL all Rwys
+                                    REIL Rwys 17R, 28, and 35L                                                                        AUTHORIZATION REQUIRED
+                                   DENVER, COLORADO
+                                                                                                                                                                                            CENTENNIAL(APA)
+                                   Orig 17APR25                                                                                    39°34'N-104°51'W
+                                                                                                                                                          RNAV (RNP) Z RWY 17L

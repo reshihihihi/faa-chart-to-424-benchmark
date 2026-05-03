@@ -1,0 +1,313 @@
+                                   NANTUCKET, MASSACHUSETTS                                                        AL-659 (FAA)                                                                  26078
+                                           WAAS
+                                                                            Rwy Ldg 4500
+                                   CH 77835
+                                                          APP CRS
+                                                                            TDZE               41                                                 RNAV (GPS) RWY 33
+                                                            329°
+                                        W33A                                Apt Elev           47                                                            NANTUCKET MEML (ACK)
+                                   RNP APCH - GPS.
+                                                                                                                                                        MISSED APPROACH: Climb to 2500
+                                       T                                                                                                                direct CEROD and on track 258° to
+                                                     For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -12°C
+                                   A                 or above 54°C. Rwy 33 helicopter visibility reduction below            3
+                                                                                                                             4   SM NA.                 CLAMY and hold.
+
+
+
+                                                ATIS                       BOSTON APP CON                        NANTUCKET TOWER                          GND CON                    UNICOM
+                                            127.5                            126.1 318.1                            118.3 (CTAF) L                          132.5                     122.95
+
+                                   MISSED APCH FIX                                                                                                                      MARCONI
+                                                                                                                  Procedure NA for arrivals at LFV
+                                                                                                                                                                          LFV
+                                       4 NM                                                                       VOR/DME on V167 northeast bound.
+                                                      70°
+                                                     2
+
+
+
+
+                                                                                                                                                               2300
+                                                                                                                                                                181°
+                                                                                                                                                                (51.
+                                                     90°
+                                                    0    CLAMY
+
+
+
+
+                                                                                                                                                                   5)
+                                                                                                         CEROD
+                                                                                                                                                                                     W3325N
+                                                                                                                                                                                    R
+                                                                                                                                                                               SA          M
+                                                                                                                        NANTUCKET                                          M
+                                                                                                                            ACK                                                      1900
+
+                                                                                  8°
+                                                                                25 )
+                                                                                                                             23 9°
+
+
+
+                                                                                   7
+NE-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                         NE-1, 16 APR 2026 to 14 MAY 2026
+                                                                                   .
+                                                                                 19
+                                                                                                                              15 .
+
+                                                                                                                               00
+
+
+
+                                                                                 (
+                                                                                                                                (
+                                                                                                                                12
+                                                                                                                                   2)
+
+
+
+
+                                                                                                                      RW33
+                                                                                                                                      125
+                                                                                                                       GADRE
+                                                                                                                       2 NM to
+                                                                                                                                                  (FAF)
+                                                                                                                        RW33                                                             (IAF)
+                                                                                                                                                  HIKSO
+                                                                                                                                                                                       EVPAW
+                                   CLAMY                                                                                                                                   T
+                                                                                                                                                                        oP              210K
+                                                                                                                                                                      N
+                                                                                                                                                  1 29
+
+
+
+
+                                                                                                                                                                     0 9°
+                                                                                                                                                   8
+                                                                                                                                                    0
+
+
+
+
+                                                      25                                                                                                            0
+                                                                                                                                                                   3 23 5)
+                                                                                                                                                     3 6)
+
+
+
+
+                                                        0
+                                                                                                                                                     0
+
+
+
+
+                                                         0                                                                                                        2        .
+                                                      12                                                                                                                 (5
+                                                                                                                                                       (
+
+
+
+
+                                                        0°
+                                                                                                                                                         °
+
+
+
+
+                                                     (
+                                                     27.3)
+                                                                                                                                                                    1
+                                                                                                                                                                     4
+                                                                                                                                                                      9
+                                                                                                                                                                       °
+                                                                                                                                                      T
+                                                                                                                                              (5 9° oP
+
+
+
+
+                                                                                                                                                                                     4 NM
+                                                                                                                                                 0 N
+
+
+
+
+                                                                                                                                                                    3
+
+
+
+
+                                           W-105A
+                                                                                                                                                    0
+
+
+
+
+                                                                                                                                                                     2
+                                                                                                                                                   0
+
+
+
+                                                                                                                                                  )
+
+
+
+
+                                                                                                                                                                      9
+                                                                                                                                                  5
+                                                                                                                                                 3
+
+
+
+
+                                                                                                                                 (IAF)
+                                                                                                                                                .5
+
+
+
+
+                                                                                                                                                                       °
+                                                                                                                                                2
+
+
+
+
+                                       ELEV         47               D     TDZE       41                                                                     (IF/IAF)
+                                                                                                                                 FARGU
+                                                                                                                                                              DUPKE                             6000
+                                                                                                                                 210K                                                HOLD
+                                                                                                                                                                                                2300
+
+
+                                                                                                   2500    CEROD                          VGSI and RNAV glidepath not coincident
+                                                                                                                             CLAMY
+                                                                                                                      tr                  (VGSI Angle 3.00/TCH 45).                     4 NM
+                                                                                   4
+
+
+
+
+                                                                           A3
+                                                                                  2
+
+
+
+
+                                                                                                                     258°                                                           Holding Pattern
+                                                                                                                                                                 DUPKE
+                                                                 1
+                                                                  5
+                                                                                                                                          HIKSO
+                                                                            P
+
+
+
+
+                                                         TWR                                                                                                               149°             6000
+                                                                                                                        GADRE
+                                                                                                                        2 NM to
+                                                                                                                                          1800
+                                                                                                                                                            29°            329°             2300
+                                                                                                                                                           3
+                                                                             4
+
+
+
+
+                                                                       0
+                                                                              5
+
+
+
+
+                                                                      5                                                  RW33
+                                                                               0
+
+
+
+
+                                                                     1
+                                                                                0
+
+
+
+
+                                                                 X
+                                                                                  X
+
+
+
+
+                                                             3                                                RW33
+                                                                                    1
+
+
+
+
+                                                            0                                                                                                                          GP 3.00°
+                                                                                     0
+
+
+
+
+                                                           3
+                                                                                      0
+
+
+
+
+                                                     P    6
+                                                %
+                                                    U
+                                                                                                                             720                    1800                                TCH 56
+                                              .3
+                                             0                                                 3
+                                                                                          P
+
+
+
+
+                                                                                              3
+                                                                                                                     2 NM        3.4 NM              6 NM
+                                                P
+
+
+
+
+                                                                                                   CATEGORY             A                     B                     C                       D
+                                           A
+                                   6
+
+
+
+
+                                            4
+                                                                                       329°
+                                                                                                   LPV      DA                                 291-34 250 (300-34 )
+
+                                                                                                   LNAV/    DA                                 301-1         260 (300-1)
+                                                                                                   VNAV
+
+                                       TDZL/RCLS Rwy 24
+                                                                                                   LNAV MDA                                    380-1         339 (400-1)
+                                       REIL Rwys 15 and 33
+                                       MIRL Rwy 15-33 L
+                                                                                                                      480-1                 500-1               720-2                 1000-3
+                                       HIRL Rwy 6-24 L                                             CIRCLING
+                                                                                                                    433 (500-1)           453 (500-1)         673 (700-2)            953 (1000-3)
+
+                                   NANTUCKET, MASSACHUSETTS
+                                                                                                                                                             NANTUCKET MEML (ACK)
+                                   Amdt 1B 19MAR26
+                                                                                                                 41°15'N-70°04'W
+                                                                                                                                                  RNAV (GPS) RWY 33
+

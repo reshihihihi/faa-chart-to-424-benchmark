@@ -1,0 +1,19 @@
+{
+  "created_at_utc": "2026-05-03T09:02:01.911996+00:00",
+  "run_id": "experiment5_dev50_20260503_r1",
+  "dev50_rows": 50,
+  "candidate_complete_count": 50,
+  "candidate_missing_count": 0,
+  "pdf_download_ok_count": 50,
+  "pdftotext_ok_count": 50,
+  "ma_region_found_count": 50,
+  "layout_fallback_count": 0,
+  "gold_ma_candidate_path": "formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_ma_text_dev50_candidate.jsonl",
+  "status": "complete_candidates_need_review",
+  "leakage_policy": {
+    "uses_admin_regions": "sanitized_bbox_only",
+    "uses_answer_side_review_structures": false,
+    "uses_procedure_database_records": false,
+    "uses_method_outputs": false
+  }
+}

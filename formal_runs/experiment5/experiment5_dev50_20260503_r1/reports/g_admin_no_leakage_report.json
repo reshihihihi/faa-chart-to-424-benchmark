@@ -1,0 +1,8 @@
+{
+  "created_at_utc": "2026-05-03T10:43:06.445361+00:00",
+  "g0_g1_oracle_answer_usage_recorded": true,
+  "g0_g1_note": "G0/G1 intentionally replay audited admin field-review relations; this is oracle diagnostic, not a blind predictor.",
+  "g3_uses_admin_gold_answer_for_prediction": false,
+  "g3_uses_field_review_for_prediction": false,
+  "g3_method_input_forbidden_key_hits": 0
+}

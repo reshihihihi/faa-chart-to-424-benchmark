@@ -1,0 +1,181 @@
+                                   FORT WORTH, TEXAS                                                              AL-6918 (FAA)                                                                     25275
+
+                                     WAAS                    11000              Rwy Ldg
+                                   CH 82324
+                                            APP CRS
+                                                    TDZE       681
+                                                                                                                                                       RNAV (GPS) RWY 34R
+                                             346°                                                                                        PEROT FLD/FORT WORTH ALLIANCE (AFW)
+                                    W34A            Apt Elev   723
+                                    T For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -8°C (18°F) or
+                                                                                                               MALSR                                                  MISSED APPROACH: Climb to
+                                      above 54°C (130°F). Circling NA east of Rwy 16L-34R. DME/DME RNP-0.3 NA.
+                                    A                                                                                                                                 3000 direct WIGZU and on track
+                                        For inop ALS, increase LPV Cat E visibility to RVR 4000, increase LNAV/VNAV all
+                                                                                                                                                             A5       283° to OBLON and hold.
+                                        Cats visibility to 2 SM, increase LNAV Cat E visibility to 5
+                                                                                                   18 SM.
+
+
+                                              ATIS                                           LONE STAR APP CON                   ALLIANCE TOWER                                     GND CON
+                                           126.925                                            118.1 306.95                       135.15 257.9                                  132.65 306.2
+
+
+                                                   12
+                                                  (  2
+                                                   31 °
+                                                     0                         OBLON
+                                                  30 K)
+                                         9 NM       2°
+
+                                                                                                     283°
+                                                                                                    (
+                                                                                                    11.
+                                                                                                      1)                     WIGZU
+SC-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                            SC-2, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                 RW34R
+
+
+
+
+                                                                                                                                            (FAF)
+                                                                                                                                            ERPIF
+                                                                                                                                                                                          34R2
+                                                                                                                                                                                        RW    5
+                                                                                                                                                                                               N
+                                                                                                                                                                                   SA           M
+                                                                                                                                                                               M
+
+
+
+
+                                                                                                                                                                                         4000
+                                                                                                                                    346°
+                                                                                                                                           2400
+                                                                                                                                 (
+                                                                                                                                 6.7)
+
+
+
+
+                                    ELEV    723               D               TDZE       681                                                          (IF)
+                                                                                                                                                  UCCOL
+
+
+                                                           16L
+                                                16R                                                  3000   WIGZU                       OBLON
+                                                                            A
+                                                                   0.
+
+
+
+
+                                                                                                                            tr                                                          UCCOL
+                                                                    4% DO
+
+
+
+
+                                                   P
+
+                                                                                                                        283°
+                                                  0.
+
+
+
+
+                                                                                                                                                         ERPIF
+                                                  DO W
+                                                   4%
+
+
+                                                                      WN
+
+
+
+
+                                                                                                                                                                                           3000
+                                                       N
+
+
+
+
+                                                                                                    *LNAV only.
+                                                       1112
+
+
+
+
+                                                                                                                                                         2400
+                                                                                                                       1.6 NM to
+                                                                        1100
+
+
+
+
+                                                                                                                       *                                                 6°
+                                                                                                                                                                        4
+                                                           5X1
+
+
+
+
+                                                                                                                        RW34R                                          3
+                                                                            0X1
+                                                              50
+
+
+
+
+                                                                                                               RW34R
+                                                                               50
+
+
+
+
+                                                                                        TWR                                                                                                     GP 3.00°
+                                                                                                                                                                      2400
+                                                              0.
+                                                               7% UP
+
+
+
+
+                                                                                                                                                                                                TCH 58
+                                                                               0.
+                                                                                7% UP
+
+
+
+
+                                                                                                                    1.6 NM               3.7 NM                       6.7 NM
+                                                                     P
+                                                                                                     CATEGORY           A                         B               C                 D              E
+                                                                                        A5
+                                                                                                    LPV     DA                                        881/18      200 (200-12 )
+                                                                     34L 4
+                                                                        3R
+                                                                                                    LNAV/                                              3                   3
+                                                                                                            DA                                    1437-14         756 (800-1 4 )
+                                                                                                    VNAV
+
+
+                                   TDZ/CL Rwys 16L and 34R                                          LNAV MDA      1240/24           559 (600-12 )                  1240/60                   1
+                                                                                                                                                                                    559 (600-14 )
+
+                                   HIRL Rwys 16L-34R                                         346°
+                                                                                                                                                                  3
+                                   and 16R-34L                                                                     1240-1                1320-1              1360-1 4          1380-2       1380-214
+                                                                                                    CIRCLING
+                                   REIL Rwys 16R and 34L                                                          517 (600-1)           597 (600-1) 637 (700-134 ) 657 (700-2) 657 (700-214 )
+
+                                   FORT WORTH, TEXAS
+                                                                                                                                         PEROT FLD/FORT WORTH ALLIANCE (AFW)
+                                   Amdt 3 29MAR18                                                              32°59'N-97°19'W
+                                                                                                                                                       RNAV (GPS) RWY 34R
+

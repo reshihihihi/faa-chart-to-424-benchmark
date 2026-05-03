@@ -1,0 +1,239 @@
+                                   ARCATA/EUREKA, CALIFORNIA                                         AL-519 (FAA)                                                                               25275
+
+                                        WAAS                         Rwy Ldg    4501
+                                    CH 63200
+                                                           APP CRS
+                                                                     TDZE        204                                                      RNAV (GPS) RWY 1
+                                                           013°
+                                        W01A                         Apt Elev    222           CALIFORNIA REDWOOD COAST-HUMBOLDT COUNTY (ACV)
+
+                                    RNP APCH - GPS.
+                                                                                                                                             MISSED APPROACH: Climb to 3200
+                                    T                                                                                                        direct HIPGI and on track 295° to
+                                                  For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -2°C
+                                    A                                                                                                        CULDU and hold.
+                                                  or above 54°C. Circling NA northeast of Rwy 14-32.
+
+
+                                                         ASOS                                       SEATTLE CENTER                                                UNICOM
+
+                                                        118.525                                    124.85 306.3                                           123.0(CTAF)L
+
+                                    MISSED APCH FIX
+
+
+
+
+                                                                                                                                          10
+                                                                                                                                            00
+                                                    13
+                                                      6°
+
+
+
+
+                                    4 NM
+                                                 31
+
+
+
+
+                                                             CULDU                                                          2
+                                                   6°
+
+
+
+
+                                                                                                                              9
+                                                                                                                          (1 5°
+                                                                                                                            1
+                                                                                                                             )
+
+
+                                                                                                                                            HIPGI
+
+
+
+
+                                                                                                                                                                                    30
+                                                                                                                                                                                      00
+SW-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                        SW-2, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                    338
+                                                                                                                     RW01
+
+
+
+
+                                                                                                                                                  10
+                                                                                                                                                    00
+                                                                                                                          (FAF)
+                                                                                                                         OGMOW
+                                                                                                         6 °
+                                                                                                         01 0
+                                                                                                      0
+                                                                                                           3
+
+
+
+
+                                                  W012
+                                                                                                    19
+
+
+
+
+                                                 R    5N
+                                                                                                              )
+
+
+
+
+                                            SA          M
+                                                                                                         (
+
+
+
+
+                                        M
+                                                  6900
+                                                                                                     (IF/IAF)
+                                                                                          3°
+
+
+
+
+                                                                                                     SEGVE                                                             000
+                                                                                                                                                                      1
+                                                                                        19
+
+                                                                                             3°
+
+
+
+
+                                                                                                                                           ELEV    222                 D        TDZE 204
+                                                                                                          NoPT for arrival at SEGVE
+                                                                                           01
+
+
+
+
+                                                                             4 NM
+                                                                                                          on V27 northbound.
+
+
+                                                                                                                                                  14
+                                                         VGSI and RNAV glidepath not coincident 3200              HIPGI           CULDU
+                                                         (VGSI Angle 3.00/TCH 48)                                          tr                               P
+                                             4 NM                                                                                                                              19
+                                                                                                                          295°
+                                                                SEGVE
+                                                                                                                                                     0.
+
+
+
+
+                                     Holding Pattern
+                                                                                                                                                      7%
+
+
+
+
+                                                                                        OGMOW
+                                                                                                                                                         UP
+
+
+
+
+                                                        193°
+                                   3000                                                                                    *LNAV only.
+                                                        013°                0            1900     *2.7 NM to
+                                                                             13                          RW01
+                                                                               °
+                                                                                                                                                                  0
+
+
+                                                                                                                                                                       60
+
+
+
+
+                                                                                                                         RW01
+                                                                                                                                                                15
+
+
+
+                                                                                                                                                                         46
+                                                                                                                                                              X
+
+
+
+
+                                                                                                                                                                           X
+                                                                                                                                                           01
+
+
+
+
+                                                                            1900
+                                                                                                                                                                              15
+                                                                                                                                                         45
+
+                                                                                                                                                                UP
+
+
+
+
+                                    GP 3.00°
+                                                                                                                                                                                0
+
+
+
+
+                                                                                                                                                    V
+                                                                                                                                                            5%
+
+
+
+
+                                    TCH 43
+                                                                                                                                                           0.
+
+
+
+
+                                                                                                                                                     1                         P
+                                                                             6 NM               2.6 NM          2.7 NM
+
+                                    CATEGORY                    A                   B                     C                     D
+                                                                                                                                                                                    A5
+                                    LPV          DA                             870-212 666 (700-212 )                                                                                     32
+                                                                                                                                                                                         CL Rwy 14 L
+                                    LNAV/
+                                                 DA                             838-212 634 (700-212 )                                             013°
+                                                                                                                                                                               TDZ/CL Rwy 32 L
+                                    VNAV
+                                                                                  1
+                                                                             1080-1                                                                                             MIRL Rwy 1-19
+                                                             1080-1                4
+                                   LNAV          MDA                                              1080-212          876 (900-212 )
+                                                                                                                                                                               HIRL Rwy 14-32 L
+                                                            876 (900-1)              1
+                                                                            876 (900-14 )
+
+
+                                                                                                  1080-212                                                                            REIL Rwy 14 L
+                                                                                                                          1080-234
+                                   CIRCLING                  1080-114 858 (900-114 )                                                                                                     REIL Rwy 1
+                                                                                                858 (900-212 )           858 (900-234 )
+
+                                   ARCATA/EUREKA, CALIFORNIA
+                                                                                               CALIFORNIA REDWOOD COAST-HUMBOLDT COUNTY (ACV)
+                                   Amdt 2B 20APR23
+                                                                                                  40°59'N-124°07'W
+                                                                                                                                          RNAV (GPS) RWY 1

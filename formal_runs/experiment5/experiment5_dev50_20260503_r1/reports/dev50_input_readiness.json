@@ -1,0 +1,506 @@
+{
+  "created_at_utc": "2026-05-03T08:55:51.180476+00:00",
+  "dev50_chart_count": 50,
+  "method_sample_boundary": "dataset_split == development",
+  "do_not_use_previous_dataset_split": true,
+  "repo_pdf_present_count": 0,
+  "repo_image_present_count": 0,
+  "source_view_manifest_exists": false,
+  "source_view_manifest_path": "E:\\experiment3\\zu4\\source_views\\manifests\\source_view_manifest.jsonl",
+  "ocr_artifact_manifests": {
+    "MISSED_APPROACH_TEXT": {
+      "path": "E:\\experiment3\\zu4\\ocr_artifacts\\V1_ma_text_only\\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\\manifest.jsonl",
+      "exists": false
+    },
+    "PLAN_VIEW": {
+      "path": "E:\\experiment3\\zu4\\ocr_artifacts\\V3_plan_view_only\\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\\manifest.jsonl",
+      "exists": false
+    },
+    "MISSED_APPROACH_DETAIL_AREA": {
+      "path": "E:\\experiment3\\zu4\\ocr_artifacts\\V4_icon_detail_only\\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\\manifest.jsonl",
+      "exists": false
+    },
+    "PLAN_DETAIL_NO_MA": {
+      "path": "E:\\experiment3\\zu4\\ocr_artifacts\\V5_plan_detail_no_ma\\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\\manifest.jsonl",
+      "exists": false
+    }
+  },
+  "admin_export": {
+    "admin_export_exists": true,
+    "admin_export_path": "formal_runs/experiment5/admin_exports/shujuji_annotation_export_2026-05-03T08-34-13-795Z.json",
+    "admin_export_sha256": "52082332ff922132a83bca087d250f08571f77709f716e360439daafee313574",
+    "exported_at": "2026-05-03T08:34:13.795Z",
+    "submission_rows": 439,
+    "unique_chart_submissions": 300,
+    "charts_with_multiple_submissions": 138
+  },
+  "dev50_admin_submission_present_count": 50,
+  "dev50_admin_submission_missing_count": 0,
+  "dev50_admin_submission_missing_chart_ids": [],
+  "sanitized_admin_region_rows": 393,
+  "sanitized_admin_region_counts_by_chart": {
+    "KACT_R01": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KACT_R19": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 2,
+      "FIX_TEXT": 2,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KACT_R32": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KACV_R01": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 2,
+      "FIX_TEXT": 2,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KACV_R14": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KACV_R32": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAEX_R14": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 2,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAEX_R18": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 2,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAEX_R32": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAGS_R08-Y": {
+      "ALTITUDE_TEXT": 2,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAGS_R08-Z": {
+      "ALTITUDE_TEXT": 2,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAGS_R26": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 2,
+      "FIX_TEXT": 2,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAJG_R04": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAJG_R22": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAJG_R31": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAND_R05": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAND_R17": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAND_R23": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KANE_R09": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KANE_R18": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KANE_R27": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KANY_R18": {
+      "ALTITUDE_TEXT": 2,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PATH_SEGMENT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KANY_R36": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAPA_R17LY": {
+      "ALTITUDE_TEXT": 2,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAPA_R28": {
+      "ALTITUDE_TEXT": 2,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAPA_R35R": {
+      "ALTITUDE_TEXT": 2,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAPN_R01": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 2,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAPN_R07": {
+      "ALTITUDE_TEXT": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAPN_R19": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KARR_R09": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KARR_R15": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KARR_R27": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KART_R07": {
+      "ALTITUDE_TEXT": 2,
+      "CLIMB_ARROW": 2,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KART_R10": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 2,
+      "FIX_TEXT": 2,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KART_R28": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KATW_R21": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAVL_I17": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAVP_L04": {
+      "ALTITUDE_TEXT": 2,
+      "CLIMB_ARROW": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAVP_R22": {
+      "ALTITUDE_TEXT": 2,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KAXN_R22": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_SYMBOL": 3,
+      "FIX_TEXT": 3,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KBKW_R01": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KBWC_R26": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KBYI_R20": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KBYL_L20": {
+      "ALTITUDE_TEXT": 2,
+      "CLIMB_ARROW": 2,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KCFO_I26": {
+      "ALTITUDE_TEXT": 2,
+      "CLIMB_ARROW": 2,
+      "FIX_TEXT": 1,
+      "HEADING_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "NAVAID_TEXT": 1,
+      "PLAN_VIEW": 1,
+      "RADIAL_TEXT": 1
+    },
+    "KCFO_L17": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "HEADING_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "NAVAID_TEXT": 1,
+      "PATH_SEGMENT": 1,
+      "PLAN_VIEW": 1,
+      "RADIAL_TEXT": 1
+    },
+    "KCIC_R13L": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KCLL_R11": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 2,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    },
+    "KCOE_L06": {
+      "ALTITUDE_TEXT": 3,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "OUTBOUND_INBOUND_MARK": 2,
+      "PATH_SEGMENT": 1,
+      "PLAN_VIEW": 1,
+      "RADIAL_TEXT": 1
+    },
+    "KCOE_R02": {
+      "ALTITUDE_TEXT": 1,
+      "CLIMB_ARROW": 1,
+      "FIX_SYMBOL": 1,
+      "FIX_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 1,
+      "MISSED_APPROACH_TEXT": 1,
+      "PLAN_VIEW": 1
+    }
+  },
+  "method_readiness": {
+    "A3_GoldText_Rules": {
+      "status": "blocked_until_dev50_gold_ma_prose",
+      "reason": "dev50 gold_ma_prose is not yet adjudicated."
+    },
+    "B2a_GoldText_LLM": {
+      "status": "blocked_until_dev50_gold_ma_prose",
+      "reason": "dev50 gold_ma_prose is not yet adjudicated."
+    },
+    "B2b_GoldText_FieldCandidates_LLM": {
+      "status": "blocked_until_dev50_gold_ma_prose",
+      "reason": "gold text field candidates must be derived only from dev50 gold_ma_prose."
+    },
+    "B3_T_B3_TPD_B3_PD_B4_TPD": {
+      "status": "blocked_missing_local_roi_source_views_and_ocr",
+      "reason": "The original source_view manifest and ROI OCR artifact manifests are not present on this machine."
+    },
+    "G0_G1_G3": {
+      "status": "source_available_needs_gold_observable_conversion",
+      "reason": "Admin export has region annotations, but a method-safe gold_observable file still needs to be constructed and audited."
+    }
+  }
+}

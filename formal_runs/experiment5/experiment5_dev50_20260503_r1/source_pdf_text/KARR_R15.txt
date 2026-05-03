@@ -1,0 +1,187 @@
+                                   CHICAGO/AURORA, ILLINOIS                                          AL-5103 (FAA)                                                                              25275
+                                     WAAS                          Rwy Ldg     5503
+                                    CH 72941
+                                                      APP CRS
+                                                                   TDZE         712                                                   RNAV (GPS) RWY 15
+                                                       148°        Apt Elev     712                                                                       AURORA MUNI(ARR)
+                                        W15A
+                                    RNP APCH - GPS.
+                                                                                                                                                       MISSED APPROACH: Climb to
+                                    T     For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -20°C or above 54°C.                                 3000 direct UQITY and hold,
+                                          Rwy 15 helicopter visibility reduction below  3
+                                                                                         4    SM NA.                                                   continue climb-in-hold to 3000.
+
+
+                                                    ATIS                   CHICAGO APP CON                               AURORA TOWER                                     GND CON
+                                                   125.85                     133.5 349.0                                 120.6 (CTAF)L                                         121.7
+
+
+                                                                                                Procedure NA for arrivals at
+                                                                                                NUELG on V172 and V177
+                                                                           (IAF)                northwest bound.
+                                                                           NUELG
+                                                                                   2
+                                                                                    15 .5)
+                                                                                          60
+                                                                                   (
+
+
+
+                                                                                            0
+                                                                                   4
+                                                                                      3°
+
+
+
+
+                                                                                       (IF)
+                                                                                   UBEXE
+                                                                                                      23
+                                                                                                 14 .2)
+                                                                                                        00
+                                                                                                (
+                                                                                                5
+                                                                                                   8       °
+EC-3, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                         EC-3, 16 APR 2026 to 14 MAY 2026
+                                                                                                    (FAF)
+                                                                                                 WUYFI
+
+
+
+
+                                                                                                                   RW15
+
+
+
+
+                                                    W1525N
+                                                   R
+                                              SA          M
+                                                                                                                                    14
+
+
+
+
+                                          M
+                                                                                                                                      8°
+
+
+
+
+                                                                                                                        4 NM
+                                                    2600
+                                                                                                                               32
+                                                                                                                                 8°
+
+
+
+
+                                                                                                                                            UQITY
+
+
+
+                                                                                                                                            ELEV       712                 D             TDZE 712
+
+
+
+                                                                                                                                              148°
+                                                                                                                          3000      UQITY
+                                                                 VGSI and RNAV glidepath not coincident
+                                                     UBEXE                    (VGSI Angle 3.00/TCH 34).                                      15
+                                                                                                                                                   P
+                                                                                                                                                                              18
+                                                                               WUYFI                                                                                             X
+                                                                                                                                                       55
+
+
+
+
+                                                                                                                          *LNAV only.
+                                                                                                                                                         03
+
+
+
+
+                                                                                                                                                                            3198 X 75
+
+
+
+
+                                                                                                                                                                                         P
+
+                                               2600
+                                                                                                                                                          X
+
+
+
+
+                                                                               2300
+                                                                 1
+                                                                                                                                                              10
+
+
+
+
+                                                                  48°                               *1.6 NM to
+                                                                                                                                                                0
+
+
+
+
+                                                                                                       RW15
+                                                                                                                                                   P
+
+
+
+
+                                                                                                                                                                                                    27
+
+
+
+
+                                                                                                                                                         6501           X 100
+                                                                                                                    RW15
+                                                                                                                                                  9
+
+
+
+
+                                                                                                                                                                                                P
+
+
+
+
+                                     GP 3.00°
+                                                                   2300                                                                                             P       V
+                                        TCH 45                                                                                                 A5
+                                                                                                                                                                    33                  X TWR
+                                                                                                                                                                                36
+                                                                  5.2 NM                  3.3 NM               1.6 NM                                               A5
+
+                                    CATEGORY                 A                 B                          C                     D
+
+                                    LPV        DA                              962-34         250 (300-34 )
+
+                                    LNAV/
+                                               DA                              962-34         250 (300-34 )
+                                    VNAV
+
+                                   LNAV MDA                 1260-1 548 (600-1)                      1260-15 8                    5
+                                                                                                                        548 (600-1 8 )
+                                                                                                                                            HIRL Rwys 15-33 and 9-27 L
+
+                                                                                                 1300-1 8      5
+                                                                                                                           1320-2           MIRL Rwys 18-36 L
+                                   CIRCLING                 1260-1 548 (600-1)                           5                                  REIL Rwys 15, 18, 27, and 36 L
+                                                                                                588 (600-1 8 )            608 (700-2)
+
+                                   CHICAGO/AURORA, ILLINOIS
+                                                                                                                                                          AURORA MUNI(ARR)
+                                   Amdt 1A 08SEP22
+                                                                                                 41°46'N-88°28'W
+                                                                                                                                      RNAV (GPS) RWY 15

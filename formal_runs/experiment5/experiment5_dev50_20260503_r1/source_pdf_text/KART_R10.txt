@@ -1,0 +1,271 @@
+                                   WATERTOWN, NEW YORK                                                                    AL-666 (FAA)                                                                                   25219
+
+                                     WAAS                    7001             Rwy Ldg
+                                   CH 53522
+                                            APP CRS
+                                                    TDZE      318                                                                                              RNAV (GPS) RWY 10
+                                             105°             331                                                                                                              WATERTOWN INTL (ART)
+                                    W10A            Apt Elev
+
+                                    RNP APCH.
+                                                                                                                                                                                 MISSED APPROACH: Climb
+                                    T                                                                                                                                            to 3600 direct BAMPE and
+                                                         For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -20°C or
+                                    A                                                                                                                                            on track 146° to PATEE
+                                                         above 54°C. Rwy 10 helicopter visibility reduction below 34 SM NA.
+                                                                                                                                                                                 and hold.
+
+
+                                          ASOS                                 KGTB ATIS                        WHEELER-SACK APP CON                                CLNC DEL                       UNICOM
+
+                                        132.325                                119.525                           124.875                307.125                      120.8                    123.0 (CTAF) L
+
+
+
+
+                                                                                               (IF/IAF)
+                                                     ES
+                                                     A
+
+                                                   AT
+                                                  AD
+
+
+
+
+                                                                                               TAREE
+                                                 ST
+                                               N
+
+
+
+
+                                                                                                4000
+                                             CA
+
+
+                                                     D
+
+
+
+
+                                                                                                                 2000                                                 408
+                                                   TE
+
+
+
+
+                                                                                  105
+                                                   I
+
+
+
+
+                                                                                     °                           105
+NE-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                                 NE-2, 16 APR 2026 to 14 MAY 2026
+                                                                                                                    °                                                                                  BAMPE
+                                                 UN
+
+
+
+
+                                                                                                                 (
+                                                                                                                 6.9)
+                                                                                           285°                                                (FAF)                RW10
+                                                                                                                                                        RICOS
+                                                                           4 NM                                                               FOGUS
+                                                                                                                                                        2 NM to
+                                                                                                                                                            RW10
+                                                                                                                                                                                                                    1
+                                                                                                                                                                                                                 (1 46
+                                                                                                         195°
+                                                                                    195°
+
+
+
+
+                                                                                                                                                                                                                   3 °
+                                                                     T)                                                                                                                                             .4
+                                                                                                                                                                                                                      )
+                                                                oP
+
+
+
+
+                                                                                                                4500
+                                                           N
+
+
+
+
+                                                                                                                                          E
+                                                           (
+
+
+
+
+                                                                                                                                        RE
+                                                                                                                             EE
+                                                      o TAREE
+
+
+
+
+                                                                                                                       o TA R
+
+
+                                                                                                                                   o TA
+
+
+
+
+                                                                           TAREE                                                                                                              MISSED APCH FIX
+                                                                                                              TAREE
+                                                                                                                                   t
+                                                                                                                       t
+                                                      t
+
+
+
+
+                                                                          4000                                4000                                                                          PATEE
+                                                                                                                                    NM
+                                                         NM
+
+
+
+
+                                                                                                                       M
+
+
+
+
+                                                                                                                                                                                                              177
+                                                                                                                     N
+
+
+                                                                                                                                  30
+                                                                                  015°
+
+
+
+
+                                                                                                                                                                                                                 °
+                                                                 0
+
+
+
+
+                                                                                                                 15
+                                                                                                       015°
+                                                                3
+
+
+
+
+                                                                                                                                                                                                       357
+
+
+
+
+                                                                                                                                                                                                                         4 NM
+                                                                                                                                                                                                          °
+
+
+
+
+                                                                                                                                                                     ELEV            331       D       TDZE          318
+                                                                                                                   3600           BAMPE                     PATEE
+                                                                                                                                                   tr
+                                            4 NM
+                                                                                                                                                 146°
+                                        Holding Pattern                        TAREE
+
+
+                                                                                                              FOGUS
+                                                                                                                             RICOS                 *LNAV only.
+                                                          285°
+                                                                                                                                                                                                       25
+
+
+
+
+                                                                                                                                                                      105°
+                                    4000                                                                                   2 NM to                                                                0
+                                                                                                                                                                                                15
+                                                          105°                                                               RW10                                                              X
+                                                                                                                                                                                                   P
+
+
+
+
+                                                                                           10                   2000                                                                         99
+                                                                                                                                                                           P
+
+
+
+
+                                                                                             5°                                                                                            49
+                                                                                                                                       *1 NM to                                0.
+                                                                                                                                                                      10
+
+
+
+
+                                                                                                                                                                                3%UP                                       A5
+                                                                                                                                              RW10                                        70
+                                                                                                                                                                                                                           28
+
+
+
+
+                                                                                                                                                                                            01X150
+                                                                                                                                                                                                                     P
+
+
+
+
+                                                                                                                                                  RW10
+                                                                                                                                                                                      P
+                                                                                                                                                                           P
+
+
+
+
+                                                                                                                                                                                     U
+                                     GP 3.00°                                                                                                                                   3%
+                                                                                            2000                   *980                                                        0.
+                                                                                                                                                                     7
+
+
+
+
+                                        TCH 47
+                                                                                                                                                                           A5
+
+                                                                                             6.9 NM                3.2 NM              1 NM     1 NM
+
+                                    CATEGORY                              A                     B                             C                         D
+
+                                    LPV      DA                                              568-34           250 (300-34 )
+                                    LNAV/                                                       3
+                                              DA                                             578- 4           260 (300-34 )
+                                    VNAV
+
+                                    LNAV MDA                                                 660-1            342 (400-1)                                            REIL Rwy 25 L
+                                                                                                                                                                     HIRL Rwy 7-25 L
+                                                                                                                       980-134                    1080-212
+                                    CIRCLING                         960-1               629 (700-1)                                                                 MIRL Rwy 10-28 L
+                                                                                                                           3
+                                                                                                                  649 (700-1 4 )                 749 (800-212 )
+
+                                   WATERTOWN, NEW YORK
+                                                                                                                                                                               WATERTOWN INTL (ART)
+                                   Amdt 1 19JUL18
+                                                                                                                   44°00'N-76°01'W
+                                                                                                                                                               RNAV (GPS) RWY 10

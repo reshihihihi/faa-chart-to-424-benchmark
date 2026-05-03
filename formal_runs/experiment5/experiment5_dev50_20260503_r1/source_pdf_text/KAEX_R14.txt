@@ -1,0 +1,210 @@
+                                   ALEXANDRIA, LOUISIANA                                                                AL-13 (FAA)                                                                    25163
+
+                                     WAAS                               Rwy Ldg  9352
+                                   CH 56417
+                                                       APP CRS
+                                                                        TDZE       85
+                                                                                                                                                      RNAV (GPS) RWY 14
+                                                        141°
+                                     W14A                               Apt Elev   88                                                                                  ALEXANDRIA INTL (AEX)
+                                   RNP APCH - GPS.
+
+                                     T                                                                                                MALSR
+                                          For uncompensated Baro-VNAV systems, LNAV/VNAV NA                                                              MISSED APPROACH: Climb to 4000 direct
+                                    A     below -15°C or above 48°C. For inop ALS increase LNAV                                       A5                 EHHIR and on track 106° to MUSHE and
+                                          Cat D visibility to RVR 6000. RADAR required when R-3801 A-B                                                   hold.
+                                          in use.
+
+                                           ASOS                          POLK APP CON                          ALEXANDRIA TOWER                             GND CON                        CLNC DEL
+
+                                         123.975                         125.4                254.8           127.35 (CTAF) 269.2                         121.9 372.0                       121.9
+
+                                                                                             6000                                                                                         W1425N
+                                                                                        HOLD                                                                                             R
+                                                                                             3000
+                                                                                                                              (IAF)                                                   SA        M
+                                                                                                                                                                                  M
+                                                                                                                             IBVUW
+                                                                                                                                                  1544                                   2800
+                                                                                                                    T
+                                                                                                                 oP
+                                                                                               14
+
+
+
+
+                                                                        4 NM                                    N
+                                                                                                 1°
+
+
+
+
+                                                                                                              00 °
+                                                                                                                 1
+                                                                                                            30 23 )
+                                                                                           32
+
+
+
+
+                                                                                                                  5
+                                                                                                                  (
+                                                                                             1°
+
+
+
+
+                                    NUBOY                                                                    (IF/IAF)
+                                                                                                T
+                                                        3                                    oP               EBYAJ
+                                                         000                                N
+                                                        10                               000 1°
+                                                          3°                            3 05 )
+                                                       (
+                                                       10                                     5
+                                                                                              (
+                                                         .5)
+                                                                                                                   18
+                                                                                                               14 .9)
+                                                                                                                     00
+                                                                                                              (7
+
+
+
+
+                                                                        (IAF)
+                                                                                                                 1°
+SC-4, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                               SC-4, 16 APR 2026 to 14 MAY 2026
+                                                                        IBHEJ
+                                                                                                                                  (FAF)
+                                                                                                                               CROVE
+
+
+
+
+                                                                                                                                                                        3
+                                                                                                                                                                         0
+                                                                                                                                                                          0 3 4.6
+                                                                                                                                          CUBIP
+
+
+
+
+                                                                                                                                                                           0 1
+                                                                                                                                                                              t
+
+
+
+
+                                                                                                                                                                            o 2°
+                                                                                                                                      2 NM to
+
+
+
+
+                                                                                                                                                                             IB
+                                                                                                                                                                               (3
+
+
+
+                                                                                                                                                                               V
+                                                                                                                                          RW14
+
+
+
+
+                                                                                                                                                                                 U
+                                                                                                                                                                                  W
+                                                                                                                                                                            )
+                                                                                                                              206
+                                                                                                                                                      252
+
+                                                                                                                                                                                                 MUSHE
+                                                                        Procedure NA for arrivals at AEX VORTAC                       116
+                                                                        on V212 eastbound.                                                                        493
+                                                                                                                                                                                       MISSED APCH FIX
+                                                                                                                                          236
+                                                                                                                                                                          649                          5 NM
+                                                                                                                             3000 to EBYAJ                                                      106°
+                                                                                                                               322° (18.7)                    EHHIR
+                                                                                                                                                                 (                              286
+                                                                                                                                                                  1 8.                MUSHE        °
+                                                                                                                                          ALEXANDRIA                 1)
+                                    ELEV      88                D       TDZE             85                                                                      10 6
+                                                                                                            R-3801A & B                      AEX            688      °
+
+                                                                                                       VGSI and RNAV glidepath not coincident                 4000        EHHIR                    MUSHE
+                                         141°                                                                           (VGSI Angle 3.00/TCH 71).                                          tr
+                                                                                                            4 NM
+                                                                                                                               EBYAJ                                                     106°
+                                                                                                      Holding Pattern
+
+                                         14                                                           6000         321°
+                                                                                                      3000         141°                               CROVE            CUBIP
+                                                                                                                                          14
+                                                   P                      18                                                                1°                      2 NM to
+                                                                                                                                                                       RW14
+                                                                                P
+                                              A5                                                                                                                                  1 NM to
+                                                                                                                                                                                  RW14
+                                                                                X 150
+                                                         93
+
+
+
+
+                                                                                                                                        1800
+                                                           52
+
+
+
+
+                                                                                                                                                                                            RW14
+                                                                                                                                                                  780
+                                                                           7001
+
+
+
+
+                                                                                                       GP 3.00°
+                                                            X
+                                                                15
+
+
+
+
+                                                                                                       TCH 56
+                                                                  0
+
+
+
+
+                                                                                                                                           7.9 NM             3.1 NM       1 NM          1 NM
+                                                                                         WR
+                                                                                         T
+                                                                                                      CATEGORY                A                      B                    C                       D
+
+                                                                    P                                 LPV     DA                                  346/24         261 (300-12 )
+                                                                                   P                  LNAV/
+                                                                    36                                        DA
+                                                                                         32           VNAV
+                                                                                                                                                    488/50 403 (400-1)
+
+                                                                                                                                                                                                480/50
+                                   TDZL Rwy 14                                                        LNAV MDA                        480/24             395 (400-12 )
+                                                                                                                                                                                            395 (400-1)
+                                    REIL Rwys 18, 32 and 36
+                                                                                                                            540-1                   560-1              700-134                860-212
+                                    HIRL Rwys 18-36 and 14-32                                         C CIRCLING
+                                                                                                                          452 (500-1)         472 (500-1)          612 (700-134 )         772 (800-212 )
+
+                                   ALEXANDRIA, LOUISIANA
+                                                                                                                                                                       ALEXANDRIA INTL (AEX)
+                                   Amdt 1C 11AUG22
+                                                                                                                   31°20'N-92°33'W
+                                                                                                                                                      RNAV (GPS) RWY 14

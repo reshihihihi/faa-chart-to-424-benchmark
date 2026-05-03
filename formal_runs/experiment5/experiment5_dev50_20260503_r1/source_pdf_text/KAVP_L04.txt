@@ -1,0 +1,215 @@
+                                   WILKES-BARRE/SCRANTON, PENNSYLVANIA                                        AL-661 (FAA)                                                                                      26022
+
+                                    LOC/DME I-AVP                           Rwy Ldg          7502
+                                         109.9
+                                                           APP CRS
+                                                                            TDZE              962
+                                                                                                                                                               ILS or LOC RWY 4
+                                                            045°
+                                        Chan 36                             Apt Elev          962                                                WILKES-BARRE/SCRANTON INTL (AVP)
+
+                                    T                Circling to Rwy 10, 28 NA at night. Circling NA for Cats C and D                                                            MISSED APPROACH:
+                                                                                                                                                              MALSR
+                                    A                southeast of Rwy 4-22. Autopilot coupled approach NA below 2530.                                                            Climb to 3000 then climbing
+                                                     DME required. For inop ALS, increase S-ILS 4 all Cats visibility to RVR                                  A5                 right turn to 4000 direct LVZ
+                                                                                             5
+                                                     5000, and S-LOC 4 Cat C/D visibility to 1 8 SM.                                                                             VORTAC and hold.
+
+                                                                     WILKES-BARRE APP CON
+                                              ATIS                                                                                WILKES-BARRE TOWER                                                GND CON
+                                                                   120.95 256.7(280°-100°)
+                                         135.75                     126.3 256.7 (101°-279°)                                          120.1                  257.8                                    121.9
+
+                                                            LOCALIZER 109.9
+
+                                                                I-AVP
+
+                                                                   Chan 36
+                                                            LOC offset 1.77°
+                                                                                                           FEVOR
+                                                                                                          I-AVP      1
+
+                                                                                                                    1292                                                     WILKES-BARRE
+                                                                                                          TUYOT                                                          111.6 LVZ
+                                                                                                      I-AVP 3.8                                                                  Chan 53
+
+                                                                                               ZEXES
+
+
+
+
+                                                                                                                                                     190°
+                                                                                             I-AVP 6.7
+                                                                                                                                         010° R-
+NE-4, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                        NE-4, 16 APR 2026 to 14 MAY 2026
+                                                                                     JISAG
+                                                                                I-AVP 10.1
+                                                                                                                                               190
+
+
+
+
+                                                                                                          2483
+
+                                                                                                                 4000 to HEAPP
+                                                                                                                     238° (15.3)
+                                                                                                                                                                                                    V
+                                                                                                                                                                                                    LZ25
+                                                         (IF/IAF)                                                                                                                                               N
+                                                                                 04 00
+
+
+
+
+                                                                                                                                                                                              SA
+                                                                                      7. °
+
+
+
+
+                                                                                                                                                                                                                 M
+                                                                                         5
+
+
+
+
+                                                                                                                                                                                         M
+                                                                                39
+
+
+
+
+                                                          HEAPP
+                                                                                        6)
+
+
+
+
+                                                       I-AVP 17.7                                                                                                                                    4000
+                                                                                      (
+
+
+
+
+                                                        LVZ 15.3
+                                                         RADAR
+                                                                   1 °
+                                                                            n
+                                                                               5°
+                                                                            i
+                                                                     5
+                                                                        m
+                                                                   04
+
+
+                                                                             22
+                                                              5°
+                                                            22
+
+
+
+
+                                                                                                                                                              ELEV               962      D          TDZE       962
+
+
+                                                                             DME or RADAR REQUIRED
+                                                                                                                                                                                                           22
+                                                                                                                                                                                                      UP
+
+
+
+
+                                                           VGSI and ILS glidepath not coincident 3000                            4000                 LVZ                                                   V
+                                     One Minute
+                                                                                                                                                                                                     7%
+                                                                                                                                                                                                    0.
+
+
+
+
+                                   Holding Pattern     HEAPP       (VGSI Angle 3.00/TCH 58).
+                                                     I-AVP 17.7                      JISAG
+                                                                                                                                                                             P
+
+
+
+
+                                                       RADAR                                                                                                                     4300X1
+                                                                                                                                                                    10
+
+
+
+
+                                                                                                                                                                                       50
+                                                                                                                                                                                                                 28
+
+
+
+
+                                                                                I-AVP 10.1 ZEXES
+                                                                                                                                                                             0.
+                                                                                                                                                                              3%UP
+                                               225°                                             I-AVP 6.7 TUYOT                      *LOC only
+                                   4000
+                                                                                                                                                                                                0
+
+
+
+
+                                                             0                       3900
+                                                                                                                                                                                              15
+
+
+
+
+                                               045°           45°                                            I-AVP 3.8
+                                                                                                                                                                                          X
+
+
+
+
+                                                                                                                                     FEVOR
+                                                                                                                                                                                         02
+
+
+
+
+                                                                                                                         *I-AVP
+                                                                                                                                                                                       75
+
+
+
+
+                                                                                                                                     I-AVP 1
+                                                                                                                           2.7
+                                                                3900                     *2820                                                                                                      TWR
+                                        GS 3.00°
+                                                                                                          *1900
+                                        TCH 56
+                                                                   7.6 NM                    3.4 NM        2.9 NM     1.2 NM    1.6 NM
+
+                                    CATEGORY                A                            B                       C                              D             A5         P
+
+
+
+                                    S-ILS 4                                          1262/24 300 (300-12 )                                                    4
+
+                                                                                                                                                                   045°
+                                    S-LOC 4              1540/24             578 (600-12 )                  1540-114           578 (600-114 )
+                                                                                                                                                                                                      HIRL Rwy 4-22
+                                                       1840-114                 1980-112                    1980-3                 2280-3                                                           MIRL Rwy 10-28
+                                    CIRCLING
+                                                      878 (900-1   1
+                                                                    4   )    1018 (1100-1       1
+                                                                                                 2    )   1018 (1100-3)         1318 (1400-3)                                       REIL Rwys 10, 22, and 28
+
+                                   WILKES-BARRE/SCRANTON, PENNSYLVANIA
+                                                                                                                                                 WILKES-BARRE/SCRANTON INTL (AVP)
+                                   Amdt 38 08DEC16
+                                                                                                           41°20'N-75°43'W
+                                                                                                                                                               ILS or LOC RWY 4

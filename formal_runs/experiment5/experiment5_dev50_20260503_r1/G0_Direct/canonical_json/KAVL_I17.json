@@ -1,0 +1,51 @@
+{
+  "chart_id": "KAVL_I17",
+  "procedure": {
+    "airport": "KAVL",
+    "approach_ident": "I17",
+    "chart_name": "ILS OR LOC RWY 17"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 1
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "BRA"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 5400,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "direct"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "unknown",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,246 @@
+                                   WACO, TEXAS                                                            AL-439 (FAA)                                                                      25163
+
+                                        WAAS                                  Rwy Ldg    5103
+                                    CH69420
+                                                               APP CRS
+                                                                              TDZE        516                                                 RNAV (GPS) RWY 32
+                                                                322°
+                                        W32A                                  Apt Elev    516                                                                      WACO RGNL(ACT)
+
+                                    T        DME/DME RNP-0.3 NA. When local altimeter setting not received use Mc Gregor
+                                                                                                                                                                       MISSED APPROACH:
+                                             Exec altimeter setting and increase all DA 31 feet and all MDA 40 feet; increase
+                                    A                                                                                                                                  Climb to 4000 direct
+                                             LPV and LNAV/VNAV all Cats and LNAV Cats C/D visibility18                             mile and Circling
+                                   ASR                                                                                                                                 EVVIS and hold,
+                                             Cat D visibility 14 mile. For uncompensated Baro-VNAV systems, LNAV/VNAV
+                                                                                                                                                                       continue climb-in-hold
+                                             NA below -13°C (9°F) or above 54°C (130°F). Baro-VNAV NA when using Mc Gregor
+                                                                                                                                                                       to 4000.
+                                             Exec altimeter setting. VDP NA with Mc Gregor Exec altimeter setting.
+
+                                                   ATIS                    WACO APP CON                  WACO TOWER                              GND CON                      UNICOM
+
+                                               123.85                      127.65 227.125          119.3 (CTAF)L 257.8                             121.9                      122.95
+
+                                     MISSED APCH FIX                                                                                                                                   DRILL
+                                                                                                                                             Procedure NA for arrivals
+                                                                                                         663
+                                                   14
+
+
+
+
+                                                                                                                                             at DRILL
+                                   4 NM
+                                                     2°
+
+
+
+
+                                                                                         RW32                                                on V15-54 northeast bound.
+                                                                                                   608
+                                               32
+
+
+
+
+                                                                                                           IWIFY
+
+
+
+
+                                                                                                                                                                                  0
+
+                                                                                                                                                                                 8)
+                                                                                                                                                                                  °
+                                                 2°
+
+
+
+
+                                                                                                                                                                               300
+                                                               EVVIS
+
+
+
+
+                                                                                                                                                                              190
+                                                                                                                                                                             28.
+                                                                                                         1.9 NM to
+                                                                                                           RW32
+
+
+
+
+                                                                                                                                                                             (
+                                                                                                 (FAF)
+                                                                                                                1021
+                                                                                                SKOCH
+
+                                                                                                  1049
+                                                                                                                        21
+                                                                                                                32 .7)
+SC-3, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                    SC-3, 16 APR 2026 to 14 MAY 2026
+                                                                                                                          00
+                                                                                                                (
+                                                                                                                6
+                                                                                                                  2          °
+
+
+
+
+                                                                                                                                   (IF)
+                                                                                                                                  ILINI            3000                     (IAF)
+                                                                                                                                                   263°                     PRKRR
+                                                                                                                                                    (8)
+
+                                                    W3225N
+                                                   R
+                                                                                                                                          3 08 )
+
+
+
+
+                                             SA           M
+                                                                                                                                           0
+                                                                                                                                            0 °
+                                                                                                                                            3 .7
+
+
+
+
+                                         M
+                                                                                                                                             0
+                                                                                                                                              (6
+                                                                                                                   0
+
+
+
+
+                                                      3600
+                                                                                                                   °
+                                                                                                                300
+                                                                                                                012
+                                                                                                                8)
+                                                                                                                (
+
+
+
+
+                                                                                                                                                 (IAF)         Procedure NA for arrivals
+                                                                                                                                                               at SATTY
+                                                                                                                                                 SATTY
+                                                                                                                                                               on V15 southeast bound.
+
+                                                                                                                        KOCYU
+                                                                                2541
+                                                                                                             0
+                                                                                                            °
+                                                                                                          360
+
+
+                                                                                                           4)
+                                                                                                         012
+
+
+
+
+                                                                                           2550                                  Procedure NA for arrivals
+                                    ELEV       516                       TDZE    516
+                                                                                                         6.
+
+
+
+
+                                                                 D
+                                                                                                         (
+
+
+
+
+                                                                                                                                 at BARES
+                                                                                                                    (IAF)        on V548 southbound.
+                                                                                                                    BARES
+                                                                          9
+                                                                         1                4000     EVVIS
+                                                                                                                                                                             ILINI
+
+                                                                                                                  IWIFY
+                                                                           A5                                   1.9 NM to                 SKOCH
+                                                                                                                  RW32                                                            3000
+                                    14                                                    *LNAV only.
+                                                                                                                                          2100               2°
+                                                                   150
+
+
+
+
+                                           P                                                             *0.9 NM                                           32
+                                                                                                          to RW32
+                                                                   7X
+                                                                710
+
+
+
+
+                                                                                                     RW32
+                                                                                                                                                                                     GP 3.00°
+                                                                                                                                                     2100
+                                         51
+
+
+
+
+                                                                                                                                                                                      TCH 59
+                                                                                                                           1160
+                                           03
+
+
+
+
+                                                                                                                           *
+                                               X
+                                                15
+
+
+
+
+                                                                                                          0.9    1.0             2.9 NM                   6.7 NM
+                                                  0
+
+
+
+
+                                                                         TWR
+                                                                                          CATEGORY                  A                        B                     C                    D
+                                                      P
+
+
+                                                          32
+                                                                 P
+                                                                                          LPV     DA                                       766-34     250 (300-    3
+                                                                                                                                                                    4   )
+                                                           1
+                                             322°                                         LNAV/
+                                                                                                  DA                                       773-34     257 (300-34 )
+                                                                                          VNAV
+
+
+                                   REIL Rwy 14
+                                                                                          LNAV MDA                                          860-1 344 (400-1)
+                                   HIRL Rwy 1-19 L
+                                                                                                                940-1                     980-1             1020-112                 1160-2
+                                   MIRL Rwy 14-32                                         C CIRCLING                                                                1
+                                                                                                           424 (500-1)                464 (500-1)          504 (600-1 2 )           644 (700-2)
+
+                                   WACO, TEXAS
+                                                                                                                                                                   WACO RGNL(ACT)
+                                   Orig-D 02APR15
+                                                                                                       31°37'N-97°14'W
+                                                                                                                                              RNAV (GPS) RWY 32

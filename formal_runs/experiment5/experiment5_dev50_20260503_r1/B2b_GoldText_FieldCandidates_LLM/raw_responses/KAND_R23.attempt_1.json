@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_3a30a40b-1bbb-4f7f-9c44-5b136f6c3b10",
+  "object": "chat.completion",
+  "created": 1777799380,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_BUpnbVYptiCzzAg6Igs9mG6u",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAND_R23\",\"procedure\":{\"airport\":\"KAND\",\"approach_ident\":\"R23\",\"chart_name\":\"RNAV (GPS) RWY 23\"},\"missed_approach\":{\"leg_count\":{\"status\":\"present\",\"value\":2},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":null},\"Q1_fix_ident\":{\"status\":\"unknown\",\"value\":null},\"Q2_altitude_constraint\":{\"status\":\"unknown\",\"value\":null},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}},{\"leg_index\":2,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":null},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"OYUNA\"},\"Q2_altitude_constraint\":{\"status\":\"unknown\",\"value\":null},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"present\",\"value\":{\"type\":\"direct\"}},\"Q5_hold_params\":{\"status\":\"unknown\",\"value\":null}}}]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}
