@@ -1,0 +1,530 @@
+{
+  "correct": 12,
+  "total": 25,
+  "accuracy": 0.48,
+  "rows": [
+    {
+      "field": "leg_count",
+      "field_path": "missed_approach.leg_count",
+      "correct": false,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": {
+        "status": "present",
+        "value": 3
+      },
+      "target": {
+        "status": "present",
+        "value": 4
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_1.Q_terminator",
+      "field_path": "missed_approach.legs[1].answers.Q_terminator",
+      "correct": true,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": {
+        "status": "present",
+        "value": "CA"
+      },
+      "target": {
+        "status": "present",
+        "value": "CA"
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_1.Q1_fix_ident",
+      "field_path": "missed_approach.legs[1].answers.Q1_fix_ident",
+      "correct": true,
+      "comparison_policy": "normalized_string",
+      "field_category": "fix_navaid",
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "detail": {
+        "pred_normalized": {
+          "status": "not_applicable",
+          "value": null
+        },
+        "target_normalized": {
+          "status": "not_applicable",
+          "value": null
+        }
+      }
+    },
+    {
+      "field": "leg_1.Q2_altitude_constraint",
+      "field_path": "missed_approach.legs[1].answers.Q2_altitude_constraint",
+      "correct": false,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": {
+        "status": "present",
+        "value": {
+          "desc": "AT_OR_ABOVE",
+          "altitude_ft": 1540,
+          "altitude_2_ft": null
+        }
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "altitude_2_ft": null,
+          "altitude_ft": 1178,
+          "desc": "AT_OR_ABOVE"
+        }
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_1.Q3_turn",
+      "field_path": "missed_approach.legs[1].answers.Q3_turn",
+      "correct": true,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_1.Q4_course_or_radial",
+      "field_path": "missed_approach.legs[1].answers.Q4_course_or_radial",
+      "correct": true,
+      "comparison_policy": "degree_display_rounding",
+      "field_category": "course_radial",
+      "pred": {
+        "status": "present",
+        "value": {
+          "type": "course_deg",
+          "course_deg": 79.0
+        }
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "course_deg": 79,
+          "type": "course_deg"
+        }
+      },
+      "detail": {
+        "pred_normalized": {
+          "status": "present",
+          "value": {
+            "course_deg": 79,
+            "type": "course_deg"
+          }
+        },
+        "target_normalized": {
+          "status": "present",
+          "value": {
+            "course_deg": 79,
+            "type": "course_deg"
+          }
+        }
+      }
+    },
+    {
+      "field": "leg_1.Q5_hold_params",
+      "field_path": "missed_approach.legs[1].answers.Q5_hold_params",
+      "correct": true,
+      "comparison_policy": "exact_status_value",
+      "field_category": "course_radial",
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_2.Q_terminator",
+      "field_path": "missed_approach.legs[2].answers.Q_terminator",
+      "correct": true,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": {
+        "status": "present",
+        "value": "DF"
+      },
+      "target": {
+        "status": "present",
+        "value": "DF"
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_2.Q1_fix_ident",
+      "field_path": "missed_approach.legs[2].answers.Q1_fix_ident",
+      "correct": false,
+      "comparison_policy": "normalized_string",
+      "field_category": "fix_navaid",
+      "pred": {
+        "status": "present",
+        "value": "VTU"
+      },
+      "target": {
+        "status": "present",
+        "value": "COTSI"
+      },
+      "detail": {
+        "pred_normalized": {
+          "status": "present",
+          "value": "VTU"
+        },
+        "target_normalized": {
+          "status": "present",
+          "value": "COTSI"
+        }
+      }
+    },
+    {
+      "field": "leg_2.Q2_altitude_constraint",
+      "field_path": "missed_approach.legs[2].answers.Q2_altitude_constraint",
+      "correct": false,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": {
+        "status": "present",
+        "value": {
+          "desc": "AT_OR_ABOVE",
+          "altitude_ft": 4600,
+          "altitude_2_ft": null
+        }
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_2.Q3_turn",
+      "field_path": "missed_approach.legs[2].answers.Q3_turn",
+      "correct": false,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "present",
+        "value": "RIGHT"
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_2.Q4_course_or_radial",
+      "field_path": "missed_approach.legs[2].answers.Q4_course_or_radial",
+      "correct": true,
+      "comparison_policy": "exact_status_value",
+      "field_category": "course_radial",
+      "pred": {
+        "status": "present",
+        "value": {
+          "type": "direct"
+        }
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "type": "direct"
+        }
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_2.Q5_hold_params",
+      "field_path": "missed_approach.legs[2].answers.Q5_hold_params",
+      "correct": true,
+      "comparison_policy": "exact_status_value",
+      "field_category": "course_radial",
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_3.Q_terminator",
+      "field_path": "missed_approach.legs[3].answers.Q_terminator",
+      "correct": false,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": {
+        "status": "present",
+        "value": "HM"
+      },
+      "target": {
+        "status": "present",
+        "value": "TF"
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_3.Q1_fix_ident",
+      "field_path": "missed_approach.legs[3].answers.Q1_fix_ident",
+      "correct": true,
+      "comparison_policy": "normalized_string",
+      "field_category": "fix_navaid",
+      "pred": {
+        "status": "present",
+        "value": "VTU"
+      },
+      "target": {
+        "status": "present",
+        "value": "VTU"
+      },
+      "detail": {
+        "pred_normalized": {
+          "status": "present",
+          "value": "VTU"
+        },
+        "target_normalized": {
+          "status": "present",
+          "value": "VTU"
+        }
+      }
+    },
+    {
+      "field": "leg_3.Q2_altitude_constraint",
+      "field_path": "missed_approach.legs[3].answers.Q2_altitude_constraint",
+      "correct": true,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": {
+        "status": "present",
+        "value": {
+          "desc": "AT_OR_ABOVE",
+          "altitude_ft": 4600,
+          "altitude_2_ft": null
+        }
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "altitude_2_ft": null,
+          "altitude_ft": 4600,
+          "desc": "AT_OR_ABOVE"
+        }
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_3.Q3_turn",
+      "field_path": "missed_approach.legs[3].answers.Q3_turn",
+      "correct": true,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_3.Q4_course_or_radial",
+      "field_path": "missed_approach.legs[3].answers.Q4_course_or_radial",
+      "correct": true,
+      "comparison_policy": "exact_status_value",
+      "field_category": "course_radial",
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_3.Q5_hold_params",
+      "field_path": "missed_approach.legs[3].answers.Q5_hold_params",
+      "correct": false,
+      "comparison_policy": "exact_status_value",
+      "field_category": "course_radial",
+      "pred": {
+        "status": "present",
+        "value": {
+          "inbound_course_deg": 263.0,
+          "leg_time_min": null,
+          "leg_distance_nm": 5.0,
+          "turn": "RIGHT"
+        }
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_4.Q_terminator",
+      "field_path": "missed_approach.legs[4].answers.Q_terminator",
+      "correct": false,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": "HM"
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_4.Q1_fix_ident",
+      "field_path": "missed_approach.legs[4].answers.Q1_fix_ident",
+      "correct": false,
+      "comparison_policy": "normalized_string",
+      "field_category": "fix_navaid",
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": "VTU"
+      },
+      "detail": {
+        "pred_normalized": null,
+        "target_normalized": {
+          "status": "present",
+          "value": "VTU"
+        }
+      }
+    },
+    {
+      "field": "leg_4.Q2_altitude_constraint",
+      "field_path": "missed_approach.legs[4].answers.Q2_altitude_constraint",
+      "correct": false,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": {
+          "altitude_2_ft": null,
+          "altitude_ft": 4600,
+          "desc": "AT_OR_ABOVE"
+        }
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_4.Q3_turn",
+      "field_path": "missed_approach.legs[4].answers.Q3_turn",
+      "correct": false,
+      "comparison_policy": "exact_status_value",
+      "field_category": "strict",
+      "pred": null,
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_4.Q4_course_or_radial",
+      "field_path": "missed_approach.legs[4].answers.Q4_course_or_radial",
+      "correct": false,
+      "comparison_policy": "exact_status_value",
+      "field_category": "course_radial",
+      "pred": null,
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "detail": {
+        "exact_status_value": true
+      }
+    },
+    {
+      "field": "leg_4.Q5_hold_params",
+      "field_path": "missed_approach.legs[4].answers.Q5_hold_params",
+      "correct": false,
+      "comparison_policy": "degree_display_rounding",
+      "field_category": "course_radial",
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": {
+          "inbound_course_deg": 131,
+          "leg_distance_nm": 5.0,
+          "leg_time_min": null,
+          "turn": "LEFT"
+        }
+      },
+      "detail": {
+        "pred_normalized": null,
+        "target_normalized": {
+          "status": "present",
+          "value": {
+            "inbound_course_deg": 131,
+            "leg_distance_nm": 5.0,
+            "leg_time_min": null,
+            "turn": "LEFT"
+          }
+        }
+      }
+    }
+  ]
+}

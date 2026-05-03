@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAJR_R24",
+  "procedure": {
+    "airport": "KAJR",
+    "approach_ident": "R24",
+    "chart_name": "RNAV (GPS) RWY 24"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

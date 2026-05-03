@@ -1,0 +1,7747 @@
+{
+  "checked_variants": [
+    "V2_full_minus_ma_prose",
+    "V5_plan_detail_no_ma"
+  ],
+  "created_at_utc": "2026-05-01T17:01:34.755915+00:00",
+  "diagnostic_note": "The pass/fail criterion is a missed-approach residual OCR block intersecting the masked T ROI. Non-MA edge intersections such as UNICOM/GND CON/CLNC DEL are diagnostic only. Shared phrases are diagnostic only because plan/detail views may legitimately contain tokens such as fixes, navaids, courses, and the word MISSED.",
+  "diagnostics": [
+    {
+      "chart_id": "KABE_I06",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        511,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 312
+    },
+    {
+      "chart_id": "KABE_I06",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        511,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 91
+    },
+    {
+      "chart_id": "KALS_I02",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        439,
+        134,
+        772,
+        201
+      ],
+      "v1_token_count": 23,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 349
+    },
+    {
+      "chart_id": "KALS_I02",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        439,
+        134,
+        772,
+        201
+      ],
+      "v1_token_count": 23,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 100
+    },
+    {
+      "chart_id": "KAMA_I04",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            590,
+            255,
+            651,
+            272
+          ],
+          "intersection_area": 122,
+          "text": "CLNC DEL"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        565,
+        134,
+        772,
+        257
+      ],
+      "v1_token_count": 24,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 441
+    },
+    {
+      "chart_id": "KAMA_I04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        565,
+        134,
+        772,
+        257
+      ],
+      "v1_token_count": 24,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 105
+    },
+    {
+      "chart_id": "KAPC_I01L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        470,
+        134,
+        772,
+        208
+      ],
+      "v1_token_count": 35,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 423
+    },
+    {
+      "chart_id": "KAPC_I01L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        470,
+        134,
+        772,
+        208
+      ],
+      "v1_token_count": 35,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 114
+    },
+    {
+      "chart_id": "KATL_I09R",
+      "non_ma_intersecting_block_count": 2,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            439,
+            114,
+            771,
+            135
+          ],
+          "intersection_area": 332,
+          "text": "HARTSFIELD/JACKSON ATLANTA INTL (ATL)"
+        },
+        {
+          "box": [
+            605,
+            214,
+            674,
+            231
+          ],
+          "intersection_area": 138,
+          "text": "GND CON"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        427,
+        134,
+        772,
+        216
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 410
+    },
+    {
+      "chart_id": "KATL_I09R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        427,
+        134,
+        772,
+        216
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 82
+    },
+    {
+      "chart_id": "KAUS_I18L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        505,
+        134,
+        772,
+        229
+      ],
+      "v1_token_count": 26,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 406
+    },
+    {
+      "chart_id": "KAUS_I18L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        505,
+        134,
+        772,
+        229
+      ],
+      "v1_token_count": 26,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 102
+    },
+    {
+      "chart_id": "KBUY_I06-Z",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            635,
+            202,
+            693,
+            220
+          ],
+          "intersection_area": 58,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        203
+      ],
+      "v1_token_count": 12,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 290
+    },
+    {
+      "chart_id": "KBUY_I06-Z",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        203
+      ],
+      "v1_token_count": 12,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 73
+    },
+    {
+      "chart_id": "KBWG_I03-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        216
+      ],
+      "v1_token_count": 12,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 316
+    },
+    {
+      "chart_id": "KBWG_I03-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        216
+      ],
+      "v1_token_count": 12,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 51
+    },
+    {
+      "chart_id": "KCMH_I10R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        521,
+        134,
+        772,
+        205
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 361
+    },
+    {
+      "chart_id": "KCMH_I10R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        521,
+        134,
+        772,
+        205
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 103
+    },
+    {
+      "chart_id": "KAXH_L09",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        492,
+        134,
+        772,
+        221
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 186
+    },
+    {
+      "chart_id": "KAXH_L09",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        492,
+        134,
+        772,
+        221
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 25
+    },
+    {
+      "chart_id": "KBDL_L33",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        529,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 13,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 369
+    },
+    {
+      "chart_id": "KBDL_L33",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        529,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 13,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 107
+    },
+    {
+      "chart_id": "KBFF_L12",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        505,
+        134,
+        772,
+        210
+      ],
+      "v1_token_count": 23,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 343
+    },
+    {
+      "chart_id": "KBFF_L12",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        505,
+        134,
+        772,
+        210
+      ],
+      "v1_token_count": 23,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 80
+    },
+    {
+      "chart_id": "KBOS_L15R",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            441,
+            201,
+            540,
+            218
+          ],
+          "intersection_area": 18,
+          "text": "BOSTON TOWER"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        534,
+        134,
+        772,
+        204
+      ],
+      "v1_token_count": 20,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 370
+    },
+    {
+      "chart_id": "KBOS_L15R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        534,
+        134,
+        772,
+        204
+      ],
+      "v1_token_count": 20,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 140
+    },
+    {
+      "chart_id": "KBUR_L08-Z",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        502,
+        134,
+        772,
+        264
+      ],
+      "v1_token_count": 54,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 490
+    },
+    {
+      "chart_id": "KBUR_L08-Z",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        502,
+        134,
+        772,
+        264
+      ],
+      "v1_token_count": 54,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 153
+    },
+    {
+      "chart_id": "KCEC_L12",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            608,
+            270,
+            665,
+            287
+          ],
+          "intersection_area": 57,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        572,
+        134,
+        772,
+        271
+      ],
+      "v1_token_count": 31,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 448
+    },
+    {
+      "chart_id": "KCEC_L12",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        572,
+        134,
+        772,
+        271
+      ],
+      "v1_token_count": 31,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 147
+    },
+    {
+      "chart_id": "KCRW_L05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        210
+      ],
+      "v1_token_count": 13,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 353
+    },
+    {
+      "chart_id": "KCRW_L05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        210
+      ],
+      "v1_token_count": 13,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 91
+    },
+    {
+      "chart_id": "KALN_L29",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        534,
+        134,
+        772,
+        226
+      ],
+      "v1_token_count": 28,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 391
+    },
+    {
+      "chart_id": "KALN_L29",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        534,
+        134,
+        772,
+        226
+      ],
+      "v1_token_count": 28,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 105
+    },
+    {
+      "chart_id": "KALO_L12",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 1,
+      "shared_long_phrases_sample": [
+        "ON ALO VOR DME"
+      ],
+      "text_roi_rect": [
+        503,
+        134,
+        772,
+        216
+      ],
+      "v1_token_count": 28,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 442
+    },
+    {
+      "chart_id": "KALO_L12",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 1,
+      "shared_long_phrases_sample": [
+        "ON ALO VOR DME"
+      ],
+      "text_roi_rect": [
+        503,
+        134,
+        772,
+        216
+      ],
+      "v1_token_count": 28,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 120
+    },
+    {
+      "chart_id": "KAWM_L17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 1,
+      "shared_long_phrases_sample": [
+        "ON GQE VOR DME"
+      ],
+      "text_roi_rect": [
+        510,
+        134,
+        772,
+        249
+      ],
+      "v1_token_count": 23,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 371
+    },
+    {
+      "chart_id": "KAWM_L17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 1,
+      "shared_long_phrases_sample": [
+        "ON GQE VOR DME"
+      ],
+      "text_roi_rect": [
+        510,
+        134,
+        772,
+        249
+      ],
+      "v1_token_count": 23,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 81
+    },
+    {
+      "chart_id": "KBRD_L34",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            618,
+            231,
+            675,
+            248
+          ],
+          "intersection_area": 114,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        540,
+        134,
+        772,
+        233
+      ],
+      "v1_token_count": 23,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 324
+    },
+    {
+      "chart_id": "KBRD_L34",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        540,
+        134,
+        772,
+        233
+      ],
+      "v1_token_count": 23,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 85
+    },
+    {
+      "chart_id": "KBTL_L23R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        541,
+        134,
+        772,
+        236
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 297
+    },
+    {
+      "chart_id": "KBTL_L23R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        541,
+        134,
+        772,
+        236
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 33
+    },
+    {
+      "chart_id": "KBTP_L08",
+      "non_ma_intersecting_block_count": 2,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            463,
+            200,
+            523,
+            217
+          ],
+          "intersection_area": 56,
+          "text": "CLNC DEL"
+        },
+        {
+          "box": [
+            645,
+            201,
+            700,
+            218
+          ],
+          "intersection_area": 55,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        495,
+        134,
+        772,
+        202
+      ],
+      "v1_token_count": 17,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 328
+    },
+    {
+      "chart_id": "KBTP_L08",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        495,
+        134,
+        772,
+        202
+      ],
+      "v1_token_count": 17,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 73
+    },
+    {
+      "chart_id": "KBWI_L15L",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            514,
+            190,
+            701,
+            209
+          ],
+          "intersection_area": 187,
+          "text": "BALTIMORE TOWERGND CON"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        511,
+        134,
+        772,
+        191
+      ],
+      "v1_token_count": 20,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 322
+    },
+    {
+      "chart_id": "KBWI_L15L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        511,
+        134,
+        772,
+        191
+      ],
+      "v1_token_count": 20,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 65
+    },
+    {
+      "chart_id": "KCAK_L01",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        535,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 13,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 272
+    },
+    {
+      "chart_id": "KCAK_L01",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        535,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 13,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 74
+    },
+    {
+      "chart_id": "KCBF_L36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        577,
+        134,
+        772,
+        212
+      ],
+      "v1_token_count": 13,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 405
+    },
+    {
+      "chart_id": "KCBF_L36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        577,
+        134,
+        772,
+        212
+      ],
+      "v1_token_count": 13,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 81
+    },
+    {
+      "chart_id": "KCJR_L04",
+      "non_ma_intersecting_block_count": 2,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            452,
+            213,
+            512,
+            230
+          ],
+          "intersection_area": 240,
+          "text": "CLNC DEL"
+        },
+        {
+          "box": [
+            633,
+            213,
+            689,
+            230
+          ],
+          "intersection_area": 224,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        442,
+        134,
+        772,
+        217
+      ],
+      "v1_token_count": 26,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 271
+    },
+    {
+      "chart_id": "KCJR_L04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        442,
+        134,
+        772,
+        217
+      ],
+      "v1_token_count": 26,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 92
+    },
+    {
+      "chart_id": "KAFN_RNV-B",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        549,
+        134,
+        772,
+        209
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 234
+    },
+    {
+      "chart_id": "KAFN_RNV-B",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        549,
+        134,
+        772,
+        209
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 45
+    },
+    {
+      "chart_id": "KAFN_RNV-C",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            617,
+            193,
+            675,
+            214
+          ],
+          "intersection_area": 232,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        522,
+        134,
+        772,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 199
+    },
+    {
+      "chart_id": "KAFN_RNV-C",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        522,
+        134,
+        772,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 57
+    },
+    {
+      "chart_id": "KANP_RNV-A",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        500,
+        134,
+        772,
+        204
+      ],
+      "v1_token_count": 11,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 188
+    },
+    {
+      "chart_id": "KANP_RNV-A",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        500,
+        134,
+        772,
+        204
+      ],
+      "v1_token_count": 11,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 52
+    },
+    {
+      "chart_id": "KAPT_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        526,
+        134,
+        772,
+        201
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 281
+    },
+    {
+      "chart_id": "KAPT_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        526,
+        134,
+        772,
+        201
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 80
+    },
+    {
+      "chart_id": "KAQW_RNV-A",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            614,
+            201,
+            670,
+            218
+          ],
+          "intersection_area": 112,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        500,
+        134,
+        772,
+        203
+      ],
+      "v1_token_count": 17,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 243
+    },
+    {
+      "chart_id": "KAQW_RNV-A",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        500,
+        134,
+        772,
+        203
+      ],
+      "v1_token_count": 17,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 76
+    },
+    {
+      "chart_id": "KAQW_RNV-B",
+      "non_ma_intersecting_block_count": 2,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            349,
+            201,
+            457,
+            218
+          ],
+          "intersection_area": 4,
+          "text": "ALBANY APP CON"
+        },
+        {
+          "box": [
+            614,
+            201,
+            670,
+            219
+          ],
+          "intersection_area": 112,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        455,
+        134,
+        772,
+        203
+      ],
+      "v1_token_count": 11,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 199
+    },
+    {
+      "chart_id": "KAQW_RNV-B",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        455,
+        134,
+        772,
+        203
+      ],
+      "v1_token_count": 11,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 50
+    },
+    {
+      "chart_id": "KAVQ_R12",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        210
+      ],
+      "v1_token_count": 17,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 237
+    },
+    {
+      "chart_id": "KAVQ_R12",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        210
+      ],
+      "v1_token_count": 17,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 47
+    },
+    {
+      "chart_id": "KAVQ_R21",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        490,
+        134,
+        772,
+        229
+      ],
+      "v1_token_count": 20,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 276
+    },
+    {
+      "chart_id": "KAVQ_R21",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        490,
+        134,
+        772,
+        229
+      ],
+      "v1_token_count": 20,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 65
+    },
+    {
+      "chart_id": "KAXH_R27",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        572,
+        134,
+        772,
+        246
+      ],
+      "v1_token_count": 13,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 244
+    },
+    {
+      "chart_id": "KAXH_R27",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        572,
+        134,
+        772,
+        246
+      ],
+      "v1_token_count": 13,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 33
+    },
+    {
+      "chart_id": "KBDN_R34",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            617,
+            207,
+            673,
+            224
+          ],
+          "intersection_area": 112,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        562,
+        134,
+        772,
+        209
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 290
+    },
+    {
+      "chart_id": "KBDN_R34",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        562,
+        134,
+        772,
+        209
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 87
+    },
+    {
+      "chart_id": "KBJC_R12L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        205
+      ],
+      "v1_token_count": 11,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 240
+    },
+    {
+      "chart_id": "KBJC_R12L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        205
+      ],
+      "v1_token_count": 11,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 56
+    },
+    {
+      "chart_id": "KBLF_R05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        220
+      ],
+      "v1_token_count": 8,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 233
+    },
+    {
+      "chart_id": "KBLF_R05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        220
+      ],
+      "v1_token_count": 8,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 67
+    },
+    {
+      "chart_id": "KBMQ_R01",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        543,
+        134,
+        772,
+        215
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 216
+    },
+    {
+      "chart_id": "KBMQ_R01",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        543,
+        134,
+        772,
+        215
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 46
+    },
+    {
+      "chart_id": "KBOS_R32",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        575,
+        134,
+        772,
+        193
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 292
+    },
+    {
+      "chart_id": "KBOS_R32",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        575,
+        134,
+        772,
+        193
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 103
+    },
+    {
+      "chart_id": "KBUR_R08-Z",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        558,
+        134,
+        772,
+        257
+      ],
+      "v1_token_count": 20,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 374
+    },
+    {
+      "chart_id": "KBUR_R08-Z",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        558,
+        134,
+        772,
+        257
+      ],
+      "v1_token_count": 20,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 75
+    },
+    {
+      "chart_id": "KCEA_RNV-D",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        452,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 11,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 192
+    },
+    {
+      "chart_id": "KCEA_RNV-D",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        452,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 11,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 53
+    },
+    {
+      "chart_id": "KCII_R33",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            651,
+            114,
+            771,
+            135
+          ],
+          "intersection_area": 120,
+          "text": "CHOTEAU (CII)"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        211
+      ],
+      "v1_token_count": 8,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 256
+    },
+    {
+      "chart_id": "KCII_R33",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        211
+      ],
+      "v1_token_count": 8,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 79
+    },
+    {
+      "chart_id": "KADF_R22",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        563,
+        134,
+        772,
+        204
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 263
+    },
+    {
+      "chart_id": "KADF_R22",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        563,
+        134,
+        772,
+        204
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 42
+    },
+    {
+      "chart_id": "KAKH_R03",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        490,
+        134,
+        772,
+        212
+      ],
+      "v1_token_count": 20,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 235
+    },
+    {
+      "chart_id": "KAKH_R03",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        490,
+        134,
+        772,
+        212
+      ],
+      "v1_token_count": 20,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 58
+    },
+    {
+      "chart_id": "KAOO_R03-Z",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            624,
+            199,
+            662,
+            218
+          ],
+          "intersection_area": 38,
+          "text": "CTAF"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        510,
+        134,
+        772,
+        200
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 235
+    },
+    {
+      "chart_id": "KAOO_R03-Z",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        510,
+        134,
+        772,
+        200
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 47
+    },
+    {
+      "chart_id": "KAOO_R21",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            477,
+            160,
+            523,
+            178
+          ],
+          "intersection_area": 18,
+          "text": "MALSR"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        522,
+        134,
+        772,
+        229
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 298
+    },
+    {
+      "chart_id": "KAOO_R21",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        522,
+        134,
+        772,
+        229
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 57
+    },
+    {
+      "chart_id": "KARG_R04",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            618,
+            232,
+            675,
+            249
+          ],
+          "intersection_area": 114,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        495,
+        134,
+        772,
+        234
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 265
+    },
+    {
+      "chart_id": "KARG_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        495,
+        134,
+        772,
+        234
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 40
+    },
+    {
+      "chart_id": "KAWG_R36",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            624,
+            241,
+            680,
+            258
+          ],
+          "intersection_area": 168,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        536,
+        134,
+        772,
+        244
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 319
+    },
+    {
+      "chart_id": "KAWG_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        536,
+        134,
+        772,
+        244
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 65
+    },
+    {
+      "chart_id": "KAXV_R26",
+      "non_ma_intersecting_block_count": 2,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            108,
+            175,
+            514,
+            191
+          ],
+          "intersection_area": 16,
+          "text": "systems, LNAV/VNAV NA below -16°C or above 54°C. Rwy 26 helicopter"
+        },
+        {
+          "box": [
+            107,
+            188,
+            514,
+            206
+          ],
+          "intersection_area": 18,
+          "text": "reduction below 1 SM NA. When local altimeter setting not received, use Li"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        153,
+        772,
+        261
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 278
+    },
+    {
+      "chart_id": "KAXV_R26",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        153,
+        772,
+        261
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 55
+    },
+    {
+      "chart_id": "KBFD_R14",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            76,
+            140,
+            514,
+            158
+          ],
+          "intersection_area": 18,
+          "text": "For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -1 9°C (-2°F)"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        238
+      ],
+      "v1_token_count": 26,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 339
+    },
+    {
+      "chart_id": "KBFD_R14",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        238
+      ],
+      "v1_token_count": 26,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 57
+    },
+    {
+      "chart_id": "KBKX_R30",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        420,
+        134,
+        772,
+        229
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 277
+    },
+    {
+      "chart_id": "KBKX_R30",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        420,
+        134,
+        772,
+        229
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 46
+    },
+    {
+      "chart_id": "KBLV_R32RY",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        489,
+        134,
+        772,
+        223
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 250
+    },
+    {
+      "chart_id": "KBLV_R32RY",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        489,
+        134,
+        772,
+        223
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 43
+    },
+    {
+      "chart_id": "KBTR_R04L",
+      "non_ma_intersecting_block_count": 4,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            75,
+            152,
+            514,
+            171
+          ],
+          "intersection_area": 19,
+          "text": "DME/DME RNP-O.3 NA. Baro-VNAV and VDP NA when using Hammond altim"
+        },
+        {
+          "box": [
+            75,
+            168,
+            514,
+            186
+          ],
+          "intersection_area": 18,
+          "text": "local altimeter setting not received, use Hammond altimeter setting and increase c"
+        },
+        {
+          "box": [
+            75,
+            197,
+            514,
+            215
+          ],
+          "intersection_area": 18,
+          "text": "LNAV Cat C/D visibility 14 mile, Circling Cat C/D visibility 1 mile. Helicopter vi:"
+        },
+        {
+          "box": [
+            505,
+            238,
+            571,
+            256
+          ],
+          "intersection_area": 58,
+          "text": "GND CON"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        239
+      ],
+      "v1_token_count": 30,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 329
+    },
+    {
+      "chart_id": "KBTR_R04L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        239
+      ],
+      "v1_token_count": 30,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 38
+    },
+    {
+      "chart_id": "KBUM_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        506,
+        134,
+        772,
+        218
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 248
+    },
+    {
+      "chart_id": "KBUM_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        506,
+        134,
+        772,
+        218
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 66
+    },
+    {
+      "chart_id": "KBXA_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        242
+      ],
+      "v1_token_count": 8,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 257
+    },
+    {
+      "chart_id": "KBXA_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        242
+      ],
+      "v1_token_count": 8,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 51
+    },
+    {
+      "chart_id": "KBYH_R36",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            555,
+            241,
+            610,
+            259
+          ],
+          "intersection_area": 23,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        587,
+        134,
+        772,
+        242
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 311
+    },
+    {
+      "chart_id": "KBYH_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        587,
+        134,
+        772,
+        242
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 52
+    },
+    {
+      "chart_id": "KCAO_R02",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        568,
+        134,
+        772,
+        256
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 360
+    },
+    {
+      "chart_id": "KCAO_R02",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        568,
+        134,
+        772,
+        256
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 77
+    },
+    {
+      "chart_id": "KCBF_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        586,
+        134,
+        772,
+        246
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 349
+    },
+    {
+      "chart_id": "KCBF_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        586,
+        134,
+        772,
+        246
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 85
+    },
+    {
+      "chart_id": "KCDI_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 13,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 221
+    },
+    {
+      "chart_id": "KCDI_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 13,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 49
+    },
+    {
+      "chart_id": "KCDS_R36",
+      "non_ma_intersecting_block_count": 2,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            61,
+            152,
+            514,
+            170
+          ],
+          "intersection_area": 18,
+          "text": "-10°C (14°F) or above 54°C (130°F). DME/DME RNP-O.3 NA. When local altime"
+        },
+        {
+          "box": [
+            616,
+            235,
+            674,
+            255
+          ],
+          "intersection_area": 58,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        236
+      ],
+      "v1_token_count": 34,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 333
+    },
+    {
+      "chart_id": "KCDS_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        236
+      ],
+      "v1_token_count": 34,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 72
+    },
+    {
+      "chart_id": "KCGI_R10",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        546,
+        134,
+        772,
+        286
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 353
+    },
+    {
+      "chart_id": "KCGI_R10",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        546,
+        134,
+        772,
+        286
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 40
+    },
+    {
+      "chart_id": "KCHO_R03",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        566,
+        134,
+        772,
+        279
+      ],
+      "v1_token_count": 17,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 414
+    },
+    {
+      "chart_id": "KCHO_R03",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        566,
+        134,
+        772,
+        279
+      ],
+      "v1_token_count": 17,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 100
+    },
+    {
+      "chart_id": "KCNC_R10",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        586,
+        134,
+        772,
+        202
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 256
+    },
+    {
+      "chart_id": "KCNC_R10",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        586,
+        134,
+        772,
+        202
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 68
+    },
+    {
+      "chart_id": "KCOI_R11",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            614,
+            201,
+            671,
+            218
+          ],
+          "intersection_area": 114,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        565,
+        134,
+        772,
+        203
+      ],
+      "v1_token_count": 17,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 272
+    },
+    {
+      "chart_id": "KCOI_R11",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        565,
+        134,
+        772,
+        203
+      ],
+      "v1_token_count": 17,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 71
+    },
+    {
+      "chart_id": "KCRS_R32",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 11,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 171
+    },
+    {
+      "chart_id": "KCRS_R32",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        513,
+        134,
+        772,
+        196
+      ],
+      "v1_token_count": 11,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 36
+    },
+    {
+      "chart_id": "KANB_R05",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            624,
+            229,
+            678,
+            246
+          ],
+          "intersection_area": 108,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        521,
+        129,
+        741,
+        231
+      ],
+      "v1_token_count": 26,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 286
+    },
+    {
+      "chart_id": "KANB_R05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        521,
+        129,
+        741,
+        231
+      ],
+      "v1_token_count": 26,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 41
+    },
+    {
+      "chart_id": "KAST_R26",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        502,
+        128,
+        741,
+        227
+      ],
+      "v1_token_count": 37,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 325
+    },
+    {
+      "chart_id": "KAST_R26",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        502,
+        128,
+        741,
+        227
+      ],
+      "v1_token_count": 37,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 98
+    },
+    {
+      "chart_id": "KABE_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        514,
+        129,
+        741,
+        207
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 280
+    },
+    {
+      "chart_id": "KABE_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        514,
+        129,
+        741,
+        207
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 61
+    },
+    {
+      "chart_id": "KABE_R24",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        425,
+        128,
+        741,
+        203
+      ],
+      "v1_token_count": 17,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 292
+    },
+    {
+      "chart_id": "KABE_R24",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        425,
+        128,
+        741,
+        203
+      ],
+      "v1_token_count": 17,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 84
+    },
+    {
+      "chart_id": "KABY_R05",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            460,
+            141,
+            502,
+            157
+          ],
+          "intersection_area": 16,
+          "text": "MALSR"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        501,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 19,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 291
+    },
+    {
+      "chart_id": "KABY_R05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        501,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 19,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 49
+    },
+    {
+      "chart_id": "KABY_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        461,
+        129,
+        741,
+        187
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 312
+    },
+    {
+      "chart_id": "KABY_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        461,
+        129,
+        741,
+        187
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 82
+    },
+    {
+      "chart_id": "KABY_R23",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        455,
+        129,
+        741,
+        187
+      ],
+      "v1_token_count": 13,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 279
+    },
+    {
+      "chart_id": "KABY_R23",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        455,
+        129,
+        741,
+        187
+      ],
+      "v1_token_count": 13,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 61
+    },
+    {
+      "chart_id": "KACK_R33",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            529,
+            204,
+            594,
+            225
+          ],
+          "intersection_area": 65,
+          "text": "GND CON"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        510,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 307
+    },
+    {
+      "chart_id": "KACK_R33",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        510,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 79
+    },
+    {
+      "chart_id": "KACY_R13-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        515,
+        129,
+        741,
+        211
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 370
+    },
+    {
+      "chart_id": "KACY_R13-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        515,
+        129,
+        741,
+        211
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 78
+    },
+    {
+      "chart_id": "KACY_R31-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        447,
+        128,
+        742,
+        194
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 315
+    },
+    {
+      "chart_id": "KACY_R31-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        447,
+        128,
+        742,
+        194
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 81
+    },
+    {
+      "chart_id": "KAFW_R34R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 17,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 292
+    },
+    {
+      "chart_id": "KAFW_R34R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 17,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 27
+    },
+    {
+      "chart_id": "KAGC_R10",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        455,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 247
+    },
+    {
+      "chart_id": "KAGC_R10",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        455,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 35
+    },
+    {
+      "chart_id": "KAGC_R28",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            620,
+            217,
+            683,
+            231
+          ],
+          "intersection_area": 63,
+          "text": "GND CON"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        517,
+        128,
+        741,
+        218
+      ],
+      "v1_token_count": 24,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 276
+    },
+    {
+      "chart_id": "KAGC_R28",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        517,
+        128,
+        741,
+        218
+      ],
+      "v1_token_count": 24,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 48
+    },
+    {
+      "chart_id": "KAKH_R21",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        435,
+        129,
+        741,
+        207
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 214
+    },
+    {
+      "chart_id": "KAKH_R21",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        435,
+        129,
+        741,
+        207
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 43
+    },
+    {
+      "chart_id": "KALB_R10",
+      "non_ma_intersecting_block_count": 3,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            442,
+            133,
+            468,
+            154
+          ],
+          "intersection_area": 105,
+          "text": "MIS"
+        },
+        {
+          "box": [
+            443,
+            152,
+            467,
+            168
+          ],
+          "intersection_area": 64,
+          "text": "anc"
+        },
+        {
+          "box": [
+            442,
+            162,
+            467,
+            183
+          ],
+          "intersection_area": 84,
+          "text": "clin"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        463,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 259
+    },
+    {
+      "chart_id": "KALB_R10",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        463,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 54
+    },
+    {
+      "chart_id": "KALB_R19-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        494,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 321
+    },
+    {
+      "chart_id": "KALB_R19-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        494,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 74
+    },
+    {
+      "chart_id": "KALB_R28",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        543,
+        129,
+        741,
+        201
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 313
+    },
+    {
+      "chart_id": "KALB_R28",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        543,
+        129,
+        741,
+        201
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 80
+    },
+    {
+      "chart_id": "KALN_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        525,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 266
+    },
+    {
+      "chart_id": "KALN_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        525,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 78
+    },
+    {
+      "chart_id": "KALS_R02",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        470,
+        129,
+        741,
+        206
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 303
+    },
+    {
+      "chart_id": "KALS_R02",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        470,
+        129,
+        741,
+        206
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 95
+    },
+    {
+      "chart_id": "KALW_R02",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            498,
+            234,
+            564,
+            253
+          ],
+          "intersection_area": 31,
+          "text": "GND CON"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        533,
+        129,
+        754,
+        235
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 287
+    },
+    {
+      "chart_id": "KALW_R02",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        533,
+        129,
+        754,
+        235
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 75
+    },
+    {
+      "chart_id": "KAMA_R04-Y",
+      "non_ma_intersecting_block_count": 3,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            454,
+            256,
+            517,
+            273
+          ],
+          "intersection_area": 132,
+          "text": "GND CON"
+        },
+        {
+          "box": [
+            580,
+            257,
+            636,
+            271
+          ],
+          "intersection_area": 112,
+          "text": "CLNC DEL"
+        },
+        {
+          "box": [
+            680,
+            257,
+            735,
+            271
+          ],
+          "intersection_area": 110,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        473,
+        129,
+        741,
+        259
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 354
+    },
+    {
+      "chart_id": "KAMA_R04-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        473,
+        129,
+        741,
+        259
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 88
+    },
+    {
+      "chart_id": "KAMA_R13-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        432,
+        128,
+        741,
+        213
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 291
+    },
+    {
+      "chart_id": "KAMA_R13-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        432,
+        128,
+        741,
+        213
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 74
+    },
+    {
+      "chart_id": "KANJ_R14",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        579,
+        147,
+        741,
+        241
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 309
+    },
+    {
+      "chart_id": "KANJ_R14",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        579,
+        147,
+        741,
+        241
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 81
+    },
+    {
+      "chart_id": "KAPC_R01LY",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        394,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 29,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 290
+    },
+    {
+      "chart_id": "KAPC_R01LY",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        394,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 29,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 84
+    },
+    {
+      "chart_id": "KAPC_R01LZ",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        394,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 29,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 290
+    },
+    {
+      "chart_id": "KAPC_R01LZ",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        394,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 29,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 84
+    },
+    {
+      "chart_id": "KARV_R18",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            587,
+            216,
+            641,
+            233
+          ],
+          "intersection_area": 54,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        501,
+        128,
+        741,
+        217
+      ],
+      "v1_token_count": 23,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 308
+    },
+    {
+      "chart_id": "KARV_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        501,
+        128,
+        741,
+        217
+      ],
+      "v1_token_count": 23,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 72
+    },
+    {
+      "chart_id": "KARV_R28",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            588,
+            195,
+            644,
+            212
+          ],
+          "intersection_area": 112,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        479,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 250
+    },
+    {
+      "chart_id": "KARV_R28",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        479,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 55
+    },
+    {
+      "chart_id": "KAAA_R03",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        468,
+        128,
+        741,
+        213
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 251
+    },
+    {
+      "chart_id": "KAAA_R03",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        468,
+        128,
+        741,
+        213
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 68
+    },
+    {
+      "chart_id": "KAAA_R21",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        468,
+        129,
+        741,
+        211
+      ],
+      "v1_token_count": 11,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 224
+    },
+    {
+      "chart_id": "KAAA_R21",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        468,
+        129,
+        741,
+        211
+      ],
+      "v1_token_count": 11,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 39
+    },
+    {
+      "chart_id": "KAAF_R06",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        545,
+        128,
+        741,
+        218
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 262
+    },
+    {
+      "chart_id": "KAAF_R06",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        545,
+        128,
+        741,
+        218
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 62
+    },
+    {
+      "chart_id": "KAAF_R14",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            600,
+            210,
+            653,
+            224
+          ],
+          "intersection_area": 53,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        549,
+        129,
+        741,
+        211
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 281
+    },
+    {
+      "chart_id": "KAAF_R14",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        549,
+        129,
+        741,
+        211
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 75
+    },
+    {
+      "chart_id": "KAAF_R24",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            600,
+            252,
+            652,
+            266
+          ],
+          "intersection_area": 104,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        552,
+        129,
+        741,
+        254
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 263
+    },
+    {
+      "chart_id": "KAAF_R24",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        552,
+        129,
+        741,
+        254
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 62
+    },
+    {
+      "chart_id": "KAAS_R05",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            594,
+            208,
+            652,
+            225
+          ],
+          "intersection_area": 116,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        210
+      ],
+      "v1_token_count": 12,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 245
+    },
+    {
+      "chart_id": "KAAS_R05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        210
+      ],
+      "v1_token_count": 12,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 36
+    },
+    {
+      "chart_id": "KAAS_R23",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        234
+      ],
+      "v1_token_count": 27,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 315
+    },
+    {
+      "chart_id": "KAAS_R23",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        234
+      ],
+      "v1_token_count": 27,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 50
+    },
+    {
+      "chart_id": "KABI_R17L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        470,
+        129,
+        741,
+        210
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 266
+    },
+    {
+      "chart_id": "KABI_R17L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        470,
+        129,
+        741,
+        210
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 54
+    },
+    {
+      "chart_id": "KABI_R35R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        510,
+        129,
+        741,
+        216
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 321
+    },
+    {
+      "chart_id": "KABI_R35R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        510,
+        129,
+        741,
+        216
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 61
+    },
+    {
+      "chart_id": "KABR_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        400,
+        128,
+        741,
+        199
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 254
+    },
+    {
+      "chart_id": "KABR_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        400,
+        128,
+        741,
+        199
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 37
+    },
+    {
+      "chart_id": "KABR_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        399,
+        128,
+        741,
+        193
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 284
+    },
+    {
+      "chart_id": "KABR_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        399,
+        128,
+        741,
+        193
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 60
+    },
+    {
+      "chart_id": "KABR_R31",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            437,
+            133,
+            482,
+            154
+          ],
+          "intersection_area": 21,
+          "text": "MALSR"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        481,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 319
+    },
+    {
+      "chart_id": "KABR_R31",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        481,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 71
+    },
+    {
+      "chart_id": "KACJ_R05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        565,
+        129,
+        741,
+        243
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 345
+    },
+    {
+      "chart_id": "KACJ_R05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        565,
+        129,
+        741,
+        243
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 63
+    },
+    {
+      "chart_id": "KACJ_R23",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            79,
+            204,
+            495,
+            218
+          ],
+          "intersection_area": 18,
+          "text": "Rwy 23 helicopter visibility reduction below 3/ SM NA. When local altimeter settin,"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        150,
+        741,
+        213
+      ],
+      "v1_token_count": 17,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 379
+    },
+    {
+      "chart_id": "KACJ_R23",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        150,
+        741,
+        213
+      ],
+      "v1_token_count": 17,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 59
+    },
+    {
+      "chart_id": "KACK_R06",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        535,
+        129,
+        741,
+        258
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 288
+    },
+    {
+      "chart_id": "KACK_R06",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        535,
+        129,
+        741,
+        258
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 66
+    },
+    {
+      "chart_id": "KACK_R15",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        541,
+        129,
+        741,
+        225
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 266
+    },
+    {
+      "chart_id": "KACK_R15",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        541,
+        129,
+        741,
+        225
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 66
+    },
+    {
+      "chart_id": "KACP_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        501,
+        129,
+        741,
+        221
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 269
+    },
+    {
+      "chart_id": "KACP_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        501,
+        129,
+        741,
+        221
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 66
+    },
+    {
+      "chart_id": "KACP_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        501,
+        129,
+        741,
+        221
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 252
+    },
+    {
+      "chart_id": "KACP_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        501,
+        129,
+        741,
+        221
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 60
+    },
+    {
+      "chart_id": "KACQ_R15",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        449,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 289
+    },
+    {
+      "chart_id": "KACQ_R15",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        449,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 69
+    },
+    {
+      "chart_id": "KACQ_R33",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        506,
+        128,
+        741,
+        209
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 282
+    },
+    {
+      "chart_id": "KACQ_R33",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        506,
+        128,
+        741,
+        209
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 63
+    },
+    {
+      "chart_id": "KACY_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        508,
+        129,
+        741,
+        201
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 302
+    },
+    {
+      "chart_id": "KACY_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        508,
+        129,
+        741,
+        201
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 68
+    },
+    {
+      "chart_id": "KADC_R16",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        552,
+        128,
+        741,
+        246
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 321
+    },
+    {
+      "chart_id": "KADC_R16",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        552,
+        128,
+        741,
+        246
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 42
+    },
+    {
+      "chart_id": "KADC_R34",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        541,
+        129,
+        741,
+        245
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 320
+    },
+    {
+      "chart_id": "KADC_R34",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        541,
+        129,
+        741,
+        245
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 45
+    },
+    {
+      "chart_id": "KADF_R04",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            86,
+            145,
+            494,
+            164
+          ],
+          "intersection_area": 19,
+          "text": "setting and increase all DA 103 feet and MDA 120 feet and increase LPV all C"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        227
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 320
+    },
+    {
+      "chart_id": "KADF_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        227
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 41
+    },
+    {
+      "chart_id": "KADH_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        563,
+        128,
+        741,
+        271
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 419
+    },
+    {
+      "chart_id": "KADH_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        563,
+        128,
+        741,
+        271
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 65
+    },
+    {
+      "chart_id": "KADH_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        518,
+        128,
+        741,
+        241
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 371
+    },
+    {
+      "chart_id": "KADH_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        518,
+        128,
+        741,
+        241
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 69
+    },
+    {
+      "chart_id": "KADM_R13",
+      "non_ma_intersecting_block_count": 2,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            500,
+            205,
+            564,
+            223
+          ],
+          "intersection_area": 192,
+          "text": "GND CON"
+        },
+        {
+          "box": [
+            641,
+            206,
+            695,
+            224
+          ],
+          "intersection_area": 108,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        494,
+        128,
+        741,
+        208
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 286
+    },
+    {
+      "chart_id": "KADM_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        494,
+        128,
+        741,
+        208
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 90
+    },
+    {
+      "chart_id": "KADM_R31",
+      "non_ma_intersecting_block_count": 2,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            500,
+            223,
+            564,
+            242
+          ],
+          "intersection_area": 256,
+          "text": "GND CON"
+        },
+        {
+          "box": [
+            645,
+            225,
+            699,
+            242
+          ],
+          "intersection_area": 108,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        495,
+        128,
+        741,
+        227
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 303
+    },
+    {
+      "chart_id": "KADM_R31",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        495,
+        128,
+        741,
+        227
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 62
+    },
+    {
+      "chart_id": "KAEG_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        550,
+        129,
+        741,
+        245
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 365
+    },
+    {
+      "chart_id": "KAEG_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        550,
+        129,
+        741,
+        245
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 67
+    },
+    {
+      "chart_id": "KAEG_R22",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        535,
+        129,
+        741,
+        258
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 371
+    },
+    {
+      "chart_id": "KAEG_R22",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        535,
+        129,
+        741,
+        258
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 64
+    },
+    {
+      "chart_id": "KAEL_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        566,
+        129,
+        741,
+        234
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 312
+    },
+    {
+      "chart_id": "KAEL_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        566,
+        129,
+        741,
+        234
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 58
+    },
+    {
+      "chart_id": "KAEL_R35",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        490,
+        128,
+        741,
+        237
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 307
+    },
+    {
+      "chart_id": "KAEL_R35",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        490,
+        128,
+        741,
+        237
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 73
+    },
+    {
+      "chart_id": "KAFJ_R09",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            615,
+            195,
+            670,
+            213
+          ],
+          "intersection_area": 110,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        561,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 215
+    },
+    {
+      "chart_id": "KAFJ_R09",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        561,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 42
+    },
+    {
+      "chart_id": "KAFJ_R27",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        557,
+        129,
+        741,
+        215
+      ],
+      "v1_token_count": 17,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 299
+    },
+    {
+      "chart_id": "KAFJ_R27",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        557,
+        129,
+        741,
+        215
+      ],
+      "v1_token_count": 17,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 63
+    },
+    {
+      "chart_id": "KAFP_R16",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        550,
+        129,
+        741,
+        196
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 208
+    },
+    {
+      "chart_id": "KAFP_R16",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        550,
+        129,
+        741,
+        196
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 47
+    },
+    {
+      "chart_id": "KAFP_R34",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        523,
+        129,
+        741,
+        230
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 248
+    },
+    {
+      "chart_id": "KAFP_R34",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        523,
+        129,
+        741,
+        230
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 47
+    },
+    {
+      "chart_id": "KAFW_R16L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        483,
+        128,
+        741,
+        217
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 344
+    },
+    {
+      "chart_id": "KAFW_R16L",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        483,
+        128,
+        741,
+        217
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 71
+    },
+    {
+      "chart_id": "KAFW_R16R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        483,
+        129,
+        741,
+        192
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 317
+    },
+    {
+      "chart_id": "KAFW_R16R",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        483,
+        129,
+        741,
+        192
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 73
+    },
+    {
+      "chart_id": "KAGO_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        553,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 260
+    },
+    {
+      "chart_id": "KAGO_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        553,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 74
+    },
+    {
+      "chart_id": "KAGO_R36",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            584,
+            194,
+            639,
+            211
+          ],
+          "intersection_area": 220,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        548,
+        128,
+        741,
+        198
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 270
+    },
+    {
+      "chart_id": "KAGO_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        548,
+        128,
+        741,
+        198
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 65
+    },
+    {
+      "chart_id": "KAGZ_R09",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        523,
+        129,
+        741,
+        216
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 315
+    },
+    {
+      "chart_id": "KAGZ_R09",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        523,
+        129,
+        741,
+        216
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 79
+    },
+    {
+      "chart_id": "KAGZ_R27",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        461,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 279
+    },
+    {
+      "chart_id": "KAGZ_R27",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        461,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 76
+    },
+    {
+      "chart_id": "KAHN_R02",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            74,
+            143,
+            494,
+            162
+          ],
+          "intersection_area": 19,
+          "text": "setting and increase all MDA 60 feet; increase LNAV Cats C and D visibilit"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        192
+      ],
+      "v1_token_count": 14,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 274
+    },
+    {
+      "chart_id": "KAHN_R02",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        192
+      ],
+      "v1_token_count": 14,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 61
+    },
+    {
+      "chart_id": "KAHN_R09",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        568,
+        129,
+        741,
+        220
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 293
+    },
+    {
+      "chart_id": "KAHN_R09",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        568,
+        129,
+        741,
+        220
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 60
+    },
+    {
+      "chart_id": "KAHN_R20",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        539,
+        128,
+        741,
+        198
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 289
+    },
+    {
+      "chart_id": "KAHN_R20",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        539,
+        128,
+        741,
+        198
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 58
+    },
+    {
+      "chart_id": "KAIA_R08",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        384,
+        129,
+        741,
+        192
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 236
+    },
+    {
+      "chart_id": "KAIA_R08",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        384,
+        129,
+        741,
+        192
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 68
+    },
+    {
+      "chart_id": "KAIA_R12",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        198
+      ],
+      "v1_token_count": 8,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 283
+    },
+    {
+      "chart_id": "KAIA_R12",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        198
+      ],
+      "v1_token_count": 8,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 69
+    },
+    {
+      "chart_id": "KAIA_R26",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        194
+      ],
+      "v1_token_count": 8,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 214
+    },
+    {
+      "chart_id": "KAIA_R26",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        194
+      ],
+      "v1_token_count": 8,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 48
+    },
+    {
+      "chart_id": "KAIG_R09",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            595,
+            202,
+            650,
+            219
+          ],
+          "intersection_area": 165,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        566,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 246
+    },
+    {
+      "chart_id": "KAIG_R09",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        566,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 44
+    },
+    {
+      "chart_id": "KAIG_R17",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            597,
+            230,
+            650,
+            244
+          ],
+          "intersection_area": 106,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        146,
+        741,
+        232
+      ],
+      "v1_token_count": 23,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 313
+    },
+    {
+      "chart_id": "KAIG_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        146,
+        741,
+        232
+      ],
+      "v1_token_count": 23,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 54
+    },
+    {
+      "chart_id": "KAIG_R27",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            591,
+            196,
+            647,
+            217
+          ],
+          "intersection_area": 336,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 12,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 255
+    },
+    {
+      "chart_id": "KAIG_R27",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 12,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 41
+    },
+    {
+      "chart_id": "KAIK_R07",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            35,
+            147,
+            494,
+            166
+          ],
+          "intersection_area": 19,
+          "text": "ANA systems, LNAV/VNAV NA below -16°C (4°F) or above 40°C (104°F). DME/DM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        226
+      ],
+      "v1_token_count": 35,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 336
+    },
+    {
+      "chart_id": "KAIK_R07",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        226
+      ],
+      "v1_token_count": 35,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 55
+    },
+    {
+      "chart_id": "KAIK_R25",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        528,
+        128,
+        741,
+        213
+      ],
+      "v1_token_count": 3,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 367
+    },
+    {
+      "chart_id": "KAIK_R25",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        528,
+        128,
+        741,
+        213
+      ],
+      "v1_token_count": 3,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 55
+    },
+    {
+      "chart_id": "KAIO_R02",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        563,
+        128,
+        741,
+        228
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 370
+    },
+    {
+      "chart_id": "KAIO_R02",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        563,
+        128,
+        741,
+        228
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 77
+    },
+    {
+      "chart_id": "KAIO_R20",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        424,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 296
+    },
+    {
+      "chart_id": "KAIO_R20",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        424,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 68
+    },
+    {
+      "chart_id": "KAIT_R16",
+      "non_ma_intersecting_block_count": 4,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            66,
+            140,
+            494,
+            155
+          ],
+          "intersection_area": 15,
+          "text": "For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -17°C (2°F) or "
+        },
+        {
+          "box": [
+            65,
+            156,
+            494,
+            170
+          ],
+          "intersection_area": 14,
+          "text": "Baro-VNAV and VDP NA when using Mc Gregor altimeter setting. DME/DME RN"
+        },
+        {
+          "box": [
+            66,
+            185,
+            494,
+            199
+          ],
+          "intersection_area": 14,
+          "text": "feet; increase LPV all Cats visibilities 14 SM, LNAV/VNAV all Cats and LNAV Cat ("
+        },
+        {
+          "box": [
+            584,
+            223,
+            637,
+            237
+          ],
+          "intersection_area": 106,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        225
+      ],
+      "v1_token_count": 27,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 327
+    },
+    {
+      "chart_id": "KAIT_R16",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        225
+      ],
+      "v1_token_count": 27,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 57
+    },
+    {
+      "chart_id": "KAIT_R34",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            67,
+            180,
+            495,
+            198
+          ],
+          "intersection_area": 36,
+          "text": "below -17°C or above 54°C. When local altimeter setting not received, use HZX <"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        147,
+        741,
+        232
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 353
+    },
+    {
+      "chart_id": "KAIT_R34",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        147,
+        741,
+        232
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 81
+    },
+    {
+      "chart_id": "KAIV_R06",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        552,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 234
+    },
+    {
+      "chart_id": "KAIV_R06",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        552,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 45
+    },
+    {
+      "chart_id": "KAIV_R24",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        552,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 240
+    },
+    {
+      "chart_id": "KAIV_R24",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        552,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 48
+    },
+    {
+      "chart_id": "KAIZ_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        530,
+        129,
+        741,
+        235
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 278
+    },
+    {
+      "chart_id": "KAIZ_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        530,
+        129,
+        741,
+        235
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 38
+    },
+    {
+      "chart_id": "KAIZ_R22",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        546,
+        128,
+        741,
+        233
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 308
+    },
+    {
+      "chart_id": "KAIZ_R22",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        546,
+        128,
+        741,
+        233
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 40
+    },
+    {
+      "chart_id": "KAJR_R06",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            59,
+            175,
+            398,
+            192
+          ],
+          "intersection_area": 17,
+          "text": "reduction bélow 3 SM NA. For uncompensated Baro-VNAV"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        397,
+        129,
+        741,
+        221
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 276
+    },
+    {
+      "chart_id": "KAJR_R06",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        397,
+        129,
+        741,
+        221
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 60
+    },
+    {
+      "chart_id": "KAJR_R24",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            593,
+            225,
+            648,
+            242
+          ],
+          "intersection_area": 110,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        227
+      ],
+      "v1_token_count": 8,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 231
+    },
+    {
+      "chart_id": "KAJR_R24",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        227
+      ],
+      "v1_token_count": 8,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 60
+    },
+    {
+      "chart_id": "KAKO_R11",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            55,
+            162,
+            505,
+            180
+          ],
+          "intersection_area": 36,
+          "text": "For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -22°C or above 5z"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        503,
+        129,
+        741,
+        188
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 269
+    },
+    {
+      "chart_id": "KAKO_R11",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        503,
+        129,
+        741,
+        188
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 59
+    },
+    {
+      "chart_id": "KAKO_R29",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 8,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 256
+    },
+    {
+      "chart_id": "KAKO_R29",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 8,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 52
+    },
+    {
+      "chart_id": "KALI_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        521,
+        128,
+        741,
+        256
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 324
+    },
+    {
+      "chart_id": "KALI_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        521,
+        128,
+        741,
+        256
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 68
+    },
+    {
+      "chart_id": "KALI_R31",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            594,
+            261,
+            647,
+            275
+          ],
+          "intersection_area": 159,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        548,
+        129,
+        741,
+        264
+      ],
+      "v1_token_count": 11,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 354
+    },
+    {
+      "chart_id": "KALI_R31",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        548,
+        129,
+        741,
+        264
+      ],
+      "v1_token_count": 11,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 70
+    },
+    {
+      "chart_id": "KALM_R04",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        528,
+        129,
+        754,
+        221
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 333
+    },
+    {
+      "chart_id": "KALM_R04",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            591,
+            219,
+            648,
+            240
+          ],
+          "intersection_area": 114,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        528,
+        129,
+        754,
+        221
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 114
+    },
+    {
+      "chart_id": "KALN_R11",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        548,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 273
+    },
+    {
+      "chart_id": "KALN_R11",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        548,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 47
+    },
+    {
+      "chart_id": "KALO_R12",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        499,
+        128,
+        741,
+        217
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 301
+    },
+    {
+      "chart_id": "KALO_R12",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        499,
+        128,
+        741,
+        217
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 55
+    },
+    {
+      "chart_id": "KALO_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 11,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 271
+    },
+    {
+      "chart_id": "KALO_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 11,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 63
+    },
+    {
+      "chart_id": "KALS_R20",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            594,
+            196,
+            650,
+            213
+          ],
+          "intersection_area": 56,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        506,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 283
+    },
+    {
+      "chart_id": "KALS_R20",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        506,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 68
+    },
+    {
+      "chart_id": "KALW_R20",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        537,
+        129,
+        739,
+        264
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 329
+    },
+    {
+      "chart_id": "KALW_R20",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        537,
+        129,
+        739,
+        264
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 88
+    },
+    {
+      "chart_id": "KALX_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        549,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 273
+    },
+    {
+      "chart_id": "KALX_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        549,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 53
+    },
+    {
+      "chart_id": "KALX_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        503,
+        129,
+        741,
+        211
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 269
+    },
+    {
+      "chart_id": "KALX_R36",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        503,
+        129,
+        741,
+        211
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 43
+    },
+    {
+      "chart_id": "KAMG_R16",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 253
+    },
+    {
+      "chart_id": "KAMG_R16",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 49
+    },
+    {
+      "chart_id": "KAMG_R34",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 8,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 254
+    },
+    {
+      "chart_id": "KAMG_R34",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        202
+      ],
+      "v1_token_count": 8,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 45
+    },
+    {
+      "chart_id": "KAMN_R09",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        549,
+        128,
+        741,
+        247
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 332
+    },
+    {
+      "chart_id": "KAMN_R09",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        549,
+        128,
+        741,
+        247
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 72
+    },
+    {
+      "chart_id": "KAMN_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 231
+    },
+    {
+      "chart_id": "KAMN_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 76
+    },
+    {
+      "chart_id": "KAMN_R27",
+      "non_ma_intersecting_block_count": 2,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            524,
+            105,
+            740,
+            131
+          ],
+          "intersection_area": 432,
+          "text": "GRATIOT COMMUNITY (AMN)"
+        },
+        {
+          "box": [
+            585,
+            204,
+            640,
+            221
+          ],
+          "intersection_area": 165,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        506,
+        129,
+        741,
+        207
+      ],
+      "v1_token_count": 14,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 258
+    },
+    {
+      "chart_id": "KAMN_R27",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        506,
+        129,
+        741,
+        207
+      ],
+      "v1_token_count": 14,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 69
+    },
+    {
+      "chart_id": "KAMT_R05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        521,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 193
+    },
+    {
+      "chart_id": "KAMT_R05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        521,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 48
+    },
+    {
+      "chart_id": "KAMT_R23",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            594,
+            185,
+            649,
+            203
+          ],
+          "intersection_area": 220,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        521,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 197
+    },
+    {
+      "chart_id": "KAMT_R23",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        521,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 43
+    },
+    {
+      "chart_id": "KAMW_R01",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        515,
+        129,
+        741,
+        216
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 285
+    },
+    {
+      "chart_id": "KAMW_R01",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        515,
+        129,
+        741,
+        216
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 66
+    },
+    {
+      "chart_id": "KAMW_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        456,
+        128,
+        741,
+        208
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 271
+    },
+    {
+      "chart_id": "KAMW_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        456,
+        128,
+        741,
+        208
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 71
+    },
+    {
+      "chart_id": "KAMW_R19",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        559,
+        128,
+        741,
+        247
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 337
+    },
+    {
+      "chart_id": "KAMW_R19",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        559,
+        128,
+        741,
+        247
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 75
+    },
+    {
+      "chart_id": "KANB_R23",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        231
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 330
+    },
+    {
+      "chart_id": "KANB_R23",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        231
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 55
+    },
+    {
+      "chart_id": "KANJ_R32",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 12,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 285
+    },
+    {
+      "chart_id": "KANJ_R32",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 12,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 72
+    },
+    {
+      "chart_id": "KANQ_R05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        199
+      ],
+      "v1_token_count": 12,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 238
+    },
+    {
+      "chart_id": "KANQ_R05",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        128,
+        741,
+        199
+      ],
+      "v1_token_count": 12,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 58
+    },
+    {
+      "chart_id": "KANQ_R23",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        483,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 200
+    },
+    {
+      "chart_id": "KANQ_R23",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        483,
+        129,
+        741,
+        197
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 51
+    },
+    {
+      "chart_id": "KANW_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 12,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 257
+    },
+    {
+      "chart_id": "KANW_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 12,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 55
+    },
+    {
+      "chart_id": "KANW_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        486,
+        128,
+        741,
+        213
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 285
+    },
+    {
+      "chart_id": "KANW_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        486,
+        128,
+        741,
+        213
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 62
+    },
+    {
+      "chart_id": "KANW_R31",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            591,
+            212,
+            647,
+            233
+          ],
+          "intersection_area": 56,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        401,
+        128,
+        741,
+        213
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 266
+    },
+    {
+      "chart_id": "KANW_R31",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        401,
+        128,
+        741,
+        213
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 67
+    },
+    {
+      "chart_id": "KAOV_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        480,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 217
+    },
+    {
+      "chart_id": "KAOV_R13",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        480,
+        129,
+        741,
+        205
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 43
+    },
+    {
+      "chart_id": "KAOV_R31",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        501,
+        129,
+        741,
+        206
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 199
+    },
+    {
+      "chart_id": "KAOV_R31",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        501,
+        129,
+        741,
+        206
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 48
+    },
+    {
+      "chart_id": "KAPF_R05-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        450,
+        129,
+        741,
+        192
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 276
+    },
+    {
+      "chart_id": "KAPF_R05-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        450,
+        129,
+        741,
+        192
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 57
+    },
+    {
+      "chart_id": "KAPF_R14",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        464,
+        129,
+        741,
+        192
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 287
+    },
+    {
+      "chart_id": "KAPF_R14",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        464,
+        129,
+        741,
+        192
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 56
+    },
+    {
+      "chart_id": "KAPF_R23-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        526,
+        129,
+        741,
+        229
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 279
+    },
+    {
+      "chart_id": "KAPF_R23-Y",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        526,
+        129,
+        741,
+        229
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 54
+    },
+    {
+      "chart_id": "KAQO_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        481,
+        129,
+        741,
+        211
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 207
+    },
+    {
+      "chart_id": "KAQO_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        481,
+        129,
+        741,
+        211
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 65
+    },
+    {
+      "chart_id": "KAQO_R35",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            587,
+            102,
+            741,
+            129
+          ],
+          "intersection_area": 154,
+          "text": "LLANO MUNI (AQO)"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        559,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 227
+    },
+    {
+      "chart_id": "KAQO_R35",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        559,
+        128,
+        741,
+        189
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 72
+    },
+    {
+      "chart_id": "KAQX_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        563,
+        129,
+        741,
+        220
+      ],
+      "v1_token_count": 15,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 317
+    },
+    {
+      "chart_id": "KAQX_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        563,
+        129,
+        741,
+        220
+      ],
+      "v1_token_count": 15,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 61
+    },
+    {
+      "chart_id": "KAQX_R35",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            593,
+            210,
+            651,
+            227
+          ],
+          "intersection_area": 116,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        146,
+        741,
+        212
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 290
+    },
+    {
+      "chart_id": "KAQX_R35",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        146,
+        741,
+        212
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 62
+    },
+    {
+      "chart_id": "KARA_R17",
+      "non_ma_intersecting_block_count": 2,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            543,
+            229,
+            607,
+            246
+          ],
+          "intersection_area": 64,
+          "text": "GND CON"
+        },
+        {
+          "box": [
+            657,
+            229,
+            712,
+            246
+          ],
+          "intersection_area": 55,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        510,
+        129,
+        741,
+        230
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 300
+    },
+    {
+      "chart_id": "KARA_R17",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        510,
+        129,
+        741,
+        230
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 48
+    },
+    {
+      "chart_id": "KARA_R35",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        510,
+        128,
+        741,
+        203
+      ],
+      "v1_token_count": 16,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 314
+    },
+    {
+      "chart_id": "KARA_R35",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        510,
+        128,
+        741,
+        203
+      ],
+      "v1_token_count": 16,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 50
+    },
+    {
+      "chart_id": "KARB_R06",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        523,
+        128,
+        741,
+        217
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 267
+    },
+    {
+      "chart_id": "KARB_R06",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        523,
+        128,
+        741,
+        217
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 40
+    },
+    {
+      "chart_id": "KARB_R24",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        518,
+        128,
+        741,
+        203
+      ],
+      "v1_token_count": 9,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 258
+    },
+    {
+      "chart_id": "KARB_R24",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        518,
+        128,
+        741,
+        203
+      ],
+      "v1_token_count": 9,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 49
+    },
+    {
+      "chart_id": "KARG_R18",
+      "non_ma_intersecting_block_count": 1,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            607,
+            254,
+            662,
+            271
+          ],
+          "intersection_area": 55,
+          "text": "UNICOM"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        560,
+        129,
+        741,
+        255
+      ],
+      "v1_token_count": 10,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 330
+    },
+    {
+      "chart_id": "KARG_R18",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        560,
+        129,
+        741,
+        255
+      ],
+      "v1_token_count": 10,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 40
+    },
+    {
+      "chart_id": "KARG_R22",
+      "non_ma_intersecting_block_count": 2,
+      "non_ma_intersecting_blocks_sample": [
+        {
+          "box": [
+            71,
+            159,
+            494,
+            177
+          ],
+          "intersection_area": 18,
+          "text": "systems, LNAV/VNAV NA below -15°C (5°F) or above 42°C (107°F). DME/DN"
+        },
+        {
+          "box": [
+            71,
+            174,
+            495,
+            192
+          ],
+          "intersection_area": 36,
+          "text": "VDP NA with Jonesboro altimeter setting. When local altimeter setting not receive"
+        }
+      ],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        240
+      ],
+      "v1_token_count": 21,
+      "variant": "V2_full_minus_ma_prose",
+      "variant_token_count": 295
+    },
+    {
+      "chart_id": "KARG_R22",
+      "non_ma_intersecting_block_count": 0,
+      "non_ma_intersecting_blocks_sample": [],
+      "residual_block_count": 0,
+      "shared_long_phrase_count": 0,
+      "shared_long_phrases_sample": [],
+      "text_roi_rect": [
+        493,
+        129,
+        741,
+        240
+      ],
+      "v1_token_count": 21,
+      "variant": "V5_plan_detail_no_ma",
+      "variant_token_count": 38
+    }
+  ],
+  "eval200_json": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\manifests\\experiment4_evaluation200_chart_ids.json",
+  "failure_count": 0,
+  "failures": [],
+  "output_root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1",
+  "phrase_hit_chart_counts": {
+    "V2_full_minus_ma_prose": 2,
+    "V5_plan_detail_no_ma": 2
+  },
+  "residual_terms": "\\b(MISSED|APPROA|APPR|CLIMB|CLB|TURN|DIRECT|HEADING|TRACK|PROCEED|MAINTAIN|HOLD|HOLDING)\\b",
+  "source_view_manifest": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\source_views\\manifests\\source_view_manifest.jsonl",
+  "status": "passed",
+  "variant_counts": {
+    "V2_full_minus_ma_prose": 200,
+    "V5_plan_detail_no_ma": 200
+  }
+}

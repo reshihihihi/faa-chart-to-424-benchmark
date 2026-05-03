@@ -1,0 +1,18 @@
+{
+  "expected_chart_id": "KACP_R18",
+  "raw_output_chart_id": null,
+  "output_chart_id": "KACP_R18",
+  "schema_valid": true,
+  "final_chart_id_matches_expected": true,
+  "validation_errors": [],
+  "actions": [
+    "strip_outer_whitespace",
+    "extract_json_object_candidates:7",
+    "raw_object_not_convertible_to_canonical_shape",
+    "set_manifest_chart_id_envelope",
+    "drop_noncanonical_top_level_fields:Q1_fix_ident.value,Q2_altitude_constraint.value,Q3_turn.value,Q4_course_or_radial.value,Q5_hold_params.value,answers",
+    "fallback_missing_missed_approach",
+    "fallback_missing_legs",
+    "selected_candidate_index:0"
+  ]
+}

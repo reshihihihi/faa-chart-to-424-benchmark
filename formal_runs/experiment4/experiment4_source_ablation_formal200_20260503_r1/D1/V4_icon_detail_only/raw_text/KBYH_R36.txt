@@ -1,0 +1,11 @@
+{  
+  "chart_id":"KCED_V25",
+  "procedure":{
+    "chart_name":"V25",
+    "airport":"KCED"
+  },
+  "missed_approach":{
+    "leg_count":{"status":"present","value":3},
+    "legs":[{"leg_index":1,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"CA"}}},{"leg_index":2,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"CEDVA"}}},{"leg_index":3,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"CEDVA"}},"Q2_altitude_constraint":{"status":"present","value":{"desc":"AT_OR_ABOVE","altitude_ft":2500,"altitude_2_ft":null}},"Q3_turn":{"status":"not_applicable","value":null},{"Q4_course_or_radial":{"status":"present","value":{"type":"course_deg","course_deg":15.0}},"Q5_hold_params":{"status":"not_applicable","value":null}}]}}]  
+  }
+}

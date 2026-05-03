@@ -1,0 +1,20 @@
+{
+  "chart_count": 300,
+  "created_at_utc": "2026-05-01T16:55:22.810232+00:00",
+  "error_count": 0,
+  "errors": [],
+  "manifest": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\source_views\\manifests\\source_view_manifest.jsonl",
+  "row_count": 1800,
+  "schema": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\schemas\\source_view_manifest.schema.json",
+  "status": "passed",
+  "variant_counts": {
+    "V0_full_chart": 300,
+    "V1_ma_text_only": 300,
+    "V2_full_minus_ma_prose": 300,
+    "V3_plan_view_only": 300,
+    "V4_icon_detail_only": 300,
+    "V5_plan_detail_no_ma": 300
+  },
+  "warning_count": 0,
+  "warnings": []
+}

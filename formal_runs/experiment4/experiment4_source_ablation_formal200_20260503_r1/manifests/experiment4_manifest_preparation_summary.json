@@ -1,0 +1,46 @@
+{
+  "created_at_utc": "2026-05-01T17:07:42.177780+00:00",
+  "evaluation_chart_count": 200,
+  "group1_scoring_manifest": ".\\formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\scoring_manifest.jsonl",
+  "input_manifest_counts": {
+    "V1_ma_text_only/B1": 200,
+    "V1_ma_text_only/C4": 200,
+    "V1_ma_text_only/D_SFT": 200,
+    "V2_full_minus_ma_prose/B1": 200,
+    "V2_full_minus_ma_prose/C4": 200,
+    "V2_full_minus_ma_prose/D_SFT": 200,
+    "V3_plan_view_only/B1": 200,
+    "V3_plan_view_only/C4": 200,
+    "V3_plan_view_only/D_SFT": 200,
+    "V4_icon_detail_only/B1": 200,
+    "V4_icon_detail_only/C4": 200,
+    "V4_icon_detail_only/D_SFT": 200,
+    "V5_plan_detail_no_ma/B1": 200,
+    "V5_plan_detail_no_ma/C4": 200,
+    "V5_plan_detail_no_ma/D_SFT": 200
+  },
+  "methods": [
+    "B1",
+    "C4",
+    "D_SFT"
+  ],
+  "ocr1_run_name": "ocr1_paddleocr_ppocrv5_source_view_20260501_r1",
+  "ocr_manifest_counts": {
+    "V1_ma_text_only": 200,
+    "V2_full_minus_ma_prose": 200,
+    "V3_plan_view_only": 200,
+    "V4_icon_detail_only": 200,
+    "V5_plan_detail_no_ma": 200
+  },
+  "scoring_manifest": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\manifests\\experiment4_scoring_manifest_eval200.jsonl",
+  "scoring_manifest_sha256": "4ff42cef6ca549edd17f9c2d5c4eec138f5460308411fcbaa0c5954789c36b4d",
+  "source_split_manifest": ".\\benchmark_exports\\derived\\v2\\formal300\\split_candidates\\split_50_200_50_seed20260437\\sample_manifest_50_200_50_seed20260437.jsonl",
+  "source_view_manifest": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\source_views\\manifests\\source_view_manifest.jsonl",
+  "variants_for_new_runs": [
+    "V1_ma_text_only",
+    "V2_full_minus_ma_prose",
+    "V3_plan_view_only",
+    "V4_icon_detail_only",
+    "V5_plan_detail_no_ma"
+  ]
+}

@@ -1,0 +1,1 @@
+{ "chart_id":"KADM_R13","approach":"R13","chart_name":"RNAV (GPS) RWY 13 "}

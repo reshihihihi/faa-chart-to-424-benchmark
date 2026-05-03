@@ -1,0 +1,12 @@
+{  
+  "chart_id":"KITD_I2600","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KITD_I2600","approach_ident":"I2600","chart_name":"ITDAZ"},"  
+  },  
+  "missed_approach":{  
+    "status":"present","  
+    "value":{"leg_count":{"status":"present","value":3},"  
+  },  
+  "procedure":{"status":"present","value":{"airport":"KITD","approach_ident":"I2600","chart_name":"ITDAZ"}},"  
+}

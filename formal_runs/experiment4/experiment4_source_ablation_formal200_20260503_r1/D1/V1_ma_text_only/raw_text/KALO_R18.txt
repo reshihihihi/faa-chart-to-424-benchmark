@@ -1,0 +1,12 @@
+{  
+  "chart_id":"KOGG_I22","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KOGG_I22","approach_ident":"I22","chart_name":"KOGG_I22","approach_ident":"I22"},"  
+  },  
+  "missed_approach":{  
+    "status":"present","  
+    "value":{"leg_count":{"status":"present","value":3},"  
+  },  
+  "procedure":{"status":"present","value":{"airport":"KOGG","approach_ident":"I22","chart_name":"KOGG_I22"}},"  
+}

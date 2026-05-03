@@ -1,0 +1,8 @@
+{  
+  "chart_id":"KCHI_L06",
+  "procedure":{
+    "chart_name":"L06_I06",
+    "leg_count":{"status":"present","value":3},
+    "legs":[{"leg_index":1,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"CA"}}},{"leg_index":2,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"DF"}}},{"leg_index":3,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"HM"}}}]}
+  ],
+  "missed_approach":{"leg_count":{"status":"present","value":3},"legs":[{"leg_index":1,"answers":{"status":"not_applicable","value":null},"answers":{"status":"not_applicable","value":null},"Q_terminator":{"status":"present","value":"HM"}}},{"leg_index":2,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"TF"}}},{"leg_index":3,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"HM"}}}},{"leg_index":3,"answers":{"status":"not_applicable","value":null},"answers":{"status":"not_applicable","value":null},"Q_terminator":{"status":"present","value":"HM"}}]}}

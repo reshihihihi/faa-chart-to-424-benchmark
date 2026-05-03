@@ -1,0 +1,51 @@
+{
+  "created_at": "2026-05-02T11:50:36.240245+00:00",
+  "run_id": "experiment4_V4_icon_detail_only_D1_20260502_r2",
+  "method": "D1",
+  "policy_id": "d1_output_canonicalization_20260502_r4",
+  "purpose": "canonicalize D-SFT raw outputs into the same fixed hierarchical canonical JSON format as the CIFP/424-derived targets",
+  "samples_total": 200,
+  "raw_outputs_found": 200,
+  "canonical_json_written": 200,
+  "schema_valid": 200,
+  "schema_invalid": 0,
+  "samples_scored": 200,
+  "field_level_v2_score": {
+    "correct": 335,
+    "total": 4052,
+    "accuracy": 0.08267522211253701
+  },
+  "raw_chart_id_mismatch_count": 33,
+  "final_chart_id_mismatch_count": 0,
+  "action_counts": {
+    "extract_json_object_candidates:0": 69,
+    "extract_json_object_candidates:1": 97,
+    "extract_json_object_candidates:2": 1,
+    "fallback_invalid_fix_ident:missed_approach.legs[2].answers.Q1_fix_ident": 1,
+    "fallback_invalid_fix_ident:missed_approach.legs[3].answers.Q1_fix_ident": 1,
+    "fallback_missing_legs": 176,
+    "fallback_missing_missed_approach": 176,
+    "fallback_no_parseable_json_to_empty_canonical": 167,
+    "parse_entire_raw_as_json_object": 33,
+    "raw_object_not_convertible_to_canonical_shape": 176,
+    "selected_candidate_index:0": 200,
+    "set_manifest_chart_id_envelope": 200,
+    "strip_outer_whitespace": 200
+  },
+  "hashes": {
+    "script": "7126aade2ea707aa8e7f196c89f61c79d0dc7e0b136ce99e97ebfa391682730d",
+    "policy": "a945453556735424513818539690e70e0c413040b6ff7bcacd717d4cc4b30bed",
+    "method_card": "e83c00d900a1519c177be5a7cbe108ac33c7db26acf60adb1e04b54cd116dc30",
+    "schema": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+    "scorer_validate_only": "bbcbe08fda2482dd90eee28526f0bbd36bce71c82baf4c5054b3608d46a5d500"
+  },
+  "paths": {
+    "out_root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1",
+    "raw_text": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\raw_text",
+    "canonical_json": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json",
+    "scores": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\scores",
+    "validation": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\validation",
+    "reports": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\reports"
+  },
+  "failures": []
+}

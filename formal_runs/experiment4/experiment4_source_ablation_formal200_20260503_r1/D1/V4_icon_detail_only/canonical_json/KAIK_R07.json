@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAIK_R07",
+  "procedure": {
+    "airport": "KAIK",
+    "approach_ident": "R07",
+    "chart_name": "RNAV (GPS) RWY 07"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

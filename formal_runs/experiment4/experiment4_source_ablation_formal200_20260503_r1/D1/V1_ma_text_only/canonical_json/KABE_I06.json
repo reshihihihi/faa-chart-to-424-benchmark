@@ -1,0 +1,15 @@
+{
+  "chart_id": "KABE_I06",
+  "procedure": {
+    "airport": "KABE",
+    "approach_ident": "I06",
+    "chart_name": "ILS OR LOC RWY 06"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}
