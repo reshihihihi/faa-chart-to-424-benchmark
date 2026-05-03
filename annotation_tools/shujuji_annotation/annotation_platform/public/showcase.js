@@ -7,6 +7,7 @@ const els = {
   chartSelect: document.querySelector("#chartSelect"),
   chartInput: document.querySelector("#chartInput"),
   loadChartBtn: document.querySelector("#loadChartBtn"),
+  difficultCaseBtn: document.querySelector("#difficultCaseBtn"),
   editAnnotationLink: document.querySelector("#editAnnotationLink"),
   returnExpertBtn: document.querySelector("#returnExpertBtn"),
   returnOrdinaryBtn: document.querySelector("#returnOrdinaryBtn"),
@@ -148,6 +149,27 @@ async function postAdminJson(path, payload = {}) {
       "content-type": "application/json",
       "x-shujuji-token": token,
       "x-shujuji-admin-token": token
+    },
+    body: JSON.stringify(payload)
+  });
+  const text = await response.text();
+  let data = {};
+  try {
+    data = text ? JSON.parse(text) : {};
+  } catch {
+    data = { raw: text };
+  }
+  if (!response.ok) throw new Error(data.error || response.statusText);
+  return data;
+}
+
+async function postJson(path, payload = {}) {
+  const token = currentAccessToken();
+  const response = await fetch(apiUrl(path), {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      ...(token ? { "x-shujuji-token": token } : {})
     },
     body: JSON.stringify(payload)
   });
@@ -532,6 +554,33 @@ function updateAdminActions() {
   }
 }
 
+function currentDifficultCase() {
+  return state.current?.difficult_case || null;
+}
+
+function currentMarkerName() {
+  return params.get("admin")
+    || params.get("annotator")
+    || params.get("reviewer")
+    || params.get("expert")
+    || state.current?.annotation_annotator
+    || state.current?.manifest?.original_annotator
+    || state.current?.manifest?.claimed_by
+    || "showcase_user";
+}
+
+function updateDifficultCaseButton() {
+  if (!els.difficultCaseBtn) return;
+  const chartId = state.current?.manifest?.chart_id || "";
+  const active = Boolean(currentDifficultCase()?.difficult);
+  els.difficultCaseBtn.disabled = !chartId;
+  els.difficultCaseBtn.classList.toggle("active", active);
+  els.difficultCaseBtn.textContent = active ? "已标为难例" : "标注为难例";
+  els.difficultCaseBtn.title = active
+    ? "点击取消这张图的难例标记"
+    : "把这张图记录到难例清单，供后台筛选和导出";
+}
+
 function renderLegOptions() {
   const rowsForLegs = reviewedRows().length ? reviewedRows() : state.rows;
   const legs = Array.from(new Map(rowsForLegs.map((row) => [row.canonical_leg_index, row])).values())
@@ -886,6 +935,7 @@ function renderAll() {
   els.chartSelect.value = manifest.chart_id || "";
   updateEditAnnotationLink();
   updateAdminActions();
+  updateDifficultCaseButton();
   renderLegOptions();
   fitChartToPane();
   renderFieldCards();
@@ -897,7 +947,11 @@ async function loadCharts() {
   const data = await getJson(apiUrl("/api/charts", { scope: "queue", annotator: "" }));
   state.charts = data.charts || [];
   els.chartSelect.innerHTML = state.charts.map((chart) => {
-    const extra = chart.claim_status === "submitted" ? " · 已提交" : chart.claimed_by ? ` · ${chart.claimed_by}` : "";
+    const parts = [];
+    if (chart.is_difficult_case) parts.push("难例");
+    if (chart.claim_status === "submitted") parts.push("已提交");
+    else if (chart.claimed_by) parts.push(chart.claimed_by);
+    const extra = parts.length ? ` · ${parts.join(" · ")}` : "";
     return `<option value="${escapeText(chart.chart_id)}">${escapeText(chart.chart_id + extra)}</option>`;
   }).join("");
 }
@@ -959,6 +1013,27 @@ async function returnCurrentChart(target) {
   await loadChart(chartId);
 }
 
+async function toggleDifficultCase() {
+  const chartId = state.current?.manifest?.chart_id || els.chartInput.value.trim();
+  if (!chartId) throw new Error("请先载入航图。");
+  const nextDifficult = !Boolean(currentDifficultCase()?.difficult);
+  const data = await postJson(`/api/difficult-cases/${encodeURIComponent(chartId)}`, {
+    difficult: nextDifficult,
+    marked_by: currentMarkerName(),
+    note: nextDifficult ? "从展示页标注为难例。" : "从展示页取消难例标记。"
+  });
+  state.current.difficult_case = data.difficult_case || null;
+  const chart = state.charts.find((item) => item.chart_id === chartId);
+  if (chart) {
+    chart.is_difficult_case = Boolean(state.current.difficult_case?.difficult);
+    chart.difficult_case = state.current.difficult_case?.difficult ? state.current.difficult_case : null;
+  }
+  updateDifficultCaseButton();
+  await loadCharts();
+  els.chartSelect.value = chartId;
+  showToast(nextDifficult ? `${chartId} 已标为难例。` : `${chartId} 已取消难例标记。`);
+}
+
 function bindEvents() {
   const savedWidth = Number(localStorage.getItem("shujuji_showcase_right_width") || 0);
   if (savedWidth) applyRightPanelWidth(savedWidth);
@@ -976,6 +1051,7 @@ function bindEvents() {
     if (event.key === "Enter") loadChart(els.chartInput.value.trim()).catch((error) => showToast(error.message));
   });
   els.chartSelect.addEventListener("change", () => loadChart(els.chartSelect.value).catch((error) => showToast(error.message)));
+  els.difficultCaseBtn?.addEventListener("click", () => toggleDifficultCase().catch((error) => showToast(error.message)));
   els.returnExpertBtn?.addEventListener("click", () => returnCurrentChart("expert").catch((error) => showToast(error.message)));
   els.returnOrdinaryBtn?.addEventListener("click", () => returnCurrentChart("ordinary").catch((error) => showToast(error.message)));
   els.resizeHandle?.addEventListener("pointerdown", (event) => {

@@ -299,6 +299,7 @@ async function readAnnotationEntries(root) {
 
 async function buildDatasetExport(dataset) {
   const claims = dataset.finalDataset ? await readClaims(dataset) : {};
+  const difficultCases = await readDifficultCases(dataset);
   const drafts = await readAnnotationEntries(annotationPath(dataset, "drafts"));
   const byAnnotator = await readAnnotationEntries(annotationPath(dataset, "by_annotator"));
   const submissions = await readAnnotationEntries(annotationPath(dataset, "submissions"));
@@ -308,12 +309,14 @@ async function buildDatasetExport(dataset) {
     exported_at: new Date().toISOString(),
     summary: {
       claims_count: Object.keys(claims || {}).length,
+      difficult_case_count: difficultCaseCount(difficultCases),
       draft_json_count: drafts.length,
       final_json_count: byAnnotator.length,
       submission_json_count: submissions.length
     },
     annotations: {
       claims,
+      difficult_cases: difficultCases,
       drafts,
       by_annotator: byAnnotator,
       submissions
@@ -491,6 +494,7 @@ function orderedAfterChart(manifest, afterChartId = "") {
 async function buildDatasetProgress(dataset) {
   const manifest = await readDatasetJson(dataset, "manifest.json", []);
   const claims = dataset.finalDataset ? await readClaims(dataset) : {};
+  const difficultCases = await readDifficultCases(dataset);
   const currentDrafts = await readAnnotationEntries(annotationPath(dataset, "drafts", "by_annotator"));
   const draftSnapshots = await readAnnotationEntries(annotationPath(dataset, "drafts", "snapshots"));
   const byAnnotator = await readAnnotationEntries(annotationPath(dataset, "by_annotator"));
@@ -514,6 +518,7 @@ async function buildDatasetProgress(dataset) {
     total_charts: totalCharts,
     claims_count: Object.keys(claims || {}).length,
     unassigned_count: dataset.finalDataset ? Math.max(0, totalCharts - Object.keys(claims || {}).length) : null,
+    difficult_case_count: difficultCaseCount(difficultCases),
     active_claim_count: activeClaimCount,
     submitted_claim_count: submittedCount,
     returned_for_expert_review_count: returnedCount,
@@ -533,6 +538,7 @@ async function buildDatasetProgress(dataset) {
 async function buildDatasetOverview(dataset) {
   const manifest = await readDatasetJson(dataset, "manifest.json", []);
   const claims = dataset.finalDataset ? await readClaims(dataset) : {};
+  const difficultCases = await readDifficultCases(dataset);
   const currentDrafts = await readAnnotationEntries(annotationPath(dataset, "drafts", "by_annotator"));
   const byAnnotator = await readAnnotationEntries(annotationPath(dataset, "by_annotator"));
   const submissions = await readAnnotationEntries(annotationPath(dataset, "submissions"));
@@ -543,6 +549,7 @@ async function buildDatasetOverview(dataset) {
   const rows = manifest.map((item, index) => {
     const chartId = item.chart_id;
     const claim = claims[chartId] || null;
+    const difficultCase = difficultCases[chartId] || null;
     const draftEntry = latestEntry(draftsByChart.get(chartId));
     const finalEntry = latestEntry(finalsByChart.get(chartId));
     const draft = annotationSummary(draftEntry);
@@ -583,6 +590,8 @@ async function buildDatasetOverview(dataset) {
       returned_at: claim?.returned_at || "",
       returned_by: claim?.returned_by || "",
       return_reason: claim?.return_reason || "",
+      is_difficult_case: Boolean(difficultCase?.difficult),
+      difficult_case: difficultCase?.difficult ? scrubClientValue(difficultCase) : null,
       original_annotator: claim?.annotator || "",
       expert_reviewer: claim?.expert_reviewer || "",
       expert_review_claimed_at: claim?.expert_review_claimed_at || "",
@@ -644,6 +653,72 @@ async function readClaims(dataset) {
 async function writeClaims(dataset, claims) {
   if (!dataset.finalDataset) return;
   await writeJsonFileAtomic(annotationPath(dataset, "claims.json"), claims);
+}
+
+async function readDifficultCases(dataset) {
+  return readAnnotationJson(dataset, "difficult_cases.json", {});
+}
+
+async function writeDifficultCases(dataset, difficultCases) {
+  await writeJsonFileAtomic(annotationPath(dataset, "difficult_cases.json"), difficultCases);
+}
+
+function difficultCaseCount(difficultCases) {
+  return Object.values(difficultCases || {}).filter((item) => item?.difficult).length;
+}
+
+async function ensureChartExists(dataset, chartId) {
+  const manifest = await readDatasetJson(dataset, "manifest.json", []);
+  if ((manifest || []).some((item) => item?.chart_id === chartId)) return;
+  const error = new Error(`Unknown chart_id: ${chartId}`);
+  error.statusCode = 404;
+  throw error;
+}
+
+async function setDifficultCase(dataset, chartId, options = {}) {
+  if (!isSafeChartId(chartId)) {
+    const error = new Error("Invalid chart_id");
+    error.statusCode = 400;
+    throw error;
+  }
+  await ensureChartExists(dataset, chartId);
+  const difficult = options.difficult !== false;
+  const markedBy = safeAnnotator(options.markedBy || "showcase_user") || "showcase_user";
+  const note = String(options.note || "").trim().slice(0, 1000);
+  return withClaimLock(async () => {
+    const difficultCases = await readDifficultCases(dataset);
+    const previous = difficultCases[chartId] || {};
+    const now = new Date().toISOString();
+    const event = {
+      action: difficult ? "mark" : "unmark",
+      by: markedBy,
+      at: now,
+      note
+    };
+    const history = [...(previous.history || []), event].slice(-30);
+    difficultCases[chartId] = {
+      ...previous,
+      chart_id: chartId,
+      dataset_key: dataset.key,
+      difficult,
+      note: difficult ? note : (note || previous.note || ""),
+      marked_by: difficult ? markedBy : (previous.marked_by || markedBy),
+      marked_at: difficult ? (previous.marked_at || now) : (previous.marked_at || ""),
+      updated_by: markedBy,
+      updated_at: now,
+      source: "showcase",
+      history
+    };
+    if (!difficult) {
+      difficultCases[chartId].unmarked_by = markedBy;
+      difficultCases[chartId].unmarked_at = now;
+    } else {
+      delete difficultCases[chartId].unmarked_by;
+      delete difficultCases[chartId].unmarked_at;
+    }
+    await writeDifficultCases(dataset, difficultCases);
+    return difficultCases[chartId];
+  });
 }
 
 async function removePathIfExists(filePath, removed, label) {
@@ -998,15 +1073,19 @@ async function loadCharts(dataset, annotator, options = {}) {
   const targets = lite ? [] : await readDatasetJson(dataset, "targets/canonical_targets.json", []);
   const targetById = new Map(targets.map((item) => [item.chart_id, item]));
   const claims = await readClaims(dataset);
+  const difficultCases = await readDifficultCases(dataset);
 
   return Promise.all(manifest.map(async (item) => {
     const chartId = item.chart_id;
     const claim = claims[chartId] || null;
+    const difficultCase = difficultCases[chartId] || null;
     const claimStatus = claimStatusFor(dataset, claim, annotator, { expertMode });
     if (lite) {
       return scrubClientValue({
         chart_id: chartId,
         claim_status: claimStatus,
+        is_difficult_case: Boolean(difficultCase?.difficult),
+        difficult_case: difficultCase?.difficult ? difficultCase : null,
         claimed_by: expertMode ? (claim?.expert_reviewer || "") : (claim?.annotator || ""),
         original_annotator: claim?.annotator || "",
         expert_reviewer: claim?.expert_reviewer || "",
@@ -1036,6 +1115,8 @@ async function loadCharts(dataset, annotator, options = {}) {
       draft_saved_at: draft?.saved_at || draft?.updated_at || "",
       submission_count: await submissionCount(dataset, chartId),
       claim_status: claimStatus,
+      is_difficult_case: Boolean(difficultCase?.difficult),
+      difficult_case: difficultCase?.difficult ? difficultCase : null,
       claimed_by: expertMode ? (claim?.expert_reviewer || "") : (claim?.annotator || ""),
       original_annotator: claim?.annotator || "",
       expert_reviewer: claim?.expert_reviewer || "",
@@ -1104,6 +1185,8 @@ async function loadChartDetail(dataset, chartId, annotator, options = {}) {
     : null;
   const prelabel = await readDatasetJson(dataset, `prelabels/${chartId}.json`, null);
   const canonicalGt = await readDatasetJson(dataset, `targets/canonical_proxy_gt/${chartId}.json`, null);
+  const difficultCases = await readDifficultCases(dataset);
+  const difficultCase = difficultCases[chartId] || null;
   const effectiveAnnotator = expertMode && dataset.finalDataset && claim?.annotator
     ? claim.annotator
     : annotator || (dataset.finalDataset && claim?.annotator ? claim.annotator : "");
@@ -1133,6 +1216,7 @@ async function loadChartDetail(dataset, chartId, annotator, options = {}) {
     prelabel: scrubClientValue(prelabel),
     annotation: scrubClientValue(annotation),
     draft: scrubClientValue(draft),
+    difficult_case: scrubClientValue(difficultCase),
     annotation_annotator: effectiveAnnotator,
     image_url: `/api/image?dataset=${encodeURIComponent(dataset.key)}&file=${encodeURIComponent(manifestItem.image_file)}`
   };
@@ -1214,6 +1298,26 @@ async function adminReturnChartForRequest(req, requestUrl, dataset, chartId) {
     dataset: dataset.key,
     chart_id: chartId,
     ...result
+  };
+}
+
+async function setDifficultCaseForRequest(req, requestUrl, dataset, chartId) {
+  const payload = JSON.parse(stripBom(await readRequestBody(req)) || "{}");
+  const markedBy = payload.marked_by
+    || requestUrl.searchParams.get("admin")
+    || getAnnotator(requestUrl)
+    || getExpertReviewer(requestUrl)
+    || "showcase_user";
+  const difficultCase = await setDifficultCase(dataset, chartId, {
+    difficult: payload.difficult !== false,
+    note: payload.note || "",
+    markedBy
+  });
+  return {
+    ok: true,
+    dataset: dataset.key,
+    chart_id: chartId,
+    difficult_case: scrubClientValue(difficultCase)
   };
 }
 
@@ -1577,7 +1681,7 @@ function adminHtml() {
       <p class="muted">只展示正式集服务器里已经保存的领取、草稿、正式提交状态；点击“展示页”检查那张图，展示页里可以继续跳回标注页修改。</p>
       <div class="toolbar">
         <label>数据集<select id="overviewDataset"><option value="formal300">正式集 300 张</option></select></label>
-        <label>状态筛选<select id="overviewStatus"><option value="">全部状态</option><option value="submitted">已提交</option><option value="draft_saved">有草稿</option><option value="claimed">已领取未提交</option><option value="returned_for_expert_review">待专家复核</option><option value="expert_review_claimed">专家复核中</option><option value="unassigned">未领取/未标</option></select></label>
+        <label>状态筛选<select id="overviewStatus"><option value="">全部状态</option><option value="__difficult__">难例</option><option value="submitted">已提交</option><option value="draft_saved">有草稿</option><option value="claimed">已领取未提交</option><option value="returned_for_expert_review">待专家复核</option><option value="expert_review_claimed">专家复核中</option><option value="unassigned">未领取/未标</option></select></label>
         <label>搜索<input id="overviewSearch" type="search" placeholder="chart_id / 机场 / 程序 / 标注人"></label>
         <button type="button" onclick="loadOverview()">刷新</button>
       </div>
@@ -1647,6 +1751,7 @@ function adminHtml() {
         metric("未领取", item.unassigned_count) +
         metric("暂存过的图", item.current_draft_chart_count, item.current_draft_json_count + " 个当前草稿文件") +
         metric("已提交", item.submitted_claim_count, item.final_json_count + " 个正式结果文件") +
+        metric("难例", item.difficult_case_count) +
         metric("提交快照", item.submission_chart_count, item.submission_json_count + " 个历史快照") +
         metric("专家复核", item.returned_for_expert_review_count) +
         metric("进行中领取", item.active_claim_count) +
@@ -1686,6 +1791,7 @@ function adminHtml() {
         "<div class='pill'><strong>" + numberCell(counts.draft_saved || 0) + "</strong> 有草稿</div>" +
         "<div class='pill'><strong>" + numberCell(counts.claimed || 0) + "</strong> 已领取</div>" +
         "<div class='pill'><strong>" + numberCell((counts.returned_for_expert_review || 0) + (counts.expert_review_claimed || 0)) + "</strong> 专家复核</div>" +
+        "<div class='pill'><strong>" + numberCell((dataset.rows || []).filter((row) => row.is_difficult_case).length) + "</strong> 难例</div>" +
         "<div class='pill'><strong>" + numberCell(counts.unassigned || 0) + "</strong> 未领取</div>" +
       "</div>";
     }
@@ -1715,7 +1821,8 @@ function adminHtml() {
       const wantedStatus = overviewStatus.value;
       const query = overviewSearch.value.trim().toUpperCase();
       return overviewRows.filter((row) => {
-        if (wantedStatus && row.status !== wantedStatus) return false;
+        if (wantedStatus === "__difficult__" && !row.is_difficult_case) return false;
+        if (wantedStatus && wantedStatus !== "__difficult__" && row.status !== wantedStatus) return false;
         if (!query) return true;
         return [row.chart_id, row.airport, row.proc_ident, row.chart_name, row.annotator, row.kind]
           .some((value) => String(value || "").toUpperCase().includes(query));
@@ -1731,8 +1838,9 @@ function adminHtml() {
         const summary = row.final || row.draft;
         const reason = row.return_reason ? "<div class='muted'>原因：" + escapeCell(row.return_reason) + "</div>" : "";
         const reviewer = row.expert_reviewer ? "<div class='muted'>复核人：" + escapeCell(row.expert_reviewer) + "</div>" : "";
+        const difficult = row.is_difficult_case ? "<div class='muted'>难例：" + escapeCell(row.difficult_case?.marked_by || row.difficult_case?.updated_by || "已标记") + "</div>" : "";
         return "<tr><td><strong>" + escapeCell(row.chart_id) + "</strong><div class='muted'>" + escapeCell([row.airport, row.proc_ident, row.chart_name].filter(Boolean).join(" · ")) + "</div></td>" +
-          "<td><span class='status-badge status-" + escapeCell(row.status) + "'>" + escapeCell(statusLabel(row.status)) + "</span>" + reason + reviewer + "</td>" +
+          "<td><span class='status-badge status-" + escapeCell(row.status) + "'>" + escapeCell(statusLabel(row.status)) + "</span>" + reason + reviewer + difficult + "</td>" +
           "<td>" + escapeCell(row.annotator || "-") + "</td>" +
           "<td>" + fieldSummary(summary) + "<div class='muted'>草稿 " + (row.has_draft ? "有" : "无") + "；正式 " + (row.has_annotation ? "有" : "无") + "；快照 " + numberCell(row.submission_count) + "</div></td>" +
           "<td>" + formatTime(row.updated_at) + "</td>" +
@@ -2116,6 +2224,40 @@ async function route(req, res) {
     const parts = pathname.split("/");
     const chartId = parts[4];
     sendJson(res, 200, await adminReturnChartForRequest(req, requestUrl, dataset, chartId));
+    return;
+  }
+
+  if (req.method === "GET" && pathname === "/api/difficult-cases") {
+    requireAccess(req, requestUrl);
+    const chartId = requestUrl.searchParams.get("chart_id") || "";
+    const difficultCases = await readDifficultCases(dataset);
+    if (chartId) {
+      if (!isSafeChartId(chartId)) {
+        const error = new Error("Invalid chart_id");
+        error.statusCode = 400;
+        throw error;
+      }
+      sendJson(res, 200, {
+        ok: true,
+        dataset: dataset.key,
+        chart_id: chartId,
+        difficult_case: scrubClientValue(difficultCases[chartId] || null)
+      });
+      return;
+    }
+    sendJson(res, 200, {
+      ok: true,
+      dataset: dataset.key,
+      difficult_case_count: difficultCaseCount(difficultCases),
+      difficult_cases: scrubClientValue(difficultCases)
+    });
+    return;
+  }
+
+  if (req.method === "POST" && pathname.startsWith("/api/difficult-cases/")) {
+    requireAccess(req, requestUrl);
+    const chartId = pathname.split("/").pop();
+    sendJson(res, 200, await setDifficultCaseForRequest(req, requestUrl, dataset, chartId));
     return;
   }
 

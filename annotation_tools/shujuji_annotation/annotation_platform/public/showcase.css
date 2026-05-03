@@ -106,6 +106,23 @@ select {
   font-weight: 700;
 }
 
+.difficult-toggle {
+  background: #fff7e6;
+  color: #6a4a08;
+  font-weight: 700;
+}
+
+.difficult-toggle.active {
+  border-color: #c77f18;
+  background: #c77f18;
+  color: #fff;
+}
+
+.difficult-toggle:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
 .admin-action {
   background: #fff7e6;
   color: #6a4a08;
