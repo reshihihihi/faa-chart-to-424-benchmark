@@ -1,6 +1,6 @@
 # 实验组4 source-view ablation 最终执行报告
 
-生成时间：2026-05-02T11:55:40.587414+00:00
+生成时间：2026-05-03T11:38:12.546648+00:00
 
 ## 实验目的
 
@@ -32,26 +32,26 @@
 |V0_full_chart|C4|complete|200|200|200|0|0.400790|1.000000|0.000000|
 |V0_full_chart|D_SFT|complete_with_method_failures|200|184|184|16|0.735499|0.920000|0.080000|
 |V0_full_chart|D1|complete|200|200|200|0|0.733465|1.000000|0.000000|
-|V1_ma_text_only|B1|complete|200|200|200|0|0.286278|1.000000|0.000000|
-|V1_ma_text_only|C4|complete|200|200|200|0|0.478776|1.000000|0.000000|
-|V1_ma_text_only|D_SFT|complete|200|4|4|196|0.697368|0.020000|0.980000|
-|V1_ma_text_only|D1|complete|200|200|200|0|0.019497|1.000000|0.000000|
-|V2_full_minus_ma_prose|B1|complete|200|200|200|0|0.181885|1.000000|0.000000|
-|V2_full_minus_ma_prose|C4|complete|200|200|200|0|0.365252|1.000000|0.000000|
-|V2_full_minus_ma_prose|D_SFT|complete|200|180|180|20|0.689182|0.900000|0.100000|
-|V2_full_minus_ma_prose|D1|complete|200|200|200|0|0.673248|1.000000|0.000000|
-|V3_plan_view_only|B1|complete|200|200|200|0|0.030109|1.000000|0.000000|
-|V3_plan_view_only|C4|complete|200|200|200|0|0.317621|1.000000|0.000000|
-|V3_plan_view_only|D_SFT|complete|200|144|144|56|0.581956|0.720000|0.280000|
-|V3_plan_view_only|D1|complete|200|200|200|0|0.547631|1.000000|0.000000|
-|V4_icon_detail_only|B1|complete|200|200|200|0|0.000000|1.000000|0.000000|
-|V4_icon_detail_only|C4|complete|200|200|200|0|0.007897|1.000000|0.000000|
-|V4_icon_detail_only|D_SFT|complete|200|13|13|187|0.723320|0.065000|0.935000|
-|V4_icon_detail_only|D1|complete|200|200|200|0|0.082675|1.000000|0.000000|
-|V5_plan_detail_no_ma|B1|complete|200|200|200|0|0.063919|1.000000|0.000000|
-|V5_plan_detail_no_ma|C4|complete|200|200|200|0|0.282083|1.000000|0.000000|
-|V5_plan_detail_no_ma|D_SFT|complete|200|151|151|49|0.647020|0.755000|0.245000|
-|V5_plan_detail_no_ma|D1|complete|200|200|200|0|0.620188|1.000000|0.000000|
+|V1_ma_text_only|B1|missing|200|||||||
+|V1_ma_text_only|C4|missing|200|||||||
+|V1_ma_text_only|D_SFT|missing|200|||||||
+|V1_ma_text_only|D1|missing|200|||||||
+|V2_full_minus_ma_prose|B1|missing|200|||||||
+|V2_full_minus_ma_prose|C4|missing|200|||||||
+|V2_full_minus_ma_prose|D_SFT|missing|200|||||||
+|V2_full_minus_ma_prose|D1|missing|200|||||||
+|V3_plan_view_only|B1|missing|200|||||||
+|V3_plan_view_only|C4|missing|200|||||||
+|V3_plan_view_only|D_SFT|missing|200|||||||
+|V3_plan_view_only|D1|missing|200|||||||
+|V4_icon_detail_only|B1|missing|200|||||||
+|V4_icon_detail_only|C4|missing|200|||||||
+|V4_icon_detail_only|D_SFT|missing|200|||||||
+|V4_icon_detail_only|D1|missing|200|||||||
+|V5_plan_detail_no_ma|B1|missing|200|||||||
+|V5_plan_detail_no_ma|C4|missing|200|||||||
+|V5_plan_detail_no_ma|D_SFT|missing|200|||||||
+|V5_plan_detail_no_ma|D1|missing|200|||||||
 
 当前 strict_group1_freeze 最高准确率为 V0_full_chart / D1：0.733465。
 
@@ -88,12 +88,12 @@
 
 ## 文件位置
 
-- source-view 图像：`formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\source_views\images`
-- source-view manifest：`formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\source_views\manifests\source_view_manifest.jsonl`
-- OCR 输出：`formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\ocr_artifacts`
-- 正式运行输出：`formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200`
-- v2 分样本评分：`formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\scores\v2`
-- 最终结果表 CSV：`formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\reports\experiment4_final_metrics_table.csv`
+- source-view 图像：`.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\source_views\images`
+- source-view manifest：`.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\source_views\manifests\source_view_manifest.jsonl`
+- OCR 输出：`.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\ocr_artifacts`
+- 正式运行输出：`.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200`
+- v2 分样本评分：`.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\scores\v2`
+- 最终结果表 CSV：`.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\reports\experiment4_final_metrics_table.csv`
 
 ## 参数解释
 

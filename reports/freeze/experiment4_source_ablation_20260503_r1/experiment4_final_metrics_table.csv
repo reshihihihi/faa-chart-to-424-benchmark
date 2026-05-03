@@ -7,26 +7,26 @@ V0_full_chart,D_SFT,strict_group1_freeze,complete_with_method_failures,200,184,1
 V0_full_chart,D_SFT,chart_display_aware_v2,complete,200,184,184,16,2910,3724,0.7814178302900108,0.92,0.08,复用实验组1 PR25 v2 rescore 结果。
 V0_full_chart,D1,strict_group1_freeze,complete,200,200,200,0,2972,4052,0.7334649555774926,1.0,0.0,复用 PR25 D1 fixed-output-interface full-chart baseline。
 V0_full_chart,D1,chart_display_aware_v2,complete,200,200,200,0,3158,4052,0.7793682132280355,1.0,0.0,复用 PR25 D1 v2 rescore full-chart baseline。
-V1_ma_text_only,B1,strict_group1_freeze,complete,200,200,200,0,1160,4052,0.28627838104639686,1.0,0.0,
-V1_ma_text_only,C4,strict_group1_freeze,complete,200,200,200,0,1940,4052,0.47877591312931883,1.0,0.0,
-V1_ma_text_only,D_SFT,strict_group1_freeze,complete,200,4,4,196,53,76,0.6973684210526315,0.02,0.98,
-V1_ma_text_only,D1,strict_group1_freeze,complete,200,200,200,0,79,4052,0.01949654491609082,1.0,0.0,
-V2_full_minus_ma_prose,B1,strict_group1_freeze,complete,200,200,200,0,737,4052,0.18188548864758144,1.0,0.0,
-V2_full_minus_ma_prose,C4,strict_group1_freeze,complete,200,200,200,0,1480,4052,0.36525172754195456,1.0,0.0,
-V2_full_minus_ma_prose,D_SFT,strict_group1_freeze,complete,200,180,180,20,2510,3642,0.6891817682591982,0.9,0.1,
-V2_full_minus_ma_prose,D1,strict_group1_freeze,complete,200,200,200,0,2728,4052,0.6732477788746298,1.0,0.0,
-V3_plan_view_only,B1,strict_group1_freeze,complete,200,200,200,0,122,4052,0.030108588351431393,1.0,0.0,
-V3_plan_view_only,C4,strict_group1_freeze,complete,200,200,200,0,1287,4052,0.31762092793682134,1.0,0.0,
-V3_plan_view_only,D_SFT,strict_group1_freeze,complete,200,144,144,56,1690,2904,0.5819559228650137,0.72,0.28,
-V3_plan_view_only,D1,strict_group1_freeze,complete,200,200,200,0,2219,4052,0.5476307996051333,1.0,0.0,
-V4_icon_detail_only,B1,strict_group1_freeze,complete,200,200,200,0,0,4052,0.0,1.0,0.0,
-V4_icon_detail_only,C4,strict_group1_freeze,complete,200,200,200,0,32,4052,0.007897334649555774,1.0,0.0,
-V4_icon_detail_only,D_SFT,strict_group1_freeze,complete,200,13,13,187,183,253,0.7233201581027668,0.065,0.935,
-V4_icon_detail_only,D1,strict_group1_freeze,complete,200,200,200,0,335,4052,0.08267522211253701,1.0,0.0,
-V5_plan_detail_no_ma,B1,strict_group1_freeze,complete,200,200,200,0,259,4052,0.06391905231984206,1.0,0.0,
-V5_plan_detail_no_ma,C4,strict_group1_freeze,complete,200,200,200,0,1143,4052,0.28208292201382035,1.0,0.0,
-V5_plan_detail_no_ma,D_SFT,strict_group1_freeze,complete,200,151,151,49,1965,3037,0.6470200856108002,0.755,0.245,
-V5_plan_detail_no_ma,D1,strict_group1_freeze,complete,200,200,200,0,2513,4052,0.620187561697927,1.0,0.0,
+V1_ma_text_only,B1,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V1_ma_text_only\B1\method_summary.json
+V1_ma_text_only,C4,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V1_ma_text_only\C4\method_summary.json
+V1_ma_text_only,D_SFT,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V1_ma_text_only\D_SFT\method_summary.json
+V1_ma_text_only,D1,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V1_ma_text_only\D1\method_summary.json
+V2_full_minus_ma_prose,B1,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V2_full_minus_ma_prose\B1\method_summary.json
+V2_full_minus_ma_prose,C4,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V2_full_minus_ma_prose\C4\method_summary.json
+V2_full_minus_ma_prose,D_SFT,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V2_full_minus_ma_prose\D_SFT\method_summary.json
+V2_full_minus_ma_prose,D1,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V2_full_minus_ma_prose\D1\method_summary.json
+V3_plan_view_only,B1,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V3_plan_view_only\B1\method_summary.json
+V3_plan_view_only,C4,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V3_plan_view_only\C4\method_summary.json
+V3_plan_view_only,D_SFT,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V3_plan_view_only\D_SFT\method_summary.json
+V3_plan_view_only,D1,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V3_plan_view_only\D1\method_summary.json
+V4_icon_detail_only,B1,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V4_icon_detail_only\B1\method_summary.json
+V4_icon_detail_only,C4,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V4_icon_detail_only\C4\method_summary.json
+V4_icon_detail_only,D_SFT,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V4_icon_detail_only\D_SFT\method_summary.json
+V4_icon_detail_only,D1,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V4_icon_detail_only\D1\method_summary.json
+V5_plan_detail_no_ma,B1,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V5_plan_detail_no_ma\B1\method_summary.json
+V5_plan_detail_no_ma,C4,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V5_plan_detail_no_ma\C4\method_summary.json
+V5_plan_detail_no_ma,D_SFT,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V5_plan_detail_no_ma\D_SFT\method_summary.json
+V5_plan_detail_no_ma,D1,strict_group1_freeze,missing,200,,,,,,,,,缺少 method_summary：.\formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\runs\formal_eval200\V5_plan_detail_no_ma\D1\method_summary.json
 V1_ma_text_only,B1,chart_display_aware_v2,complete,200,200,200,0,1166,4052,0.28775913129318853,1.0,0.0,
 V1_ma_text_only,C4,chart_display_aware_v2,complete,200,200,200,0,1948,4052,0.4807502467917078,1.0,0.0,
 V1_ma_text_only,D_SFT,chart_display_aware_v2,complete,200,4,4,196,53,76,0.6973684210526315,0.02,0.98,

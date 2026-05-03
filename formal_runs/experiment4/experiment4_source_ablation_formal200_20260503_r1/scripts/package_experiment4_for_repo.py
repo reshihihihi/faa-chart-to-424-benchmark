@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import hashlib
+import re
 import shutil
 from datetime import datetime, timezone
 from pathlib import Path
@@ -30,6 +31,7 @@ REQUIRED_RELS = [
     "reports/experiment4_dsft_raw_vs_d1_coverage_failure.png",
     "reports/experiment4_submission_file_list.json",
     "reports/experiment4_submission_package_manifest_zh.md",
+    "baseline/V0_group1_frozen_baseline_manifest.json",
     "manifests/experiment4_evaluation200_chart_ids.json",
     "manifests/experiment4_evaluation200_source_view_manifest.jsonl",
     "manifests/experiment4_manifest_preparation_summary.json",
@@ -67,24 +69,60 @@ D1_SUBDIRS = [
 ]
 
 
+def is_same_path(left: Path, right: Path) -> bool:
+    try:
+        return left.resolve() == right.resolve()
+    except FileNotFoundError:
+        return False
+
+
 def repo_rel(path: Path) -> str:
     return path.relative_to(REPO_ROOT).as_posix()
 
 
+def portable_path(path: Path) -> str:
+    try:
+        return repo_rel(path)
+    except ValueError:
+        return sanitize_text(str(path))
+
+
 def sanitize_text(text: str) -> str:
-    replacements = {
-        str(SOURCE_ROOT): RUN_REL.as_posix(),
-        str(SOURCE_ROOT).replace("\\", "\\\\"): RUN_REL.as_posix(),
-        str(SOURCE_ROOT).replace("\\", "/"): RUN_REL.as_posix(),
-        "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1": RUN_REL.as_posix(),
-        "E:\\\\experiment3\\\\zu4": RUN_REL.as_posix(),
-        str(REPO_ROOT): ".",
-        str(REPO_ROOT).replace("\\", "\\\\"): ".",
-        str(REPO_ROOT).replace("\\", "/"): ".",
-    }
     out = text
-    for old, new in replacements.items():
+    repo_abs = Path.cwd().resolve()
+    run_abs = (repo_abs / RUN_REL).resolve()
+    source_abs = (repo_abs / SOURCE_ROOT).resolve() if not SOURCE_ROOT.is_absolute() else SOURCE_ROOT.resolve()
+    replacements = [
+        (str(run_abs), RUN_REL.as_posix()),
+        (str(run_abs).replace("\\", "/"), RUN_REL.as_posix()),
+        (str(run_abs).replace("\\", "\\\\"), RUN_REL.as_posix()),
+        (str(source_abs), RUN_REL.as_posix()),
+        (str(source_abs).replace("\\", "/"), RUN_REL.as_posix()),
+        (str(source_abs).replace("\\", "\\\\"), RUN_REL.as_posix()),
+        (str(repo_abs), "."),
+        (str(repo_abs).replace("\\", "/"), "."),
+        (str(repo_abs).replace("\\", "\\\\"), "."),
+    ]
+    for old, new in replacements:
         out = out.replace(old, new)
+    out = re.sub(
+        r"[A-Za-z]:[\\/]+experiment3[\\/]+zu4",
+        RUN_REL.as_posix(),
+        out,
+        flags=re.IGNORECASE,
+    )
+    out = re.sub(
+        r"[A-Za-z]:[\\/]+experiment3[\\/]+github_work[\\/]+faa-chart-to-424-benchmark(?:-[^\\/\"']+)?",
+        ".",
+        out,
+        flags=re.IGNORECASE,
+    )
+    out = re.sub(
+        r"[A-Za-z]:[\\/]+experiment3[\\/]+",
+        "external/experiment3/",
+        out,
+        flags=re.IGNORECASE,
+    )
     return out
 
 
@@ -92,8 +130,13 @@ def copy_file(src: Path, dst: Path) -> None:
     dst.parent.mkdir(parents=True, exist_ok=True)
     if src.suffix.lower() in TEXT_SUFFIXES:
         text = src.read_text(encoding="utf-8", errors="replace")
-        dst.write_text(sanitize_text(text), encoding="utf-8", newline="\n")
+        sanitized = sanitize_text(text)
+        if is_same_path(src, dst) and sanitized == text:
+            return
+        dst.write_text(sanitized, encoding="utf-8", newline="\n")
     else:
+        if is_same_path(src, dst):
+            return
         shutil.copy2(src, dst)
 
 
@@ -137,7 +180,9 @@ def copy_required_files() -> list[dict[str, object]]:
 def copy_d1_outputs() -> list[dict[str, object]]:
     records: list[dict[str, object]] = []
     for variant in D1_VARIANTS:
-        src_root = SOURCE_ROOT / "runs" / "formal_eval200" / variant / "D1"
+        local_style_src = SOURCE_ROOT / "runs" / "formal_eval200" / variant / "D1"
+        repo_style_src = SOURCE_ROOT / "D1" / variant
+        src_root = local_style_src if local_style_src.exists() else repo_style_src
         dst_root = RUN_ROOT / "D1" / variant
         for subdir in D1_SUBDIRS:
             src_dir = src_root / subdir
@@ -149,13 +194,13 @@ def copy_d1_outputs() -> list[dict[str, object]]:
                     copy_file(src, dst_dir / rel)
                     count += 1
             records.append(
-                {
-                    "variant": variant,
-                    "subdir": subdir,
-                    "source": str(src_dir),
-                    "destination": repo_rel(dst_dir),
-                    "file_count": count,
-                }
+                    {
+                        "variant": variant,
+                        "subdir": subdir,
+                        "source": portable_path(src_dir),
+                        "destination": repo_rel(dst_dir),
+                        "file_count": count,
+                    }
             )
 
         for filename in ["method_summary.json", "summary_report.json"]:

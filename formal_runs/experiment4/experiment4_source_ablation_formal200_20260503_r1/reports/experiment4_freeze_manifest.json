@@ -1,10 +1,15 @@
 {
-  "created_at_utc": "2026-05-03T01:48:30.061106+00:00",
+  "created_at_utc": "2026-05-03T11:43:41.186755+00:00",
   "purpose": "Repo-packaged Experiment 4 freeze manifest after local absolute path sanitization.",
   "repo_run_root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1",
   "repo_freeze_root": "reports/freeze/experiment4_source_ablation_20260503_r1",
   "roi_source": "prelabel_not_gold",
   "files": [
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/baseline/V0_group1_frozen_baseline_manifest.json",
+      "size_bytes": 16353,
+      "sha256": "7278819a65a07e6e3b4e53eb950cc14aff8fe493102f58e01f83587a5f70aa92"
+    },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/canonical_json/KAAA_R03.json",
       "size_bytes": 257,
@@ -25156,6 +25161,11 @@
       "sha256": "062117834e48c84bb2724e1a8703086aa12264dd4f13489a30600338150e1e79"
     },
     {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/experiment4_repo_package_manifest.json",
+      "size_bytes": 23347,
+      "sha256": "b08f0a49012a9348f406a511658305259b49bfb4844bcb6047059b078f7da59a"
+    },
+    {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/manifests/experiment4_evaluation200_chart_ids.json",
       "size_bytes": 103766,
       "sha256": "4a114be0159c5edc7885db111b416bc074e3df310621b6ff6369fe9710843c85"
@@ -25172,8 +25182,8 @@
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/manifests/experiment4_scoring_manifest_eval200.jsonl",
-      "size_bytes": 99912,
-      "sha256": "4ff42cef6ca549edd17f9c2d5c4eec138f5460308411fcbaa0c5954789c36b4d"
+      "size_bytes": 77912,
+      "sha256": "f03960f71b1499ea1ae93a61d0eb03f4bfe7a8ccea61d06673c30987cdcecf4a"
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_analysis_artifacts_manifest.json",
@@ -25192,18 +25202,18 @@
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_final_execution_report_zh.md",
-      "size_bytes": 6605,
-      "sha256": "acb99e04dbac8b901fab2052fcabbadaed989e2480a15dbcf32acfd95e01ae7c"
+      "size_bytes": 5976,
+      "sha256": "0130d234965f83e11abd7caa06430e835cb98791466776e1113cf010ca153af4"
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_final_metrics_summary.json",
-      "size_bytes": 19533,
-      "sha256": "ae44c734c37ade4e37c0649f0a1233cc1dd12b2406845e6800a8fd8bed300dc1"
+      "size_bytes": 22747,
+      "sha256": "1757c198645fbfd76c8f92dfbe7b6aadeca52c82bd8a678f4c888c158b80eda5"
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_final_metrics_table.csv",
-      "size_bytes": 5582,
-      "sha256": "bc5a053550a0521562d87eec7a9c570ae59c64f0d5f29c092db6d2db8ff534bf"
+      "size_bytes": 8036,
+      "sha256": "869cb2498eb6c25f81e662a2ccdaff60ac7a6d0859c759d90d88e65d3bb6a49e"
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_method_v2_accuracy_by_variant.png",
@@ -25236,6 +25246,51 @@
       "sha256": "667ba01719ad1b12faf678541c46113f1d78deba728102176dc4e1f476322ea3"
     },
     {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/build_source_views.cpython-311.pyc",
+      "size_bytes": 23921,
+      "sha256": "c4bc8d18bcfa9cdfc98abe6b4c2f05a1616429a1afbd8ba91c4c5971c06e7ac5"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/create_experiment4_freeze_manifest.cpython-311.pyc",
+      "size_bytes": 9591,
+      "sha256": "65992f5cc2b859f6991cdc639b39979bea1ff7fa8daf37952fb5ee68d1e118df"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/generate_experiment4_analysis_artifacts.cpython-311.pyc",
+      "size_bytes": 33554,
+      "sha256": "6d1ef4ddf28b87f58f61b773d8432fc6d1575527e220fb61a27a3fedf70b01ee"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/package_experiment4_for_repo.cpython-311.pyc",
+      "size_bytes": 19180,
+      "sha256": "955aff4180a7baf5246c31c5b820be8e64747a69784b49da25664413be36761b"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/prepare_experiment4_manifests.cpython-311.pyc",
+      "size_bytes": 14688,
+      "sha256": "3c1b743af34aa882cc5c910eda5ad06a3d1630c2756b1d787b1b3f0d8e36b0bb"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/rescore_experiment4_v2.cpython-311.pyc",
+      "size_bytes": 16982,
+      "sha256": "0694cb27d9566edf8c39f16013000fd26a39d47e98aa58f12ef9a1db467c0847"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/run_d1_output_canonicalizer.cpython-311.pyc",
+      "size_bytes": 39758,
+      "sha256": "f700dd6aff1b47e84e861b298979514c490772f63774274abb588247d7fff31a"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/score_d1_strict.cpython-311.pyc",
+      "size_bytes": 11053,
+      "sha256": "fa2bffde5fbe7625f2559477f93a2030b45390ea1d1cae3b2b0a7d6ecd677703"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/summarize_experiment4_results.cpython-311.pyc",
+      "size_bytes": 23524,
+      "sha256": "a55a14bb2a83bc3fbc47da674711b6f90634c514399a2bab7a6193e94a62fcdf"
+    },
+    {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/build_source_views.py",
       "size_bytes": 15037,
       "sha256": "31bf279850b7e57b8edb01034bf67bee5dcefd04728b12315f09e4ae77ce5c40"
@@ -25247,13 +25302,13 @@
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/generate_experiment4_analysis_artifacts.py",
-      "size_bytes": 23183,
-      "sha256": "8b5da338c13583aadddd5de34f9a8b6be01f836bd2557dd817304d7aad16aec6"
+      "size_bytes": 23242,
+      "sha256": "44587f7367059087fc7bfc88a694444e0f831ddc6e414841ada9cc2eba857986"
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/package_experiment4_for_repo.py",
-      "size_bytes": 11232,
-      "sha256": "9091e2a212701c1e0649a33145cc35d3560aad67dd51bbb7ab8299a70ca19f67"
+      "size_bytes": 12616,
+      "sha256": "d5c12deecede0d0dbeb6929d874449e2c1785424e91ad6160e489a3e1626f1dd"
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/prepare_experiment4_manifests.py",
@@ -25277,8 +25332,8 @@
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/summarize_experiment4_results.py",
-      "size_bytes": 17219,
-      "sha256": "0699b25a945b7759d52ea7835be83dd00ceef3c250009293c96b7ea2a1073de8"
+      "size_bytes": 17734,
+      "sha256": "05816e4b5c44950f40273368709bad7da9185dff5b165ef17c4c0bd91cc43388"
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/source_views/manifests/source_view_manifest.jsonl",
@@ -25312,8 +25367,8 @@
     },
     {
       "relative_path": "reports/freeze/experiment4_source_ablation_20260503_r1/experiment4_final_metrics_table.csv",
-      "size_bytes": 5582,
-      "sha256": "bc5a053550a0521562d87eec7a9c570ae59c64f0d5f29c092db6d2db8ff534bf"
+      "size_bytes": 8036,
+      "sha256": "869cb2498eb6c25f81e662a2ccdaff60ac7a6d0859c759d90d88e65d3bb6a49e"
     },
     {
       "relative_path": "reports/freeze/experiment4_source_ablation_20260503_r1/experiment4_method_v2_accuracy_by_variant.png",
@@ -25543,5 +25598,5 @@
       }
     }
   ],
-  "file_count": 5065
+  "file_count": 5076
 }

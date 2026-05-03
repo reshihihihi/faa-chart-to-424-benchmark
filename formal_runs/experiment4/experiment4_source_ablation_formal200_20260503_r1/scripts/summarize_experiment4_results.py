@@ -114,6 +114,15 @@ def row_template(
 
 def baseline_rows(output_root: Path) -> list[dict[str, Any]]:
     baseline_path = output_root / "baseline" / "V0_group1_frozen_baseline_manifest.json"
+    if not baseline_path.exists():
+        summary_path = output_root / "reports" / "experiment4_final_metrics_summary.json"
+        if summary_path.exists():
+            summary = read_json(summary_path)
+            return [row for row in summary.get("rows", []) if row.get("variant") == "V0_full_chart"]
+        raise FileNotFoundError(
+            f"Missing V0 baseline manifest at {baseline_path}; expected the packaged "
+            "baseline artifact or an existing final metrics summary fallback."
+        )
     baseline = read_json(baseline_path)
     rows: list[dict[str, Any]] = []
     for method in METHODS:

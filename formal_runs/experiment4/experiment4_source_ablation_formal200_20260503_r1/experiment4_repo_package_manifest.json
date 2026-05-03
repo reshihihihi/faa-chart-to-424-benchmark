@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-05-03T01:48:30.089106+00:00",
+  "created_at_utc": "2026-05-03T11:43:41.217310+00:00",
   "source_root": "local experiment4 workspace",
   "repo_run_root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1",
   "repo_freeze_root": "reports/freeze/experiment4_source_ablation_20260503_r1",
@@ -7,49 +7,49 @@
     {
       "relative_path": "reports/experiment4_final_execution_report_zh.md",
       "copied": true,
-      "source_size_bytes": 6375,
+      "source_size_bytes": 5976,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_final_execution_report_zh.md"
     },
     {
       "relative_path": "reports/experiment4_result_analysis_zh.md",
       "copied": true,
-      "source_size_bytes": 6703,
+      "source_size_bytes": 6612,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_result_analysis_zh.md"
     },
     {
       "relative_path": "reports/experiment4_final_metrics_table.csv",
       "copied": true,
-      "source_size_bytes": 5631,
+      "source_size_bytes": 8036,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_final_metrics_table.csv"
     },
     {
       "relative_path": "reports/experiment4_final_metrics_summary.json",
       "copied": true,
-      "source_size_bytes": 20324,
+      "source_size_bytes": 22747,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_final_metrics_summary.json"
     },
     {
       "relative_path": "reports/experiment4_v2_scoring_summary.csv",
       "copied": true,
-      "source_size_bytes": 1874,
+      "source_size_bytes": 1853,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_v2_scoring_summary.csv"
     },
     {
       "relative_path": "reports/experiment4_v2_scoring_summary.json",
       "copied": true,
-      "source_size_bytes": 383573,
+      "source_size_bytes": 403664,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_v2_scoring_summary.json"
     },
     {
       "relative_path": "reports/experiment4_freeze_manifest.json",
       "copied": true,
-      "source_size_bytes": 80784,
+      "source_size_bytes": 1406040,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_freeze_manifest.json"
     },
     {
       "relative_path": "reports/experiment4_analysis_artifacts_manifest.json",
       "copied": true,
-      "source_size_bytes": 674,
+      "source_size_bytes": 981,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_analysis_artifacts_manifest.json"
     },
     {
@@ -73,61 +73,67 @@
     {
       "relative_path": "reports/experiment4_submission_file_list.json",
       "copied": true,
-      "source_size_bytes": 7250,
+      "source_size_bytes": 9140,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_submission_file_list.json"
     },
     {
       "relative_path": "reports/experiment4_submission_package_manifest_zh.md",
       "copied": true,
-      "source_size_bytes": 2698,
+      "source_size_bytes": 2922,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_submission_package_manifest_zh.md"
+    },
+    {
+      "relative_path": "baseline/V0_group1_frozen_baseline_manifest.json",
+      "copied": true,
+      "source_size_bytes": 16353,
+      "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/baseline/V0_group1_frozen_baseline_manifest.json"
     },
     {
       "relative_path": "manifests/experiment4_evaluation200_chart_ids.json",
       "copied": true,
-      "source_size_bytes": 107449,
+      "source_size_bytes": 103766,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/manifests/experiment4_evaluation200_chart_ids.json"
     },
     {
       "relative_path": "manifests/experiment4_evaluation200_source_view_manifest.jsonl",
       "copied": true,
-      "source_size_bytes": 1808419,
+      "source_size_bytes": 1999219,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/manifests/experiment4_evaluation200_source_view_manifest.jsonl"
     },
     {
       "relative_path": "manifests/experiment4_manifest_preparation_summary.json",
       "copied": true,
-      "source_size_bytes": 1931,
+      "source_size_bytes": 1845,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/manifests/experiment4_manifest_preparation_summary.json"
     },
     {
       "relative_path": "manifests/experiment4_scoring_manifest_eval200.jsonl",
       "copied": true,
-      "source_size_bytes": 99912,
+      "source_size_bytes": 77912,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/manifests/experiment4_scoring_manifest_eval200.jsonl"
     },
     {
       "relative_path": "source_views/manifests/source_view_manifest.jsonl",
       "copied": true,
-      "source_size_bytes": 2711849,
+      "source_size_bytes": 2998049,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/source_views/manifests/source_view_manifest.jsonl"
     },
     {
       "relative_path": "validation/input_manifest_no_leakage_final_report.json",
       "copied": true,
-      "source_size_bytes": 5003,
+      "source_size_bytes": 5704,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/validation/input_manifest_no_leakage_final_report.json"
     },
     {
       "relative_path": "validation/source_view_validation_after_residual_guard_report.json",
       "copied": true,
-      "source_size_bytes": 600,
+      "source_size_bytes": 686,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/validation/source_view_validation_after_residual_guard_report.json"
     },
     {
       "relative_path": "validation/masked_text_residual_ocr_report_final.json",
       "copied": true,
-      "source_size_bytes": 198865,
+      "source_size_bytes": 191277,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/validation/masked_text_residual_ocr_report_final.json"
     },
     {
@@ -151,37 +157,37 @@
     {
       "relative_path": "scripts/score_d1_strict.py",
       "copied": true,
-      "source_size_bytes": 6813,
+      "source_size_bytes": 6743,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/score_d1_strict.py"
     },
     {
       "relative_path": "scripts/rescore_experiment4_v2.py",
       "copied": true,
-      "source_size_bytes": 13175,
+      "source_size_bytes": 13160,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/rescore_experiment4_v2.py"
     },
     {
       "relative_path": "scripts/summarize_experiment4_results.py",
       "copied": true,
-      "source_size_bytes": 17234,
+      "source_size_bytes": 17734,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/summarize_experiment4_results.py"
     },
     {
       "relative_path": "scripts/create_experiment4_freeze_manifest.py",
       "copied": true,
-      "source_size_bytes": 5697,
+      "source_size_bytes": 5752,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/create_experiment4_freeze_manifest.py"
     },
     {
       "relative_path": "scripts/generate_experiment4_analysis_artifacts.py",
       "copied": true,
-      "source_size_bytes": 23128,
+      "source_size_bytes": 23242,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/generate_experiment4_analysis_artifacts.py"
     },
     {
       "relative_path": "scripts/package_experiment4_for_repo.py",
       "copied": true,
-      "source_size_bytes": 11192,
+      "source_size_bytes": 12616,
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/package_experiment4_for_repo.py"
     }
   ],
@@ -189,42 +195,42 @@
     {
       "variant": "V1_ma_text_only",
       "subdir": "raw_text",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V1_ma_text_only\\D1\\raw_text",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/raw_text",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/raw_text",
       "file_count": 200
     },
     {
       "variant": "V1_ma_text_only",
       "subdir": "canonical_json",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V1_ma_text_only\\D1\\canonical_json",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/canonical_json",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/canonical_json",
       "file_count": 200
     },
     {
       "variant": "V1_ma_text_only",
       "subdir": "validation",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V1_ma_text_only\\D1\\validation",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/validation",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/validation",
       "file_count": 200
     },
     {
       "variant": "V1_ma_text_only",
       "subdir": "scores",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V1_ma_text_only\\D1\\scores",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/scores",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/scores",
       "file_count": 200
     },
     {
       "variant": "V1_ma_text_only",
       "subdir": "strict_scores",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V1_ma_text_only\\D1\\strict_scores",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/strict_scores",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/strict_scores",
       "file_count": 200
     },
     {
       "variant": "V1_ma_text_only",
       "subdir": "reports",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V1_ma_text_only\\D1\\reports",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/reports",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V1_ma_text_only/reports",
       "file_count": 4
     },
@@ -243,42 +249,42 @@
     {
       "variant": "V2_full_minus_ma_prose",
       "subdir": "raw_text",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V2_full_minus_ma_prose\\D1\\raw_text",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/raw_text",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/raw_text",
       "file_count": 200
     },
     {
       "variant": "V2_full_minus_ma_prose",
       "subdir": "canonical_json",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V2_full_minus_ma_prose\\D1\\canonical_json",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/canonical_json",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/canonical_json",
       "file_count": 200
     },
     {
       "variant": "V2_full_minus_ma_prose",
       "subdir": "validation",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V2_full_minus_ma_prose\\D1\\validation",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/validation",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/validation",
       "file_count": 200
     },
     {
       "variant": "V2_full_minus_ma_prose",
       "subdir": "scores",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V2_full_minus_ma_prose\\D1\\scores",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/scores",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/scores",
       "file_count": 200
     },
     {
       "variant": "V2_full_minus_ma_prose",
       "subdir": "strict_scores",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V2_full_minus_ma_prose\\D1\\strict_scores",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/strict_scores",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/strict_scores",
       "file_count": 200
     },
     {
       "variant": "V2_full_minus_ma_prose",
       "subdir": "reports",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V2_full_minus_ma_prose\\D1\\reports",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/reports",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V2_full_minus_ma_prose/reports",
       "file_count": 4
     },
@@ -297,42 +303,42 @@
     {
       "variant": "V3_plan_view_only",
       "subdir": "raw_text",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V3_plan_view_only\\D1\\raw_text",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/raw_text",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/raw_text",
       "file_count": 200
     },
     {
       "variant": "V3_plan_view_only",
       "subdir": "canonical_json",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V3_plan_view_only\\D1\\canonical_json",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/canonical_json",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/canonical_json",
       "file_count": 200
     },
     {
       "variant": "V3_plan_view_only",
       "subdir": "validation",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V3_plan_view_only\\D1\\validation",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/validation",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/validation",
       "file_count": 200
     },
     {
       "variant": "V3_plan_view_only",
       "subdir": "scores",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V3_plan_view_only\\D1\\scores",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/scores",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/scores",
       "file_count": 200
     },
     {
       "variant": "V3_plan_view_only",
       "subdir": "strict_scores",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V3_plan_view_only\\D1\\strict_scores",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/strict_scores",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/strict_scores",
       "file_count": 200
     },
     {
       "variant": "V3_plan_view_only",
       "subdir": "reports",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V3_plan_view_only\\D1\\reports",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/reports",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V3_plan_view_only/reports",
       "file_count": 4
     },
@@ -351,42 +357,42 @@
     {
       "variant": "V4_icon_detail_only",
       "subdir": "raw_text",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\raw_text",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/raw_text",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/raw_text",
       "file_count": 200
     },
     {
       "variant": "V4_icon_detail_only",
       "subdir": "canonical_json",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/canonical_json",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/canonical_json",
       "file_count": 200
     },
     {
       "variant": "V4_icon_detail_only",
       "subdir": "validation",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\validation",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/validation",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/validation",
       "file_count": 200
     },
     {
       "variant": "V4_icon_detail_only",
       "subdir": "scores",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\scores",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/scores",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/scores",
       "file_count": 200
     },
     {
       "variant": "V4_icon_detail_only",
       "subdir": "strict_scores",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\strict_scores",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/strict_scores",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/strict_scores",
       "file_count": 200
     },
     {
       "variant": "V4_icon_detail_only",
       "subdir": "reports",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\reports",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/reports",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V4_icon_detail_only/reports",
       "file_count": 4
     },
@@ -405,42 +411,42 @@
     {
       "variant": "V5_plan_detail_no_ma",
       "subdir": "raw_text",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V5_plan_detail_no_ma\\D1\\raw_text",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/raw_text",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/raw_text",
       "file_count": 200
     },
     {
       "variant": "V5_plan_detail_no_ma",
       "subdir": "canonical_json",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V5_plan_detail_no_ma\\D1\\canonical_json",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/canonical_json",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/canonical_json",
       "file_count": 200
     },
     {
       "variant": "V5_plan_detail_no_ma",
       "subdir": "validation",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V5_plan_detail_no_ma\\D1\\validation",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/validation",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/validation",
       "file_count": 200
     },
     {
       "variant": "V5_plan_detail_no_ma",
       "subdir": "scores",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V5_plan_detail_no_ma\\D1\\scores",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/scores",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/scores",
       "file_count": 200
     },
     {
       "variant": "V5_plan_detail_no_ma",
       "subdir": "strict_scores",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V5_plan_detail_no_ma\\D1\\strict_scores",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/strict_scores",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/strict_scores",
       "file_count": 200
     },
     {
       "variant": "V5_plan_detail_no_ma",
       "subdir": "reports",
-      "source": "E:\\experiment3\\zu4\\runs\\formal_eval200\\V5_plan_detail_no_ma\\D1\\reports",
+      "source": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/reports",
       "destination": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/V5_plan_detail_no_ma/reports",
       "file_count": 4
     },

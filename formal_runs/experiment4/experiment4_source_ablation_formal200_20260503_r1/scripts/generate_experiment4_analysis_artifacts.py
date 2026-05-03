@@ -53,13 +53,17 @@ COLORS = {
 
 def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
     candidates = [
-        Path(r"C:\Windows\Fonts\msyhbd.ttc" if bold else r"C:\Windows\Fonts\msyh.ttc"),
-        Path(r"C:\Windows\Fonts\simhei.ttf"),
-        Path(r"C:\Windows\Fonts\arialbd.ttf" if bold else r"C:\Windows\Fonts\arial.ttf"),
+        "NotoSansCJK-Bold.ttc" if bold else "NotoSansCJK-Regular.ttc",
+        "Microsoft YaHei Bold" if bold else "Microsoft YaHei",
+        "SimHei",
+        "Arial Bold" if bold else "Arial",
+        "DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf",
     ]
-    for path in candidates:
-        if path.exists():
-            return ImageFont.truetype(str(path), size=size)
+    for name in candidates:
+        try:
+            return ImageFont.truetype(name, size=size)
+        except OSError:
+            continue
     return ImageFont.load_default()
 
 
