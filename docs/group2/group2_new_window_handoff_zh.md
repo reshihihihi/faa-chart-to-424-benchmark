@@ -595,6 +595,30 @@ E:\experiment3\zu2+3\group2_formal\<run_id>\
 如果 300 张全部完成，用 `formal300` 命名。
 
 如果只用 296 张已提交子集，用 `formal_submitted296` 命名，避免误写成完整 300。
+此时命令应显式使用：
+
+```text
+--expected-submitted-count 296
+```
+
+这样报告会把结论限定在 submitted296 口径内，而不是 formal300。
+
+正式 runner 每次会写 chart / field / region 三层标注快照。后续如果补齐剩余 4 张，或修改已有标注，下一次运行时传入：
+
+```text
+--previous-run-root <旧的 group2_formal run 目录>
+```
+
+即可生成：
+
+```text
+inputs/annotation_change_audit.json
+inputs/annotation_changed_charts.jsonl
+inputs/annotation_changed_fields.jsonl
+inputs/annotation_changed_regions.jsonl
+```
+
+这些文件用于定位后续改动发生在哪张图、哪个字段、哪个区域；确认改动无误后，以最新 run 的表格和报告作为当前结论版本。
 
 示例命令见：
 

@@ -1,4 +1,5 @@
 import argparse
+import hashlib
 import importlib.util
 import json
 import os
@@ -91,6 +92,12 @@ def parse_args():
     parser.add_argument("--expected-submitted-count", type=int, default=300)
     parser.add_argument("--expected-analysis-count", type=int, default=None)
     parser.add_argument("--min-analysis-count", type=int, default=1)
+    parser.add_argument(
+        "--previous-run-root",
+        type=Path,
+        default=path_from_optional(os.environ.get("GROUP2_PREVIOUS_RUN_ROOT")),
+        help="Optional previous run root. When provided, writes chart/field/region annotation change audits.",
+    )
     parser.add_argument(
         "--allow-submitted-subset",
         action="store_true",
@@ -206,6 +213,208 @@ def validate_inputs(args, repo_root, group1_run, target_dir):
         raise SystemExit("Missing required inputs:\n- " + "\n- ".join(missing))
     if not repo_root.exists():
         raise SystemExit(f"Repo root does not exist: {repo_root}")
+
+
+def stable_json(obj):
+    return json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(",", ":"), default=str)
+
+
+def stable_hash(obj):
+    return hashlib.sha256(stable_json(obj).encode("utf-8")).hexdigest()
+
+
+def read_jsonl_optional(path: Path):
+    if not path.exists():
+        return []
+    with path.open("r", encoding="utf-8-sig") as f:
+        return [json.loads(line) for line in f if line.strip()]
+
+
+def field_review_score_field(review):
+    field_name = review.get("field_name")
+    leg_index = review.get("canonical_leg_index")
+    if field_name == "leg_count":
+        return "leg_count"
+    return base.flatten_field_key(leg_index, field_name)
+
+
+def build_annotation_snapshots(submitted):
+    chart_rows = []
+    field_rows = []
+    region_rows = []
+    for entry in submitted:
+        data = entry.get("data") or {}
+        chart_id = data.get("chart_id")
+        field_reviews = data.get("field_reviews") or []
+        regions = data.get("regions") or []
+        evidence_provenance = data.get("evidence_provenance") or []
+        chart_rows.append({
+            "chart_id": chart_id,
+            "annotator": data.get("annotator"),
+            "saved_at": data.get("saved_at"),
+            "relative_path": entry.get("relative_path"),
+            "field_review_count": len(field_reviews),
+            "region_count": len(regions),
+            "evidence_provenance_count": len(evidence_provenance),
+            "annotation_sha256": stable_hash(data),
+            "field_reviews_sha256": stable_hash(field_reviews),
+            "regions_sha256": stable_hash(regions),
+            "evidence_provenance_sha256": stable_hash(evidence_provenance),
+        })
+
+        for review in field_reviews:
+            score_field = field_review_score_field(review)
+            canonical_answer = review.get("canonical_answer")
+            evidence_region_ids = review.get("evidence_region_ids") or []
+            field_rows.append({
+                "chart_id": chart_id,
+                "field_key": review.get("field_key") or score_field,
+                "score_field": score_field,
+                "canonical_leg_index": review.get("canonical_leg_index"),
+                "field_name": review.get("field_name"),
+                "leg_type": review.get("leg_type"),
+                "support_mode": review.get("support_mode"),
+                "review_status": review.get("review_status"),
+                "evidence_region_ids": evidence_region_ids,
+                "evidence_source": review.get("evidence_source") or review.get("checked_sources") or [],
+                "canonical_answer_sha256": stable_hash(canonical_answer),
+                "row_sha256": stable_hash(review),
+            })
+
+        for region in regions:
+            region_id = region.get("final_region_id") or region.get("source_region_id")
+            region_rows.append({
+                "chart_id": chart_id,
+                "region_id": region_id,
+                "source_region_id": region.get("source_region_id"),
+                "region_type": region.get("region_type"),
+                "label": region.get("label"),
+                "bbox_sha256": stable_hash(region.get("bbox")),
+                "ocr_text_sha256": stable_hash(region.get("ocr_text")),
+                "accepted_mapping_count": len(region.get("accepted_mappings") or []),
+                "reviewed_mapping_count": len(region.get("candidate_mappings_reviewed") or []),
+                "row_sha256": stable_hash(region),
+            })
+    return (
+        sorted(chart_rows, key=lambda r: r["chart_id"] or ""),
+        sorted(field_rows, key=lambda r: (r["chart_id"] or "", r["score_field"] or "")),
+        sorted(region_rows, key=lambda r: (r["chart_id"] or "", r["region_id"] or "")),
+    )
+
+
+def compare_snapshot_rows(previous_rows, current_rows, key_fields, hash_field, value_fields):
+    previous = {tuple(row.get(field) for field in key_fields): row for row in previous_rows}
+    current = {tuple(row.get(field) for field in key_fields): row for row in current_rows}
+    changes = []
+    for key in sorted(set(previous) | set(current), key=lambda x: tuple("" if value is None else str(value) for value in x)):
+        old = previous.get(key)
+        new = current.get(key)
+        base_row = {field: key[index] for index, field in enumerate(key_fields)}
+        if old is None:
+            changes.append({
+                **base_row,
+                "change_type": "added",
+                "new_hash": new.get(hash_field),
+                **{f"new_{field}": new.get(field) for field in value_fields},
+            })
+        elif new is None:
+            changes.append({
+                **base_row,
+                "change_type": "removed",
+                "old_hash": old.get(hash_field),
+                **{f"old_{field}": old.get(field) for field in value_fields},
+            })
+        elif old.get(hash_field) != new.get(hash_field):
+            changes.append({
+                **base_row,
+                "change_type": "changed",
+                "old_hash": old.get(hash_field),
+                "new_hash": new.get(hash_field),
+                **{f"old_{field}": old.get(field) for field in value_fields},
+                **{f"new_{field}": new.get(field) for field in value_fields},
+            })
+    return changes
+
+
+def write_annotation_change_tracking(output_root, submitted, previous_run_root):
+    chart_snapshot, field_snapshot, region_snapshot = build_annotation_snapshots(submitted)
+    inputs_dir = output_root / "inputs"
+    write_jsonl(inputs_dir / "annotation_chart_snapshot.jsonl", chart_snapshot)
+    write_jsonl(inputs_dir / "annotation_field_snapshot.jsonl", field_snapshot)
+    write_jsonl(inputs_dir / "annotation_region_snapshot.jsonl", region_snapshot)
+
+    audit = {
+        "current_snapshot_paths": {
+            "charts": str(inputs_dir / "annotation_chart_snapshot.jsonl"),
+            "fields": str(inputs_dir / "annotation_field_snapshot.jsonl"),
+            "regions": str(inputs_dir / "annotation_region_snapshot.jsonl"),
+        },
+        "previous_run_root": str(previous_run_root) if previous_run_root else None,
+        "has_previous_snapshot": False,
+        "changed_chart_count": 0,
+        "changed_field_count": 0,
+        "changed_region_count": 0,
+        "changed_chart_ids": [],
+    }
+    if not previous_run_root:
+        write_json(inputs_dir / "annotation_change_audit.json", audit)
+        return audit
+
+    prev_inputs = previous_run_root / "inputs"
+    previous_chart = read_jsonl_optional(prev_inputs / "annotation_chart_snapshot.jsonl")
+    previous_field = read_jsonl_optional(prev_inputs / "annotation_field_snapshot.jsonl")
+    previous_region = read_jsonl_optional(prev_inputs / "annotation_region_snapshot.jsonl")
+    audit["has_previous_snapshot"] = bool(previous_chart or previous_field or previous_region)
+    if not audit["has_previous_snapshot"]:
+        audit["warning"] = "previous run root does not contain annotation snapshot files"
+        write_json(inputs_dir / "annotation_change_audit.json", audit)
+        return audit
+
+    chart_changes = compare_snapshot_rows(
+        previous_chart,
+        chart_snapshot,
+        ["chart_id"],
+        "annotation_sha256",
+        ["saved_at", "field_review_count", "region_count", "evidence_provenance_count"],
+    )
+    field_changes = compare_snapshot_rows(
+        previous_field,
+        field_snapshot,
+        ["chart_id", "score_field"],
+        "row_sha256",
+        ["field_key", "field_name", "support_mode", "review_status", "evidence_region_ids", "evidence_source"],
+    )
+    region_changes = compare_snapshot_rows(
+        previous_region,
+        region_snapshot,
+        ["chart_id", "region_id"],
+        "row_sha256",
+        ["region_type", "label", "accepted_mapping_count", "reviewed_mapping_count"],
+    )
+    changed_chart_ids = sorted({
+        row.get("chart_id")
+        for rows in (chart_changes, field_changes, region_changes)
+        for row in rows
+        if row.get("chart_id")
+    })
+    changed_chart_rows = [{"chart_id": chart_id} for chart_id in changed_chart_ids]
+    write_jsonl(inputs_dir / "annotation_changed_charts.jsonl", changed_chart_rows)
+    write_jsonl(inputs_dir / "annotation_changed_fields.jsonl", field_changes)
+    write_jsonl(inputs_dir / "annotation_changed_regions.jsonl", region_changes)
+
+    audit.update({
+        "changed_chart_count": len(changed_chart_ids),
+        "changed_field_count": len(field_changes),
+        "changed_region_count": len(region_changes),
+        "changed_chart_ids": changed_chart_ids,
+        "change_paths": {
+            "changed_charts": str(inputs_dir / "annotation_changed_charts.jsonl"),
+            "changed_fields": str(inputs_dir / "annotation_changed_fields.jsonl"),
+            "changed_regions": str(inputs_dir / "annotation_changed_regions.jsonl"),
+        },
+    })
+    write_json(inputs_dir / "annotation_change_audit.json", audit)
+    return audit
 
 
 def is_non_final_annotation(entry, overview_meta):
@@ -404,6 +613,7 @@ def main():
             f"Submitted annotation count is {submitted_count}, expected {args.expected_submitted_count}. "
             "Use --allow-submitted-subset only if this is intentionally a submitted-subset run."
         )
+    change_audit = write_annotation_change_tracking(output_root, submitted, args.previous_run_root)
 
     selected, skipped_missing_scores = build_selection(
         submitted,
@@ -524,12 +734,17 @@ def main():
         "positive_evidence_bucket_counts": Counter(row.get("evidence_evidence_bucket") for row in split["positive"]),
         "negative_error_type_counts": Counter(row.get("negative_error_type") for row in split["negative"]),
         "output_root": str(output_root),
+        "annotation_change_audit": change_audit,
     }
     warnings = []
+    if args.expected_submitted_count < 300:
+        warnings.append("this run intentionally uses a submitted subset; do not label it formal300")
     if audit["skipped_missing_group1_score_chart_count"] > 0:
         warnings.append("some submitted charts were excluded from the paired main table because at least one Group 1 method score file is missing")
     if args.include_missing_score_charts:
         warnings.append("available-score mode uses unequal per-method denominators; do not use it as paired method comparison")
+    if change_audit.get("has_previous_snapshot") and change_audit.get("changed_chart_count", 0) > 0:
+        warnings.append("annotation changes were detected relative to the previous run; review annotation_changed_* files")
     blockers = hard_blockers(audit)
     audit["warnings"] = warnings
     audit["hard_blockers"] = blockers
@@ -558,6 +773,7 @@ def main():
         "- 没有重新跑模型；只读取已提交人工标注、Group1 scoring-equivalence v2 字段分数和 v2 target/policy。",
         "- `not_applicable` 字段只用于乱填/over-assertion 分析，不进入正类证据来源主表。",
         "- `leg_count` 只作为规模控制变量，不进入证据来源主表。",
+        f"- 标注快照变更图数：{change_audit.get('changed_chart_count', 0)}",
         "",
         "## 关键审计",
         "",
@@ -617,6 +833,7 @@ def main():
         "unmatched_present_rows": len(split["unmatched_present"]),
         "ready_for_group2_main_claim": not blockers,
         "hard_blockers": blockers,
+        "annotation_change_audit": str(output_root / "inputs" / "annotation_change_audit.json"),
         "report": str(output_root / "group2" / "reports" / "group2_formal_submitted_v1_report_zh.md"),
         "audit": str(output_root / "group2" / "group2_formal_submitted_v1_audit.json"),
     }

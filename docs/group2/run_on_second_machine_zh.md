@@ -87,12 +87,12 @@ $env:GROUP2_OUTPUT_ROOT = "E:\experiment3\zu2+3\group2_formal\group2_formal300_v
 python scripts\group2\run_group2_formal_submitted_v1.py
 ```
 
-如果明确只跑 296 张已提交子集，不能冒充 formal300，命令必须显式写：
+如果明确先跑 296 张已提交子集，不能冒充 formal300，命令必须显式写 `submitted296` 和 `--expected-submitted-count 296`：
 
 ```powershell
 $env:GROUP2_RUN_ID = "group2_formal_submitted296_v1_YYYYMMDD_HHMM"
 $env:GROUP2_OUTPUT_ROOT = "E:\experiment3\zu2+3\group2_formal\group2_formal_submitted296_v1_YYYYMMDD_HHMM"
-python scripts\group2\run_group2_formal_submitted_v1.py --allow-submitted-subset
+python scripts\group2\run_group2_formal_submitted_v1.py --expected-submitted-count 296
 ```
 
 跑完后先看：
@@ -111,3 +111,39 @@ unmatched_present_rows = 0
 submitted_annotation_count = 300  （除非明确写 submitted 子集）
 analysis_chart_count 符合预期
 ```
+
+## 后续标注改动定位
+
+正式 runner 每次都会写三层标注快照：
+
+```text
+inputs\annotation_chart_snapshot.jsonl
+inputs\annotation_field_snapshot.jsonl
+inputs\annotation_region_snapshot.jsonl
+```
+
+如果后续补了剩余 4 张，或修改了已提交标注，下一次运行时带上旧 run 目录：
+
+```powershell
+python scripts\group2\run_group2_formal_submitted_v1.py `
+  --previous-run-root "E:\experiment3\zu2+3\group2_formal\group2_formal_submitted296_v1_YYYYMMDD_HHMM"
+```
+
+脚本会输出：
+
+```text
+inputs\annotation_change_audit.json
+inputs\annotation_changed_charts.jsonl
+inputs\annotation_changed_fields.jsonl
+inputs\annotation_changed_regions.jsonl
+```
+
+这些文件用于定位后续改动：
+
+```text
+哪张 chart 新增/删除/变更
+哪个 score_field 的证据、support_mode、review_status 或 region id 变化
+哪个 region 的 OCR、bbox、accepted mapping 或 reviewed mapping 变化
+```
+
+发现变更后，优先检查 `annotation_changed_fields.jsonl`；确认无误后以最新 run 输出覆盖旧结论。旧 run 不删除，保留为可追踪基线。
