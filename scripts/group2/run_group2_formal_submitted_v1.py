@@ -230,7 +230,7 @@ def validate_inputs(args, repo_root, group1_run, target_dir):
     }
     missing = [f"{name}: {path}" for name, path in required.items() if not path or not Path(path).exists()]
     if missing:
-        raise SystemExit("Missing required inputs:\n- " + "\n- ".join(missing))
+        raise SystemExit("Missing required inputs" + "\n- " + "\n- ".join(missing))
     if not repo_root.exists():
         raise SystemExit(f"Repo root does not exist: {repo_root}")
 

@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-EXPERIMENT_ROOT = Path(os.environ.get("EXPERIMENT3_ROOT", r"E:\experiment3"))
+EXPERIMENT_ROOT = Path(os.environ.get("EXPERIMENT3_ROOT", ".")).resolve()
 REPO_ROOT = Path(
     os.environ.get(
         "FAA_BENCH_REPO",

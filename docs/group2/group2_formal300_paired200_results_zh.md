@@ -9,7 +9,7 @@
 正式主结果目录：
 
 ```text
-C:\Users\admin\Documents\New project\group2_formal\group2_formal300_paired200_methodfailure_v1_20260503_155704
+<GROUP2_FORMAL_ROOT>/group2_formal300_paired200_methodfailure_v1_20260503_155704
 ```
 
 关键文件：
@@ -328,9 +328,10 @@ A1 和 A2 整体最弱。A1 正类字段正确率为 15.42%，A2 为 9.68%。A1 
 后续写结果、论文段落或图表时，应以这个目录作为实验组2主结果：
 
 ```text
-C:\Users\admin\Documents\New project\group2_formal\group2_formal300_paired200_methodfailure_v1_20260503_155704
+<GROUP2_FORMAL_ROOT>/group2_formal300_paired200_methodfailure_v1_20260503_155704
 ```
 
 旧的 168 张结果不应作为主结论来源。
 
 如果后续后台标注有改动，应重新运行正式脚本，并传入当前结果目录作为上一次运行目录，以定位哪些图、字段和区域发生变化。
+

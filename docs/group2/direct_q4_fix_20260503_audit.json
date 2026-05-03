@@ -40,10 +40,11 @@
     "KCRW_L05:leg_2.Q4_course_or_radial"
   ],
   "output_files": {
-    "fixed_evidence": "E:\\experiment3\\zu2+3\\group2\\evidence_provenance_pilot30_direct_q4_fix_20260503.jsonl",
-    "added_evidence": "E:\\experiment3\\zu2+3\\group2\\direct_q4_added_evidence_direct_q4_fix_20260503.jsonl",
-    "fixed_joined": "E:\\experiment3\\zu2+3\\group2\\group2_joined_field_scores_pilot30_direct_q4_fix_20260503.jsonl",
-    "complete19_group2_audit": "E:\\experiment3\\zu2+3\\group2\\group2_complete19_direct_q4_fix_20260503_audit.json",
-    "complete19_group3_audit": "E:\\experiment3\\zu2+3\\group3\\group3_complete19_direct_q4_fix_20260503_audit.json"
+    "fixed_evidence": "<GROUP23_ROOT>/group2/evidence_provenance_pilot30_direct_q4_fix_20260503.jsonl",
+    "added_evidence": "<GROUP23_ROOT>/group2/direct_q4_added_evidence_direct_q4_fix_20260503.jsonl",
+    "fixed_joined": "<GROUP23_ROOT>/group2/group2_joined_field_scores_pilot30_direct_q4_fix_20260503.jsonl",
+    "complete19_group2_audit": "<GROUP23_ROOT>/group2/group2_complete19_direct_q4_fix_20260503_audit.json",
+    "complete19_group3_audit": "<GROUP23_ROOT>/group3/group3_complete19_direct_q4_fix_20260503_audit.json"
   }
 }
+

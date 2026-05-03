@@ -46,13 +46,13 @@
 目前相关来源主要在：
 
 ```text
-E:\experiment3\github_work\faa-chart-to-424-benchmark\formal_runs\group1
+<FAA_BENCH_REPO>/formal_runs/group1
 ```
 
 当前实验组2脚本使用的是实验组1正式评估结果目录：
 
 ```text
-E:\experiment3\github_work\faa-chart-to-424-benchmark\formal_runs\group1\group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2
+<GROUP1_RUN>
 ```
 
 ### 2.2 标准答案字段表
@@ -62,7 +62,7 @@ E:\experiment3\github_work\faa-chart-to-424-benchmark\formal_runs\group1\group1_
 实验组2使用的字段级标准答案表是：
 
 ```text
-E:\experiment3\github_work\faa-chart-to-424-benchmark\benchmark_exports\derived\v2\formal300\targets\scoring_equivalence_v2\field_targets_chart_display_v2.jsonl
+<FAA_BENCH_REPO>/benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/field_targets_chart_display_v2.jsonl
 ```
 
 这个文件把每张航图拆成字段级目标。例如：
@@ -92,14 +92,14 @@ Q5_hold_params = 等待程序参数
 最近一次用于检查的后台状态保存在：
 
 ```text
-C:\Users\admin\Documents\New project\group2_annotation_status_20260503_152409
+<GROUP2_ANNOTATION_STATUS_ROOT>
 ```
 
 其中：
 
 ```text
-C:\Users\admin\Documents\New project\group2_annotation_status_20260503_152409\admin_overview_formal300_latest_20260503.json
-C:\Users\admin\Documents\New project\group2_annotation_status_20260503_152409\shujuji_annotation_export_2026-05-03T07-24-24-338Z.json
+<GROUP2_ANNOTATION_STATUS_ROOT>/admin_overview_formal300_latest_20260503.json
+<GROUP2_ANNOTATION_STATUS_ROOT>/shujuji_annotation_export_2026-05-03T07-24-24-338Z.json
 ```
 
 当前后台标注状态是：
@@ -133,7 +133,7 @@ C:\Users\admin\Documents\New project\group2_annotation_status_20260503_152409\sh
 当前试跑目录是：
 
 ```text
-E:\experiment3\zu2+3
+<GROUP23_ROOT>
 ```
 
 已做过的主要事情包括：
@@ -338,19 +338,19 @@ direct SGD
 修复脚本：
 
 ```text
-E:\experiment3\zu2+3\scripts\run_group2_group3_direct_q4_fix.py
+<GROUP23_ROOT>/scripts/run_group2_group3_direct_q4_fix.py
 ```
 
 修复报告：
 
 ```text
-E:\experiment3\zu2+3\reports\direct_q4_fix_20260503_report_zh.md
+<GROUP23_ROOT>/reports/direct_q4_fix_20260503_report_zh.md
 ```
 
 审计文件：
 
 ```text
-E:\experiment3\zu2+3\reports\direct_q4_fix_20260503_audit.json
+<GROUP23_ROOT>/reports/direct_q4_fix_20260503_audit.json
 ```
 
 修复后的关键结果：
@@ -403,37 +403,37 @@ KCRW_L05
 ### 7.1 修复后的字段级证据表
 
 ```text
-E:\experiment3\zu2+3\group2\evidence_provenance_pilot30_direct_q4_fix_20260503.jsonl
+<GROUP23_ROOT>/group2/evidence_provenance_pilot30_direct_q4_fix_20260503.jsonl
 ```
 
 ### 7.2 新增的 10 条直接飞向证据
 
 ```text
-E:\experiment3\zu2+3\group2\direct_q4_added_evidence_direct_q4_fix_20260503.jsonl
+<GROUP23_ROOT>/group2/direct_q4_added_evidence_direct_q4_fix_20260503.jsonl
 ```
 
 ### 7.3 修复后的实验组2连接表
 
 ```text
-E:\experiment3\zu2+3\group2\group2_joined_field_scores_pilot30_direct_q4_fix_20260503.jsonl
+<GROUP23_ROOT>/group2/group2_joined_field_scores_pilot30_direct_q4_fix_20260503.jsonl
 ```
 
 ### 7.4 修复后的实验组2完整可比 19 张审计
 
 ```text
-E:\experiment3\zu2+3\group2\group2_complete19_direct_q4_fix_20260503_audit.json
+<GROUP23_ROOT>/group2/group2_complete19_direct_q4_fix_20260503_audit.json
 ```
 
 ### 7.5 修复后的实验组2主表
 
 ```text
-E:\experiment3\zu2+3\group2\group2_positive_joined_field_scores_complete19_direct_q4_fix_20260503.jsonl
+<GROUP23_ROOT>/group2/group2_positive_joined_field_scores_complete19_direct_q4_fix_20260503.jsonl
 ```
 
 ### 7.6 修复后的跨航段回退表
 
 ```text
-E:\experiment3\zu2+3\group2\group2_positive_question_fallback_complete19_direct_q4_fix_20260503.jsonl
+<GROUP23_ROOT>/group2/group2_positive_question_fallback_complete19_direct_q4_fix_20260503.jsonl
 ```
 
 这个文件现在应该是空的，因为跨航段回退已经清零。
@@ -472,13 +472,13 @@ E:\experiment3\zu2+3\group2\group2_positive_question_fallback_complete19_direct_
 paired 主表口径：
 
 ```text
-C:\Users\admin\Documents\New project\group2_formal\group2_formal300_paired200_methodfailure_v1_20260503_155704
+<GROUP2_FORMAL_ROOT>/group2_formal300_paired200_methodfailure_v1_20260503_155704
 ```
 
 available-score 补充口径：
 
 ```text
-C:\Users\admin\Documents\New project\group2_formal\group2_formal300_available_scores_v1_20260503_152409
+<GROUP2_FORMAL_ROOT>/group2_formal300_available_scores_v1_20260503_152409
 ```
 
 paired 主表用于严格方法间比较：300 张标注中选取 Group1 已评分的 200 张；若某个方法在这 200 张内因 schema invalid 没有 score JSON，则按 method failure 计入，而不是丢弃整张图。available-score 表覆盖全部 300 张，但不同方法分母不完全一致，只作为补充。
@@ -488,7 +488,7 @@ paired 主表用于严格方法间比较：300 张标注中选取 Group1 已评�
 正式导出已保存到：
 
 ```text
-C:\Users\admin\Documents\New project\group2_annotation_status_20260503_152409
+<GROUP2_ANNOTATION_STATUS_ROOT>
 ```
 
 其中 export 文件：
@@ -546,7 +546,7 @@ shujuji_annotation_export_2026-05-03T07-24-24-338Z.json
 先读：
 
 ```text
-E:\experiment3\zu2+3\reports\group2_new_window_handoff_zh.md
+<GROUP23_ROOT>/reports/group2_new_window_handoff_zh.md
 ```
 
 ### 第二步：确认后台标注是否已完成
@@ -556,7 +556,7 @@ E:\experiment3\zu2+3\reports\group2_new_window_handoff_zh.md
 最近一次本地保存结果：
 
 ```text
-E:\experiment3\group2_annotation_status_20260503\annotation_completion_check_20260503_summary.json
+<GROUP2_ANNOTATION_STATUS_ROOT>/annotation_completion_check_20260503_summary.json
 ```
 
 如果仍然是 296/300，就先不要正式跑全量。
@@ -577,7 +577,7 @@ E:\experiment3\group2_annotation_status_20260503\annotation_completion_check_202
 建议保存到：
 
 ```text
-E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM
+<GROUP2_ANNOTATION_STATUS_ROOT>
 ```
 
 ### 第四步：基于新导出重跑实验组2
@@ -587,7 +587,7 @@ E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM
 当前相关脚本：
 
 ```text
-E:\experiment3\zu2+3\scripts\run_group2_group3_direct_q4_fix.py
+<GROUP23_ROOT>/scripts/run_group2_group3_direct_q4_fix.py
 ```
 
 但这个脚本目前是针对 pilot30/complete19 的修复验证脚本。
@@ -600,7 +600,7 @@ scripts\group2\run_group2_formal_submitted_v1.py
 推荐输出目录仍使用：
 
 ```text
-E:\experiment3\zu2+3\group2_formal\<run_id>\
+<GROUP2_FORMAL_ROOT>/<run_id>\
 ```
 
 如果 300 张全部完成，用 `formal300` 命名。当前正式 paired 主输出已经采用 200 张 Group1 交集口径：
@@ -676,7 +676,7 @@ docs/group2/run_on_second_machine_zh.md
 建议目录结构：
 
 ```text
-E:\experiment3\zu2+3\group2_formal\
+<GROUP2_FORMAL_ROOT>/
   inputs\
   evidence\
   joined\
@@ -737,3 +737,4 @@ paired 主表覆盖 Group1 已评分的 200 张航图；
 证据对齐审计通过，没有跨航段 fallback 和应填写字段缺证据问题；
 available-score 版本覆盖全部 300 张，但只作为补充。
 ```
+

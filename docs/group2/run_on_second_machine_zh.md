@@ -7,20 +7,20 @@
 建议保持和当前机器相同的根目录：
 
 ```text
-E:\experiment3
+<EXPERIMENT_ROOT>
 ```
 
 至少需要准备：
 
 ```text
-E:\experiment3\github_work\faa-chart-to-424-benchmark
-E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM
-E:\experiment3\github_work\faa-chart-to-424-benchmark\formal_runs\group1\group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2
+<FAA_BENCH_REPO>
+<GROUP2_ANNOTATION_STATUS_ROOT>
+<GROUP1_RUN>
 ```
 
 其中 `benchmark_exports\derived\v2\formal300\targets\scoring_equivalence_v2` 已放入本分支。
 
-如果另一台电脑不用 `E:\experiment3`，需要先把脚本里的本地路径改成新机器路径，或者后续改造成命令行参数。
+如果另一台电脑不用 `<EXPERIMENT_ROOT>`，需要先把脚本里的本地路径改成新机器路径，或者后续改造成命令行参数。
 
 ## 已同步到 Git 的关键文件
 
@@ -34,22 +34,22 @@ docs\group2\direct_q4_fix_20260503_report_zh.md
 docs\group2\direct_q4_fix_20260503_audit.json
 ```
 
-这三个脚本默认读取和写入 `E:\experiment3` 下的路径。如果新机器路径不同，可以设置：
+这三个脚本默认读取和写入 `<EXPERIMENT_ROOT>` 下的路径。如果新机器路径不同，可以设置：
 
 ```powershell
-$env:EXPERIMENT3_ROOT = "D:\experiment3"
-$env:FAA_BENCH_REPO = "D:\experiment3\github_work\faa-chart-to-424-benchmark"
-$env:GROUP23_ROOT = "D:\experiment3\zu2+3"
-$env:GROUP2_EXPORT_PATH = "D:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\shujuji_annotation_export_xxx.json"
-$env:GROUP2_OVERVIEW_PATH = "D:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\admin_overview_formal300.json"
-$env:GROUP1_RUN = "D:\experiment3\github_work\faa-chart-to-424-benchmark\formal_runs\group1\group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2"
+$env:EXPERIMENT3_ROOT = "<EXPERIMENT_ROOT>"
+$env:FAA_BENCH_REPO = "<FAA_BENCH_REPO>"
+$env:GROUP23_ROOT = "<GROUP23_ROOT>"
+$env:GROUP2_EXPORT_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>/shujuji_annotation_export_xxx.json"
+$env:GROUP2_OVERVIEW_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>/admin_overview_formal300.json"
+$env:GROUP1_RUN = "<GROUP1_RUN>"
 ```
 
-如果新机器仍使用 `E:\experiment3`，通常只需要设置最新人工导出的两个路径：
+如果新机器仍使用 `<EXPERIMENT_ROOT>`，通常只需要设置最新人工导出的两个路径：
 
 ```powershell
-$env:GROUP2_EXPORT_PATH = "E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\shujuji_annotation_export_xxx.json"
-$env:GROUP2_OVERVIEW_PATH = "E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\admin_overview_formal300.json"
+$env:GROUP2_EXPORT_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>\shujuji_annotation_export_xxx.json"
+$env:GROUP2_OVERVIEW_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>\admin_overview_formal300.json"
 ```
 
 ## 正式全量前的判断
@@ -82,10 +82,10 @@ scripts\group2\run_group2_formal_submitted_v1.py
 如果 300 张已经全部提交，推荐命令：
 
 ```powershell
-$env:GROUP2_EXPORT_PATH = "E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\shujuji_annotation_export_xxx.json"
-$env:GROUP2_OVERVIEW_PATH = "E:\experiment3\group2_annotation_status_YYYYMMDD_HHMM\admin_overview_formal300.json"
+$env:GROUP2_EXPORT_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>\shujuji_annotation_export_xxx.json"
+$env:GROUP2_OVERVIEW_PATH = "<GROUP2_ANNOTATION_STATUS_ROOT>\admin_overview_formal300.json"
 $env:GROUP2_RUN_ID = "group2_formal300_paired200_methodfailure_v1_YYYYMMDD_HHMM"
-$env:GROUP2_OUTPUT_ROOT = "E:\experiment3\zu2+3\group2_formal\group2_formal300_paired200_methodfailure_v1_YYYYMMDD_HHMM"
+$env:GROUP2_OUTPUT_ROOT = "<GROUP2_FORMAL_ROOT>/group2_formal300_paired200_methodfailure_v1_YYYYMMDD_HHMM"
 python scripts\group2\run_group2_formal_submitted_v1.py `
   --expected-analysis-count 200 `
   --count-missing-scores-as-method-failure
@@ -97,7 +97,7 @@ python scripts\group2\run_group2_formal_submitted_v1.py `
 
 ```powershell
 $env:GROUP2_RUN_ID = "group2_formal_submitted296_v1_YYYYMMDD_HHMM"
-$env:GROUP2_OUTPUT_ROOT = "E:\experiment3\zu2+3\group2_formal\group2_formal_submitted296_v1_YYYYMMDD_HHMM"
+$env:GROUP2_OUTPUT_ROOT = "<GROUP2_FORMAL_ROOT>/group2_formal_submitted296_v1_YYYYMMDD_HHMM"
 python scripts\group2\run_group2_formal_submitted_v1.py --expected-submitted-count 296
 ```
 
@@ -133,7 +133,7 @@ inputs\annotation_region_snapshot.jsonl
 
 ```powershell
 python scripts\group2\run_group2_formal_submitted_v1.py `
-  --previous-run-root "E:\experiment3\zu2+3\group2_formal\group2_formal_submitted296_v1_YYYYMMDD_HHMM"
+  --previous-run-root "<GROUP2_FORMAL_ROOT>/group2_formal_submitted296_v1_YYYYMMDD_HHMM"
 ```
 
 脚本会输出：
@@ -154,3 +154,4 @@ inputs\annotation_changed_regions.jsonl
 ```
 
 发现变更后，优先检查 `annotation_changed_fields.jsonl`；确认无误后以最新 run 输出覆盖旧结论。旧 run 不删除，保留为可追踪基线。
+

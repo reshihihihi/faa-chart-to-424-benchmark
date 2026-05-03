@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-EXPERIMENT_ROOT = Path(os.environ.get("EXPERIMENT3_ROOT", r"E:\experiment3"))
+EXPERIMENT_ROOT = Path(os.environ.get("EXPERIMENT3_ROOT", ".")).resolve()
 ROOT = Path(os.environ.get("GROUP23_ROOT", str(EXPERIMENT_ROOT / "zu2+3")))
 SCRIPT_DIR = Path(os.environ.get("GROUP2_SCRIPT_DIR", str(Path(__file__).resolve().parent)))
 BASE_SCRIPT = SCRIPT_DIR / "run_group2_group3_pilot30.py"

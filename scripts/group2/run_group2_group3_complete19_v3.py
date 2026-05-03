@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 
 
-EXPERIMENT_ROOT = Path(os.environ.get("EXPERIMENT3_ROOT", r"E:\experiment3"))
+EXPERIMENT_ROOT = Path(os.environ.get("EXPERIMENT3_ROOT", ".")).resolve()
 ROOT = Path(os.environ.get("GROUP23_ROOT", str(EXPERIMENT_ROOT / "zu2+3")))
 METHOD_ORDER = ["A1", "A2", "B1", "B1_prime", "B1_prime_link", "C1", "C2", "C3", "C4", "D1"]
 
@@ -621,4 +621,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
