@@ -1,0 +1,35 @@
+{
+  "created_at_utc": "2026-05-03T05:34:10.251156+00:00",
+  "run_id": "experiment5_smoke_20260503_r4_available_methods",
+  "smoke20_count": 20,
+  "source_view_manifest": "E:\\experiment3\\zu4\\source_views\\manifests\\source_view_manifest.jsonl",
+  "source_view_manifest_sha256": "e193f28bb21e7b78a9db311b1c9f3de739623d849027480e8ece4749b165775f",
+  "source_view_summary": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\benchmark_exports\\derived\\v2\\experiment5_diagnostic\\source_view_summary_for_experiment5_current.json",
+  "source_view_summary_sha256": "17af758f0e9266c0721579fa533c534bf37fd8efe57f0ad53ad6840640332d30",
+  "source_view_summary_manifest_sha256": "e193f28bb21e7b78a9db311b1c9f3de739623d849027480e8ece4749b165775f",
+  "source_view_hash_matches_summary": true,
+  "source_view_original_summary": "E:\\experiment3\\zu4\\source_views\\reports\\source_view_summary.json",
+  "source_view_original_summary_sha256": "f608027006853d13d626e1febeb96cc967a6f7466cc6370e52003eae84337d4d",
+  "region_profiles_prepared": {
+    "PD": 20,
+    "T": 20,
+    "TPD": 20
+  },
+  "roi_rows": 20,
+  "roi_ocr_rows": 80,
+  "candidate_input_rows": 60,
+  "missing_count": 0,
+  "missing": [],
+  "candidate_schema": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\schemas\\experiment5_roi_field_candidates.schema.v1.json",
+  "candidate_schema_sha256": "220c4b2b64ab08622251736ef903416006b835b6b186651553fad858fe694083",
+  "candidate_validation_error_rows": 0,
+  "candidate_unknown_source_section_count": 0,
+  "candidate_cross_region_snippet_count": 0,
+  "ready_for_smoke_b3_b4": true,
+  "provenance_warnings": [],
+  "blocked_human_inputs": [
+    "gold_ma_text_smoke20_template.jsonl must be completed before A3/B2a/B2b.",
+    "gold_observable_smoke20_template.jsonl must be completed before G0/G1/G2/G3.",
+    "rule_registry.yaml must be reviewed before A3/B4/G1/G3 formal claims."
+  ]
+}

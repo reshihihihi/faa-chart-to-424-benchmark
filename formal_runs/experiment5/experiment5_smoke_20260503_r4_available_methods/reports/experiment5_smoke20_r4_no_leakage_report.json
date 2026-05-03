@@ -1,0 +1,16 @@
+{
+  "run_id": "experiment5_smoke_20260503_r4_available_methods",
+  "created_from_manifest": "run_manifest_b3_b4_smoke.json",
+  "target_used_for_prediction": false,
+  "score_used_for_prediction": false,
+  "cifp_or_arinc_424_used_for_prediction": false,
+  "gold_observable_used_for_prediction": false,
+  "gold_ma_text_used_for_prediction": false,
+  "b3_pd_withholds_missed_approach_text": true,
+  "b4_uses_field_candidates": true,
+  "input_readiness_ready_for_smoke_b3_b4": true,
+  "candidate_validation_error_rows": 0,
+  "candidate_cross_region_snippet_count": 0,
+  "candidate_unknown_source_section_count": 0,
+  "hard_leakage_detected": false
+}

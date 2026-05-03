@@ -1,0 +1,91 @@
+registry_id: experiment5_rule_registry_v1_candidate
+experiment_group: 5
+status: candidate_for_smoke_r2
+purpose: >
+  Frozen candidate registry for Experiment 5 B4/G rules diagnostics. Rules may
+  use only ROI OCR text and region-aware OCR-derived field candidates.
+forbidden_inputs:
+  - canonical_target
+  - expected_value
+  - scorer_output
+  - cifp_or_arinc_424
+  - gold_observable_evidence
+  - gold_field_to_leg_mapping
+  - historical_model_output
+abstain_policy:
+  default: unknown_or_not_applicable
+  note: >
+    If the rule cannot identify a field from allowed ROI OCR/candidates, it must
+    abstain. It must not infer from target structure or scorer feedback.
+rules:
+  - rule_id: R_B4_PRIMARY_MA_TEXT_INSTRUCTION
+    rule_name: Use MA_TEXT instruction candidates as primary procedure order
+    allowed_sources:
+      - MISSED_APPROACH_TEXT
+    input_conditions:
+      - candidate.field_type == missed_approach_instruction
+      - candidate.source_section == missed_approach_text
+    output_fields:
+      - leg_count
+      - missed_approach.legs
+    negative_conditions:
+      - Do not use PLAN_VIEW route labels to create new legs unless MA_TEXT is unreadable.
+    abstain_behavior: return empty unknown leg_count if no readable missed approach instruction exists
+  - rule_id: R_B4_CLIMB_ALTITUDE_TO_CA
+    rule_name: Climb altitude without fix creates CA-like first leg candidate
+    allowed_sources:
+      - MISSED_APPROACH_TEXT
+    input_conditions:
+      - text contains climb/climbing to altitude
+      - no direct-to fix in the same clause
+    output_fields:
+      - Q_terminator
+      - Q2_altitude_constraint
+    negative_conditions:
+      - Do not use profile or plan-view altitude alone as missed approach altitude.
+    abstain_behavior: leave field unknown or not_applicable
+  - rule_id: R_B4_DIRECT_TO_DF
+    rule_name: Direct-to phrase creates DF candidate
+    allowed_sources:
+      - MISSED_APPROACH_TEXT
+      - PLAN_VIEW
+      - MISSED_APPROACH_DETAIL_AREA
+    input_conditions:
+      - direct_phrase candidate is supported by MA_TEXT instruction or same named P/D fix
+    output_fields:
+      - Q_terminator
+      - Q1_fix_ident
+      - Q4_course_or_radial
+    negative_conditions:
+      - Do not convert unrelated IAF/IF/FAF labels into missed approach DF legs.
+    abstain_behavior: leave field unknown
+  - rule_id: R_B4_HOLD_TO_HM
+    rule_name: Hold phrase creates HM candidate
+    allowed_sources:
+      - MISSED_APPROACH_TEXT
+      - PLAN_VIEW
+      - MISSED_APPROACH_DETAIL_AREA
+    input_conditions:
+      - hold candidate exists
+      - hold fix is named in MA_TEXT instruction or same named P/D candidate
+    output_fields:
+      - Q_terminator
+      - Q1_fix_ident
+      - Q5_hold_params
+    negative_conditions:
+      - Do not use generic HOLD chart legend without a missed approach fix relation.
+    abstain_behavior: leave field unknown
+  - rule_id: R_B4_COURSE_OR_RADIAL
+    rule_name: Course/radial values are only accepted with procedural text context
+    allowed_sources:
+      - MISSED_APPROACH_TEXT
+      - PLAN_VIEW
+      - MISSED_APPROACH_DETAIL_AREA
+    input_conditions:
+      - course/radial candidate has TRACK/COURSE/HEADING/R- context
+      - candidate can be associated with a missed approach clause or named fix
+    output_fields:
+      - Q4_course_or_radial
+    negative_conditions:
+      - Do not use feeder-route, procedure-NA, MSA, IAF/IF/FAF, or profile course labels alone.
+    abstain_behavior: leave field unknown
