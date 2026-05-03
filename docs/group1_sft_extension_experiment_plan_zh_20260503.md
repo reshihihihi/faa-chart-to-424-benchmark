@@ -409,3 +409,44 @@ docs/group1_sft_extension_experiment_plan_zh_20260503.md
 请边做边说明你看到的问题，不要跳过诊断直接全量跑。
 ```
 
+## 12. 2026-05-04 本机补充执行记录
+
+本轮继续在本机执行新增 SFT 方法修复和验证。所有新增推理仍遵守以下边界：推理阶段不读取 target JSON、score、raw 424/CIFP 或其他方法预测；`scoring_manifest` 只在预测完成后用于评分；run package 使用 `scoring_equivalence_v2` target 和 `comparison_policy_v2`。
+
+新增代码和策略：
+
+1. 给 `CHART_TO_EVIDENCE_SFT` runner 增加 evidence-record assistant prefill：`{"chart_id":null,"evidence_items":[{`。这是输出形状约束，不读取答案或分数。
+2. 给 `TWO_STAGE_AUTO_SFT` 拆分 stage 1 和 stage 2 的 assistant prefill。stage 1 使用 evidence-record prefill，stage 2 使用普通 JSON object prefill。
+3. 给问卷式第二阶段增加机械 schema 规范化：当模型把问题字段输出为 `null`、缺失或非对象时，只规范化为 `{"status":"unknown","value":null}`。该规范化不使用 target、score 或答案，不做语义修复，并单独保存 normalized JSON 和 normalization 日志。
+4. `prepare_group1_sft_run_package.py` 增加 `--split-subset development`，用于生成第一个 development 50 的内部验证包，避免把 formal200 的前 50 条误当作 development 50。
+
+训练和 checkpoint：
+
+1. 重新生成训练 JSONL 后，检查结果仍为 `ready=true`、`schema_error_count=0`、`eval_input_violation_count=0`。
+2. 训练了 `CHART_TO_EVIDENCE_SFT` r2，但 smoke 表现差于 r1，因此当前第一阶段继续使用 r1 checkpoint。
+3. 训练了 `EVIDENCE_TO_SEMANTICS_SFT` r2，best dev loss 为 `0.11352123245596886`。当前第二阶段使用 r2 checkpoint。
+
+smoke5 当前结果：
+
+| 方法 | 样本数 | 可评分/可验证情况 | failure | score |
+|---|---:|---:|---:|---:|
+| `CHART_TO_EVIDENCE_SFT` | 5 | 4/5 schema valid | 1 parse failure | 不直接评分 |
+| `EVIDENCE_TO_SEMANTICS_SFT` | 5 | 5/5 可评分 | 0 | 2 / 101 = 0.019801980198019802 |
+| `TWO_STAGE_AUTO_SFT` | 5 | 4/5 可评分 | 1 stage 1 parse failure | 0 / 76 = 0.0 |
+
+development-50 内部验证：
+
+生成了 `group1_sft_dev50_internal_20260503` run package，`split_subset=development`，blocker 为 0。该包是内部验证，不是 formal evaluation。
+
+已先运行 `EVIDENCE_TO_SEMANTICS_SFT` 的 development-50 内部验证，结果如下：
+
+| 方法 | 样本数 | 可评分 | failure | parse failure | schema failure | score |
+|---|---:|---:|---:|---:|---:|---:|
+| `EVIDENCE_TO_SEMANTICS_SFT` development-50 internal | 50 | 38 | 12 | 11 | 1 | 20 / 776 = 0.02577319587628866 |
+
+当前结论：
+
+1. 第一个 50 张 development split 已经用于 SFT 训练和内部验证打包；不能用 `--limit 50` 直接代表 development 50，因为默认 `--limit` 会截取 formal evaluation scoring manifest。
+2. 第一阶段 evidence record 输出格式已有明显改善，但仍有少量 parse failure。
+3. 第二阶段即使在人工确认 evidence 输入下，development-50 内部验证准确率仍很低，说明瓶颈是 evidence-to-semantics 语义组织能力，而不是单纯输出 schema。
+4. 当前不建议进入新增 SFT formal200；应优先改进第二阶段训练目标、输出空间或转写方式，再重新 smoke5 和 development-50 internal。

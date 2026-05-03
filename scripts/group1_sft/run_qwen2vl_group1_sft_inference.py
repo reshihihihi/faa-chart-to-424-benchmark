@@ -13,6 +13,9 @@ ROOT = Path(__file__).resolve().parents[2]
 SCORER_DIR = ROOT / "scripts" / "scorers"
 sys.path.insert(0, str(SCORER_DIR))
 
+JSON_OBJECT_PREFILL = "{"
+CHART_TO_EVIDENCE_PREFILL = '{"chart_id":null,"evidence_items":[{'
+
 
 def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8-sig"))
@@ -200,6 +203,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     run_dir.mkdir(parents=True, exist_ok=args.overwrite)
     validator = load_schema_validator(args.json_schema)
     model, processor = load_model(args)
+    assistant_prefill = args.assistant_prefill
+    if assistant_prefill is None:
+        assistant_prefill = CHART_TO_EVIDENCE_PREFILL if args.method == "CHART_TO_EVIDENCE_SFT" else JSON_OBJECT_PREFILL
 
     results: list[dict[str, Any]] = []
     failures: list[dict[str, Any]] = []
@@ -224,7 +230,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 image_path=image_path,
                 prompt_text=prompt_text,
                 max_new_tokens=args.max_new_tokens,
-                assistant_prefill=args.assistant_prefill,
+                assistant_prefill=assistant_prefill,
             )
             write_text(run_dir / "raw_text" / f"{chart_id}.txt", text)
             parsed = strict_json(text)
@@ -275,7 +281,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "strict_json_only": True,
             "code_fence_stripping_allowed": False,
             "semantic_repair_allowed": False,
-            "assistant_prefill": args.assistant_prefill,
+            "assistant_prefill": assistant_prefill,
         },
         "input_boundary": {
             "target_used_for_prompt_or_parsing": False,
@@ -314,7 +320,7 @@ def main() -> int:
     parser.add_argument("--output-root", required=True, type=Path)
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--limit", type=int, default=None)
-    parser.add_argument("--assistant-prefill", default="{")
+    parser.add_argument("--assistant-prefill", default=None)
     parser.add_argument("--max-new-tokens", type=int, default=1536)
     parser.add_argument("--min-pixels", type=int, default=3136)
     parser.add_argument("--max-pixels", type=int, default=501760)

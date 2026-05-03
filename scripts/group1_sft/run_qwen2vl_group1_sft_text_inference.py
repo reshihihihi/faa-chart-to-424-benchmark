@@ -92,6 +92,33 @@ def validation_errors(obj: dict[str, Any], validator: Any | None) -> list[str]:
     return [(".".join(str(part) for part in err.path) or "$") + f": {err.message}" for err in errors]
 
 
+def normalize_questionnaire_schema(obj: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
+    normalized = json.loads(json.dumps(obj, ensure_ascii=False))
+    actions: list[str] = []
+    legs = normalized.get("legs")
+    if not isinstance(legs, list):
+        return normalized, actions
+    for leg_index, leg in enumerate(legs):
+        if not isinstance(leg, dict):
+            continue
+        for field in QUESTION_FIELDS:
+            value = leg.get(field)
+            if value is None:
+                leg[field] = {"status": "unknown", "value": None}
+                actions.append(f"legs.{leg_index}.{field}: null_or_missing_to_unknown_answer")
+            elif not isinstance(value, dict):
+                leg[field] = {"status": "unknown", "value": None}
+                actions.append(f"legs.{leg_index}.{field}: non_object_to_unknown_answer")
+            else:
+                if "status" not in value:
+                    value["status"] = "unknown"
+                    actions.append(f"legs.{leg_index}.{field}.status: missing_to_unknown")
+                if "value" not in value:
+                    value["value"] = None
+                    actions.append(f"legs.{leg_index}.{field}.value: missing_to_null")
+    return normalized, actions
+
+
 def load_targets(scoring_manifest: Path | None) -> dict[str, Path]:
     if scoring_manifest is None:
         return {}
@@ -274,14 +301,19 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             write_text(run_dir / "raw_text" / f"{chart_id}.txt", text)
             parsed = strict_json(text)
             write_json(run_dir / "parsed_json" / f"{chart_id}.json", parsed)
-            errors = validation_errors(parsed, validator)
+            normalized, normalization_actions = normalize_questionnaire_schema(parsed)
+            if normalization_actions:
+                write_json(run_dir / "normalized_json" / f"{chart_id}.json", normalized)
+                write_json(run_dir / "normalization" / f"{chart_id}.json", normalization_actions)
+            errors = validation_errors(normalized, validator)
             write_json(run_dir / "validation" / f"{chart_id}.json", errors)
             item["validation_error_count"] = len(errors)
             item["validation_errors"] = errors
+            item["normalization_action_count"] = len(normalization_actions)
             if errors:
                 failures.append({"sample_id": sample_id, "chart_id": chart_id, "stage": "schema_validation", "error": errors[0]})
             else:
-                canonical = questionnaire_to_canonical(row, parsed)
+                canonical = questionnaire_to_canonical(row, normalized)
                 write_json(run_dir / "canonical_json" / f"{chart_id}.json", canonical)
                 valid_predictions.append(
                     {"sample_id": sample_id, "chart_id": chart_id, "canonical": canonical, "item": item}
@@ -323,6 +355,11 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "strict_json_only": True,
             "code_fence_stripping_allowed": False,
             "semantic_repair_allowed": False,
+            "mechanical_schema_normalization": [
+                "questionnaire null or missing question answer -> {'status':'unknown','value':null}",
+                "questionnaire non-object question answer -> {'status':'unknown','value':null}",
+                "questionnaire answer missing status/value -> fill unknown/null",
+            ],
             "assistant_prefill": args.assistant_prefill,
         },
         "input_boundary": {

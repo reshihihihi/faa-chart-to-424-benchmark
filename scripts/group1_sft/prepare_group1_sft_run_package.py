@@ -28,6 +28,16 @@ POLICY_V2 = (
     / "scoring_equivalence_v2"
     / "comparison_policy_v2.jsonl"
 )
+DEFAULT_SPLIT = (
+    ROOT
+    / "benchmark_exports"
+    / "derived"
+    / "v2"
+    / "formal300"
+    / "split_candidates"
+    / "split_50_200_50_seed20260437"
+    / "splits_50_200_50_seed20260437.json"
+)
 
 DEFAULT_METHODS = [
     "D_BASE_SAME_BACKBONE",
@@ -300,37 +310,86 @@ def make_image_row(
     }
 
 
+def strip_evidence_row_for_inference(row: dict[str, Any], *, split_subset: str) -> dict[str, Any]:
+    messages = row.get("messages")
+    safe_messages = [messages[0]] if isinstance(messages, list) and messages else []
+    source_annotation = row.get("source_annotation")
+    if isinstance(source_annotation, dict):
+        source_annotation = {
+            **source_annotation,
+            "uses_field_reviews_as_label": False,
+            "assistant_label_removed_for_inference": True,
+        }
+    return {
+        "sample_id": row.get("sample_id"),
+        "split": split_subset,
+        "chart_id": row["chart_id"],
+        "evidence_record": row.get("evidence_record"),
+        "field_evidence_links": row.get("field_evidence_links"),
+        "declared_oracle_human_evidence_input": True,
+        "messages": safe_messages,
+        "source_annotation": source_annotation,
+    }
+
+
 def copy_evidence_manifest(
     *,
     config: dict[str, str],
     repo_root: Path,
     out_path: Path,
-    limit: int | None,
+    selected_chart_ids: list[str],
+    split_subset: str,
 ) -> tuple[int, list[dict[str, Any]]]:
     blockers: list[dict[str, Any]] = []
-    value = config.get("evidence_to_semantics_eval_jsonl")
-    if is_placeholder(value):
+    if split_subset == "development":
+        sources = [
+            config.get("evidence_to_semantics_train_jsonl"),
+            config.get("evidence_to_semantics_dev_jsonl"),
+        ]
+        if any(is_placeholder(value) for value in sources):
+            write_jsonl(out_path, [])
+            blockers.append(
+                {
+                    "method": "EVIDENCE_TO_SEMANTICS_SFT",
+                    "blocker": "missing_development_evidence_jsonl",
+                    "detail": "Set evidence_to_semantics_train_jsonl and evidence_to_semantics_dev_jsonl in local_paths.local.json.",
+                }
+            )
+            return 0, blockers
+        source_paths = [resolve_path(str(value), repo_root=repo_root) for value in sources if value]
+    else:
+        value = config.get("evidence_to_semantics_eval_jsonl")
+        if is_placeholder(value):
+            write_jsonl(out_path, [])
+            blockers.append(
+                {
+                    "method": "EVIDENCE_TO_SEMANTICS_SFT",
+                    "blocker": "missing_evidence_to_semantics_eval_jsonl",
+                    "detail": "Set evidence_to_semantics_eval_jsonl in local_paths.local.json.",
+                }
+            )
+            return 0, blockers
+        source_paths = [resolve_path(str(value), repo_root=repo_root)]
+
+    missing_sources = [str(path) for path in source_paths if not path.exists()]
+    if missing_sources:
         write_jsonl(out_path, [])
         blockers.append(
             {
                 "method": "EVIDENCE_TO_SEMANTICS_SFT",
-                "blocker": "missing_evidence_to_semantics_eval_jsonl",
-                "detail": "Set evidence_to_semantics_eval_jsonl in local_paths.local.json.",
+                "blocker": "evidence_jsonl_not_found",
+                "paths": missing_sources,
             }
         )
         return 0, blockers
-    source = resolve_path(str(value), repo_root=repo_root)
-    if not source.exists():
-        write_jsonl(out_path, [])
-        blockers.append(
-            {
-                "method": "EVIDENCE_TO_SEMANTICS_SFT",
-                "blocker": "evidence_eval_jsonl_not_found",
-                "path": str(source),
-            }
-        )
-        return 0, blockers
-    rows = read_jsonl(source, limit)
+
+    rows_by_chart: dict[str, dict[str, Any]] = {}
+    for source in source_paths:
+        for row in read_jsonl(source):
+            if row.get("chart_id"):
+                rows_by_chart[row["chart_id"]] = strip_evidence_row_for_inference(row, split_subset=split_subset)
+    rows = [rows_by_chart[chart_id] for chart_id in selected_chart_ids if chart_id in rows_by_chart]
+    missing_charts = [chart_id for chart_id in selected_chart_ids if chart_id not in rows_by_chart]
     safe_rows = []
     forbidden_fragments = ["target", "score", "canonical_proxy_gt", "cifp", "answer_key"]
     for row in rows:
@@ -349,7 +408,16 @@ def copy_evidence_manifest(
             {
                 "method": "EVIDENCE_TO_SEMANTICS_SFT",
                 "blocker": "forbidden_keys_in_evidence_eval_jsonl",
-                "path": str(source),
+                "paths": [str(path) for path in source_paths],
+            }
+        )
+    if missing_charts:
+        blockers.append(
+            {
+                "method": "EVIDENCE_TO_SEMANTICS_SFT",
+                "blocker": "missing_evidence_rows_for_selected_split",
+                "count": len(missing_charts),
+                "examples": missing_charts[:10],
             }
         )
     return len(safe_rows), blockers
@@ -365,7 +433,7 @@ def method_prompt_and_schema(method: str) -> tuple[Path, Path]:
     raise ValueError(method)
 
 
-def write_commands(run_dir: Path, config: dict[str, str], methods: list[str]) -> None:
+def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *, split_subset: str) -> None:
     base_model = config.get("base_vlm_model_dir", "<BASE_MODEL_DIR>")
     adapter = config.get("d1_lora_or_checkpoint_dir", "<D1_LORA_OR_CHECKPOINT_DIR>")
     repo_root = resolve_path(config.get("repo_root", str(ROOT)), repo_root=ROOT) if not is_placeholder(config.get("repo_root")) else ROOT
@@ -395,8 +463,8 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str]) ->
         "## 2. Rebuild this run package",
         "",
         "```powershell",
-        "python scripts\\group1_sft\\prepare_group1_sft_run_package.py --paths training\\group1_sft\\configs\\local_paths.local.json --out-dir "
-        + str(run_dir),
+        "python scripts\\group1_sft\\prepare_group1_sft_run_package.py --paths training\\group1_sft\\configs\\local_paths.local.json "
+        + f"--split-subset {split_subset} --out-dir {run_dir}",
         "```",
         "",
         "## 3. Train CHART_TO_EVIDENCE_SFT on the development-50 train split",
@@ -462,6 +530,9 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str]) ->
             [
                 "## 7. CHART_TO_EVIDENCE_SFT inference",
                 "",
+                "This runner uses the registered evidence-record assistant prefill by default: "
+                + "`{\"chart_id\":null,\"evidence_items\":[{`.",
+                "",
                 "```powershell",
                 "python scripts\\group1_sft\\run_qwen2vl_group1_sft_inference.py "
                 + "--method CHART_TO_EVIDENCE_SFT "
@@ -498,6 +569,8 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str]) ->
             [
                 "## 9. TWO_STAGE_AUTO_SFT full automatic two-stage inference",
                 "",
+                "This runner uses separate defaults for the two stages: evidence-record prefill for stage 1 and JSON-object prefill for stage 2.",
+                "",
                 "```powershell",
                 "python scripts\\group1_sft\\run_group1_sft_two_stage_auto.py "
                 + f"--input-manifest {run_dir / 'TWO_STAGE_AUTO_SFT' / 'input_manifest.jsonl'} "
@@ -522,6 +595,8 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str]) ->
             "- `scoring_manifest.jsonl` is for post-prediction scoring only.",
             "- `EVIDENCE_TO_SEMANTICS_SFT` uses declared human evidence records and must be reported as diagnostic/oracle second-stage input.",
             "- `TWO_STAGE_AUTO_SFT` uses only the automatically generated evidence record from its first stage at inference time.",
+            "- The evidence-record assistant prefill constrains JSON shape only; it does not use targets, scores, raw 424/CIFP records, or other method predictions.",
+            "- Questionnaire null/missing answer normalization is mechanical only: it maps malformed question answers to `unknown` without using targets or scores.",
             "",
         ]
     )
@@ -537,7 +612,20 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
     canonical_targets_dir = canonical_targets_dir_from_config(config, repo_root=repo_root)
     sample_rows = load_sample_rows(formal_manifest)
     samples_by_chart = {row["chart_id"]: row for row in sample_rows if row.get("chart_id")}
-    scoring_rows = read_jsonl(scoring_manifest, args.limit)
+    if args.split_subset == "evaluation":
+        scoring_rows = read_jsonl(scoring_manifest, args.limit)
+    else:
+        split = read_json(args.split_json)
+        split_rows = split["splits"][args.split_subset]
+        scoring_rows = [
+            {
+                "sample_id": row["sample_id"],
+                "chart_id": row["chart_id"],
+                "scoring_phase_only": True,
+                "source_split_subset": args.split_subset,
+            }
+            for row in split_rows[: args.limit]
+        ]
     selected_samples = []
     blockers: list[dict[str, Any]] = []
     for scoring_row in scoring_rows:
@@ -552,6 +640,7 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
             )
             continue
         selected_samples.append(sample)
+    selected_chart_ids = [sample["chart_id"] for sample in selected_samples]
 
     run_id = args.run_id or f"group1_sft_extension_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}"
     if args.out_dir:
@@ -636,7 +725,8 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
                 config=config,
                 repo_root=repo_root,
                 out_path=method_dir / "input_manifest.jsonl",
-                limit=args.limit,
+                selected_chart_ids=selected_chart_ids,
+                split_subset=args.split_subset,
             )
             blockers.extend(method_blockers)
             method_reports[method] = {
@@ -690,6 +780,7 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
         "created_at": datetime.now(timezone.utc).isoformat(),
         "run_id": run_id,
         "run_dir": str(run_dir),
+        "split_subset": args.split_subset,
         "paths_file": str(paths_file),
         "repo_root": str(repo_root),
         "formal_manifest": artifact(formal_manifest),
@@ -717,6 +808,7 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
         "policy": {
             "input_manifests_exclude_targets": True,
             "scoring_manifest_for_post_prediction_only": True,
+            "development_split_results_are_internal_validation_only": args.split_subset == "development",
             "forbidden_inference_inputs": [
                 "target_json",
                 "raw_424_record",
@@ -731,7 +823,7 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
     write_json(run_dir / "run_package_manifest.json", package_manifest)
     write_json(run_dir / "reports" / "preflight_report.json", package_manifest)
     write_preflight_markdown(run_dir / "reports" / "preflight_report_zh.md", package_manifest)
-    write_commands(run_dir, config, methods)
+    write_commands(run_dir, config, methods, split_subset=args.split_subset)
     return package_manifest
 
 
@@ -774,6 +866,7 @@ def write_preflight_markdown(path: Path, manifest: dict[str, Any]) -> None:
         "# 实验组 1 SFT 扩展 run package preflight",
         "",
         f"- run_id: `{manifest['run_id']}`",
+        f"- split_subset: `{manifest.get('split_subset', 'evaluation')}`",
         f"- ready_for_remote_execution: `{manifest['ready_for_remote_execution']}`",
         f"- blockers: `{len(manifest['blockers'])}`",
         "",
@@ -810,6 +903,8 @@ def main() -> int:
     parser.add_argument("--out-dir", type=Path, default=None, help="Output run package directory.")
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--methods", default=",".join(DEFAULT_METHODS))
+    parser.add_argument("--split-subset", choices=["development", "evaluation"], default="evaluation")
+    parser.add_argument("--split-json", type=Path, default=DEFAULT_SPLIT)
     parser.add_argument("--limit", type=int, default=None, help="Limit samples for a smoke package.")
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--fail-on-blockers", action="store_true")

@@ -15,6 +15,8 @@ SCRIPT_DIR = ROOT / "scripts" / "group1_sft"
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from run_qwen2vl_group1_sft_inference import (  # noqa: E402
+    CHART_TO_EVIDENCE_PREFILL,
+    JSON_OBJECT_PREFILL,
     image_path_from_row,
     infer_one as infer_image_one,
     load_model as load_image_model,
@@ -27,6 +29,7 @@ from run_qwen2vl_group1_sft_text_inference import (  # noqa: E402
     load_model as load_text_model,
     load_scorer,
     load_targets,
+    normalize_questionnaire_schema,
     questionnaire_to_canonical,
 )
 
@@ -107,6 +110,13 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     semantics_prompt = args.evidence_to_semantics_prompt.read_text(encoding="utf-8").strip()
     evidence_validator = load_schema_validator(args.evidence_schema)
     questionnaire_validator = load_schema_validator(args.questionnaire_schema)
+    stage1_assistant_prefill = args.stage1_assistant_prefill
+    stage2_assistant_prefill = args.stage2_assistant_prefill
+    if args.assistant_prefill is not None:
+        stage1_assistant_prefill = stage1_assistant_prefill or args.assistant_prefill
+        stage2_assistant_prefill = stage2_assistant_prefill or args.assistant_prefill
+    stage1_assistant_prefill = stage1_assistant_prefill or CHART_TO_EVIDENCE_PREFILL
+    stage2_assistant_prefill = stage2_assistant_prefill or JSON_OBJECT_PREFILL
 
     image_model, image_processor = load_image_model(
         model_args(
@@ -138,7 +148,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 image_path=image_path,
                 prompt_text=chart_prompt,
                 max_new_tokens=args.stage1_max_new_tokens,
-                assistant_prefill=args.assistant_prefill,
+                assistant_prefill=stage1_assistant_prefill,
             )
             write_text(run_dir / "stage1_raw_text" / f"{chart_id}.txt", text)
             evidence = strict_json(text)
@@ -190,20 +200,25 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 processor=text_processor,
                 messages=messages,
                 max_new_tokens=args.stage2_max_new_tokens,
-                assistant_prefill=args.assistant_prefill,
+                assistant_prefill=stage2_assistant_prefill,
             )
             write_text(run_dir / "stage2_raw_text" / f"{chart_id}.txt", text)
             questionnaire = strict_json(text)
             write_json(run_dir / "stage2_questionnaire_json" / f"{chart_id}.json", questionnaire)
-            errors = validation_errors(questionnaire, questionnaire_validator)
+            normalized_questionnaire, normalization_actions = normalize_questionnaire_schema(questionnaire)
+            if normalization_actions:
+                write_json(run_dir / "stage2_normalized_questionnaire_json" / f"{chart_id}.json", normalized_questionnaire)
+                write_json(run_dir / "stage2_normalization" / f"{chart_id}.json", normalization_actions)
+            errors = validation_errors(normalized_questionnaire, questionnaire_validator)
             write_json(run_dir / "stage2_validation" / f"{chart_id}.json", errors)
             item["stage2_validation_error_count"] = len(errors)
             item["stage2_validation_errors"] = errors
+            item["stage2_normalization_action_count"] = len(normalization_actions)
             if errors:
                 failures.append({"sample_id": sample_id, "chart_id": chart_id, "stage": "stage2_schema_validation", "error": errors[0]})
                 item["failure"] = "stage2_schema_validation"
                 continue
-            canonical = questionnaire_to_canonical(row, questionnaire)
+            canonical = questionnaire_to_canonical(row, normalized_questionnaire)
             write_json(run_dir / "canonical_json" / f"{chart_id}.json", canonical)
             valid_predictions.append({"sample_id": sample_id, "chart_id": chart_id, "canonical": canonical, "item": item})
         except Exception as exc:  # noqa: BLE001
@@ -246,7 +261,13 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "strict_json_only": True,
             "code_fence_stripping_allowed": False,
             "semantic_repair_allowed": False,
-            "assistant_prefill": args.assistant_prefill,
+            "mechanical_schema_normalization": [
+                "stage2 questionnaire null or missing question answer -> {'status':'unknown','value':null}",
+                "stage2 questionnaire non-object question answer -> {'status':'unknown','value':null}",
+                "stage2 questionnaire answer missing status/value -> fill unknown/null",
+            ],
+            "stage1_assistant_prefill": stage1_assistant_prefill,
+            "stage2_assistant_prefill": stage2_assistant_prefill,
         },
         "input_boundary": {
             "stage1_inference_input": ["full_chart_image", "chart_to_evidence_prompt"],
@@ -297,7 +318,9 @@ def main() -> int:
     parser.add_argument("--output-root", required=True, type=Path)
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--limit", type=int, default=None)
-    parser.add_argument("--assistant-prefill", default="{")
+    parser.add_argument("--assistant-prefill", default=None, help="Legacy option applied to both stages if stage-specific prefill is not set.")
+    parser.add_argument("--stage1-assistant-prefill", default=None)
+    parser.add_argument("--stage2-assistant-prefill", default=None)
     parser.add_argument("--stage1-max-new-tokens", type=int, default=1536)
     parser.add_argument("--stage2-max-new-tokens", type=int, default=1536)
     parser.add_argument("--min-pixels", type=int, default=3136)
