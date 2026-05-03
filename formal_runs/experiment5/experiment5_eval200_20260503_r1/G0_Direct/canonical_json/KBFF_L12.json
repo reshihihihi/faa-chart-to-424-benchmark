@@ -1,0 +1,82 @@
+{
+  "chart_id": "KBFF_L12",
+  "procedure": {
+    "airport": "KBFF",
+    "approach_ident": "L12",
+    "chart_name": "ILS OR LOC/DME RWY 12"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 2
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q1_fix_ident": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 4500,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "unknown",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "BFF"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 6900,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "present",
+            "value": "LEFT"
+          },
+          "Q4_course_or_radial": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "unknown",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

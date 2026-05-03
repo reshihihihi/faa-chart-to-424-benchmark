@@ -1,6 +1,6 @@
 # 实验组5 dev50 admin 框标注处理报告
 
-- 生成时间 UTC: `2026-05-03T10:12:41.803032+00:00`
+- 生成时间 UTC: `2026-05-03T11:23:36.847750+00:00`
 - dev50 charts: 50
 - admin region rows: 393
 - observable rows: 50

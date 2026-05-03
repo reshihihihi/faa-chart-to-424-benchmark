@@ -1,0 +1,1 @@
+{"chart_id":"KCAK_L01","procedure":{"airport":"KCAK","approach_ident":"L01","chart_name":"ILS OR LOC RWY 01"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

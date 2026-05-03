@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1200 on heading 82.1; right turn climb to 2000 to HEPIG; hold at HEPIG, inbound course 337.2, right turns, 4 NM, maintain 2000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- ALTITUDE_TEXT: 1200 -> AT_OR_ABOVE 1200 ft
+- FIX_TEXT: HEPIG -> HEPIG
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

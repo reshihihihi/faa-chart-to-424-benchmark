@@ -221,29 +221,33 @@ def draw_admin_overlays(run_dir: Path, regions_by_chart: dict[str, list[dict[str
         canvas.paste(thumb, (10, 28))
         thumbnails.append(canvas)
 
-    cols = 3
-    rows = (len(thumbnails) + cols - 1) // cols
-    sheet = Image.new("RGB", (cols * 380, rows * 600), "white")
-    for index, thumb in enumerate(thumbnails):
-        sheet.paste(thumb, ((index % cols) * 380, (index // cols) * 600))
-    sheet_path = run_dir / "visuals" / "dev50_admin_box_overlays_contact_sheet.png"
-    sheet.save(sheet_path)
+    sheet_path: Path | None = None
+    if thumbnails:
+        cols = 3
+        rows = (len(thumbnails) + cols - 1) // cols
+        sheet = Image.new("RGB", (cols * 380, rows * 600), "white")
+        for index, thumb in enumerate(thumbnails):
+            sheet.paste(thumb, ((index % cols) * 380, (index // cols) * 600))
+        sheet_path = run_dir / "visuals" / "admin_box_overlays_contact_sheet.png"
+        sheet.save(sheet_path)
     return {
         "overlay_count": len(overlay_rows),
         "overlay_dir": rel(overlay_dir),
-        "contact_sheet": rel(sheet_path),
+        "contact_sheet": rel(sheet_path) if sheet_path is not None else None,
         "overlays": overlay_rows,
     }
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Build method-safe dev50 observables from admin box annotations.")
+    parser = argparse.ArgumentParser(description="Build method-safe split observables from admin box annotations.")
     parser.add_argument("--run-dir", type=Path, default=DEFAULT_RUN_DIR)
-    parser.add_argument("--dev50-manifest", type=Path, default=DEFAULT_DEV50_MANIFEST)
+    parser.add_argument("--chart-manifest", "--dev50-manifest", dest="chart_manifest", type=Path, default=DEFAULT_DEV50_MANIFEST)
     parser.add_argument("--sanitized-regions", type=Path, default=DEFAULT_SANITIZED_REGIONS)
+    parser.add_argument("--artifact-label", default="dev50")
     args = parser.parse_args()
 
-    dev_rows = read_jsonl(args.dev50_manifest)
+    artifact_label = args.artifact_label
+    dev_rows = read_jsonl(args.chart_manifest)
     regions = read_jsonl(args.sanitized_regions)
     dev_ids = [row["chart_id"] for row in dev_rows]
     regions_by_chart: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -280,6 +284,8 @@ def main() -> int:
     summary = {
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "run_id": args.run_dir.name,
+        "artifact_label": artifact_label,
+        "chart_count": len(dev_ids),
         "dev50_chart_count": len(dev_ids),
         "admin_region_rows": len(regions),
         "observable_rows": len(observable_rows),
@@ -289,23 +295,23 @@ def main() -> int:
         "fact_type_counts": dict(sorted(fact_counter.items())),
         "forbidden_key_scan": forbidden_scan,
         "hard_leakage_detected": forbidden_scan["hit_count"] > 0,
-        "output_path": rel(args.run_dir / "inputs" / "gold_observable_dev50_admin.jsonl"),
-        "fact_table_path": rel(args.run_dir / "reports" / "gold_observable_dev50_admin_facts.jsonl"),
+        "output_path": rel(args.run_dir / "inputs" / f"gold_observable_{artifact_label}_admin.jsonl"),
+        "fact_table_path": rel(args.run_dir / "reports" / f"gold_observable_{artifact_label}_admin_facts.jsonl"),
         "overlay_summary": overlay_summary,
         "source_admin_regions_path": rel(args.sanitized_regions),
         "source_admin_regions_sha256": sha256_file(args.sanitized_regions),
     }
 
-    write_jsonl(args.run_dir / "inputs" / "gold_observable_dev50_admin.jsonl", observable_rows)
-    write_jsonl(args.run_dir / "reports" / "gold_observable_dev50_admin_facts.jsonl", fact_rows)
-    write_json(args.run_dir / "reports" / "gold_observable_dev50_admin_summary.json", summary)
+    write_jsonl(args.run_dir / "inputs" / f"gold_observable_{artifact_label}_admin.jsonl", observable_rows)
+    write_jsonl(args.run_dir / "reports" / f"gold_observable_{artifact_label}_admin_facts.jsonl", fact_rows)
+    write_json(args.run_dir / "reports" / f"gold_observable_{artifact_label}_admin_summary.json", summary)
     write_json(args.run_dir / "visuals" / "admin_box_overlay_manifest.json", overlay_summary["overlays"])
 
     report = [
         "# 实验组5 dev50 admin 框标注处理报告",
         "",
         f"- 生成时间 UTC: `{summary['created_at_utc']}`",
-        f"- dev50 charts: {summary['dev50_chart_count']}",
+        f"- charts: {summary['chart_count']}",
         f"- admin region rows: {summary['admin_region_rows']}",
         f"- observable rows: {summary['observable_rows']}",
         f"- observable fact rows: {summary['observable_fact_rows']}",
@@ -325,7 +331,7 @@ def main() -> int:
         "- 输出只来自 `region_type`、`label`、`bbox`、`review_action`、`annotation_scope` 等可观察标注字段。",
         "- 已在上游 sanitized 文件中去掉 accepted/candidate mappings、field review 结构和答案侧字段。",
     ]
-    write_text(args.run_dir / "reports" / "gold_observable_dev50_admin_report_zh.md", "\n".join(report) + "\n")
+    write_text(args.run_dir / "reports" / f"gold_observable_{artifact_label}_admin_report_zh.md", "\n".join(report) + "\n")
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0 if not summary["hard_leakage_detected"] else 1
 

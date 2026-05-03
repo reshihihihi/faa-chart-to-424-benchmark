@@ -1,0 +1,144 @@
+{
+  "chart_id": "KADF_R04",
+  "procedure": {
+    "airport": "KADF",
+    "approach_ident": "R04",
+    "chart_name": "RNAV (GPS) RWY 04"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0779,
+        "width": 0.3123,
+        "x_center": 0.7961,
+        "y_center": 0.1496
+      },
+      "chart_id": "KADF_R04",
+      "evidence_region_id": "KADF_R04_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KADF_R04_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.391,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.425
+      },
+      "chart_id": "KADF_R04",
+      "evidence_region_id": "KADF_R04_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KADF_R04_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0543,
+        "width": 0.1313,
+        "x_center": 0.5976,
+        "y_center": 0.6471
+      },
+      "chart_id": "KADF_R04",
+      "evidence_region_id": "KADF_R04_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KADF_R04_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5611,
+        "y_center": 0.6293
+      },
+      "chart_id": "KADF_R04",
+      "evidence_region_id": "KADF_R04_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 2100 -> AT_OR_ABOVE 2100 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 2100,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "2100"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0651,
+        "x_center": 0.6259,
+        "y_center": 0.6293
+      },
+      "chart_id": "KADF_R04",
+      "evidence_region_id": "KADF_R04_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: COVNO -> COVNO",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "COVNO",
+        "raw_text": "COVNO"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.027,
+        "width": 0.0413,
+        "x_center": 0.6245,
+        "y_center": 0.6523
+      },
+      "chart_id": "KADF_R04",
+      "evidence_region_id": "KADF_R04_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0395,
+        "width": 0.0154,
+        "x_center": 0.5587,
+        "y_center": 0.6527
+      },
+      "chart_id": "KADF_R04",
+      "evidence_region_id": "KADF_R04_iconalign_007_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

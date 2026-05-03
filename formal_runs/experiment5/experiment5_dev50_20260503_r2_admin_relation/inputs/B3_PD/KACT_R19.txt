@@ -1,0 +1,11 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- FIX_TEXT: BOSEL -> BOSEL
+- FIX_TEXT: YAYUC -> YAYUC
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: fix symbol

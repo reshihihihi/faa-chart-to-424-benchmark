@@ -1,0 +1,144 @@
+{
+  "chart_id": "KAIA_R26",
+  "procedure": {
+    "airport": "KAIA",
+    "approach_ident": "R26",
+    "chart_name": "RNAV (GPS) RWY 26"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0505,
+        "width": 0.3123,
+        "x_center": 0.7961,
+        "y_center": 0.1359
+      },
+      "chart_id": "KAIA_R26",
+      "evidence_region_id": "KAIA_R26_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAIA_R26_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.502,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.453
+      },
+      "chart_id": "KAIA_R26",
+      "evidence_region_id": "KAIA_R26_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAIA_R26_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0553,
+        "width": 0.1595,
+        "x_center": 0.4155,
+        "y_center": 0.7313
+      },
+      "chart_id": "KAIA_R26",
+      "evidence_region_id": "KAIA_R26_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAIA_R26_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3788,
+        "y_center": 0.7126
+      },
+      "chart_id": "KAIA_R26",
+      "evidence_region_id": "KAIA_R26_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 6000 -> AT_OR_ABOVE 6000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 6000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "6000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0635,
+        "x_center": 0.4521,
+        "y_center": 0.7132
+      },
+      "chart_id": "KAIA_R26",
+      "evidence_region_id": "KAIA_R26_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: WAKPA -> WAKPA",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "WAKPA",
+        "raw_text": "WAKPA"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0269,
+        "width": 0.0142,
+        "x_center": 0.3761,
+        "y_center": 0.7433
+      },
+      "chart_id": "KAIA_R26",
+      "evidence_region_id": "KAIA_R26_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0227,
+        "width": 0.0374,
+        "x_center": 0.4523,
+        "y_center": 0.7361
+      },
+      "chart_id": "KAIA_R26",
+      "evidence_region_id": "KAIA_R26_iconalign_006_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

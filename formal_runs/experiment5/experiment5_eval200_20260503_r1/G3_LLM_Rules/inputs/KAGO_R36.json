@@ -1,0 +1,144 @@
+{
+  "chart_id": "KAGO_R36",
+  "procedure": {
+    "airport": "KAGO",
+    "approach_ident": "R36",
+    "chart_name": "RNAV (GPS) RWY 36"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0539,
+        "width": 0.2419,
+        "x_center": 0.8313,
+        "y_center": 0.1376
+      },
+      "chart_id": "KAGO_R36",
+      "evidence_region_id": "KAGO_R36_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAGO_R36_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.505,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.45
+      },
+      "chart_id": "KAGO_R36",
+      "evidence_region_id": "KAGO_R36_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAGO_R36_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0535,
+        "width": 0.1335,
+        "x_center": 0.5965,
+        "y_center": 0.7287
+      },
+      "chart_id": "KAGO_R36",
+      "evidence_region_id": "KAGO_R36_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAGO_R36_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5595,
+        "y_center": 0.7106
+      },
+      "chart_id": "KAGO_R36",
+      "evidence_region_id": "KAGO_R36_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 2000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "2000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0505,
+        "x_center": 0.6287,
+        "y_center": 0.7105
+      },
+      "chart_id": "KAGO_R36",
+      "evidence_region_id": "KAGO_R36_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: ZEPEX -> ZEPEX",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "ZEPEX",
+        "raw_text": "ZEPEX"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0388,
+        "width": 0.0156,
+        "x_center": 0.5574,
+        "y_center": 0.734
+      },
+      "chart_id": "KAGO_R36",
+      "evidence_region_id": "KAGO_R36_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0236,
+        "width": 0.0348,
+        "x_center": 0.6277,
+        "y_center": 0.7348
+      },
+      "chart_id": "KAGO_R36",
+      "evidence_region_id": "KAGO_R36_iconalign_006_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

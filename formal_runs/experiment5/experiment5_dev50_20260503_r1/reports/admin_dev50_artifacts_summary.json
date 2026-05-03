@@ -1,8 +1,8 @@
 {
-  "created_at_utc": "2026-05-03T10:32:41.601079+00:00",
+  "created_at_utc": "2026-05-03T11:23:24.715439+00:00",
   "run_id": "experiment5_dev50_20260503_r1",
   "export_meta": {
-    "admin_export_path": "formal_runs/experiment5/admin_exports/shujuji_annotation_export_2026-05-03T08-34-13-795Z.json",
+    "admin_export_path": "downloads/experiment5_admin/shujuji_annotation_export_2026-05-03T08-34-13-795Z.json",
     "admin_export_sha256": "52082332ff922132a83bca087d250f08571f77709f716e360439daafee313574",
     "exported_at": "2026-05-03T08:34:13.795Z",
     "submission_rows": 439,

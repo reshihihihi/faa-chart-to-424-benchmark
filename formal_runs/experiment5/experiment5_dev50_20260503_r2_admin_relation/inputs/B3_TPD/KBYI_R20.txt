@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 202.5; left turn climb to 7000 to IREME; hold at IREME, inbound course 202.5, right turns, 7 NM, maintain 7000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 7000 -> AT_OR_ABOVE 7000 ft
+- FIX_TEXT: IREME -> IREME
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

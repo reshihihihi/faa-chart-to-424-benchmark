@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 285.1; climb to 2400 to TAREE; hold at TAREE, inbound course 104.8, right turns, 4 NM, maintain 2400.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2400 -> AT_OR_ABOVE 2400 ft
+- FIX_TEXT: TAREE -> TAREE
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

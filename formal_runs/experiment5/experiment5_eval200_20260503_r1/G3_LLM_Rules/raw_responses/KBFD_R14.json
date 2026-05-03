@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_48d0a92e-9a6d-41c5-8857-02441a134ca0",
+  "object": "chat.completion",
+  "created": 1777808142,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_A1Xk5qb6TdOpLfCReA7bh054",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KBFD_R14\",\"procedure\":{\"airport\":\"KBFD\",\"approach_ident\":\"R14\",\"chart_name\":\"RNAV (GPS) RWY 14\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":null},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"NIMEE\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT_OR_ABOVE\",\"altitude_ft\":4500,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"unknown\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"unknown\",\"value\":null}}}]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

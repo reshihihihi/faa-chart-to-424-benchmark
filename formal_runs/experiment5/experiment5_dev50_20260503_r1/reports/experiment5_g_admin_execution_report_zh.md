@@ -2,7 +2,7 @@
 
 - run_id: `experiment5_dev50_20260503_r1`
 - admin gold answer: `formal_runs/experiment5/experiment5_dev50_20260503_r1/admin_artifacts/admin_gold_answer_dev50.jsonl`
-- gold observable: `formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_observable_dev50_accept_pending.jsonl`
+- gold observable: `formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_observable_dev50_admin.jsonl`
 - model: `gpt-5.4`
 
 ## 结果
@@ -11,7 +11,7 @@
 |---|---:|---:|---:|---:|---:|
 | `G0_Direct` | 50/50 | 0 | 274/1010 | 27.13% | 27.13% |
 | `G1_Rules` | 50/50 | 0 | 600/1010 | 59.41% | 59.41% |
-| `G3_LLM_Rules` | 50/50 | 42 | 76/1010 | 7.52% | 7.52% |
+| `G3_LLM_Rules` | 50/50 | 0 | 76/1010 | 7.52% | 7.52% |
 
 ## 输入边界
 

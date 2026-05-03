@@ -134,8 +134,8 @@ def load_sample_meta() -> dict[str, dict[str, Any]]:
     return {row["chart_id"]: row for row in read_jsonl(SAMPLE_MANIFEST)}
 
 
-def load_candidate_inputs() -> dict[tuple[str, str], dict[str, Any]]:
-    return {(row["chart_id"], row["region_profile"]): row for row in read_jsonl(INPUT_MANIFEST)}
+def load_candidate_inputs(input_manifest: Path) -> dict[tuple[str, str], dict[str, Any]]:
+    return {(row["chart_id"], row["region_profile"]): row for row in read_jsonl(input_manifest)}
 
 
 def prompt_for(
@@ -697,6 +697,8 @@ def summarize(results: list[dict[str, Any]]) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run Experiment 5 smoke B3/B4 diagnostic methods.")
     parser.add_argument("--run-dir", type=Path, default=RUN_DIR)
+    parser.add_argument("--input-manifest", type=Path, default=INPUT_MANIFEST)
+    parser.add_argument("--sample-scope", default="experiment5_smoke20_prefix_limit_for_flow_check")
     parser.add_argument("--methods", default="B3_T,B3_TPD,B4_TPD")
     parser.add_argument("--limit", type=int, default=20)
     parser.add_argument("--text-model", default="gpt-5.4")
@@ -712,8 +714,10 @@ def main() -> int:
     if unknown:
         raise ValueError(f"Unsupported methods: {unknown}")
 
-    candidate_inputs = load_candidate_inputs()
-    chart_ids = sorted({chart_id for chart_id, _profile in candidate_inputs})[: args.limit]
+    candidate_inputs = load_candidate_inputs(args.input_manifest)
+    chart_ids = sorted({chart_id for chart_id, _profile in candidate_inputs})
+    if args.limit > 0:
+        chart_ids = chart_ids[: args.limit]
     samples = load_sample_meta()
     targets = json.loads(TARGET_V2.read_text(encoding="utf-8"))
     policies = load_policy(POLICY_V2)
@@ -735,11 +739,11 @@ def main() -> int:
         "methods": methods,
         "method_descriptions": METHOD_DESCRIPTION,
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
-        "sample_scope": "experiment5_smoke20_prefix_limit_for_flow_check",
+        "sample_scope": args.sample_scope,
         "limit": args.limit,
         "chart_ids": chart_ids,
-        "input_manifest": rel(INPUT_MANIFEST),
-        "input_manifest_sha256": sha256_file(INPUT_MANIFEST),
+        "input_manifest": rel(args.input_manifest),
+        "input_manifest_sha256": sha256_file(args.input_manifest),
         "sample_manifest": rel(SAMPLE_MANIFEST),
         "sample_manifest_sha256": sha256_file(SAMPLE_MANIFEST),
         "target_v2": rel(TARGET_V2),

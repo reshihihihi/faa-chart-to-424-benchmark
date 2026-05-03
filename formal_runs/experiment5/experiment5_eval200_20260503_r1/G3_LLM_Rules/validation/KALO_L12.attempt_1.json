@@ -1,0 +1,5 @@
+[
+  "missed_approach.legs.1.answers.Q4_course_or_radial.value: {'navaid': 'ALO', 'navaid_radial': 276.5, 'direction': 'inbound'} is not valid under any of the given schemas",
+  "missed_approach.legs[0].answers.Q_terminator: value must be null when status is 'unknown'",
+  "missed_approach.legs[1].answers.Q_terminator: value must be null when status is 'unknown'"
+]

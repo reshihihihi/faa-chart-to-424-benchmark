@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_2f2bab62-6fb2-483a-8b77-26fd9168a503",
+  "object": "chat.completion",
+  "created": 1777808199,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_mdT1FwlZ9S4zoQvbaFa4bkj7",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KABI_R35R\",\"procedure\":{\"airport\":\"KABI\",\"approach_ident\":\"R35R\",\"chart_name\":\"RNAV (GPS) RWY 35R\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":\"unknown\"},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"GOFDO\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT_OR_ABOVE\",\"altitude_ft\":4000,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"unknown\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}}]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

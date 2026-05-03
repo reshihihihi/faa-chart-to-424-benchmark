@@ -250,13 +250,15 @@ def scan_key_names(value: Any, forbidden: set[str]) -> dict[str, Any]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Export dev50 admin artifacts into answer, review, evidence, and method-safe input files.")
+    parser = argparse.ArgumentParser(description="Export split admin artifacts into answer, review, evidence, and method-safe input files.")
     parser.add_argument("--run-dir", type=Path, default=DEFAULT_RUN_DIR)
     parser.add_argument("--admin-export", type=Path, default=DEFAULT_ADMIN_EXPORT)
-    parser.add_argument("--dev50-manifest", type=Path, default=DEFAULT_DEV50_MANIFEST)
+    parser.add_argument("--chart-manifest", "--dev50-manifest", dest="chart_manifest", type=Path, default=DEFAULT_DEV50_MANIFEST)
+    parser.add_argument("--artifact-label", default="dev50")
     args = parser.parse_args()
 
-    chart_ids = [row["chart_id"] for row in read_jsonl(args.dev50_manifest)]
+    artifact_label = args.artifact_label
+    chart_ids = [row["chart_id"] for row in read_jsonl(args.chart_manifest)]
     latest, export_meta = latest_submissions_by_chart(args.admin_export)
     schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
     validator = Draft202012Validator(schema)
@@ -340,14 +342,24 @@ def main() -> int:
     )
 
     output_dir = args.run_dir / "admin_artifacts"
-    write_jsonl(output_dir / "admin_gold_answer_dev50.jsonl", gold_answer_rows)
-    write_jsonl(output_dir / "admin_field_review_dev50.jsonl", field_review_rows)
-    write_jsonl(output_dir / "admin_regions_dev50.jsonl", region_rows)
-    write_jsonl(output_dir / "admin_evidence_links_dev50.jsonl", evidence_link_rows)
-    write_jsonl(args.run_dir / "inputs" / "gold_observable_dev50_accept.jsonl", observable_accept)
-    write_jsonl(args.run_dir / "inputs" / "gold_observable_dev50_accept_pending.jsonl", observable_all)
-    write_jsonl(args.run_dir / "reports" / "gold_observable_dev50_accept_facts.jsonl", facts_accept)
-    write_jsonl(args.run_dir / "reports" / "gold_observable_dev50_accept_pending_facts.jsonl", facts_all)
+    admin_gold_answer_path = output_dir / f"admin_gold_answer_{artifact_label}.jsonl"
+    admin_field_review_path = output_dir / f"admin_field_review_{artifact_label}.jsonl"
+    admin_regions_path = output_dir / f"admin_regions_{artifact_label}.jsonl"
+    admin_evidence_links_path = output_dir / f"admin_evidence_links_{artifact_label}.jsonl"
+    gold_observable_accept_path = args.run_dir / "inputs" / f"gold_observable_{artifact_label}_accept.jsonl"
+    gold_observable_accept_pending_path = args.run_dir / "inputs" / f"gold_observable_{artifact_label}_accept_pending.jsonl"
+    gold_observable_accept_facts_path = args.run_dir / "reports" / f"gold_observable_{artifact_label}_accept_facts.jsonl"
+    gold_observable_accept_pending_facts_path = (
+        args.run_dir / "reports" / f"gold_observable_{artifact_label}_accept_pending_facts.jsonl"
+    )
+    write_jsonl(admin_gold_answer_path, gold_answer_rows)
+    write_jsonl(admin_field_review_path, field_review_rows)
+    write_jsonl(admin_regions_path, region_rows)
+    write_jsonl(admin_evidence_links_path, evidence_link_rows)
+    write_jsonl(gold_observable_accept_path, observable_accept)
+    write_jsonl(gold_observable_accept_pending_path, observable_all)
+    write_jsonl(gold_observable_accept_facts_path, facts_accept)
+    write_jsonl(gold_observable_accept_pending_facts_path, facts_all)
 
     region_counter = Counter(row.get("region_type") for row in region_rows)
     review_action_counter = Counter(row.get("review_action") for row in region_rows)
@@ -356,7 +368,9 @@ def main() -> int:
     summary = {
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "run_id": args.run_dir.name,
+        "artifact_label": artifact_label,
         "export_meta": export_meta,
+        "chart_count": len(chart_ids),
         "dev50_chart_count": len(chart_ids),
         "missing_submission_chart_ids": missing,
         "gold_answer_rows": len(gold_answer_rows),
@@ -376,21 +390,21 @@ def main() -> int:
         "method_safe_accept_scan": scan_key_names(observable_accept, ANSWER_SIDE_KEYS),
         "method_safe_accept_pending_scan": scan_key_names(observable_all, ANSWER_SIDE_KEYS),
         "outputs": {
-            "admin_gold_answer": rel(output_dir / "admin_gold_answer_dev50.jsonl"),
-            "admin_field_review": rel(output_dir / "admin_field_review_dev50.jsonl"),
-            "admin_regions": rel(output_dir / "admin_regions_dev50.jsonl"),
-            "admin_evidence_links": rel(output_dir / "admin_evidence_links_dev50.jsonl"),
-            "gold_observable_accept": rel(args.run_dir / "inputs" / "gold_observable_dev50_accept.jsonl"),
-            "gold_observable_accept_pending": rel(args.run_dir / "inputs" / "gold_observable_dev50_accept_pending.jsonl"),
+            "admin_gold_answer": rel(admin_gold_answer_path),
+            "admin_field_review": rel(admin_field_review_path),
+            "admin_regions": rel(admin_regions_path),
+            "admin_evidence_links": rel(admin_evidence_links_path),
+            "gold_observable_accept": rel(gold_observable_accept_path),
+            "gold_observable_accept_pending": rel(gold_observable_accept_pending_path),
         },
     }
-    write_json(args.run_dir / "reports" / "admin_dev50_artifacts_summary.json", summary)
+    write_json(args.run_dir / "reports" / f"admin_{artifact_label}_artifacts_summary.json", summary)
 
     report = [
         "# 实验组5 dev50 后台审核工件导出报告",
         "",
         f"- 生成时间 UTC: `{summary['created_at_utc']}`",
-        f"- dev50 charts: {summary['dev50_chart_count']}",
+        f"- charts: {summary['chart_count']}",
         f"- gold answers: {summary['gold_answer_rows']}",
         f"- gold answer schema error charts: {summary['gold_answer_schema_error_chart_count']}",
         f"- field reviews: {summary['field_review_rows']}",
@@ -416,7 +430,7 @@ def main() -> int:
             "- `gold_observable_dev50_accept*.jsonl` 是去答案字段后的方法输入，可给 G 系列使用。",
         ]
     )
-    write_text(args.run_dir / "reports" / "admin_dev50_artifacts_export_report_zh.md", "\n".join(report) + "\n")
+    write_text(args.run_dir / "reports" / f"admin_{artifact_label}_artifacts_export_report_zh.md", "\n".join(report) + "\n")
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0 if not missing and not schema_errors else 1
 

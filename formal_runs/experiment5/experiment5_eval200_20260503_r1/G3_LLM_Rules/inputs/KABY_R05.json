@@ -1,0 +1,164 @@
+{
+  "chart_id": "KABY_R05",
+  "procedure": {
+    "airport": "KABY",
+    "approach_ident": "R05",
+    "chart_name": "RNAV (GPS) RWY 05"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0572,
+        "width": 0.3019,
+        "x_center": 0.8013,
+        "y_center": 0.1393
+      },
+      "chart_id": "KABY_R05",
+      "evidence_region_id": "KABY_R05_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KABY_R05_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.449,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.432
+      },
+      "chart_id": "KABY_R05",
+      "evidence_region_id": "KABY_R05_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KABY_R05_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0543,
+        "width": 0.2559,
+        "x_center": 0.5353,
+        "y_center": 0.6833
+      },
+      "chart_id": "KABY_R05",
+      "evidence_region_id": "KABY_R05_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KABY_R05_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.4367,
+        "y_center": 0.6665
+      },
+      "chart_id": "KABY_R05",
+      "evidence_region_id": "KABY_R05_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 2000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "2000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.054,
+        "x_center": 0.5039,
+        "y_center": 0.6662
+      },
+      "chart_id": "KABY_R05",
+      "evidence_region_id": "KABY_R05_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: UNIKE -> UNIKE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "UNIKE",
+        "raw_text": "UNIKE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.032,
+        "x_center": 0.638,
+        "y_center": 0.6665
+      },
+      "chart_id": "KABY_R05",
+      "evidence_region_id": "KABY_R05_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: PZD -> PZD",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "PZD",
+        "raw_text": "PZD"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0125,
+        "width": 0.0426,
+        "x_center": 0.5684,
+        "y_center": 0.6949
+      },
+      "chart_id": "KABY_R05",
+      "evidence_region_id": "KABY_R05_iconalign_009_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0219,
+        "width": 0.0348,
+        "x_center": 0.5026,
+        "y_center": 0.6894
+      },
+      "chart_id": "KABY_R05",
+      "evidence_region_id": "KABY_R05_iconalign_007_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

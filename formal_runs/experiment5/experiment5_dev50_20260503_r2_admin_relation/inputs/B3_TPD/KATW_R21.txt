@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 208.2; climb to 2900 to APIXE; hold at APIXE, inbound course 028, right turns, 4 NM, maintain 2900.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2900 -> AT_OR_ABOVE 2900 ft
+- FIX_TEXT: APIXE -> APIXE
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

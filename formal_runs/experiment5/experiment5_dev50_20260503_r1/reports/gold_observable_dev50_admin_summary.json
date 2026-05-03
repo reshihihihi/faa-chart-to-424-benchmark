@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-05-03T10:12:41.803032+00:00",
+  "created_at_utc": "2026-05-03T11:23:36.847750+00:00",
   "run_id": "experiment5_dev50_20260503_r1",
   "dev50_chart_count": 50,
   "admin_region_rows": 393,
@@ -302,5 +302,5 @@
     ]
   },
   "source_admin_regions_path": "formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/admin_regions_sanitized_dev50.jsonl",
-  "source_admin_regions_sha256": "959a1e5e29c3d491e461b9dc5c84fee3e6031a51831239419f9cf25b1ed0b9aa"
+  "source_admin_regions_sha256": "7880eb8a4e4b858e0b5244b1b4d67c295b9d62c8fb5cf989c2ec417ce49ad1d2"
 }

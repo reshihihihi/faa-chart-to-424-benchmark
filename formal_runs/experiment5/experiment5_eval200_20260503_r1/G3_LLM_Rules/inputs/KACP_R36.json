@@ -1,0 +1,124 @@
+{
+  "chart_id": "KACP_R36",
+  "procedure": {
+    "airport": "KACP",
+    "approach_ident": "R36",
+    "chart_name": "RNAV (GPS) RWY 36"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0724,
+        "width": 0.3013,
+        "x_center": 0.8016,
+        "y_center": 0.1469
+      },
+      "chart_id": "KACP_R36",
+      "evidence_region_id": "KACP_R36_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KACP_R36_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.484,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.466
+      },
+      "chart_id": "KACP_R36",
+      "evidence_region_id": "KACP_R36_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KACP_R36_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.053,
+        "width": 0.1206,
+        "x_center": 0.8919,
+        "y_center": 0.734
+      },
+      "chart_id": "KACP_R36",
+      "evidence_region_id": "KACP_R36_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KACP_R36_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.8617,
+        "y_center": 0.7171
+      },
+      "chart_id": "KACP_R36",
+      "evidence_region_id": "KACP_R36_iconalign_001_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 2200 -> AT_OR_ABOVE 2200 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 2200,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "2200"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0236,
+        "width": 0.0361,
+        "x_center": 0.9213,
+        "y_center": 0.7407
+      },
+      "chart_id": "KACP_R36",
+      "evidence_region_id": "KACP_R36_iconalign_003_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.032,
+        "width": 0.0103,
+        "x_center": 0.8568,
+        "y_center": 0.7433
+      },
+      "chart_id": "KACP_R36",
+      "evidence_region_id": "KACP_R36_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

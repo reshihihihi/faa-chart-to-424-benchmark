@@ -1,0 +1,211 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KAOO_R03-Z",
+  "procedure": {
+    "airport": "KAOO",
+    "approach_ident": "R03-Z",
+    "chart_name": "RNAV (GPS) Z RWY 03"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0481,
+        "width": 0.3166,
+        "x_center": 0.7946,
+        "y_center": 0.1347
+      },
+      "chart_id": "KAOO_R03-Z",
+      "evidence_region_id": "KAOO_R03-Z_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAOO_R03-Z_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.47,
+        "width": 0.906,
+        "x_center": 0.5,
+        "y_center": 0.434
+      },
+      "chart_id": "KAOO_R03-Z",
+      "evidence_region_id": "KAOO_R03-Z_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAOO_R03-Z_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0557,
+        "width": 0.2509,
+        "x_center": 0.5375,
+        "y_center": 0.7702
+      },
+      "chart_id": "KAOO_R03-Z",
+      "evidence_region_id": "KAOO_R03-Z_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAOO_R03-Z_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0461,
+        "x_center": 0.4419,
+        "y_center": 0.7532
+      },
+      "chart_id": "KAOO_R03-Z",
+      "evidence_region_id": "KAOO_R03-Z_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 5000 -> AT_OR_ABOVE 5000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 5000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "5000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.059,
+        "x_center": 0.5038,
+        "y_center": 0.7532
+      },
+      "chart_id": "KAOO_R03-Z",
+      "evidence_region_id": "KAOO_R03-Z_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: TOGJU -> TOGJU",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "TOGJU",
+        "raw_text": "TOGJU"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0654,
+        "x_center": 0.6293,
+        "y_center": 0.7532
+      },
+      "chart_id": "KAOO_R03-Z",
+      "evidence_region_id": "KAOO_R03-Z_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: GANEC -> GANEC",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "GANEC",
+        "raw_text": "GANEC"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0121,
+        "width": 0.0087,
+        "x_center": 0.4393,
+        "y_center": 0.767
+      },
+      "chart_id": "KAOO_R03-Z",
+      "evidence_region_id": "KAOO_R03-Z_iconalign_006_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0275,
+        "width": 0.0136,
+        "x_center": 0.4393,
+        "y_center": 0.7819
+      },
+      "chart_id": "KAOO_R03-Z",
+      "evidence_region_id": "KAOO_R03-Z_iconalign_009_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0234,
+        "width": 0.0384,
+        "x_center": 0.5025,
+        "y_center": 0.7758
+      },
+      "chart_id": "KAOO_R03-Z",
+      "evidence_region_id": "KAOO_R03-Z_iconalign_007_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0218,
+        "width": 0.0372,
+        "x_center": 0.6283,
+        "y_center": 0.7758
+      },
+      "chart_id": "KAOO_R03-Z",
+      "evidence_region_id": "KAOO_R03-Z_iconalign_008_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

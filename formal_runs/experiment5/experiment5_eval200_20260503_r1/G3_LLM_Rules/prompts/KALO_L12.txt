@@ -1,0 +1,239 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KALO_L12",
+  "procedure": {
+    "airport": "KALO",
+    "approach_ident": "L12",
+    "chart_name": "ILS OR LOC RWY 12"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0614,
+        "width": 0.3265,
+        "x_center": 0.7897,
+        "y_center": 0.1414
+      },
+      "chart_id": "KALO_L12",
+      "evidence_region_id": "KALO_L12_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KALO_L12_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.389,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.407
+      },
+      "chart_id": "KALO_L12",
+      "evidence_region_id": "KALO_L12_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KALO_L12_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0523,
+        "width": 0.1896,
+        "x_center": 0.5682,
+        "y_center": 0.6277
+      },
+      "chart_id": "KALO_L12",
+      "evidence_region_id": "KALO_L12_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KALO_L12_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.503,
+        "y_center": 0.6092
+      },
+      "chart_id": "KALO_L12",
+      "evidence_region_id": "KALO_L12_iconalign_001_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 1400 -> AT_OR_ABOVE 1400 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 1400,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "1400"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0121,
+        "width": 0.0409,
+        "x_center": 0.5629,
+        "y_center": 0.6094
+      },
+      "chart_id": "KALO_L12",
+      "evidence_region_id": "KALO_L12_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3300 -> AT_OR_ABOVE 3300 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3300,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3300"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0652,
+        "x_center": 0.6297,
+        "y_center": 0.6085
+      },
+      "chart_id": "KALO_L12",
+      "evidence_region_id": "KALO_L12_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: DEWAR -> DEWAR",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "DEWAR",
+        "raw_text": "DEWAR"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0121,
+        "width": 0.0302,
+        "x_center": 0.5526,
+        "y_center": 0.6346
+      },
+      "chart_id": "KALO_L12",
+      "evidence_region_id": "KALO_L12_iconalign_004_navaid_text",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "NAVAID_TEXT: ALO -> type=navaid_radial, navaid=ALO, radial_deg=276.5, direction=inbound",
+      "region_type": "NAVAID_TEXT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "direction": "inbound",
+        "navaid": "ALO",
+        "radial_deg": 276.5,
+        "raw_text": "ALO"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0121,
+        "width": 0.0457,
+        "x_center": 0.5544,
+        "y_center": 0.6474
+      },
+      "chart_id": "KALO_L12",
+      "evidence_region_id": "KALO_L12_iconalign_005_radial_text",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "RADIAL_TEXT: R-096 -> type=navaid_radial, navaid=ALO, radial_deg=276.5, direction=inbound",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "direction": "inbound",
+        "navaid": "ALO",
+        "radial_deg": 276.5,
+        "raw_text": "R-096"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0267,
+        "width": 0.0349,
+        "x_center": 0.57,
+        "y_center": 0.6296
+      },
+      "chart_id": "KALO_L12",
+      "evidence_region_id": "KALO_L12_iconalign_010_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0396,
+        "width": 0.0136,
+        "x_center": 0.5013,
+        "y_center": 0.6329
+      },
+      "chart_id": "KALO_L12",
+      "evidence_region_id": "KALO_L12_iconalign_008_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0097,
+        "width": 0.0173,
+        "x_center": 0.6283,
+        "y_center": 0.63
+      },
+      "chart_id": "KALO_L12",
+      "evidence_region_id": "KALO_L12_iconalign_009_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

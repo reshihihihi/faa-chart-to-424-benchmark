@@ -1,46 +1,76 @@
-# 给另一台 OCR 电脑 Codex 的指令
+# 给另一台电脑 Codex 的交接指令：实验组5 dev50 后台输入优先
 
-把下面整段发给另一台有 OCR 环境的 Codex。
+把下面整段发给另一台电脑的 Codex。注意：这里已经不再是“OCR 优先”的交接，dev50 的主输入源是 shujuji admin 后台的人工审核关系。
 
 ```text
-请继续实验组5的 dev50 OCR 输入准备和后续运行。
+请继续实验组5 dev50 输入准备与运行。
 
-仓库：
-https://github.com/reshihihihi/faa-chart-to-424-benchmark.git
+repo: https://github.com/reshihihihi/faa-chart-to-424-benchmark.git
+branch: experiment5-diagnostic-20260503
 
-分支：
-experiment5-diagnostic-20260503
-
-请先执行：
-
+先执行：
 git clone https://github.com/reshihihihi/faa-chart-to-424-benchmark.git
 cd faa-chart-to-424-benchmark
 git checkout experiment5-diagnostic-20260503
 git pull origin experiment5-diagnostic-20260503
 
-先阅读这些交接文件：
-
+先阅读：
 formal_runs/experiment5/experiment5_dev50_20260503_r1/reports/experiment5_dev50_execution_status_20260503_zh.md
 formal_runs/experiment5/experiment5_dev50_20260503_r1/reports/experiment5_g_admin_execution_report_zh.md
 formal_runs/experiment5/experiment5_dev50_20260503_r1/reports/admin_dev50_artifacts_export_report_zh.md
+formal_runs/experiment5/experiment5_detailed_experiment_plan_zh.md
 
-当前已经完成：
+核心理解：
+实验组5是诊断实验，不是排行榜。dev50 用来冻结输入转换、方法边界、no-leakage 检查和运行策略；evaluation200 只能在 dev50 策略固定后按同一规则执行，不能用来调参。
 
-1. dev50 固定划分已确认，不能改样本。
-2. 后台 dev50 人工审核工件已经导出：
-   - formal_runs/experiment5/experiment5_dev50_20260503_r1/admin_artifacts/admin_gold_answer_dev50.jsonl
-   - formal_runs/experiment5/experiment5_dev50_20260503_r1/admin_artifacts/admin_field_review_dev50.jsonl
-   - formal_runs/experiment5/experiment5_dev50_20260503_r1/admin_artifacts/admin_regions_dev50.jsonl
-   - formal_runs/experiment5/experiment5_dev50_20260503_r1/admin_artifacts/admin_evidence_links_dev50.jsonl
-3. G0/G1/G3 dev50 已跑完。
-4. 当前阻塞只剩 OCR/文字输入：
-   - 后台有 MISSED_APPROACH_TEXT 框，但 ocr_text 为空。
-   - 需要用你这台电脑的 OCR 能力生成正式 gold_ma_prose 和 ROI OCR。
+dev50 需要的输入以 shujuji admin 后台 formal300 submissions 为准。后台提供的是一套完整人工审核关系：
+- regions/boxes
+- legs/fields
+- field_reviews
+- evidence links / evidence_provenance
+- annotation_pr28_json 最终字段答案
+- 每个字段和证据框之间的关系
 
-严禁：
+先从后台导出/下载最新 formal300 export。不要把 admin token 写进仓库；在本机环境变量里设置：
 
-不要把这些答案侧字段作为方法输入：
+PowerShell:
+$env:SHUJUJI_ADMIN_TOKEN='<用户提供的 admin_token>'
+python scripts/experiment5/download_shujuji_admin_export.py --output-dir downloads/experiment5_admin
 
+然后用下载脚本 JSON 输出里的 output_path 重新生成 dev50 后台工件：
+
+python scripts/experiment5/export_admin_dev50_artifacts.py --admin-export <output_path> --run-dir formal_runs/experiment5/experiment5_dev50_20260503_r1
+python scripts/experiment5/build_experiment5_dev50_admin_observables.py --run-dir formal_runs/experiment5/experiment5_dev50_20260503_r1
+
+也可以打开 downloads/experiment5_admin/latest_download_summary.json，使用其中记录的 output_path。
+
+已经存在/需要核对的 dev50 工件：
+- formal_runs/experiment5/experiment5_dev50_20260503_r1/admin_artifacts/admin_gold_answer_dev50.jsonl
+- formal_runs/experiment5/experiment5_dev50_20260503_r1/admin_artifacts/admin_field_review_dev50.jsonl
+- formal_runs/experiment5/experiment5_dev50_20260503_r1/admin_artifacts/admin_regions_dev50.jsonl
+- formal_runs/experiment5/experiment5_dev50_20260503_r1/admin_artifacts/admin_evidence_links_dev50.jsonl
+- formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/admin_regions_sanitized_dev50.jsonl
+- formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_observable_dev50_accept.jsonl
+- formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_observable_dev50_accept_pending.jsonl
+
+输入边界必须写清楚：
+- admin_gold_answer_dev50.jsonl 是最终人工答案，只能评分/审计。
+- admin_field_review_dev50.jsonl 和 admin_evidence_links_dev50.jsonl 是完整人工审核关系，只能用于 G0/G1 oracle replay、诊断和错误归因；其中 canonical_answer/canonical_leg_index/leg_type/support_mode 不能进入 A3/B2/B3/B4/G3 的 blind 方法输入。
+- gold_observable_dev50_accept*.jsonl 是从后台 regions 派生的 answer-stripped method-safe observable，可用于 G3。
+- 后台 regions 的 label、bbox、region_type、review_action 可以作为可见证据输入；accepted_mappings、canonical_answer、canonical_leg_index、final_value 等答案侧内容不能混入 blind 方法输入。
+
+优先做的不是 OCR，而是后台关系解析：
+1. 核对 latest admin export 覆盖 formal300 300/300，并确认 dev50 50/50 都有 final submission。
+2. 重新导出 dev50 的 gold answer、field review、regions、evidence links。
+3. 重新生成 answer-stripped gold_observable，并跑 forbidden-key/no-leakage 扫描。
+4. 运行或复核 G0/G1/G3 dev50：
+   - G0_Direct: 只作为 direct_visible oracle replay，允许使用 field_review 答案侧关系，诊断里必须标记 uses_canonical_answer=True。
+   - G1_Rules: direct_visible + rule_default_completion oracle replay，同样只作为诊断上限。
+   - G3_LLM_Rules: 只能用 gold_observable answer-stripped input。
+5. A3/B2 的 gold_ma_prose 只有在后台存在 chart-side 复飞文字/人工确认文本源时才从后台导出；不能从 annotation_pr28_json、canonical_answer、accepted_mappings、final_value 反推 prose。
+6. B3/B4 的 ROI 输入优先从后台 region_type/label/bbox/review_action 解析可见文本和候选；必须剥离答案侧字段，不能把最终字段答案当方法输入。
+
+严禁把这些字段作为 A3/B2/B3/B4/G3 方法输入：
 - target
 - score
 - canonical_answer
@@ -48,113 +78,15 @@ formal_runs/experiment5/experiment5_dev50_20260503_r1/reports/admin_dev50_artifa
 - Q_terminator
 - leg_type
 - field_review_v2
-- admin_gold_answer_dev50.jsonl
-- admin_field_review_dev50.jsonl 中的 canonical_* 字段
+- accepted_mappings.canonical_answer
+- accepted_mappings.final_value
+- annotation_pr28_json
 
-这些答案侧工件只允许用于评分、oracle 诊断、错误归因，不能进入 A3/B2/B3/B4/G3 的预测输入。
-
-第一步：生成正式 gold_ma_prose
-
-输入图片优先使用：
-
-formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/ma_text_crops/*_ma_text_crop.png
-
-这些图片是后台 MISSED_APPROACH_TEXT 框裁剪出来的 dev50 复飞文字区域。
-
-如果 OCR 效果不好，可以回到：
-
-formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/*.png
-formal_runs/experiment5/experiment5_dev50_20260503_r1/admin_artifacts/admin_regions_dev50.jsonl
-
-用 admin_regions 里的 MISSED_APPROACH_TEXT bbox 重新裁剪或放大 OCR。
-
-输出文件建议写成：
-
-formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_ma_text_dev50_ocr_reviewed.jsonl
-
-每行 JSONL 格式：
-
-{
-  "chart_id": "KAVL_I17",
-  "checked_scopes": ["MISSED_APPROACH_TEXT"],
-  "gold_ma_prose": "MISSED APPROACH: ...",
-  "source": "admin_ma_text_crop_ocr_reviewed",
-  "ocr_engine": "你的OCR引擎名称",
-  "review_status": "ocr_reviewed",
-  "notes": "不要从 canonical_answer 反推。"
-}
-
-要求：
-
-- 50 个 dev50 chart_id 必须都有一行。
-- gold_ma_prose 必须是图上复飞文字区域的文字，不是从最终答案反推的文字。
-- 可以人工校正 OCR 错字。
-- 不要混入 minima、MALSR、A5、灯光系统、页脚等非复飞说明文字，除非它确实是复飞说明句子的一部分。
-
-第二步：用正式 gold_ma_prose 跑 A3/B2 dev50
-
-A3：
-
-python scripts/experiment5/run_experiment5_gold_text_a3.py --run-dir formal_runs/experiment5/experiment5_dev50_20260503_r2_ocr --gold-text formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_ma_text_dev50_ocr_reviewed.jsonl --limit 50 --force
-
-B2：
-
-先确认本机 openai-compatible API 可用，模型用 gpt-5.4。
-
-python scripts/experiment5/run_experiment5_gold_text_b2.py --run-dir formal_runs/experiment5/experiment5_dev50_20260503_r2_ocr --gold-text formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_ma_text_dev50_ocr_reviewed.jsonl --methods B2a_GoldText_LLM,B2b_GoldText_FieldCandidates_LLM --model gpt-5.4 --base-url http://127.0.0.1:8080/v1 --limit 50 --max-workers 8 --request-timeout 240 --schema-retry-count 1 --resume-existing
-
-第三步：生成 ROI OCR 输入
-
-输入：
-
-formal_runs/experiment5/experiment5_dev50_20260503_r1/admin_artifacts/admin_regions_dev50.jsonl
-formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/*.png
-
-需要对这些 region_type 做 OCR 或读取框内文字：
-
-- FIX_TEXT
-- ALTITUDE_TEXT
-- HEADING_TEXT
-- RADIAL_TEXT
-- TRACK_OR_RADIAL_TEXT
-- NAVAID_TEXT
-- OUTBOUND_INBOUND_MARK
-- MISSED_APPROACH_TEXT
-
-输出建议写成：
-
-formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/roi_ocr_dev50_ocr_reviewed.jsonl
-
-每行至少包含：
-
-{
-  "chart_id": "KAVL_I17",
-  "region_id": "KAVL_I17_iconalign_001_fix_text",
-  "region_type": "FIX_TEXT",
-  "bbox": {...},
-  "ocr_text": "BRA",
-  "ocr_engine": "你的OCR引擎名称",
-  "review_status": "ocr_reviewed"
-}
-
-第四步：再跑 B3/B4 dev50
-
-先检查现有 B3/B4 脚本需要的输入格式。如果需要，把 roi_ocr_dev50_ocr_reviewed.jsonl 转成现有 runner 需要的 field_candidates / validation 输入。不要把 admin_field_review 里的 canonical_answer 当成候选输入。
-
-第五步：输出报告
-
-请更新或新建中文报告：
-
-formal_runs/experiment5/experiment5_dev50_20260503_r2_ocr/reports/experiment5_dev50_ocr_run_status_zh.md
-
-报告必须写清：
-
-- OCR 引擎
-- gold_ma_prose 覆盖率：50/50 是否齐全
-- ROI OCR 覆盖率
-- A3/B2/B3/B4 结果
-- no-leakage 检查
-- 哪些文件是方法输入，哪些文件只用于评分
-
-如果发现现有脚本缺少转换器，可以新增脚本到 scripts/experiment5/，但要保持输入边界不泄漏答案。
+最后输出中文状态报告，写清：
+- 使用的后台 export 文件名和时间
+- dev50 覆盖率
+- 每类工件的用途：方法输入 / 评分 / oracle 诊断
+- no-leakage 检查结果
+- G0/G1/G3 结果
+- A3/B2/B3/B4 是否已有合法后台输入；如果没有合法 chart-side 文本源，明确标记 blocked，不要用最终答案反推。
 ```

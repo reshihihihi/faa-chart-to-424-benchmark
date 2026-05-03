@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 6400 on heading 283; right turn climb to 9000 to EZBEL; hold at EZBEL, inbound course 238, right turns, 7 NM, maintain 9000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 6400 -> AT_OR_ABOVE 6400 ft
+- ALTITUDE_TEXT: 9000 -> AT_OR_ABOVE 9000 ft
+- FIX_TEXT: EZBEL -> EZBEL
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
