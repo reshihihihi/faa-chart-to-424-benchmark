@@ -61,6 +61,74 @@ def strict_json(text: str) -> dict[str, Any]:
     return parsed
 
 
+def iter_json_object_spans(text: str) -> list[tuple[int, int]]:
+    spans: list[tuple[int, int]] = []
+    stack = 0
+    start: int | None = None
+    in_string = False
+    escaped = False
+    for i, char in enumerate(text):
+        if in_string:
+            if escaped:
+                escaped = False
+            elif char == "\\":
+                escaped = True
+            elif char == '"':
+                in_string = False
+            continue
+        if char == '"':
+            in_string = True
+        elif char == "{":
+            if stack == 0:
+                start = i
+            stack += 1
+        elif char == "}" and stack > 0:
+            stack -= 1
+            if stack == 0 and start is not None:
+                spans.append((start, i + 1))
+                start = None
+    return spans
+
+
+def parse_last_schema_valid_json_object(
+    text: str,
+    *,
+    validator: Any | None,
+) -> tuple[dict[str, Any], dict[str, Any]] | None:
+    spans = iter_json_object_spans(text)
+    candidates: list[tuple[int, dict[str, Any], list[str]]] = []
+    schema_valid_candidates: list[tuple[int, dict[str, Any]]] = []
+    for index, (start, end) in enumerate(spans):
+        try:
+            parsed = json.loads(text[start:end])
+        except Exception:
+            continue
+        if not isinstance(parsed, dict):
+            continue
+        errors = validation_errors(parsed, validator)
+        candidates.append((index, parsed, errors))
+        if not errors:
+            schema_valid_candidates.append((index, parsed))
+    if schema_valid_candidates:
+        index, parsed = schema_valid_candidates[-1]
+        return parsed, {
+            "json_object_candidate_extraction_applied": True,
+            "json_object_candidate_count": len(spans),
+            "json_object_candidate_selected_index": index,
+            "json_object_candidate_selection_rule": "last_schema_valid_complete_object",
+        }
+    if not candidates:
+        return None
+    index, parsed, errors = candidates[-1]
+    return parsed, {
+        "json_object_candidate_extraction_applied": True,
+        "json_object_candidate_count": len(spans),
+        "json_object_candidate_selected_index": index,
+        "json_object_candidate_selection_rule": "last_parseable_complete_object_no_schema_valid_candidate",
+        "json_object_candidate_schema_errors": errors[:5],
+    }
+
+
 def delimiter_balance_outside_strings(text: str) -> dict[str, int]:
     balances = {"curly": 0, "square": 0}
     in_string = False
@@ -93,11 +161,13 @@ def parse_model_output(
     *,
     method: str,
     allow_single_missing_final_object_brace: bool,
+    allow_json_object_candidate_extraction: bool,
     validator: Any | None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     parse_event: dict[str, Any] = {
         "strict_json_parse_ok": False,
         "single_missing_final_object_brace_applied": False,
+        "json_object_candidate_extraction_applied": False,
         "semantic_repair_applied": False,
     }
     try:
@@ -106,6 +176,12 @@ def parse_model_output(
         return parsed, parse_event
     except Exception as strict_exc:  # noqa: BLE001
         parse_event["strict_json_error"] = repr(strict_exc)
+        if allow_json_object_candidate_extraction and "```" not in text:
+            candidate = parse_last_schema_valid_json_object(text, validator=validator)
+            if candidate is not None:
+                parsed, extraction_event = candidate
+                parse_event.update(extraction_event)
+                return parsed, parse_event
         if (
             not allow_single_missing_final_object_brace
             or method not in JOINT_EVIDENCE_CANONICAL_METHODS
@@ -170,8 +246,8 @@ def validation_errors(obj: dict[str, Any], validator: Any | None) -> list[str]:
     return [(".".join(str(part) for part in err.path) or "$") + f": {err.message}" for err in errors]
 
 
-def canonical_prediction_for_scoring(parsed: dict[str, Any], method: str) -> dict[str, Any]:
-    if method in JOINT_EVIDENCE_CANONICAL_METHODS:
+def canonical_prediction_for_scoring(parsed: dict[str, Any], method: str, *, expect_wrapper: bool) -> dict[str, Any]:
+    if method in JOINT_EVIDENCE_CANONICAL_METHODS and expect_wrapper:
         canonical = parsed.get("canonical_prediction")
         if not isinstance(canonical, dict):
             raise ValueError("canonical_prediction_is_missing_or_not_object")
@@ -179,8 +255,8 @@ def canonical_prediction_for_scoring(parsed: dict[str, Any], method: str) -> dic
     return parsed
 
 
-def evidence_box_count(parsed: dict[str, Any], method: str) -> int | None:
-    if method not in JOINT_EVIDENCE_CANONICAL_METHODS:
+def evidence_box_count(parsed: dict[str, Any], method: str, *, expect_wrapper: bool) -> int | None:
+    if method not in JOINT_EVIDENCE_CANONICAL_METHODS or not expect_wrapper:
         return None
     boxes = parsed.get("evidence_boxes")
     return len(boxes) if isinstance(boxes, list) else None
@@ -294,9 +370,12 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     if run_dir.exists() and not args.overwrite:
         raise RuntimeError(f"Prediction run directory already exists: {run_dir}")
     run_dir.mkdir(parents=True, exist_ok=args.overwrite)
+    expect_wrapper = args.output_mode == "wrapper" or (
+        args.output_mode == "auto" and args.method in JOINT_EVIDENCE_CANONICAL_METHODS
+    )
     validator = load_schema_validator(args.json_schema)
     canonical_validator = (
-        load_schema_validator(args.canonical_json_schema) if args.method in JOINT_EVIDENCE_CANONICAL_METHODS else None
+        load_schema_validator(args.canonical_json_schema) if expect_wrapper else None
     )
     model, processor = load_model(args)
     assistant_prefill = args.assistant_prefill
@@ -335,6 +414,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 text,
                 method=args.method,
                 allow_single_missing_final_object_brace=args.allow_single_missing_final_object_brace,
+                allow_json_object_candidate_extraction=args.allow_json_object_candidate_extraction,
                 validator=validator,
             )
             parser_event["sample_id"] = sample_id
@@ -346,15 +426,18 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 "single_missing_final_object_brace_applied": parser_event[
                     "single_missing_final_object_brace_applied"
                 ],
+                "json_object_candidate_extraction_applied": parser_event[
+                    "json_object_candidate_extraction_applied"
+                ],
             }
             write_json(run_dir / "parsed_json" / f"{chart_id}.json", parsed)
             errors = validation_errors(parsed, validator)
-            canonical_prediction = canonical_prediction_for_scoring(parsed, args.method)
-            if args.method in JOINT_EVIDENCE_CANONICAL_METHODS:
+            canonical_prediction = canonical_prediction_for_scoring(parsed, args.method, expect_wrapper=expect_wrapper)
+            if expect_wrapper:
                 write_json(run_dir / "canonical_json" / f"{chart_id}.json", canonical_prediction)
                 canonical_errors = validation_errors(canonical_prediction, canonical_validator)
                 errors.extend([f"canonical_prediction.{error}" for error in canonical_errors])
-                item["evidence_box_count"] = evidence_box_count(parsed, args.method)
+                item["evidence_box_count"] = evidence_box_count(parsed, args.method, expect_wrapper=expect_wrapper)
             write_json(run_dir / "validation" / f"{chart_id}.json", errors)
             item["validation_error_count"] = len(errors)
             item["validation_errors"] = errors
@@ -397,12 +480,14 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "prompt": str(args.prompt),
         "json_schema": str(args.json_schema) if args.json_schema else None,
         "canonical_json_schema": str(args.canonical_json_schema)
-        if args.method in JOINT_EVIDENCE_CANONICAL_METHODS
+        if expect_wrapper
         else None,
         "scoring_manifest": str(args.scoring_manifest) if args.scoring_manifest else None,
         "comparison_policy": str(args.comparison_policy) if args.scoring_manifest else None,
         "parser_policy": {
-            "strict_json_only": not args.allow_single_missing_final_object_brace,
+            "strict_json_only": not (
+                args.allow_single_missing_final_object_brace or args.allow_json_object_candidate_extraction
+            ),
             "strict_json_attempted_first": True,
             "code_fence_stripping_allowed": False,
             "single_missing_final_object_brace_closure_allowed": args.allow_single_missing_final_object_brace,
@@ -411,9 +496,17 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 if args.allow_single_missing_final_object_brace
                 else None
             ),
+            "json_object_candidate_extraction_allowed": args.allow_json_object_candidate_extraction,
+            "json_object_candidate_extraction_policy": (
+                "after strict JSON failure, parse complete JSON object candidates from model output "
+                "and select the last candidate that validates against the active output schema"
+                if args.allow_json_object_candidate_extraction
+                else None
+            ),
             "semantic_repair_allowed": False,
             "assistant_prefill": assistant_prefill,
-            "joint_output_canonical_extraction": args.method in JOINT_EVIDENCE_CANONICAL_METHODS,
+            "output_mode": args.output_mode,
+            "joint_output_canonical_extraction": expect_wrapper,
             "repetition_penalty": args.repetition_penalty,
         },
         "input_boundary": {
@@ -433,6 +526,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "strict_json_parse_ok": sum(1 for event in parser_events if event.get("strict_json_parse_ok")),
             "single_missing_final_object_brace_applied": sum(
                 1 for event in parser_events if event.get("single_missing_final_object_brace_applied")
+            ),
+            "json_object_candidate_extraction_applied": sum(
+                1 for event in parser_events if event.get("json_object_candidate_extraction_applied")
             ),
             "semantic_repair_applied": sum(1 for event in parser_events if event.get("semantic_repair_applied")),
         },
@@ -471,6 +567,15 @@ def main() -> int:
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--assistant-prefill", default=None)
+    parser.add_argument(
+        "--output-mode",
+        choices=["auto", "wrapper", "canonical"],
+        default="auto",
+        help=(
+            "Use wrapper for the joint evidence method by default. Use canonical to score the "
+            "D1 evidence-trained checkpoint with the unchanged D1 canonical JSON output."
+        ),
+    )
     parser.add_argument("--max-new-tokens", type=int, default=1536)
     parser.add_argument("--repetition-penalty", type=float, default=1.0)
     parser.add_argument(
@@ -480,6 +585,16 @@ def main() -> int:
             "For the joint evidence-box-plus-canonical method only, allow one pre-registered "
             "mechanical closure when strict JSON parsing fails solely because the final outer "
             "object brace is missing. The candidate must pass the wrapper schema before scoring."
+        ),
+    )
+    parser.add_argument(
+        "--allow-json-object-candidate-extraction",
+        action="store_true",
+        help=(
+            "After strict JSON parsing fails, mechanically scan complete JSON object candidates "
+            "from the model output and use the last candidate that validates against the active "
+            "schema. This does not use targets, scores, raw 424/CIFP records, or other method "
+            "predictions."
         ),
     )
     parser.add_argument("--min-pixels", type=int, default=3136)

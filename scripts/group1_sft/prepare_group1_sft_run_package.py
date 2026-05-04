@@ -460,7 +460,7 @@ def method_prompt_and_schema(method: str) -> tuple[Path, Path]:
     if method in {"D_BASE_SAME_BACKBONE", "D1"}:
         return CANONICAL_PROMPT, CANONICAL_SCHEMA
     if method == "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL":
-        return D1_EVIDENCE_BOXES_PROMPT, D1_EVIDENCE_BOXES_SCHEMA
+        return CANONICAL_PROMPT, CANONICAL_SCHEMA
     if method in {"CHART_TO_EVIDENCE_SFT", "TWO_STAGE_AUTO_SFT"}:
         return CHART_TO_EVIDENCE_PROMPT, EVIDENCE_SCHEMA
     if method == "EVIDENCE_TO_SEMANTICS_SFT":
@@ -584,11 +584,13 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
             ]
         )
     if "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL" in methods:
+        d1_evidence_boxes_raw_run_id = f"{run_dir.name}_D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL_raw"
+        d1_evidence_boxes_output_root = run_dir / "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL"
         lines.extend(
             [
-                "## 6. D1 plus chart evidence boxes inference",
+                "## 6. D1 plus chart evidence boxes formal inference",
                 "",
-                "This method saves the raw evidence wrapper for diagnosis, then extracts `canonical_prediction` as the unchanged D1-style canonical JSON for formal scoring.",
+                "The checkpoint was continued with evidence-box supervision, but the formal scored output remains the unchanged D1 canonical JSON. The evidence wrapper is a diagnostic training target, not the formal scoring file.",
                 "",
                 "```powershell",
                 "python scripts\\group1_sft\\run_qwen2vl_group1_sft_inference.py "
@@ -596,13 +598,35 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
                 + f"--input-manifest {run_dir / 'D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL' / 'input_manifest.jsonl'} "
                 + f"--model-dir {base_model} "
                 + f"--adapter-checkpoint {d1_evidence_boxes_adapter} "
-                + "--prompt training\\group1_sft\\prompts\\d1_chart_to_evidence_boxes_and_canonical.zh.md "
-                + "--json-schema training\\group1_sft\\manifests\\d1_chart_to_evidence_boxes_and_canonical.schema.json "
-                + "--canonical-json-schema schemas\\missed_approach_leg.schema.json "
-                + f"--scoring-manifest {run_dir / 'scoring_manifest.jsonl'} "
-                + f"--output-root {run_dir / 'D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL'} "
-                + "--max-new-tokens 4096 "
-                + "--repetition-penalty 1.15",
+                + "--prompt training\\d_sft\\prompts\\d_sft_image_to_canonical.v2.md "
+                + "--json-schema schemas\\missed_approach_leg.schema.json "
+                + "--output-mode canonical "
+                + "--allow-json-object-candidate-extraction "
+                + f"--output-root {d1_evidence_boxes_output_root} "
+                + f"--run-id {d1_evidence_boxes_raw_run_id} "
+                + "--max-new-tokens 1024 "
+                + "--repetition-penalty 1.08",
+                "```",
+                "",
+                "## 6b. Canonicalize and score D1 plus chart evidence boxes outputs",
+                "",
+                "This post-processing uses the same mechanical D1 canonicalization policy as D1 and the same-backbone control. It fixes only the JSON envelope and schema shape without using targets, scores, raw 424/CIFP records, OCR, or other method predictions to change answer values. Targets are used only after canonical JSON is written, for scoring.",
+                "",
+                "```powershell",
+                "python scripts\\run_d1_output_canonicalizer.py "
+                + f"--sample-manifest {run_dir / 'scoring_manifest.jsonl'} "
+                + f"--input-manifest {run_dir / 'D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL' / 'input_manifest.jsonl'} "
+                + f"--raw-dir {d1_evidence_boxes_output_root / 'predictions' / d1_evidence_boxes_raw_run_id / 'raw_text'} "
+                + "--schema schemas\\missed_approach_leg.schema.json "
+                + "--scorer scripts\\scorers\\group1_canonical_field_scorer_v2.py "
+                + f"--target-v2 {TARGET_V2} "
+                + f"--comparison-policy-v2 {POLICY_V2} "
+                + f"--policy {D1_CANONICALIZATION_POLICY} "
+                + f"--method-card {D1_METHOD_CARD} "
+                + f"--out-root {run_dir / 'D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL_CANONICALIZED'} "
+                + f"--run-id {run_dir.name}_D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL_CANONICALIZED "
+                + "--method D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL "
+                + "--policy-id d1_evidence_output_canonicalization_same_as_d1",
                 "```",
                 "",
             ]
