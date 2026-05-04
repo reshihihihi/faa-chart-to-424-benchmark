@@ -1,0 +1,244 @@
+{
+  "chart_id": "KAQO_R17",
+  "procedure": {
+    "airport": "KAQO",
+    "approach_ident": "R17",
+    "chart_name": "RNAV (GPS) RWY 17"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260504_r6_strict_visible_inputs/inputs/g_visible_observables_eval200_strict.jsonl",
+  "observable_facts": [
+    {
+      "bbox": {
+        "height": 0.0648,
+        "width": 0.3284,
+        "x_center": 0.7881,
+        "y_center": 0.1431
+      },
+      "chart_id": "KAQO_R17",
+      "observable_type": "ma_text_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAQO_R17_01_missed_approach_text",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAQO_R17_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.514,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.474
+      },
+      "chart_id": "KAQO_R17",
+      "observable_type": "plan_view_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAQO_R17_02_plan_view",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAQO_R17_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0526,
+        "width": 0.1432,
+        "x_center": 0.5916,
+        "y_center": 0.7569
+      },
+      "chart_id": "KAQO_R17",
+      "observable_type": "ma_detail_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAQO_R17_03_lower_detail_area",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAQO_R17_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5559,
+        "y_center": 0.7398
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "3500",
+          "value": 3500,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KAQO_R17",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAQO_R17_iconalign_002_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "3500",
+      "region_id": "KAQO_R17_iconalign_002_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 3500"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0547,
+        "x_center": 0.6273,
+        "y_center": 0.7398
+      },
+      "candidates": [
+        {
+          "candidate_type": "fix_ident_literal",
+          "raw_text": "IYMUD",
+          "value": "IYMUD",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KAQO_R17",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAQO_R17_iconalign_001_fix_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "IYMUD",
+      "region_id": "KAQO_R17_iconalign_001_fix_text",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "FIX_TEXT",
+      "visible_literal": "FIX_TEXT: IYMUD"
+    },
+    {
+      "bbox": {
+        "height": 0.0126,
+        "width": 0.009,
+        "x_center": 0.5529,
+        "y_center": 0.7538
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KAQO_R17",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAQO_R17_iconalign_007_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KAQO_R17_iconalign_007_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0185,
+        "width": 0.0271,
+        "x_center": 0.6316,
+        "y_center": 0.7677
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KAQO_R17",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAQO_R17_iconalign_005_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KAQO_R17_iconalign_005_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0227,
+        "width": 0.0374,
+        "x_center": 0.6252,
+        "y_center": 0.763
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "FIX_SYMBOL",
+          "value": "FIX_SYMBOL",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KAQO_R17",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAQO_R17_iconalign_006_fix_symbol",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KAQO_R17_iconalign_006_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "visible_label_prefix": "FIX_SYMBOL",
+      "visible_literal": "detected lower detail: fix symbol"
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

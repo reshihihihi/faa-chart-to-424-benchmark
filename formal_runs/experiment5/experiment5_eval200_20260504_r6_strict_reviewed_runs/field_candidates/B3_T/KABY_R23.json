@@ -1,0 +1,196 @@
+{
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "chart_id": "KABY_R23",
+  "field_candidates": {
+    "altitude_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "altitude_ft",
+        "global_end_char": 63,
+        "global_start_char": 59,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 40,
+        "region_local_start_char": 36,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 63,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: APPROACH: Climb to 3000 direct ZITIR and on 197° to ELMOE and hold.",
+        "source_start_char": 59,
+        "value": 3000
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "climb_phrase",
+        "global_end_char": 55,
+        "global_start_char": 50,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 32,
+        "region_local_start_char": 27,
+        "rule_id": "climb_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 55,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: APPROACH: Climb to 3000 direct ZITIR and on 197° to ELMOE and hold.",
+        "source_start_char": 50,
+        "value": "MISSED APPROACH: APPROACH: Climb to 3000 direct ZITIR and on 197° to ELMOE and hold."
+      }
+    ],
+    "course_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "course_deg",
+        "global_end_char": 87,
+        "global_start_char": 84,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 64,
+        "region_local_start_char": 61,
+        "rule_id": "degree_value_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 87,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "ISSED APPROACH: APPROACH: Climb to 3000 direct ZITIR and on 197° to ELMOE and hold.",
+        "source_start_char": 84,
+        "value": 197
+      }
+    ],
+    "direct_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "direct_phrase",
+        "global_end_char": 70,
+        "global_start_char": 64,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 47,
+        "region_local_start_char": 41,
+        "rule_id": "direct_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 70,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: APPROACH: Climb to 3000 direct ZITIR and on 197° to ELMOE and hold.",
+        "source_start_char": 64,
+        "value": "MISSED APPROACH: APPROACH: Climb to 3000 direct ZITIR and on 197° to ELMOE and hold."
+      }
+    ],
+    "fix_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 76,
+        "global_start_char": 71,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 53,
+        "region_local_start_char": 48,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 76,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: APPROACH: Climb to 3000 direct ZITIR and on 197° to ELMOE and hold.",
+        "source_start_char": 71,
+        "value": "ZITIR"
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 97,
+        "global_start_char": 92,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 74,
+        "region_local_start_char": 69,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 97,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "PROACH: APPROACH: Climb to 3000 direct ZITIR and on 197° to ELMOE and hold.",
+        "source_start_char": 92,
+        "value": "ELMOE"
+      }
+    ],
+    "hold_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "hold_phrase",
+        "global_end_char": 106,
+        "global_start_char": 102,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 83,
+        "region_local_start_char": 79,
+        "rule_id": "hold_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 106,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: APPROACH: Climb to 3000 direct ZITIR and on 197° to ELMOE and hold.",
+        "source_start_char": 102,
+        "value": "MISSED APPROACH: APPROACH: Climb to 3000 direct ZITIR and on 197° to ELMOE and hold."
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "confidence": 0.95,
+        "field_type": "missed_approach_instruction",
+        "global_end_char": 107,
+        "global_start_char": 50,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "region_local_end_char": 84,
+        "region_local_start_char": 27,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 107,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 3000 direct ZITIR and on 197° to ELMOE and hold.",
+        "source_start_char": 50,
+        "value": "Climb to 3000 direct ZITIR and on 197° to ELMOE and hold."
+      }
+    ],
+    "route_sequence_snippets": [],
+    "track_to_fix_snippets": [
+      {
+        "confidence": 0.82,
+        "field_type": "track_to_fix_phrase",
+        "global_end_char": 97,
+        "global_start_char": 81,
+        "notes": "flat_ocr_track_to_fix_phrase_no_leg_binding",
+        "region_local_end_char": 74,
+        "region_local_start_char": 58,
+        "rule_id": "track_to_fix_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 97,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: APPROACH: Climb to 3000 direct ZITIR and on 197° to ELMOE and hold.",
+        "source_start_char": 81,
+        "value": "on 197° to ELMOE"
+      }
+    ],
+    "turn_candidates": []
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_gold_observable_evidence": false,
+    "uses_human_evidence_provenance": false,
+    "uses_scorer_output": false
+  },
+  "region_profile": "T",
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "source_contract": {
+    "allows_canonical_target": false,
+    "allows_chart_image_pixels": false,
+    "allows_gold_observable_evidence": false,
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "source": "same_chart_human_confirmed_roi_ocr_text"
+  }
+}

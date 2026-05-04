@@ -1,0 +1,1 @@
+{"chart_id":"KCAO_R02","procedure":{"airport":"KCAO","approach_ident":"R02","chart_name":"RNAV (GPS) RWY 02"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

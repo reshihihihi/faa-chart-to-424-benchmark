@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_5bda7615-ee65-47b6-bfd9-e7521287859a",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_Xl2RzcR1y29tEL4kGJFSFw8h",
+            "function": {
+              "arguments": "{\"chart_id\":\"KAXH_L09\",\"procedure\":{\"airport\":\"KAXH\",\"approach_ident\":\"L09\",\"chart_name\":\"LOC RWY 09\"},\"missed_approach\":{\"leg_count\":{\"status\":\"present\",\"value\":1},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":null},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"KEEDS\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":2500,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"unknown\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}}]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868288,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

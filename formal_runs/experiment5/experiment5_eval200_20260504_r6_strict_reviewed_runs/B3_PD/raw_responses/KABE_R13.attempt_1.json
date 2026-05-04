@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_e2d87395-acce-46b0-bff3-878eac44edfa",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_qW4UlXeemmUem1ZAzKUsKkvD",
+            "function": {
+              "arguments": "{\"chart_id\":\"KABE_R13\",\"procedure\":{\"airport\":\"KABE\",\"approach_ident\":\"R13\",\"chart_name\":\"RNAV (GPS) RWY 13\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868123,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

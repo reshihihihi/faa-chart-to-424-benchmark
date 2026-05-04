@@ -691,9 +691,12 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dev-run-dir", type=Path, default=DEFAULT_DEV_RUN_DIR)
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    parser.add_argument("--artifact-label", default="dev50")
+    parser.add_argument("--admin-regions", type=Path)
     args = parser.parse_args()
 
-    source_file = args.dev_run_dir / "admin_artifacts" / "admin_regions_dev50.jsonl"
+    artifact_label = args.artifact_label
+    source_file = args.admin_regions or args.dev_run_dir / "admin_artifacts" / f"admin_regions_{artifact_label}.jsonl"
     rows = read_jsonl(source_file)
     grouped = grouped_regions(rows)
 
@@ -701,12 +704,12 @@ def main() -> int:
     manifests_dir = args.out_dir / "manifests"
     reports_dir = args.out_dir / "reports"
     paths = {
-        "a3_b2": inputs_dir / "gold_ma_text_dev50_strict.jsonl",
-        "roi": inputs_dir / "roi_text_dev50_strict.jsonl",
-        "pd": inputs_dir / "pd_visible_candidates_dev50_strict.jsonl",
-        "tpd": inputs_dir / "tpd_combined_visible_inputs_dev50_strict.jsonl",
-        "g": inputs_dir / "g_visible_observables_dev50_strict.jsonl",
-        "manifest": manifests_dir / "strict_method_input_manifest_dev50.jsonl",
+        "a3_b2": inputs_dir / f"gold_ma_text_{artifact_label}_strict.jsonl",
+        "roi": inputs_dir / f"roi_text_{artifact_label}_strict.jsonl",
+        "pd": inputs_dir / f"pd_visible_candidates_{artifact_label}_strict.jsonl",
+        "tpd": inputs_dir / f"tpd_combined_visible_inputs_{artifact_label}_strict.jsonl",
+        "g": inputs_dir / f"g_visible_observables_{artifact_label}_strict.jsonl",
+        "manifest": manifests_dir / f"strict_method_input_manifest_{artifact_label}.jsonl",
     }
 
     a3_b2_rows = build_a3_b2_rows(grouped, source_file, args.dev_run_dir)

@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_3c58e0ab-7164-44bc-a562-9cbd5777b1cb",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_3A9XO5Au2YsRYp6HkWf5fmin",
+            "function": {
+              "arguments": "{\"chart_id\":\"KBUY_I06-Z\",\"procedure\":{\"airport\":\"KBUY\",\"approach_ident\":\"I06-Z\",\"chart_name\":\"ILS Z OR LOC Z RWY 06\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868305,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

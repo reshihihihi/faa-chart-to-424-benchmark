@@ -1,0 +1,452 @@
+# Experiment 5 ROI OCR Diagnostic Prompt v1 Region Priority
+
+## Method Boundary
+
+You are running an Experiment 5 diagnostic method:
+
+B3_TPD
+
+This is not a full-chart baseline. It tests whether a model can recover canonical missed-approach JSON when the input has been restricted to human-confirmed source-view ROI OCR text and automatic region-aware field candidates from that ROI OCR text.
+
+## Allowed Inputs
+
+You may use only:
+
+- chart_id
+- airport
+- approach_ident
+- chart_name
+- ROI OCR text for the specified region profile
+- automatic region-aware field_candidates generated from the same ROI OCR text
+- the canonical output contract described here
+
+Region profile:
+
+TPD
+
+Region description:
+
+MISSED_APPROACH_TEXT, PLAN_VIEW, and MISSED_APPROACH_DETAIL_AREA source-view OCR are provided with region labels.
+
+## Forbidden Inputs
+
+Do not use:
+
+- full chart image pixels
+- any image pixels at this LLM stage
+- OCR text outside the specified region profile
+- OCR bbox or coordinates
+- gold missed-approach prose
+- gold observable evidence
+- canonical target or answer key
+- field_targets.jsonl
+- evidence_provenance.jsonl
+- challenge_tags.jsonl
+- scorer output
+- CIFP or ARINC 424 records
+- historical model output for the same chart
+- web search or external aviation databases
+
+The field_candidates input is OCR-derived weak evidence only. It is not a gold parse, not a mapping to missed-approach legs, and not an answer key. It does not contain leg_index, candidate_leg_id, schema_field, expected_value, target_value, Q_terminator, or path terminator labels.
+
+## Region Priority and Candidate Evidence Policy
+
+Treat MISSED_APPROACH_TEXT as the primary evidence for the flown missed-approach procedure order.
+
+Use PLAN_VIEW and MISSED_APPROACH_DETAIL_AREA only as support evidence:
+
+- They may confirm a fix, holding pattern, radial/course, or altitude that is already linked to the missed-approach instruction.
+- They may fill a value when MISSED_APPROACH_TEXT names the relevant fix/hold/radial but OCR is incomplete.
+- They must not create a new missed-approach leg from unrelated IAF, IF, FAF, feeder-route, arrival-route, MSA, ELEV, TDZE, procedure-NA, profile-altitude, or localizer label text.
+- They must not override a clear MISSED_APPROACH_TEXT phrase such as climb, direct, turn, track, course/radial, or hold.
+- If PLAN_VIEW or DETAIL_AREA conflicts with readable MISSED_APPROACH_TEXT, keep the conservative MA_TEXT leg skeleton and mark only the conflicting field unknown/null.
+
+Use field_candidates to locate possible values, then verify them against the ROI OCR text and source_region/source_section before using them. Do not assume a candidate is correct only because it appears in field_candidates.
+
+If the flown order is partially readable, output the readable leg sequence and mark uncertain answer fields unknown. Output unknown leg_count and an empty legs array only when no usable missed-approach instruction can be found in the provided ROI OCR text.
+
+## Task
+
+Use the ROI OCR text and field_candidates to extract the missed approach procedure and output one canonical JSON object.
+
+If ROI OCR text or candidates are ambiguous, damaged, contradictory, or insufficient for a specific field, use unknown for that field. Do not guess only to fill the schema.
+
+## Output Schema
+
+Top-level object must contain exactly:
+
+- chart_id
+- procedure
+- missed_approach
+
+procedure must contain exactly:
+
+- airport
+- approach_ident
+- chart_name
+
+missed_approach must contain:
+
+- leg_count: an answer object with status and value
+- legs: an array of leg objects
+
+Each leg object must contain:
+
+- leg_index
+- answers
+
+leg_index must strictly follow these rules:
+
+- The first leg must have leg_index = 1, never 0.
+- Later legs must increase by 1 without gaps.
+- The order of the legs array must match the actual flown order of the missed approach procedure.
+- When leg_count.status is present, leg_count.value must equal the number of objects in the legs array.
+- If no usable missed approach instruction can be found at all, set leg_count.status to unknown, leg_count.value to null, and legs to an empty array.
+- If a missed approach instruction is readable but some fields are uncertain, output the conservative readable leg sequence, set leg_count.status to present, set leg_count.value to the number of leg objects, and set only uncertain answer fields to unknown/null.
+
+answers must contain exactly:
+
+- Q_terminator
+- Q1_fix_ident
+- Q2_altitude_constraint
+- Q3_turn
+- Q4_course_or_radial
+- Q5_hold_params
+
+Each answer object must use:
+
+- status: one of present, not_applicable, not_observable, unknown
+- value: concrete value when status is present; otherwise null
+
+For leg_count, status may be present, not_observable, or unknown. If leg_count is unknown, value must be null and legs must be an empty array.
+
+Copy chart_id, airport, approach_ident, and chart_name exactly from the input metadata. Do not infer, correct, abbreviate, or replace metadata from OCR text or field_candidates.
+
+## Status/Value Separation Hard Rule
+
+The status field is a label about observability only. It must never contain the extracted aviation value.
+
+Allowed status strings are exactly:
+
+- present
+- not_applicable
+- not_observable
+- unknown
+
+Do not put ARINC path terminators, fix idents, altitudes, courses, radials, directions, or hold values in status.
+
+If the ROI OCR text and field_candidates support a concrete answer, use status present and put the concrete answer in value. For example, a DF terminator must be written as status present with value DF, not status DF.
+
+If the answer is uncertain, not observable, or not applicable, status must be unknown, not_observable, or not_applicable, and value must be null.
+
+## Field Value Constraints
+
+Q_terminator value, when present, must be one of:
+
+CA, CF, CI, CR, DF, FA, FM, HA, HF, HM, IF, RF, TF, VA, VD, VI, VM, VR, AF, CD, FC, FD, VC, PI
+
+Q1_fix_ident value, when present, must be a real fix, waypoint, runway, or navaid ident string with at most 5 characters. Facility labels often contain an ident plus a facility type, such as ORL VORTAC; in that case the ident is ORL and the facility type VORTAC must never be output as Q1_fix_ident.
+
+Q2_altitude_constraint value, when present, must be:
+
+{"desc":"AT_OR_ABOVE","altitude_ft":3000,"altitude_2_ft":null}
+
+desc must be one of AT, AT_OR_ABOVE, AT_OR_BELOW, BETWEEN. altitude_ft and altitude_2_ft must be integers or null.
+
+Q3_turn value, when present, must be LEFT or RIGHT.
+
+Q4_course_or_radial value, when present, must be exactly one of:
+
+{"type":"course_deg","course_deg":70.0}
+
+{"type":"navaid_radial","navaid":"ABC","radial_deg":123.0,"direction":"outbound"}
+
+{"type":"direct"}
+
+For Q4_course_or_radial, status must never be course_deg, navaid_radial, direct, type course_deg, type navaid_radial, or type direct.
+
+Q5_hold_params value, when present, must be:
+
+{"inbound_course_deg":70.0,"leg_time_min":1.0,"leg_distance_nm":null,"turn":"RIGHT"}
+
+For non-hold legs, Q5_hold_params should be not_applicable. For hold legs, Q3_turn should usually be not_applicable because hold turn belongs in Q5_hold_params.
+
+All degree-valued fields must be in the schema range 0.0 through 359.9. If OCR text or field_candidates display 360 degrees, encode it as 359.9, never as 360.
+
+## Final Internal Check Before Emitting
+
+Before emitting the final object, silently check:
+
+- metadata fields exactly match the input metadata;
+- top-level keys are exactly chart_id, procedure, and missed_approach;
+- every answer object has exactly status and value;
+- every status is an allowed status label, never an aviation value;
+- every non-present answer has value null;
+- every present answer has a schema-valid value;
+- every Q1_fix_ident value is at most 5 characters and is not a facility-type word;
+- every degree value is between 0.0 and 359.9;
+- if leg_count.status is present, leg_count.value equals the number of legs;
+- leg_index starts at 1 and increases by 1 without gaps.
+
+If a concrete field would violate these checks, set that field to status unknown with value null instead of emitting invalid JSON.
+
+## Strict Raw Output Contract
+
+Return exactly one bare JSON object through the registered tool/schema.
+
+Do not output Markdown. Do not output code fences. Do not output explanation.
+
+## Input
+
+chart_id: KBUR_R08-Z
+airport: KBUR
+approach_ident: R08-Z
+chart_name: RNAV (GPS) Z RWY 08
+
+FIELD_CANDIDATES_JSON:
+{
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "chart_id": "KBUR_R08-Z",
+  "field_candidates": {
+    "altitude_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "altitude_ft",
+        "global_end_char": 73,
+        "global_start_char": 69,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 50,
+        "region_local_start_char": 46,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 73,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 69,
+        "value": 4600
+      },
+      {
+        "confidence": 0.45,
+        "field_type": "altitude_ft",
+        "global_end_char": 197,
+        "global_start_char": 193,
+        "notes": "other_chart_text_procedure_word_context",
+        "region_local_end_char": 19,
+        "region_local_start_char": 15,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 197,
+        "source_region": "MISSED_APPROACH_DETAIL_AREA",
+        "source_section": "missed_approach_detail_area",
+        "source_snippet": "ALTITUDE_TEXT: 4600 FIX_TEXT: COTSI FIX_TEXT: VTU CLIMB_ARROW FIX_SYMBOL PATH_S",
+        "source_start_char": 193,
+        "value": 4600
+      }
+    ],
+    "climb_phrase_snippets": [],
+    "course_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "course_deg",
+        "global_end_char": 106,
+        "global_start_char": 103,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 83,
+        "region_local_start_char": 80,
+        "rule_id": "course_heading_radial_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 106,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "SR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 103,
+        "value": 263
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "course_deg",
+        "global_end_char": 106,
+        "global_start_char": 103,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 83,
+        "region_local_start_char": 80,
+        "rule_id": "degree_value_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 106,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "SR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 103,
+        "value": 263
+      }
+    ],
+    "direct_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "direct_phrase",
+        "global_end_char": 80,
+        "global_start_char": 74,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 57,
+        "region_local_start_char": 51,
+        "rule_id": "direct_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 80,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 74,
+        "value": "MISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold."
+      }
+    ],
+    "fix_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 86,
+        "global_start_char": 81,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 63,
+        "region_local_start_char": 58,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 86,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 81,
+        "value": "COTSI"
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 114,
+        "global_start_char": 111,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 91,
+        "region_local_start_char": 88,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 114,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "ing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 111,
+        "value": "VTU"
+      }
+    ],
+    "hold_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "hold_phrase",
+        "global_end_char": 131,
+        "global_start_char": 127,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 108,
+        "region_local_start_char": 104,
+        "rule_id": "hold_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 131,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "limbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 127,
+        "value": "limbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold."
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "confidence": 0.95,
+        "field_type": "missed_approach_instruction",
+        "global_end_char": 132,
+        "global_start_char": 61,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "region_local_end_char": 109,
+        "region_local_start_char": 38,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 132,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 61,
+        "value": "turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold."
+      }
+    ],
+    "route_sequence_snippets": [],
+    "track_to_fix_snippets": [
+      {
+        "confidence": 0.82,
+        "field_type": "track_to_fix_phrase",
+        "global_end_char": 114,
+        "global_start_char": 94,
+        "notes": "flat_ocr_track_to_fix_phrase_no_leg_binding",
+        "region_local_end_char": 91,
+        "region_local_start_char": 71,
+        "rule_id": "track_to_fix_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 114,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "ISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 94,
+        "value": "on track 263° to VTU"
+      }
+    ],
+    "turn_candidates": [
+      {
+        "confidence": 0.45,
+        "field_type": "turn_direction",
+        "global_end_char": 60,
+        "global_start_char": 55,
+        "notes": "other_chart_text_procedure_word_context",
+        "region_local_end_char": 37,
+        "region_local_start_char": 32,
+        "rule_id": "turn_direction_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 60,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/D",
+        "source_start_char": 55,
+        "value": "RIGHT"
+      }
+    ]
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_gold_observable_evidence": false,
+    "uses_human_evidence_provenance": false,
+    "uses_scorer_output": false
+  },
+  "region_profile": "TPD",
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "source_contract": {
+    "allows_canonical_target": false,
+    "allows_chart_image_pixels": false,
+    "allows_gold_observable_evidence": false,
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "source": "same_chart_human_confirmed_roi_ocr_text"
+  }
+}
+
+ROI_OCR_TEXT:
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.
+
+[PLAN_VIEW]
+
+
+[MISSED_APPROACH_DETAIL_AREA]
+ALTITUDE_TEXT: 4600
+FIX_TEXT: COTSI
+FIX_TEXT: VTU
+CLIMB_ARROW
+FIX_SYMBOL
+PATH_SEGMENT
+

@@ -1,0 +1,1 @@
+{"chart_id":"KACK_R33","procedure":{"airport":"KACK","approach_ident":"R33","chart_name":"RNAV (GPS) RWY 33"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

@@ -1,0 +1,205 @@
+{
+  "chart_id": "KAPC_I01L",
+  "procedure": {
+    "airport": "KAPC",
+    "approach_ident": "I01L",
+    "chart_name": "ILS OR LOC Z RWY 01L"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260504_r6_strict_visible_inputs/inputs/g_visible_observables_eval200_strict.jsonl",
+  "observable_facts": [
+    {
+      "bbox": {
+        "height": 0.0553,
+        "width": 0.3662,
+        "x_center": 0.7698,
+        "y_center": 0.1383
+      },
+      "chart_id": "KAPC_I01L",
+      "observable_type": "ma_text_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPC_I01L_01_missed_approach_text",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAPC_I01L_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.388,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.401
+      },
+      "chart_id": "KAPC_I01L",
+      "observable_type": "plan_view_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPC_I01L_02_plan_view",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAPC_I01L_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0547,
+        "width": 0.2538,
+        "x_center": 0.536,
+        "y_center": 0.6227
+      },
+      "chart_id": "KAPC_I01L",
+      "observable_type": "ma_detail_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPC_I01L_03_lower_detail_area",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAPC_I01L_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.013,
+        "width": 0.044,
+        "x_center": 0.486,
+        "y_center": 0.604
+      },
+      "candidates": [],
+      "chart_id": "KAPC_I01L",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPC_I01L_iconalign_004_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "高度文字",
+      "region_id": "KAPC_I01L_iconalign_004_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "高度文字"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.034,
+        "x_center": 0.436,
+        "y_center": 0.6044
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "500",
+          "value": 500,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KAPC_I01L",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPC_I01L_iconalign_001_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "500",
+      "region_id": "KAPC_I01L_iconalign_001_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 500"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0368,
+        "x_center": 0.5382,
+        "y_center": 0.6047
+      },
+      "candidates": [
+        {
+          "candidate_type": "fix_ident_literal",
+          "raw_text": "SGD",
+          "value": "SGD",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KAPC_I01L",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPC_I01L_iconalign_002_fix_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "SGD",
+      "region_id": "KAPC_I01L_iconalign_002_fix_text",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "FIX_TEXT",
+      "visible_literal": "FIX_TEXT: SGD"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0562,
+        "x_center": 0.6361,
+        "y_center": 0.6145
+      },
+      "candidates": [
+        {
+          "candidate_type": "fix_ident_literal",
+          "raw_text": "BURDE",
+          "value": "BURDE",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KAPC_I01L",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPC_I01L_iconalign_003_fix_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "BURDE",
+      "region_id": "KAPC_I01L_iconalign_003_fix_text",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "FIX_TEXT",
+      "visible_literal": "FIX_TEXT: BURDE"
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

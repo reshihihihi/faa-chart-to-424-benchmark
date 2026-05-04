@@ -1,0 +1,206 @@
+{
+  "chart_id": "KANB_R05",
+  "airport": "KANB",
+  "approach_ident": "R05",
+  "chart_name": "RNAV (GPS) RWY 05",
+  "gold_ma_prose": "MISSED APPROACH: Climb MALSR to 1600, then climbing right turn to 3500 direct CAMKU and track 210° to CANUG A5 and track 300° to LINTZ and hold.",
+  "field_candidates": {
+    "schema_version": "experiment5_gold_ma_prose_field_candidates_schema_v1",
+    "chart_id": "KANB_R05",
+    "candidate_source": "experiment5_gold_ma_prose_regex_candidates_v1",
+    "source_contract": {
+      "source": "adjudicated_gold_ma_prose",
+      "allows_canonical_target": false,
+      "allows_gold_observable_evidence": false,
+      "allows_field_review_v2": false,
+      "allows_cifp_or_arinc_424": false
+    },
+    "leakage_policy": {
+      "uses_canonical_target": false,
+      "uses_expected_value": false,
+      "uses_gold_field_to_leg_mapping": false,
+      "uses_human_evidence_provenance": false,
+      "uses_gold_observable_evidence": false,
+      "uses_cifp_or_arinc_424": false,
+      "uses_scorer_output": false,
+      "uses_field_review_v2": false
+    },
+    "field_candidates": {
+      "fix_candidates": [
+        {
+          "value": "CAMKU",
+          "field_type": "fix_ident",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "DIRECT CAMKU",
+          "source_start_char": 78,
+          "source_end_char": 83,
+          "rule_id": "gold_ma_direct_fix_regex_v1",
+          "confidence": 0.95,
+          "notes": "direct_phrase_context"
+        },
+        {
+          "value": "CANUG",
+          "field_type": "fix_ident",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "TRACK 210° TO CANUG",
+          "source_start_char": 102,
+          "source_end_char": 107,
+          "rule_id": "gold_ma_track_to_fix_regex_v1",
+          "confidence": 0.9,
+          "notes": "track_to_fix_context"
+        },
+        {
+          "value": "LINTZ",
+          "field_type": "fix_ident",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "TRACK 300° TO LINTZ",
+          "source_start_char": 129,
+          "source_end_char": 134,
+          "rule_id": "gold_ma_track_to_fix_regex_v1",
+          "confidence": 0.9,
+          "notes": "track_to_fix_context"
+        }
+      ],
+      "altitude_candidates": [
+        {
+          "value": 1600,
+          "field_type": "altitude_ft",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "1600",
+          "source_start_char": 32,
+          "source_end_char": 36,
+          "rule_id": "gold_ma_altitude_ft_regex_v1",
+          "confidence": 0.95,
+          "notes": "climb_to_altitude_context"
+        }
+      ],
+      "turn_candidates": [
+        {
+          "value": "RIGHT",
+          "field_type": "turn_direction",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CLIMBING RIGHT TURN",
+          "source_start_char": 43,
+          "source_end_char": 62,
+          "rule_id": "gold_ma_turn_regex_v1",
+          "confidence": 0.95,
+          "notes": "turn_phrase_context"
+        }
+      ],
+      "course_candidates": [
+        {
+          "value": 210.0,
+          "field_type": "course_deg",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "TRACK 210° TO CANUG",
+          "source_start_char": 94,
+          "source_end_char": 97,
+          "rule_id": "gold_ma_track_course_regex_v1",
+          "confidence": 0.9,
+          "notes": "track_to_fix_context"
+        },
+        {
+          "value": 300.0,
+          "field_type": "course_deg",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "TRACK 300° TO LINTZ",
+          "source_start_char": 121,
+          "source_end_char": 124,
+          "rule_id": "gold_ma_track_course_regex_v1",
+          "confidence": 0.9,
+          "notes": "track_to_fix_context"
+        }
+      ],
+      "hold_candidates": [
+        {
+          "value": "MISSED APPROACH: Climb MALSR to 1600, then climbing right turn to 3500 direct CAMKU and track 210° to CANUG A5 and track 300° to LINTZ and hold.",
+          "field_type": "hold_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: Climb MALSR to 1600, then climbing right turn to 3500 direct CAMKU and track 210° to CANUG A5 and track 300° to LINTZ and hold.",
+          "source_start_char": 139,
+          "source_end_char": 143,
+          "rule_id": "gold_ma_hold_phrase_regex_v1",
+          "confidence": 0.95,
+          "notes": "hold_phrase_context_no_leg_binding"
+        }
+      ],
+      "instruction_snippets": [
+        {
+          "value": "Climb MALSR to 1600, then climbing right turn to 3500 direct CAMKU and track 210° to CANUG A5 and track 300° to LINTZ and hold.",
+          "field_type": "missed_approach_instruction",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: Climb MALSR to 1600, then climbing right turn to 3500 direct CAMKU and track 210° to CANUG A5 and track 300° to LINTZ and hold.",
+          "source_start_char": 0,
+          "source_end_char": 144,
+          "rule_id": "gold_ma_instruction_span_regex_v1",
+          "confidence": 0.99,
+          "notes": "automatic_candidate_from_adjudicated_gold_ma_prose_no_target_or_leg_binding"
+        }
+      ],
+      "track_to_fix_snippets": [
+        {
+          "value": "TRACK 210° TO CANUG",
+          "field_type": "track_to_fix",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "TRACK 210° TO CANUG",
+          "source_start_char": 88,
+          "source_end_char": 107,
+          "rule_id": "gold_ma_track_to_fix_snippet_regex_v1",
+          "confidence": 0.9,
+          "notes": "track_to_fix_context"
+        },
+        {
+          "value": "TRACK 300° TO LINTZ",
+          "field_type": "track_to_fix",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "TRACK 300° TO LINTZ",
+          "source_start_char": 115,
+          "source_end_char": 134,
+          "rule_id": "gold_ma_track_to_fix_snippet_regex_v1",
+          "confidence": 0.9,
+          "notes": "track_to_fix_context"
+        }
+      ],
+      "route_sequence_snippets": [],
+      "direct_phrase_snippets": [
+        {
+          "value": "DIRECT CAMKU",
+          "field_type": "direct_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "DIRECT CAMKU",
+          "source_start_char": 71,
+          "source_end_char": 83,
+          "rule_id": "gold_ma_direct_phrase_regex_v1",
+          "confidence": 0.95,
+          "notes": "direct_phrase_context"
+        }
+      ],
+      "climb_phrase_snippets": [
+        {
+          "value": "CLIMB MALSR TO 1600, THEN CLIMBING RIGHT TURN TO 3500 DIRECT CAMKU AND TRACK 210° TO CANUG A5 AND TRACK 300° TO LINTZ AND HOLD",
+          "field_type": "climb_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CLIMB MALSR TO 1600, THEN CLIMBING RIGHT TURN TO 3500 DIRECT CAMKU AND TRACK 210° TO CANUG A5 AND TRACK 300° TO LINTZ AND HOLD",
+          "source_start_char": 17,
+          "source_end_char": 143,
+          "rule_id": "gold_ma_climb_phrase_regex_v1",
+          "confidence": 0.9,
+          "notes": "climb_phrase_context"
+        }
+      ]
+    }
+  }
+}

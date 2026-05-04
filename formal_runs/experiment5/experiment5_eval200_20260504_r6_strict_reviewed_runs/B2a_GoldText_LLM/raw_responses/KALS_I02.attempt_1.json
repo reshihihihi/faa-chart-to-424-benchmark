@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_36fefac4-0d19-4f5b-8868-15460ac54f20",
+  "object": "chat.completion",
+  "created": 1777866788,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_DfF1ULRB2LTHPPGT88yP3r58",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KALS_I02\",\"procedure\":{\"airport\":\"KALS\",\"approach_ident\":\"I02\",\"chart_name\":\"ILS OR LOC RWY 02\"},\"missed_approach\":{\"leg_count\":{\"status\":\"present\",\"value\":3},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"present\",\"value\":\"CA\"},\"Q1_fix_ident\":{\"status\":\"not_applicable\",\"value\":null},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":8700,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}},{\"leg_index\":2,\"answers\":{\"Q_terminator\":{\"status\":\"present\",\"value\":\"DF\"},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"ALS\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":11000,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"present\",\"value\":\"RIGHT\"},\"Q4_course_or_radial\":{\"status\":\"present\",\"value\":{\"type\":\"direct\"}},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}},{\"leg_index\":3,\"answers\":{\"Q_terminator\":{\"status\":\"present\",\"value\":\"HM\"},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"ALS\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":11000,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"unknown\",\"value\":null}}}]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

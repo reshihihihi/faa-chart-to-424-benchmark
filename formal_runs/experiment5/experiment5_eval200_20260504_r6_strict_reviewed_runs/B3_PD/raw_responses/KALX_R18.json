@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_efcebc44-414f-46ba-915e-d24855b5064d",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_646zV1GAoL3QXG99vVLqkgHV",
+            "function": {
+              "arguments": "{\"chart_id\":\"KALX_R18\",\"procedure\":{\"airport\":\"KALX\",\"approach_ident\":\"R18\",\"chart_name\":\"RNAV (GPS) RWY 18\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868221,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

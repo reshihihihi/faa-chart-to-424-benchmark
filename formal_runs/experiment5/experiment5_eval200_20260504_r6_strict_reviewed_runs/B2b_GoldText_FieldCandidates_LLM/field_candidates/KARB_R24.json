@@ -1,0 +1,112 @@
+{
+  "schema_version": "experiment5_gold_ma_prose_field_candidates_schema_v1",
+  "chart_id": "KARB_R24",
+  "candidate_source": "experiment5_gold_ma_prose_regex_candidates_v1",
+  "source_contract": {
+    "source": "adjudicated_gold_ma_prose",
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false,
+    "allows_field_review_v2": false,
+    "allows_cifp_or_arinc_424": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false,
+    "uses_field_review_v2": false
+  },
+  "field_candidates": {
+    "fix_candidates": [
+      {
+        "value": "YACNU",
+        "field_type": "fix_ident",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "DIRECT YACNU",
+        "source_start_char": 38,
+        "source_end_char": 43,
+        "rule_id": "gold_ma_direct_fix_regex_v1",
+        "confidence": 0.95,
+        "notes": "direct_phrase_context"
+      }
+    ],
+    "altitude_candidates": [
+      {
+        "value": 3000,
+        "field_type": "altitude_ft",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "3000",
+        "source_start_char": 26,
+        "source_end_char": 30,
+        "rule_id": "gold_ma_altitude_ft_regex_v1",
+        "confidence": 0.95,
+        "notes": "climb_to_altitude_context"
+      }
+    ],
+    "turn_candidates": [],
+    "course_candidates": [],
+    "hold_candidates": [
+      {
+        "value": "MISSED APPROACH: Climb to 3000 direct YACNU and hold.",
+        "field_type": "hold_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct YACNU and hold.",
+        "source_start_char": 48,
+        "source_end_char": 52,
+        "rule_id": "gold_ma_hold_phrase_regex_v1",
+        "confidence": 0.95,
+        "notes": "hold_phrase_context_no_leg_binding"
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "value": "Climb to 3000 direct YACNU and hold.",
+        "field_type": "missed_approach_instruction",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct YACNU and hold.",
+        "source_start_char": 0,
+        "source_end_char": 53,
+        "rule_id": "gold_ma_instruction_span_regex_v1",
+        "confidence": 0.99,
+        "notes": "automatic_candidate_from_adjudicated_gold_ma_prose_no_target_or_leg_binding"
+      }
+    ],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [
+      {
+        "value": "DIRECT YACNU",
+        "field_type": "direct_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "DIRECT YACNU",
+        "source_start_char": 31,
+        "source_end_char": 43,
+        "rule_id": "gold_ma_direct_phrase_regex_v1",
+        "confidence": 0.95,
+        "notes": "direct_phrase_context"
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "value": "CLIMB TO 3000 DIRECT YACNU AND HOLD",
+        "field_type": "climb_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "CLIMB TO 3000 DIRECT YACNU AND HOLD",
+        "source_start_char": 17,
+        "source_end_char": 52,
+        "rule_id": "gold_ma_climb_phrase_regex_v1",
+        "confidence": 0.9,
+        "notes": "climb_phrase_context"
+      }
+    ]
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "chart_id": "KCJR_L04",
+  "procedure": {
+    "airport": "KCJR",
+    "approach_ident": "L04",
+    "chart_name": "LOC RWY 04"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260504_r6_strict_visible_inputs/inputs/g_visible_observables_eval200_strict.jsonl",
+  "observable_facts": [
+    {
+      "bbox": {
+        "height": 0.0618,
+        "width": 0.4021,
+        "x_center": 0.7519,
+        "y_center": 0.1416
+      },
+      "chart_id": "KCJR_L04",
+      "observable_type": "ma_text_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_01_missed_approach_text",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KCJR_L04_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.5004,
+        "width": 0.9083,
+        "x_center": 0.5012,
+        "y_center": 0.4525
+      },
+      "chart_id": "KCJR_L04",
+      "observable_type": "plan_view_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_02_plan_view",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KCJR_L04_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0539,
+        "width": 0.2586,
+        "x_center": 0.5374,
+        "y_center": 0.7297
+      },
+      "chart_id": "KCJR_L04",
+      "observable_type": "ma_detail_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_03_lower_detail_area",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KCJR_L04_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.034,
+        "x_center": 0.4387,
+        "y_center": 0.7111
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "900",
+          "value": 900,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KCJR_L04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_iconalign_001_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "900",
+      "region_id": "KCJR_L04_iconalign_001_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 900"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5063,
+        "y_center": 0.7114
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "2600",
+          "value": 2600,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KCJR_L04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_iconalign_004_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "2600",
+      "region_id": "KCJR_L04_iconalign_004_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 2600"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0535,
+        "x_center": 0.6355,
+        "y_center": 0.7169
+      },
+      "candidates": [
+        {
+          "candidate_type": "fix_ident_literal",
+          "raw_text": "NISAE",
+          "value": "NISAE",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KCJR_L04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_iconalign_003_fix_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "NISAE",
+      "region_id": "KCJR_L04_iconalign_003_fix_text",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "FIX_TEXT",
+      "visible_literal": "FIX_TEXT: NISAE"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0386,
+        "x_center": 0.6355,
+        "y_center": 0.7302
+      },
+      "candidates": [
+        {
+          "candidate_type": "navaid_ident_literal",
+          "raw_text": "GVE",
+          "value": "GVE",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KCJR_L04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_iconalign_005_navaid_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "GVE",
+      "region_id": "KCJR_L04_iconalign_005_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "NAVAID_TEXT",
+      "visible_literal": "NAVAID_TEXT: GVE"
+    },
+    {
+      "bbox": {
+        "height": 0.013,
+        "width": 0.05,
+        "x_center": 0.569,
+        "y_center": 0.736
+      },
+      "candidates": [],
+      "chart_id": "KCJR_L04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_iconalign_006_radial_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "径向文字",
+      "region_id": "KCJR_L04_iconalign_006_radial_text",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "RADIAL_TEXT",
+      "visible_literal": "径向文字"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5019,
+        "y_center": 0.7494
+      },
+      "candidates": [],
+      "chart_id": "KCJR_L04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_iconalign_002_heading_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "180°",
+      "region_id": "KCJR_L04_iconalign_002_heading_text",
+      "region_type": "HEADING_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "HEADING_TEXT",
+      "visible_literal": "HEADING_TEXT: 180°"
+    },
+    {
+      "bbox": {
+        "height": 0.0258,
+        "width": 0.0285,
+        "x_center": 0.5136,
+        "y_center": 0.7342
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KCJR_L04",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_iconalign_013_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KCJR_L04_iconalign_013_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0323,
+        "width": 0.015,
+        "x_center": 0.4374,
+        "y_center": 0.7367
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KCJR_L04",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_iconalign_010_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KCJR_L04_iconalign_010_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0121,
+        "width": 0.0521,
+        "x_center": 0.6319,
+        "y_center": 0.7379
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "PATH_SEGMENT",
+          "value": "PATH_SEGMENT",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KCJR_L04",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KCJR_L04_iconalign_014_path_segment",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KCJR_L04_iconalign_014_path_segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "visible_label_prefix": "PATH_SEGMENT",
+      "visible_literal": "detected lower detail: path segment"
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

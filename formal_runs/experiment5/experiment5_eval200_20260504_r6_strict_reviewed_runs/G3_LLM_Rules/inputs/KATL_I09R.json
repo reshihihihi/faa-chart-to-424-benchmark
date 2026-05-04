@@ -1,0 +1,262 @@
+{
+  "chart_id": "KATL_I09R",
+  "procedure": {
+    "airport": "KATL",
+    "approach_ident": "I09R",
+    "chart_name": "ILS OR LOC RWY 09R"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260504_r6_strict_visible_inputs/inputs/g_visible_observables_eval200_strict.jsonl",
+  "observable_facts": [
+    {
+      "bbox": {
+        "height": 0.061,
+        "width": 0.4201,
+        "x_center": 0.7429,
+        "y_center": 0.1412
+      },
+      "chart_id": "KATL_I09R",
+      "observable_type": "ma_text_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KATL_I09R_01_missed_approach_text",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KATL_I09R_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.436,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.433
+      },
+      "chart_id": "KATL_I09R",
+      "observable_type": "plan_view_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KATL_I09R_02_plan_view",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KATL_I09R_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0561,
+        "width": 0.2014,
+        "x_center": 0.5623,
+        "y_center": 0.6791
+      },
+      "chart_id": "KATL_I09R",
+      "observable_type": "ma_detail_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KATL_I09R_03_lower_detail_area",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KATL_I09R_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.013,
+        "width": 0.044,
+        "x_center": 0.495,
+        "y_center": 0.659
+      },
+      "candidates": [],
+      "chart_id": "KATL_I09R",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KATL_I09R_iconalign_003_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "高度文字",
+      "region_id": "KATL_I09R_iconalign_003_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "高度文字"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0676,
+        "x_center": 0.6327,
+        "y_center": 0.6599
+      },
+      "candidates": [
+        {
+          "candidate_type": "fix_ident_literal",
+          "raw_text": "CONNI",
+          "value": "CONNI",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KATL_I09R",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KATL_I09R_iconalign_002_fix_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "CONNI",
+      "region_id": "KATL_I09R_iconalign_002_fix_text",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "FIX_TEXT",
+      "visible_literal": "FIX_TEXT: CONNI"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.038,
+        "x_center": 0.5612,
+        "y_center": 0.6743
+      },
+      "candidates": [
+        {
+          "candidate_type": "navaid_ident_literal",
+          "raw_text": "AHN",
+          "value": "AHN",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KATL_I09R",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KATL_I09R_iconalign_004_navaid_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "AHN",
+      "region_id": "KATL_I09R_iconalign_004_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "NAVAID_TEXT",
+      "visible_literal": "NAVAID_TEXT: AHN"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0495,
+        "x_center": 0.5631,
+        "y_center": 0.6865
+      },
+      "candidates": [
+        {
+          "candidate_type": "radial_text_literal",
+          "raw_text": "R-235",
+          "value": 235,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KATL_I09R",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KATL_I09R_iconalign_005_radial_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "R-235",
+      "region_id": "KATL_I09R_iconalign_005_radial_text",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "RADIAL_TEXT",
+      "visible_literal": "RADIAL_TEXT: R-235"
+    },
+    {
+      "bbox": {
+        "height": 0.0125,
+        "width": 0.0759,
+        "x_center": 0.4958,
+        "y_center": 0.7011
+      },
+      "candidates": [],
+      "chart_id": "KATL_I09R",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KATL_I09R_iconalign_001_heading_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "hdg 100°",
+      "region_id": "KATL_I09R_iconalign_001_heading_text",
+      "region_type": "HEADING_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "HEADING_TEXT",
+      "visible_literal": "HEADING_TEXT: hdg 100°"
+    },
+    {
+      "bbox": {
+        "height": 0.0129,
+        "width": 0.0087,
+        "x_center": 0.4926,
+        "y_center": 0.6704
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KATL_I09R",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KATL_I09R_iconalign_009_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KATL_I09R_iconalign_009_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

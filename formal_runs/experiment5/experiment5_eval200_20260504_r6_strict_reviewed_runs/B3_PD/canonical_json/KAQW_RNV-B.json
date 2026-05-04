@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAQW_RNV-B",
+  "procedure": {
+    "airport": "KAQW",
+    "approach_ident": "RNV-B",
+    "chart_name": "RNAV (GPS)-B"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

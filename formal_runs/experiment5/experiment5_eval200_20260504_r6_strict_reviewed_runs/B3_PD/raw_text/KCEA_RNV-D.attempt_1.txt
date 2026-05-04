@@ -1,0 +1,1 @@
+{"chart_id":"KCEA_RNV-D","procedure":{"airport":"KCEA","approach_ident":"RNV-D","chart_name":"RNAV (GPS)-D"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

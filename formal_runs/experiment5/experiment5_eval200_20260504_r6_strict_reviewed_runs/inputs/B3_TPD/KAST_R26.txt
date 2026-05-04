@@ -1,0 +1,15 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: (Do not exceed 210K until STAZY) Climb to 5000 direct STAZY and left turn on track 189° to YUXBU and left turn on track 113° to KULOA and hold, continue climb-in-hold to 5000.
+
+[PLAN_VIEW]
+
+
+[MISSED_APPROACH_DETAIL_AREA]
+ALTITUDE_TEXT: 5000
+FIX_TEXT: STAZY
+FIX_TEXT: YUXBU
+FIX_TEXT: KULOA
+CLIMB_ARROW
+CLIMB_ARROW
+FIX_SYMBOL
+FIX_SYMBOL

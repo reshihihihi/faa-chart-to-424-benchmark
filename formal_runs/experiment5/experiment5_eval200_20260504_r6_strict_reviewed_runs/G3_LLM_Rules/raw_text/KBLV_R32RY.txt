@@ -1,0 +1,1 @@
+{"chart_id":"KBLV_R32RY","procedure":{"airport":"KBLV","approach_ident":"R32RY","chart_name":"RNAV (RNP) Z RWY 14L"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

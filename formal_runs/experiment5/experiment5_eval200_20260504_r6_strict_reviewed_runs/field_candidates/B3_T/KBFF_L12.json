@@ -1,0 +1,212 @@
+{
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "chart_id": "KBFF_L12",
+  "field_candidates": {
+    "altitude_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "altitude_ft",
+        "global_end_char": 53,
+        "global_start_char": 49,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 30,
+        "region_local_start_char": 26,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 53,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold,",
+        "source_start_char": 49,
+        "value": 4500
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "altitude_ft",
+        "global_end_char": 85,
+        "global_start_char": 81,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 62,
+        "region_local_start_char": 58,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 85,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 69",
+        "source_start_char": 81,
+        "value": 6900
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "climb_phrase",
+        "global_end_char": 45,
+        "global_start_char": 40,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 22,
+        "region_local_start_char": 17,
+        "rule_id": "climb_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 45,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue",
+        "source_start_char": 40,
+        "value": "MISSED APPROACH: Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue"
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "climb_phrase",
+        "global_end_char": 131,
+        "global_start_char": 126,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 108,
+        "region_local_start_char": 103,
+        "rule_id": "climb_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 131,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 6900.",
+        "source_start_char": 126,
+        "value": "to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 6900."
+      }
+    ],
+    "course_candidates": [],
+    "direct_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "direct_phrase",
+        "global_end_char": 92,
+        "global_start_char": 86,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 69,
+        "region_local_start_char": 63,
+        "rule_id": "direct_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 92,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 6900.",
+        "source_start_char": 86,
+        "value": "MISSED APPROACH: Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 6900."
+      }
+    ],
+    "fix_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 96,
+        "global_start_char": 93,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 73,
+        "region_local_start_char": 70,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 96,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "ROACH: Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 6900.",
+        "source_start_char": 93,
+        "value": "BFF"
+      }
+    ],
+    "hold_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "hold_phrase",
+        "global_end_char": 112,
+        "global_start_char": 108,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 89,
+        "region_local_start_char": 85,
+        "rule_id": "hold_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 112,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "D APPROACH: Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 6900.",
+        "source_start_char": 108,
+        "value": "D APPROACH: Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 6900."
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "hold_phrase",
+        "global_end_char": 139,
+        "global_start_char": 135,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 116,
+        "region_local_start_char": 112,
+        "rule_id": "hold_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 139,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "hen climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 6900.",
+        "source_start_char": 135,
+        "value": "hen climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 6900."
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "confidence": 0.95,
+        "field_type": "missed_approach_instruction",
+        "global_end_char": 148,
+        "global_start_char": 40,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "region_local_end_char": 125,
+        "region_local_start_char": 17,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 148,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 6900.",
+        "source_start_char": 40,
+        "value": "Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-in-hold to 6900."
+      }
+    ],
+    "route_sequence_snippets": [],
+    "track_to_fix_snippets": [],
+    "turn_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "turn_direction",
+        "global_end_char": 72,
+        "global_start_char": 68,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 49,
+        "region_local_start_char": 45,
+        "rule_id": "turn_direction_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 72,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 4500 then climbing left turn to 6900 direct BFF VORTAC and hold, A5 continue climb-",
+        "source_start_char": 68,
+        "value": "LEFT"
+      }
+    ]
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_gold_observable_evidence": false,
+    "uses_human_evidence_provenance": false,
+    "uses_scorer_output": false
+  },
+  "region_profile": "T",
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "source_contract": {
+    "allows_canonical_target": false,
+    "allows_chart_image_pixels": false,
+    "allows_gold_observable_evidence": false,
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "source": "same_chart_human_confirmed_roi_ocr_text"
+  }
+}

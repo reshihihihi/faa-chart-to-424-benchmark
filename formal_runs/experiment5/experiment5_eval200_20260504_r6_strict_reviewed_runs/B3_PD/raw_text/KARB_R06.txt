@@ -1,0 +1,1 @@
+{"chart_id":"KARB_R06","procedure":{"airport":"KARB","approach_ident":"R06","chart_name":"RNAV (GPS) RWY 06"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

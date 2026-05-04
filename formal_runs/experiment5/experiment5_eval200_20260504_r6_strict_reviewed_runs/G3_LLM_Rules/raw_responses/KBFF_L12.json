@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_f70d28f6-ad09-4c89-8647-03a0040df6be",
+  "object": "chat.completion",
+  "created": 1777868823,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_3hcHjBfYfjc6reqn1m1fHMem",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KBFF_L12\",\"procedure\":{\"airport\":\"KBFF\",\"approach_ident\":\"L12\",\"chart_name\":\"ILS OR LOC/DME RWY 12\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

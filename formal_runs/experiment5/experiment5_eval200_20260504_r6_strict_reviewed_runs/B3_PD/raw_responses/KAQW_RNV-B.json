@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_e07d7918-3353-442c-86c9-3e7d67821465",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_EnevFUxwpvvqcQHrxCCxvapg",
+            "function": {
+              "arguments": "{\"chart_id\":\"KAQW_RNV-B\",\"procedure\":{\"airport\":\"KAQW\",\"approach_ident\":\"RNV-B\",\"chart_name\":\"RNAV (GPS)-B\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868268,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

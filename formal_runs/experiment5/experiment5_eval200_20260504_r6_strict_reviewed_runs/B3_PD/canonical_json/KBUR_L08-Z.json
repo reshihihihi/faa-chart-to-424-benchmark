@@ -1,0 +1,54 @@
+{
+  "chart_id": "KBUR_L08-Z",
+  "procedure": {
+    "airport": "KBUR",
+    "approach_ident": "L08-Z",
+    "chart_name": "ILS Z OR LOC Z RWY 08"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 1
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "VTU"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 4600,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "navaid_radial",
+              "navaid": "VTU",
+              "radial_deg": 86,
+              "direction": "outbound"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

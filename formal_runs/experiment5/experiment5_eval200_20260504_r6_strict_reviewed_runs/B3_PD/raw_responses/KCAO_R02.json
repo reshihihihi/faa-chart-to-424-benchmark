@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_24579a60-22cc-4090-ab6c-c0b750bb957f",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_LCrZjqqm30FJ6J97OXFZaukT",
+            "function": {
+              "arguments": "{\"chart_id\":\"KCAO_R02\",\"procedure\":{\"airport\":\"KCAO\",\"approach_ident\":\"R02\",\"chart_name\":\"RNAV (GPS) RWY 02\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868310,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

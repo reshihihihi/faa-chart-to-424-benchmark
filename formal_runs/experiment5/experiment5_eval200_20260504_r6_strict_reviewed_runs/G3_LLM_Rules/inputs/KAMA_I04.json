@@ -1,0 +1,372 @@
+{
+  "chart_id": "KAMA_I04",
+  "procedure": {
+    "airport": "KAMA",
+    "approach_ident": "I04",
+    "chart_name": "ILS OR LOC RWY 04"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260504_r6_strict_visible_inputs/inputs/g_visible_observables_eval200_strict.jsonl",
+  "observable_facts": [
+    {
+      "bbox": {
+        "height": 0.0949,
+        "width": 0.2485,
+        "x_center": 0.8287,
+        "y_center": 0.1581
+      },
+      "chart_id": "KAMA_I04",
+      "observable_type": "ma_text_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_01_missed_approach_text",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAMA_I04_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.449,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.468
+      },
+      "chart_id": "KAMA_I04",
+      "observable_type": "plan_view_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_02_plan_view",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAMA_I04_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0545,
+        "width": 0.2243,
+        "x_center": 0.5508,
+        "y_center": 0.7195
+      },
+      "chart_id": "KAMA_I04",
+      "observable_type": "ma_detail_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_03_lower_detail_area",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAMA_I04_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5477,
+        "y_center": 0.7016
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "5000",
+          "value": 5000,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KAMA_I04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_iconalign_003_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "5000",
+      "region_id": "KAMA_I04_iconalign_003_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 5000"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.4717,
+        "y_center": 0.7019
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "4100",
+          "value": 4100,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KAMA_I04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_iconalign_001_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "4100",
+      "region_id": "KAMA_I04_iconalign_001_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 4100"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0613,
+        "x_center": 0.6286,
+        "y_center": 0.7024
+      },
+      "candidates": [
+        {
+          "candidate_type": "fix_ident_literal",
+          "raw_text": "CAUDE",
+          "value": "CAUDE",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KAMA_I04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_iconalign_002_fix_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "CAUDE",
+      "region_id": "KAMA_I04_iconalign_002_fix_text",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "FIX_TEXT",
+      "visible_literal": "FIX_TEXT: CAUDE"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0375,
+        "x_center": 0.5234,
+        "y_center": 0.7409
+      },
+      "candidates": [
+        {
+          "candidate_type": "navaid_ident_literal",
+          "raw_text": "PNH",
+          "value": "PNH",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KAMA_I04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_iconalign_004_navaid_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "PNH",
+      "region_id": "KAMA_I04_iconalign_004_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "review_action": "pending",
+      "visible_label_prefix": "NAVAID_TEXT",
+      "visible_literal": "NAVAID_TEXT: PNH"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0469,
+        "x_center": 0.5653,
+        "y_center": 0.7409
+      },
+      "candidates": [
+        {
+          "candidate_type": "radial_text_literal",
+          "raw_text": "R-118",
+          "value": 118,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KAMA_I04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_iconalign_005_radial_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "R-118",
+      "region_id": "KAMA_I04_iconalign_005_radial_text",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "pending",
+      "visible_label_prefix": "RADIAL_TEXT",
+      "visible_literal": "RADIAL_TEXT: R-118"
+    },
+    {
+      "bbox": {
+        "height": 0.0274,
+        "width": 0.0421,
+        "x_center": 0.5403,
+        "y_center": 0.7197
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KAMA_I04",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_iconalign_010_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KAMA_I04_iconalign_010_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0267,
+        "width": 0.0136,
+        "x_center": 0.469,
+        "y_center": 0.7314
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KAMA_I04",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_iconalign_008_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KAMA_I04_iconalign_008_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0097,
+        "width": 0.0186,
+        "x_center": 0.6264,
+        "y_center": 0.7237
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "FIX_SYMBOL",
+          "value": "FIX_SYMBOL",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KAMA_I04",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_iconalign_009_fix_symbol",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KAMA_I04_iconalign_009_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "visible_label_prefix": "FIX_SYMBOL",
+      "visible_literal": "detected lower detail: fix symbol"
+    },
+    {
+      "bbox": {
+        "height": 0.0234,
+        "width": 0.0273,
+        "x_center": 0.5242,
+        "y_center": 0.7347
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "PATH_SEGMENT",
+          "value": "PATH_SEGMENT",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KAMA_I04",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAMA_I04_iconalign_011_path_segment",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KAMA_I04_iconalign_011_path_segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "visible_label_prefix": "PATH_SEGMENT",
+      "visible_literal": "detected lower detail: path segment"
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_4e9021e4-7377-40c9-845c-04e07e5a72ac",
+  "object": "chat.completion",
+  "created": 1777869204,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_J8UH3HtG1EW1wXzFhlOsOR9T",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAKO_R29\",\"procedure\":{\"airport\":\"KAKO\",\"approach_ident\":\"R29\",\"chart_name\":\"RNAV (GPS) RWY 29\"},\"missed_approach\":{\"leg_count\":{\"status\":\"present\",\"value\":1},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":\"unknown\"},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"KUKMY\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":7500,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"unknown\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}}]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "chart_id": "KAUS_I18L",
+  "airport": "KAUS",
+  "approach_ident": "I18L",
+  "chart_name": "ILS OR LOC RWY 18L",
+  "gold_ma_prose": "MISSED APPROACH: Climb to 1000 then climbing left turn to 3000 on heading 040° and CWK VORTAC R-088 to HOOKK/CWK 17 DME and hold.",
+  "field_candidates": {
+    "schema_version": "experiment5_gold_ma_prose_field_candidates_schema_v1",
+    "chart_id": "KAUS_I18L",
+    "candidate_source": "experiment5_gold_ma_prose_regex_candidates_v1",
+    "source_contract": {
+      "source": "adjudicated_gold_ma_prose",
+      "allows_canonical_target": false,
+      "allows_gold_observable_evidence": false,
+      "allows_field_review_v2": false,
+      "allows_cifp_or_arinc_424": false
+    },
+    "leakage_policy": {
+      "uses_canonical_target": false,
+      "uses_expected_value": false,
+      "uses_gold_field_to_leg_mapping": false,
+      "uses_human_evidence_provenance": false,
+      "uses_gold_observable_evidence": false,
+      "uses_cifp_or_arinc_424": false,
+      "uses_scorer_output": false,
+      "uses_field_review_v2": false
+    },
+    "field_candidates": {
+      "fix_candidates": [],
+      "altitude_candidates": [
+        {
+          "value": 1000,
+          "field_type": "altitude_ft",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "1000",
+          "source_start_char": 26,
+          "source_end_char": 30,
+          "rule_id": "gold_ma_altitude_ft_regex_v1",
+          "confidence": 0.95,
+          "notes": "climb_to_altitude_context"
+        }
+      ],
+      "turn_candidates": [
+        {
+          "value": "LEFT",
+          "field_type": "turn_direction",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CLIMBING LEFT TURN",
+          "source_start_char": 36,
+          "source_end_char": 54,
+          "rule_id": "gold_ma_turn_regex_v1",
+          "confidence": 0.95,
+          "notes": "turn_phrase_context"
+        }
+      ],
+      "course_candidates": [
+        {
+          "value": {
+            "type": "navaid_radial",
+            "navaid": "CWK",
+            "radial_deg": 88.0,
+            "direction": "outbound"
+          },
+          "field_type": "navaid_radial",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CWK VORTAC R-088",
+          "source_start_char": 83,
+          "source_end_char": 99,
+          "rule_id": "gold_ma_navaid_radial_regex_v1",
+          "confidence": 0.9,
+          "notes": "navaid_radial_context"
+        }
+      ],
+      "hold_candidates": [
+        {
+          "value": "MISSED APPROACH: Climb to 1000 then climbing left turn to 3000 on heading 040° and CWK VORTAC R-088 to HOOKK/CWK 17 DME and hold.",
+          "field_type": "hold_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: Climb to 1000 then climbing left turn to 3000 on heading 040° and CWK VORTAC R-088 to HOOKK/CWK 17 DME and hold.",
+          "source_start_char": 124,
+          "source_end_char": 128,
+          "rule_id": "gold_ma_hold_phrase_regex_v1",
+          "confidence": 0.95,
+          "notes": "hold_phrase_context_no_leg_binding"
+        }
+      ],
+      "instruction_snippets": [
+        {
+          "value": "Climb to 1000 then climbing left turn to 3000 on heading 040° and CWK VORTAC R-088 to HOOKK/CWK 17 DME and hold.",
+          "field_type": "missed_approach_instruction",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: Climb to 1000 then climbing left turn to 3000 on heading 040° and CWK VORTAC R-088 to HOOKK/CWK 17 DME and hold.",
+          "source_start_char": 0,
+          "source_end_char": 129,
+          "rule_id": "gold_ma_instruction_span_regex_v1",
+          "confidence": 0.99,
+          "notes": "automatic_candidate_from_adjudicated_gold_ma_prose_no_target_or_leg_binding"
+        }
+      ],
+      "track_to_fix_snippets": [],
+      "route_sequence_snippets": [],
+      "direct_phrase_snippets": [],
+      "climb_phrase_snippets": [
+        {
+          "value": "CLIMB TO 1000 THEN CLIMBING LEFT TURN TO 3000 ON HEADING 040° AND CWK VORTAC R-088 TO HOOKK/CWK 17 DME AND HOLD",
+          "field_type": "climb_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CLIMB TO 1000 THEN CLIMBING LEFT TURN TO 3000 ON HEADING 040° AND CWK VORTAC R-088 TO HOOKK/CWK 17 DME AND HOLD",
+          "source_start_char": 17,
+          "source_end_char": 128,
+          "rule_id": "gold_ma_climb_phrase_regex_v1",
+          "confidence": 0.9,
+          "notes": "climb_phrase_context"
+        }
+      ]
+    }
+  }
+}

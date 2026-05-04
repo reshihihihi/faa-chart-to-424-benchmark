@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_55a845ac-060d-4ea3-b136-6d145886ab56",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_n51eTRa4AVgSe4lb3cFYqQ8W",
+            "function": {
+              "arguments": "{\"chart_id\":\"KABR_R31\",\"procedure\":{\"airport\":\"KABR\",\"approach_ident\":\"R31\",\"chart_name\":\"RNAV (GPS) RWY 31\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868131,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

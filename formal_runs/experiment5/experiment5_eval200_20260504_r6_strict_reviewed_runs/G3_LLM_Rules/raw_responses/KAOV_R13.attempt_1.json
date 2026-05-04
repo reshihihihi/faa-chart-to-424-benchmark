@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_e5bcf542-43f2-4f5c-96c2-4f5e48bcb170",
+  "object": "chat.completion",
+  "created": 1777869279,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_sOn19Hsfqtctmj3I4pvSGyfr",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAOV_R13\",\"procedure\":{\"airport\":\"KAOV\",\"approach_ident\":\"R13\",\"chart_name\":\"RNAV (GPS) RWY 13\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

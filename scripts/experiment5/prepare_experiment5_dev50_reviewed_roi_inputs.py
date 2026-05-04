@@ -180,6 +180,8 @@ def main() -> int:
     parser.add_argument("--run-dir", type=Path, default=DEFAULT_RUN_DIR)
     parser.add_argument("--reviewed-ma-text", type=Path, default=DEFAULT_REVIEWED_MA_TEXT)
     parser.add_argument("--pd-visible", type=Path, default=DEFAULT_PD_VISIBLE)
+    parser.add_argument("--artifact-label", default="dev50")
+    parser.add_argument("--expected-chart-count", type=int, default=50)
     args = parser.parse_args()
 
     ma_rows = load_reviewed_text(args.reviewed_ma_text)
@@ -218,7 +220,7 @@ def main() -> int:
             audit_totals["cross_region_snippet_count"] += audit["cross_region_snippet_count"]
             manifest_rows.append(
                 {
-                    "schema_version": "experiment5_dev50_reviewed_roi_input_manifest_v1",
+                    "schema_version": f"experiment5_{args.artifact_label}_reviewed_roi_input_manifest_v1",
                     "chart_id": chart_id,
                     "region_profile": profile,
                     "regions": regions,
@@ -261,8 +263,8 @@ def main() -> int:
                 }
             )
 
-    manifest_path = args.run_dir / "manifests" / "roi_ocr_candidate_input_manifest_dev50_reviewed_strict.jsonl"
-    validation_report_path = args.run_dir / "reports" / "roi_field_candidate_validation_dev50_reviewed_strict.jsonl"
+    manifest_path = args.run_dir / "manifests" / f"roi_ocr_candidate_input_manifest_{args.artifact_label}_reviewed_strict.jsonl"
+    validation_report_path = args.run_dir / "reports" / f"roi_field_candidate_validation_{args.artifact_label}_reviewed_strict.jsonl"
     write_jsonl(manifest_path, manifest_rows)
     write_jsonl(validation_report_path, validation_rows)
     leakage = scan_forbidden([manifest_path])
@@ -285,17 +287,17 @@ def main() -> int:
         "unknown_source_section_count": audit_totals["unknown_source_section_count"],
         "cross_region_snippet_count": audit_totals["cross_region_snippet_count"],
         "no_leakage_status": leakage["status"],
-        "ready_for_b3_b4_dev50": (
-            len(chart_ids) == 50
+        "ready_for_b3_b4": (
+            len(chart_ids) == args.expected_chart_count
             and not missing_ma
             and not missing_pd
             and not any(row["validation_error_count"] for row in validation_rows)
             and leakage["status"] == "PASS"
         ),
     }
-    write_json(args.run_dir / "reports" / "experiment5_dev50_reviewed_roi_input_readiness.json", summary)
+    write_json(args.run_dir / "reports" / f"experiment5_{args.artifact_label}_reviewed_roi_input_readiness.json", summary)
     print(json.dumps(summary, ensure_ascii=False, indent=2))
-    return 0 if summary["ready_for_b3_b4_dev50"] else 1
+    return 0 if summary["ready_for_b3_b4"] else 1
 
 
 if __name__ == "__main__":

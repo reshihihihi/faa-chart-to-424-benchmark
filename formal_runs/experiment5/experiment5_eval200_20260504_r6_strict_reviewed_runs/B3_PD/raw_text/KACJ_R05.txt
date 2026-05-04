@@ -1,0 +1,1 @@
+{"chart_id":"KACJ_R05","procedure":{"airport":"KACJ","approach_ident":"R05","chart_name":"RNAV (GPS) RWY 05"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

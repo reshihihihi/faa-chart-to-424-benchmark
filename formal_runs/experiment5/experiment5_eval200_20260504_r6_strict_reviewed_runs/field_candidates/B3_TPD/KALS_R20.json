@@ -1,0 +1,194 @@
+{
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "chart_id": "KALS_R20",
+  "field_candidates": {
+    "altitude_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "altitude_ft",
+        "global_end_char": 54,
+        "global_start_char": 49,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 31,
+        "region_local_start_char": 26,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 54,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500.",
+        "source_start_char": 49,
+        "value": 11500
+      },
+      {
+        "confidence": 0.45,
+        "field_type": "altitude_ft",
+        "global_end_char": 176,
+        "global_start_char": 171,
+        "notes": "other_chart_text_procedure_word_context",
+        "region_local_end_char": 20,
+        "region_local_start_char": 15,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 176,
+        "source_region": "MISSED_APPROACH_DETAIL_AREA",
+        "source_section": "missed_approach_detail_area",
+        "source_snippet": "ALTITUDE_TEXT: 11500 FIX_TEXT: RODDS CLIMB_ARROW FIX_SYMBOL",
+        "source_start_char": 171,
+        "value": 11500
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "climb_phrase",
+        "global_end_char": 45,
+        "global_start_char": 40,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 22,
+        "region_local_start_char": 17,
+        "rule_id": "climb_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 45,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500.",
+        "source_start_char": 40,
+        "value": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500."
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "climb_phrase",
+        "global_end_char": 92,
+        "global_start_char": 87,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 69,
+        "region_local_start_char": 64,
+        "rule_id": "climb_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 92,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500.",
+        "source_start_char": 87,
+        "value": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500."
+      }
+    ],
+    "course_candidates": [],
+    "direct_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "direct_phrase",
+        "global_end_char": 61,
+        "global_start_char": 55,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 38,
+        "region_local_start_char": 32,
+        "rule_id": "direct_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 61,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500.",
+        "source_start_char": 55,
+        "value": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500."
+      }
+    ],
+    "fix_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 67,
+        "global_start_char": 62,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 44,
+        "region_local_start_char": 39,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 67,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500.",
+        "source_start_char": 62,
+        "value": "RODDS"
+      }
+    ],
+    "hold_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "hold_phrase",
+        "global_end_char": 76,
+        "global_start_char": 72,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 53,
+        "region_local_start_char": 49,
+        "rule_id": "hold_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 76,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500.",
+        "source_start_char": 72,
+        "value": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500."
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "hold_phrase",
+        "global_end_char": 100,
+        "global_start_char": 96,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 77,
+        "region_local_start_char": 73,
+        "rule_id": "hold_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 100,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500.",
+        "source_start_char": 96,
+        "value": "MISSED APPROACH: Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500."
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "confidence": 0.95,
+        "field_type": "missed_approach_instruction",
+        "global_end_char": 110,
+        "global_start_char": 40,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "region_local_end_char": 87,
+        "region_local_start_char": 17,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 110,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500.",
+        "source_start_char": 40,
+        "value": "Climb to 11500 direct RODDS and hold, continue climb-in-hold to 11500."
+      }
+    ],
+    "route_sequence_snippets": [],
+    "track_to_fix_snippets": [],
+    "turn_candidates": []
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_gold_observable_evidence": false,
+    "uses_human_evidence_provenance": false,
+    "uses_scorer_output": false
+  },
+  "region_profile": "TPD",
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "source_contract": {
+    "allows_canonical_target": false,
+    "allows_chart_image_pixels": false,
+    "allows_gold_observable_evidence": false,
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "source": "same_chart_human_confirmed_roi_ocr_text"
+  }
+}

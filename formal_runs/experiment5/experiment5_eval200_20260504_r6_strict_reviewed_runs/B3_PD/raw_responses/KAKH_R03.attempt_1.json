@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_e7208d81-37fa-4a2b-9159-0ba2de014876",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_eRvc3HoABmzljOg0pfre8pQV",
+            "function": {
+              "arguments": "{\"chart_id\":\"KAKH_R03\",\"procedure\":{\"airport\":\"KAKH\",\"approach_ident\":\"R03\",\"chart_name\":\"RNAV (GPS) RWY 03\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868197,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: Climb to 5000 direct SIMAY on track 091° to WARUV and hold, continue climb-in-hold to 5000.
