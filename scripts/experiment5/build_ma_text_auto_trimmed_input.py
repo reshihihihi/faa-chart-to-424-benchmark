@@ -149,15 +149,29 @@ def clean_known_ocr_noise(text: str) -> str:
     return ensure_terminal_punctuation(text)
 
 
-def build_cleaned_prose(row: dict[str, Any]) -> tuple[str, str]:
-    source_kind = "ocr_missed_approach_candidate"
-    source = str(row.get(source_kind) or "")
-    if not source.strip():
-        source_kind = "ocr_text_candidate"
-        source = str(row.get(source_kind) or "")
-    if not source.strip():
-        source_kind = "pdf_missed_approach_candidate"
-        source = str(row.get(source_kind) or "")
+def build_cleaned_prose(row: dict[str, Any], source_priority: str) -> tuple[str, str]:
+    if source_priority == "pdf_first":
+        source_kinds = [
+            "pdf_missed_approach_candidate",
+            "pdf_text_layer_candidate",
+            "ocr_missed_approach_candidate",
+            "ocr_text_candidate",
+        ]
+    else:
+        source_kinds = [
+            "ocr_missed_approach_candidate",
+            "ocr_text_candidate",
+            "pdf_missed_approach_candidate",
+            "pdf_text_layer_candidate",
+        ]
+    source_kind = source_kinds[0]
+    source = ""
+    for candidate_kind in source_kinds:
+        candidate = str(row.get(candidate_kind) or "")
+        if candidate.strip():
+            source_kind = candidate_kind
+            source = candidate
+            break
     prose = clean_known_ocr_noise(trim_to_missed_approach(source))
     return prose, source_kind
 
@@ -214,11 +228,13 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Build provisional MA text input by trimming and cleaning OCR.")
     parser.add_argument("--review-queue", type=Path, default=DEFAULT_REVIEW_QUEUE)
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    parser.add_argument("--artifact-label", default="dev50")
+    parser.add_argument("--source-priority", choices=["ocr_first", "pdf_first"], default="ocr_first")
     args = parser.parse_args()
 
     out_rows: list[dict[str, Any]] = []
     for row in read_jsonl(args.review_queue):
-        prose, source_kind = build_cleaned_prose(row)
+        prose, source_kind = build_cleaned_prose(row, args.source_priority)
         out_rows.append(
             {
                 "schema_version": "experiment5_ma_text_auto_cleaned_v2_provisional_v1",
@@ -244,9 +260,9 @@ def main() -> int:
             }
         )
 
-    input_path = args.out_dir / "inputs" / "gold_ma_text_dev50_ocr_auto_cleaned_v2_provisional.jsonl"
-    report_path = args.out_dir / "reports" / "ma_text_auto_cleaned_v2_provisional_report.md"
-    summary_path = args.out_dir / "reports" / "ma_text_auto_cleaned_v2_provisional_summary.json"
+    input_path = args.out_dir / "inputs" / f"gold_ma_text_{args.artifact_label}_ocr_auto_cleaned_v2_provisional.jsonl"
+    report_path = args.out_dir / "reports" / f"ma_text_{args.artifact_label}_auto_cleaned_v2_provisional_report.md"
+    summary_path = args.out_dir / "reports" / f"ma_text_{args.artifact_label}_auto_cleaned_v2_provisional_summary.json"
     write_jsonl(input_path, out_rows)
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text(render_report(out_rows) + "\n", encoding="utf-8")
@@ -254,6 +270,8 @@ def main() -> int:
         summary_path,
         {
             "created_at_utc": datetime.now(timezone.utc).isoformat(),
+            "artifact_label": args.artifact_label,
+            "source_priority": args.source_priority,
             "rows": len(out_rows),
             "input_path": str(input_path),
             "report_path": str(report_path),

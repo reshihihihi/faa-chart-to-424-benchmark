@@ -122,20 +122,29 @@ def chart_id_from_crop(path: Path) -> str:
     return path.name.replace("_admin_ma_text_crop_v2.png", "")
 
 
-def load_pdf_candidates(run_dir: Path) -> dict[str, str]:
-    path = run_dir / "inputs" / "gold_ma_text_dev50_candidate.jsonl"
+def load_pdf_candidates(run_dir: Path, artifact_label: str) -> dict[str, str]:
+    candidate_paths = [
+        run_dir / "inputs" / f"gold_ma_text_{artifact_label}_pdf_text_layer_candidate.jsonl",
+        run_dir / "inputs" / f"gold_ma_text_{artifact_label}_candidate.jsonl",
+        run_dir / "inputs" / "gold_ma_text_dev50_candidate.jsonl",
+    ]
     candidates: dict[str, str] = {}
-    for row in read_jsonl(path):
-        chart_id = row.get("chart_id")
-        text = row.get("gold_ma_prose")
-        if chart_id and isinstance(text, str):
-            candidates[str(chart_id)] = normalize_ocr_text(text)
+    for path in candidate_paths:
+        if not path.exists():
+            continue
+        for row in read_jsonl(path):
+            chart_id = row.get("chart_id")
+            text = row.get("gold_ma_prose")
+            if chart_id and isinstance(text, str):
+                candidates[str(chart_id)] = normalize_ocr_text(text)
+        if candidates:
+            break
     return candidates
 
 
-def render_review_sheet(rows: list[dict[str, Any]]) -> str:
+def render_review_sheet(rows: list[dict[str, Any]], artifact_label: str) -> str:
     lines = [
-        "# Experiment 5 dev50 MA_TEXT OCR 人工校验表",
+        f"# Experiment 5 {artifact_label} MA_TEXT OCR 人工校验表",
         "",
         "说明：这里的 OCR/PDF text-layer 都只是候选。请以图片为准，把确认后的文本填入 review JSONL 的 `reviewed_gold_ma_prose`。",
         "",
@@ -181,6 +190,7 @@ def main() -> int:
     parser.add_argument("--run-dir", type=Path, default=DEFAULT_RUN_DIR)
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
     parser.add_argument("--tesseract-cmd", type=Path, default=DEFAULT_TESSERACT_CMD)
+    parser.add_argument("--artifact-label", default="dev50")
     parser.add_argument("--limit", type=int, default=0)
     args = parser.parse_args()
 
@@ -196,7 +206,7 @@ def main() -> int:
     if args.limit:
         crop_paths = crop_paths[: args.limit]
 
-    pdf_candidates = load_pdf_candidates(args.run_dir)
+    pdf_candidates = load_pdf_candidates(args.run_dir, args.artifact_label)
     preprocessed_dir = args.out_dir / "visuals" / "preprocessed_admin_ma_text_crops_v2"
     rows: list[dict[str, Any]] = []
 
@@ -240,20 +250,21 @@ def main() -> int:
 
     inputs_dir = args.out_dir / "inputs"
     reports_dir = args.out_dir / "reports"
-    queue_path = inputs_dir / "gold_ma_text_dev50_ocr_review_queue.jsonl"
-    template_path = inputs_dir / "gold_ma_text_dev50_ocr_review_template.jsonl"
-    report_path = reports_dir / "ma_text_ocr_review_sheet_zh.md"
-    summary_path = reports_dir / "ma_text_ocr_review_summary.json"
+    queue_path = inputs_dir / f"gold_ma_text_{args.artifact_label}_ocr_review_queue.jsonl"
+    template_path = inputs_dir / f"gold_ma_text_{args.artifact_label}_ocr_review_template.jsonl"
+    report_path = reports_dir / f"ma_text_{args.artifact_label}_ocr_review_sheet_zh.md"
+    summary_path = reports_dir / f"ma_text_{args.artifact_label}_ocr_review_summary.json"
 
     write_jsonl(queue_path, rows)
     write_jsonl(template_path, rows)
     report_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.write_text(render_review_sheet(rows), encoding="utf-8")
+    report_path.write_text(render_review_sheet(rows, args.artifact_label), encoding="utf-8")
     write_json(
         summary_path,
         {
             "created_at_utc": datetime.now(timezone.utc).isoformat(),
             "chart_count": len(rows),
+            "artifact_label": args.artifact_label,
             "queue_path": str(queue_path),
             "template_path": str(template_path),
             "report_path": str(report_path),

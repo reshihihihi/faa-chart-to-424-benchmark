@@ -13,6 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 RUN_DIR = REPO_ROOT / "formal_runs" / "experiment5" / "experiment5_dev50_20260504_r5_ma_text_ocr_review"
 DEFAULT_PROVISIONAL = RUN_DIR / "inputs" / "gold_ma_text_dev50_ocr_auto_cleaned_v2_provisional.jsonl"
 DEFAULT_OUT = RUN_DIR / "inputs" / "gold_ma_text_dev50_ocr_reviewed.jsonl"
+DEFAULT_ARTIFACT_LABEL = "dev50"
 
 
 USER_IMAGE_CONFIRMED_OVERRIDES = {
@@ -47,6 +48,15 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
             if line:
                 rows.append(json.loads(line))
     return rows
+
+
+def read_override_json(path: Path | None) -> dict[str, str]:
+    if path is None:
+        return dict(USER_IMAGE_CONFIRMED_OVERRIDES)
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        raise ValueError(f"Override file must be a JSON object: {path}")
+    return {str(key): str(value) for key, value in data.items()}
 
 
 def write_json(path: Path, value: Any) -> None:
@@ -100,18 +110,18 @@ def scan_no_leakage(rows: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def render_report(rows: list[dict[str, Any]], scan: dict[str, Any]) -> str:
+def render_report(rows: list[dict[str, Any]], scan: dict[str, Any], artifact_label: str, overrides: dict[str, str]) -> str:
     status_counts = Counter(row["review_status"] for row in rows)
     lines = [
-        "# Experiment 5 dev50 MA_TEXT OCR reviewed input",
+        f"# Experiment 5 {artifact_label} MA_TEXT OCR reviewed input",
         "",
         f"Generated: {datetime.now(timezone.utc).isoformat()}",
         "",
         "## 结论",
         "",
-        "`gold_ma_text_dev50_ocr_reviewed.jsonl` 已生成。50 条都以 `MISSED APPROACH:` 开头，且不使用最终答案、canonical_answer 或 scoring target。",
+        f"`gold_ma_text_{artifact_label}_ocr_reviewed.jsonl` 已生成。所有行都以 `MISSED APPROACH:` 开头，且不使用最终答案、canonical_answer 或 scoring target。",
         "",
-        "6 条原先可疑的 OCR 已按用户提供的图片文本覆盖；其余 44 条来自 auto-cleaned v2 且没有 suspicious flag。",
+        f"{len(overrides)} 条原先可疑的 OCR 已按图片/人工检查文本覆盖；其余行来自 auto-cleaned v2 且没有 suspicious flag。",
         "",
         "## 计数",
         "",
@@ -128,11 +138,11 @@ def render_report(rows: list[dict[str, Any]], scan: dict[str, Any]) -> str:
             f"- forbidden key hits: {scan['forbidden_key_hit_count']}",
             f"- non-MISSED-APPROACH prefix rows: {scan['non_missed_approach_prefix_count']}",
             "",
-            "## 用户图片确认覆盖的 6 条",
+            f"## 图片/人工检查覆盖的 {len(overrides)} 条",
             "",
         ]
     )
-    for chart_id, prose in USER_IMAGE_CONFIRMED_OVERRIDES.items():
+    for chart_id, prose in sorted(overrides.items()):
         lines.append(f"- `{chart_id}`: {prose}")
     return "\n".join(lines) + "\n"
 
@@ -141,16 +151,21 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Finalize reviewed MA_TEXT OCR input after user image confirmation.")
     parser.add_argument("--provisional", type=Path, default=DEFAULT_PROVISIONAL)
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
+    parser.add_argument("--artifact-label", default=DEFAULT_ARTIFACT_LABEL)
+    parser.add_argument("--override-json", type=Path, default=None)
     args = parser.parse_args()
 
+    overrides = read_override_json(args.override_json)
     rows: list[dict[str, Any]] = []
     for row in read_jsonl(args.provisional):
         chart_id = str(row["chart_id"])
-        if chart_id in USER_IMAGE_CONFIRMED_OVERRIDES:
-            prose = USER_IMAGE_CONFIRMED_OVERRIDES[chart_id]
-            review_status = "reviewed_accept_user_image_confirmed"
-            reviewer = "user_20260504_inline_image_confirmation"
+        if chart_id in overrides:
+            prose = overrides[chart_id]
+            review_status = "reviewed_accept_image_or_manual_inspected"
+            reviewer = "image_or_manual_inspection_20260504"
         else:
+            if row.get("suspicious_flags"):
+                raise SystemExit(f"Unresolved suspicious row without override: {chart_id} {row.get('suspicious_flags')}")
             prose = str(row["gold_ma_prose"])
             review_status = "auto_cleaned_v2_accept_no_suspicious_flags"
             reviewer = "codex_auto_cleaned_v2_no_suspicious_flags"
@@ -180,8 +195,11 @@ def main() -> int:
     scan = scan_no_leakage(rows)
     write_jsonl(args.out, rows)
     reports_dir = args.out.parents[1] / "reports"
-    write_json(reports_dir / "ma_text_ocr_reviewed_no_leakage_report.json", scan)
-    (reports_dir / "ma_text_ocr_reviewed_summary_zh.md").write_text(render_report(rows, scan), encoding="utf-8")
+    write_json(reports_dir / f"ma_text_{args.artifact_label}_ocr_reviewed_no_leakage_report.json", scan)
+    (reports_dir / f"ma_text_{args.artifact_label}_ocr_reviewed_summary_zh.md").write_text(
+        render_report(rows, scan, args.artifact_label, overrides),
+        encoding="utf-8",
+    )
     print(json.dumps({"rows": len(rows), "out": str(args.out), "scan_status": scan["status"]}, ensure_ascii=False, indent=2))
     return 0 if scan["status"] == "PASS" else 1
 
