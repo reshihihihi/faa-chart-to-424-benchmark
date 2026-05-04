@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/training/group1_sft/manifests/d1_chart_to_evidence_boxes_and_canonical.schema.json",
-  "title": "D1 Fine Evidence Boxes Plus Field Grounding Plus Canonical Output",
+  "title": "D1 Fine Evidence Boxes Diagnostic Wrapper With Canonical Prediction",
   "type": "object",
-  "required": ["evidence_boxes", "canonical_prediction", "answer_grounding"],
+  "required": ["evidence_boxes", "answer_grounding", "canonical_prediction"],
   "additionalProperties": false,
   "properties": {
     "evidence_boxes": {
@@ -48,7 +48,12 @@
         "TRACK_OR_RADIAL_TEXT",
         "NAVAID_TEXT",
         "HEADING_TEXT",
-        "OUTBOUND_INBOUND_MARK"
+        "OUTBOUND_INBOUND_MARK",
+        "HOLD_SYMBOL",
+        "HOLD_INBOUND_COURSE_TEXT",
+        "HOLD_DISTANCE_TEXT",
+        "HOLD_TIME_TEXT",
+        "HOLD_TURN_DIRECTION_TEXT"
       ]
     },
     "question_field": {
@@ -76,16 +81,12 @@
     },
     "evidence_box": {
       "type": "object",
-      "required": ["box_id", "source_region_id", "bbox", "region_type", "visible_text", "field_names"],
+      "required": ["box_id", "bbox", "region_type", "visible_text", "field_names", "evidence_role"],
       "additionalProperties": false,
       "properties": {
         "box_id": {
           "type": "string",
           "pattern": "^box_[0-9]{3}$"
-        },
-        "source_region_id": {
-          "type": "string",
-          "minLength": 1
         },
         "bbox": { "$ref": "#/$defs/bbox" },
         "region_type": { "$ref": "#/$defs/region_type" },
@@ -96,6 +97,10 @@
           "type": "array",
           "items": { "$ref": "#/$defs/question_field" },
           "uniqueItems": true
+        },
+        "evidence_role": {
+          "type": "string",
+          "minLength": 1
         }
       }
     },
@@ -107,7 +112,7 @@
         "answer_path",
         "support_mode",
         "evidence_box_ids",
-        "source_region_ids"
+        "evidence_summary"
       ],
       "additionalProperties": false,
       "properties": {
@@ -129,18 +134,9 @@
           },
           "uniqueItems": true
         },
-        "source_region_ids": {
-          "type": "array",
-          "items": { "type": "string", "minLength": 1 },
-          "uniqueItems": true
-        },
-        "review_support_mode": {
-          "type": ["string", "null"]
-        },
-        "evidence_source": {
-          "type": "array",
-          "items": { "type": "string" },
-          "uniqueItems": true
+        "evidence_summary": {
+          "type": "string",
+          "minLength": 1
         }
       }
     }

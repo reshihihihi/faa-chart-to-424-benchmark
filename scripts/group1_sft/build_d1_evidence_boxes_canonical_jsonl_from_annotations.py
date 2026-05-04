@@ -30,7 +30,6 @@ D1_EVIDENCE_PROMPT = (
     / "prompts"
     / "d1_chart_to_evidence_boxes_and_canonical.zh.md"
 )
-D1_CANONICAL_PROMPT = ROOT / "training" / "d_sft" / "prompts" / "d_sft_image_to_canonical.v2.md"
 WRAPPER_SCHEMA = (
     ROOT
     / "training"
@@ -68,12 +67,17 @@ CORE_REGION_ORDER = {
     "HEADING_TEXT": 4,
     "NAVAID_TEXT": 5,
     "OUTBOUND_INBOUND_MARK": 6,
-    "FIX_SYMBOL": 7,
-    "CLIMB_ARROW": 8,
-    "PATH_SEGMENT": 9,
-    "MISSED_APPROACH_TEXT": 10,
-    "PLAN_VIEW": 11,
-    "MISSED_APPROACH_DETAIL_AREA": 12,
+    "HOLD_INBOUND_COURSE_TEXT": 7,
+    "HOLD_DISTANCE_TEXT": 8,
+    "HOLD_TIME_TEXT": 9,
+    "HOLD_TURN_DIRECTION_TEXT": 10,
+    "FIX_SYMBOL": 11,
+    "HOLD_SYMBOL": 12,
+    "CLIMB_ARROW": 13,
+    "PATH_SEGMENT": 14,
+    "MISSED_APPROACH_TEXT": 15,
+    "PLAN_VIEW": 16,
+    "MISSED_APPROACH_DETAIL_AREA": 17,
 }
 
 TEXT_REGION_TYPES = {
@@ -84,9 +88,14 @@ TEXT_REGION_TYPES = {
     "RADIAL_TEXT",
     "HEADING_TEXT",
     "TRACK_OR_RADIAL_TEXT",
+    "HOLD_INBOUND_COURSE_TEXT",
+    "HOLD_DISTANCE_TEXT",
+    "HOLD_TIME_TEXT",
+    "HOLD_TURN_DIRECTION_TEXT",
 }
 SYMBOL_REGION_TYPES = {
     "FIX_SYMBOL",
+    "HOLD_SYMBOL",
     "CLIMB_ARROW",
     "PATH_SEGMENT",
     "OUTBOUND_INBOUND_MARK",
@@ -96,11 +105,7 @@ COARSE_REGION_TYPES = {
     "PLAN_VIEW",
     "MISSED_APPROACH_DETAIL_AREA",
 }
-D1_CANONICAL_KEYS = [
-    "d1_dev50_train_jsonl",
-    "d1_dev50_dev_jsonl",
-    "d1_dev50_eval_jsonl",
-]
+FINE_REGION_TYPES = set(CORE_REGION_ORDER) - COARSE_REGION_TYPES
 
 
 def read_json(path: Path) -> Any:
@@ -205,10 +210,13 @@ def compact_binding(mapping: dict[str, Any]) -> dict[str, Any] | None:
     }
 
 
-def candidate_bindings(region: dict[str, Any]) -> list[dict[str, Any]]:
+def candidate_bindings(region: dict[str, Any], *, include_reviewed_candidates: bool = False) -> list[dict[str, Any]]:
     seen: set[tuple[Any, ...]] = set()
     rows: list[dict[str, Any]] = []
-    for mapping in region.get("accepted_mappings") or []:
+    mappings = list(region.get("accepted_mappings") or [])
+    if include_reviewed_candidates:
+        mappings.extend(region.get("candidate_mappings_reviewed") or [])
+    for mapping in mappings:
         row = compact_binding(mapping)
         if row is None:
             continue
@@ -233,7 +241,7 @@ def review_region_ids(review: dict[str, Any]) -> list[str]:
 
 
 def region_sort_key(region: dict[str, Any]) -> tuple[int, int, float, float, str]:
-    bindings = candidate_bindings(region)
+    bindings = candidate_bindings(region, include_reviewed_candidates=True)
     region_type = str(region.get("region_type") or "OTHER")
     bbox = bbox_to_array(region.get("bbox")) or [1.0, 1.0, 1.0, 1.0]
     has_bindings = 0 if bindings else 1
@@ -253,10 +261,39 @@ def field_names_for_region(
     region: dict[str, Any],
     reviews_by_region: dict[str, set[str]],
 ) -> list[str]:
-    names = {binding["field_name"] for binding in candidate_bindings(region)}
+    names = {binding["field_name"] for binding in candidate_bindings(region, include_reviewed_candidates=True)}
+    source_field = region.get("source_field_name")
+    if source_field in QUESTION_FIELDS:
+        names.add(str(source_field))
     for rid in region_ids(region):
         names.update(reviews_by_region.get(rid, set()))
     return [name for name in QUESTION_FIELDS if name in names]
+
+
+def evidence_role_for_region(region_type: str, field_names: list[str]) -> str:
+    if region_type == "PLAN_VIEW":
+        return "plan_view_context_evidence"
+    if region_type in {"MISSED_APPROACH_TEXT", "MISSED_APPROACH_DETAIL_AREA"}:
+        return "missed_approach_context_evidence"
+    fields = set(field_names)
+    if "Q5_hold_params" in fields or region_type.startswith("HOLD_"):
+        return "holding_parameter_evidence"
+    if "Q2_altitude_constraint" in fields or region_type == "ALTITUDE_TEXT":
+        return "altitude_text_evidence"
+    if "Q4_course_or_radial" in fields or region_type in {
+        "RADIAL_TEXT",
+        "TRACK_OR_RADIAL_TEXT",
+        "HEADING_TEXT",
+        "HOLD_INBOUND_COURSE_TEXT",
+    }:
+        return "course_or_radial_evidence"
+    if "Q1_fix_ident" in fields or region_type in {"FIX_TEXT", "NAVAID_TEXT", "FIX_SYMBOL"}:
+        return "fix_or_navaid_evidence"
+    if "Q3_turn" in fields or region_type in {"CLIMB_ARROW", "PATH_SEGMENT", "OUTBOUND_INBOUND_MARK"}:
+        return "turn_or_path_symbol_evidence"
+    if "Q_terminator" in fields:
+        return "terminator_context_evidence"
+    return "missed_approach_context_evidence"
 
 
 def collect_reviews_by_region(annotation: dict[str, Any]) -> dict[str, set[str]]:
@@ -276,7 +313,11 @@ def selected_evidence_regions(annotation: dict[str, Any]) -> list[dict[str, Any]
     for review in annotation.get("field_reviews") or []:
         selected_ids.update(review_region_ids(review))
     for region in annotation.get("regions") or []:
-        if candidate_bindings(region):
+        region_type = str(region.get("region_type") or "")
+        candidate_flag = region.get("is_formal_annotation_candidate")
+        is_formal_candidate = candidate_flag is True or str(candidate_flag).lower() == "true"
+        is_fine_candidate = region_type in FINE_REGION_TYPES and is_formal_candidate
+        if candidate_bindings(region, include_reviewed_candidates=True) or is_fine_candidate:
             selected_ids.update(region_ids(region))
 
     selected: dict[str, dict[str, Any]] = {}
@@ -313,14 +354,15 @@ def build_evidence_boxes(
         for alias in region_ids(region):
             region_id_to_box_id[alias] = box_id
             region_id_to_type[alias] = region_type
+        field_names = field_names_for_region(region, reviews_by_region)
         boxes.append(
             {
                 "box_id": box_id,
-                "source_region_id": rid,
                 "bbox": bbox,
                 "region_type": region_type,
                 "visible_text": visible_text_from_region(region),
-                "field_names": field_names_for_region(region, reviews_by_region),
+                "field_names": field_names,
+                "evidence_role": evidence_role_for_region(region_type, field_names),
             }
         )
     return boxes, region_id_to_box_id, region_id_to_type
@@ -388,7 +430,7 @@ def unique_strings(values: list[Any]) -> list[str]:
     return rows
 
 
-def accepted_mapping_regions_for_field(
+def mapping_regions_for_field(
     annotation: dict[str, Any],
     *,
     leg_index: int,
@@ -396,7 +438,9 @@ def accepted_mapping_regions_for_field(
 ) -> list[str]:
     rows: list[str] = []
     for region in annotation.get("regions") or []:
-        for mapping in region.get("accepted_mappings") or []:
+        mappings = list(region.get("accepted_mappings") or [])
+        mappings.extend(region.get("candidate_mappings_reviewed") or [])
+        for mapping in mappings:
             if mapping.get("canonical_leg_index") == leg_index and mapping.get("field_name") == field_name:
                 rid = primary_region_id(region)
                 if rid:
@@ -435,13 +479,36 @@ def classify_support_mode(
     return "inferred_from_visible_evidence"
 
 
+def evidence_summary_for_answer(
+    *,
+    field_name: str,
+    support_mode: str,
+    evidence_box_ids: list[str],
+    box_by_id: dict[str, dict[str, Any]],
+) -> str:
+    if not evidence_box_ids:
+        return f"{field_name} has no selected fine evidence box; support_mode={support_mode}."
+    parts = []
+    for box_id in evidence_box_ids:
+        box = box_by_id.get(box_id, {})
+        region_type = box.get("region_type") or "UNKNOWN_REGION"
+        visible_text = box.get("visible_text")
+        if visible_text:
+            parts.append(f"{box_id}:{region_type}:{visible_text}")
+        else:
+            parts.append(f"{box_id}:{region_type}")
+    return f"{field_name} is supported by " + "; ".join(parts)
+
+
 def build_answer_grounding(
     annotation: dict[str, Any],
     *,
+    boxes: list[dict[str, Any]],
     region_id_to_box_id: dict[str, str],
     region_id_to_type: dict[str, str],
 ) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
+    box_by_id = {box["box_id"]: box for box in boxes}
     reviews = sorted(
         annotation.get("field_reviews") or [],
         key=lambda review: (
@@ -456,8 +523,15 @@ def build_answer_grounding(
         if not isinstance(leg_index, int) or field_name not in QUESTION_FIELDS:
             continue
         source_region_ids = review_region_ids(review)
+        mapped_region_ids = mapping_regions_for_field(
+            annotation,
+            leg_index=leg_index,
+            field_name=str(field_name),
+        )
+        if mapped_region_ids:
+            source_region_ids = unique_strings(source_region_ids + mapped_region_ids)
         if not source_region_ids:
-            source_region_ids = accepted_mapping_regions_for_field(
+            source_region_ids = mapping_regions_for_field(
                 annotation,
                 leg_index=leg_index,
                 field_name=str(field_name),
@@ -479,9 +553,12 @@ def build_answer_grounding(
                 "answer_path": answer_path(leg_index, str(field_name)),
                 "support_mode": support_mode,
                 "evidence_box_ids": evidence_box_ids,
-                "source_region_ids": unique_strings(source_region_ids),
-                "review_support_mode": str(raw_support_mode) if raw_support_mode else None,
-                "evidence_source": unique_strings(review.get("evidence_source") or []),
+                "evidence_summary": evidence_summary_for_answer(
+                    field_name=str(field_name),
+                    support_mode=support_mode,
+                    evidence_box_ids=evidence_box_ids,
+                    box_by_id=box_by_id,
+                ),
             }
         )
     return rows
@@ -493,6 +570,7 @@ def build_joint_output(sample: dict[str, Any], annotation: dict[str, Any], *, ma
         "evidence_boxes": boxes,
         "answer_grounding": build_answer_grounding(
             annotation,
+            boxes=boxes,
             region_id_to_box_id=region_id_to_box_id,
             region_id_to_type=region_id_to_type,
         ),
@@ -551,37 +629,12 @@ def make_joint_training_row(
         "split_candidate_subset": "development",
         "annotation_source": "shujuji_export_final_by_annotator",
         "uses_regions_as_evidence_box_labels": True,
+        "uses_reviewed_candidate_mappings_for_fine_box_field_links": True,
         "uses_field_reviews_as_canonical_labels": True,
         "evidence_boxes_exclude_final_answer_values": True,
         "answer_grounding_excludes_final_answer_values": True,
-        "chart_id": sample["chart_id"],
-    }
-    return row
-
-
-def make_canonical_training_row(
-    *,
-    split: str,
-    sample_id: str,
-    sample: dict[str, Any],
-    annotation: dict[str, Any],
-    image_path: Path,
-    prompt_text: str,
-) -> dict[str, Any]:
-    label = build_canonical(sample, annotation)
-    row = base_row_metadata(
-        split=split,
-        sample_id=sample_id,
-        sample=sample,
-        image_path=image_path,
-        prompt_text=prompt_text,
-    )
-    row["messages"].append({"role": "assistant", "content": json.dumps(label, ensure_ascii=False, separators=(",", ":"))})
-    row["source_annotation"] = {
-        "dataset_key": "formal300",
-        "split_candidate_subset": "development",
-        "annotation_source": "shujuji_export_final_by_annotator",
-        "uses_field_reviews_as_canonical_labels": True,
+        "backend_region_ids_kept_out_of_assistant_label": True,
+        "formal_scoring_uses_canonical_prediction_only": True,
         "chart_id": sample["chart_id"],
     }
     return row
@@ -674,7 +727,7 @@ def collect_joint_label_audit(label: dict[str, Any], audit: dict[str, Any], char
                         "field_name": field_name,
                         "support_mode": support_mode,
                         "evidence_region_types": evidence_types,
-                        "source_region_ids": item["source_region_ids"],
+                        "evidence_box_ids": item["evidence_box_ids"],
                     }
                 )
         if not item["evidence_box_ids"] and support_mode not in {"insufficient_for_encoding", "not_grounded"}:
@@ -684,50 +737,23 @@ def collect_joint_label_audit(label: dict[str, Any], audit: dict[str, Any], char
                     "leg_index": item["leg_index"],
                     "field_name": field_name,
                     "support_mode": support_mode,
-                    "source_region_ids": item["source_region_ids"],
+                    "evidence_box_ids": item["evidence_box_ids"],
                 }
             )
 
 
-def write_optional_d1_canonical_outputs(
-    *,
-    config: dict[str, str],
-    repo_root: Path,
-    train_rows: list[dict[str, Any]],
-    dev_rows: list[dict[str, Any]],
-    eval_rows: list[dict[str, Any]],
-) -> dict[str, Any]:
-    if not all(key in config for key in D1_CANONICAL_KEYS):
-        return {
-            "enabled": False,
-            "missing_config_keys": [key for key in D1_CANONICAL_KEYS if key not in config],
-        }
-    train_path = resolve_path(config["d1_dev50_train_jsonl"], repo_root=repo_root)
-    dev_path = resolve_path(config["d1_dev50_dev_jsonl"], repo_root=repo_root)
-    eval_path = resolve_path(config["d1_dev50_eval_jsonl"], repo_root=repo_root)
-    write_jsonl(train_path, train_rows)
-    write_jsonl(dev_path, dev_rows)
-    write_jsonl(eval_path, eval_rows)
-    return {
-        "enabled": True,
-        "d1_dev50_train_jsonl": str(train_path),
-        "d1_dev50_train_rows": len(train_rows),
-        "d1_dev50_dev_jsonl": str(dev_path),
-        "d1_dev50_dev_rows": len(dev_rows),
-        "d1_dev50_eval_jsonl": str(eval_path),
-        "d1_dev50_eval_rows": len(eval_rows),
-    }
-
-
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Build D1 dev50 canonical JSONL and D1 fine evidence-box-plus-canonical JSONL."
+        description=(
+            "Build D1 continued-SFT JSONL with fine evidence boxes, answer grounding, "
+            "and an unchanged canonical_prediction for formal scoring."
+        )
     )
     parser.add_argument("--export-json", required=True, type=Path, help="Downloaded shujuji annotation export JSON.")
     parser.add_argument("--paths", type=Path, default=DEFAULT_PATHS)
     parser.add_argument("--split-json", type=Path, default=DEFAULT_SPLIT)
     parser.add_argument("--train-target", type=int, default=40)
-    parser.add_argument("--max-boxes", type=int, default=12)
+    parser.add_argument("--max-boxes", type=int, default=24)
     args = parser.parse_args()
 
     config, repo_root = load_paths(args.paths)
@@ -739,7 +765,6 @@ def main() -> int:
     annotations = {item["chart_id"]: item for item in annotation_records(export)}
     images_dir = resolve_path(config["formal_images_dir"], repo_root=repo_root)
     joint_prompt_text = D1_EVIDENCE_PROMPT.read_text(encoding="utf-8").strip()
-    canonical_prompt_text = D1_CANONICAL_PROMPT.read_text(encoding="utf-8").strip()
     wrapper_validator = Draft202012Validator(read_json(WRAPPER_SCHEMA))
     canonical_validator = Draft202012Validator(read_json(CANONICAL_SCHEMA))
 
@@ -758,9 +783,6 @@ def main() -> int:
     joint_train_rows: list[dict[str, Any]] = []
     joint_dev_rows: list[dict[str, Any]] = []
     joint_eval_rows: list[dict[str, Any]] = []
-    canonical_train_rows: list[dict[str, Any]] = []
-    canonical_dev_rows: list[dict[str, Any]] = []
-    canonical_eval_rows: list[dict[str, Any]] = []
     schema_errors: list[dict[str, Any]] = []
     audit: dict[str, Any] = {
         "region_type_counts": Counter(),
@@ -774,9 +796,9 @@ def main() -> int:
         "box_count_by_chart": {},
     }
 
-    for split_name, samples, joint_out_rows, canonical_out_rows in [
-        ("train", train_samples, joint_train_rows, canonical_train_rows),
-        ("dev", dev_samples, joint_dev_rows, canonical_dev_rows),
+    for split_name, samples, joint_out_rows in [
+        ("train", train_samples, joint_train_rows),
+        ("dev", dev_samples, joint_dev_rows),
     ]:
         for idx, sample in enumerate(samples, 1):
             chart_id = sample["chart_id"]
@@ -798,19 +820,6 @@ def main() -> int:
             for error in validation_errors(label["canonical_prediction"], canonical_validator):
                 schema_errors.append({"chart_id": chart_id, "artifact": "canonical_prediction", "error": error})
 
-            canonical_row = make_canonical_training_row(
-                split=split_name,
-                sample_id=f"d1_dev50_canonical_{split_name}_{idx:04d}",
-                sample=by_chart[chart_id],
-                annotation=annotation,
-                image_path=image_for(sample),
-                prompt_text=canonical_prompt_text,
-            )
-            canonical_out_rows.append(canonical_row)
-            canonical_label = json.loads(canonical_row["messages"][1]["content"])
-            for error in validation_errors(canonical_label, canonical_validator):
-                schema_errors.append({"chart_id": chart_id, "artifact": "d1_dev50_canonical", "error": error})
-
     for idx, sample in enumerate(eval_split, 1):
         chart_sample = by_chart[sample["chart_id"]]
         joint_eval_rows.append(
@@ -821,29 +830,14 @@ def main() -> int:
                 prompt_text=joint_prompt_text,
             )
         )
-        canonical_eval_rows.append(
-            make_eval_row(
-                sample_id=f"d1_dev50_canonical_eval_{idx:04d}",
-                sample=chart_sample,
-                image_path=image_for(sample),
-                prompt_text=canonical_prompt_text,
-            )
-        )
 
-    eval_violations = assert_no_eval_labels(joint_eval_rows) + assert_no_eval_labels(canonical_eval_rows)
+    eval_violations = assert_no_eval_labels(joint_eval_rows)
     joint_train_path = resolve_path(config["d1_evidence_boxes_train_jsonl"], repo_root=repo_root)
     joint_dev_path = resolve_path(config["d1_evidence_boxes_dev_jsonl"], repo_root=repo_root)
     joint_eval_path = resolve_path(config["d1_evidence_boxes_eval_jsonl"], repo_root=repo_root)
     write_jsonl(joint_train_path, joint_train_rows)
     write_jsonl(joint_dev_path, joint_dev_rows)
     write_jsonl(joint_eval_path, joint_eval_rows)
-    d1_outputs = write_optional_d1_canonical_outputs(
-        config=config,
-        repo_root=repo_root,
-        train_rows=canonical_train_rows,
-        dev_rows=canonical_dev_rows,
-        eval_rows=canonical_eval_rows,
-    )
 
     reports_dir = resolve_path(config.get("reports_dir", str(joint_train_path.parent)), repo_root=repo_root)
     gap_path = reports_dir / "d1_q5_hold_params_needs_fine_box_review.jsonl"
@@ -853,7 +847,8 @@ def main() -> int:
     report = {
         "created_at": datetime.now(timezone.utc).isoformat(),
         "method_id": "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL",
-        "d1_method_id": "D1_DEV50_ONLY",
+        "method_version": "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL-1",
+        "continued_from_checkpoint_key": "d1_lora_or_checkpoint_dir",
         "export_json": str(args.export_json),
         "split_json": str(args.split_json),
         "formal_manifest": str(formal_manifest),
@@ -893,14 +888,20 @@ def main() -> int:
             "d1_evidence_boxes_dev_rows": len(joint_dev_rows),
             "d1_evidence_boxes_eval_jsonl": str(joint_eval_path),
             "d1_evidence_boxes_eval_rows": len(joint_eval_rows),
-            "d1_dev50_outputs": d1_outputs,
         },
         "input_boundary": {
             "development_train_dev_use_regions_as_evidence_box_labels": True,
+            "development_train_dev_use_reviewed_candidate_mappings_for_fine_box_field_links": True,
             "development_train_dev_use_field_reviews_as_canonical_labels": True,
+            "backend_region_ids_are_training_audit_only": True,
             "evaluation_has_assistant_labels": False,
             "evaluation_contains_canonical_answer": False,
             "probe_used": False,
+        },
+        "formal_scoring_boundary": {
+            "raw_model_output": "diagnostic_wrapper_with_evidence_boxes_answer_grounding_and_canonical_prediction",
+            "formal_prediction_for_scoring": "canonical_prediction_only",
+            "canonical_schema_changed": False,
         },
         "ready": not schema_errors and not eval_violations,
         "ready_for_fine_holding_training_goal": not schema_errors and not eval_violations and q5_gap_count == 0,

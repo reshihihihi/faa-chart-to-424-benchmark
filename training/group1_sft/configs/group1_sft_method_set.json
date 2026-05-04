@@ -17,22 +17,23 @@
       "output": "missed approach canonical JSON",
       "allowed_inputs": ["chart_image"],
       "forbidden_inputs": ["ocr_text", "target_json", "raw_424_record", "score_file", "other_method_prediction"],
-      "purpose": "保留实验组 1 已有的主要端到端 SFT baseline。"
+      "purpose": "保留实验组1已有的主要端到端 SFT baseline。"
     },
     {
       "method_id": "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL",
-      "name_zh": "D1 基础上增加图上证据框监督",
+      "name_zh": "在 D1 基础上增加图上证据框监督",
       "input": "完整航图图片",
-      "output": "先输出 evidence_boxes，再输出 canonical_prediction",
+      "raw_diagnostic_output": "先输出 evidence_boxes 和 answer_grounding，再输出 canonical_prediction",
+      "formal_scored_output": "从 canonical_prediction 抽出的原始 D1 形状 missed approach canonical JSON",
       "allowed_inputs": ["chart_image"],
       "forbidden_inputs": ["target_json", "raw_424_record", "score_file", "other_method_prediction"],
-      "purpose": "检验在 D1 已有端到端能力基础上，显式学习复飞相关证据框和字段绑定，是否能提升最终 canonical JSON。"
+      "purpose": "检验在 D1 已有端到端能力基础上，继续学习后台人工审核的细框、航段、字段、证据关系，是否能提升最终 canonical JSON，同时保持评分 JSON 形状不变。"
     }
   ],
   "dropped_from_current_plan": [
     {
       "method_id": "CHART_TO_EVIDENCE_SFT",
-      "reason": "本轮时间优先做 D1 续训的单模型联合输出，不再单独评估图到证据模型。"
+      "reason": "本轮时间优先做 D1 继续训练的单模型证据监督，不再单独评估图到证据模型。"
     },
     {
       "method_id": "EVIDENCE_TO_SEMANTICS_SFT",

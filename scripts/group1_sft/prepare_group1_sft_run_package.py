@@ -69,7 +69,7 @@ DEFAULT_METHODS = [
 
 CHART_TO_EVIDENCE_TRAIN_RUN_ID = "chart_to_evidence_sft_dev50_with_field_links_20260503_r1"
 EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID = "evidence_to_semantics_sft_dev50_with_field_links_20260503_r1"
-D1_EVIDENCE_BOXES_TRAIN_RUN_ID = "d1_chart_to_evidence_boxes_and_canonical_dev50_coarse3_20260504_r4"
+D1_EVIDENCE_BOXES_TRAIN_RUN_ID = "d1_chart_to_evidence_boxes_and_canonical_d1_continue_dev50_20260504_r1"
 
 IMAGE_METHODS = {
     "D_BASE_SAME_BACKBONE",
@@ -582,7 +582,7 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
             [
                 "## 6. D1 plus chart evidence boxes inference",
                 "",
-                "This method outputs `evidence_boxes` first and `canonical_prediction` second. The runner validates the wrapper, extracts `canonical_prediction`, and scores only that canonical object.",
+                "This method saves the raw evidence wrapper for diagnosis, then extracts `canonical_prediction` as the unchanged D1-style canonical JSON for formal scoring.",
                 "",
                 "```powershell",
                 "python scripts\\group1_sft\\run_qwen2vl_group1_sft_inference.py "
@@ -669,8 +669,8 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
             "",
             "- Do not pass target JSON, score files, raw 424 records, or other method predictions to inference.",
             "- `scoring_manifest.jsonl` is for post-prediction scoring only.",
-            "- `D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL` is the only new default method: it starts from the D1 adapter, learns evidence boxes, and still scores only `canonical_prediction`.",
-            "- `evidence_boxes` are diagnostic; the formal score uses only the extracted `canonical_prediction` object.",
+            "- `D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL` is the only new default method: it starts from the existing D1 adapter, learns fine evidence boxes, and keeps the formal scored prediction as the original canonical JSON shape.",
+            "- `evidence_boxes` and `answer_grounding` are diagnostic side outputs; the formal score uses only the extracted `canonical_prediction` object.",
             "- The parser is strict JSON only; semantic repair is not applied.",
             "",
         ]
