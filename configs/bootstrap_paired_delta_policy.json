@@ -1,0 +1,443 @@
+{
+  "schema_version": "bootstrap_paired_delta_policy_v2",
+  "policy_document": "docs/bootstrap_paired_delta_policy_zh.md",
+  "created_for": "paper-v2 final-result post-scoring statistics",
+  "frozen_defaults": {
+    "bootstrap_iterations": 10000,
+    "seed": 20260504,
+    "confidence_level": 0.95,
+    "interval_method": "percentile",
+    "resampling_unit": "chart_id",
+    "metric_definition": "sum(score_numerator) / sum(score_denominator)",
+    "paired_delta_definition": "metric(method_a) - metric(method_b)"
+  },
+  "source_refs": {
+    "group1_sft_extension_plan_20260503": "59b8dce3152b8e67236ea27493acce9702d6a856",
+    "main_with_experiment4": "b8fb1108acb622d94ec25df9846c2ab5edda48bc",
+    "experiment5_diagnostic_20260503": "09af6a5b904388800bf26459590007f63dd58d79",
+    "experiment6_v11_pr25_d1_20260502": "c271ca6f771a3c9c1c055b71b38da170f0297035",
+    "group2_formal_run_20260503": "01071b5f6a0918b954f0a800e81fa3bb302cc63e",
+    "group1_c2_method_effect_20260504": "1b09a5a5625230360e8eeb40ca06e2d1b4963578"
+  },
+  "global_rules": {
+    "prediction_stage_forbidden_inputs": [
+      "target JSON",
+      "score outputs",
+      "raw 424/CIFP",
+      "other method predictions",
+      "answer keys"
+    ],
+    "statistics_stage_allowed_inputs": [
+      "post-scoring per-sample JSONL/CSV",
+      "post-scoring score JSON files",
+      "verification cases plus predictions only after all predictions are complete"
+    ],
+    "primary_resampling_unit": "chart_id",
+    "missing_or_invalid_outputs": "Do not silently drop failures. Prefer explicit zero-correct per-chart rows. If legacy files omit failures, use a frozen unit_total_source or fail strict validation."
+  },
+  "analysis_sets": {
+    "group1_scoring_equivalence_v2": {
+      "experiment_group": "experiment_group_1",
+      "final_result_role": "main_leaderboard",
+      "status": "active_via_frozen_git_source_ref",
+      "description": "Formal group 1 extraction methods on formal200, rescored with scoring_equivalence_v2 / comparison_policy_v2. D1 is the final SFT interface; raw D_SFT is excluded from the main set.",
+      "primary_metric": "chart_display_aware_v2_field_accuracy",
+      "resampling_unit_key": "chart_id",
+      "missing_unit_policy": "zero_correct_with_unit_total",
+      "unit_total_source": {
+        "format": "jsonl_score_rows",
+        "source_ref": "59b8dce3152b8e67236ea27493acce9702d6a856",
+        "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/D1_per_sample_v2.jsonl",
+        "unit_key": "chart_id",
+        "denominator_key": "v2_total"
+      },
+      "method_discovery": [
+        {
+          "format": "jsonl_score_rows",
+          "source_ref": "59b8dce3152b8e67236ea27493acce9702d6a856",
+          "glob": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/*_per_sample_v2.jsonl",
+          "method_name_regex": "reports/(?P<method>.+)_per_sample_v2\\.jsonl$",
+          "unit_key": "chart_id",
+          "numerator_key": "v2_correct",
+          "denominator_key": "v2_total",
+          "aggregate_duplicate_units": "sum"
+        }
+      ],
+      "include_methods": [
+        "A1",
+        "A2",
+        "B1",
+        "B1_prime",
+        "B1_prime_link",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "D1"
+      ],
+      "required_methods": [
+        "A1",
+        "A2",
+        "B1",
+        "B1_prime",
+        "B1_prime_link",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "D1"
+      ],
+      "paired_comparisons": "all_pairs",
+      "output_dir": "reports/statistics/group1_scoring_equivalence_v2"
+    },
+    "group1_c2_model_method_effect_20260504": {
+      "experiment_group": "experiment_group_1",
+      "final_result_role": "supplementary_c2_model_method_effect",
+      "status": "active_via_frozen_git_source_ref",
+      "description": "Supplementary Group 1 C2 bridge analysis. This is not the main Group 1 leaderboard. It separates the C2 method-structure effect from the C2 model effect using Claude original C2, Claude batched C2, and GPT-5.4 batched C2.",
+      "primary_metric": "chart_display_aware_v2_field_accuracy",
+      "resampling_unit_key": "chart_id",
+      "missing_unit_policy": "strict_error",
+      "interpretation_boundary": "Do not interpret GPT-5.4 batched C2 minus Claude original C2 as a pure model effect, because the C2 calling structure also changed.",
+      "summary_only_not_bootstrapped": [
+        {
+          "method": "C1_GPT54",
+          "source_ref": "1b09a5a5625230360e8eeb40ca06e2d1b4963578",
+          "summary_path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_gpt54_current_oauth_responses_batched_c2/reports/combined_gpt54_current_oauth_batched_c2_summary.json",
+          "point_estimate": "1201/4052 = 0.29639684106614017",
+          "reason": "The Git branch records the combined summary but not the per-chart C1_GPT54 method_summary/scores needed for chart-level bootstrap."
+        },
+        {
+          "method": "C3_GPT54",
+          "source_ref": "1b09a5a5625230360e8eeb40ca06e2d1b4963578",
+          "summary_path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_gpt54_current_oauth_responses_batched_c2/reports/combined_gpt54_current_oauth_batched_c2_summary.json",
+          "point_estimate": "1218/4052 = 0.3005923000987167",
+          "reason": "The Git branch records the combined summary but not the per-chart C3_GPT54 method_summary/scores needed for chart-level bootstrap."
+        },
+        {
+          "method": "C4_GPT54",
+          "source_ref": "1b09a5a5625230360e8eeb40ca06e2d1b4963578",
+          "summary_path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_gpt54_current_oauth_responses_batched_c2/reports/combined_gpt54_current_oauth_batched_c2_summary.json",
+          "point_estimate": "1757/4052 = 0.43361303060217177",
+          "reason": "The Git branch records the combined summary but not the per-chart C4_GPT54 method_summary/scores needed for chart-level bootstrap."
+        }
+      ],
+      "method_discovery": [
+        {
+          "format": "jsonl_score_rows",
+          "source_ref": "1b09a5a5625230360e8eeb40ca06e2d1b4963578",
+          "glob": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/C2_per_sample_v2.jsonl",
+          "method_name_regex": "reports/(?P<method>C2)_per_sample_v2\\.jsonl$",
+          "method_name_template": "C2_CLAUDE_original",
+          "unit_key": "chart_id",
+          "numerator_key": "v2_correct",
+          "denominator_key": "v2_total",
+          "aggregate_duplicate_units": "sum"
+        },
+        {
+          "format": "method_summary_results",
+          "source_ref": "1b09a5a5625230360e8eeb40ca06e2d1b4963578",
+          "glob": "formal_runs/group1/g1_claude_c2b_combined_20260504/C2_CLAUDE_batched_leg/method_summary.json",
+          "method_name_regex": "(?P<method>C2_CLAUDE_batched_leg)/method_summary\\.json$",
+          "unit_key": "chart_id",
+          "numerator_key": "score.correct",
+          "denominator_key": "score.total",
+          "results_key": "results",
+          "aggregate_duplicate_units": "sum"
+        },
+        {
+          "format": "method_summary_results",
+          "source_ref": "1b09a5a5625230360e8eeb40ca06e2d1b4963578",
+          "glob": "formal_runs/group1/g1_gpt54_oauth_c2b_20260504/C2_GPT54_batched_leg/method_summary.json",
+          "method_name_regex": "(?P<method>C2_GPT54_batched_leg)/method_summary\\.json$",
+          "unit_key": "chart_id",
+          "numerator_key": "score.correct",
+          "denominator_key": "score.total",
+          "results_key": "results",
+          "aggregate_duplicate_units": "sum"
+        }
+      ],
+      "required_methods": [
+        "C2_CLAUDE_original",
+        "C2_CLAUDE_batched_leg",
+        "C2_GPT54_batched_leg"
+      ],
+      "paired_comparisons": [
+        {
+          "method_a": "C2_CLAUDE_batched_leg",
+          "method_b": "C2_CLAUDE_original",
+          "label": "method_structure_effect_same_model"
+        },
+        {
+          "method_a": "C2_GPT54_batched_leg",
+          "method_b": "C2_CLAUDE_batched_leg",
+          "label": "model_effect_same_batched_method"
+        },
+        {
+          "method_a": "C2_GPT54_batched_leg",
+          "method_b": "C2_CLAUDE_original",
+          "label": "combined_non_isolated_difference"
+        }
+      ],
+      "output_dir": "reports/statistics/group1_c2_model_method_effect_20260504"
+    },
+    "experiment4_source_ablation_formal200_main_6x3": {
+      "experiment_group": "experiment_group_4",
+      "final_result_role": "main_source_view_ablation",
+      "status": "registered_with_required_artifact_check",
+      "description": "Formal source-view ablation on formal200. The final main matrix is 6 source-view variants times 3 methods: B1, C4, D1. Raw D_SFT is excluded and treated as appendix diagnostic only.",
+      "primary_metric": "chart_display_aware_v2_field_accuracy",
+      "resampling_unit_key": "chart_id",
+      "missing_unit_policy": "strict_error",
+      "unit_total_source": {
+        "format": "jsonl_score_rows",
+        "source_ref": "59b8dce3152b8e67236ea27493acce9702d6a856",
+        "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/D1_per_sample_v2.jsonl",
+        "unit_key": "chart_id",
+        "denominator_key": "v2_total"
+      },
+      "method_discovery": [
+        {
+          "format": "jsonl_score_rows",
+          "source_ref": "59b8dce3152b8e67236ea27493acce9702d6a856",
+          "glob": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/B1_per_sample_v2.jsonl",
+          "method_name_regex": "reports/(?P<method>B1)_per_sample_v2\\.jsonl$",
+          "method_name_template": "V0_full_chart__{method}",
+          "unit_key": "chart_id",
+          "numerator_key": "v2_correct",
+          "denominator_key": "v2_total",
+          "aggregate_duplicate_units": "sum"
+        },
+        {
+          "format": "jsonl_score_rows",
+          "source_ref": "59b8dce3152b8e67236ea27493acce9702d6a856",
+          "glob": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/C4_per_sample_v2.jsonl",
+          "method_name_regex": "reports/(?P<method>C4)_per_sample_v2\\.jsonl$",
+          "method_name_template": "V0_full_chart__{method}",
+          "unit_key": "chart_id",
+          "numerator_key": "v2_correct",
+          "denominator_key": "v2_total",
+          "aggregate_duplicate_units": "sum"
+        },
+        {
+          "format": "jsonl_score_rows",
+          "source_ref": "59b8dce3152b8e67236ea27493acce9702d6a856",
+          "glob": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/D1_per_sample_v2.jsonl",
+          "method_name_regex": "reports/(?P<method>D1)_per_sample_v2\\.jsonl$",
+          "method_name_template": "V0_full_chart__{method}",
+          "unit_key": "chart_id",
+          "numerator_key": "v2_correct",
+          "denominator_key": "v2_total",
+          "aggregate_duplicate_units": "sum"
+        },
+        {
+          "format": "json_score_files",
+          "source_ref": "b8fb1108acb622d94ec25df9846c2ab5edda48bc",
+          "glob": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/D1/*/scores/*.json",
+          "method_name_regex": "D1/(?P<variant>[^/\\\\]+)/scores/",
+          "method_name_template": "{variant}__D1",
+          "unit_id_from": "filename_stem",
+          "numerator_key": "correct",
+          "denominator_key": "total",
+          "aggregate_duplicate_units": "sum"
+        },
+        {
+          "format": "json_score_files",
+          "source_ref": "b8fb1108acb622d94ec25df9846c2ab5edda48bc",
+          "glob": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/runs/formal_eval200/*/B1/scores_v2/*.json",
+          "method_name_regex": "formal_eval200/(?P<variant>[^/\\\\]+)/(?P<method>B1)/scores_v2/",
+          "method_name_template": "{variant}__{method}",
+          "unit_id_from": "filename_stem",
+          "numerator_key": "correct",
+          "denominator_key": "total",
+          "aggregate_duplicate_units": "sum"
+        },
+        {
+          "format": "json_score_files",
+          "source_ref": "b8fb1108acb622d94ec25df9846c2ab5edda48bc",
+          "glob": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/runs/formal_eval200/*/C4/scores_v2/*.json",
+          "method_name_regex": "formal_eval200/(?P<variant>[^/\\\\]+)/(?P<method>C4)/scores_v2/",
+          "method_name_template": "{variant}__{method}",
+          "unit_id_from": "filename_stem",
+          "numerator_key": "correct",
+          "denominator_key": "total",
+          "aggregate_duplicate_units": "sum"
+        }
+      ],
+      "required_methods": [
+        "V0_full_chart__B1",
+        "V0_full_chart__C4",
+        "V0_full_chart__D1",
+        "V1_ma_text_only__B1",
+        "V1_ma_text_only__C4",
+        "V1_ma_text_only__D1",
+        "V2_full_minus_ma_prose__B1",
+        "V2_full_minus_ma_prose__C4",
+        "V2_full_minus_ma_prose__D1",
+        "V3_plan_view_only__B1",
+        "V3_plan_view_only__C4",
+        "V3_plan_view_only__D1",
+        "V4_icon_detail_only__B1",
+        "V4_icon_detail_only__C4",
+        "V4_icon_detail_only__D1",
+        "V5_plan_detail_no_ma__B1",
+        "V5_plan_detail_no_ma__C4",
+        "V5_plan_detail_no_ma__D1"
+      ],
+      "paired_comparisons": "all_pairs",
+      "output_dir": "reports/statistics/experiment4_source_ablation_formal200_main_6x3",
+      "artifact_note": "If this analysis set fails, the likely reason is that Git has the final metrics table but not the B1/C4 per-chart score artifacts for V1-V5. Do not replace this with a D1-only bootstrap."
+    },
+    "experiment5_eval200_r6_strict_reviewed": {
+      "experiment_group": "experiment_group_5",
+      "final_result_role": "main_diagnostic_eval200",
+      "status": "active_via_frozen_git_source_ref",
+      "description": "Experiment 5 final diagnostic eval200 run with strict reviewed inputs. Dev, smoke, admin_relation, and oracle textualized runs are excluded from this main diagnostic set.",
+      "primary_metric": "chart_display_aware_v2_field_accuracy",
+      "resampling_unit_key": "chart_id",
+      "missing_unit_policy": "strict_error",
+      "interpretation_boundary": "Diagnostic and oracle-style analysis only; do not merge into the fair group 1 leaderboard.",
+      "method_discovery": [
+      {
+        "format": "json_score_files",
+        "source_ref": "09af6a5b904388800bf26459590007f63dd58d79",
+        "glob": "formal_runs/experiment5/experiment5_eval200_20260504_r6_strict_reviewed_runs/*/scores_v2/*.json",
+        "method_name_regex": "experiment5_eval200_20260504_r6_strict_reviewed_runs/(?P<method>[^/\\\\]+)/scores_v2/",
+        "unit_id_from": "filename_stem",
+        "numerator_key": "correct",
+        "denominator_key": "total",
+        "aggregate_duplicate_units": "sum"
+      },
+      {
+        "format": "jsonl_score_rows",
+        "source_ref": "09af6a5b904388800bf26459590007f63dd58d79",
+        "glob": "formal_runs/experiment5/experiment5_eval200_20260504_r6_strict_reviewed_runs/reports/g_admin_results.jsonl",
+        "method_name_regex": "reports/g_admin_results\\.jsonl$",
+        "method_name_template": "G3_LLM_Rules",
+        "unit_key": "chart_id",
+        "numerator_key": "score.v2.correct",
+        "denominator_key": "score.v2.total",
+        "aggregate_duplicate_units": "sum"
+      }
+    ],
+      "include_methods": [
+        "A3_GoldText_Rules",
+        "B2a_GoldText_LLM",
+        "B2b_GoldText_FieldCandidates_LLM",
+        "B3_T",
+        "B3_PD",
+        "B3_TPD",
+        "B4_TPD",
+        "G3_LLM_Rules"
+      ],
+      "required_methods": [
+        "A3_GoldText_Rules",
+        "B2a_GoldText_LLM",
+        "B2b_GoldText_FieldCandidates_LLM",
+        "B3_T",
+        "B3_PD",
+        "B3_TPD",
+        "B4_TPD",
+        "G3_LLM_Rules"
+      ],
+      "paired_comparisons": "all_pairs",
+      "output_dir": "reports/statistics/experiment5_eval200_r6_strict_reviewed"
+    },
+    "experiment6_v11_pr25_d1_counterfactual": {
+      "experiment_group": "experiment_group_6",
+      "final_result_role": "main_counterfactual_verification_v11",
+      "status": "active_via_frozen_git_source_ref",
+      "description": "Experiment 6 v11 final counterfactual verification aligned to PR25 and D1. Pre-D1 D_SFT appendix diagnostics are excluded.",
+      "primary_metric": "binary_accuracy_all_invalid_wrong",
+      "resampling_unit_key": "chart_id",
+      "missing_unit_policy": "strict_error",
+      "case_filter": {},
+      "method_aliases": {
+        "V1_text_only": "V1_OCR_text_chartdisplay_v2",
+        "V2_direct_image_policyv3": "V2_direct_image_policyv3_chartdisplay_v2",
+        "V4_C4_tolerant": "V4_C4_tolerant_chartdisplay_v2",
+        "V4_D1_SFT_tolerant": "V4_D1_SFT_tolerant_chartdisplay_v2"
+      },
+      "method_discovery": [
+        {
+          "format": "experiment6_verification_cases_predictions",
+          "source_ref": "c271ca6f771a3c9c1c055b71b38da170f0297035",
+          "cases_jsonl": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/E6_core/cases/e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+          "method_name_regex": "$^",
+          "unit_key": "chart_id",
+          "case_id_key": "verification_case_id",
+          "synthetic_controls": [
+            {
+              "method": "control_all_accept",
+              "rule": "all_accept"
+            },
+            {
+              "method": "control_all_reject",
+              "rule": "all_reject"
+            },
+            {
+              "method": "control_oracle_label",
+              "rule": "oracle_label"
+            }
+          ],
+          "aggregate_duplicate_units": "sum"
+        },
+        {
+          "format": "experiment6_verification_cases_predictions",
+          "source_ref": "c271ca6f771a3c9c1c055b71b38da170f0297035",
+          "cases_jsonl": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/E6_core/cases/e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+          "prediction_paths": [
+            "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/controls/control_v0_candidate_integrity/predictions.jsonl"
+          ],
+          "method_name_regex": "controls/(?P<method>control_v0_candidate_integrity)/predictions\\.jsonl$",
+          "unit_key": "chart_id",
+          "case_id_key": "verification_case_id",
+          "aggregate_duplicate_units": "sum"
+        },
+        {
+          "format": "experiment6_verification_cases_predictions",
+          "source_ref": "c271ca6f771a3c9c1c055b71b38da170f0297035",
+          "cases_jsonl": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/E6_core/cases/e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+          "prediction_paths": [
+            "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/V1_text_only/predictions.jsonl",
+            "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/V2_direct_image_policyv3/predictions.normalized_error_fields.jsonl",
+            "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/V3_C4_group1v2_neutralized/predictions.jsonl",
+            "formal_runs/experiment6/experiment6_group1formal200_full200_v11_pr25_d1_20260502_r1/V3_D1_SFT_group1v2_neutralized/predictions.jsonl",
+            "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/V4_C4_tolerant/predictions.jsonl",
+            "formal_runs/experiment6/experiment6_group1formal200_full200_v11_pr25_d1_20260502_r1/V4_D1_SFT_tolerant/predictions.jsonl"
+          ],
+          "method_name_regex": "experiment6_group1formal200_full200_v(?:9_chartdisplay_20260501|11_pr25_d1_20260502)_r1/(?P<method>[^/\\\\]+)/",
+          "unit_key": "chart_id",
+          "case_id_key": "verification_case_id",
+          "aggregate_duplicate_units": "sum"
+        }
+      ],
+      "include_methods": [
+        "control_all_accept",
+        "control_all_reject",
+        "control_oracle_label",
+        "control_v0_candidate_integrity",
+        "V1_OCR_text_chartdisplay_v2",
+        "V2_direct_image_policyv3_chartdisplay_v2",
+        "V3_C4_group1v2_neutralized",
+        "V3_D1_SFT_group1v2_neutralized",
+        "V4_C4_tolerant_chartdisplay_v2",
+        "V4_D1_SFT_tolerant_chartdisplay_v2"
+      ],
+      "required_methods": [
+        "control_all_accept",
+        "control_all_reject",
+        "control_oracle_label",
+        "control_v0_candidate_integrity",
+        "V1_OCR_text_chartdisplay_v2",
+        "V2_direct_image_policyv3_chartdisplay_v2",
+        "V3_C4_group1v2_neutralized",
+        "V3_D1_SFT_group1v2_neutralized",
+        "V4_C4_tolerant_chartdisplay_v2",
+        "V4_D1_SFT_tolerant_chartdisplay_v2"
+      ],
+      "paired_comparisons": "all_pairs",
+      "output_dir": "reports/statistics/experiment6_v11_pr25_d1_counterfactual"
+    }
+  }
+}
