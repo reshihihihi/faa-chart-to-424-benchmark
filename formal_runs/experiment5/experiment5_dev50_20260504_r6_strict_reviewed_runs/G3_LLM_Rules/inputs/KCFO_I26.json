@@ -1,0 +1,326 @@
+{
+  "chart_id": "KCFO_I26",
+  "procedure": {
+    "airport": "KCFO",
+    "approach_ident": "I26",
+    "chart_name": "ILS OR LOC RWY 26"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_dev50_20260504_r3_strict_no_leak/inputs/g_visible_observables_dev50_strict.jsonl",
+  "observable_facts": [
+    {
+      "bbox": {
+        "height": 0.0569,
+        "width": 0.4157,
+        "x_center": 0.745,
+        "y_center": 0.1391
+      },
+      "chart_id": "KCFO_I26",
+      "observable_type": "ma_text_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_I26_01_missed_approach_text",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KCFO_I26_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.462,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.443
+      },
+      "chart_id": "KCFO_I26",
+      "observable_type": "plan_view_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_I26_02_plan_view",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KCFO_I26_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0545,
+        "width": 0.2373,
+        "x_center": 0.4557,
+        "y_center": 0.7013
+      },
+      "chart_id": "KCFO_I26",
+      "observable_type": "ma_detail_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_I26_03_lower_detail_area",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KCFO_I26_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3637,
+        "y_center": 0.6827
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "6100",
+          "value": 6100,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KCFO_I26",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_I26_iconalign_001_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "6100",
+      "region_id": "KCFO_I26_iconalign_001_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 6100"
+    },
+    {
+      "bbox": {
+        "height": 0.013,
+        "width": 0.044,
+        "x_center": 0.425,
+        "y_center": 0.683
+      },
+      "candidates": [],
+      "chart_id": "KCFO_I26",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_I26_iconalign_004_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "高度文字",
+      "region_id": "KCFO_I26_iconalign_004_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "高度文字"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0465,
+        "x_center": 0.5447,
+        "y_center": 0.6864
+      },
+      "candidates": [
+        {
+          "candidate_type": "fix_ident_literal",
+          "raw_text": "SKIPI",
+          "value": "SKIPI",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KCFO_I26",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_I26_iconalign_003_fix_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "SKIPI",
+      "region_id": "KCFO_I26_iconalign_003_fix_text",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "FIX_TEXT",
+      "visible_literal": "FIX_TEXT: SKIPI"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0366,
+        "x_center": 0.4824,
+        "y_center": 0.6942
+      },
+      "candidates": [
+        {
+          "candidate_type": "navaid_ident_literal",
+          "raw_text": "FQF",
+          "value": "FQF",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KCFO_I26",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_I26_iconalign_005_navaid_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "FQF",
+      "region_id": "KCFO_I26_iconalign_005_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "review_action": "pending",
+      "visible_label_prefix": "NAVAID_TEXT",
+      "visible_literal": "NAVAID_TEXT: FQF"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0495,
+        "x_center": 0.4821,
+        "y_center": 0.7088
+      },
+      "candidates": [
+        {
+          "candidate_type": "radial_text_literal",
+          "raw_text": "R-045",
+          "value": 45,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KCFO_I26",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_I26_iconalign_006_radial_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "R-045",
+      "region_id": "KCFO_I26_iconalign_006_radial_text",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "pending",
+      "visible_label_prefix": "RADIAL_TEXT",
+      "visible_literal": "RADIAL_TEXT: R-045"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.4145,
+        "y_center": 0.7207
+      },
+      "candidates": [],
+      "chart_id": "KCFO_I26",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_I26_iconalign_002_heading_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "080°",
+      "region_id": "KCFO_I26_iconalign_002_heading_text",
+      "region_type": "HEADING_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "HEADING_TEXT",
+      "visible_literal": "HEADING_TEXT: 080°"
+    },
+    {
+      "bbox": {
+        "height": 0.0162,
+        "width": 0.0322,
+        "x_center": 0.4263,
+        "y_center": 0.7019
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KCFO_I26",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_I26_iconalign_012_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KCFO_I26_iconalign_012_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0275,
+        "width": 0.0099,
+        "x_center": 0.3631,
+        "y_center": 0.7132
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KCFO_I26",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_I26_iconalign_009_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KCFO_I26_iconalign_009_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

@@ -1,0 +1,1 @@
+{"chart_id":"KBWC_R26","procedure":{"airport":"KBWC","approach_ident":"R26","chart_name":"RNAV (GPS) RWY 26"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

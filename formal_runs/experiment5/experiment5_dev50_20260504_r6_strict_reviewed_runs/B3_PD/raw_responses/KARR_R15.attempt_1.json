@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_b9beecb3-a698-41e7-a0e2-b274974c0424",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_ShlEs1DDLcblGAAyXKcMr6sP",
+            "function": {
+              "arguments": "{\"chart_id\":\"KARR_R15\",\"procedure\":{\"airport\":\"KARR\",\"approach_ident\":\"R15\",\"chart_name\":\"RNAV (GPS) RWY 15\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777864544,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

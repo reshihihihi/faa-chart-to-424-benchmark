@@ -1,0 +1,314 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KCFO_L17",
+  "procedure": {
+    "airport": "KCFO",
+    "approach_ident": "L17",
+    "chart_name": "ILS OR LOC RWY 17"
+  },
+  "observable_facts": [
+    {
+      "bbox": {
+        "height": 0.042,
+        "width": 0.3377,
+        "x_center": 0.7841,
+        "y_center": 0.1317
+      },
+      "chart_id": "KCFO_L17",
+      "observable_type": "ma_text_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_L17_01_missed_approach_text",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KCFO_L17_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.517,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.456
+      },
+      "chart_id": "KCFO_L17",
+      "observable_type": "plan_view_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_L17_02_plan_view",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KCFO_L17_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0549,
+        "width": 0.1877,
+        "x_center": 0.859,
+        "y_center": 0.7415
+      },
+      "chart_id": "KCFO_L17",
+      "observable_type": "ma_detail_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_L17_03_lower_detail_area",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KCFO_L17_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.8036,
+        "y_center": 0.7258
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "8500",
+          "value": 8500,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KCFO_L17",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_L17_iconalign_002_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "8500",
+      "region_id": "KCFO_L17_iconalign_002_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 8500"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0366,
+        "x_center": 0.8667,
+        "y_center": 0.7391
+      },
+      "candidates": [
+        {
+          "candidate_type": "navaid_ident_literal",
+          "raw_text": "FQF",
+          "value": "FQF",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KCFO_L17",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_L17_iconalign_003_navaid_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "FQF",
+      "region_id": "KCFO_L17_iconalign_003_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "review_action": "pending",
+      "visible_label_prefix": "NAVAID_TEXT",
+      "visible_literal": "NAVAID_TEXT: FQF"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0495,
+        "x_center": 0.8656,
+        "y_center": 0.7513
+      },
+      "candidates": [
+        {
+          "candidate_type": "radial_text_literal",
+          "raw_text": "R-127",
+          "value": 127,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KCFO_L17",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_L17_iconalign_004_radial_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "R-127",
+      "region_id": "KCFO_L17_iconalign_004_radial_text",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "pending",
+      "visible_label_prefix": "RADIAL_TEXT",
+      "visible_literal": "RADIAL_TEXT: R-127"
+    },
+    {
+      "bbox": {
+        "height": 0.0125,
+        "width": 0.0758,
+        "x_center": 0.8055,
+        "y_center": 0.7622
+      },
+      "candidates": [],
+      "chart_id": "KCFO_L17",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_L17_iconalign_001_heading_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "hdg 172°",
+      "region_id": "KCFO_L17_iconalign_001_heading_text",
+      "region_type": "HEADING_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "HEADING_TEXT",
+      "visible_literal": "HEADING_TEXT: hdg 172°"
+    },
+    {
+      "bbox": {
+        "height": 0.0242,
+        "width": 0.0124,
+        "x_center": 0.8005,
+        "y_center": 0.731
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KCFO_L17",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_L17_iconalign_007_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KCFO_L17_iconalign_007_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0097,
+        "width": 0.0173,
+        "x_center": 0.9207,
+        "y_center": 0.7472
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "FIX_SYMBOL",
+          "value": "FIX_SYMBOL",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KCFO_L17",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_L17_iconalign_006_fix_symbol",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KCFO_L17_iconalign_006_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "visible_label_prefix": "FIX_SYMBOL",
+      "visible_literal": "detected lower detail: fix symbol"
+    },
+    {
+      "bbox": {
+        "height": 0.0098,
+        "width": 0.0359,
+        "x_center": 0.8643,
+        "y_center": 0.735
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "PATH_SEGMENT",
+          "value": "PATH_SEGMENT",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KCFO_L17",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_region_id": "KCFO_L17_iconalign_008_path_segment",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KCFO_L17_iconalign_008_path_segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "visible_label_prefix": "PATH_SEGMENT",
+      "visible_literal": "detected lower detail: path segment"
+    }
+  ]
+}

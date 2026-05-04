@@ -1,0 +1,15 @@
+{
+  "chart_id": "KCFO_I26",
+  "procedure": {
+    "airport": "KCFO",
+    "approach_ident": "I26",
+    "chart_name": "ILS OR LOC RWY 26"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

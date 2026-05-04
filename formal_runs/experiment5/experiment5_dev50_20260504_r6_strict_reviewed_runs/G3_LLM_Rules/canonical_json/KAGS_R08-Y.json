@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAGS_R08-Y",
+  "procedure": {
+    "airport": "KAGS",
+    "approach_ident": "R08-Y",
+    "chart_name": "RNAV (GPS) Y RWY 08"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

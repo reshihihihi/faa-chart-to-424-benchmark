@@ -1,0 +1,1 @@
+RuntimeError('HTTP 500 from http://127.0.0.1:8080/v1/chat/completions: {"error":{"message":"Your authentication token has been invalidated. Please try signing in again.","type":"server_error"}}')

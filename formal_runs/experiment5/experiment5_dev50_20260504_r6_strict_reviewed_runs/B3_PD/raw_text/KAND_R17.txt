@@ -1,0 +1,1 @@
+{"chart_id":"KAND_R17","procedure":{"airport":"KAND","approach_ident":"R17","chart_name":"RNAV (GPS) RWY 17"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

@@ -1008,6 +1008,7 @@ def main() -> int:
     parser.add_argument("--run-dir", type=Path, default=DEFAULT_RUN_DIR)
     parser.add_argument("--gold-text", type=Path, default=GOLD_TEXT_PATH)
     parser.add_argument("--methods", default="B2a_GoldText_LLM,B2b_GoldText_FieldCandidates_LLM")
+    parser.add_argument("--sample-scope", default="experiment5_gold_ma_prose")
     parser.add_argument("--model", default="gpt-5.4")
     parser.add_argument("--base-url", default=os.environ.get("OPENAI_BASE_URL") or DEFAULT_BASE_URL)
     parser.add_argument("--limit", type=int, default=20)
@@ -1043,7 +1044,7 @@ def main() -> int:
         "experiment_group": 5,
         "methods": methods,
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
-        "sample_scope": "experiment5_smoke20_gold_ma_prose",
+        "sample_scope": args.sample_scope,
         "limit": args.limit,
         "chart_ids": chart_ids,
         "model": args.model,

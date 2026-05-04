@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAPN_R01",
+  "procedure": {
+    "airport": "KAPN",
+    "approach_ident": "R01",
+    "chart_name": "RNAV (GPS) RWY 01"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: Climb to 7000 direct ZEXEL and hold, continue climb-in-hold to 7000.

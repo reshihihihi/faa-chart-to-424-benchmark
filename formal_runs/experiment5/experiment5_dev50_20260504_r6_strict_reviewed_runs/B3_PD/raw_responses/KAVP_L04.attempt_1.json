@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_5910e0ab-f274-47d8-beeb-c1602047f47c",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_ge0OuPJhBPDsT4lU6FB17Tp1",
+            "function": {
+              "arguments": "{\"chart_id\":\"KAVP_L04\",\"procedure\":{\"airport\":\"KAVP\",\"approach_ident\":\"L04\",\"chart_name\":\"ILS OR LOC RWY 04\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777864558,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

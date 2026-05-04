@@ -763,6 +763,10 @@ def main() -> int:
     chart_ids = sorted({chart_id for chart_id, _profile in candidate_inputs})
     if args.limit > 0:
         chart_ids = chart_ids[: args.limit]
+    reviewed_ma_text_used = any(
+        bool(row.get("reviewed_ma_text_input_path"))
+        for row in candidate_inputs.values()
+    )
     samples = load_sample_meta()
     targets = json.loads(TARGET_V2.read_text(encoding="utf-8"))
     policies = load_policy(POLICY_V2)
@@ -818,7 +822,8 @@ def main() -> int:
         "score_used_for_prediction": False,
         "cifp_or_arinc_424_used_for_prediction": False,
         "gold_observable_used_for_prediction": False,
-        "gold_ma_text_used_for_prediction": False,
+        "gold_ma_text_used_for_prediction": reviewed_ma_text_used,
+        "reviewed_ma_text_used_for_prediction": reviewed_ma_text_used,
         "b4_uses_field_candidates": "B4_TPD" in methods,
         "b3_pd_withholds_missed_approach_text": "B3_PD" in methods,
         "env_openai_base_url": os.environ.get("OPENAI_BASE_URL") or os.environ.get("CODEX_PROXY_BASE_URL"),
