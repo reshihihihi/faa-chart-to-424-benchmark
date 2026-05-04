@@ -1,0 +1,681 @@
+{
+  "answer_derived_keys": [
+    "Q_terminator",
+    "annotation_pr28_json",
+    "canonical_answer",
+    "canonical_leg_index",
+    "leg_type"
+  ],
+  "artifact_paths": {
+    "admin_evidence_links": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_evidence_links_dev50.jsonl",
+    "admin_field_review": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_field_review_dev50.jsonl",
+    "admin_gold_answer": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_gold_answer_dev50.jsonl",
+    "admin_regions": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl"
+  },
+  "artifact_summaries": {
+    "admin_evidence_links": {
+      "forbidden_key_hits": {
+        "candidate_leg_id": 542,
+        "canonical_answer": 542,
+        "canonical_leg_index": 542,
+        "leg_type": 542
+      },
+      "name": "admin_evidence_links",
+      "rows": 542,
+      "sample_nested_keys": [
+        "candidate_leg_id",
+        "canonical_answer",
+        "canonical_answer.status",
+        "canonical_answer.value",
+        "canonical_leg_index",
+        "chart_id",
+        "checked_scopes",
+        "checked_sources",
+        "evidence_region_ids",
+        "field_key",
+        "field_name",
+        "leg_type",
+        "required_evidence_region_ids",
+        "review_status",
+        "secondary_evidence_region_ids",
+        "support_mode",
+        "canonical_answer.value.altitude_2_ft",
+        "canonical_answer.value.altitude_ft",
+        "canonical_answer.value.desc",
+        "canonical_answer.value.type",
+        "canonical_answer.value.inbound_course_deg",
+        "canonical_answer.value.leg_distance_nm",
+        "canonical_answer.value.leg_time_min",
+        "canonical_answer.value.turn",
+        "canonical_answer.value.course_deg",
+        "canonical_answer.value.direction",
+        "canonical_answer.value.navaid",
+        "canonical_answer.value.radial_deg"
+      ],
+      "top_level_keys": {
+        "candidate_leg_id": 542,
+        "canonical_answer": 542,
+        "canonical_leg_index": 542,
+        "chart_id": 542,
+        "checked_scopes": 542,
+        "checked_sources": 542,
+        "evidence_region_ids": 542,
+        "field_key": 542,
+        "field_name": 542,
+        "leg_type": 542,
+        "required_evidence_region_ids": 542,
+        "review_status": 542,
+        "secondary_evidence_region_ids": 542,
+        "support_mode": 542
+      }
+    },
+    "admin_field_review": {
+      "forbidden_key_hits": {
+        "candidate_leg_id": 542,
+        "canonical_answer": 542,
+        "canonical_leg_index": 542,
+        "leg_type": 542
+      },
+      "name": "admin_field_review",
+      "rows": 542,
+      "sample_nested_keys": [
+        "candidate_leg_id",
+        "canonical_answer",
+        "canonical_answer.status",
+        "canonical_answer.value",
+        "canonical_leg_index",
+        "chart_id",
+        "checked_scopes",
+        "checked_sources",
+        "evidence_region_ids",
+        "evidence_source",
+        "field_key",
+        "field_name",
+        "leg_type",
+        "notes",
+        "required_evidence_region_ids",
+        "review_index",
+        "review_status",
+        "reviewed_at",
+        "reviewed_by",
+        "schema",
+        "secondary_evidence_region_ids",
+        "support_mode",
+        "canonical_answer.value.altitude_2_ft",
+        "canonical_answer.value.altitude_ft",
+        "canonical_answer.value.desc",
+        "canonical_answer.value.type",
+        "canonical_answer.value.inbound_course_deg",
+        "canonical_answer.value.leg_distance_nm",
+        "canonical_answer.value.leg_time_min",
+        "canonical_answer.value.turn",
+        "canonical_answer.value.course_deg",
+        "canonical_answer.value.direction",
+        "canonical_answer.value.navaid",
+        "canonical_answer.value.radial_deg"
+      ],
+      "top_level_keys": {
+        "candidate_leg_id": 542,
+        "canonical_answer": 542,
+        "canonical_leg_index": 542,
+        "chart_id": 542,
+        "checked_scopes": 542,
+        "checked_sources": 542,
+        "evidence_region_ids": 542,
+        "evidence_source": 542,
+        "field_key": 542,
+        "field_name": 542,
+        "leg_type": 542,
+        "notes": 542,
+        "required_evidence_region_ids": 542,
+        "review_index": 542,
+        "review_status": 542,
+        "reviewed_at": 542,
+        "reviewed_by": 542,
+        "schema": 542,
+        "secondary_evidence_region_ids": 542,
+        "support_mode": 542
+      }
+    },
+    "admin_gold_answer": {
+      "forbidden_key_hits": {
+        "annotation_pr28_json": 50,
+        "annotation_pr28_json.missed_approach.legs[].answers.Q_terminator": 160
+      },
+      "name": "admin_gold_answer",
+      "rows": 50,
+      "sample_nested_keys": [
+        "annotation_pr28_json.missed_approach.legs[].answers",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q1_fix_ident",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q1_fix_ident.status",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q1_fix_ident.value",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q2_altitude_constraint",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q2_altitude_constraint.status",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q2_altitude_constraint.value",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q3_turn",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q3_turn.status",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q3_turn.value",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q4_course_or_radial",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q4_course_or_radial.status",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q4_course_or_radial.value",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q5_hold_params",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q5_hold_params.status",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q5_hold_params.value",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q_terminator",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q_terminator.status",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q_terminator.value",
+        "annotation_pr28_json.missed_approach.legs[].leg_index",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q2_altitude_constraint.value.altitude_2_ft",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q2_altitude_constraint.value.altitude_ft",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q2_altitude_constraint.value.desc",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q4_course_or_radial.value.type",
+        "annotation_pr28_json",
+        "annotation_pr28_json.chart_id",
+        "annotation_pr28_json.missed_approach",
+        "annotation_pr28_json.missed_approach.leg_count",
+        "annotation_pr28_json.missed_approach.leg_count.status",
+        "annotation_pr28_json.missed_approach.leg_count.value",
+        "annotation_pr28_json.missed_approach.legs",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q5_hold_params.value.inbound_course_deg",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q5_hold_params.value.leg_distance_nm",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q5_hold_params.value.leg_time_min",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q5_hold_params.value.turn",
+        "annotation_pr28_json.procedure",
+        "annotation_pr28_json.procedure.airport",
+        "annotation_pr28_json.procedure.approach_ident",
+        "annotation_pr28_json.procedure.chart_name",
+        "chart_id",
+        "review_status",
+        "saved_at",
+        "saved_by",
+        "schema_validation_errors",
+        "source",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q4_course_or_radial.value.course_deg",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q4_course_or_radial.value.direction",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q4_course_or_radial.value.navaid",
+        "annotation_pr28_json.missed_approach.legs[].answers.Q4_course_or_radial.value.radial_deg"
+      ],
+      "top_level_keys": {
+        "annotation_pr28_json": 50,
+        "chart_id": 50,
+        "review_status": 50,
+        "saved_at": 50,
+        "saved_by": 50,
+        "schema_validation_errors": 50,
+        "source": 50
+      }
+    },
+    "admin_regions": {
+      "forbidden_key_hits": {},
+      "name": "admin_regions",
+      "rows": 393,
+      "sample_nested_keys": [
+        "annotation_scope",
+        "bbox",
+        "bbox.height",
+        "bbox.width",
+        "bbox.x_center",
+        "bbox.y_center",
+        "chart_id",
+        "element_role",
+        "final_region_id",
+        "is_formal_annotation_candidate",
+        "label",
+        "needs_discussion",
+        "notes",
+        "ocr_text",
+        "parent_step_region_id",
+        "region_index",
+        "region_type",
+        "review_action",
+        "source_region_id",
+        "step_id"
+      ],
+      "top_level_keys": {
+        "annotation_scope": 393,
+        "bbox": 393,
+        "chart_id": 393,
+        "element_role": 393,
+        "final_region_id": 393,
+        "is_formal_annotation_candidate": 393,
+        "label": 393,
+        "needs_discussion": 393,
+        "notes": 393,
+        "ocr_text": 393,
+        "parent_step_region_id": 393,
+        "region_index": 393,
+        "region_type": 393,
+        "review_action": 393,
+        "source_region_id": 393,
+        "step_id": 393
+      }
+    }
+  },
+  "dev_run_dir": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1",
+  "forbidden_keys": [
+    "Q_terminator",
+    "annotation_pr28_json",
+    "candidate_leg_id",
+    "canonical_answer",
+    "canonical_leg_index",
+    "field_review_v2",
+    "leg_type",
+    "score",
+    "target"
+  ],
+  "generated_at": "2026-05-04T02:08:27.026907+00:00",
+  "method_availability": {
+    "A3": {
+      "reason": "MISSED_APPROACH_TEXT rows=50, nonempty ocr_text=0; strict A3 needs real visible MA text.",
+      "status": "blocked_missing_visible_ma_text"
+    },
+    "B2": {
+      "reason": "B2 depends on the same legal MA_TEXT prose as A3.",
+      "status": "blocked_missing_visible_ma_text"
+    },
+    "B3_PD": {
+      "reason": "Plan/detail visible label or icon rows available=243; values must use literal label left side only.",
+      "status": "ready_visible_region_labels"
+    },
+    "B3_T": {
+      "reason": "ROI text requires nonempty OCR/corrected text; available MA_TEXT OCR rows=0/50.",
+      "status": "blocked_missing_roi_text"
+    },
+    "B3_TPD": {
+      "reason": "TPD can combine PD observables with text only after legal ROI text exists.",
+      "status": "partial_missing_text"
+    },
+    "B4_TPD": {
+      "reason": "B4 uses the same strict TPD evidence base before extra relation handling.",
+      "status": "partial_missing_text"
+    },
+    "G": {
+      "reason": "Existing gold_observable files include interpreted value objects; rebuild as visible facts only.",
+      "status": "requires_rebuild_from_visible_observables"
+    }
+  },
+  "region_summary": {
+    "annotation_scope_counts": {
+      "coarse_region": 50,
+      "detail_element": 1,
+      "lower_detail_icon_aligned_prelabel_candidate": 242,
+      "lower_detail_seed": 50,
+      "upper_coarse_formal_annotation": 50
+    },
+    "charts": 50,
+    "label_interpretation_suffix_by_region_type": {
+      "ALTITUDE_TEXT": {
+        "with_arrow_suffix": 62,
+        "without_arrow_suffix": 1
+      },
+      "CLIMB_ARROW": {
+        "with_arrow_suffix": 0,
+        "without_arrow_suffix": 71
+      },
+      "FIX_SYMBOL": {
+        "with_arrow_suffix": 0,
+        "without_arrow_suffix": 42
+      },
+      "FIX_TEXT": {
+        "with_arrow_suffix": 55,
+        "without_arrow_suffix": 0
+      },
+      "HEADING_TEXT": {
+        "with_arrow_suffix": 2,
+        "without_arrow_suffix": 0
+      },
+      "MISSED_APPROACH_DETAIL_AREA": {
+        "with_arrow_suffix": 0,
+        "without_arrow_suffix": 50
+      },
+      "MISSED_APPROACH_TEXT": {
+        "with_arrow_suffix": 0,
+        "without_arrow_suffix": 50
+      },
+      "NAVAID_TEXT": {
+        "with_arrow_suffix": 2,
+        "without_arrow_suffix": 0
+      },
+      "OUTBOUND_INBOUND_MARK": {
+        "with_arrow_suffix": 2,
+        "without_arrow_suffix": 0
+      },
+      "PATH_SEGMENT": {
+        "with_arrow_suffix": 0,
+        "without_arrow_suffix": 3
+      },
+      "PLAN_VIEW": {
+        "with_arrow_suffix": 0,
+        "without_arrow_suffix": 50
+      },
+      "RADIAL_TEXT": {
+        "with_arrow_suffix": 3,
+        "without_arrow_suffix": 0
+      }
+    },
+    "ma_text_nonempty_ocr_rows": 0,
+    "ma_text_region_rows": 50,
+    "ocr_text_availability_by_region_type": {
+      "ALTITUDE_TEXT": {
+        "empty": 63,
+        "nonempty": 0
+      },
+      "CLIMB_ARROW": {
+        "empty": 71,
+        "nonempty": 0
+      },
+      "FIX_SYMBOL": {
+        "empty": 42,
+        "nonempty": 0
+      },
+      "FIX_TEXT": {
+        "empty": 55,
+        "nonempty": 0
+      },
+      "HEADING_TEXT": {
+        "empty": 2,
+        "nonempty": 0
+      },
+      "MISSED_APPROACH_DETAIL_AREA": {
+        "empty": 50,
+        "nonempty": 0
+      },
+      "MISSED_APPROACH_TEXT": {
+        "empty": 50,
+        "nonempty": 0
+      },
+      "NAVAID_TEXT": {
+        "empty": 2,
+        "nonempty": 0
+      },
+      "OUTBOUND_INBOUND_MARK": {
+        "empty": 2,
+        "nonempty": 0
+      },
+      "PATH_SEGMENT": {
+        "empty": 3,
+        "nonempty": 0
+      },
+      "PLAN_VIEW": {
+        "empty": 50,
+        "nonempty": 0
+      },
+      "RADIAL_TEXT": {
+        "empty": 3,
+        "nonempty": 0
+      }
+    },
+    "pd_visible_observable_rows": 243,
+    "region_type_counts": {
+      "ALTITUDE_TEXT": 63,
+      "CLIMB_ARROW": 71,
+      "FIX_SYMBOL": 42,
+      "FIX_TEXT": 55,
+      "HEADING_TEXT": 2,
+      "MISSED_APPROACH_DETAIL_AREA": 50,
+      "MISSED_APPROACH_TEXT": 50,
+      "NAVAID_TEXT": 2,
+      "OUTBOUND_INBOUND_MARK": 2,
+      "PATH_SEGMENT": 3,
+      "PLAN_VIEW": 50,
+      "RADIAL_TEXT": 3
+    },
+    "review_action_counts": {
+      "accept": 220,
+      "pending": 173
+    },
+    "sample_visible_literals": [
+      {
+        "chart_id": "KAVL_I17",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "ALTITUDE_TEXT",
+        "review_action": "accept",
+        "visible_literal": "ALTITUDE_TEXT: 5400"
+      },
+      {
+        "chart_id": "KAVL_I17",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "FIX_TEXT",
+        "review_action": "accept",
+        "visible_literal": "FIX_TEXT: BRA"
+      },
+      {
+        "chart_id": "KAVL_I17",
+        "original_label_had_interpreted_suffix": false,
+        "region_id": null,
+        "region_type": "CLIMB_ARROW",
+        "review_action": "pending",
+        "visible_literal": "detected lower detail: climb arrow"
+      },
+      {
+        "chart_id": "KCFO_I26",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "ALTITUDE_TEXT",
+        "review_action": "accept",
+        "visible_literal": "ALTITUDE_TEXT: 6100"
+      },
+      {
+        "chart_id": "KCFO_I26",
+        "original_label_had_interpreted_suffix": false,
+        "region_id": null,
+        "region_type": "ALTITUDE_TEXT",
+        "review_action": "accept",
+        "visible_literal": "高度文字"
+      },
+      {
+        "chart_id": "KCFO_I26",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "FIX_TEXT",
+        "review_action": "accept",
+        "visible_literal": "FIX_TEXT: SKIPI"
+      },
+      {
+        "chart_id": "KCFO_I26",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "NAVAID_TEXT",
+        "review_action": "pending",
+        "visible_literal": "NAVAID_TEXT: FQF"
+      },
+      {
+        "chart_id": "KCFO_I26",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "RADIAL_TEXT",
+        "review_action": "pending",
+        "visible_literal": "RADIAL_TEXT: R-045"
+      },
+      {
+        "chart_id": "KCFO_I26",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "HEADING_TEXT",
+        "review_action": "accept",
+        "visible_literal": "HEADING_TEXT: 080°"
+      },
+      {
+        "chart_id": "KCFO_I26",
+        "original_label_had_interpreted_suffix": false,
+        "region_id": null,
+        "region_type": "CLIMB_ARROW",
+        "review_action": "pending",
+        "visible_literal": "detected lower detail: climb arrow"
+      },
+      {
+        "chart_id": "KCFO_I26",
+        "original_label_had_interpreted_suffix": false,
+        "region_id": null,
+        "region_type": "CLIMB_ARROW",
+        "review_action": "pending",
+        "visible_literal": "detected lower detail: climb arrow"
+      },
+      {
+        "chart_id": "KAVP_L04",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "ALTITUDE_TEXT",
+        "review_action": "accept",
+        "visible_literal": "ALTITUDE_TEXT: 3000"
+      },
+      {
+        "chart_id": "KAVP_L04",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "ALTITUDE_TEXT",
+        "review_action": "accept",
+        "visible_literal": "ALTITUDE_TEXT: 4000"
+      },
+      {
+        "chart_id": "KAVP_L04",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "FIX_TEXT",
+        "review_action": "accept",
+        "visible_literal": "FIX_TEXT: LVZ"
+      },
+      {
+        "chart_id": "KAVP_L04",
+        "original_label_had_interpreted_suffix": false,
+        "region_id": null,
+        "region_type": "CLIMB_ARROW",
+        "review_action": "pending",
+        "visible_literal": "detected lower detail: climb arrow"
+      },
+      {
+        "chart_id": "KBYL_L20",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "ALTITUDE_TEXT",
+        "review_action": "accept",
+        "visible_literal": "ALTITUDE_TEXT: 4000"
+      },
+      {
+        "chart_id": "KBYL_L20",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "ALTITUDE_TEXT",
+        "review_action": "accept",
+        "visible_literal": "ALTITUDE_TEXT: 1800"
+      },
+      {
+        "chart_id": "KBYL_L20",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "FIX_TEXT",
+        "review_action": "accept",
+        "visible_literal": "FIX_TEXT: LOZ"
+      },
+      {
+        "chart_id": "KBYL_L20",
+        "original_label_had_interpreted_suffix": false,
+        "region_id": null,
+        "region_type": "CLIMB_ARROW",
+        "review_action": "pending",
+        "visible_literal": "detected lower detail: climb arrow"
+      },
+      {
+        "chart_id": "KBYL_L20",
+        "original_label_had_interpreted_suffix": false,
+        "region_id": null,
+        "region_type": "CLIMB_ARROW",
+        "review_action": "pending",
+        "visible_literal": "detected lower detail: climb arrow"
+      },
+      {
+        "chart_id": "KCFO_L17",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "ALTITUDE_TEXT",
+        "review_action": "accept",
+        "visible_literal": "ALTITUDE_TEXT: 8500"
+      },
+      {
+        "chart_id": "KCFO_L17",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "NAVAID_TEXT",
+        "review_action": "pending",
+        "visible_literal": "NAVAID_TEXT: FQF"
+      },
+      {
+        "chart_id": "KCFO_L17",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "RADIAL_TEXT",
+        "review_action": "pending",
+        "visible_literal": "RADIAL_TEXT: R-127"
+      },
+      {
+        "chart_id": "KCFO_L17",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "HEADING_TEXT",
+        "review_action": "accept",
+        "visible_literal": "HEADING_TEXT: hdg 172°"
+      },
+      {
+        "chart_id": "KCFO_L17",
+        "original_label_had_interpreted_suffix": false,
+        "region_id": null,
+        "region_type": "CLIMB_ARROW",
+        "review_action": "pending",
+        "visible_literal": "detected lower detail: climb arrow"
+      },
+      {
+        "chart_id": "KCFO_L17",
+        "original_label_had_interpreted_suffix": false,
+        "region_id": null,
+        "region_type": "FIX_SYMBOL",
+        "review_action": "pending",
+        "visible_literal": "detected lower detail: fix symbol"
+      },
+      {
+        "chart_id": "KCFO_L17",
+        "original_label_had_interpreted_suffix": false,
+        "region_id": null,
+        "region_type": "PATH_SEGMENT",
+        "review_action": "pending",
+        "visible_literal": "detected lower detail: path segment"
+      },
+      {
+        "chart_id": "KCOE_L06",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "ALTITUDE_TEXT",
+        "review_action": "accept",
+        "visible_literal": "ALTITUDE_TEXT: 2900"
+      },
+      {
+        "chart_id": "KCOE_L06",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "ALTITUDE_TEXT",
+        "review_action": "accept",
+        "visible_literal": "ALTITUDE_TEXT: 6000"
+      },
+      {
+        "chart_id": "KCOE_L06",
+        "original_label_had_interpreted_suffix": true,
+        "region_id": null,
+        "region_type": "ALTITUDE_TEXT",
+        "review_action": "accept",
+        "visible_literal": "ALTITUDE_TEXT: 6500"
+      }
+    ],
+    "text_class_counts": {
+      "bbox_only_no_text": 150,
+      "visible_icon_available": 118,
+      "visible_label_literal_available": 125
+    }
+  },
+  "strict_source_decision": {
+    "admin_evidence_links": "relation_source_only_after_field_answer_stripping",
+    "admin_field_review": "blocked_for_method_inputs_except_manual_audit",
+    "admin_gold_answer": "scoring_only_never_input",
+    "admin_regions": "allowed_with_sanitization"
+  }
+}
