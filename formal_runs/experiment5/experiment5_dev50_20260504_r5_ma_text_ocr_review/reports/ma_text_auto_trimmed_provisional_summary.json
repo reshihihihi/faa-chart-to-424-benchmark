@@ -1,0 +1,9 @@
+{
+  "created_at_utc": "2026-05-04T02:38:09.081265+00:00",
+  "input_path": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260504_r5_ma_text_ocr_review\\inputs\\gold_ma_text_dev50_ocr_auto_trimmed_provisional.jsonl",
+  "ready_as_reviewed_gold": false,
+  "report_path": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260504_r5_ma_text_ocr_review\\reports\\ma_text_auto_trimmed_provisional_report_zh.md",
+  "review_status": "auto_trimmed_from_ocr_needs_spotcheck",
+  "rows": 50,
+  "suspicious_rows": 6
+}
