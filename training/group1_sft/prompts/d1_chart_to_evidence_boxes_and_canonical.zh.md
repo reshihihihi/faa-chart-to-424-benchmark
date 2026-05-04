@@ -11,33 +11,28 @@ The JSON object has exactly two top-level keys, in this order:
 1. `evidence_boxes`
 2. `canonical_prediction`
 
-`evidence_boxes` is an array of at most 12 chart regions. Each region must be
-visible on the chart image and relevant to the missed approach procedure. Use
-normalized bbox coordinates in `[x_center, y_center, width, height]` format,
-where every number is between 0 and 1.
+Because `canonical_prediction` is nested inside the outer object, the completed
+answer must close both the canonical object and the outer object. The final
+characters of a valid answer are normally `]}}}` after the last leg. Do not stop
+after `]}}`.
 
-Do not repeat the same box. If you are uncertain, output fewer boxes. After the
-last evidence box, close the `evidence_boxes` array and immediately output the
-`canonical_prediction` object.
+`evidence_boxes` is an array of exactly 3 chart regions. Do not output more
+than 3 boxes. Do not repeat a box. After the third box, close the array and
+immediately output `canonical_prediction`.
 
-Each evidence box has exactly these keys:
-`box_id`, `bbox`, `region_type`, `visible_text`, `candidate_bindings`.
+Use these three boxes, in this order:
+1. `missed_approach_text` with region_type `MISSED_APPROACH_TEXT`
+2. `plan_view_context` with region_type `PLAN_VIEW`
+3. `missed_approach_detail_area` with region_type `MISSED_APPROACH_DETAIL_AREA`
 
-`visible_text` is the text visibly inside or associated with the box, or null
-when no reliable text is visible. Do not invent OCR text.
-
-`candidate_bindings` lists which missed approach leg and canonical field the
-box may support. A binding has exactly these keys:
-`leg_index`, `candidate_leg_id`, `field_name`, `evidence_role`,
-`human_confidence`.
-
-Allowed `field_name` values:
-`Q_terminator`, `Q1_fix_ident`, `Q2_altitude_constraint`, `Q3_turn`,
-`Q4_course_or_radial`, `Q5_hold_params`.
+Each evidence box has exactly these keys: `box_id`, `bbox`, `region_type`.
+Use normalized bbox coordinates in `[x_center, y_center, width, height]`
+format, where every number is between 0 and 1.
 
 The evidence box section must not contain final answer values, canonical target
 objects, score metadata, CIFP/424 records, file paths, or other method
-predictions. It may only contain visible evidence and field-binding hints.
+predictions. It must not contain candidate leg ids, final answer values, or
+field-level canonical answers.
 
 `canonical_prediction` must follow the usual missed approach canonical JSON
 schema. It has exactly three keys:

@@ -61,6 +61,80 @@ def strict_json(text: str) -> dict[str, Any]:
     return parsed
 
 
+def delimiter_balance_outside_strings(text: str) -> dict[str, int]:
+    balances = {"curly": 0, "square": 0}
+    in_string = False
+    escaped = False
+    for char in text:
+        if escaped:
+            escaped = False
+            continue
+        if char == "\\" and in_string:
+            escaped = True
+            continue
+        if char == '"':
+            in_string = not in_string
+            continue
+        if in_string:
+            continue
+        if char == "{":
+            balances["curly"] += 1
+        elif char == "}":
+            balances["curly"] -= 1
+        elif char == "[":
+            balances["square"] += 1
+        elif char == "]":
+            balances["square"] -= 1
+    return balances
+
+
+def parse_model_output(
+    text: str,
+    *,
+    method: str,
+    allow_single_missing_final_object_brace: bool,
+    validator: Any | None,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    parse_event: dict[str, Any] = {
+        "strict_json_parse_ok": False,
+        "single_missing_final_object_brace_applied": False,
+        "semantic_repair_applied": False,
+    }
+    try:
+        parsed = strict_json(text)
+        parse_event["strict_json_parse_ok"] = True
+        return parsed, parse_event
+    except Exception as strict_exc:  # noqa: BLE001
+        parse_event["strict_json_error"] = repr(strict_exc)
+        if (
+            not allow_single_missing_final_object_brace
+            or method not in JOINT_EVIDENCE_CANONICAL_METHODS
+            or "```" in text
+        ):
+            raise
+
+    stripped = text.strip()
+    balances = delimiter_balance_outside_strings(stripped)
+    parse_event["delimiter_balance_before_closure"] = balances
+    if balances != {"curly": 1, "square": 0}:
+        raise ValueError(
+            "single_missing_final_object_brace_not_applicable: "
+            f"curly_balance={balances['curly']} square_balance={balances['square']}"
+        )
+    if not stripped.startswith("{") or not stripped.endswith("}"):
+        raise ValueError("single_missing_final_object_brace_not_applicable: output_boundary_mismatch")
+
+    parsed = json.loads(stripped + "}")
+    if not isinstance(parsed, dict):
+        raise ValueError("model_output_is_not_json_object")
+    schema_errors = validation_errors(parsed, validator)
+    if schema_errors:
+        raise ValueError("single_missing_final_object_brace_candidate_schema_invalid: " + schema_errors[0])
+    parse_event["single_missing_final_object_brace_applied"] = True
+    parse_event["mechanical_closure_added"] = "}"
+    return parsed, parse_event
+
+
 def dependency_versions() -> dict[str, Any]:
     packages = ["torch", "transformers", "peft", "bitsandbytes", "Pillow", "jsonschema"]
     versions: dict[str, Any] = {"python": sys.version}
@@ -233,6 +307,7 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     failures: list[dict[str, Any]] = []
     score_rows: list[dict[str, Any]] = []
     valid_predictions: list[dict[str, Any]] = []
+    parser_events: list[dict[str, Any]] = []
     for row in rows:
         sample_id = row.get("sample_id")
         chart_id = row["chart_id"]
@@ -256,7 +331,22 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 repetition_penalty=args.repetition_penalty,
             )
             write_text(run_dir / "raw_text" / f"{chart_id}.txt", text)
-            parsed = strict_json(text)
+            parsed, parser_event = parse_model_output(
+                text,
+                method=args.method,
+                allow_single_missing_final_object_brace=args.allow_single_missing_final_object_brace,
+                validator=validator,
+            )
+            parser_event["sample_id"] = sample_id
+            parser_event["chart_id"] = chart_id
+            parser_events.append(parser_event)
+            write_json(run_dir / "parser_logs" / f"{chart_id}.json", parser_event)
+            item["parser"] = {
+                "strict_json_parse_ok": parser_event["strict_json_parse_ok"],
+                "single_missing_final_object_brace_applied": parser_event[
+                    "single_missing_final_object_brace_applied"
+                ],
+            }
             write_json(run_dir / "parsed_json" / f"{chart_id}.json", parsed)
             errors = validation_errors(parsed, validator)
             canonical_prediction = canonical_prediction_for_scoring(parsed, args.method)
@@ -312,8 +402,15 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "scoring_manifest": str(args.scoring_manifest) if args.scoring_manifest else None,
         "comparison_policy": str(args.comparison_policy) if args.scoring_manifest else None,
         "parser_policy": {
-            "strict_json_only": True,
+            "strict_json_only": not args.allow_single_missing_final_object_brace,
+            "strict_json_attempted_first": True,
             "code_fence_stripping_allowed": False,
+            "single_missing_final_object_brace_closure_allowed": args.allow_single_missing_final_object_brace,
+            "single_missing_final_object_brace_closure_scope": (
+                "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL_only"
+                if args.allow_single_missing_final_object_brace
+                else None
+            ),
             "semantic_repair_allowed": False,
             "assistant_prefill": assistant_prefill,
             "joint_output_canonical_extraction": args.method in JOINT_EVIDENCE_CANONICAL_METHODS,
@@ -332,6 +429,13 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         },
         "samples_total": len(rows),
         "samples_scored": len(score_rows),
+        "parser_event_counts": {
+            "strict_json_parse_ok": sum(1 for event in parser_events if event.get("strict_json_parse_ok")),
+            "single_missing_final_object_brace_applied": sum(
+                1 for event in parser_events if event.get("single_missing_final_object_brace_applied")
+            ),
+            "semantic_repair_applied": sum(1 for event in parser_events if event.get("semantic_repair_applied")),
+        },
         "failures": failures,
         "failure_count": len(failures),
         "score": {"correct": correct, "total": total, "accuracy": correct / total if total else None},
@@ -369,6 +473,15 @@ def main() -> int:
     parser.add_argument("--assistant-prefill", default=None)
     parser.add_argument("--max-new-tokens", type=int, default=1536)
     parser.add_argument("--repetition-penalty", type=float, default=1.0)
+    parser.add_argument(
+        "--allow-single-missing-final-object-brace",
+        action="store_true",
+        help=(
+            "For the joint evidence-box-plus-canonical method only, allow one pre-registered "
+            "mechanical closure when strict JSON parsing fails solely because the final outer "
+            "object brace is missing. The candidate must pass the wrapper schema before scoring."
+        ),
+    )
     parser.add_argument("--min-pixels", type=int, default=3136)
     parser.add_argument("--max-pixels", type=int, default=501760)
     parser.add_argument("--compute-dtype", choices=["float16", "bfloat16"], default="float16")

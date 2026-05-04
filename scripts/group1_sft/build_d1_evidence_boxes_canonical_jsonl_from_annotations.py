@@ -73,6 +73,12 @@ CORE_REGION_ORDER = {
     "PATH_SEGMENT": 12,
 }
 
+COARSE_EVIDENCE_BOXES = [
+    ("missed_approach_text", "MISSED_APPROACH_TEXT"),
+    ("plan_view_context", "PLAN_VIEW"),
+    ("missed_approach_detail_area", "MISSED_APPROACH_DETAIL_AREA"),
+]
+
 
 def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8-sig"))
@@ -193,32 +199,27 @@ def region_sort_key(region: dict[str, Any]) -> tuple[int, int, float, float, str
     return (has_bindings, region_rank, bbox[1], bbox[0], region_id(region) or "")
 
 
+def field_names_for_region(region: dict[str, Any]) -> list[str]:
+    names = sorted({binding["field_name"] for binding in candidate_bindings(region)})
+    return [name for name in QUESTION_FIELDS if name in names]
+
+
 def build_evidence_boxes(annotation: dict[str, Any], *, max_boxes: int) -> list[dict[str, Any]]:
     boxes: list[dict[str, Any]] = []
-    seen: set[str] = set()
-    regions = sorted(annotation.get("regions") or [], key=region_sort_key)
-    for region in regions:
-        rid = region_id(region)
-        bbox = bbox_to_array(region.get("bbox"))
-        if not rid or rid in seen or bbox is None:
-            continue
-        seen.add(rid)
+    regions_by_type: dict[str, dict[str, Any]] = {}
+    for region in sorted(annotation.get("regions") or [], key=region_sort_key):
         region_type = str(region.get("region_type") or "OTHER")
-        if region_type not in CORE_REGION_ORDER and not candidate_bindings(region):
+        bbox = bbox_to_array(region.get("bbox"))
+        if bbox is not None and region_type not in regions_by_type:
+            regions_by_type[region_type] = region
+    for box_id, region_type in COARSE_EVIDENCE_BOXES[:max_boxes]:
+        region = regions_by_type.get(region_type)
+        if region is None:
             continue
-        label = normalize_spaces(region.get("label"))
-        text = normalize_spaces(region.get("ocr_text")) or visible_text_from_label(label)
-        boxes.append(
-            {
-                "box_id": rid,
-                "bbox": bbox,
-                "region_type": region_type if region_type in CORE_REGION_ORDER else "OTHER",
-                "visible_text": text or None,
-                "candidate_bindings": candidate_bindings(region),
-            }
-        )
-        if len(boxes) >= max_boxes:
-            break
+        bbox = bbox_to_array(region.get("bbox"))
+        if bbox is None:
+            continue
+        boxes.append({"box_id": box_id, "bbox": bbox, "region_type": region_type})
     return boxes
 
 
@@ -399,7 +400,7 @@ def main() -> int:
     parser.add_argument("--paths", type=Path, default=DEFAULT_PATHS)
     parser.add_argument("--split-json", type=Path, default=DEFAULT_SPLIT)
     parser.add_argument("--train-target", type=int, default=40)
-    parser.add_argument("--max-boxes", type=int, default=12)
+    parser.add_argument("--max-boxes", type=int, default=3)
     args = parser.parse_args()
 
     config, repo_root = load_paths(args.paths)
@@ -455,8 +456,6 @@ def main() -> int:
             box_count_by_chart[chart_id] = len(label["evidence_boxes"])
             for box in label["evidence_boxes"]:
                 region_type_counts[box["region_type"]] += 1
-                for binding in box["candidate_bindings"]:
-                    field_binding_counts[binding["field_name"]] += 1
             for error in validation_errors(label, wrapper_validator):
                 schema_errors.append({"chart_id": chart_id, "artifact": "wrapper", "error": error})
             for error in validation_errors(label["canonical_prediction"], canonical_validator):

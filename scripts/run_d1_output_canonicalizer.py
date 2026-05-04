@@ -5,6 +5,7 @@ import copy
 import hashlib
 import importlib.util
 import json
+import re
 import shutil
 from collections import Counter
 from datetime import datetime, timezone
@@ -204,7 +205,30 @@ def normalize_status(answer: Any, actions: list[str], field_path: str) -> tuple[
     return status, value
 
 
-def sanitize_answer(field: str, answer: Any, actions: list[str], field_path: str) -> dict[str, Any]:
+def coerce_diagnostic_answer(field: str, answer: Any, actions: list[str], field_path: str) -> Any:
+    if not isinstance(answer, dict) or "status" in answer:
+        return answer
+    if "value" in answer:
+        value = answer.get("value")
+        status = "present" if value is not None else "unknown"
+        actions.append(f"diagnostic_add_status_from_value:{field_path}")
+        return {**answer, "status": status}
+    if field in {"Q2_altitude_constraint", "Q4_course_or_radial", "Q5_hold_params"}:
+        actions.append(f"diagnostic_wrap_structured_answer_value:{field_path}")
+        return {"status": "present", "value": answer}
+    return answer
+
+
+def sanitize_answer(
+    field: str,
+    answer: Any,
+    actions: list[str],
+    field_path: str,
+    *,
+    diagnostic_salvage: bool = False,
+) -> dict[str, Any]:
+    if diagnostic_salvage:
+        answer = coerce_diagnostic_answer(field, answer, actions, field_path)
     status, value = normalize_status(answer, actions, field_path)
     if status != "present":
         return {"status": status, "value": None}
@@ -306,13 +330,32 @@ def sanitize_answer(field: str, answer: Any, actions: list[str], field_path: str
     return answer_unknown()
 
 
-def sanitize_leg(leg: Any, index: int, actions: list[str]) -> dict[str, Any]:
+def diagnostic_answers_from_mapping(source: dict[str, Any], actions: list[str], field_path: str) -> dict[str, Any]:
+    answers = source.get("answers")
+    out = copy.deepcopy(answers) if isinstance(answers, dict) else {}
+    for field in QUESTION_FIELDS:
+        if field in source and field not in out:
+            out[field] = source[field]
+            actions.append(f"diagnostic_move_sibling_question_field:{field_path}.{field}")
+    return out
+
+
+def sanitize_leg(
+    leg: Any,
+    index: int,
+    actions: list[str],
+    *,
+    diagnostic_salvage: bool = False,
+) -> dict[str, Any]:
     if not isinstance(leg, dict):
         actions.append(f"fallback_non_object_leg:{index}")
         answers = {}
     else:
-        answers = leg.get("answers")
-        if not isinstance(answers, dict):
+        if diagnostic_salvage:
+            answers = diagnostic_answers_from_mapping(leg, actions, f"legs[{index}]")
+        else:
+            answers = leg.get("answers")
+        if not isinstance(answers, dict) or not answers:
             actions.append(f"fallback_missing_answers:{index}")
             answers = {}
     sanitized_answers: dict[str, Any] = {}
@@ -326,6 +369,7 @@ def sanitize_leg(leg: Any, index: int, actions: list[str]) -> dict[str, Any]:
                 answers[field],
                 actions,
                 f"missed_approach.legs[{index}].answers.{field}",
+                diagnostic_salvage=diagnostic_salvage,
             )
     return {"leg_index": index, "answers": sanitized_answers}
 
@@ -370,9 +414,71 @@ def apply_manifest_envelope(obj: dict[str, Any], meta: dict[str, Any], actions: 
     return out
 
 
-def force_canonical_schema(obj: dict[str, Any], meta: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
+def mapping_has_question_fields(value: Any) -> bool:
+    return isinstance(value, dict) and any(field in value for field in QUESTION_FIELDS)
+
+
+def diagnostic_normalize_misnested_missed(missed: dict[str, Any], actions: list[str]) -> dict[str, Any]:
+    out = copy.deepcopy(missed)
+    raw_legs = out.get("legs")
+    if isinstance(raw_legs, list):
+        return out
+    legs: list[dict[str, Any]] = []
+    leg_count = out.get("leg_count")
+    if mapping_has_question_fields(leg_count):
+        legs.append({"answers": diagnostic_answers_from_mapping(leg_count, actions, "missed_approach.leg_count")})
+        actions.append("diagnostic_convert_leg_count_questions_to_leg_1")
+    leg_items: list[tuple[int, dict[str, Any]]] = []
+    for key, value in out.items():
+        match = re.fullmatch(r"leg_(\d+)", str(key))
+        if match and isinstance(value, dict):
+            leg_items.append((int(match.group(1)), value))
+    for _, value in sorted(leg_items, key=lambda item: item[0]):
+        legs.append({"answers": diagnostic_answers_from_mapping(value, actions, "missed_approach.leg_n")})
+    if legs:
+        out["legs"] = legs
+        out["leg_count"] = {"status": "present", "value": len(legs)}
+        actions.append("diagnostic_build_legs_from_misnested_question_fields")
+    return out
+
+
+def diagnostic_extract_misnested_missed(obj: dict[str, Any], actions: list[str]) -> dict[str, Any] | None:
+    missed = obj.get("missed_approach")
+    if isinstance(missed, dict):
+        actions.append("diagnostic_use_top_level_missed_approach")
+        return diagnostic_normalize_misnested_missed(missed, actions)
+    procedure = obj.get("procedure")
+    if not isinstance(procedure, dict):
+        return None
+    proc_missed = procedure.get("missed_approach")
+    if isinstance(proc_missed, dict):
+        actions.append("diagnostic_move_procedure_missed_approach_to_top_level")
+        return diagnostic_normalize_misnested_missed(proc_missed, actions)
+    if isinstance(procedure.get("legs"), list) or "leg_count" in procedure:
+        actions.append("diagnostic_move_procedure_legs_to_missed_approach")
+        return diagnostic_normalize_misnested_missed(
+            {"leg_count": procedure.get("leg_count"), "legs": procedure.get("legs")},
+            actions,
+        )
+    return None
+
+
+def force_canonical_schema(
+    obj: dict[str, Any],
+    meta: dict[str, Any],
+    *,
+    diagnostic_salvage: bool = False,
+) -> tuple[dict[str, Any], list[str]]:
     actions: list[str] = []
+    salvaged_missed = diagnostic_extract_misnested_missed(obj, actions) if diagnostic_salvage else None
     out = apply_manifest_envelope(obj, meta, actions)
+    if salvaged_missed is not None:
+        out["missed_approach"] = salvaged_missed
+    extra_top_level = sorted(set(out) - {"chart_id", "procedure", "missed_approach"})
+    if extra_top_level:
+        for key in extra_top_level:
+            out.pop(key, None)
+        actions.append("drop_extra_top_level_fields_after_envelope:" + ",".join(extra_top_level))
     missed = out.get("missed_approach")
     if not isinstance(missed, dict):
         actions.append("fallback_missing_missed_approach")
@@ -381,7 +487,10 @@ def force_canonical_schema(obj: dict[str, Any], meta: dict[str, Any]) -> tuple[d
     if not isinstance(raw_legs, list):
         actions.append("fallback_missing_legs")
         raw_legs = []
-    legs = [sanitize_leg(leg, idx, actions) for idx, leg in enumerate(raw_legs, start=1)]
+    legs = [
+        sanitize_leg(leg, idx, actions, diagnostic_salvage=diagnostic_salvage)
+        for idx, leg in enumerate(raw_legs, start=1)
+    ]
     leg_count = sanitize_leg_count(missed.get("leg_count"), actions, len(legs))
     out["missed_approach"] = {"leg_count": leg_count, "legs": legs}
     return out, actions
@@ -491,6 +600,18 @@ def main() -> None:
     parser.add_argument("--policy", type=Path, required=True)
     parser.add_argument("--method-card", type=Path, required=True)
     parser.add_argument("--out-root", type=Path, required=True)
+    parser.add_argument("--run-id", default=RUN_ID)
+    parser.add_argument("--method", default="D1")
+    parser.add_argument("--policy-id", default=POLICY_ID)
+    parser.add_argument(
+        "--diagnostic-salvage-misnested-output",
+        action="store_true",
+        help=(
+            "Diagnostic only: reuse raw-output fields that were generated under the wrong "
+            "JSON level, such as procedure.legs or procedure.missed_approach. This does not "
+            "use targets, scores, raw 424/CIFP records, OCR, or other method predictions."
+        ),
+    )
     args = parser.parse_args()
 
     out_root = args.out_root
@@ -534,9 +655,9 @@ def main() -> None:
         meta["chart_id"] = chart_id
         raw_path = args.raw_dir / f"{chart_id}.txt"
         record: dict[str, Any] = {
-            "run_id": RUN_ID,
-            "method": "D1",
-            "policy_id": POLICY_ID,
+            "run_id": args.run_id,
+            "method": args.method,
+            "policy_id": args.policy_id,
             "sample_id": sample.get("sample_id"),
             "expected_chart_id": chart_id,
             "raw_path": str(raw_path),
@@ -570,7 +691,11 @@ def main() -> None:
         for index, obj in enumerate(objects):
             candidate, candidate_actions = canonicalize_one(obj)
             raw_candidate_chart_id = candidate.get("chart_id")
-            forced, force_actions = force_canonical_schema(candidate, meta)
+            forced, force_actions = force_canonical_schema(
+                candidate,
+                meta,
+                diagnostic_salvage=args.diagnostic_salvage_misnested_output,
+            )
             errors = validate(forced, scorer, validator)
             if selected is None:
                 selected = forced
@@ -638,10 +763,14 @@ def main() -> None:
 
     summary = {
         "created_at": datetime.now(timezone.utc).isoformat(),
-        "run_id": RUN_ID,
-        "method": "D1",
-        "policy_id": POLICY_ID,
-        "purpose": "canonicalize D-SFT raw outputs into the same fixed hierarchical canonical JSON format as the CIFP/424-derived targets",
+        "run_id": args.run_id,
+        "method": args.method,
+        "policy_id": args.policy_id,
+        "purpose": (
+            "canonicalize raw model outputs into the same fixed hierarchical canonical JSON "
+            "format as the CIFP/424-derived targets"
+        ),
+        "diagnostic_salvage_misnested_output": args.diagnostic_salvage_misnested_output,
         "samples_total": len(rows),
         "raw_outputs_found": raw_found,
         "canonical_json_written": len(list(canonical_dir.glob("*.json"))),
@@ -681,15 +810,17 @@ def main() -> None:
             for row in failures
         ],
     }
-    write_json(reports_dir / "D1_summary.json", summary)
-    write_jsonl(reports_dir / "D1_per_sample.jsonl", per_sample)
-    write_jsonl(reports_dir / "D1_failures.jsonl", failures)
+    report_prefix = args.method
+    write_json(reports_dir / f"{report_prefix}_summary.json", summary)
+    write_jsonl(reports_dir / f"{report_prefix}_per_sample.jsonl", per_sample)
+    write_jsonl(reports_dir / f"{report_prefix}_failures.jsonl", failures)
 
     lines = [
         "# D1 输出格式规范化结果",
         "",
-        f"- run_id: `{RUN_ID}`",
-        f"- policy_id: `{POLICY_ID}`",
+        f"- run_id: `{args.run_id}`",
+        f"- method: `{args.method}`",
+        f"- policy_id: `{args.policy_id}`",
         f"- 总样本: {len(rows)}",
         f"- raw output 找到: {raw_found}",
         f"- canonical JSON 写出: {summary['canonical_json_written']}",
@@ -708,7 +839,7 @@ def main() -> None:
     for row in failures:
         err = (row.get("validation_errors") or [""])[0]
         lines.append(f"| {row.get('expected_chart_id')} | {row.get('output_chart_id')} | `{err}` |")
-    (reports_dir / "D1_summary_zh.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (reports_dir / f"{report_prefix}_summary_zh.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

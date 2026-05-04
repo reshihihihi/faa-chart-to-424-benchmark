@@ -38,6 +38,18 @@ POLICY_V2 = (
     / "scoring_equivalence_v2"
     / "comparison_policy_v2.jsonl"
 )
+TARGET_V2 = (
+    ROOT
+    / "benchmark_exports"
+    / "derived"
+    / "v2"
+    / "formal300"
+    / "targets"
+    / "scoring_equivalence_v2"
+    / "canonical_proxy_gt_chart_display_v2.json"
+)
+D1_CANONICALIZATION_POLICY = ROOT / "docs" / "d1_output_canonicalization_policy_zh.md"
+D1_METHOD_CARD = ROOT / "docs" / "d1_method_card_zh.md"
 DEFAULT_SPLIT = (
     ROOT
     / "benchmark_exports"
@@ -57,7 +69,7 @@ DEFAULT_METHODS = [
 
 CHART_TO_EVIDENCE_TRAIN_RUN_ID = "chart_to_evidence_sft_dev50_with_field_links_20260503_r1"
 EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID = "evidence_to_semantics_sft_dev50_with_field_links_20260503_r1"
-D1_EVIDENCE_BOXES_TRAIN_RUN_ID = "d1_chart_to_evidence_boxes_and_canonical_dev50_20260504_r2"
+D1_EVIDENCE_BOXES_TRAIN_RUN_ID = "d1_chart_to_evidence_boxes_and_canonical_dev50_coarse3_20260504_r4"
 
 IMAGE_METHODS = {
     "D_BASE_SAME_BACKBONE",
@@ -498,13 +510,15 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
         + "--method D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL "
         + "--paths training\\group1_sft\\configs\\local_paths.local.json "
         + f"--run-id {D1_EVIDENCE_BOXES_TRAIN_RUN_ID} "
-        + "--epochs 1 "
-        + "--learning-rate 5e-5 "
-        + "--max-seq-length 4096",
+                + "--epochs 1 "
+                + "--learning-rate 5e-5 "
+                + "--max-seq-length 4096",
         "```",
         "",
     ]
     if "D_BASE_SAME_BACKBONE" in methods:
+        dbase_raw_run_id = f"{run_dir.name}_D_BASE_SAME_BACKBONE_raw"
+        dbase_output_root = run_dir / "D_BASE_SAME_BACKBONE"
         lines.extend(
             [
                 "## 4. Same-backbone unfinetuned control",
@@ -517,7 +531,29 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
                 + "--prompt training\\d_sft\\prompts\\d_sft_image_to_canonical.v2.md "
                 + "--json-schema schemas\\missed_approach_leg.schema.json "
                 + f"--scoring-manifest {run_dir / 'scoring_manifest.jsonl'} "
-                + f"--output-root {run_dir / 'D_BASE_SAME_BACKBONE'}",
+                + f"--output-root {dbase_output_root} "
+                + f"--run-id {dbase_raw_run_id}",
+                "```",
+                "",
+                "## 4b. Canonicalize and score the same-backbone control outputs",
+                "",
+                "This post-processing uses the same mechanical D1 canonicalization policy: it fixes the output envelope and schema shape without using targets, scores, raw 424/CIFP records, OCR, or other method predictions to change answer values. Targets are used only after canonical JSON is written, for scoring.",
+                "",
+                "```powershell",
+                "python scripts\\run_d1_output_canonicalizer.py "
+                + f"--sample-manifest {run_dir / 'scoring_manifest.jsonl'} "
+                + f"--input-manifest {run_dir / 'D_BASE_SAME_BACKBONE' / 'input_manifest.jsonl'} "
+                + f"--raw-dir {dbase_output_root / 'predictions' / dbase_raw_run_id / 'raw_text'} "
+                + "--schema schemas\\missed_approach_leg.schema.json "
+                + "--scorer scripts\\scorers\\group1_canonical_field_scorer_v2.py "
+                + f"--target-v2 {TARGET_V2} "
+                + f"--comparison-policy-v2 {POLICY_V2} "
+                + f"--policy {D1_CANONICALIZATION_POLICY} "
+                + f"--method-card {D1_METHOD_CARD} "
+                + f"--out-root {run_dir / 'D_BASE_SAME_BACKBONE_CANONICALIZED'} "
+                + f"--run-id {run_dir.name}_D_BASE_SAME_BACKBONE_CANONICALIZED "
+                + "--method D_BASE_SAME_BACKBONE "
+                + "--policy-id dbase_output_canonicalization_same_as_d1",
                 "```",
                 "",
             ]
@@ -559,7 +595,7 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
                 + "--canonical-json-schema schemas\\missed_approach_leg.schema.json "
                 + f"--scoring-manifest {run_dir / 'scoring_manifest.jsonl'} "
                 + f"--output-root {run_dir / 'D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL'} "
-                + "--max-new-tokens 2560 "
+                + "--max-new-tokens 2048 "
                 + "--repetition-penalty 1.08",
                 "```",
                 "",
