@@ -62,10 +62,16 @@ DEFAULT_SPLIT = (
 )
 
 DEFAULT_METHODS = [
+    "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL",
+]
+ALLOWED_METHODS = {
     "D_BASE_SAME_BACKBONE",
     "D1",
     "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL",
-]
+    "CHART_TO_EVIDENCE_SFT",
+    "EVIDENCE_TO_SEMANTICS_SFT",
+    "TWO_STAGE_AUTO_SFT",
+}
 
 CHART_TO_EVIDENCE_TRAIN_RUN_ID = "chart_to_evidence_sft_dev50_with_field_links_20260503_r1"
 EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID = "evidence_to_semantics_sft_dev50_with_field_links_20260503_r1"
@@ -725,7 +731,7 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
         run_dir = output_root / run_id
     run_dir.mkdir(parents=True, exist_ok=args.overwrite)
     methods = [item.strip() for item in args.methods.split(",") if item.strip()]
-    unknown = sorted(set(methods) - set(DEFAULT_METHODS))
+    unknown = sorted(set(methods) - ALLOWED_METHODS)
     if unknown:
         raise ValueError(f"Unknown methods: {unknown}")
 

@@ -1,89 +1,42 @@
-# 实验组1 D 方法补充方案：D1 继续训练增加图上证据框监督
+# 实验组1补充方法最终方案：D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL
 
 日期：2026-05-04
 
-## 1. 本轮目标
+## 一、本轮只做什么
 
-本轮只保留三种 D 方法，目的是把“没有 SFT、已有 D1、在 D1 基础上增加找证据能力”放在同一批 200 张正式评估样本上对比。
-
-三种方法分别是：
-
-1. `D_BASE_SAME_BACKBONE`
-   - 作用：同底座未微调对照。
-   - 输入：完整航图图片。
-   - 输出：原始 missed approach canonical JSON。
-   - 是否训练：不训练。
-   - 用途：说明同一个 Qwen2-VL 底座不经过 D1 SFT 时，直接输出 canonical JSON 的能力如何。
-
-2. `D1`
-   - 作用：实验组1已有端到端 SFT baseline。
-   - 输入：完整航图图片。
-   - 输出：原始 missed approach canonical JSON。
-   - 是否训练：已经有旧 D1 checkpoint，不在本轮重新训练。
-   - 用途：作为当前主要 baseline，代表“完整航图直接到最终 canonical JSON”的端到端学习效果。
-
-3. `D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL`
-   - 作用：在旧 D1 checkpoint 基础上继续训练，让模型显式学习“先找图上证据，再给最终答案”。
-   - 输入：完整航图图片。
-   - 原始诊断输出：`evidence_boxes`、`answer_grounding`、`canonical_prediction`。
-   - 正式评分输出：只抽取 `canonical_prediction`，保持和旧 D1 完全相同的 missed approach canonical JSON 形状。
-   - 是否训练：需要训练，从旧 D1 checkpoint 继续训，不从 base model 重新训。
-   - 用途：测试增加图上证据框监督后，是否能改善最终 canonical JSON，同时不改变评分接口。
-
-## 2. 数据来源
-
-训练数据只来自标注后台已经有的人工审核关系，不要求额外补新标注。
-
-后台导出能提供以下信息：
-
-- `regions`：图上框、bbox、region type、可见文字、框来源。
-- `accepted_mappings`：框和航段、字段之间的人工接受关系。
-- `candidate_mappings_reviewed` 和 `source_field_name`：后台已经保存的细框候选字段关系，用来补足 `CLIMB_ARROW`、`FIX_SYMBOL`、`RADIAL_TEXT`、`NAVAID_TEXT` 等细框监督；这些关系只在 development 50 内用于训练，不进入 evaluation 输入。
-- `field_reviews`：字段级最终答案、字段对应证据 region id、support mode、review status。
-- 最终字段答案：每个 missed approach leg 下的 `Q_terminator`、`Q1_fix_ident`、`Q2_altitude_constraint`、`Q3_turn`、`Q4_course_or_radial`、`Q5_hold_params`。
-
-脚本只做转换：
-
-- 把后台框转换成模型训练用的 `evidence_boxes`。
-- 把后台字段和证据关系转换成 `answer_grounding`。
-- 把后台已有的细框候选关系纳入 `evidence_boxes`，避免只训练三个粗框。
-- 把后台字段答案转换成 `canonical_prediction`。
-- 把后台内部 region id 留在审计逻辑里，不要求模型输出后台 id。
-
-## 3. 固定 split
-
-继续使用 formal300 的固定 50+200+50：
-
-- development 50：本轮新增训练唯一可用的人工标签来源。
-- evaluation 200：正式评估样本，只生成无 assistant 标签的输入，不在推理前读取 target、score、raw 424/CIFP 或其他方法预测。
-- probe 50：本轮不使用。
-
-当前脚本默认把 development 50 切成：
-
-- train 40：进入优化器训练。
-- dev 10：只用于训练过程中的 loss 监控和 checkpoint 选择。
-
-这 40/10 都来自第一个 50，不会碰 evaluation 200。若后续决定用完整 50 做最终训练，需要单独记录 run id，并说明 dev 监控策略，不要悄悄改变。
-
-## 4. 新方法的训练起点
-
-`D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL` 必须从旧 D1 checkpoint 继续训练：
+本轮只做一个新增方法：
 
 ```text
-d1_lora_or_checkpoint_dir
+D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL
 ```
 
-不再走 `D1_DEV50_ONLY`。原因是本轮问题不是重新证明“只用 50 张能否训出 D1”，而是要在已经有效的 D1 能力上增加找证据能力。
+旧 `D1` 只作为继续训练的起点 checkpoint，不是本轮要重新跑的新增方法。`D_BASE_SAME_BACKBONE`、普通 `D1` 复跑、`D1_DEV50_ONLY`、两阶段方法都不在当前执行范围内。
 
-这样做的好处：
+## 二、核心目的
 
-- 保留旧 D1 从 500 样本训练中学到的 canonical 输出能力。
-- 新的 development 50 只负责补充图上证据框和字段证据关系。
-- 避免把“从零只训 50 张的模型能力不足”和“证据监督是否有效”混在一起。
+这个方法的目的不是改变最终答案格式，也不是把证据框拿去评分。
 
-## 5. 新方法的训练目标
+真正目的只有一个：
 
-训练样本的 assistant label 是一个诊断 wrapper：
+```text
+在旧 D1 已经会输出最终 canonical JSON 的基础上，
+继续训练它学会先找到图上证据来源，
+再根据这些证据组织最终 canonical JSON。
+```
+
+最终评分仍然是：
+
+```text
+模型最终 canonical JSON
+vs
+424/CIFP 派生出来的 scoring_equivalence_v2 目标 JSON
+```
+
+新增的证据框和字段证据关系只用于训练约束和错误分析，不直接参与最终分数。
+
+## 三、最终输出和评分边界
+
+训练和原始推理时，模型会先输出一个诊断外壳：
 
 ```json
 {
@@ -93,75 +46,18 @@ d1_lora_or_checkpoint_dir
 }
 ```
 
-但正式评分只使用：
+这三个部分的含义是：
 
-```json
-canonical_prediction
-```
+- `evidence_boxes`：模型认为图上哪些区域是复飞相关证据。
+- `answer_grounding`：每个航段、每个字段的答案由哪些证据框支持。
+- `canonical_prediction`：旧 D1 形状的最终 missed approach canonical JSON。
 
-也就是说，canonical JSON 本身没有改 schema。证据框只是让模型在生成最终答案前显式学习“证据在哪里、字段靠什么支持”。
+正式评分时不把整个外壳交给 scorer。推理脚本会保存两类文件：
 
-## 6. evidence_boxes 细节
+1. 诊断文件：保留完整外壳，用于看证据框和字段证据关系。
+2. 正式预测文件：只抽出 `canonical_prediction`，保存成旧 D1 的 canonical JSON。
 
-`evidence_boxes` 应该尽量使用后台已有细框，不再只用三个大框。
-
-每个 box 包含：
-
-- `box_id`：训练时重新编号，如 `box_001`、`box_002`，避免模型学习后台内部 id。
-- `bbox`：归一化 `[x_center, y_center, width, height]`。
-- `region_type`：来自后台 region type。
-- `visible_text`：框内可见文字；纯图形符号可为 null。
-- `field_names`：该框支持的 canonical 字段列表。
-- `evidence_role`：该框的作用，例如 fix、altitude、course/radial、turn/path、holding 参数、missed approach context。
-
-优先使用的细框类型包括：
-
-- `FIX_TEXT`
-- `ALTITUDE_TEXT`
-- `RADIAL_TEXT`
-- `TRACK_OR_RADIAL_TEXT`
-- `HEADING_TEXT`
-- `NAVAID_TEXT`
-- `FIX_SYMBOL`
-- `CLIMB_ARROW`
-- `PATH_SEGMENT`
-- `OUTBOUND_INBOUND_MARK`
-- `HOLD_SYMBOL`
-- `HOLD_INBOUND_COURSE_TEXT`
-- `HOLD_DISTANCE_TEXT`
-- `HOLD_TIME_TEXT`
-- `HOLD_TURN_DIRECTION_TEXT`
-
-`PLAN_VIEW`、`MISSED_APPROACH_TEXT`、`MISSED_APPROACH_DETAIL_AREA` 只能作为兜底上下文框使用，不应该成为主要训练目标。
-
-## 7. answer_grounding 细节
-
-`answer_grounding` 的作用是解释每个字段答案从哪些证据框来。
-
-每条 grounding 包含：
-
-- `leg_index`：航段编号。
-- `field_name`：字段名，如 `Q1_fix_ident`。
-- `answer_path`：字段在 canonical JSON 中的位置。
-- `support_mode`：证据支持方式。
-- `evidence_box_ids`：引用 `evidence_boxes` 中的 `box_id`。
-- `evidence_summary`：用 `box_id` 和可见内容简要说明证据来自图上哪里。
-
-允许的 `support_mode`：
-
-- `direct_visible_text`
-- `direct_visible_symbol`
-- `direct_visible_region`
-- `inferred_from_visible_evidence`
-- `rule_default_not_directly_visible`
-- `insufficient_for_encoding`
-- `not_grounded`
-
-如果某字段来自规则默认值，不能伪装成直接可见；如果证据不足，也要明确标成不足或未 grounding。
-
-## 8. canonical_prediction 细节
-
-`canonical_prediction` 必须保持旧 D1 的 canonical JSON：
+scorer 只读取第二类正式预测文件。因此最终用于评分的 JSON 仍然是旧格式：
 
 ```json
 {
@@ -172,48 +68,261 @@ canonical_prediction
     "chart_name": "..."
   },
   "missed_approach": {
-    "leg_count": {"status": "...", "value": ...},
+    "leg_count": {"status": "...", "value": "..."},
     "legs": []
   }
 }
 ```
 
-正式评分时，runner 会：
+所以本方法满足这个约束：
 
-1. 保存模型原始 wrapper 到 `parsed_json/`。
-2. 从 wrapper 抽出 `canonical_prediction`。
-3. 把抽出的 canonical JSON 保存到 `canonical_json/`。
-4. 只用 `canonical_json/` 进入 scorer。
+```text
+最终 canonical JSON 仍按照之前 D1 的格式；
+只是训练和诊断中额外要求模型找到证据来源。
+```
 
-因此证据功能不会改变评分 JSON 的 schema。
+## 四、训练数据来源
 
-## 9. 防止忘掉旧 D1 能力
+训练数据只来自标注后台已经有的人工审核关系，不新增人工工作。
 
-因为新训练只用 development 50，必须控制继续训练强度：
+后台导出中使用的信息包括：
 
-- 起点使用旧 D1 checkpoint。
-- 学习率用较小值，建议 `5e-5` 起步。
-- 先跑 1 epoch smoke，不直接全量长训。
-- assistant label 同时保留完整 `canonical_prediction`，不是只训练框。
-- dev 10 监控 wrapper schema、canonical schema、loss 和截断情况。
-- 如果 canonical parse/schema failure 上升，要优先降学习率、缩短 epoch 或调低输出复杂度。
+- 图上框：每个框的位置、类型、可见文字。
+- 框和航段关系：这个框对应哪个复飞航段。
+- 框和字段关系：这个框支持哪个字段。
+- 字段和证据关系：某个字段答案由哪些框支持。
+- 最终字段答案：人工审核后的标准字段答案。
 
-## 10. 构建和训练步骤
+脚本读取的后台字段主要包括：
 
-1. 确认本地路径：
+- `regions`
+- `accepted_mappings`
+- `candidate_mappings_reviewed`
+- `source_field_name`
+- `field_reviews`
+- `field_reviews[].canonical_answer`
+
+其中 `candidate_mappings_reviewed` 和 `source_field_name` 是为了利用后台已经保存的细框候选关系，例如爬升箭头、修正点符号、径向文字、导航台文字等。这样不需要额外标注，也不会退化成只训练几个大框。
+
+## 五、固定数据划分
+
+继续使用 formal300 固定的 50+200+50：
+
+- 第一个 50 张：用于构建本方法训练集和开发验证集。
+- 中间 200 张：正式评估输入，只能推理和评分。
+- 最后 50 张：本轮不用。
+
+当前构建方式：
+
+- 40 张训练。
+- 10 张开发验证。
+- 200 张正式评估输入。
+
+这 40/10 都来自第一个 50。中间 200 张不会有 assistant 标签，不会包含最终答案。
+
+## 六、每条训练样本的输入
+
+每条训练样本的模型输入只有两部分：
+
+1. 完整航图图片。
+2. 本方法专用提示词。
+
+禁止输入：
+
+- 目标 JSON。
+- 分数。
+- raw 424。
+- CIFP。
+- 其他方法预测。
+- 人工答案文件。
+- 后台答案路径。
+
+## 七、每条训练样本的输出
+
+每条训练样本的 assistant 标签由三部分组成。
+
+第一部分是 `evidence_boxes`，表示图上证据框。
+
+第二部分是 `answer_grounding`，表示每个航段、每个字段和证据框之间的关系。
+
+第三部分是 `canonical_prediction`，表示旧 D1 形状的最终答案。
+
+训练时让模型同时学习这三部分，是为了让模型不要只记最终答案，而是学习：
+
+```text
+图上哪里有证据
+哪个字段依赖哪些证据
+最终标准答案应该是什么
+```
+
+## 八、证据框怎么构建
+
+证据框来自后台已有的 `regions`。
+
+证据框不是只有细框，也不是只有大框，而是：
+
+```text
+必要大框 + 字段细框
+```
+
+大框包括：
+
+- 平面图区域。
+- 复飞文字说明区域。
+- 下方复飞细节区域。
+
+大框的作用是提供整体上下文，尤其是航段结构、复飞语义、holding 或图形关系。
+
+细框包括：
+
+- 修正点文字框。
+- 高度文字框。
+- 爬升箭头框。
+- 修正点符号框。
+- 径向文字框。
+- 导航台文字框。
+- 航向文字框。
+- 路径线段框。
+- 出航/入航标记框。
+
+细框的作用是支持具体字段，例如修正点、高度、航向/径向、转弯方向等。
+
+脚本会优先保留和字段有关系的细框，同时保留必要大框作为上下文。这样既不丢掉大范围语义，也不会退化成只看三个粗框。
+
+## 九、一个航段可以对应多个框
+
+这个方案明确支持：
+
+```text
+一个航段的一个字段，对应多个证据框。
+```
+
+例如第 2 个航段的修正点，可能同时依赖：
+
+- 修正点文字框。
+- 修正点符号框。
+- 复飞文字说明区域。
+- 平面图上下文区域。
+
+因此 `answer_grounding` 里使用数组：
+
+```json
+{
+  "leg_index": 2,
+  "field_name": "Q1_fix_ident",
+  "answer_path": "missed_approach.legs[1].answers.Q1_fix_ident",
+  "support_mode": "direct_visible_text",
+  "evidence_box_ids": ["box_001", "box_003", "box_005"],
+  "evidence_summary": "第2段修正点由 box_001 的修正点文字、box_003 的修正点符号和 box_005 的上下文支持"
+}
+```
+
+这里不是“一个航段一个框”，而是“字段到多个证据框”的关系。
+
+## 十、证据框字段
+
+每个证据框包含：
+
+- `box_id`：训练时重新编号，如 `box_001`。
+- `bbox`：归一化框坐标。
+- `region_type`：框类型。
+- `visible_text`：框内可见文字；纯符号框可以是 null。
+- `field_names`：这个框支持哪些字段。
+- `evidence_role`：这个框的作用。
+
+模型输出里不要求后台内部 region id。后台 id 只留在脚本内部用于映射和审计。
+
+## 十一、字段证据关系
+
+每条字段证据关系包含：
+
+- `leg_index`：航段编号。
+- `field_name`：字段名。
+- `answer_path`：字段在最终 canonical JSON 中的位置。
+- `support_mode`：证据支持方式。
+- `evidence_box_ids`：支持该字段的一个或多个证据框。
+- `evidence_summary`：用证据框编号和可见内容说明证据来源。
+
+如果字段是规则默认补全，不能伪装成直接从图上可见。若证据不足，也要明确记录。
+
+## 十二、最终答案怎么构建
+
+最终答案来自后台人工审核过的字段答案，也就是 `field_reviews[].canonical_answer`。
+
+脚本会把这些字段答案组装成旧 D1 的 canonical JSON：
+
+- 路径终止符。
+- 修正点。
+- 高度限制。
+- 转弯方向。
+- 航向或径向。
+- holding 参数。
+
+这个最终答案放入训练标签的 `canonical_prediction` 里。
+
+正式评分时，再从原始诊断输出中抽出它，作为最终预测文件。
+
+## 十三、正式评估输入如何防泄漏
+
+evaluation 200 只生成输入，不生成 assistant 标签。
+
+正式评估输入不包含：
+
+- 最终答案。
+- 字段答案。
+- 评分结果。
+- raw 424。
+- CIFP。
+- 其他方法预测。
+- 后台答案路径。
+
+`scoring_manifest` 只能在预测完成后用于评分。
+
+## 十四、当前构建审计状态
+
+当前本地已经用后台最新导出构建过一次本方法数据集，构建检查结果为：
+
+- 训练样本：40。
+- 开发验证样本：10。
+- 正式评估输入：200。
+- schema errors：0。
+- eval input violations：0。
+- 评估输入 assistant 标签：0。
+- 评估输入答案泄漏：0。
+
+已经纳入训练标签的框类型包括：
+
+- 平面图大框。
+- 复飞文字说明大框。
+- 修正点文字框。
+- 高度文字框。
+- 爬升箭头框。
+- 修正点符号框。
+- 径向文字框。
+- 导航台文字框。
+- 航向文字框。
+- 路径线段框。
+
+需要注意的限制：
+
+当前后台导出里，`Q5_hold_params` 的证据关系仍然主要连到平面图大框，没有完整的 holding 专用细框。因此本实验不能声称 holding 参数细框监督已经完全解决，只能如实说明这个字段目前主要依赖上下文大框。
+
+## 十五、执行步骤
+
+1. 校验路径：
 
 ```powershell
 python scripts\group1_sft\validate_group1_sft_workspace.py --paths training\group1_sft\configs\local_paths.local.json
 ```
 
-2. 用后台导出构建训练 JSONL：
+2. 用后台导出构建本方法 JSONL：
 
 ```powershell
 python scripts\group1_sft\build_d1_evidence_boxes_canonical_jsonl_from_annotations.py `
   --export-json <本地后台导出JSON路径> `
   --paths training\group1_sft\configs\local_paths.local.json `
   --train-target 40 `
-  --max-boxes 8
+  --max-boxes 24
 ```
 
 3. 检查构建报告：
@@ -222,15 +331,13 @@ python scripts\group1_sft\build_d1_evidence_boxes_canonical_jsonl_from_annotatio
 <reports_dir>/d1_evidence_boxes_canonical_jsonl_build_report.json
 ```
 
-必须重点看：
+重点检查：
 
 - `schema_errors` 是否为 0。
 - `eval_input_violations` 是否为 0。
-- `box_count` 是否不是三个大框模式。
-- `region_type_counts_train_dev` 中细框是否占主导。
-- `CLIMB_ARROW`、`FIX_SYMBOL`、`RADIAL_TEXT`、`NAVAID_TEXT`、`PATH_SEGMENT` 等后台细框是否进入训练标签。
-- `evidence_boxes` 是否被限制在 8 个以内，避免推理时在框数组里循环而不输出最终 canonical JSON。
-- `q5_hold_params_needs_fine_box_count` 是否提示 holding 仍只连到粗框。
+- evaluation 200 是否没有 assistant 标签。
+- 是否同时保留必要大框和字段细框。
+- `canonical_schema_changed` 是否为 false。
 
 4. 从旧 D1 checkpoint 继续训练：
 
@@ -238,60 +345,44 @@ python scripts\group1_sft\build_d1_evidence_boxes_canonical_jsonl_from_annotatio
 python scripts\group1_sft\train_qwen2vl_group1_sft_lora.py `
   --method D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL `
   --paths training\group1_sft\configs\local_paths.local.json `
-  --run-id d1_chart_to_evidence_boxes_and_canonical_d1_continue_dev50_20260504_r1 `
+  --run-id d1_chart_to_evidence_boxes_and_canonical_d1_continue_dev50_20260504_r2 `
   --epochs 1 `
   --learning-rate 5e-5 `
-  --max-seq-length 5120
+  --max-seq-length 4096
 ```
 
-5. 生成 run package 并先跑小样本：
+5. 训练后只为本方法生成 smoke 包：
 
 ```powershell
 python scripts\group1_sft\prepare_group1_sft_run_package.py `
   --paths training\group1_sft\configs\local_paths.local.json `
   --limit 5 `
-  --run-id group1_sft_smoke5
+  --methods D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL `
+  --run-id group1_sft_d1_evidence_smoke5
 ```
 
-6. 小样本通过后再跑 evaluation 200：
+6. smoke 通过后，只跑本方法的 evaluation 200。
 
-- `D_BASE_SAME_BACKBONE`
-- `D1`
-- `D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL`
-
-三者使用同一套 evaluation 200 和同一套 scoring manifest。scoring manifest 只能在预测完成后用于评分。
-
-## 11. 不提交到 Git 的内容
-
-以下内容不能提交：
-
-- `training/group1_sft/configs/local_paths.local.json`
-- 后台导出 JSON
-- train/dev/eval JSONL
-- PNG/PDF 图片
-- 模型和 checkpoint
-- raw outputs
-- 大结果文件
-- 带 token 的后台 URL
+## 十六、Git 提交边界
 
 可以提交：
 
-- 脚本
-- schema
-- prompt
-- 路径模板
-- `.gitignore`
-- 设计文档
+- 方案文档。
+- 构建脚本。
+- 训练脚本的方法配置。
+- run package 脚本的方法默认范围。
+- prompt。
+- schema。
+- 路径模板。
+- 方法集合配置。
 
-## 12. 当前需要执行的下一步
+不能提交：
 
-当前应先完成代码层面的定义修正，然后本地构建 JSONL 并读审计报告。
-
-顺序是：
-
-1. 确认 `D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL` 的训练起点已经改成 `d1_lora_or_checkpoint_dir`。
-2. 确认模型输出 wrapper 中不要求后台内部 region id。
-3. 确认 `canonical_prediction` schema 与旧 D1 canonical JSON 一致。
-4. 用后台导出重新构建 train/dev/eval JSONL。
-5. 审计 `schema_errors`、`eval_input_violations`、box 细粒度和 holding 字段证据。
-6. 审计通过后再训练新方法的 1 epoch smoke。
+- `local_paths.local.json`。
+- 后台导出 JSON。
+- train/dev/eval JSONL。
+- 图片/PDF。
+- checkpoint。
+- raw outputs。
+- summary results。
+- 带 token 的 URL。
