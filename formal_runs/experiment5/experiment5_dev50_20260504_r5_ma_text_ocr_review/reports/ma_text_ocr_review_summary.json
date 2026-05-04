@@ -1,0 +1,16 @@
+{
+  "chart_count": 50,
+  "confidence_summary": {
+    "empty_ocr_text": 0,
+    "mean_confidence_max": 95.53,
+    "mean_confidence_min": 81.69,
+    "with_ocr_text": 50
+  },
+  "created_at_utc": "2026-05-04T02:29:12.635616+00:00",
+  "ocr_engine": "tesseract_eng",
+  "queue_path": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260504_r5_ma_text_ocr_review\\inputs\\gold_ma_text_dev50_ocr_review_queue.jsonl",
+  "ready_for_formal_input": false,
+  "reason": "Human review is required before these OCR candidates can become formal gold MA text.",
+  "report_path": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260504_r5_ma_text_ocr_review\\reports\\ma_text_ocr_review_sheet_zh.md",
+  "template_path": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260504_r5_ma_text_ocr_review\\inputs\\gold_ma_text_dev50_ocr_review_template.jsonl"
+}
