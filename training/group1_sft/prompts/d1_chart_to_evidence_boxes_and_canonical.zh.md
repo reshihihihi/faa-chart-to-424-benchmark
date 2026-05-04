@@ -1,38 +1,62 @@
 You are given one complete FAA instrument approach chart image.
 
-Task: output one JSON object. First identify the visible chart evidence boxes
-that support the missed approach extraction, then output the missed approach
-procedure as canonical JSON.
+Task: output one JSON object. First identify the chart evidence boxes that
+support the missed approach extraction, then connect each extracted answer
+field to those boxes, then output the missed approach procedure as canonical
+JSON.
 
 The final answer must be one JSON object. The first character must be `{`.
 Do not use markdown. Do not use a fenced code block. Do not explain.
 
-The JSON object has exactly two top-level keys, in this order:
+The JSON object has exactly three top-level keys, in this order:
 1. `evidence_boxes`
-2. `canonical_prediction`
+2. `answer_grounding`
+3. `canonical_prediction`
 
 Because `canonical_prediction` is nested inside the outer object, the completed
-answer must close both the canonical object and the outer object. The final
-characters of a valid answer are normally `]}}}` after the last leg. Do not stop
-after `]}}`.
+answer must close both the canonical object and the outer object. Do not stop
+after the canonical `legs` array.
 
-`evidence_boxes` is an array of exactly 3 chart regions. Do not output more
-than 3 boxes. Do not repeat a box. After the third box, close the array and
-immediately output `canonical_prediction`.
+`evidence_boxes` is an array of distinct fine-grained chart regions. Prefer
+small boxes around the actual visible text, symbol, course/radial text,
+altitude text, fix text, hold symbol, path segment, or other local visual
+evidence. Use a broader `PLAN_VIEW` or `MISSED_APPROACH_TEXT` region only when
+the answer cannot honestly be tied to a smaller visible element.
 
-Use these three boxes, in this order:
-1. `missed_approach_text` with region_type `MISSED_APPROACH_TEXT`
-2. `plan_view_context` with region_type `PLAN_VIEW`
-3. `missed_approach_detail_area` with region_type `MISSED_APPROACH_DETAIL_AREA`
+Each evidence box has exactly these keys:
+`box_id`, `source_region_id`, `bbox`, `region_type`, `visible_text`,
+`field_names`.
 
-Each evidence box has exactly these keys: `box_id`, `bbox`, `region_type`.
-Use normalized bbox coordinates in `[x_center, y_center, width, height]`
-format, where every number is between 0 and 1.
+Use `box_id` values like `box_001`, `box_002`, and so on. Use normalized bbox
+coordinates in `[x_center, y_center, width, height]` format, where every number
+is between 0 and 1. `visible_text` is the text visibly inside the box, or null
+for symbol-only regions. `field_names` lists the canonical fields supported by
+the box, using only these names:
+`Q_terminator`, `Q1_fix_ident`, `Q2_altitude_constraint`, `Q3_turn`,
+`Q4_course_or_radial`, `Q5_hold_params`.
 
-The evidence box section must not contain final answer values, canonical target
-objects, score metadata, CIFP/424 records, file paths, or other method
-predictions. It must not contain candidate leg ids, final answer values, or
-field-level canonical answers.
+Do not repeat a box. Do not put final answer values, canonical answer objects,
+score metadata, CIFP/424 records, file paths, method predictions, or raw target
+JSON inside `evidence_boxes`.
+
+`answer_grounding` is an array that links answer fields to evidence boxes. Each
+item has exactly these keys:
+`leg_index`, `field_name`, `answer_path`, `support_mode`, `evidence_box_ids`,
+`source_region_ids`, `review_support_mode`, `evidence_source`.
+
+Use `answer_path` values like:
+`missed_approach.legs[0].answers.Q_terminator`
+
+Use `evidence_box_ids` to reference the supporting boxes by `box_id`. If a
+field is completed by a rule default rather than directly visible chart text or
+symbol, do not pretend it is directly visible. Use
+`rule_default_not_directly_visible`. If available evidence is too weak for a
+field, use `insufficient_for_encoding` or `not_grounded`.
+
+Allowed `support_mode` values:
+`direct_visible_text`, `direct_visible_symbol`, `direct_visible_region`,
+`inferred_from_visible_evidence`, `rule_default_not_directly_visible`,
+`insufficient_for_encoding`, `not_grounded`.
 
 `canonical_prediction` must follow the usual missed approach canonical JSON
 schema. It has exactly three keys:

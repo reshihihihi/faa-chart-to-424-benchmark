@@ -22,10 +22,16 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_PATHS = ROOT / "training" / "group1_sft" / "configs" / "local_paths.local.json"
 
 METHOD_CONFIG = {
+    "D1_DEV50_ONLY": {
+        "train_key": "d1_dev50_train_jsonl",
+        "dev_key": "d1_dev50_dev_jsonl",
+        "input_boundary": ["full_chart_image", "canonical_prompt"],
+        "label_source": "development_only_field_reviews_canonical",
+    },
     "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL": {
         "train_key": "d1_evidence_boxes_train_jsonl",
         "dev_key": "d1_evidence_boxes_dev_jsonl",
-        "initial_adapter_key": "d1_lora_or_checkpoint_dir",
+        "initial_adapter_key": "d1_dev50_lora_or_checkpoint_dir",
         "input_boundary": ["full_chart_image", "evidence_boxes_then_canonical_prompt"],
         "label_source": "development_only_human_regions_plus_field_reviews",
     },

@@ -1,19 +1,23 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/training/group1_sft/manifests/d1_chart_to_evidence_boxes_and_canonical.schema.json",
-  "title": "D1 Chart Evidence Boxes Plus Canonical Output",
+  "title": "D1 Fine Evidence Boxes Plus Field Grounding Plus Canonical Output",
   "type": "object",
-  "required": ["evidence_boxes", "canonical_prediction"],
+  "required": ["evidence_boxes", "canonical_prediction", "answer_grounding"],
   "additionalProperties": false,
   "properties": {
     "evidence_boxes": {
       "type": "array",
-      "minItems": 3,
-      "maxItems": 3,
+      "minItems": 1,
+      "maxItems": 24,
       "items": { "$ref": "#/$defs/evidence_box" }
     },
     "canonical_prediction": {
       "type": "object"
+    },
+    "answer_grounding": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/answer_grounding" }
     }
   },
   "$defs": {
@@ -29,23 +33,114 @@
       "minItems": 4,
       "maxItems": 4
     },
+    "region_type": {
+      "type": "string",
+      "enum": [
+        "MISSED_APPROACH_TEXT",
+        "PLAN_VIEW",
+        "MISSED_APPROACH_DETAIL_AREA",
+        "ALTITUDE_TEXT",
+        "FIX_TEXT",
+        "FIX_SYMBOL",
+        "CLIMB_ARROW",
+        "PATH_SEGMENT",
+        "RADIAL_TEXT",
+        "TRACK_OR_RADIAL_TEXT",
+        "NAVAID_TEXT",
+        "HEADING_TEXT",
+        "OUTBOUND_INBOUND_MARK"
+      ]
+    },
+    "question_field": {
+      "type": "string",
+      "enum": [
+        "Q_terminator",
+        "Q1_fix_ident",
+        "Q2_altitude_constraint",
+        "Q3_turn",
+        "Q4_course_or_radial",
+        "Q5_hold_params"
+      ]
+    },
+    "support_mode": {
+      "type": "string",
+      "enum": [
+        "direct_visible_text",
+        "direct_visible_symbol",
+        "direct_visible_region",
+        "inferred_from_visible_evidence",
+        "rule_default_not_directly_visible",
+        "insufficient_for_encoding",
+        "not_grounded"
+      ]
+    },
     "evidence_box": {
       "type": "object",
-      "required": ["box_id", "bbox", "region_type"],
+      "required": ["box_id", "source_region_id", "bbox", "region_type", "visible_text", "field_names"],
       "additionalProperties": false,
       "properties": {
         "box_id": {
           "type": "string",
-          "enum": ["missed_approach_text", "plan_view_context", "missed_approach_detail_area"]
+          "pattern": "^box_[0-9]{3}$"
+        },
+        "source_region_id": {
+          "type": "string",
+          "minLength": 1
         },
         "bbox": { "$ref": "#/$defs/bbox" },
-        "region_type": {
+        "region_type": { "$ref": "#/$defs/region_type" },
+        "visible_text": {
+          "type": ["string", "null"]
+        },
+        "field_names": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/question_field" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "answer_grounding": {
+      "type": "object",
+      "required": [
+        "leg_index",
+        "field_name",
+        "answer_path",
+        "support_mode",
+        "evidence_box_ids",
+        "source_region_ids"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "leg_index": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "field_name": { "$ref": "#/$defs/question_field" },
+        "answer_path": {
           "type": "string",
-          "enum": [
-            "MISSED_APPROACH_TEXT",
-            "PLAN_VIEW",
-            "MISSED_APPROACH_DETAIL_AREA"
-          ]
+          "minLength": 1
+        },
+        "support_mode": { "$ref": "#/$defs/support_mode" },
+        "evidence_box_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^box_[0-9]{3}$"
+          },
+          "uniqueItems": true
+        },
+        "source_region_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "review_support_mode": {
+          "type": ["string", "null"]
+        },
+        "evidence_source": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
         }
       }
     }
