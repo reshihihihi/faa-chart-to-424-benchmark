@@ -699,9 +699,9 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
             "",
             "- Do not pass target JSON, score files, raw 424 records, or other method predictions to inference.",
             "- `scoring_manifest.jsonl` is for post-prediction scoring only.",
-            "- `D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL` is the only new default method: it starts from the existing D1 adapter, learns fine evidence boxes, and keeps the formal scored prediction as the original canonical JSON shape.",
-            "- `evidence_boxes` and `answer_grounding` are diagnostic side outputs; the formal score uses only the extracted `canonical_prediction` object.",
-            "- The parser is strict JSON only; semantic repair is not applied.",
+            "- `D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL` is the only new default method: it starts from the existing D1 adapter, learns fine evidence boxes during continued SFT, and keeps the formal scored prediction as the original canonical JSON shape.",
+            "- `evidence_boxes` and `answer_grounding` are training/diagnostic targets. The formal score uses the unchanged D1 canonical JSON output, not the diagnostic wrapper.",
+            "- The parser tries strict JSON first. Optional JSON-object candidate extraction is mechanical envelope handling only; semantic repair is not applied.",
             "",
         ]
     )
