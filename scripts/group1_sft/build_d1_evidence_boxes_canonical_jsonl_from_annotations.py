@@ -753,7 +753,7 @@ def main() -> int:
     parser.add_argument("--paths", type=Path, default=DEFAULT_PATHS)
     parser.add_argument("--split-json", type=Path, default=DEFAULT_SPLIT)
     parser.add_argument("--train-target", type=int, default=40)
-    parser.add_argument("--max-boxes", type=int, default=24)
+    parser.add_argument("--max-boxes", type=int, default=8)
     args = parser.parse_args()
 
     config, repo_root = load_paths(args.paths)

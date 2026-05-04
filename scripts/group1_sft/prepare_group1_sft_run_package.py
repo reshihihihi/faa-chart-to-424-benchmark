@@ -69,7 +69,7 @@ DEFAULT_METHODS = [
 
 CHART_TO_EVIDENCE_TRAIN_RUN_ID = "chart_to_evidence_sft_dev50_with_field_links_20260503_r1"
 EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID = "evidence_to_semantics_sft_dev50_with_field_links_20260503_r1"
-D1_EVIDENCE_BOXES_TRAIN_RUN_ID = "d1_chart_to_evidence_boxes_and_canonical_d1_continue_dev50_20260504_r1"
+D1_EVIDENCE_BOXES_TRAIN_RUN_ID = "d1_chart_to_evidence_boxes_and_canonical_d1_continue_dev50_20260504_r2"
 
 IMAGE_METHODS = {
     "D_BASE_SAME_BACKBONE",
@@ -512,7 +512,7 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
         + f"--run-id {D1_EVIDENCE_BOXES_TRAIN_RUN_ID} "
                 + "--epochs 1 "
                 + "--learning-rate 5e-5 "
-                + "--max-seq-length 4096",
+                + "--max-seq-length 5120",
         "```",
         "",
     ]
@@ -595,8 +595,8 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
                 + "--canonical-json-schema schemas\\missed_approach_leg.schema.json "
                 + f"--scoring-manifest {run_dir / 'scoring_manifest.jsonl'} "
                 + f"--output-root {run_dir / 'D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL'} "
-                + "--max-new-tokens 2048 "
-                + "--repetition-penalty 1.08",
+                + "--max-new-tokens 4096 "
+                + "--repetition-penalty 1.15",
                 "```",
                 "",
             ]

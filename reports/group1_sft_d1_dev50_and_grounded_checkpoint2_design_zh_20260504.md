@@ -213,7 +213,7 @@ python scripts\group1_sft\build_d1_evidence_boxes_canonical_jsonl_from_annotatio
   --export-json <本地后台导出JSON路径> `
   --paths training\group1_sft\configs\local_paths.local.json `
   --train-target 40 `
-  --max-boxes 24
+  --max-boxes 8
 ```
 
 3. 检查构建报告：
@@ -229,6 +229,7 @@ python scripts\group1_sft\build_d1_evidence_boxes_canonical_jsonl_from_annotatio
 - `box_count` 是否不是三个大框模式。
 - `region_type_counts_train_dev` 中细框是否占主导。
 - `CLIMB_ARROW`、`FIX_SYMBOL`、`RADIAL_TEXT`、`NAVAID_TEXT`、`PATH_SEGMENT` 等后台细框是否进入训练标签。
+- `evidence_boxes` 是否被限制在 8 个以内，避免推理时在框数组里循环而不输出最终 canonical JSON。
 - `q5_hold_params_needs_fine_box_count` 是否提示 holding 仍只连到粗框。
 
 4. 从旧 D1 checkpoint 继续训练：
@@ -240,7 +241,7 @@ python scripts\group1_sft\train_qwen2vl_group1_sft_lora.py `
   --run-id d1_chart_to_evidence_boxes_and_canonical_d1_continue_dev50_20260504_r1 `
   --epochs 1 `
   --learning-rate 5e-5 `
-  --max-seq-length 4096
+  --max-seq-length 5120
 ```
 
 5. 生成 run package 并先跑小样本：

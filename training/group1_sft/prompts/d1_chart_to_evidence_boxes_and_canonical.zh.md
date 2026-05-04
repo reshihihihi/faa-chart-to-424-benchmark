@@ -25,6 +25,11 @@ path segment, or other local visual evidence. Use a broader `PLAN_VIEW`,
 `MISSED_APPROACH_TEXT`, or `MISSED_APPROACH_DETAIL_AREA` region only when the
 answer cannot honestly be tied to a smaller visible element.
 
+Output no more than 8 evidence boxes. Do not continue listing boxes after
+`box_008`. If you are uncertain, output fewer boxes and then immediately write
+`answer_grounding` and `canonical_prediction`. Never repeat the same bbox or
+alternate between repeated `PLAN_VIEW` boxes.
+
 Each evidence box has exactly these keys:
 `box_id`, `bbox`, `region_type`, `visible_text`, `field_names`,
 `evidence_role`.
@@ -45,6 +50,10 @@ Use `evidence_role` to say what the visible region contributes, for example:
 Do not repeat a box. Do not put final answer objects, target JSON, score
 metadata, CIFP/424 records, file paths, method predictions, backend annotation
 IDs, or raw provenance notes inside `evidence_boxes`.
+
+After finishing `evidence_boxes`, close the array and continue to
+`answer_grounding`. After `answer_grounding`, always output
+`canonical_prediction`. Do not stop inside `evidence_boxes`.
 
 `answer_grounding` is an array that links answer fields to evidence boxes.
 Each item has exactly these keys:

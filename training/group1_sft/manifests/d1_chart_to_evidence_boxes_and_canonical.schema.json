@@ -9,7 +9,7 @@
     "evidence_boxes": {
       "type": "array",
       "minItems": 1,
-      "maxItems": 24,
+      "maxItems": 8,
       "items": { "$ref": "#/$defs/evidence_box" }
     },
     "canonical_prediction": {

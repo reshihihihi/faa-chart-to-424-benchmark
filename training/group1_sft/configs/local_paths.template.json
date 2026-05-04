@@ -8,7 +8,7 @@
   "group1_formal_scoring_manifest": "CHANGE_ME/formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/scoring_manifest.jsonl",
   "base_vlm_model_dir": "E:/models/qwen2_vl_2b_base",
   "d1_lora_or_checkpoint_dir": "E:/experiment3/d_sft/checkpoints/d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1/checkpoint-final",
-  "d1_evidence_boxes_lora_or_checkpoint_dir": "CHANGE_ME/group1_sft/checkpoints/D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL/d1_chart_to_evidence_boxes_and_canonical_d1_continue_dev50_20260504_r1/checkpoint-final",
+  "d1_evidence_boxes_lora_or_checkpoint_dir": "CHANGE_ME/group1_sft/checkpoints/D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL/d1_chart_to_evidence_boxes_and_canonical_d1_continue_dev50_20260504_r2/checkpoint-final",
   "d1_evidence_boxes_train_jsonl": "CHANGE_ME/group1_sft/train_jsonl/d1_evidence_boxes_and_canonical_train.jsonl",
   "d1_evidence_boxes_dev_jsonl": "CHANGE_ME/group1_sft/train_jsonl/d1_evidence_boxes_and_canonical_dev.jsonl",
   "d1_evidence_boxes_eval_jsonl": "CHANGE_ME/group1_sft/eval_jsonl/d1_evidence_boxes_and_canonical_formal200_input.jsonl",
