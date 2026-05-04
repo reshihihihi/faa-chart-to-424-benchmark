@@ -15,6 +15,7 @@ sys.path.insert(0, str(SCORER_DIR))
 
 JSON_OBJECT_PREFILL = "{"
 CHART_TO_EVIDENCE_PREFILL = '{"chart_id":null,"evidence_items":[{'
+JOINT_EVIDENCE_CANONICAL_METHODS = {"D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL"}
 
 
 def read_json(path: Path) -> Any:
@@ -95,6 +96,22 @@ def validation_errors(obj: dict[str, Any], validator: Any | None) -> list[str]:
     return [(".".join(str(part) for part in err.path) or "$") + f": {err.message}" for err in errors]
 
 
+def canonical_prediction_for_scoring(parsed: dict[str, Any], method: str) -> dict[str, Any]:
+    if method in JOINT_EVIDENCE_CANONICAL_METHODS:
+        canonical = parsed.get("canonical_prediction")
+        if not isinstance(canonical, dict):
+            raise ValueError("canonical_prediction_is_missing_or_not_object")
+        return canonical
+    return parsed
+
+
+def evidence_box_count(parsed: dict[str, Any], method: str) -> int | None:
+    if method not in JOINT_EVIDENCE_CANONICAL_METHODS:
+        return None
+    boxes = parsed.get("evidence_boxes")
+    return len(boxes) if isinstance(boxes, list) else None
+
+
 def load_targets(scoring_manifest: Path | None) -> dict[str, Path]:
     if scoring_manifest is None:
         return {}
@@ -170,6 +187,7 @@ def infer_one(
     prompt_text: str,
     max_new_tokens: int,
     assistant_prefill: str,
+    repetition_penalty: float,
 ) -> str:
     import torch
     from PIL import Image
@@ -185,6 +203,7 @@ def infer_one(
         **inputs,
         max_new_tokens=max_new_tokens,
         do_sample=False,
+        repetition_penalty=repetition_penalty,
         pad_token_id=processor.tokenizer.pad_token_id,
         eos_token_id=processor.tokenizer.eos_token_id,
     )
@@ -202,6 +221,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError(f"Prediction run directory already exists: {run_dir}")
     run_dir.mkdir(parents=True, exist_ok=args.overwrite)
     validator = load_schema_validator(args.json_schema)
+    canonical_validator = (
+        load_schema_validator(args.canonical_json_schema) if args.method in JOINT_EVIDENCE_CANONICAL_METHODS else None
+    )
     model, processor = load_model(args)
     assistant_prefill = args.assistant_prefill
     if assistant_prefill is None:
@@ -231,18 +253,27 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
                 prompt_text=prompt_text,
                 max_new_tokens=args.max_new_tokens,
                 assistant_prefill=assistant_prefill,
+                repetition_penalty=args.repetition_penalty,
             )
             write_text(run_dir / "raw_text" / f"{chart_id}.txt", text)
             parsed = strict_json(text)
             write_json(run_dir / "parsed_json" / f"{chart_id}.json", parsed)
             errors = validation_errors(parsed, validator)
+            canonical_prediction = canonical_prediction_for_scoring(parsed, args.method)
+            if args.method in JOINT_EVIDENCE_CANONICAL_METHODS:
+                write_json(run_dir / "canonical_json" / f"{chart_id}.json", canonical_prediction)
+                canonical_errors = validation_errors(canonical_prediction, canonical_validator)
+                errors.extend([f"canonical_prediction.{error}" for error in canonical_errors])
+                item["evidence_box_count"] = evidence_box_count(parsed, args.method)
             write_json(run_dir / "validation" / f"{chart_id}.json", errors)
             item["validation_error_count"] = len(errors)
             item["validation_errors"] = errors
             if errors:
                 failures.append({"sample_id": sample_id, "chart_id": chart_id, "stage": "schema_validation", "error": errors[0]})
             else:
-                valid_predictions.append({"sample_id": sample_id, "chart_id": chart_id, "parsed": parsed, "item": item})
+                valid_predictions.append(
+                    {"sample_id": sample_id, "chart_id": chart_id, "parsed": canonical_prediction, "item": item}
+                )
         except Exception as exc:  # noqa: BLE001
             err = repr(exc)
             write_text(run_dir / "errors" / f"{chart_id}.txt", err)
@@ -275,6 +306,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         "adapter_checkpoint": str(args.adapter_checkpoint) if args.adapter_checkpoint else None,
         "prompt": str(args.prompt),
         "json_schema": str(args.json_schema) if args.json_schema else None,
+        "canonical_json_schema": str(args.canonical_json_schema)
+        if args.method in JOINT_EVIDENCE_CANONICAL_METHODS
+        else None,
         "scoring_manifest": str(args.scoring_manifest) if args.scoring_manifest else None,
         "comparison_policy": str(args.comparison_policy) if args.scoring_manifest else None,
         "parser_policy": {
@@ -282,6 +316,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
             "code_fence_stripping_allowed": False,
             "semantic_repair_allowed": False,
             "assistant_prefill": assistant_prefill,
+            "joint_output_canonical_extraction": args.method in JOINT_EVIDENCE_CANONICAL_METHODS,
+            "repetition_penalty": args.repetition_penalty,
         },
         "input_boundary": {
             "target_used_for_prompt_or_parsing": False,
@@ -309,12 +345,22 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run Qwen2-VL inference for Group 1 SFT extension methods.")
-    parser.add_argument("--method", required=True, choices=["D_BASE_SAME_BACKBONE", "D1", "CHART_TO_EVIDENCE_SFT"])
+    parser.add_argument(
+        "--method",
+        required=True,
+        choices=[
+            "D_BASE_SAME_BACKBONE",
+            "D1",
+            "CHART_TO_EVIDENCE_SFT",
+            "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL",
+        ],
+    )
     parser.add_argument("--input-manifest", required=True, type=Path)
     parser.add_argument("--model-dir", required=True, type=Path)
     parser.add_argument("--adapter-checkpoint", type=Path, default=None)
     parser.add_argument("--prompt", required=True, type=Path)
     parser.add_argument("--json-schema", type=Path, default=None)
+    parser.add_argument("--canonical-json-schema", type=Path, default=ROOT / "schemas" / "missed_approach_leg.schema.json")
     parser.add_argument("--scoring-manifest", type=Path, default=None)
     parser.add_argument("--comparison-policy", type=Path, default=ROOT / "benchmark_exports" / "derived" / "v2" / "formal300" / "targets" / "scoring_equivalence_v2" / "comparison_policy_v2.jsonl")
     parser.add_argument("--output-root", required=True, type=Path)
@@ -322,6 +368,7 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--assistant-prefill", default=None)
     parser.add_argument("--max-new-tokens", type=int, default=1536)
+    parser.add_argument("--repetition-penalty", type=float, default=1.0)
     parser.add_argument("--min-pixels", type=int, default=3136)
     parser.add_argument("--max-pixels", type=int, default=501760)
     parser.add_argument("--compute-dtype", choices=["float16", "bfloat16"], default="float16")

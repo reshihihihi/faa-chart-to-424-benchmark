@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/training/group1_sft/manifests/d1_chart_to_evidence_boxes_and_canonical.schema.json",
+  "title": "D1 Chart Evidence Boxes Plus Canonical Output",
+  "type": "object",
+  "required": ["evidence_boxes", "canonical_prediction"],
+  "additionalProperties": false,
+  "properties": {
+    "evidence_boxes": {
+      "type": "array",
+      "maxItems": 12,
+      "items": { "$ref": "#/$defs/evidence_box" }
+    },
+    "canonical_prediction": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "bbox": {
+      "type": "array",
+      "prefixItems": [
+        { "type": "number", "minimum": 0, "maximum": 1 },
+        { "type": "number", "minimum": 0, "maximum": 1 },
+        { "type": "number", "minimum": 0, "maximum": 1 },
+        { "type": "number", "minimum": 0, "maximum": 1 }
+      ],
+      "items": false,
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "evidence_box": {
+      "type": "object",
+      "required": ["box_id", "bbox", "region_type", "visible_text", "candidate_bindings"],
+      "additionalProperties": false,
+      "properties": {
+        "box_id": { "type": "string", "minLength": 1 },
+        "bbox": { "$ref": "#/$defs/bbox" },
+        "region_type": {
+          "type": "string",
+          "enum": [
+            "MISSED_APPROACH_TEXT",
+            "PLAN_VIEW",
+            "MISSED_APPROACH_DETAIL_AREA",
+            "ALTITUDE_TEXT",
+            "FIX_TEXT",
+            "CLIMB_ARROW",
+            "FIX_SYMBOL",
+            "NAVAID_TEXT",
+            "RADIAL_TEXT",
+            "HEADING_TEXT",
+            "PATH_SEGMENT",
+            "TRACK_OR_RADIAL_TEXT",
+            "OUTBOUND_INBOUND_MARK",
+            "OTHER"
+          ]
+        },
+        "visible_text": { "type": ["string", "null"] },
+        "candidate_bindings": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/candidate_binding" }
+        }
+      }
+    },
+    "candidate_binding": {
+      "type": "object",
+      "required": ["leg_index", "candidate_leg_id", "field_name", "evidence_role", "human_confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "leg_index": { "type": "integer", "minimum": 1 },
+        "candidate_leg_id": { "type": ["string", "null"] },
+        "field_name": {
+          "type": "string",
+          "enum": [
+            "Q_terminator",
+            "Q1_fix_ident",
+            "Q2_altitude_constraint",
+            "Q3_turn",
+            "Q4_course_or_radial",
+            "Q5_hold_params"
+          ]
+        },
+        "evidence_role": { "type": ["string", "null"] },
+        "human_confidence": {
+          "type": ["string", "null"],
+          "enum": ["high", "medium", "low", null]
+        }
+      }
+    }
+  }
+}

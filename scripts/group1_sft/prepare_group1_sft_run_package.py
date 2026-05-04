@@ -15,9 +15,19 @@ METHOD_SET = ROOT / "training" / "group1_sft" / "configs" / "group1_sft_method_s
 CANONICAL_PROMPT = ROOT / "training" / "d_sft" / "prompts" / "d_sft_image_to_canonical.v2.md"
 CHART_TO_EVIDENCE_PROMPT = ROOT / "training" / "group1_sft" / "prompts" / "chart_to_evidence.zh.md"
 EVIDENCE_TO_QUESTIONNAIRE_PROMPT = ROOT / "training" / "group1_sft" / "prompts" / "evidence_to_questionnaire.zh.md"
+D1_EVIDENCE_BOXES_PROMPT = (
+    ROOT / "training" / "group1_sft" / "prompts" / "d1_chart_to_evidence_boxes_and_canonical.zh.md"
+)
 CANONICAL_SCHEMA = ROOT / "schemas" / "missed_approach_leg.schema.json"
 EVIDENCE_SCHEMA = ROOT / "training" / "group1_sft" / "manifests" / "evidence_record.schema.json"
 QUESTIONNAIRE_SCHEMA = ROOT / "training" / "group1_sft" / "manifests" / "evidence_questionnaire.schema.json"
+D1_EVIDENCE_BOXES_SCHEMA = (
+    ROOT
+    / "training"
+    / "group1_sft"
+    / "manifests"
+    / "d1_chart_to_evidence_boxes_and_canonical.schema.json"
+)
 POLICY_V2 = (
     ROOT
     / "benchmark_exports"
@@ -42,15 +52,20 @@ DEFAULT_SPLIT = (
 DEFAULT_METHODS = [
     "D_BASE_SAME_BACKBONE",
     "D1",
-    "EVIDENCE_TO_SEMANTICS_SFT",
-    "CHART_TO_EVIDENCE_SFT",
-    "TWO_STAGE_AUTO_SFT",
+    "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL",
 ]
 
 CHART_TO_EVIDENCE_TRAIN_RUN_ID = "chart_to_evidence_sft_dev50_with_field_links_20260503_r1"
 EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID = "evidence_to_semantics_sft_dev50_with_field_links_20260503_r1"
+D1_EVIDENCE_BOXES_TRAIN_RUN_ID = "d1_chart_to_evidence_boxes_and_canonical_dev50_20260504_r2"
 
-IMAGE_METHODS = {"D_BASE_SAME_BACKBONE", "D1", "CHART_TO_EVIDENCE_SFT", "TWO_STAGE_AUTO_SFT"}
+IMAGE_METHODS = {
+    "D_BASE_SAME_BACKBONE",
+    "D1",
+    "CHART_TO_EVIDENCE_SFT",
+    "TWO_STAGE_AUTO_SFT",
+    "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL",
+}
 OPTIONAL_EVIDENCE_METHODS = {"EVIDENCE_TO_SEMANTICS_SFT"}
 
 
@@ -426,6 +441,8 @@ def copy_evidence_manifest(
 def method_prompt_and_schema(method: str) -> tuple[Path, Path]:
     if method in {"D_BASE_SAME_BACKBONE", "D1"}:
         return CANONICAL_PROMPT, CANONICAL_SCHEMA
+    if method == "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL":
+        return D1_EVIDENCE_BOXES_PROMPT, D1_EVIDENCE_BOXES_SCHEMA
     if method in {"CHART_TO_EVIDENCE_SFT", "TWO_STAGE_AUTO_SFT"}:
         return CHART_TO_EVIDENCE_PROMPT, EVIDENCE_SCHEMA
     if method == "EVIDENCE_TO_SEMANTICS_SFT":
@@ -451,6 +468,13 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
         default_run_id=EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID,
         repo_root=repo_root,
     )
+    d1_evidence_boxes_adapter = checkpoint_path_from_config(
+        config,
+        key="d1_evidence_boxes_lora_or_checkpoint_dir",
+        method="D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL",
+        default_run_id=D1_EVIDENCE_BOXES_TRAIN_RUN_ID,
+        repo_root=repo_root,
+    )
     lines = [
         "# Group 1 SFT extension run commands",
         "",
@@ -467,31 +491,23 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
         + f"--split-subset {split_subset} --out-dir {run_dir}",
         "```",
         "",
-        "## 3. Train CHART_TO_EVIDENCE_SFT on the development-50 train split",
+        "## 3. Train D1 plus chart evidence boxes on the development-50 train split",
         "",
         "```powershell",
         "python scripts\\group1_sft\\train_qwen2vl_group1_sft_lora.py "
-        + "--method CHART_TO_EVIDENCE_SFT "
+        + "--method D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL "
         + "--paths training\\group1_sft\\configs\\local_paths.local.json "
-        + f"--run-id {CHART_TO_EVIDENCE_TRAIN_RUN_ID} "
-        + "--epochs 1",
-        "```",
-        "",
-        "## 4. Train EVIDENCE_TO_SEMANTICS_SFT on the development-50 train split",
-        "",
-        "```powershell",
-        "python scripts\\group1_sft\\train_qwen2vl_group1_sft_lora.py "
-        + "--method EVIDENCE_TO_SEMANTICS_SFT "
-        + "--paths training\\group1_sft\\configs\\local_paths.local.json "
-        + f"--run-id {EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID} "
-        + "--epochs 1",
+        + f"--run-id {D1_EVIDENCE_BOXES_TRAIN_RUN_ID} "
+        + "--epochs 1 "
+        + "--learning-rate 5e-5 "
+        + "--max-seq-length 4096",
         "```",
         "",
     ]
     if "D_BASE_SAME_BACKBONE" in methods:
         lines.extend(
             [
-                "## 5. Same-backbone unfinetuned control",
+                "## 4. Same-backbone unfinetuned control",
                 "",
                 "```powershell",
                 "python scripts\\group1_sft\\run_qwen2vl_group1_sft_inference.py "
@@ -509,7 +525,7 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
     if "D1" in methods:
         lines.extend(
             [
-                "## 6. D1 rerun with the same entry point",
+                "## 5. D1 rerun with the same entry point",
                 "",
                 "```powershell",
                 "python scripts\\group1_sft\\run_qwen2vl_group1_sft_inference.py "
@@ -521,6 +537,30 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
                 + "--json-schema schemas\\missed_approach_leg.schema.json "
                 + f"--scoring-manifest {run_dir / 'scoring_manifest.jsonl'} "
                 + f"--output-root {run_dir / 'D1'}",
+                "```",
+                "",
+            ]
+        )
+    if "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL" in methods:
+        lines.extend(
+            [
+                "## 6. D1 plus chart evidence boxes inference",
+                "",
+                "This method outputs `evidence_boxes` first and `canonical_prediction` second. The runner validates the wrapper, extracts `canonical_prediction`, and scores only that canonical object.",
+                "",
+                "```powershell",
+                "python scripts\\group1_sft\\run_qwen2vl_group1_sft_inference.py "
+                + "--method D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL "
+                + f"--input-manifest {run_dir / 'D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL' / 'input_manifest.jsonl'} "
+                + f"--model-dir {base_model} "
+                + f"--adapter-checkpoint {d1_evidence_boxes_adapter} "
+                + "--prompt training\\group1_sft\\prompts\\d1_chart_to_evidence_boxes_and_canonical.zh.md "
+                + "--json-schema training\\group1_sft\\manifests\\d1_chart_to_evidence_boxes_and_canonical.schema.json "
+                + "--canonical-json-schema schemas\\missed_approach_leg.schema.json "
+                + f"--scoring-manifest {run_dir / 'scoring_manifest.jsonl'} "
+                + f"--output-root {run_dir / 'D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL'} "
+                + "--max-new-tokens 2560 "
+                + "--repetition-penalty 1.08",
                 "```",
                 "",
             ]
@@ -593,10 +633,9 @@ def write_commands(run_dir: Path, config: dict[str, str], methods: list[str], *,
             "",
             "- Do not pass target JSON, score files, raw 424 records, or other method predictions to inference.",
             "- `scoring_manifest.jsonl` is for post-prediction scoring only.",
-            "- `EVIDENCE_TO_SEMANTICS_SFT` uses declared human evidence records and must be reported as diagnostic/oracle second-stage input.",
-            "- `TWO_STAGE_AUTO_SFT` uses only the automatically generated evidence record from its first stage at inference time.",
-            "- The evidence-record assistant prefill constrains JSON shape only; it does not use targets, scores, raw 424/CIFP records, or other method predictions.",
-            "- Questionnaire null/missing answer normalization is mechanical only: it maps malformed question answers to `unknown` without using targets or scores.",
+            "- `D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL` is the only new default method: it starts from the D1 adapter, learns evidence boxes, and still scores only `canonical_prediction`.",
+            "- `evidence_boxes` are diagnostic; the formal score uses only the extracted `canonical_prediction` object.",
+            "- The parser is strict JSON only; semantic repair is not applied.",
             "",
         ]
     )
@@ -756,6 +795,13 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
         default_run_id=EVIDENCE_TO_SEMANTICS_TRAIN_RUN_ID,
         repo_root=repo_root,
     )
+    d1_evidence_boxes_checkpoint = checkpoint_path_from_config(
+        config,
+        key="d1_evidence_boxes_lora_or_checkpoint_dir",
+        method="D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL",
+        default_run_id=D1_EVIDENCE_BOXES_TRAIN_RUN_ID,
+        repo_root=repo_root,
+    )
     if any(method in methods for method in ["CHART_TO_EVIDENCE_SFT", "TWO_STAGE_AUTO_SFT"]) and not chart_checkpoint.exists():
         blockers.append(
             {
@@ -772,6 +818,15 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
                 "blocker": "evidence_to_semantics_lora_or_checkpoint_dir_missing",
                 "path": str(semantics_checkpoint),
                 "detail": "Train EVIDENCE_TO_SEMANTICS_SFT or set evidence_to_semantics_lora_or_checkpoint_dir in local_paths.local.json.",
+            }
+        )
+    if "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL" in methods and not d1_evidence_boxes_checkpoint.exists():
+        blockers.append(
+            {
+                "method": "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL",
+                "blocker": "d1_evidence_boxes_lora_or_checkpoint_dir_missing",
+                "path": str(d1_evidence_boxes_checkpoint),
+                "detail": "Train D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL or set d1_evidence_boxes_lora_or_checkpoint_dir in local_paths.local.json.",
             }
         )
 
@@ -803,6 +858,10 @@ def build_package(args: argparse.Namespace) -> dict[str, Any]:
             "evidence_to_semantics_lora_or_checkpoint_dir": {
                 "path": str(semantics_checkpoint),
                 "exists": semantics_checkpoint.exists(),
+            },
+            "d1_evidence_boxes_lora_or_checkpoint_dir": {
+                "path": str(d1_evidence_boxes_checkpoint),
+                "exists": d1_evidence_boxes_checkpoint.exists(),
             },
         },
         "policy": {
@@ -888,8 +947,8 @@ def write_preflight_markdown(path: Path, manifest: dict[str, Any]) -> None:
             "",
             "- input manifests 不包含 target JSON、score、CIFP/424 原始记录或其他方法预测。",
             "- scoring manifest 只允许在预测完成后用于评分。",
-            "- `EVIDENCE_TO_SEMANTICS_SFT` 使用人工确认图上证据，报告中必须标成 diagnostic/oracle second-stage SFT。",
-            "- `TWO_STAGE_AUTO_SFT` 推理时只能使用第一阶段自动生成的证据记录。",
+            "- 新增默认方法只比较 `canonical_prediction` 的正式分数；`evidence_boxes` 只做诊断分析。",
+            "- 旧的人工证据/自动两阶段方法不再是本轮默认方法。",
             "",
         ]
     )

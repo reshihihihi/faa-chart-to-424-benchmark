@@ -22,6 +22,13 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_PATHS = ROOT / "training" / "group1_sft" / "configs" / "local_paths.local.json"
 
 METHOD_CONFIG = {
+    "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL": {
+        "train_key": "d1_evidence_boxes_train_jsonl",
+        "dev_key": "d1_evidence_boxes_dev_jsonl",
+        "initial_adapter_key": "d1_lora_or_checkpoint_dir",
+        "input_boundary": ["full_chart_image", "evidence_boxes_then_canonical_prompt"],
+        "label_source": "development_only_human_regions_plus_field_reviews",
+    },
     "CHART_TO_EVIDENCE_SFT": {
         "train_key": "chart_to_evidence_train_jsonl",
         "dev_key": "chart_to_evidence_dev_jsonl",
@@ -230,15 +237,20 @@ def load_model_and_processor(args: argparse.Namespace, base_model_dir: Path) -> 
     if args.gradient_checkpointing:
         model.gradient_checkpointing_enable()
     model = prepare_model_for_kbit_training(model)
-    peft_config = LoraConfig(
-        r=args.lora_r,
-        lora_alpha=args.lora_alpha,
-        lora_dropout=args.lora_dropout,
-        bias="none",
-        task_type="CAUSAL_LM",
-        target_modules=args.target_modules,
-    )
-    model = get_peft_model(model, peft_config)
+    if args.initial_adapter_checkpoint:
+        from peft import PeftModel
+
+        model = PeftModel.from_pretrained(model, args.initial_adapter_checkpoint, is_trainable=True)
+    else:
+        peft_config = LoraConfig(
+            r=args.lora_r,
+            lora_alpha=args.lora_alpha,
+            lora_dropout=args.lora_dropout,
+            bias="none",
+            task_type="CAUSAL_LM",
+            target_modules=args.target_modules,
+        )
+        model = get_peft_model(model, peft_config)
     model.print_trainable_parameters()
     return model, processor
 
@@ -282,6 +294,16 @@ def train(args: argparse.Namespace) -> dict[str, Any]:
     base_model_dir = resolve_path(paths["base_vlm_model_dir"], repo_root=repo_root)
     train_jsonl = resolve_path(paths[method_cfg["train_key"]], repo_root=repo_root)
     dev_jsonl = resolve_path(paths[method_cfg["dev_key"]], repo_root=repo_root)
+    initial_adapter_checkpoint = (
+        resolve_path(str(args.initial_adapter_checkpoint), repo_root=repo_root)
+        if args.initial_adapter_checkpoint
+        else None
+    )
+    if initial_adapter_checkpoint is None and method_cfg.get("initial_adapter_key"):
+        initial_adapter_checkpoint = resolve_path(paths[method_cfg["initial_adapter_key"]], repo_root=repo_root)
+    if initial_adapter_checkpoint is not None and not initial_adapter_checkpoint.exists():
+        raise RuntimeError(f"Initial adapter checkpoint does not exist: {initial_adapter_checkpoint}")
+    args.initial_adapter_checkpoint = initial_adapter_checkpoint
     local_root = resolve_path(paths.get("local_root", str(paths["output_root"])), repo_root=repo_root)
     checkpoint_root = args.checkpoint_root or (local_root / "checkpoints" / args.method)
     reports_root = args.reports_root or (local_root / "reports")
@@ -379,6 +401,8 @@ def train(args: argparse.Namespace) -> dict[str, Any]:
         "method_id": args.method,
         "run_id": run_id,
         "base_model_dir": str(base_model_dir),
+        "initial_adapter_checkpoint": str(initial_adapter_checkpoint) if initial_adapter_checkpoint else None,
+        "initial_adapter_checkpoint_exists": initial_adapter_checkpoint.exists() if initial_adapter_checkpoint else None,
         "train_jsonl": {"path": str(train_jsonl), "rows": len(train_rows), "sha256": sha256_file(train_jsonl)},
         "dev_jsonl": {"path": str(dev_jsonl), "rows": len(dev_rows), "sha256": sha256_file(dev_jsonl)},
         "input_boundary": {
@@ -446,6 +470,7 @@ def main() -> int:
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--checkpoint-root", type=Path, default=None)
     parser.add_argument("--reports-root", type=Path, default=None)
+    parser.add_argument("--initial-adapter-checkpoint", type=Path, default=None)
     parser.add_argument("--train-limit", type=int, default=None)
     parser.add_argument("--dev-limit", type=int, default=None)
     parser.add_argument("--epochs", type=int, default=1)
