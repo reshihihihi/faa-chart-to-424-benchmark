@@ -18,7 +18,9 @@
     "experiment6_v11_pr25_d1_20260502": "c271ca6f771a3c9c1c055b71b38da170f0297035",
     "group2_formal_run_20260503": "01071b5f6a0918b954f0a800e81fa3bb302cc63e",
     "group1_c2_method_effect_20260504": "1b09a5a5625230360e8eeb40ca06e2d1b4963578",
-    "group1_gpt54_cfamily_per_chart_20260505": "878856d5d56b38f18170d9158d1854de9b4d77f7"
+    "group1_gpt54_cfamily_per_chart_20260505": "878856d5d56b38f18170d9158d1854de9b4d77f7",
+    "group2_bootstrap_derived_rows_pr36": "80bf4297bb2605195e01f2d5867634de044418ad",
+    "group3_bootstrap_derived_rows_pr37": "6ed4c7b05a09b0ba83868263d3edb66702fa51e7"
   },
   "global_rules": {
     "prediction_stage_forbidden_inputs": [
@@ -186,6 +188,182 @@
       ],
       "paired_comparisons": "all_pairs",
       "output_dir": "reports/statistics/group1_gpt54_cfamily_per_chart_20260505"
+    },
+    "group2_positive_present_evidence_20260505": {
+      "experiment_group": "experiment_group_2",
+      "final_result_role": "diagnostic_positive_present_evidence",
+      "status": "active_via_pr36_derived_rows",
+      "description": "Experiment 2 diagnostic bootstrap over submitted formal200 positive/present evidence-linked field rows. Each row is one scored present field; correct=true counts as 1 and false counts as 0. This is not a new leaderboard.",
+      "primary_metric": "positive_present_field_accuracy",
+      "resampling_unit_key": "chart_id",
+      "missing_unit_policy": "strict_error",
+      "method_discovery": [
+        {
+          "format": "jsonl_score_rows",
+          "glob": "formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704/group2/positive_joined_field_scores.jsonl",
+          "method_key": "method",
+          "unit_key": "chart_id",
+          "numerator_bool_key": "correct",
+          "denominator_constant": 1,
+          "aggregate_duplicate_units": "sum"
+        }
+      ],
+      "required_methods": [
+        "A1",
+        "A2",
+        "B1",
+        "B1_prime",
+        "B1_prime_link",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "D1"
+      ],
+      "paired_comparisons": "all_pairs",
+      "output_dir": "reports/statistics/group2_positive_present_evidence_20260505"
+    },
+    "group2_negative_not_applicable_20260505": {
+      "experiment_group": "experiment_group_2",
+      "final_result_role": "diagnostic_negative_not_applicable",
+      "status": "active_via_pr36_derived_rows",
+      "description": "Experiment 2 diagnostic bootstrap over submitted formal200 negative/not-applicable field rows. Each row is one scored not-applicable field; correct=true counts as 1 and false counts as 0. This measures suppression of over-asserted fields, not extraction of present fields.",
+      "primary_metric": "not_applicable_field_accuracy",
+      "resampling_unit_key": "chart_id",
+      "missing_unit_policy": "strict_error",
+      "method_discovery": [
+        {
+          "format": "jsonl_score_rows",
+          "glob": "formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704/group2/negative_not_applicable.jsonl",
+          "method_key": "method",
+          "unit_key": "chart_id",
+          "numerator_bool_key": "correct",
+          "denominator_constant": 1,
+          "aggregate_duplicate_units": "sum"
+        }
+      ],
+      "required_methods": [
+        "A1",
+        "A2",
+        "B1",
+        "B1_prime",
+        "B1_prime_link",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "D1"
+      ],
+      "paired_comparisons": "all_pairs",
+      "output_dir": "reports/statistics/group2_negative_not_applicable_20260505"
+    },
+    "group3_formal200_difficulty_all_20260505": {
+      "experiment_group": "experiment_group_3",
+      "final_result_role": "diagnostic_difficulty_all_formal200",
+      "status": "active_via_pr37_derived_rows",
+      "description": "Experiment 3 diagnostic bootstrap over all 200 formal200 chart-level rows after joining formal hard-case labels. This is a subgroup/difficulty diagnostic, not a new main leaderboard.",
+      "primary_metric": "chart_display_aware_v2_field_accuracy",
+      "resampling_unit_key": "chart_id",
+      "missing_unit_policy": "strict_error",
+      "method_discovery": [
+        {
+          "format": "jsonl_score_rows",
+          "glob": "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl",
+          "method_key": "method",
+          "unit_key": "chart_id",
+          "numerator_key": "correct",
+          "denominator_key": "total",
+          "aggregate_duplicate_units": "sum"
+        }
+      ],
+      "required_methods": [
+        "A1",
+        "A2",
+        "B1",
+        "B1_prime",
+        "B1_prime_link",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "D_SFT"
+      ],
+      "paired_comparisons": "all_pairs",
+      "output_dir": "reports/statistics/group3_formal200_difficulty_all_20260505"
+    },
+    "group3_formal200_core_20260505": {
+      "experiment_group": "experiment_group_3",
+      "final_result_role": "diagnostic_difficulty_core_formal200",
+      "status": "active_via_pr37_derived_rows",
+      "description": "Experiment 3 diagnostic bootstrap over the 180 non-hard/core formal200 charts. This is a subgroup diagnostic, not a new main leaderboard.",
+      "primary_metric": "chart_display_aware_v2_field_accuracy",
+      "resampling_unit_key": "chart_id",
+      "missing_unit_policy": "strict_error",
+      "method_discovery": [
+        {
+          "format": "jsonl_score_rows",
+          "glob": "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl",
+          "row_filter": {
+            "difficulty_level": "core"
+          },
+          "method_key": "method",
+          "unit_key": "chart_id",
+          "numerator_key": "correct",
+          "denominator_key": "total",
+          "aggregate_duplicate_units": "sum"
+        }
+      ],
+      "required_methods": [
+        "A1",
+        "A2",
+        "B1",
+        "B1_prime",
+        "B1_prime_link",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "D_SFT"
+      ],
+      "paired_comparisons": "all_pairs",
+      "output_dir": "reports/statistics/group3_formal200_core_20260505"
+    },
+    "group3_formal200_hard_20260505": {
+      "experiment_group": "experiment_group_3",
+      "final_result_role": "diagnostic_difficulty_hard_formal200",
+      "status": "active_via_pr37_derived_rows",
+      "description": "Experiment 3 diagnostic bootstrap over the 20 selected hard formal200 charts. This is a subgroup diagnostic, not a new main leaderboard.",
+      "primary_metric": "chart_display_aware_v2_field_accuracy",
+      "resampling_unit_key": "chart_id",
+      "missing_unit_policy": "strict_error",
+      "method_discovery": [
+        {
+          "format": "jsonl_score_rows",
+          "glob": "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl",
+          "row_filter": {
+            "difficulty_level": "hard"
+          },
+          "method_key": "method",
+          "unit_key": "chart_id",
+          "numerator_key": "correct",
+          "denominator_key": "total",
+          "aggregate_duplicate_units": "sum"
+        }
+      ],
+      "required_methods": [
+        "A1",
+        "A2",
+        "B1",
+        "B1_prime",
+        "B1_prime_link",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "D_SFT"
+      ],
+      "paired_comparisons": "all_pairs",
+      "output_dir": "reports/statistics/group3_formal200_hard_20260505"
     },
     "experiment4_source_ablation_formal200_main_6x3": {
       "experiment_group": "experiment_group_4",

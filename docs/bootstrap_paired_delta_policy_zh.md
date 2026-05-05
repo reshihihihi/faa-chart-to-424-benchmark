@@ -136,13 +136,28 @@ C2 的结论必须拆开说：
 
 实验组2不是重新跑模型，也不是独立 leaderboard。它回答的是：实验组1字段正确/错误与人工证据来源有什么关系。
 
-实验组2在第一批统一统计中不作为必跑对象。只有当论文里要声称“某方法在某类证据来源上显著更强”时，才需要按 `chart_id` 聚类做 bootstrap 或 paired-delta。描述性证据分布表本身不需要 paired-delta。
+PR #36 补齐 derived rows 后，实验组2进入诊断 bootstrap，但仍然不是独立 leaderboard。当前注册两个 analysis set：
+
+```text
+group2_positive_present_evidence_20260505
+group2_negative_not_applicable_20260505
+```
+
+前者统计 positive/present evidence-linked 字段正确率；后者统计 negative/not-applicable 字段正确率。两者都按 `chart_id` 聚类重采样，`correct=true` 记 1，`correct=false` 记 0，每个字段行 denominator 为 1。
 
 ### 4.3 实验组3
 
-当前仓库内实验组3主要体现为 formal300 challenge tags / 难度标签。它用于分层解释样本，而不是新的方法结果。
+实验组3用于分层解释样本，而不是新的方法结果。
 
-实验组3不进入第一批主方法 paired-delta。若要报告某标签子集上的方法差异，也必须按 `chart_id` 聚类，并明确这是 subgroup diagnostic，不是新的主 leaderboard。
+PR #37 补齐 formal200 difficulty derived rows 后，实验组3进入诊断 bootstrap。当前注册三个 analysis set：
+
+```text
+group3_formal200_difficulty_all_20260505
+group3_formal200_core_20260505
+group3_formal200_hard_20260505
+```
+
+三者分别对应 200 张全部样本、180 张 core 样本、20 张 hard 样本。它们都按 `chart_id` 聚类重采样，并明确解释为 subgroup diagnostic，不是新的主 leaderboard。
 
 ### 4.4 实验组4
 
@@ -315,12 +330,17 @@ Bootstrap/paired-delta 需要逐 chart score，而不是只有最终 summary。
 ```text
 group1_scoring_equivalence_v2
 group1_c2_model_method_effect_20260504
+group2_positive_present_evidence_20260505
+group2_negative_not_applicable_20260505
+group3_formal200_difficulty_all_20260505
+group3_formal200_core_20260505
+group3_formal200_hard_20260505
 experiment4_source_ablation_formal200_main_6x3
 experiment5_eval200_r6_strict_reviewed
 experiment6_v11_pr25_d1_counterfactual
 ```
 
-实验组2、实验组3暂不放入第一批主流程。后续如果论文需要它们的子组差异声明，再单独添加 analysis set。
+实验组2、实验组3的 analysis set 是诊断统计，不改变主 leaderboard。论文中引用时要说明它们分别回答证据来源和难例分层问题。
 
 ## 8. 输出要求
 

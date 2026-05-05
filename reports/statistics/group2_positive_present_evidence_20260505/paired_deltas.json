@@ -1,0 +1,407 @@
+[
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.03741906018044312,
+    "ci_upper": 0.07795622638153109,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A1",
+    "method_b": "A2",
+    "point_delta": 0.057412167952013704
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.043965866927765836,
+    "ci_upper": 0.0060583777857666325,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A1",
+    "method_b": "B1",
+    "point_delta": -0.01928020565552699
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.12018866034779706,
+    "ci_upper": -0.07097043125680949,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A1",
+    "method_b": "B1_prime",
+    "point_delta": -0.09554413024850042
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.017756412419686552,
+    "ci_upper": 0.05663659167390301,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A1",
+    "method_b": "B1_prime_link",
+    "point_delta": 0.03684661525278492
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.12489311596679285,
+    "ci_upper": -0.06952743944288368,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A1",
+    "method_b": "C1",
+    "point_delta": -0.09768637532133675
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.2566822231650403,
+    "ci_upper": -0.2043701799485861,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A1",
+    "method_b": "C2",
+    "point_delta": -0.23050556983718937
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.14532188684286776,
+    "ci_upper": -0.0871234972159524,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A1",
+    "method_b": "C3",
+    "point_delta": -0.11653813196229648
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.14407875776324636,
+    "ci_upper": -0.08723634951418838,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A1",
+    "method_b": "C4",
+    "point_delta": -0.11525278491859467
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.5473739753185423,
+    "ci_upper": -0.460548038486738,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A1",
+    "method_b": "D1",
+    "point_delta": -0.5042844901456727
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.10025608379550625,
+    "ci_upper": -0.05411195491050689,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A2",
+    "method_b": "B1",
+    "point_delta": -0.07669237360754069
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.17771279770955806,
+    "ci_upper": -0.12831342750277863,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A2",
+    "method_b": "B1_prime",
+    "point_delta": -0.15295629820051412
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.03860885573244523,
+    "ci_upper": -0.0025550145139608873,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A2",
+    "method_b": "B1_prime_link",
+    "point_delta": -0.020565552699228787
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.18069804822357205,
+    "ci_upper": -0.12989681658051752,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A2",
+    "method_b": "C1",
+    "point_delta": -0.15509854327335046
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.3121264510806463,
+    "ci_upper": -0.26357961072761105,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A2",
+    "method_b": "C2",
+    "point_delta": -0.28791773778920304
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.20129324339453647,
+    "ci_upper": -0.14642471887158007,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A2",
+    "method_b": "C3",
+    "point_delta": -0.17395029991431019
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.20306529755600017,
+    "ci_upper": -0.1437202630114762,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A2",
+    "method_b": "C4",
+    "point_delta": -0.17266495287060837
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.601116539866172,
+    "ci_upper": -0.5214069226527799,
+    "delta_definition": "method_a - method_b",
+    "method_a": "A2",
+    "method_b": "D1",
+    "point_delta": -0.5616966580976863
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.09982790139625712,
+    "ci_upper": -0.05269697476145765,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1",
+    "method_b": "B1_prime",
+    "point_delta": -0.07626392459297343
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.03772706311392136,
+    "ci_upper": 0.07478661991783539,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1",
+    "method_b": "B1_prime_link",
+    "point_delta": 0.056126820908311906
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.10184787279759344,
+    "ci_upper": -0.055053371937395866,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1",
+    "method_b": "C1",
+    "point_delta": -0.07840616966580977
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.23357664233576642,
+    "ci_upper": -0.1888139813231714,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1",
+    "method_b": "C2",
+    "point_delta": -0.21122536418166238
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.12258894127732531,
+    "ci_upper": -0.07250723078607825,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1",
+    "method_b": "C3",
+    "point_delta": -0.0972579263067695
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.12079486534299938,
+    "ci_upper": -0.07246843036270452,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1",
+    "method_b": "C4",
+    "point_delta": -0.09597257926306768
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.528229647708833,
+    "ci_upper": -0.44078645298690855,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1",
+    "method_b": "D1",
+    "point_delta": -0.48500428449014565
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.114956646350312,
+    "ci_upper": 0.150108019371255,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1_prime",
+    "method_b": "B1_prime_link",
+    "point_delta": 0.13239074550128532
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.028696220578094973,
+    "ci_upper": 0.02397285940570826,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1_prime",
+    "method_b": "C1",
+    "point_delta": -0.002142245072836335
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.16093016881616487,
+    "ci_upper": -0.10846422893250725,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1_prime",
+    "method_b": "C2",
+    "point_delta": -0.13496143958868895
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.050811447109334024,
+    "ci_upper": 0.007646721602829767,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1_prime",
+    "method_b": "C3",
+    "point_delta": -0.020994001713796062
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.04745617785378364,
+    "ci_upper": 0.007324508052414995,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1_prime",
+    "method_b": "C4",
+    "point_delta": -0.01970865467009425
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.45169780318717934,
+    "ci_upper": -0.365522277921451,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1_prime",
+    "method_b": "D1",
+    "point_delta": -0.4087403598971722
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.15461305603800457,
+    "ci_upper": -0.11476091730543278,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1_prime_link",
+    "method_b": "C1",
+    "point_delta": -0.13453299057412166
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.2872431506849315,
+    "ci_upper": -0.24733917985333323,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1_prime_link",
+    "method_b": "C2",
+    "point_delta": -0.26735218508997427
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.17662287157528517,
+    "ci_upper": -0.13018905087781316,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1_prime_link",
+    "method_b": "C3",
+    "point_delta": -0.15338474721508139
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.17649743616161223,
+    "ci_upper": -0.12831427241167156,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1_prime_link",
+    "method_b": "C4",
+    "point_delta": -0.15209940017137957
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.5784065873479081,
+    "ci_upper": -0.5029938203797183,
+    "delta_definition": "method_a - method_b",
+    "method_a": "B1_prime_link",
+    "method_b": "D1",
+    "point_delta": -0.5411311053984575
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.1554518974126458,
+    "ci_upper": -0.1095702111336277,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C1",
+    "method_b": "C2",
+    "point_delta": -0.1328191945158526
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.04392847571688056,
+    "ci_upper": 0.006374976206198841,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C1",
+    "method_b": "C3",
+    "point_delta": -0.018851756640959727
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.04721089398228473,
+    "ci_upper": 0.011559087657410722,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C1",
+    "method_b": "C4",
+    "point_delta": -0.017566409597257915
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.4467369930082402,
+    "ci_upper": -0.366665613147914,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C1",
+    "method_b": "D1",
+    "point_delta": -0.4065981148243359
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.08719606083778242,
+    "ci_upper": 0.14047162377346278,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C2",
+    "method_b": "C3",
+    "point_delta": 0.11396743787489289
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.08650952483273193,
+    "ci_upper": 0.14285869430309045,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C2",
+    "method_b": "C4",
+    "point_delta": 0.1152527849185947
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.3129857207850064,
+    "ci_upper": -0.23405806018630954,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C2",
+    "method_b": "D1",
+    "point_delta": -0.2737789203084833
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.02790927351827177,
+    "ci_upper": 0.030107850757870223,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C3",
+    "method_b": "C4",
+    "point_delta": 0.0012853470437018122
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.4283989966628611,
+    "ci_upper": -0.3476765167468061,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C3",
+    "method_b": "D1",
+    "point_delta": -0.38774635818337616
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.4360189573459715,
+    "ci_upper": -0.3415048504725923,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C4",
+    "method_b": "D1",
+    "point_delta": -0.389031705227078
+  }
+]

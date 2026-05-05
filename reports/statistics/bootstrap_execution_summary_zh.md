@@ -1,6 +1,6 @@
 # Bootstrap / paired-delta 执行记录
 
-执行日期：2026-05-04；实验组4补充 bootstrap：2026-05-05；GPT-5.4 C 系列逐 chart bootstrap：2026-05-05
+执行日期：2026-05-04；实验组4补充 bootstrap：2026-05-05；GPT-5.4 C 系列逐 chart bootstrap：2026-05-05；实验组2/3 derived rows bootstrap：2026-05-05
 
 配置文件：
 
@@ -29,6 +29,11 @@ scripts/scorers/compute_bootstrap_paired_delta.py
 | `group1_scoring_equivalence_v2` | 通过 | 已完成 | `reports/statistics/group1_scoring_equivalence_v2/` | 有缺失样本按预注册规则补 0，详见下方 |
 | `group1_c2_model_method_effect_20260504` | 通过 | 已完成 | `reports/statistics/group1_c2_model_method_effect_20260504/` | 无 warning |
 | `group1_gpt54_cfamily_per_chart_20260505` | 通过 | 已完成 | `reports/statistics/group1_gpt54_cfamily_per_chart_20260505/` | 878856d5 补齐逐 chart score 表后新增，warning 为空 |
+| `group2_positive_present_evidence_20260505` | 通过 | 已完成 | `reports/statistics/group2_positive_present_evidence_20260505/` | PR #36 derived rows；positive/present evidence-linked 字段，warning 为空 |
+| `group2_negative_not_applicable_20260505` | 通过 | 已完成 | `reports/statistics/group2_negative_not_applicable_20260505/` | PR #36 derived rows；negative/not-applicable 字段，warning 为空 |
+| `group3_formal200_difficulty_all_20260505` | 通过 | 已完成 | `reports/statistics/group3_formal200_difficulty_all_20260505/` | PR #37 derived rows；200 张全部样本，warning 为空 |
+| `group3_formal200_core_20260505` | 通过 | 已完成 | `reports/statistics/group3_formal200_core_20260505/` | PR #37 derived rows；180 张 core 样本，warning 为空 |
+| `group3_formal200_hard_20260505` | 通过 | 已完成 | `reports/statistics/group3_formal200_hard_20260505/` | PR #37 derived rows；20 张 hard 样本，warning 为空 |
 | `experiment4_source_ablation_formal200_main_6x3` | 通过 | 已完成 | `reports/statistics/experiment4_source_ablation_formal200_main_6x3/` | V1-V5 逐 chart CSV 已补齐，warning 为空 |
 | `experiment5_eval200_r6_strict_reviewed` | 通过 | 已完成 | `reports/statistics/experiment5_eval200_r6_strict_reviewed/` | 已把 G3 的真实逐样本来源接入配置 |
 | `experiment6_v11_pr25_d1_counterfactual` | 通过 | 已完成 | `reports/statistics/experiment6_v11_pr25_d1_counterfactual/` | 无 warning |
@@ -122,6 +127,118 @@ selected paired delta：
 | `C2_GPT54_batched_leg - C4_GPT54` | +3.13 pp | +0.17 pp - +6.06 pp |
 | `C4_GPT54 - C1_GPT54` | +13.72 pp | +11.64 pp - +15.80 pp |
 | `C4_GPT54 - C3_GPT54` | +13.30 pp | +11.20 pp - +15.41 pp |
+
+## 3.6 实验组2
+
+输入：
+
+```text
+formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704/
+```
+
+输出：
+
+```text
+reports/statistics/group2_positive_present_evidence_20260505/
+reports/statistics/group2_negative_not_applicable_20260505/
+```
+
+运行状态：
+
+- 100 次 smoke：通过。
+- 10000 次正式 bootstrap：已完成。
+- 两个 analysis set 的 `bootstrap_run_manifest.json` 中 `warnings=[]`，`n_units=200`，`n_methods=10`。
+
+positive/present evidence-linked 字段 point estimate：
+
+| 方法 | Correct/Total | Accuracy | 95% CI |
+|---|---:|---:|---:|
+| `A1` | 360/2334 | 15.42% | 13.33% - 17.61% |
+| `A2` | 226/2334 | 9.68% | 7.80% - 11.69% |
+| `B1` | 405/2334 | 17.35% | 15.08% - 19.74% |
+| `B1_prime` | 583/2334 | 24.98% | 22.81% - 27.14% |
+| `B1_prime_link` | 274/2334 | 11.74% | 10.58% - 12.96% |
+| `C1` | 588/2334 | 25.19% | 22.98% - 27.46% |
+| `C2` | 898/2334 | 38.47% | 36.28% - 40.65% |
+| `C3` | 632/2334 | 27.08% | 24.59% - 29.53% |
+| `C4` | 629/2334 | 26.95% | 24.11% - 29.88% |
+| `D1` | 1537/2334 | 65.85% | 62.11% - 69.53% |
+
+negative/not-applicable 字段 point estimate：
+
+| 方法 | Correct/Total | Accuracy | 95% CI |
+|---|---:|---:|---:|
+| `A1` | 776/1518 | 51.12% | 47.95% - 54.30% |
+| `A2` | 636/1518 | 41.90% | 37.86% - 45.97% |
+| `B1` | 674/1518 | 44.40% | 42.36% - 46.48% |
+| `B1_prime` | 699/1518 | 46.05% | 43.99% - 48.09% |
+| `B1_prime_link` | 411/1518 | 27.08% | 23.94% - 30.33% |
+| `C1` | 945/1518 | 62.25% | 60.37% - 64.17% |
+| `C2` | 62/1518 | 4.08% | 2.88% - 5.40% |
+| `C3` | 893/1518 | 58.83% | 56.75% - 60.87% |
+| `C4` | 947/1518 | 62.38% | 59.32% - 65.50% |
+| `D1` | 1203/1518 | 79.25% | 74.85% - 83.64% |
+
+## 3.7 实验组3
+
+输入：
+
+```text
+benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/
+```
+
+输出：
+
+```text
+reports/statistics/group3_formal200_difficulty_all_20260505/
+reports/statistics/group3_formal200_core_20260505/
+reports/statistics/group3_formal200_hard_20260505/
+```
+
+运行状态：
+
+- 100 次 smoke：通过。
+- 10000 次正式 bootstrap：已完成。
+- 三个 analysis set 的 `bootstrap_run_manifest.json` 中 `warnings=[]`，`n_methods=10`。
+- all 口径 `n_units=200`，core 口径 `n_units=180`，hard 口径 `n_units=20`。
+- 这是难例分层诊断统计，不是新的主 leaderboard。
+
+all formal200 point estimate：
+
+| 方法 | Correct/Total | Accuracy | 95% CI |
+|---|---:|---:|---:|
+| `A1` | 1184/4052 | 29.22% | 26.83% - 31.68% |
+| `A2` | 916/4052 | 22.61% | 20.00% - 25.27% |
+| `B1` | 1110/4052 | 27.39% | 25.36% - 29.50% |
+| `B1_prime` | 1308/4052 | 32.28% | 30.31% - 34.26% |
+| `B1_prime_link` | 718/4052 | 17.72% | 15.81% - 19.69% |
+| `C1` | 1596/4052 | 39.39% | 37.79% - 41.01% |
+| `C2` | 1074/4052 | 26.51% | 25.09% - 27.96% |
+| `C3` | 1593/4052 | 39.31% | 37.33% - 41.30% |
+| `C4` | 1638/4052 | 40.42% | 37.54% - 43.40% |
+| `D_SFT` | 2885/4052 | 71.20% | 67.20% - 75.09% |
+
+hard subset point estimate：
+
+| 方法 | Correct/Total | Accuracy | 95% CI |
+|---|---:|---:|---:|
+| `A1` | 169/518 | 32.63% | 25.10% - 40.27% |
+| `A2` | 114/518 | 22.01% | 14.29% - 30.66% |
+| `B1` | 132/518 | 25.48% | 19.73% - 31.87% |
+| `B1_prime` | 170/518 | 32.82% | 26.76% - 38.61% |
+| `B1_prime_link` | 84/518 | 16.22% | 10.80% - 21.68% |
+| `C1` | 186/518 | 35.91% | 31.49% - 40.35% |
+| `C2` | 118/518 | 22.78% | 19.00% - 26.76% |
+| `C3` | 197/518 | 38.03% | 33.78% - 42.56% |
+| `C4` | 249/518 | 48.07% | 41.60% - 54.77% |
+| `D_SFT` | 212/518 | 40.93% | 34.16% - 46.64% |
+
+selected paired delta：
+
+| 比较 | delta | 95% CI |
+|---|---:|---:|
+| `C4 - D_SFT` on hard | +7.14 pp | -2.15 pp - +17.56 pp |
+| `C3 - D_SFT` on hard | -2.90 pp | -9.18 pp - +3.71 pp |
 
 ## 4. 实验组4
 

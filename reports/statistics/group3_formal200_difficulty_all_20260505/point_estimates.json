@@ -1,0 +1,162 @@
+[
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.2682925301823159,
+    "ci_upper": 0.3167792544761405,
+    "filled_missing_units": 0,
+    "method": "A1",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.29220138203356366,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 1184.0,
+    "source_files": [
+      "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.20004555037684982,
+    "ci_upper": 0.25266869976279877,
+    "filled_missing_units": 0,
+    "method": "A2",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.22606120434353405,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 916.0,
+    "source_files": [
+      "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.2535519200072189,
+    "ci_upper": 0.29503354182367364,
+    "filled_missing_units": 0,
+    "method": "B1",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.27393879565646595,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 1110.0,
+    "source_files": [
+      "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.30306021717670284,
+    "ci_upper": 0.3426436977837507,
+    "filled_missing_units": 0,
+    "method": "B1_prime",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.3228035538005923,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 1308.0,
+    "source_files": [
+      "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.1580610587718152,
+    "ci_upper": 0.19687247485932627,
+    "filled_missing_units": 0,
+    "method": "B1_prime_link",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.1771964461994077,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 718.0,
+    "source_files": [
+      "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.3778720760187541,
+    "ci_upper": 0.4100706345257948,
+    "filled_missing_units": 0,
+    "method": "C1",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.39387956564659427,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 1596.0,
+    "source_files": [
+      "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.2508549096238398,
+    "ci_upper": 0.27959923030930584,
+    "filled_missing_units": 0,
+    "method": "C2",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.2650542941757157,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 1074.0,
+    "source_files": [
+      "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.3733267228557263,
+    "ci_upper": 0.41296813123364123,
+    "filled_missing_units": 0,
+    "method": "C3",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.3931391905231984,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 1593.0,
+    "source_files": [
+      "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.37537456957144144,
+    "ci_upper": 0.4339531478011109,
+    "filled_missing_units": 0,
+    "method": "C4",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.40424481737413626,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 1638.0,
+    "source_files": [
+      "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.6719580018687895,
+    "ci_upper": 0.7508782062306412,
+    "filled_missing_units": 0,
+    "method": "D_SFT",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.7119940769990128,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 2885.0,
+    "source_files": [
+      "benchmark_exports/derived/v2/experiment_groups/formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl"
+    ]
+  }
+]

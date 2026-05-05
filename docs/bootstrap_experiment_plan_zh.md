@@ -86,12 +86,13 @@ configs/bootstrap_paired_delta_policy.json
 实验组6
 ```
 
-实验组2、实验组3暂时不作为第一批主 bootstrap 对象。
+PR #36 补齐实验组2 derived rows、PR #37 补齐实验组3 formal200 derived rows 后，当前把实验组2和实验组3都作为诊断 bootstrap 对象加入统一统计。
 
-原因：
+边界是：
 
-- 实验组2主要是 evidence / paired input 的分析，只有当论文要对某个 evidence 子集做显著性声明时才需要 bootstrap。
-- 实验组3主要是 challenge tag / difficulty tag 分层说明，不是新的方法 leaderboard。
+- 实验组2主要是 evidence / paired input 的分析，现在统计 positive/present evidence-linked 字段和 negative/not-applicable 字段两个口径。
+- 实验组3主要是 challenge tag / difficulty tag 分层说明，现在统计 all/core/hard 三个 formal200 口径。
+- 它们都不是新的主 leaderboard；论文中应作为诊断分析报告。
 
 ## 5. 实验组1 bootstrap 方案
 
