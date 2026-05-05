@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-05-03T11:43:41.186755+00:00",
+  "created_at_utc": "2026-05-05T01:56:10.234727+00:00",
   "purpose": "Repo-packaged Experiment 4 freeze manifest after local absolute path sanitization.",
   "repo_run_root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1",
   "repo_freeze_root": "reports/freeze/experiment4_source_ablation_20260503_r1",
@@ -25162,8 +25162,8 @@
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/experiment4_repo_package_manifest.json",
-      "size_bytes": 23347,
-      "sha256": "b08f0a49012a9348f406a511658305259b49bfb4844bcb6047059b078f7da59a"
+      "size_bytes": 29225,
+      "sha256": "613206aa0fb2115ed9799fb19acca37b393fce7a5fb3ccd88bc8aed11b71614a"
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/manifests/experiment4_evaluation200_chart_ids.json",
@@ -25189,6 +25189,11 @@
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_analysis_artifacts_manifest.json",
       "size_bytes": 981,
       "sha256": "570e4df5865bc3ee66547463ddb7d69f7d34435c1c7ccc06e5355c579249fa32"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_bootstrap_run_instructions_zh.md",
+      "size_bytes": 2431,
+      "sha256": "3241ffef2e96ebb41ba53ff6529d32134e738ff9ab372df647a349974070feca"
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_d1_v2_accuracy_by_variant.png",
@@ -25246,6 +25251,106 @@
       "sha256": "667ba01719ad1b12faf678541c46113f1d78deba728102176dc4e1f476322ea3"
     },
     {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V1_ma_text_only/B1/per_sample_scores.csv",
+      "size_bytes": 41968,
+      "sha256": "e8cbad89624021bf09c520819fdc15a3f0d175a8b71d0fcc73fd1db4ff68f89c"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V1_ma_text_only/C4/per_sample_scores.csv",
+      "size_bytes": 41987,
+      "sha256": "fa2e1a0cf365c6a6a4ff76f056c3ece4a1ed0902a12c2012982db4088ec81e99"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V1_ma_text_only/D1/per_sample_scores.csv",
+      "size_bytes": 39537,
+      "sha256": "96bd654d2be67d8593a0724a033e48847af71877ec454d586a1f93564634d285"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V1_ma_text_only/D_SFT/per_sample_scores.csv",
+      "size_bytes": 57578,
+      "sha256": "805114ba3a9f26e3021177840deb4b903462018ec2fe2aaddc4b01412e4fb71e"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V2_full_minus_ma_prose/B1/per_sample_scores.csv",
+      "size_bytes": 44423,
+      "sha256": "8d62e2e6638e3549ba9c0464a66c4d0c22d947e166c73b58078f7c1b1a159d8a"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V2_full_minus_ma_prose/C4/per_sample_scores.csv",
+      "size_bytes": 44394,
+      "sha256": "fec7465d502e8ced84867eefd3f1b4991ff56f220136819a24adb9e36eb59520"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V2_full_minus_ma_prose/D1/per_sample_scores.csv",
+      "size_bytes": 44766,
+      "sha256": "30c5fc044ba6754357916b50a58b442639eea8a192668e88b8a6a5edc70354d8"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V2_full_minus_ma_prose/D_SFT/per_sample_scores.csv",
+      "size_bytes": 56803,
+      "sha256": "ec645f4654b78f975a856392ecbb1f4815688180ad636e9d18ea176dc88512cc"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V3_plan_view_only/B1/per_sample_scores.csv",
+      "size_bytes": 40887,
+      "sha256": "ecf3d91791c704dd0a8e6a60f9b59931ab264aac6c7af00e4a7435ba20e3f058"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V3_plan_view_only/C4/per_sample_scores.csv",
+      "size_bytes": 42437,
+      "sha256": "2936a51243a4fabfaa5abc5e9bd889f5b4c3baab941b049693225c9f36312c7d"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V3_plan_view_only/D1/per_sample_scores.csv",
+      "size_bytes": 42718,
+      "sha256": "f269f2514308079cebabcef6ca9dcfb3739cd3f2ac8c84ce128e7ad1ad6f2da6"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V3_plan_view_only/D_SFT/per_sample_scores.csv",
+      "size_bytes": 58442,
+      "sha256": "5b5bf8640147bfb975a3362b206fe246ef652538b6ad1bdb90f533574edf8d0d"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V4_icon_detail_only/B1/per_sample_scores.csv",
+      "size_bytes": 41041,
+      "sha256": "150e8bcfc5d7fd28fadaa6ee4b525a9f0900c4381ef15a9ef7af83d3596fdfcb"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V4_icon_detail_only/C4/per_sample_scores.csv",
+      "size_bytes": 41103,
+      "sha256": "e7c507d4d7f872308160227f8443fa12ba22ae875043edab617b37f3474f3bab"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V4_icon_detail_only/D1/per_sample_scores.csv",
+      "size_bytes": 41367,
+      "sha256": "b6e52ba8dad63a6c35412b8546a7b2855a6ee18295950797da3721fa458634e2"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V4_icon_detail_only/D_SFT/per_sample_scores.csv",
+      "size_bytes": 61493,
+      "sha256": "bf9809aafed91cb25c5d0dbdffd378e80d682fae2d32d149342e9582fd5c4aaf"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V5_plan_detail_no_ma/B1/per_sample_scores.csv",
+      "size_bytes": 42686,
+      "sha256": "3f313b25ec460bf198953a9a42dfc05893bbf33a0b4d5ca43da4103c1574c259"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V5_plan_detail_no_ma/C4/per_sample_scores.csv",
+      "size_bytes": 43311,
+      "sha256": "076f627d951de7222e51fb60eb17cf0ccaf721b09e97834a08b95b93bcba6977"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V5_plan_detail_no_ma/D1/per_sample_scores.csv",
+      "size_bytes": 44002,
+      "sha256": "ed9c412562620e7de4fcf9db5bcfd22ece9b9fbfb4875b2811e1ff841e7019d2"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V5_plan_detail_no_ma/D_SFT/per_sample_scores.csv",
+      "size_bytes": 58712,
+      "sha256": "4c2403e86414ae365444a2f6a753432c664e57a2353d0ed66839738a713061f1"
+    },
+    {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/build_source_views.cpython-311.pyc",
       "size_bytes": 23921,
       "sha256": "c4bc8d18bcfa9cdfc98abe6b4c2f05a1616429a1afbd8ba91c4c5971c06e7ac5"
@@ -25264,6 +25369,11 @@
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/package_experiment4_for_repo.cpython-311.pyc",
       "size_bytes": 19180,
       "sha256": "955aff4180a7baf5246c31c5b820be8e64747a69784b49da25664413be36761b"
+    },
+    {
+      "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/package_experiment4_for_repo.cpython-313.pyc",
+      "size_bytes": 18262,
+      "sha256": "5b7d4deaa93ff6198748f10979f91bd8878b52fbd5bb9aff178ed2dc2f6132b8"
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/__pycache__/prepare_experiment4_manifests.cpython-311.pyc",
@@ -25307,8 +25417,8 @@
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/package_experiment4_for_repo.py",
-      "size_bytes": 12616,
-      "sha256": "d5c12deecede0d0dbeb6929d874449e2c1785424e91ad6160e489a3e1626f1dd"
+      "size_bytes": 14254,
+      "sha256": "14c8352265ff828acad8f770cd607124c2fca6939fb1635166e8db0e22613009"
     },
     {
       "relative_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scripts/prepare_experiment4_manifests.py",
@@ -25356,6 +25466,11 @@
       "sha256": "fe34c4db567b96bcf01dc59a8949e0074d4e43aa92f5fff11468061b601df93d"
     },
     {
+      "relative_path": "reports/freeze/experiment4_source_ablation_20260503_r1/experiment4_bootstrap_run_instructions_zh.md",
+      "size_bytes": 2431,
+      "sha256": "3241ffef2e96ebb41ba53ff6529d32134e738ff9ab372df647a349974070feca"
+    },
+    {
       "relative_path": "reports/freeze/experiment4_source_ablation_20260503_r1/experiment4_d1_v2_accuracy_by_variant.png",
       "size_bytes": 42241,
       "sha256": "4dcd58137c327a4b3130e84ff812c775fd3075fc06d344efb556e106d7b22f44"
@@ -25382,8 +25497,8 @@
     },
     {
       "relative_path": "reports/freeze/experiment4_source_ablation_20260503_r1/README_zh.md",
-      "size_bytes": 1549,
-      "sha256": "1cf92f3c8deb26bb29fef6644ed1c3b4c24eeb2b0ea0e07ffec90017cb8d8b6f"
+      "size_bytes": 1910,
+      "sha256": "892357190cf3550121d7687bd0196eb4862669a0888c0eee6dff986660965b4b"
     }
   ],
   "d1_output_inventory": [
@@ -25598,5 +25713,5 @@
       }
     }
   ],
-  "file_count": 5076
+  "file_count": 5099
 }

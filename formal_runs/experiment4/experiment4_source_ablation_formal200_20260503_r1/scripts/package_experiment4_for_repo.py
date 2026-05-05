@@ -31,6 +31,7 @@ REQUIRED_RELS = [
     "reports/experiment4_dsft_raw_vs_d1_coverage_failure.png",
     "reports/experiment4_submission_file_list.json",
     "reports/experiment4_submission_package_manifest_zh.md",
+    "reports/experiment4_bootstrap_run_instructions_zh.md",
     "baseline/V0_group1_frozen_baseline_manifest.json",
     "manifests/experiment4_evaluation200_chart_ids.json",
     "manifests/experiment4_evaluation200_source_view_manifest.jsonl",
@@ -67,6 +68,8 @@ D1_SUBDIRS = [
     "strict_scores",
     "reports",
 ]
+
+SCORE_METHODS = ["B1", "C4", "D_SFT", "D1"]
 
 
 def is_same_path(left: Path, right: Path) -> bool:
@@ -219,14 +222,46 @@ def copy_d1_outputs() -> list[dict[str, object]]:
     return records
 
 
+def copy_score_csvs() -> list[dict[str, object]]:
+    records: list[dict[str, object]] = []
+    for variant in D1_VARIANTS:
+        for method in SCORE_METHODS:
+            src = SOURCE_ROOT / "scores" / "v2" / variant / method / "per_sample_scores.csv"
+            dst = RUN_ROOT / "scores" / "v2" / variant / method / "per_sample_scores.csv"
+            if src.exists():
+                copy_file(src, dst)
+                records.append(
+                    {
+                        "variant": variant,
+                        "method": method,
+                        "relative_path": repo_rel(dst),
+                        "copied": True,
+                        "source_size_bytes": src.stat().st_size,
+                    }
+                )
+            else:
+                records.append(
+                    {
+                        "variant": variant,
+                        "method": method,
+                        "relative_path": repo_rel(dst),
+                        "copied": False,
+                        "reason": "missing source",
+                    }
+                )
+    return records
+
+
 def write_freeze_readme() -> None:
     FREEZE_ROOT.mkdir(parents=True, exist_ok=True)
     analysis_src = RUN_ROOT / "reports" / "experiment4_result_analysis_zh.md"
     metrics_src = RUN_ROOT / "reports" / "experiment4_final_metrics_table.csv"
     freeze_src = RUN_ROOT / "reports" / "experiment4_freeze_manifest.json"
+    bootstrap_src = RUN_ROOT / "reports" / "experiment4_bootstrap_run_instructions_zh.md"
     for src in [
         analysis_src,
         metrics_src,
+        bootstrap_src,
         RUN_ROOT / "reports" / "experiment4_d1_v2_accuracy_by_variant.png",
         RUN_ROOT / "reports" / "experiment4_method_v2_accuracy_by_variant.png",
         RUN_ROOT / "reports" / "experiment4_dsft_raw_vs_d1_coverage_failure.png",
@@ -259,6 +294,10 @@ def write_freeze_readme() -> None:
 - `{repo_rel(metrics_src)}`
 - `{repo_rel(freeze_src)}`
 - `{repo_rel(RUN_ROOT / 'reports' / 'experiment4_submission_package_manifest_zh.md')}`
+- `{repo_rel(bootstrap_src)}`
+- `{repo_rel(RUN_ROOT / 'scores' / 'v2' / '<variant>' / '<method>' / 'per_sample_scores.csv')}`
+- `configs/bootstrap_paired_delta_policy.json`
+- `scripts/scorers/compute_bootstrap_paired_delta.py`
 """
     (FREEZE_ROOT / "README_zh.md").write_text(readme, encoding="utf-8", newline="\n")
 
@@ -318,6 +357,7 @@ def main() -> int:
     RUN_ROOT.mkdir(parents=True, exist_ok=True)
     file_records = copy_required_files()
     d1_records = copy_d1_outputs()
+    score_records = copy_score_csvs()
     write_freeze_readme()
     repo_freeze_manifest = write_repo_freeze_manifest()
 
@@ -328,6 +368,7 @@ def main() -> int:
         "repo_freeze_root": FREEZE_REL.as_posix(),
         "required_files": file_records,
         "d1_outputs": d1_records,
+        "score_csvs": score_records,
         "repo_freeze_manifest": repo_rel(repo_freeze_manifest),
         "note": "Text artifacts were sanitized to remove local absolute paths before packaging.",
     }
