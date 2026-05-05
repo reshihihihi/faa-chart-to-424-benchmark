@@ -1,0 +1,32 @@
+{
+  "created_at_utc": "2026-05-03T08:55:51.180602+00:00",
+  "split_manifest": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/sample_manifest_50_200_50_seed20260437.jsonl",
+  "split_manifest_sha256": "a9f66283fa61a8e7ee9822ef205e886a9925c3eea1c092de60c93d407f84c402",
+  "split_counts": {
+    "development": 50,
+    "evaluation": 200,
+    "probe": 50
+  },
+  "dev50_count": 50,
+  "dev50_chart_id_unique_count": 50,
+  "dev50_sample_id_unique_count": 50,
+  "evaluation_count": 200,
+  "probe_count": 50,
+  "dev50_evaluation_chart_overlap": [],
+  "dev50_probe_chart_overlap": [],
+  "dev50_evaluation_sample_overlap": [],
+  "dev50_probe_sample_overlap": [],
+  "previous_dataset_split_counts_inside_dev50": {
+    "development": 34,
+    "evaluation": 12,
+    "probe": 4
+  },
+  "selection_rule": "row.dataset_split == 'development'",
+  "previous_dataset_split_used_for_selection": false,
+  "pass": true,
+  "forbidden_key_name_scan_over_method_safe_outputs": {
+    "hit_count": 0,
+    "hits": [],
+    "truncated": false
+  }
+}

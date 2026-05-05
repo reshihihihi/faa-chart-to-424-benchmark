@@ -1,0 +1,178 @@
+{
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "chart_id": "KAGS_R08-Z",
+  "field_candidates": {
+    "altitude_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "altitude_ft",
+        "global_end_char": 53,
+        "global_start_char": 49,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 30,
+        "region_local_start_char": 26,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 53,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold.",
+        "source_start_char": 49,
+        "value": 1200
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "altitude_ft",
+        "global_end_char": 86,
+        "global_start_char": 82,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 63,
+        "region_local_start_char": 59,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 86,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold.",
+        "source_start_char": 82,
+        "value": 2000
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "climb_phrase",
+        "global_end_char": 45,
+        "global_start_char": 40,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 22,
+        "region_local_start_char": 17,
+        "rule_id": "climb_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 45,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold.",
+        "source_start_char": 40,
+        "value": "MISSED APPROACH: Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold."
+      }
+    ],
+    "course_candidates": [],
+    "direct_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "direct_phrase",
+        "global_end_char": 93,
+        "global_start_char": 87,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 70,
+        "region_local_start_char": 64,
+        "rule_id": "direct_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 93,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold.",
+        "source_start_char": 87,
+        "value": "MISSED APPROACH: Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold."
+      }
+    ],
+    "fix_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 99,
+        "global_start_char": 94,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 76,
+        "region_local_start_char": 71,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 99,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "OACH: Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold.",
+        "source_start_char": 94,
+        "value": "HEPIG"
+      }
+    ],
+    "hold_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "hold_phrase",
+        "global_end_char": 108,
+        "global_start_char": 104,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 85,
+        "region_local_start_char": 81,
+        "rule_id": "hold_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 108,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "ISSED APPROACH: Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold.",
+        "source_start_char": 104,
+        "value": "ISSED APPROACH: Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold."
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "confidence": 0.95,
+        "field_type": "missed_approach_instruction",
+        "global_end_char": 109,
+        "global_start_char": 40,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "region_local_end_char": 86,
+        "region_local_start_char": 17,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 109,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold.",
+        "source_start_char": 40,
+        "value": "Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold."
+      }
+    ],
+    "route_sequence_snippets": [],
+    "track_to_fix_snippets": [],
+    "turn_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "turn_direction",
+        "global_end_char": 73,
+        "global_start_char": 68,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 50,
+        "region_local_start_char": 45,
+        "rule_id": "turn_direction_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 73,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold.",
+        "source_start_char": 68,
+        "value": "RIGHT"
+      }
+    ]
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_gold_observable_evidence": false,
+    "uses_human_evidence_provenance": false,
+    "uses_scorer_output": false
+  },
+  "region_profile": "T",
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "source_contract": {
+    "allows_canonical_target": false,
+    "allows_chart_image_pixels": false,
+    "allows_gold_observable_evidence": false,
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "source": "same_chart_human_confirmed_roi_ocr_text"
+  }
+}

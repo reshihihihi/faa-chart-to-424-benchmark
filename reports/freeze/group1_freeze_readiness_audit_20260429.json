@@ -1,0 +1,410 @@
+{
+  "audit_version": "0.1.0",
+  "status": "not_formal_freeze_ready",
+  "created_at_utc": "2026-04-29T04:52:11.639683+00:00",
+  "formal300_source_lock": "benchmark_exports\\derived\\v2\\formal300_source_lock_20260429",
+  "formal300_source_lock_status": "source_lock_only_not_formal_eval_ready",
+  "formal300_counts": {
+    "rows": 300,
+    "unique_chart_id": 300,
+    "unique_pdf_file": 299,
+    "dataset_split": {
+      "evaluation": 75,
+      "development": 200,
+      "probe": 25
+    },
+    "kind": {
+      "ILS": 13,
+      "LOC": 25,
+      "RNAV": 262
+    },
+    "sample_source": {
+      "v2604_existing_100": 100,
+      "issue19_rnav_expansion_200": 200
+    }
+  },
+  "schema": {
+    "path": "schemas/missed_approach_leg.schema.json",
+    "sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+    "status": "canonical contract already frozen in frozen_experiment_manifest"
+  },
+  "scorer_validator": {
+    "path": "scripts/scorers/group1_canonical_field_scorer.py",
+    "sha256": "2bdfb6b999c65684dc3714da52a88f8c23ab49f3bf8a744a7d3b930c9323c520",
+    "manifest": "configs/scorer_validator_manifest.json",
+    "status": "candidate implemented, not formal frozen"
+  },
+  "output_control": {
+    "policy": "configs/output_control_policy.md",
+    "parser_repair": "configs/parser_repair_policy.md",
+    "rerun_policy": "docs/rerun_policy.md",
+    "status": "strict policy exists; final formal rerun details still need freeze"
+  },
+  "methods": {
+    "A1": {
+      "boundary": "image -> OCR-1 -> deterministic rules -> canonical JSON",
+      "allowed": "chart image only for OCR-1; OCR-1 text/rule diagnostics for rules",
+      "forbidden": "OCR-2, VLM/MLLM transcription, target/CIFP/scorer/human labels",
+      "runner": "scripts/run_a1_a2_rules_pilot10.py",
+      "prompt": "none",
+      "model": "none",
+      "blocker": "rules runner is pilot/external oriented; formal300 runner and OCR artifact policy not frozen",
+      "schema": "schemas/missed_approach_leg.schema.json",
+      "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "scorer": "scripts/scorers/group1_canonical_field_scorer.py",
+      "scorer_sha256": "2bdfb6b999c65684dc3714da52a88f8c23ab49f3bf8a744a7d3b930c9323c520",
+      "pilot100_evidence": {
+        "artifact_exists": true,
+        "run_id": "pilot100_group1_a1_a2_rules_prefreeze_final_20260429_r1",
+        "samples_total": 100,
+        "schema_valid": 100,
+        "samples_scored": 100,
+        "correct": 741,
+        "total": 2344,
+        "accuracy": 0.31612627986348124,
+        "schema_retry_count_total": null,
+        "parser_repair_count_non_strict_json": null
+      },
+      "prompt_info": null,
+      "runner_exists_in_repo": true
+    },
+    "A2": {
+      "boundary": "image -> OCR-2 -> same deterministic rules -> canonical JSON",
+      "allowed": "chart image only for OCR-2; OCR-2 text/rule diagnostics for same rules",
+      "forbidden": "OCR-1, VLM/MLLM transcription, target/CIFP/scorer/human labels",
+      "runner": "scripts/run_a1_a2_rules_pilot10.py",
+      "prompt": "none",
+      "model": "none",
+      "blocker": "rules runner is pilot/external oriented; formal300 runner and OCR-2 artifact policy not frozen",
+      "schema": "schemas/missed_approach_leg.schema.json",
+      "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "scorer": "scripts/scorers/group1_canonical_field_scorer.py",
+      "scorer_sha256": "2bdfb6b999c65684dc3714da52a88f8c23ab49f3bf8a744a7d3b930c9323c520",
+      "pilot100_evidence": {
+        "artifact_exists": true,
+        "run_id": "pilot100_group1_a1_a2_rules_prefreeze_final_20260429_r1",
+        "samples_total": 100,
+        "schema_valid": 100,
+        "samples_scored": 100,
+        "correct": 521,
+        "total": 2344,
+        "accuracy": 0.22226962457337884,
+        "schema_retry_count_total": null,
+        "parser_repair_count_non_strict_json": null
+      },
+      "prompt_info": null,
+      "runner_exists_in_repo": true
+    },
+    "B1": {
+      "boundary": "OCR-1 full-chart text -> text LLM -> canonical JSON",
+      "allowed": "metadata + OCR-1 full-chart text + canonical schema",
+      "forbidden": "image pixels at LLM stage, field candidates, links, targets/CIFP/scorer",
+      "runner": "scripts/run_group1_pilot10_gpt54.py / external pilot100 runner",
+      "prompt": "B1",
+      "model": "gpt-5.4 candidate",
+      "blocker": "prompt/model/call params and formal OCR-1 artifact manifest not formally frozen",
+      "schema": "schemas/missed_approach_leg.schema.json",
+      "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "scorer": "scripts/scorers/group1_canonical_field_scorer.py",
+      "scorer_sha256": "2bdfb6b999c65684dc3714da52a88f8c23ab49f3bf8a744a7d3b930c9323c520",
+      "pilot100_evidence": {
+        "artifact_exists": true,
+        "run_id": "pilot100_group1_b1_prefreeze_final_20260429_combined",
+        "samples_total": 100,
+        "schema_valid": 100,
+        "samples_scored": 100,
+        "correct": 728,
+        "total": 2344,
+        "accuracy": 0.310580204778157,
+        "schema_retry_count_total": 9,
+        "parser_repair_count_non_strict_json": 0
+      },
+      "prompt_info": {
+        "path": "prompts\\paper_v2\\b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+        "sha256": "f9be2fb84a7554897045c27abf787e47758f1687de406312e9afe1ebe15d4f3f"
+      },
+      "runner_exists_in_repo": true
+    },
+    "B1_prime": {
+      "boundary": "OCR-1 text -> automatic flat field_candidates -> text LLM -> canonical JSON",
+      "allowed": "metadata + OCR-1 text + OCR-derived field_candidates",
+      "forbidden": "field-to-leg links, target-aware candidates, image pixels, targets/CIFP/scorer",
+      "runner": "scripts/run_group1_pilot10_gpt54.py / external pilot100 runner",
+      "prompt": "B1_prime",
+      "model": "gpt-5.4 candidate",
+      "blocker": "field_candidates matcher and prompt remain candidate; pilot100 underperformed B1",
+      "schema": "schemas/missed_approach_leg.schema.json",
+      "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "scorer": "scripts/scorers/group1_canonical_field_scorer.py",
+      "scorer_sha256": "2bdfb6b999c65684dc3714da52a88f8c23ab49f3bf8a744a7d3b930c9323c520",
+      "pilot100_evidence": {
+        "artifact_exists": true,
+        "run_id": "pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
+        "samples_total": 100,
+        "schema_valid": 100,
+        "samples_scored": 100,
+        "correct": 674,
+        "total": 2344,
+        "accuracy": 0.28754266211604096,
+        "schema_retry_count_total": 11,
+        "parser_repair_count_non_strict_json": 0
+      },
+      "prompt_info": {
+        "path": "prompts\\paper_v2\\b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+        "sha256": "08244d80f0ea85c579158d4b8512bfa021a26755bb342742ed2362a80763c707"
+      },
+      "runner_exists_in_repo": true
+    },
+    "B1_prime_link": {
+      "boundary": "OCR-1 text -> automatic field_candidates + automatic field_to_leg_links -> text LLM -> canonical JSON",
+      "allowed": "metadata + OCR-1 text + OCR-derived candidates/links",
+      "forbidden": "manual/gold/oracle links, target/CIFP/scorer, image pixels",
+      "runner": "external pilot100 runner; repo has manifest/method card only",
+      "prompt": "B1_prime_link",
+      "model": "gpt-5.4 candidate",
+      "blocker": "runner not yet consolidated in repo; link schema/prompt are candidate",
+      "schema": "schemas/missed_approach_leg.schema.json",
+      "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "scorer": "scripts/scorers/group1_canonical_field_scorer.py",
+      "scorer_sha256": "2bdfb6b999c65684dc3714da52a88f8c23ab49f3bf8a744a7d3b930c9323c520",
+      "pilot100_evidence": {
+        "artifact_exists": true,
+        "run_id": "b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2",
+        "samples_total": 100,
+        "schema_valid": 100,
+        "samples_scored": 100,
+        "correct": 1031,
+        "total": 2344,
+        "accuracy": 0.4398464163822526,
+        "schema_retry_count_total": 1,
+        "parser_repair_count_non_strict_json": 0,
+        "field_to_leg_link_schema_valid": "100/100"
+      },
+      "prompt_info": {
+        "path": "prompts\\paper_v2\\b1_prime_link_ocr_candidates_links_to_canonical.zh_v0_candidate.md",
+        "sha256": "2b135d82928e3963a5b37ad5ebcee82e2e079aa94d34c88cf33b1d215c8909c2"
+      },
+      "runner_exists_in_repo": false
+    },
+    "C1": {
+      "boundary": "full chart image -> VLM/MLLM -> canonical JSON",
+      "allowed": "metadata + full chart image + canonical schema",
+      "forbidden": "OCR text, field candidates, targets/CIFP/scorer",
+      "runner": "scripts/run_b1_c1_pilot10_ocr1.py / external pilot100 runner",
+      "prompt": "C1",
+      "model": "claude-sonnet-4-5-20250929 candidate",
+      "blocker": "pilot100 has 1 schema failure; provider/tool policy/model not formally frozen",
+      "schema": "schemas/missed_approach_leg.schema.json",
+      "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "scorer": "scripts/scorers/group1_canonical_field_scorer.py",
+      "scorer_sha256": "2bdfb6b999c65684dc3714da52a88f8c23ab49f3bf8a744a7d3b930c9323c520",
+      "pilot100_evidence": {
+        "artifact_exists": true,
+        "run_id": "pilot100_group1_c1_c3_c4_claude_tooluse_semantic_audit_ordinary_ocr_20260428_r1",
+        "samples_total": 100,
+        "schema_valid": 99,
+        "samples_scored": 99,
+        "correct": 902,
+        "total": 2313,
+        "accuracy": 0.3899697362732382,
+        "schema_retry_count_total": 7,
+        "parser_repair_count_non_strict_json": 0,
+        "failures": [
+          {
+            "sample_id": "pilot100_external_078",
+            "chart_id": "KMCW_I36",
+            "method": "C1",
+            "error": "schema_validation_failed"
+          }
+        ]
+      },
+      "prompt_info": {
+        "path": "prompts\\paper_v2\\c1_image_to_canonical_pilot10.zh_v1_candidate.md",
+        "sha256": "aa87bf512359160da4c54503911bfccc38a6e55ee9af619b9eef3c48183ef74c"
+      },
+      "runner_exists_in_repo": true
+    },
+    "C2": {
+      "boundary": "full chart image -> fixed QA prompt bundle -> deterministic aggregator -> canonical JSON",
+      "allowed": "metadata + full chart image + fixed QA schemas/prompts + aggregator",
+      "forbidden": "OCR text, field candidates, targets/CIFP/scorer",
+      "runner": "scripts/run_c2_qa_pilot10.py + scripts/aggregate_c2_qa_candidate.py",
+      "prompt": "C2_QA_bundle",
+      "model": "claude-sonnet-4-5-20250929 candidate",
+      "blocker": "QA bundle/aggregator are candidate; formal invalid-QA handling and runner not frozen",
+      "schema": "schemas/missed_approach_leg.schema.json",
+      "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "scorer": "scripts/scorers/group1_canonical_field_scorer.py",
+      "scorer_sha256": "2bdfb6b999c65684dc3714da52a88f8c23ab49f3bf8a744a7d3b930c9323c520",
+      "pilot100_evidence": {
+        "artifact_exists": true,
+        "run_id": "pilot100_group1_c2_claude_tooluse_qa_semantic_audit_ordinary_ocr_20260428_r1",
+        "samples_total": 100,
+        "schema_valid": 100,
+        "samples_scored": 100,
+        "correct": 457,
+        "total": 2344,
+        "accuracy": 0.19496587030716722,
+        "qa_calls_total": 2374,
+        "qa_schema_retry_count_total": 9,
+        "parser_repair_count_non_strict_json": 0,
+        "failures": []
+      },
+      "prompt_info": {
+        "path": "prompts/path_c_qa_v2/",
+        "directory_sha256": "4e3f19fb3d992640cc4db1ec7ace10a2eebb35661e23e6e4e20e4e949d2355f9"
+      },
+      "runner_exists_in_repo": false
+    },
+    "C3": {
+      "boundary": "full chart image -> VLM questionnaire JSON -> deterministic questionnaire-to-canonical parser -> canonical JSON",
+      "allowed": "metadata + full chart image + questionnaire schema/parser",
+      "forbidden": "OCR text, field candidates, targets/CIFP/scorer",
+      "runner": "scripts/run_pilot10_anthropic.py / external pilot100 runner",
+      "prompt": "C3",
+      "model": "claude-sonnet-4-5-20250929 candidate",
+      "blocker": "pilot100 has 1 schema failure; questionnaire prompt/model/tool policy not formally frozen",
+      "schema": "schemas/missed_approach_leg.schema.json",
+      "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "scorer": "scripts/scorers/group1_canonical_field_scorer.py",
+      "scorer_sha256": "2bdfb6b999c65684dc3714da52a88f8c23ab49f3bf8a744a7d3b930c9323c520",
+      "pilot100_evidence": {
+        "artifact_exists": true,
+        "run_id": "pilot100_group1_c1_c3_c4_claude_tooluse_semantic_audit_ordinary_ocr_20260428_r1",
+        "samples_total": 100,
+        "schema_valid": 99,
+        "samples_scored": 99,
+        "correct": 874,
+        "total": 2313,
+        "accuracy": 0.3778642455685257,
+        "schema_retry_count_total": 5,
+        "parser_repair_count_non_strict_json": 0,
+        "failures": [
+          {
+            "sample_id": "pilot100_external_078",
+            "chart_id": "KMCW_I36",
+            "method": "C3",
+            "error": "schema_validation_failed"
+          }
+        ]
+      },
+      "prompt_info": {
+        "path": "prompts\\paper_v2\\c3_questionnaire_pilot10.zh_v1_candidate.md",
+        "sha256": "858b91b07d778498ddbe484a6d54f8555169c9c674f3189dfb69b06e2c406362"
+      },
+      "runner_exists_in_repo": true
+    },
+    "C4": {
+      "boundary": "full chart image + OCR-1 text -> VLM/MLLM -> canonical JSON",
+      "allowed": "metadata + full chart image + OCR-1 text + canonical schema",
+      "forbidden": "OCR-2, field candidates, targets/CIFP/scorer",
+      "runner": "scripts/run_b1prime_c4_pilot10.py / external pilot100 runner",
+      "prompt": "C4",
+      "model": "claude-sonnet-4-5-20250929 candidate",
+      "blocker": "output-control retry issue resolved for pilot100; model/tool policy and formal OCR-1 artifact policy still not formally frozen",
+      "schema": "schemas/missed_approach_leg.schema.json",
+      "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "scorer": "scripts/scorers/group1_canonical_field_scorer.py",
+      "scorer_sha256": "2bdfb6b999c65684dc3714da52a88f8c23ab49f3bf8a744a7d3b930c9323c520",
+      "pilot100_evidence": {
+        "artifact_exists": true,
+        "run_id": "pilot100_group1_c4_output_control_fix_no_retry_20260429_r1 + api_retry_081",
+        "samples_total": 100,
+        "schema_valid": 100,
+        "samples_scored": 100,
+        "correct": 1248,
+        "total": 2344,
+        "accuracy": 0.5324232081911263,
+        "schema_retry_count_total": 0,
+        "parser_repair_count_non_strict_json": 0,
+        "wrapper_like_final_outputs": 0,
+        "report": "reports/pilot/c4_output_control_fix_pilot100_20260429.md"
+      },
+      "prompt_info": {
+        "path": "prompts\\paper_v2\\c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+        "sha256": "5a60df7bdeead7c01e38ccb8c8ccc1802af6110a0f41c4658e2f5cdcc313588a"
+      },
+      "runner_exists_in_repo": true
+    },
+    "D_SFT": {
+      "boundary": "full chart image -> SFT VLM -> canonical JSON",
+      "allowed": "metadata + full chart image + frozen SFT checkpoint",
+      "forbidden": "OCR text, field candidates, targets/CIFP/scorer at inference",
+      "runner": "scripts/d_sft_infer_qwen2vl_lora.py",
+      "prompt": "D-SFT inference prompt",
+      "model": "Qwen2-VL-2B LoRA/QLoRA candidate/frozen training artifact",
+      "blocker": "pilot100 has 6 parse/schema failures; formal invalid-output scoring policy and checkpoint/report linkage must be locked",
+      "schema": "schemas/missed_approach_leg.schema.json",
+      "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+      "scorer": "scripts/scorers/group1_canonical_field_scorer.py",
+      "scorer_sha256": "2bdfb6b999c65684dc3714da52a88f8c23ab49f3bf8a744a7d3b930c9323c520",
+      "pilot100_evidence": {
+        "artifact_exists": true,
+        "run_id": "d_sft_pilot100_promptv2_prefill_20260428_r1",
+        "samples_total": 100,
+        "schema_valid": 94,
+        "samples_scored": 94,
+        "correct": 1014,
+        "total": 2200,
+        "accuracy": 0.46090909090909093,
+        "failures": [
+          {
+            "sample_id": "pilot100_external_009",
+            "chart_id": "KARR_L33",
+            "stage": "inference_or_parse",
+            "error": "JSONDecodeError('Extra data: line 1 column 1487 (char 1486)')"
+          },
+          {
+            "sample_id": "pilot100_external_024",
+            "chart_id": "KABR_R35",
+            "stage": "schema_validation",
+            "error": "missed_approach.legs.1.answers.Q1_fix_ident.value: 'FISOPO' is not valid under any of the given schemas"
+          },
+          {
+            "sample_id": "pilot100_external_034",
+            "chart_id": "KEWR_R11",
+            "stage": "schema_validation",
+            "error": "missed_approach.legs.1.answers.Q1_fix_ident.value: 'JKLINE' is not valid under any of the given schemas"
+          },
+          {
+            "sample_id": "pilot100_external_053",
+            "chart_id": "KOLY_R11",
+            "stage": "schema_validation",
+            "error": "chart_id: 'OL11_R11' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'"
+          },
+          {
+            "sample_id": "pilot100_external_078",
+            "chart_id": "KMCW_I36",
+            "stage": "schema_validation",
+            "error": "missed_approach.legs.0.answers.Q4_course_or_radial.value: {'type': 'course_deg', 'course_deg': 360.0} is not valid under any of the given schemas"
+          },
+          {
+            "sample_id": "pilot100_external_100",
+            "chart_id": "KCLW_RNV-A",
+            "stage": "schema_validation",
+            "error": "chart_id: 'KLW_RNV-A' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'"
+          }
+        ]
+      },
+      "prompt_info": null,
+      "runner_exists_in_repo": true
+    }
+  },
+  "global_blockers": [
+    "formal300 source sample/split lock exists, but formal300 image/PDF artifacts and checksums are missing locally.",
+    "formal300 canonical proxy targets, field_targets, evidence_provenance, and challenge_tags are not materialized/frozen.",
+    "Scorer/validator is now implemented as a candidate standalone script, but it still needs formal review and lock against formal300 targets.",
+    "Model/provider/base_url/max_tokens/tool policy/retry policy are still candidate, not formal frozen.",
+    "C1 and C3 each have one pilot100 schema failure on KMCW_I36; the previous C4 high schema-only retry count is resolved by the 2026-04-29 output-control fix pilot100 validation.",
+    "A1/A2/B/C runners are mostly pilot/external runners; formal300 no-leakage input manifest and runner wrappers are not consolidated.",
+    "D_SFT pilot100 has 6 parse/schema failures; formal handling of invalid outputs must be specified before leaderboard reporting."
+  ],
+  "recommended_next_steps": [
+    "Materialize formal300 images/PDFs and checksums from the locked source manifest.",
+    "Generate schema-valid formal300 canonical proxy targets with the fixed CIFP -> canonical projection pipeline.",
+    "Decide and freeze invalid-output scoring: e.g. schema/parse failure contributes zero for all target fields rather than disappearing from denominator.",
+    "Freeze model/provider/call parameters and rerun policy with per-method run manifests.",
+    "Consolidate formal Group 1 runners so they consume only allowed input manifests and cannot read target/scorer directories during inference.",
+    "Only after those blockers are closed, create the Group 1 formal freeze package and run formal300 evaluation."
+  ]
+}

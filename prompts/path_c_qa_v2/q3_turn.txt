@@ -6,12 +6,12 @@ Chart cues:
 - Profile-view curved arrows with directional labeling
 
 Which legs can have a turn answer:
-- CA / VA / VI / TF / IF legs are typically straight → not_applicable
-- DF / CF legs with preceding "turn" wording → LEFT or RIGHT
-- FA legs with explicit "climbing turn" → LEFT or RIGHT
+- CA / VA / VI / TF / IF legs are typically straight -> not_applicable
+- DF / CF legs with preceding "turn" wording -> LEFT or RIGHT
+- FA legs with explicit "climbing turn" -> LEFT or RIGHT
 - RF legs always turn; direction determined by arc center position
 - Hold legs (HA / HF / HM): hold turn direction belongs to Q5_hold_params, NOT here
-  → status=not_applicable for Q3
+  -> status=not_applicable for Q3
 
 OUTPUT (single JSON object):
 
@@ -21,7 +21,14 @@ OUTPUT (single JSON object):
 }
 
 Rules:
-- Straight leg → not_applicable, value=null.
-- Hold leg → not_applicable, value=null (Q5 carries hold turn).
-- Turning leg and direction readable → present, value=LEFT or RIGHT.
-- Turning leg but direction ambiguous → unknown, value=null.
+- Straight leg -> not_applicable, value=null.
+- Hold leg -> not_applicable, value=null (Q5 carries hold turn).
+- Turning leg and direction readable -> present, value=LEFT or RIGHT.
+- Turning leg but direction ambiguous -> unknown, value=null.
+
+Strict output rules:
+- Return exactly one bare JSON object with keys status and value.
+- Do not output Markdown, code fences, prose, or any text outside JSON.
+- status must be exactly present, not_applicable, not_observable, or unknown.
+- If status is not present, value must be null.
+- If status is present, value must be LEFT or RIGHT.

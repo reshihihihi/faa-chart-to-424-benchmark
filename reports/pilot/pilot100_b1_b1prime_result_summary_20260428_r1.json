@@ -1,0 +1,64 @@
+{
+  "run_id": "pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
+  "artifact_root": "<external-artifact-root>\\try_B1_B1'",
+  "sample_role": "pilot100_external_expanded_feasibility_only_not_formal300",
+  "formal300_overlap": {
+    "chart_id": 0,
+    "pdf": 0
+  },
+  "pilot10_overlap": {
+    "chart_id": 0,
+    "pdf": 0
+  },
+  "failures_count": 0,
+  "methods": {
+    "B1": {
+      "samples_total": 100,
+      "schema_valid": 100,
+      "samples_scored": 100,
+      "score_correct": 723,
+      "score_total": 2344,
+      "score_accuracy": 0.3084470989761092,
+      "schema_retry_count_total": 7,
+      "parser_repair_count_non_strict_json": 0,
+      "json_extraction_policy_counts": {
+        "openai_tool_call_arguments": 100
+      },
+      "attempt_count_distribution": {
+        "1": 93,
+        "2": 7
+      },
+      "schema_retry_distribution": {
+        "0": 93,
+        "1": 7
+      }
+    },
+    "B1_prime": {
+      "samples_total": 100,
+      "schema_valid": 100,
+      "samples_scored": 100,
+      "score_correct": 674,
+      "score_total": 2344,
+      "score_accuracy": 0.28754266211604096,
+      "schema_retry_count_total": 11,
+      "parser_repair_count_non_strict_json": 0,
+      "json_extraction_policy_counts": {
+        "openai_tool_call_arguments": 100
+      },
+      "attempt_count_distribution": {
+        "1": 89,
+        "2": 11
+      },
+      "schema_retry_distribution": {
+        "0": 89,
+        "1": 11
+      },
+      "field_candidates_validation_error_count_total": 0,
+      "field_candidates_schema_valid": 100
+    }
+  },
+  "interpretation": {
+    "B1": "Boundary and output path remain stable on 100 external samples; prompt/model parameters remain candidate.",
+    "B1_prime": "Runnable and schema-stable, but underperformed B1 on pilot100; matcher/prompt should not be formally frozen before error analysis."
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "chart_id": "KANY_R18",
+  "procedure": {
+    "airport": "KANY",
+    "approach_ident": "R18",
+    "chart_name": "RNAV (GPS) RWY 18"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_observable_dev50_accept_pending.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0687,
+        "width": 0.3414,
+        "x_center": 0.7822,
+        "y_center": 0.145
+      },
+      "chart_id": "KANY_R18",
+      "evidence_region_id": "KANY_R18_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KANY_R18_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.411,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.425
+      },
+      "chart_id": "KANY_R18",
+      "evidence_region_id": "KANY_R18_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KANY_R18_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0545,
+        "width": 0.189,
+        "x_center": 0.4315,
+        "y_center": 0.6581
+      },
+      "chart_id": "KANY_R18",
+      "evidence_region_id": "KANY_R18_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KANY_R18_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3708,
+        "y_center": 0.6393
+      },
+      "chart_id": "KANY_R18",
+      "evidence_region_id": "KANY_R18_iconalign_001_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.4338,
+        "y_center": 0.6393
+      },
+      "chart_id": "KANY_R18",
+      "evidence_region_id": "KANY_R18_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3300 -> AT_OR_ABOVE 3300 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3300,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3300"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0568,
+        "x_center": 0.4976,
+        "y_center": 0.6393
+      },
+      "chart_id": "KANY_R18",
+      "evidence_region_id": "KANY_R18_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: UZZUF -> UZZUF",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "UZZUF",
+        "raw_text": "UZZUF"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0242,
+        "width": 0.0235,
+        "x_center": 0.4455,
+        "y_center": 0.6656
+      },
+      "chart_id": "KANY_R18",
+      "evidence_region_id": "KANY_R18_iconalign_008_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0347,
+        "width": 0.0136,
+        "x_center": 0.3699,
+        "y_center": 0.6668
+      },
+      "chart_id": "KANY_R18",
+      "evidence_region_id": "KANY_R18_iconalign_006_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0234,
+        "width": 0.0372,
+        "x_center": 0.4957,
+        "y_center": 0.6636
+      },
+      "chart_id": "KANY_R18",
+      "evidence_region_id": "KANY_R18_iconalign_007_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0129,
+        "width": 0.0497,
+        "x_center": 0.4944,
+        "y_center": 0.6656
+      },
+      "chart_id": "KANY_R18",
+      "evidence_region_id": "KANY_R18_iconalign_009_path_segment",
+      "fact_type": "path_segment_visible",
+      "label": "detected lower detail: path segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

@@ -7,19 +7,21 @@ import json
 import os
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
-import anthropic
 from jsonschema import Draft202012Validator
 
 from c3_questionnaire_to_canonical import QUESTION_FIELDS, questionnaire_to_canonical
+
+if TYPE_CHECKING:
+    import anthropic
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "benchmark_exports" / "derived" / "v2" / "pilot10_external"
 RUN_DIR = ROOT / "local_runs" / "pilot10_exp1_a1_b1_c3_v0"
 PROMPT_DIR = ROOT / "prompts" / "paper_v2"
-SCHEMA_PATH = ROOT / "refs" / "repo_pr28_pr29_snapshot" / "schemas" / "missed_approach_leg.schema.json"
+SCHEMA_PATH = ROOT / "schemas" / "missed_approach_leg.schema.json"
 
 OCR_PROMPT = PROMPT_DIR / "ocr_full_chart_text.zh_v1_candidate.md"
 B1_PROMPT = PROMPT_DIR / "b1_ocr_to_canonical_pilot10.zh_v1_candidate.md"
@@ -70,7 +72,9 @@ def fill_prompt(template: str, row: dict[str, Any], *, ocr_text: str | None = No
     return template
 
 
-def get_client() -> anthropic.Anthropic:
+def get_client() -> "anthropic.Anthropic":
+    import anthropic
+
     auth_token = os.environ.get("ANTHROPIC_AUTH_TOKEN")
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     base_url = os.environ.get("ANTHROPIC_BASE_URL")
@@ -101,7 +105,7 @@ def image_block(path: Path) -> dict[str, Any]:
 
 
 def call_model(
-    client: anthropic.Anthropic,
+    client: "anthropic.Anthropic",
     *,
     model: str,
     prompt: str,
@@ -140,12 +144,62 @@ def write_text(path: Path, value: str) -> None:
     path.write_text(value + ("\n" if value and not value.endswith("\n") else ""), encoding="utf-8")
 
 
+def _iter_answer_objects(obj: Any, path: str = ""):
+    if isinstance(obj, dict):
+        if "status" in obj and "value" in obj:
+            yield path or "$", obj
+        for key, value in obj.items():
+            child_path = f"{path}.{key}" if path else str(key)
+            yield from _iter_answer_objects(value, child_path)
+    elif isinstance(obj, list):
+        for index, value in enumerate(obj):
+            yield from _iter_answer_objects(value, f"{path}[{index}]")
+
+
+def validate_canonical_semantics(obj: dict[str, Any]) -> list[str]:
+    if not isinstance(obj, dict) or "missed_approach" not in obj:
+        return []
+
+    messages: list[str] = []
+    missed = obj.get("missed_approach", {})
+    legs = missed.get("legs", []) if isinstance(missed, dict) else []
+    leg_count = missed.get("leg_count", {}) if isinstance(missed, dict) else {}
+    if isinstance(leg_count, dict) and leg_count.get("status") == "present" and leg_count.get("value") != len(legs):
+        messages.append(
+            "missed_approach.leg_count: present value must equal len(missed_approach.legs)"
+        )
+
+    if isinstance(legs, list):
+        for expected_index, leg in enumerate(legs, start=1):
+            if isinstance(leg, dict) and leg.get("leg_index") != expected_index:
+                messages.append(
+                    f"missed_approach.legs[{expected_index - 1}].leg_index: expected {expected_index}"
+                )
+
+    for path, answer in _iter_answer_objects(obj):
+        status = answer.get("status")
+        value = answer.get("value")
+        if status != "present" and value is not None:
+            messages.append(f"{path}: value must be null when status is {status!r}")
+        if status == "present" and value is None:
+            messages.append(f"{path}: value must be non-null when status is 'present'")
+        if status == "present" and isinstance(value, str) and value.strip().lower() in {
+            "unknown",
+            "not_observable",
+            "not applicable",
+            "n/a",
+        }:
+            messages.append(f"{path}: present value must not contain a status word")
+    return messages
+
+
 def validate_canonical(obj: dict[str, Any], validator: Draft202012Validator) -> list[str]:
     errors = sorted(validator.iter_errors(obj), key=lambda err: list(err.path))
     messages = []
     for err in errors:
         loc = ".".join(str(p) for p in err.path) or "$"
         messages.append(f"{loc}: {err.message}")
+    messages.extend(validate_canonical_semantics(obj))
     return messages
 
 

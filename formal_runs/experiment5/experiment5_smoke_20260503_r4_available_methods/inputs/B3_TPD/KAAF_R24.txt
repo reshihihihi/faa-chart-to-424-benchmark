@@ -1,0 +1,54 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: Climb to
+600 then climbing right turn to
+3000 direct ASVOY and hold,
+continue climb-in-hold to 3000.
+
+[PLAN_VIEW]
+4 NM
+TERES
+HOLD
+6000
+4 NM
+ASVOY
+ 2300
+2300
+258°
+TYNDALL E MOA
+-063°
+243°
+(27.4)
+1600
+(IF/IAF)
+-243
+ONBOE
+61
+Procedure NA for
+arrivals at TERES on
+(FAF)
+RW24
+T336 southeast bound.
+EXUTE
+TYNDALL G MOA
+TYNDALL F MOA
+2300
+ONBOE
+¤
+¤
+ONBOE
+W-151B
+2300
+-333°
+-333°-
+ELEV
+20
+TDZE
+20
+W-470A
+81
+I8
+
+[MISSED_APPROACH_DETAIL_AREA]
+600
+3000
+ASVOY

@@ -1,0 +1,10 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2700 -> AT_OR_ABOVE 2700 ft
+- FIX_TEXT: RUPRE -> RUPRE
+- FIX_TEXT: KEEDS -> KEEDS
+- 航迹/径向文字
+- detected lower detail: fix symbol
+- detected lower detail: fix symbol

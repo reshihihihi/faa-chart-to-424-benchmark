@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 6300 on heading 35.1; left turn climb to 8600 to EYIPE; hold at EYIPE, inbound course 200.8, right turns, 7 NM, maintain 8600.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 6300 -> AT_OR_ABOVE 6300 ft
+- ALTITUDE_TEXT: 8600 -> AT_OR_ABOVE 8600 ft
+- FIX_TEXT: EYIPE -> EYIPE
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

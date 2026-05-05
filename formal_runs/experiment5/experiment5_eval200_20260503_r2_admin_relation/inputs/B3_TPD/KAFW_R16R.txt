@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1200 on heading 166.2; right turn climb to 3000 to OBLON; hold at OBLON, inbound course 122.1, right turns, 9 NM, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1200 -> AT_OR_ABOVE 1200 ft
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

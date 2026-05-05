@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_802fc407-41eb-47fb-9d68-f8e1ca4dd11f",
+  "object": "chat.completion",
+  "created": 1777868969,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_JRhAT8Uk4HXTc40TIYm0XwNm",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KCRS_R32\",\"procedure\":{\"airport\":\"KCRS\",\"approach_ident\":\"R32\",\"chart_name\":\"RNAV (GPS) RWY 32\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

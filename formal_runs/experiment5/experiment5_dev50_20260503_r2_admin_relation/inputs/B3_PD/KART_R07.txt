@@ -1,0 +1,9 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 900 -> AT_OR_ABOVE 900 ft
+- ALTITUDE_TEXT: 3500 -> AT_OR_ABOVE 3500 ft
+- FIX_TEXT: NOYAQ -> NOYAQ
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

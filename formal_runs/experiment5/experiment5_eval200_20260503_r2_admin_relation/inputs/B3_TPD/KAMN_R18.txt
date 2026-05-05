@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 185.3; right turn climb to 2800 to OREYO; hold at OREYO, inbound course 185.3, right turns, 4 NM, maintain 2800.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2800 -> AT_OR_ABOVE 2800 ft
+- FIX_TEXT: OREYO -> OREYO
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

@@ -1,0 +1,15 @@
+{
+  "chart_id": "KBYI_R20",
+  "procedure": {
+    "airport": "KBYI",
+    "approach_ident": "R20",
+    "chart_name": "RNAV (GPS) RWY 20"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

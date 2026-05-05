@@ -1,0 +1,5 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH:
+ed Baro-VNAV
+Climb to 3000 direct
+DOODA and hold.

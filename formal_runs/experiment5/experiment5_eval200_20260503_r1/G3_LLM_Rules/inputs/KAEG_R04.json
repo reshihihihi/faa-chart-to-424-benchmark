@@ -1,0 +1,182 @@
+{
+  "chart_id": "KAEG_R04",
+  "procedure": {
+    "airport": "KAEG",
+    "approach_ident": "R04",
+    "chart_name": "RNAV (GPS) RWY 04"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0934,
+        "width": 0.2387,
+        "x_center": 0.8329,
+        "y_center": 0.1574
+      },
+      "chart_id": "KAEG_R04",
+      "evidence_region_id": "KAEG_R04_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAEG_R04_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.408,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.449
+      },
+      "chart_id": "KAEG_R04",
+      "evidence_region_id": "KAEG_R04_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAEG_R04_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0543,
+        "width": 0.1855,
+        "x_center": 0.5705,
+        "y_center": 0.6803
+      },
+      "chart_id": "KAEG_R04",
+      "evidence_region_id": "KAEG_R04_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAEG_R04_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5079,
+        "y_center": 0.6626
+      },
+      "chart_id": "KAEG_R04",
+      "evidence_region_id": "KAEG_R04_iconalign_001_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 6300 -> AT_OR_ABOVE 6300 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 6300,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "6300"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5711,
+        "y_center": 0.6626
+      },
+      "chart_id": "KAEG_R04",
+      "evidence_region_id": "KAEG_R04_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 8600 -> AT_OR_ABOVE 8600 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 8600,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "8600"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0458,
+        "x_center": 0.6345,
+        "y_center": 0.6621
+      },
+      "chart_id": "KAEG_R04",
+      "evidence_region_id": "KAEG_R04_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: EYIPE -> EYIPE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "EYIPE",
+        "raw_text": "EYIPE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0185,
+        "width": 0.0116,
+        "x_center": 0.5077,
+        "y_center": 0.6776
+      },
+      "chart_id": "KAEG_R04",
+      "evidence_region_id": "KAEG_R04_iconalign_006_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0286,
+        "width": 0.0284,
+        "x_center": 0.5794,
+        "y_center": 0.6886
+      },
+      "chart_id": "KAEG_R04",
+      "evidence_region_id": "KAEG_R04_iconalign_008_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0227,
+        "width": 0.0374,
+        "x_center": 0.6316,
+        "y_center": 0.6864
+      },
+      "chart_id": "KAEG_R04",
+      "evidence_region_id": "KAEG_R04_iconalign_007_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

@@ -1,0 +1,5 @@
+{
+  "status": "not_run_pending_model_server",
+  "reason": "B2a/B2b require an OpenAI-compatible model server. No successful model-server call is recorded by run_experiment5_gold_text_a3.py; run B2 only after service readiness is confirmed.",
+  "default_expected_base_url": "http://127.0.0.1:8080/v1"
+}

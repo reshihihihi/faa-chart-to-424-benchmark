@@ -1,0 +1,211 @@
+                                   AUGUSTA, GEORGIA                                                    AL-27 (FAA)                                                                          26078
+
+                                     WAAS                      Rwy Ldg  6001
+                                   CH 90328
+                                                 APP CRS
+                                                               TDZE      137                                                             RNAV (GPS) Z RWY 8
+                                                   082°
+                                     W08A                      Apt Elev  146                                                            AUGUSTA RGNL AT BUSH FLD (AGS)
+                                   RNP APCH - GPS.
+
+                                    T                                                                                                                 MISSED APPROACH: Climb to
+                                           Rwy 8 helicopter visibility reduction below 34 SM NA. For uncompensated                                    1200 then climbing right turn to
+                                    A      Baro-VNAV systems, LNAV/VNAV NA below -6°C or above 54°C.                                                  2000 direct HEPIG and hold.
+
+
+
+                                          ATIS             AUGUSTA APP CON                            AUGUSTA TOWER                                 GND CON                           UNICOM
+                                        132.75                 126.8 270.3                         118.7 (CTAF)L 239.3                             121.9 348.6                        122.95
+
+                                                                          COLLIERS                                                                                                 W0825N
+                                                                                                                                                                                  R
+                                                                             IRQ                                                                                               SA        M
+                                                                                                                                                                           M
+
+                                                                              Procedure NA for arrivals on IRQ VORTAC                                                               3000
+                                                                    0
+
+                                                                   1)
+                                                                    °
+
+
+
+
+                                                                              airway radials 118 CW 288.
+                                                                 200
+                                                                199
+                                                               19.
+                                                               (
+
+
+
+
+                                                  (IAF)
+                                                 WOBAS
+SE-4, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                      SE-4, 16 APR 2026 to 14 MAY 2026
+                                                                                                                       439
+                                                                                              (FAF)
+                                                               20 °
+
+
+
+
+                                                                                                                °
+                                                                15 )
+
+
+
+
+                                                                                            GONRE            082
+                                                                 00
+
+
+
+
+                                                                                                                                   RW08
+                                                                  (
+                                                                  6
+                                                                  7
+
+
+
+
+                                                                                                                       DAYTE
+                                                                                       00
+                                               R-3004 A, B, C                        20   °                       2.8 NM to
+                                                                                       7
+                                                                                     06.
+                                                                                       7)
+                                                                                                                       RW08
+                                                                                       6
+                                                                                       (
+                                                                   (IF)
+                                                               WONIL
+                                                                             20 °
+                                                                              33
+
+                                                                               00
+                                                                                (
+                                                                                8
+                                                                                 7)
+
+
+
+
+                                                                                              15
+
+
+
+
+                                                                             (IAF)
+                                                                                                7°
+
+
+
+
+                                                                             HEPIG                    4 NM
+                                                                                                                                                   ELEV   146                       TDZE   137
+                                                                                            33
+
+
+
+
+                                                                                                         2000
+                                                                                              7°
+
+
+
+
+                                                                                                        293°
+                                                                                                       (21.
+                                                                                                          7)
+                                                                                                                                                      17
+
+                                                                           Procedure NA for arrivals at
+                                                                           SARDY on V185 southeast bound.                               SARDY
+                                                                                                                                                     A5
+                                                                                                                                                              P
+
+                                                                                                             1200           2000        HEPIG
+
+
+                                           WONIL                      GONRE                  DAYTE
+                                                                                                                                                              8001
+
+
+
+
+                                                                                        2.8 NM to
+                                                                          2000
+                                                                                             RW08
+                                                                                                                                                                   X 15
+
+
+
+
+                                        2000         067°                                             1.6 NM to
+                                                                                                                                                                       0
+
+
+
+
+                                                                                 0
+                                                                                                                                                                                                 26
+
+
+
+
+                                                                                  82                    RW08                                        TWR
+                                                          2000                      °
+                                                                                                                  RW08
+                                                                                                                                                                                             P
+
+
+
+
+                                    GP 3.00°                                                                                                                                          00
+                                                                                                                                                              P
+
+
+
+
+                                                                                                                                                                                  01X1
+                                                                                      1080                                                                                      60
+                                                                                                                                                          8
+
+
+
+
+                                     TCH 55
+
+                                                          6.7 NM                   2.9 NM           1.2 NM   1.6 NM
+                                                                                                                                                                      P
+                                   CATEGORY                A                     B                       C                          D
+                                                                                                                                                    082°
+                                                                                1                            1                                                                 A5
+                                    LPV     DA                              669-12           532 (600-1       2   )
+                                                                                                                                                                           35
+                                    LNAV/                                       5                     5
+                                            DA                              693-1 8          556 (600-1 8 )
+                                    VNAV
+
+                                    LNAV MDA              700-1      563 (600-1)                     700-15 8                       5
+                                                                                                                           563 (600-1 8 )                                           MIRL Rwy 8-26
+                                                                                                                                   1
+                                                      760-1                  780-1                   780-134                   940-2 2                                              HIRL Rwy 17-35
+                                    CIRCLING
+                                                    614 (700-1)            634 (700-1)             634 (700-1     3
+                                                                                                                       )     794 (800-2   1
+                                                                                                                                           2   )                                REIL Rwys 8 and 26
+                                                                                                                   4
+
+
+                                   AUGUSTA, GEORGIA                                                                                     AUGUSTA RGNL AT BUSH FLD (AGS)
+                                   Amdt 1A 29DEC22
+                                                                                                     33°22'N-81°58'W
+                                                                                                                                         RNAV (GPS) Z RWY 8

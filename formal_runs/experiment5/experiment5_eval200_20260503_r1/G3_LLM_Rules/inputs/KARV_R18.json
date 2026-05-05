@@ -1,0 +1,198 @@
+{
+  "chart_id": "KARV_R18",
+  "procedure": {
+    "airport": "KARV",
+    "approach_ident": "R18",
+    "chart_name": "RNAV (GPS) RWY 18"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0699,
+        "width": 0.3013,
+        "x_center": 0.8016,
+        "y_center": 0.1456
+      },
+      "chart_id": "KARV_R18",
+      "evidence_region_id": "KARV_R18_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KARV_R18_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.428,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.429
+      },
+      "chart_id": "KARV_R18",
+      "evidence_region_id": "KARV_R18_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KARV_R18_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0543,
+        "width": 0.2652,
+        "x_center": 0.4694,
+        "y_center": 0.6707
+      },
+      "chart_id": "KARV_R18",
+      "evidence_region_id": "KARV_R18_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KARV_R18_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3702,
+        "y_center": 0.6532
+      },
+      "chart_id": "KARV_R18",
+      "evidence_region_id": "KARV_R18_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 6000 -> AT_OR_ABOVE 6000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 6000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "6000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0591,
+        "x_center": 0.4324,
+        "y_center": 0.6532
+      },
+      "chart_id": "KARV_R18",
+      "evidence_region_id": "KARV_R18_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: CEPMU -> CEPMU",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "CEPMU",
+        "raw_text": "CEPMU"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0591,
+        "x_center": 0.5724,
+        "y_center": 0.6532
+      },
+      "chart_id": "KARV_R18",
+      "evidence_region_id": "KARV_R18_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: KRSMS -> KRSMS",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "KRSMS",
+        "raw_text": "KRSMS"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0261,
+        "width": 0.0335,
+        "x_center": 0.431,
+        "y_center": 0.6788
+      },
+      "chart_id": "KARV_R18",
+      "evidence_region_id": "KARV_R18_iconalign_007_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0328,
+        "width": 0.0103,
+        "x_center": 0.369,
+        "y_center": 0.6797
+      },
+      "chart_id": "KARV_R18",
+      "evidence_region_id": "KARV_R18_iconalign_010_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0101,
+        "width": 0.0181,
+        "x_center": 0.5716,
+        "y_center": 0.6768
+      },
+      "chart_id": "KARV_R18",
+      "evidence_region_id": "KARV_R18_iconalign_009_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0177,
+        "width": 0.0452,
+        "x_center": 0.5026,
+        "y_center": 0.6587
+      },
+      "chart_id": "KARV_R18",
+      "evidence_region_id": "KARV_R18_iconalign_011_path_segment",
+      "fact_type": "path_segment_visible",
+      "label": "detected lower detail: path segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

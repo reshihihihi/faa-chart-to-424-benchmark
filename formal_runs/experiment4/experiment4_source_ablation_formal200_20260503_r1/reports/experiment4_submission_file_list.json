@@ -1,0 +1,177 @@
+{
+  "created_at_utc": "2026-05-03T01:40:16.447896+00:00",
+  "purpose": "Experiment 4 final submission/archive file list.",
+  "output_root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1",
+  "required_files": [
+    {
+      "relative_path": "reports/experiment4_final_execution_report_zh.md",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_final_execution_report_zh.md",
+      "exists": true,
+      "size_bytes": 6375
+    },
+    {
+      "relative_path": "reports/experiment4_result_analysis_zh.md",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_result_analysis_zh.md",
+      "exists": true,
+      "size_bytes": 6703
+    },
+    {
+      "relative_path": "reports/experiment4_final_metrics_table.csv",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_final_metrics_table.csv",
+      "exists": true,
+      "size_bytes": 5631
+    },
+    {
+      "relative_path": "reports/experiment4_final_metrics_summary.json",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_final_metrics_summary.json",
+      "exists": true,
+      "size_bytes": 20324
+    },
+    {
+      "relative_path": "reports/experiment4_v2_scoring_summary.csv",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_v2_scoring_summary.csv",
+      "exists": true,
+      "size_bytes": 1874
+    },
+    {
+      "relative_path": "reports/experiment4_v2_scoring_summary.json",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_v2_scoring_summary.json",
+      "exists": true,
+      "size_bytes": 383573
+    },
+    {
+      "relative_path": "reports/experiment4_freeze_manifest.json",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_freeze_manifest.json",
+      "exists": true,
+      "size_bytes": 80784
+    },
+    {
+      "relative_path": "reports/experiment4_analysis_artifacts_manifest.json",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_analysis_artifacts_manifest.json",
+      "exists": true,
+      "size_bytes": 674
+    },
+    {
+      "relative_path": "reports/experiment4_d1_v2_accuracy_by_variant.png",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_d1_v2_accuracy_by_variant.png",
+      "exists": true,
+      "size_bytes": 42241
+    },
+    {
+      "relative_path": "reports/experiment4_method_v2_accuracy_by_variant.png",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_method_v2_accuracy_by_variant.png",
+      "exists": true,
+      "size_bytes": 56256
+    },
+    {
+      "relative_path": "reports/experiment4_dsft_raw_vs_d1_coverage_failure.png",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_dsft_raw_vs_d1_coverage_failure.png",
+      "exists": true,
+      "size_bytes": 47395
+    },
+    {
+      "relative_path": "manifests/experiment4_evaluation200_chart_ids.json",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\manifests\\experiment4_evaluation200_chart_ids.json",
+      "exists": true,
+      "size_bytes": 107449
+    },
+    {
+      "relative_path": "source_views/manifests/source_view_manifest.jsonl",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\source_views\\manifests\\source_view_manifest.jsonl",
+      "exists": true,
+      "size_bytes": 2711849
+    },
+    {
+      "relative_path": "validation/input_manifest_no_leakage_final_report.json",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\validation\\input_manifest_no_leakage_final_report.json",
+      "exists": true,
+      "size_bytes": 5003
+    },
+    {
+      "relative_path": "validation/source_view_validation_after_residual_guard_report.json",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\validation\\source_view_validation_after_residual_guard_report.json",
+      "exists": true,
+      "size_bytes": 600
+    },
+    {
+      "relative_path": "scripts/build_source_views.py",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\scripts\\build_source_views.py",
+      "exists": true,
+      "size_bytes": 15037
+    },
+    {
+      "relative_path": "scripts/prepare_experiment4_manifests.py",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\scripts\\prepare_experiment4_manifests.py",
+      "exists": true,
+      "size_bytes": 9988
+    },
+    {
+      "relative_path": "scripts/run_d1_output_canonicalizer.py",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\scripts\\run_d1_output_canonicalizer.py",
+      "exists": true,
+      "size_bytes": 28363
+    },
+    {
+      "relative_path": "scripts/score_d1_strict.py",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\scripts\\score_d1_strict.py",
+      "exists": true,
+      "size_bytes": 6813
+    },
+    {
+      "relative_path": "scripts/rescore_experiment4_v2.py",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\scripts\\rescore_experiment4_v2.py",
+      "exists": true,
+      "size_bytes": 13175
+    },
+    {
+      "relative_path": "scripts/summarize_experiment4_results.py",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\scripts\\summarize_experiment4_results.py",
+      "exists": true,
+      "size_bytes": 17234
+    },
+    {
+      "relative_path": "scripts/create_experiment4_freeze_manifest.py",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\scripts\\create_experiment4_freeze_manifest.py",
+      "exists": true,
+      "size_bytes": 5697
+    },
+    {
+      "relative_path": "scripts/generate_experiment4_analysis_artifacts.py",
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\scripts\\generate_experiment4_analysis_artifacts.py",
+      "exists": true,
+      "size_bytes": 23128
+    }
+  ],
+  "d1_output_dirs": [
+    {
+      "variant": "V1_ma_text_only",
+      "d1_root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V1_ma_text_only\\D1",
+      "canonical_json_dir": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V1_ma_text_only\\D1\\canonical_json",
+      "report": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V1_ma_text_only\\D1\\reports\\D1_summary.json"
+    },
+    {
+      "variant": "V2_full_minus_ma_prose",
+      "d1_root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V2_full_minus_ma_prose\\D1",
+      "canonical_json_dir": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V2_full_minus_ma_prose\\D1\\canonical_json",
+      "report": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V2_full_minus_ma_prose\\D1\\reports\\D1_summary.json"
+    },
+    {
+      "variant": "V3_plan_view_only",
+      "d1_root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V3_plan_view_only\\D1",
+      "canonical_json_dir": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V3_plan_view_only\\D1\\canonical_json",
+      "report": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V3_plan_view_only\\D1\\reports\\D1_summary.json"
+    },
+    {
+      "variant": "V4_icon_detail_only",
+      "d1_root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1",
+      "canonical_json_dir": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json",
+      "report": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\reports\\D1_summary.json"
+    },
+    {
+      "variant": "V5_plan_detail_no_ma",
+      "d1_root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V5_plan_detail_no_ma\\D1",
+      "canonical_json_dir": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V5_plan_detail_no_ma\\D1\\canonical_json",
+      "report": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V5_plan_detail_no_ma\\D1\\reports\\D1_summary.json"
+    }
+  ]
+}

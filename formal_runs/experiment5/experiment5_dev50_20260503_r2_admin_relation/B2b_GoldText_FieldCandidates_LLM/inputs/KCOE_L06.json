@@ -1,0 +1,165 @@
+{
+  "chart_id": "KCOE_L06",
+  "airport": "KCOE",
+  "approach_ident": "L06",
+  "chart_name": "ILS OR LOC RWY 06",
+  "gold_ma_prose": "MISSED APPROACH: climb to 2900 on heading 51.1; climb to 6000 on COE R-350 OUTBOUND to COE; left turn climb to 6500 on COE R-350 INBOUND to COE; hold at COE, inbound course 051, left turns, 1 minute, maintain 6500.",
+  "field_candidates": {
+    "schema_version": "experiment5_gold_ma_prose_field_candidates_schema_v1",
+    "chart_id": "KCOE_L06",
+    "candidate_source": "experiment5_gold_ma_prose_regex_candidates_v1",
+    "source_contract": {
+      "source": "adjudicated_gold_ma_prose",
+      "allows_canonical_target": false,
+      "allows_gold_observable_evidence": false,
+      "allows_field_review_v2": false,
+      "allows_cifp_or_arinc_424": false
+    },
+    "leakage_policy": {
+      "uses_canonical_target": false,
+      "uses_expected_value": false,
+      "uses_gold_field_to_leg_mapping": false,
+      "uses_human_evidence_provenance": false,
+      "uses_gold_observable_evidence": false,
+      "uses_cifp_or_arinc_424": false,
+      "uses_scorer_output": false,
+      "uses_field_review_v2": false
+    },
+    "field_candidates": {
+      "fix_candidates": [],
+      "altitude_candidates": [
+        {
+          "value": 2900,
+          "field_type": "altitude_ft",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "2900",
+          "source_start_char": 26,
+          "source_end_char": 30,
+          "rule_id": "gold_ma_altitude_ft_regex_v1",
+          "confidence": 0.95,
+          "notes": "climb_to_altitude_context"
+        }
+      ],
+      "turn_candidates": [
+        {
+          "value": "LEFT",
+          "field_type": "turn_direction",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "LEFT TURN",
+          "source_start_char": 92,
+          "source_end_char": 101,
+          "rule_id": "gold_ma_turn_regex_v1",
+          "confidence": 0.95,
+          "notes": "turn_phrase_context"
+        }
+      ],
+      "course_candidates": [
+        {
+          "value": {
+            "type": "navaid_radial",
+            "navaid": "COE",
+            "radial_deg": 350.0,
+            "direction": "outbound"
+          },
+          "field_type": "navaid_radial",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "COE R-350",
+          "source_start_char": 65,
+          "source_end_char": 74,
+          "rule_id": "gold_ma_navaid_radial_regex_v1",
+          "confidence": 0.9,
+          "notes": "navaid_radial_context"
+        },
+        {
+          "value": {
+            "type": "navaid_radial",
+            "navaid": "COE",
+            "radial_deg": 350.0,
+            "direction": "outbound"
+          },
+          "field_type": "navaid_radial",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "COE R-350",
+          "source_start_char": 119,
+          "source_end_char": 128,
+          "rule_id": "gold_ma_navaid_radial_regex_v1",
+          "confidence": 0.9,
+          "notes": "navaid_radial_context"
+        }
+      ],
+      "hold_candidates": [
+        {
+          "value": "MISSED APPROACH: climb to 2900 on heading 51.1; climb to 6000 on COE R-350 OUTBOUND to COE; left turn climb to 6500 on COE R-350 INBOUND to COE; hold at COE, inbound course 051, left turns, 1 minute, maintain 6500.",
+          "field_type": "hold_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: climb to 2900 on heading 51.1; climb to 6000 on COE R-350 OUTBOUND to COE; left turn climb to 6500 on COE R-350 INBOUND to COE; hold at COE, inbound course 051, left turns, 1 minute, maintain 6500.",
+          "source_start_char": 145,
+          "source_end_char": 149,
+          "rule_id": "gold_ma_hold_phrase_regex_v1",
+          "confidence": 0.95,
+          "notes": "hold_phrase_context_no_leg_binding"
+        }
+      ],
+      "instruction_snippets": [
+        {
+          "value": "climb to 2900 on heading 51.1; climb to 6000 on COE R-350 OUTBOUND to COE; left turn climb to 6500 on COE R-350 INBOUND to COE; hold at COE, inbound course 051, left turns, 1 minute, maintain 6500.",
+          "field_type": "missed_approach_instruction",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: climb to 2900 on heading 51.1; climb to 6000 on COE R-350 OUTBOUND to COE; left turn climb to 6500 on COE R-350 INBOUND to COE; hold at COE, inbound course 051, left turns, 1 minute, maintain 6500.",
+          "source_start_char": 0,
+          "source_end_char": 214,
+          "rule_id": "gold_ma_instruction_span_regex_v1",
+          "confidence": 0.99,
+          "notes": "automatic_candidate_from_adjudicated_gold_ma_prose_no_target_or_leg_binding"
+        }
+      ],
+      "track_to_fix_snippets": [],
+      "route_sequence_snippets": [],
+      "direct_phrase_snippets": [],
+      "climb_phrase_snippets": [
+        {
+          "value": "CLIMB TO 2900 ON HEADING 51",
+          "field_type": "climb_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CLIMB TO 2900 ON HEADING 51",
+          "source_start_char": 17,
+          "source_end_char": 44,
+          "rule_id": "gold_ma_climb_phrase_regex_v1",
+          "confidence": 0.9,
+          "notes": "climb_phrase_context"
+        },
+        {
+          "value": "CLIMB TO 6000 ON COE R-350 OUTBOUND TO COE",
+          "field_type": "climb_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CLIMB TO 6000 ON COE R-350 OUTBOUND TO COE",
+          "source_start_char": 48,
+          "source_end_char": 90,
+          "rule_id": "gold_ma_climb_phrase_regex_v1",
+          "confidence": 0.9,
+          "notes": "climb_phrase_context"
+        },
+        {
+          "value": "CLIMB TO 6500 ON COE R-350 INBOUND TO COE",
+          "field_type": "climb_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CLIMB TO 6500 ON COE R-350 INBOUND TO COE",
+          "source_start_char": 102,
+          "source_end_char": 143,
+          "rule_id": "gold_ma_climb_phrase_regex_v1",
+          "confidence": 0.9,
+          "notes": "climb_phrase_context"
+        }
+      ]
+    }
+  }
+}

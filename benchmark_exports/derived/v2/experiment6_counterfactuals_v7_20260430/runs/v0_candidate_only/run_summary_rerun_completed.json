@@ -1,0 +1,17 @@
+{
+  "api_error": 0,
+  "base_url": "http://127.0.0.1:8080/v1",
+  "completed_now": 10,
+  "elapsed_sec": 6.462,
+  "input_jsonl": "packed_inputs/v0_candidate_only_inputs.jsonl",
+  "method": "V0_candidate_only",
+  "model": "gpt-5.4",
+  "out_jsonl": "<not-in-package>/v0_candidate_only_predictions.jsonl",
+  "parse_fail": 0,
+  "parse_ok": 3091,
+  "previously_done": 3081,
+  "prompt": "prompts/formal_v0_candidate_only_verifier.md",
+  "prompt_hash": "c3008f1ffc695d8498561317844bd6d8eb9f9b1546e6bfe4072efa5c2897f1e5",
+  "requested_records": 3091,
+  "total_outputs_for_request": 3091
+}

@@ -1,0 +1,4 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: Climb to
+3000 direct KOCEC and on
+track 084° to LIZZI and hold.

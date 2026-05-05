@@ -1,0 +1,66 @@
+[
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.27297692172692173,
+    "ci_upper": 0.32095749877870056,
+    "filled_missing_units": 0,
+    "method": "C1_GPT54",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.29639684106614017,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 1201.0,
+    "source_files": [
+      "reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.4460973803290728,
+    "ci_upper": 0.4836689562967875,
+    "filled_missing_units": 0,
+    "method": "C2_GPT54_batched_leg",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.46495557749259625,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 1884.0,
+    "source_files": [
+      "reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.27713957163472097,
+    "ci_upper": 0.3248746901844899,
+    "filled_missing_units": 0,
+    "method": "C3_GPT54",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.3005923000987167,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 1218.0,
+    "source_files": [
+      "reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv"
+    ]
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.4058960097020718,
+    "ci_upper": 0.4608782020002193,
+    "filled_missing_units": 0,
+    "method": "C4_GPT54",
+    "n_units": 200,
+    "observed_units": 200,
+    "point_estimate": 0.43361303060217177,
+    "raw_rows": 200,
+    "score_denominator": 4052.0,
+    "score_numerator": 1757.0,
+    "source_files": [
+      "reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv"
+    ]
+  }
+]

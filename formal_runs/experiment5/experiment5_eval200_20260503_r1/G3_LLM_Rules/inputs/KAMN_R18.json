@@ -1,0 +1,161 @@
+{
+  "chart_id": "KAMN_R18",
+  "procedure": {
+    "airport": "KAMN",
+    "approach_ident": "R18",
+    "chart_name": "RNAV (GPS) RWY 18"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0522,
+        "width": 0.3123,
+        "x_center": 0.7961,
+        "y_center": 0.1368
+      },
+      "chart_id": "KAMN_R18",
+      "evidence_region_id": "KAMN_R18_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMN_R18_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.531,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.469
+      },
+      "chart_id": "KAMN_R18",
+      "evidence_region_id": "KAMN_R18_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMN_R18_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0572,
+        "width": 0.1213,
+        "x_center": 0.3974,
+        "y_center": 0.7635
+      },
+      "chart_id": "KAMN_R18",
+      "evidence_region_id": "KAMN_R18_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMN_R18_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3704,
+        "y_center": 0.7436
+      },
+      "chart_id": "KAMN_R18",
+      "evidence_region_id": "KAMN_R18_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 2800 -> AT_OR_ABOVE 2800 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 2800,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "2800"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0571,
+        "x_center": 0.4288,
+        "y_center": 0.7448
+      },
+      "chart_id": "KAMN_R18",
+      "evidence_region_id": "KAMN_R18_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: OREYO -> OREYO",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "OREYO",
+        "raw_text": "OREYO"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0228,
+        "width": 0.0517,
+        "x_center": 0.369,
+        "y_center": 0.7597
+      },
+      "chart_id": "KAMN_R18",
+      "evidence_region_id": "KAMN_R18_iconalign_009_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0311,
+        "width": 0.0271,
+        "x_center": 0.3503,
+        "y_center": 0.7723
+      },
+      "chart_id": "KAMN_R18",
+      "evidence_region_id": "KAMN_R18_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0236,
+        "width": 0.0348,
+        "x_center": 0.429,
+        "y_center": 0.7668
+      },
+      "chart_id": "KAMN_R18",
+      "evidence_region_id": "KAMN_R18_iconalign_006_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

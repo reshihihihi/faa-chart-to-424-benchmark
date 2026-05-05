@@ -1,6 +1,6 @@
 # Parser Repair Policy
 
-Status: frozen for strict raw JSON v1 on 2026-04-27.
+Status: frozen for strict raw JSON v1 on 2026-04-27; extended with structured tool-call output control v1 on 2026-04-28.
 
 This policy freezes the parser and format-handling rules for B1/C3 pilot promotion and is the default policy for later extraction methods unless a later formal freeze explicitly supersedes it before evaluation.
 
@@ -42,6 +42,28 @@ assistant_prefill_value: "{"
 ```
 
 This is not semantic repair. It only forces the assistant response to begin with the opening JSON brace and prevents markdown code fences. The saved raw output must include the prefilled `{` so the stored raw text is the exact JSON object sent to the parser.
+
+## Structured Tool-Call Output Control
+
+OpenAI-compatible text LLM methods may use the stronger output-control policy in:
+
+```text
+configs/output_control_policy.md
+```
+
+Anthropic-compatible VLM/MLLM methods may use the provider-specific candidate tool-use policy in the same file before formal freeze.
+
+Under these policies, the raw API response must contain exactly one forced tool call/tool-use block, and the parser reads only the saved tool-call argument string or saved tool-use input object.
+
+Allowed parser operations are still only:
+
+```text
+trim whitespace -> JSON parse -> schema validate
+```
+
+This is not parser repair. The parser must not add braces, move values between fields, fix enum values, infer missing fields, repair metadata, or consult targets/scorers.
+
+The policy may allow exactly one schema-only retry as a model call before final failure. That retry must be fixed in the run manifest, must use a new run id when introduced, and must not use target, scorer, CIFP, annotations, or performance information.
 
 ## Explicitly Forbidden Parser Repairs
 

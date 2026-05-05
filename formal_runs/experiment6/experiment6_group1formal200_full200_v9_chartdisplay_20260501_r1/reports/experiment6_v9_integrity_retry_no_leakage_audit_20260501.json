@@ -1,0 +1,309 @@
+{
+  "no_leakage": {
+    "V1_text_only": {
+      "checked_records": 400,
+      "finding_count": 0,
+      "findings": [],
+      "input_jsonl": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/packed_inputs/v1_text_only_inputs_v9_chartdisplay_e6core.jsonl",
+      "status": "pass"
+    },
+    "V2_direct_image": {
+      "checked_records": 400,
+      "finding_count": 0,
+      "findings": [],
+      "input_jsonl": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/packed_inputs/v2_direct_vlm_inputs_v9_chartdisplay_e6core.jsonl",
+      "status": "pass"
+    },
+    "V3_extract_then_compare": {
+      "checked_records": 400,
+      "finding_count": 0,
+      "findings": [],
+      "input_jsonl": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/packed_inputs/v3_extract_then_compare_inputs_v9_chartdisplay_e6core.jsonl",
+      "status": "pass"
+    }
+  },
+  "prediction_integrity": {
+    "V1_OCR_text_chartdisplay_v2": {
+      "api_error_count": 0,
+      "consistent_false_empty_error_fields": 0,
+      "consistent_true_nonempty_error_fields": 0,
+      "disallowed_error_field_rows": 0,
+      "duplicate_count": 0,
+      "duplicate_examples": [],
+      "expected_cases": 400,
+      "malformed_parsed_output_count": 0,
+      "method": "V1_OCR_text_chartdisplay_v2",
+      "missing_count": 0,
+      "missing_examples": [],
+      "parse_fail_count": 0,
+      "rows": 400,
+      "unexpected_count": 0,
+      "unexpected_examples": []
+    },
+    "V2_direct_image_policyv3_chartdisplay_v2": {
+      "api_error_count": 0,
+      "consistent_false_empty_error_fields": 0,
+      "consistent_true_nonempty_error_fields": 0,
+      "disallowed_error_field_rows": 0,
+      "duplicate_count": 0,
+      "duplicate_examples": [],
+      "expected_cases": 400,
+      "malformed_parsed_output_count": 0,
+      "method": "V2_direct_image_policyv3_chartdisplay_v2",
+      "missing_count": 0,
+      "missing_examples": [],
+      "parse_fail_count": 0,
+      "rows": 400,
+      "unexpected_count": 0,
+      "unexpected_examples": []
+    },
+    "V3_C4_group1v2_neutralized": {
+      "api_error_count": 0,
+      "consistent_false_empty_error_fields": 0,
+      "consistent_true_nonempty_error_fields": 0,
+      "disallowed_error_field_rows": 0,
+      "duplicate_count": 0,
+      "duplicate_examples": [],
+      "expected_cases": 400,
+      "malformed_parsed_output_count": 0,
+      "method": "V3_C4_group1v2_neutralized",
+      "missing_count": 0,
+      "missing_examples": [],
+      "parse_fail_count": 0,
+      "rows": 400,
+      "unexpected_count": 0,
+      "unexpected_examples": []
+    },
+    "V3_D_SFT_group1v2_neutralized": {
+      "api_error_count": 0,
+      "consistent_false_empty_error_fields": 0,
+      "consistent_true_nonempty_error_fields": 0,
+      "disallowed_error_field_rows": 0,
+      "duplicate_count": 0,
+      "duplicate_examples": [],
+      "expected_cases": 400,
+      "malformed_parsed_output_count": 30,
+      "method": "V3_D_SFT_group1v2_neutralized",
+      "missing_count": 0,
+      "missing_examples": [],
+      "parse_fail_count": 30,
+      "rows": 400,
+      "unexpected_count": 0,
+      "unexpected_examples": []
+    },
+    "V4_C4_tolerant_chartdisplay_v2": {
+      "api_error_count": 0,
+      "consistent_false_empty_error_fields": 0,
+      "consistent_true_nonempty_error_fields": 0,
+      "disallowed_error_field_rows": 0,
+      "duplicate_count": 0,
+      "duplicate_examples": [],
+      "expected_cases": 400,
+      "malformed_parsed_output_count": 0,
+      "method": "V4_C4_tolerant_chartdisplay_v2",
+      "missing_count": 0,
+      "missing_examples": [],
+      "parse_fail_count": 0,
+      "rows": 400,
+      "unexpected_count": 0,
+      "unexpected_examples": []
+    },
+    "V4_D_SFT_tolerant_chartdisplay_v2": {
+      "api_error_count": 0,
+      "consistent_false_empty_error_fields": 0,
+      "consistent_true_nonempty_error_fields": 0,
+      "disallowed_error_field_rows": 0,
+      "duplicate_count": 0,
+      "duplicate_examples": [],
+      "expected_cases": 400,
+      "malformed_parsed_output_count": 30,
+      "method": "V4_D_SFT_tolerant_chartdisplay_v2",
+      "missing_count": 0,
+      "missing_examples": [],
+      "parse_fail_count": 30,
+      "rows": 400,
+      "unexpected_count": 0,
+      "unexpected_examples": []
+    },
+    "control_all_accept": {
+      "api_error_count": 0,
+      "consistent_false_empty_error_fields": 0,
+      "consistent_true_nonempty_error_fields": 0,
+      "disallowed_error_field_rows": 0,
+      "duplicate_count": 0,
+      "duplicate_examples": [],
+      "expected_cases": 400,
+      "malformed_parsed_output_count": 0,
+      "method": "control_all_accept",
+      "missing_count": 0,
+      "missing_examples": [],
+      "parse_fail_count": 0,
+      "rows": 400,
+      "unexpected_count": 0,
+      "unexpected_examples": []
+    },
+    "control_all_reject": {
+      "api_error_count": 0,
+      "consistent_false_empty_error_fields": 0,
+      "consistent_true_nonempty_error_fields": 0,
+      "disallowed_error_field_rows": 0,
+      "duplicate_count": 0,
+      "duplicate_examples": [],
+      "expected_cases": 400,
+      "malformed_parsed_output_count": 0,
+      "method": "control_all_reject",
+      "missing_count": 0,
+      "missing_examples": [],
+      "parse_fail_count": 0,
+      "rows": 400,
+      "unexpected_count": 0,
+      "unexpected_examples": []
+    },
+    "control_oracle_label": {
+      "api_error_count": 0,
+      "consistent_false_empty_error_fields": 0,
+      "consistent_true_nonempty_error_fields": 0,
+      "disallowed_error_field_rows": 0,
+      "duplicate_count": 0,
+      "duplicate_examples": [],
+      "expected_cases": 400,
+      "malformed_parsed_output_count": 0,
+      "method": "control_oracle_label",
+      "missing_count": 0,
+      "missing_examples": [],
+      "parse_fail_count": 0,
+      "rows": 400,
+      "unexpected_count": 0,
+      "unexpected_examples": []
+    },
+    "control_v0_candidate_integrity": {
+      "api_error_count": 0,
+      "consistent_false_empty_error_fields": 0,
+      "consistent_true_nonempty_error_fields": 0,
+      "disallowed_error_field_rows": 0,
+      "duplicate_count": 0,
+      "duplicate_examples": [],
+      "expected_cases": 400,
+      "malformed_parsed_output_count": 0,
+      "method": "control_v0_candidate_integrity",
+      "missing_count": 0,
+      "missing_examples": [],
+      "parse_fail_count": 0,
+      "rows": 400,
+      "unexpected_count": 0,
+      "unexpected_examples": []
+    }
+  },
+  "retry_attempts": [
+    {
+      "api_error_rows": 0,
+      "attempt_distribution": {
+        "1": 400
+      },
+      "max_attempts": 1,
+      "method": "V1_OCR_text_chartdisplay_v2",
+      "parse_fail_rows": 0,
+      "retry_rows": 0,
+      "rows": 400
+    },
+    {
+      "api_error_rows": 0,
+      "attempt_distribution": {
+        "1": 400
+      },
+      "max_attempts": 1,
+      "method": "V2_direct_image_policyv3_chartdisplay_v2",
+      "parse_fail_rows": 0,
+      "retry_rows": 0,
+      "rows": 400
+    },
+    {
+      "api_error_rows": 0,
+      "attempt_distribution": {
+        "0": 400
+      },
+      "max_attempts": 0,
+      "method": "V3_C4_group1v2_neutralized",
+      "parse_fail_rows": 0,
+      "retry_rows": 0,
+      "rows": 400
+    },
+    {
+      "api_error_rows": 0,
+      "attempt_distribution": {
+        "0": 400
+      },
+      "max_attempts": 0,
+      "method": "V3_D_SFT_group1v2_neutralized",
+      "parse_fail_rows": 30,
+      "retry_rows": 0,
+      "rows": 400
+    },
+    {
+      "api_error_rows": 0,
+      "attempt_distribution": {
+        "0": 400
+      },
+      "max_attempts": 0,
+      "method": "V4_C4_tolerant_chartdisplay_v2",
+      "parse_fail_rows": 0,
+      "retry_rows": 0,
+      "rows": 400
+    },
+    {
+      "api_error_rows": 0,
+      "attempt_distribution": {
+        "0": 400
+      },
+      "max_attempts": 0,
+      "method": "V4_D_SFT_tolerant_chartdisplay_v2",
+      "parse_fail_rows": 30,
+      "retry_rows": 0,
+      "rows": 400
+    },
+    {
+      "api_error_rows": 0,
+      "attempt_distribution": {
+        "0": 400
+      },
+      "max_attempts": 0,
+      "method": "control_all_accept",
+      "parse_fail_rows": 0,
+      "retry_rows": 0,
+      "rows": 400
+    },
+    {
+      "api_error_rows": 0,
+      "attempt_distribution": {
+        "0": 400
+      },
+      "max_attempts": 0,
+      "method": "control_all_reject",
+      "parse_fail_rows": 0,
+      "retry_rows": 0,
+      "rows": 400
+    },
+    {
+      "api_error_rows": 0,
+      "attempt_distribution": {
+        "0": 400
+      },
+      "max_attempts": 0,
+      "method": "control_oracle_label",
+      "parse_fail_rows": 0,
+      "retry_rows": 0,
+      "rows": 400
+    },
+    {
+      "api_error_rows": 0,
+      "attempt_distribution": {
+        "0": 400
+      },
+      "max_attempts": 0,
+      "method": "control_v0_candidate_integrity",
+      "parse_fail_rows": 0,
+      "retry_rows": 0,
+      "rows": 400
+    }
+  ]
+}

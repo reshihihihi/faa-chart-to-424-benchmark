@@ -1,0 +1,194 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KBOS_R32",
+  "procedure": {
+    "airport": "KBOS",
+    "approach_ident": "R32",
+    "chart_name": "RNAV (GPS) RWY 32"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0428,
+        "width": 0.2367,
+        "x_center": 0.8346,
+        "y_center": 0.1321
+      },
+      "chart_id": "KBOS_R32",
+      "evidence_region_id": "KBOS_R32_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KBOS_R32_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.5097,
+        "width": 0.9083,
+        "x_center": 0.5012,
+        "y_center": 0.4507
+      },
+      "chart_id": "KBOS_R32",
+      "evidence_region_id": "KBOS_R32_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "coarse plan-view context for missed approach",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KBOS_R32_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0541,
+        "width": 0.2472,
+        "x_center": 0.4607,
+        "y_center": 0.7326
+      },
+      "chart_id": "KBOS_R32",
+      "evidence_region_id": "KBOS_R32_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KBOS_R32_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0461,
+        "x_center": 0.369,
+        "y_center": 0.7145
+      },
+      "chart_id": "KBOS_R32",
+      "evidence_region_id": "KBOS_R32_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.064,
+        "x_center": 0.4341,
+        "y_center": 0.7145
+      },
+      "chart_id": "KBOS_R32",
+      "evidence_region_id": "KBOS_R32_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: WINDZ -> WINDZ",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "WINDZ",
+        "raw_text": "WINDZ"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0469,
+        "x_center": 0.554,
+        "y_center": 0.7156
+      },
+      "chart_id": "KBOS_R32",
+      "evidence_region_id": "KBOS_R32_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: TELLE -> TELLE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "TELLE",
+        "raw_text": "TELLE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0194,
+        "width": 0.0186,
+        "x_center": 0.4356,
+        "y_center": 0.7415
+      },
+      "chart_id": "KBOS_R32",
+      "evidence_region_id": "KBOS_R32_iconalign_007_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0323,
+        "width": 0.0149,
+        "x_center": 0.3681,
+        "y_center": 0.7423
+      },
+      "chart_id": "KBOS_R32",
+      "evidence_region_id": "KBOS_R32_iconalign_010_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0218,
+        "width": 0.0372,
+        "x_center": 0.5527,
+        "y_center": 0.7403
+      },
+      "chart_id": "KBOS_R32",
+      "evidence_region_id": "KBOS_R32_iconalign_009_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

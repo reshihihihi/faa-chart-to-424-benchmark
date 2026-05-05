@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_db0ed7c2-9608-4ecc-9b8b-d4c148a5b30c",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_Y2iTTTAdlPgq30Q9LlPXGCru",
+            "function": {
+              "arguments": "{\"chart_id\":\"KAIG_R27\",\"procedure\":{\"airport\":\"KAIG\",\"approach_ident\":\"R27\",\"chart_name\":\"RNAV (GPS) RWY 27\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868182,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

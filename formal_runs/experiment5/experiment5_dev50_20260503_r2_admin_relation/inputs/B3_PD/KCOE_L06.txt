@@ -1,0 +1,12 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2900 -> AT_OR_ABOVE 2900 ft
+- ALTITUDE_TEXT: 6000 -> AT_OR_ABOVE 6000 ft
+- ALTITUDE_TEXT: 6500 -> AT_OR_ABOVE 6500 ft
+- FIX_TEXT: COE -> COE; NAVAID_TEXT: COE -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=outbound; NAVAID_TEXT: COE -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=inbound
+- RADIAL_TEXT: R-350 -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=outbound; RADIAL_TEXT: R-350 -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=inbound
+- OUTBOUND_INBOUND_MARK: inbnd -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=inbound
+- OUTBOUND_INBOUND_MARK: outbnd -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=outbound
+- detected lower detail: path segment

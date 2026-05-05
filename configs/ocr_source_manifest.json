@@ -1,0 +1,129 @@
+{
+  "manifest_version": "0.1.0",
+  "status": "candidate_not_formal_frozen",
+  "last_updated_utc": "2026-04-28T04:45:00Z",
+  "decision": "Experiment Group 1 A/B methods must use ordinary OCR sources. MLLM/VLM-generated transcription, including Claude-generated OCR text, is not valid as OCR-1 or OCR-2 for formal A1/A2/B1/B1_prime/C4 evidence.",
+  "group1_usage_rule": {
+    "ocr_1_used_by": [
+      "A1",
+      "B1",
+      "B1_prime",
+      "C4"
+    ],
+    "ocr_2_used_by": [
+      "A2"
+    ],
+    "no_ocr_text_methods": [
+      "C1",
+      "C2",
+      "C3",
+      "D_SFT"
+    ]
+  },
+  "sources": [
+    {
+      "ocr_id": "OCR-1",
+      "engine": "PaddleOCR",
+      "candidate_model": "PP-OCRv5",
+      "role": "primary ordinary full-chart OCR source",
+      "status": "candidate_pilot10_artifact_generated_not_formal_frozen",
+      "observed_environment": {
+        "python_environment": "conda:ocr_exp",
+        "paddleocr_version": "3.5.0",
+        "paddlepaddle_version": "3.2.2",
+        "det_model": "PP-OCRv5_server_det",
+        "rec_model": "en_PP-OCRv5_mobile_rec",
+        "model_cache_status": "available_on_local_machine"
+      },
+      "allowed_methods": [
+        "A1",
+        "B1",
+        "B1_prime",
+        "C4"
+      ],
+      "forbidden_roles": [
+        "VLM/MLLM transcription",
+        "target-aware text normalization",
+        "human-corrected gold text"
+      ],
+      "must_record_before_freeze": [
+        "package_version",
+        "model_version_or_checkpoint",
+        "language",
+        "image_preprocessing",
+        "line_ordering_rule",
+        "raw_ocr_json_path",
+        "flattened_text_path",
+        "bbox_and_confidence_policy",
+        "checksums"
+      ],
+      "pilot10_artifact": {
+        "run_id": "ocr1_paddleocr_ppocrv5_20260428_r1",
+        "root": "ocr_artifacts/pilot10_external/ocr1_paddleocr_ppocrv5_20260428_r1",
+        "manifest": "ocr_artifacts/pilot10_external/ocr1_paddleocr_ppocrv5_20260428_r1/manifest.jsonl",
+        "run_manifest": "ocr_artifacts/pilot10_external/ocr1_paddleocr_ppocrv5_20260428_r1/run_manifest.json",
+        "sample_count": 10,
+        "sample_role": "pilot10_external_excluded_from_formal_evaluation"
+      }
+    },
+    {
+      "ocr_id": "OCR-2",
+      "engine": "Tesseract OCR",
+      "candidate_model": "5.x",
+      "role": "secondary ordinary full-chart OCR source for OCR sensitivity",
+      "status": "candidate_pilot10_artifact_generated_not_formal_frozen",
+      "observed_environment": {
+        "binary_version": "5.5.0.20241111",
+        "leptonica_version": "1.85.0",
+        "python_wrapper": "pytesseract 0.3.13 in conda:ocr_exp",
+        "path_policy": "local executable path is not committed; runner accepts --tesseract-cmd"
+      },
+      "allowed_methods": [
+        "A2"
+      ],
+      "forbidden_roles": [
+        "VLM/MLLM transcription",
+        "target-aware text normalization",
+        "human-corrected gold text"
+      ],
+      "must_record_before_freeze": [
+        "binary_version",
+        "language_data_version",
+        "psm_oem_settings",
+        "image_preprocessing",
+        "raw_tsv_path",
+        "flattened_text_path",
+        "bbox_and_confidence_policy",
+        "checksums"
+      ],
+      "pilot10_artifact": {
+        "run_id": "ocr2_tesseract5_20260428_r1",
+        "root": "ocr_artifacts/pilot10_external/ocr2_tesseract5_20260428_r1",
+        "manifest": "ocr_artifacts/pilot10_external/ocr2_tesseract5_20260428_r1/manifest.jsonl",
+        "run_manifest": "ocr_artifacts/pilot10_external/ocr2_tesseract5_20260428_r1/run_manifest.json",
+        "sample_count": 10,
+        "sample_role": "pilot10_external_excluded_from_formal_evaluation"
+      }
+    }
+  ],
+  "invalidated_or_demoted_artifacts": [
+    {
+      "run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+      "affected_methods": [
+        "B1"
+      ],
+      "reason": "B1 used Claude-generated OCR text, which is MLLM/VLM transcription rather than ordinary OCR.",
+      "new_status": "pipeline_debug_only_invalid_for_formal_B1"
+    },
+    {
+      "run_id": "pilot10_exp1_b1prime_c4_semantic_matcher_v2_20260427_r3",
+      "affected_methods": [
+        "B1_prime",
+        "C4"
+      ],
+      "reason": "B1_prime and C4 reused Claude-generated OCR text.",
+      "new_status": "pipeline_debug_only_invalid_for_formal_B1_prime_C4",
+      "github_pr": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/pull/17"
+    }
+  ]
+}

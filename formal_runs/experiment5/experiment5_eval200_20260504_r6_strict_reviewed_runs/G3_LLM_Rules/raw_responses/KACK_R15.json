@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_aeee7675-f37e-405b-8337-05b7d0b45619",
+  "object": "chat.completion",
+  "created": 1777869090,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_7Mms4WbVUhnmOvPnQzS5JoZg",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KACK_R15\",\"procedure\":{\"airport\":\"KACK\",\"approach_ident\":\"R15\",\"chart_name\":\"RNAV (GPS) RWY 15\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

@@ -1,0 +1,335 @@
+                                   ANDERSON, SOUTH CAROLINA                                                 AL-857 (FAA)
+                                                                                                                                                                                                                 22363
+                                        WAAS                 6002     Rwy Idg
+                                   CH 62901
+                                            APP CRS
+                                                    TDZE      759                                                                          RNAV (GPS) RWY 5
+                                             051°             782                                                                                       ANDERSON RGNL(AND)
+                                    W05A            Apt Elev
+
+                                   RNP APCH - GPS.
+                                    T    VDP NA when using Clemson altimeter setting. When local altimeter setting not
+                                                                                                                                             MALSR MISSED APPROACH: Climb to
+                                    A    received, use Clemson altimeter setting and increase LPV DA to 1006 feet; increase
+                                                                                                    1
+                                         all MDAs 60 feet and LNAV visibility Cats C/D 8 SM, Circling visibility Cats C/D                    A5         3000 direct OXTIC and hold.
+                                         1
+                                          4   SM. Circling Rwy 17, 35 NA at night. For inop ALS when using Clemson altimeter
+                                         setting, increase LNAV visibility Cats C/D to 3
+                                                                                       18 SM.
+
+                                                            ASOS                                           GREER APP CON                                                               CTAF
+
+                                                      120.675                                              118.8     270.275                                                    123.6 L
+
+                                                                                                                                                                              MISSED APCH FIX
+
+
+                                                                                                                                                                                      4 NM
+                                                                                                                                           1086
+                                                                                                                                                                                           °                 °
+                                                                                          M oY                                                                                            1                 1
+                                                                                       30N t   EGM                                                                                      0
+                                                                                                                                                                                         5
+                                                                                                                                                                                                          2
+                                                                                                                                                                                                           3
+                                                                                                  Y                                      930
+                                                                                          4600
+                                                                                                                                                                                                    OXTIC
+                                                                                               10N                       1030        846            930
+                                                                               1
+
+
+
+
+                                                                                                  M
+                                                                                4
+                                                                                 1
+                                                                                  °
+
+
+
+
+                                                                                             2700               °
+                                                                                                               1                                        1005
+                                                                                                              3                          RW05
+                                                                                                             2
+                                                                      (IAF)                    YEGMY
+                                                                  YEGMY
+SE-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                           SE-2, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                                1131
+                                                                                      2
+                                                                                       5 14 )
+
+
+
+
+                                                                                                                           (FAF)
+                                                                                        0
+                                                                                         0 1°
+
+
+
+
+                                                                                                                         OWUXO
+                                                                                          N
+
+
+
+
+                                                                                                              0
+                                                                                                             0
+                                                                                            o
+
+
+
+
+                                                                                                                 °                          °
+                                                                                             (7
+
+
+
+
+                                                                                                            5
+                                                                                             P
+
+
+
+
+                                                                                                           2    1                          1
+                                                                                              T
+
+
+
+
+                                                                                                                                          3             3
+                                                                                                              5                          2
+                                                                                                             0 (6)                                       0
+                                                                                                                                                          NM
+                                                                                       (IF/IAF)
+                                                                                                                                             2700
+                                                                                       OYUNA
+                                                                                                                                                             t
+                                                                                                                                                             o UM O G Y
+
+                                                                               6000
+                                                                          HOLD
+                                                                               2500             °
+                                                                                               1                                      UMOGY
+                                                                  1
+
+
+
+
+                                                                                              5        °
+                                                                                                               2
+                                                                   4
+
+
+
+
+                                                                                                      1
+                                                                                                                5 32 )
+
+
+
+
+                                                                                             0
+                                                                    1
+
+
+
+
+                                                                                                                 0
+
+
+
+
+                                                                                                     3
+                                                                     °
+
+
+
+
+                                                                                                                  0 1°
+
+
+
+
+                                                                                                    2
+                                                                                                                   N
+                                                                      M
+
+
+
+
+                                                                                                                     o
+                                                                                                                      P
+                                                                                                                      (7
+
+
+
+
+                                                                                                                                            3
+                                                                  10 N
+
+
+
+
+                                                                                                                       T
+
+
+
+
+                                                                                                                                             2
+                                                                                                                                              1
+                                                                                                                                               °
+
+
+
+
+                                                                                               4 NM
+                                                     30 N
+
+
+
+
+                                     1332                                 OYUNA
+                                                                4100                                                        (IAF)
+                                                       M
+
+
+
+
+                                                                                        3
+
+
+
+
+                                                                                                                           UMOGY                ELEV      782                               TDZE            759
+                                                                      °
+
+
+
+
+                                                                                         2
+                                                                     5
+
+
+
+
+                                                                                          1
+                                                            t
+
+
+
+                                                                    4
+                                                            o
+
+
+
+
+                                                                                           °
+
+
+
+
+                                                                                2500
+                                                                   0
+                                                             O
+
+
+
+
+                                                                 Y
+                                                                  U
+                                                                   N
+                                                                    A
+                                                                           (
+                                                                           NoP                                                                               1
+                                                                              T)                                                                              7
+
+
+                                                                         VGSI and RNAV glidepath not coincident          3000       OXTIC
+                                          4 NM
+                                                                                      (VGSI Angle 3.00/TCH 49).
+                                                                                                                                                                                                                       3
+
+
+
+
+                                    Holding Pattern
+                                                                                                                                                                                                                      2
+                                                                                                                                                                              499
+
+
+
+
+                                                                                                                                                                                                                  P
+
+
+
+
+                                                            OYUNA                     OWUXO
+                                                                                                                                                                                 6X
+                                                                                                                                                                                 149
+
+
+
+
+                                                                                        2500
+                                                                                                                                                                          H
+                                                                                                                                                                                                      9
+                                                     231°                                                  1.3 NM                                   808                                              4
+                                    6000                                                                                                                                  H                     X
+                                                                                                                                                                                                    1
+                                                                           051°                            to RW05                                                                       0
+                                                                                                                                                                                          2
+                                    2500         051°                                                                                                                                  6
+                                                                                                                                                                                        0
+
+                                                                                                                    RW05
+                                   GP 3.00°
+                                                                           2500
+                                                                                                                                                                                       0.
+
+
+
+
+                                    TCH 54
+                                                                                                                                                                                        9% U
+                                                                                                                                                    P
+
+
+
+
+                                                                             6 NM                 4.1 NM      1.3 NM
+                                                                                                                                                                                            P
+                                                                                                                                                5
+
+
+
+
+                                    CATEGORY                      A                      B                    C                  D
+                                                                                                                                                        A5                               5
+                                                                                                                                                                                        3
+                                                                                          1
+                                    LPV         DA                                     959- 2       200 (200-12 )
+                                                                                                                                                    051°
+                                                                    1                                           7
+                                    LNAV MDA                    1200- 2        441 (500-12 )                1200- 8      441 (500-78 )
+
+                                                                                                              3
+                                                             1260-1                  1320-1              1440-1 4           1500-214
+                                    C CIRCLING                                                                                                  HIRL Rwy 5-23 L
+                                                            478 (500-1)             538 (600-1)         658 (700-134 )     718 (800-214 )
+
+                                   ANDERSON, SOUTH CAROLINA
+                                                                                                                                                        ANDERSON RGNL(AND)
+                                   Amdt 2 29DEC22                                                        34°30'N-82°43'W
+                                                                                                                                           RNAV (GPS) RWY 5

@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAKH_R21",
+  "procedure": {
+    "airport": "KAKH",
+    "approach_ident": "R21",
+    "chart_name": "RNAV (GPS) RWY 21"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

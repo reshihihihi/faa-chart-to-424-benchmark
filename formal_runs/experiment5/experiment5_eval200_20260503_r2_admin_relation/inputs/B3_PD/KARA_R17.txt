@@ -1,0 +1,9 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 480 -> AT_OR_ABOVE 480 ft
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- FIX_TEXT: CLYNT -> CLYNT
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

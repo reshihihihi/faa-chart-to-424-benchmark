@@ -1,0 +1,14 @@
+{
+  "run_id": "group2_formal300_paired200_methodfailure_v1_20260503_155704",
+  "output_root": "formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704",
+  "submitted_annotation_count": 300,
+  "analysis_chart_count": 200,
+  "positive_present_strict_evidence_rows": 23340,
+  "positive_question_fallback_rows": 0,
+  "unmatched_present_rows": 0,
+  "ready_for_group2_main_claim": true,
+  "hard_blockers": [],
+  "annotation_change_audit": "formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704/inputs/annotation_change_audit.json",
+  "report": "formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704/group2/reports/group2_formal_submitted_v1_report_zh.md",
+  "audit": "formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704/group2/group2_formal_submitted_v1_audit.json"
+}

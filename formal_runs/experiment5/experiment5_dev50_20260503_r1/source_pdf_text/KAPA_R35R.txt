@@ -1,0 +1,183 @@
+                                   DENVER, COLORADO                                                                                   AL-5715 (FAA)                                                                            25219
+
+                                        WAAS                                                Rwy Ldg                   10001
+                                    CH 40339
+                                                                             APP CRS
+                                                                                            TDZE                       5885                                                  RNAV (GPS) RWY 35R
+                                                                                  350°                                                                                                              CENTENNIAL (APA)
+                                        W35A                                                Apt Elev                   5885
+                                   RNP APCH.                                                                                                                                           MISSED APPROACH: (Do not exceed
+                                                                                                                                                                           MALSR
+                                    T     Circling Rwy 35L NA at night. For uncompensated Baro-VNAV systems,                                                                           240K until BPUTN) Climb to 8200
+
+                                    A     LNAV/VNAV NA below -21°C or above 54°C. For inop ALS, increase                                                                               then climbing left turn to 9600 direct
+                                                                                                           3
+                                                                                                                                                                           A5
+                                          LNAV Cats C/D visibility to 18 SM.                                                                                                           BPUTN and hold.
+
+                                                         ATIS                                  DENVER APP CON                    CENTENNIAL TOWER                                   GND CON                       CLNC DEL
+                                                     120.3                                      132.75 269.3                               118.9                                     121.8                         128.6
+                                                                                                    172°
+
+
+
+
+                                                                                                                      7 NM
+                                                                                                                                   RW35R
+                                                                                                               352°
+
+
+
+
+                                                                                                                                   LECET
+                                                                                                                                2.3 NM to            6129
+                                                                                         BPUTN                                   RW35R                6205
+                                                                                                                                   RONNI
+                                                                                                                                3.4 NM to
+                                                                                                                                   RW35R
+SW-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                                       SW-1, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                      (FAF)
+                                                                                                                                     JIDOG
+                                                                                                                                                   350°
+                                                                                                                                                          8000
+                                                                                                                                            (
+                                                                                                                                            6.4)
+
+
+
+
+                                                                                                                                       (IF)
+                                                                                                                                      FIRPI
+                                                                                                                                      9000                                                                           5R2
+                                                                                                                                                                                                                  RW3   5N
+                                                                                                                                                                                                             SA           M
+                                                                                                                                                    9000
+                                                                                                                                                    350°
+
+
+
+
+                                                                                                                                                                                                         M
+                                                                                                                                              (
+                                                                                                                                              4)
+
+
+
+
+                                                                                                                                                                                                                   12700
+
+
+                                                                                                                                         (IAF)
+                                                                                                                                        XBEEE
+                                   ELEV      5885                                        TDZE   5885                                  9000         240K
+                                    MIRL all Rwys
+                                    REIL Rwys 17R, 28, and 35L
+                                                                                                                       8200    9600    BPUTN                                                                          FIRPI
+                                                   17L
+                                                                                                                                                                                         JIDOG
+                                                                                                                                                                     RONNI
+                                                             P
+                                                                                                                                                                    3.4 NM to
+                                                                                                                                                          LECET                                                            9000
+                                                             1.
+
+
+
+
+                                          17R                                                                                                                        RW35R               8000
+                                                                                                                                                     2.3 NM to
+                                                              0% UP
+
+
+
+
+                                                                                                                                                                                                        50°
+                                                                                                                                             RW35R                                                     3
+                                          0.
+
+
+
+
+                                                         P
+                                           9% UP
+
+
+
+
+                                                                             TWR                                                      1.4 NM to
+                                                                                           H
+                                                                                                                                       RW35R
+                                                                                                                                                                                                    8000
+                                                                    10
+
+
+
+
+                                                                                                                               RW35R
+                                                                                  P
+                                                              10001 X 100
+
+
+
+
+                                                                                      4    06
+                                                                                                                                                                            7060                                           GP 3.10°
+                                                                                         0X .
+                                                                                       80     %U                                                                 6700
+                                             7001 X 75
+
+
+
+
+                                                                                           75   P                                                                                                                          TCH 51
+                                                                                                     28
+                                                                                                P
+
+
+
+
+                                                                                                                                   1.4 NM      0.9 NM            1.1 NM         2.9 NM                 6.4 NM
+
+                                                                                                                        CATEGORY                    A                           B                  C                       D
+                                                                 DOW N
+
+
+
+
+                                                                                                                                                                            6085-12
+                                                                            0.
+
+
+
+
+                                                                                                                       LPV      DA                                                        200 (200-12 )
+                                                                             8%
+
+
+
+
+                                                             P
+
+
+                                                     L                                                                 LNAV/
+                                                   35                                                                           DA                                         6324-34       439 (500-34 )
+                                                             P
+                                                                                                                       VNAV
+                                                                                  A5
+
+                                                                        35R                                            LNAV MDA             6380-12               495 (500-12 )                   6380-1 495 (500-1)
+
+                                                                                  350°
+                                                                                                                                            6400-1                         6540-1             6740-212              6760-234
+                                                                                                                        CIRCLING
+                                                                                                                                        515 (600-1)                       655 (700-1)        855 (900-212 )        875 (900-234 )
+
+                                   DENVER, COLORADO                                                                                                                                                 CENTENNIAL (APA)
+                                   Amdt 1B 23FEB23
+                                                                                                                                   39°34'N-104°51'W
+                                                                                                                                                                             RNAV (GPS) RWY 35R

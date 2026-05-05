@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 43.4; climb to 2300 to KUREC; hold at KUREC, inbound course 223.6, right turns, 4 NM, maintain 2300.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2300 -> AT_OR_ABOVE 2300 ft
+- FIX_TEXT: KUREC -> KUREC
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

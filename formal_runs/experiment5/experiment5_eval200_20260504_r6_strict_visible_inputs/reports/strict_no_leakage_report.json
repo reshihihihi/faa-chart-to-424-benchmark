@@ -1,0 +1,18 @@
+{
+  "forbidden_key_hit_count": 0,
+  "forbidden_key_hits": [],
+  "forbidden_value_hit_count": 0,
+  "forbidden_value_hits": [],
+  "interpreted_arrow_suffix_hit_count": 0,
+  "interpreted_arrow_suffix_hits": [],
+  "scanned_files": [
+    "formal_runs\\experiment5\\experiment5_eval200_20260504_r6_strict_visible_inputs\\inputs\\gold_ma_text_eval200_strict.jsonl",
+    "formal_runs\\experiment5\\experiment5_eval200_20260504_r6_strict_visible_inputs\\inputs\\roi_text_eval200_strict.jsonl",
+    "formal_runs\\experiment5\\experiment5_eval200_20260504_r6_strict_visible_inputs\\inputs\\pd_visible_candidates_eval200_strict.jsonl",
+    "formal_runs\\experiment5\\experiment5_eval200_20260504_r6_strict_visible_inputs\\inputs\\tpd_combined_visible_inputs_eval200_strict.jsonl",
+    "formal_runs\\experiment5\\experiment5_eval200_20260504_r6_strict_visible_inputs\\inputs\\g_visible_observables_eval200_strict.jsonl",
+    "formal_runs\\experiment5\\experiment5_eval200_20260504_r6_strict_visible_inputs\\manifests\\strict_method_input_manifest_eval200.jsonl"
+  ],
+  "scanned_rows": 2400,
+  "status": "PASS"
+}

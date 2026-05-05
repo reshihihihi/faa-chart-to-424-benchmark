@@ -1,0 +1,15 @@
+{
+  "chart_id": "KBTR_R04L",
+  "procedure": {
+    "airport": "KBTR",
+    "approach_ident": "R04L",
+    "chart_name": "RNAV (GPS) RWY 04L"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

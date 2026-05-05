@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 49.1; climb to 2800 to FENLA; hold at FENLA, inbound course 229.3, right turns, 4 NM, maintain 2800.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2800 -> AT_OR_ABOVE 2800 ft
+- FIX_TEXT: FENLA -> FENLA
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

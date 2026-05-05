@@ -1,0 +1,11 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3600 -> AT_OR_ABOVE 3600 ft
+- FIX_TEXT: BAMPE -> BAMPE
+- FIX_TEXT: PATEE -> PATEE
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: fix symbol

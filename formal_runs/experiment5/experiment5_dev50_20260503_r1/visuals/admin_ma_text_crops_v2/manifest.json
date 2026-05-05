@@ -1,0 +1,952 @@
+[
+  {
+    "chart_id": "KAVL_I17",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAVL_I17_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAVL_I17.png",
+    "admin_region_id": "KAVL_I17_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.042,
+      "width": 0.36,
+      "x_center": 0.7729,
+      "y_center": 0.1317
+    },
+    "crop_pixels_with_display_padding": [
+      695,
+      194,
+      1134,
+      283
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KCFO_I26",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KCFO_I26_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KCFO_I26.png",
+    "admin_region_id": "KCFO_I26_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0569,
+      "width": 0.4157,
+      "x_center": 0.745,
+      "y_center": 0.1391
+    },
+    "crop_pixels_with_display_padding": [
+      629,
+      194,
+      1134,
+      310
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAVP_L04",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAVP_L04_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAVP_L04.png",
+    "admin_region_id": "KAVP_L04_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0622,
+      "width": 0.2819,
+      "x_center": 0.812,
+      "y_center": 0.1418
+    },
+    "crop_pixels_with_display_padding": [
+      788,
+      194,
+      1134,
+      319
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KBYL_L20",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KBYL_L20_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KBYL_L20.png",
+    "admin_region_id": "KBYL_L20_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0553,
+      "width": 0.2342,
+      "x_center": 0.8358,
+      "y_center": 0.1383
+    },
+    "crop_pixels_with_display_padding": [
+      844,
+      194,
+      1134,
+      307
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KCFO_L17",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KCFO_L17_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KCFO_L17.png",
+    "admin_region_id": "KCFO_L17_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.042,
+      "width": 0.3377,
+      "x_center": 0.7841,
+      "y_center": 0.1317
+    },
+    "crop_pixels_with_display_padding": [
+      722,
+      194,
+      1134,
+      283
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KCOE_L06",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KCOE_L06_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KCOE_L06.png",
+    "admin_region_id": "KCOE_L06_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0658,
+      "width": 0.334,
+      "x_center": 0.7859,
+      "y_center": 0.1436
+    },
+    "crop_pixels_with_display_padding": [
+      726,
+      194,
+      1134,
+      326
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KBWC_R26",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KBWC_R26_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KBWC_R26.png",
+    "admin_region_id": "KBWC_R26_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0456,
+      "width": 0.3135,
+      "x_center": 0.7962,
+      "y_center": 0.1335
+    },
+    "crop_pixels_with_display_padding": [
+      751,
+      194,
+      1134,
+      289
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KCOE_R02",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KCOE_R02_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KCOE_R02.png",
+    "admin_region_id": "KCOE_R02_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0553,
+      "width": 0.4058,
+      "x_center": 0.75,
+      "y_center": 0.1383
+    },
+    "crop_pixels_with_display_padding": [
+      641,
+      194,
+      1134,
+      307
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KACT_R32",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KACT_R32_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KACT_R32.png",
+    "admin_region_id": "KACT_R32_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0771,
+      "width": 0.3135,
+      "x_center": 0.7962,
+      "y_center": 0.1492
+    },
+    "crop_pixels_with_display_padding": [
+      751,
+      194,
+      1134,
+      346
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KANY_R18",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KANY_R18_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KANY_R18.png",
+    "admin_region_id": "KANY_R18_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0687,
+      "width": 0.3414,
+      "x_center": 0.7822,
+      "y_center": 0.145
+    },
+    "crop_pixels_with_display_padding": [
+      718,
+      194,
+      1134,
+      331
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KATW_R21",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KATW_R21_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KATW_R21.png",
+    "admin_region_id": "KATW_R21_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0569,
+      "width": 0.3854,
+      "x_center": 0.7602,
+      "y_center": 0.1391
+    },
+    "crop_pixels_with_display_padding": [
+      665,
+      194,
+      1134,
+      310
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAVP_R22",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAVP_R22_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAVP_R22.png",
+    "admin_region_id": "KAVP_R22_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0505,
+      "width": 0.2534,
+      "x_center": 0.8262,
+      "y_center": 0.1359
+    },
+    "crop_pixels_with_display_padding": [
+      822,
+      194,
+      1134,
+      298
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAXN_R22",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAXN_R22_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAXN_R22.png",
+    "admin_region_id": "KAXN_R22_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0844,
+      "width": 0.2714,
+      "x_center": 0.8172,
+      "y_center": 0.1529
+    },
+    "crop_pixels_with_display_padding": [
+      800,
+      194,
+      1134,
+      360
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KBKW_R01",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KBKW_R01_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KBKW_R01.png",
+    "admin_region_id": "KBKW_R01_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0521,
+      "width": 0.3327,
+      "x_center": 0.7866,
+      "y_center": 0.1367
+    },
+    "crop_pixels_with_display_padding": [
+      728,
+      194,
+      1134,
+      301
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KBYI_R20",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KBYI_R20_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KBYI_R20.png",
+    "admin_region_id": "KBYI_R20_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0989,
+      "width": 0.2503,
+      "x_center": 0.8278,
+      "y_center": 0.1601
+    },
+    "crop_pixels_with_display_padding": [
+      825,
+      194,
+      1134,
+      386
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KCIC_R13L",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KCIC_R13L_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KCIC_R13L.png",
+    "admin_region_id": "KCIC_R13L_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0727,
+      "width": 0.2993,
+      "x_center": 0.8194,
+      "y_center": 0.147
+    },
+    "crop_pixels_with_display_padding": [
+      786,
+      194,
+      1153,
+      338
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KCLL_R11",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KCLL_R11_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KCLL_R11.png",
+    "admin_region_id": "KCLL_R11_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0602,
+      "width": 0.2931,
+      "x_center": 0.8064,
+      "y_center": 0.1408
+    },
+    "crop_pixels_with_display_padding": [
+      775,
+      194,
+      1134,
+      316
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KACT_R19",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KACT_R19_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KACT_R19.png",
+    "admin_region_id": "KACT_R19_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0711,
+      "width": 0.3,
+      "x_center": 0.8023,
+      "y_center": 0.1463
+    },
+    "crop_pixels_with_display_padding": [
+      766,
+      195,
+      1133,
+      336
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KACV_R01",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KACV_R01_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KACV_R01.png",
+    "admin_region_id": "KACV_R01_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0657,
+      "width": 0.2755,
+      "x_center": 0.8145,
+      "y_center": 0.1435
+    },
+    "crop_pixels_with_display_padding": [
+      795,
+      194,
+      1133,
+      326
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAEX_R14",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAEX_R14_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAEX_R14.png",
+    "admin_region_id": "KAEX_R14_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0724,
+      "width": 0.329,
+      "x_center": 0.7877,
+      "y_center": 0.1469
+    },
+    "crop_pixels_with_display_padding": [
+      731,
+      194,
+      1133,
+      338
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAEX_R18",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAEX_R18_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAEX_R18.png",
+    "admin_region_id": "KAEX_R18_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0446,
+      "width": 0.3129,
+      "x_center": 0.7958,
+      "y_center": 0.133
+    },
+    "crop_pixels_with_display_padding": [
+      750,
+      194,
+      1133,
+      287
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAGS_R26",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAGS_R26_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAGS_R26.png",
+    "admin_region_id": "KAGS_R26_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.056,
+      "width": 0.3123,
+      "x_center": 0.7961,
+      "y_center": 0.1387
+    },
+    "crop_pixels_with_display_padding": [
+      751,
+      194,
+      1133,
+      308
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAPN_R01",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAPN_R01_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAPN_R01.png",
+    "admin_region_id": "KAPN_R01_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0766,
+      "width": 0.3123,
+      "x_center": 0.7961,
+      "y_center": 0.165
+    },
+    "crop_pixels_with_display_padding": [
+      751,
+      223,
+      1133,
+      374
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KART_R10",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KART_R10_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KART_R10.png",
+    "admin_region_id": "KART_R10_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0728,
+      "width": 0.2516,
+      "x_center": 0.8265,
+      "y_center": 0.1471
+    },
+    "crop_pixels_with_display_padding": [
+      823,
+      194,
+      1133,
+      339
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KACT_R01",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KACT_R01_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KACT_R01.png",
+    "admin_region_id": "KACT_R01_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0627,
+      "width": 0.3123,
+      "x_center": 0.7961,
+      "y_center": 0.1555
+    },
+    "crop_pixels_with_display_padding": [
+      751,
+      219,
+      1133,
+      345
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KACV_R14",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KACV_R14_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KACV_R14.png",
+    "admin_region_id": "KACV_R14_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0598,
+      "width": 0.2458,
+      "x_center": 0.8294,
+      "y_center": 0.1406
+    },
+    "crop_pixels_with_display_padding": [
+      830,
+      194,
+      1133,
+      315
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KACV_R32",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KACV_R32_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KACV_R32.png",
+    "admin_region_id": "KACV_R32_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0467,
+      "width": 0.3916,
+      "x_center": 0.7565,
+      "y_center": 0.134
+    },
+    "crop_pixels_with_display_padding": [
+      657,
+      194,
+      1133,
+      291
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAEX_R32",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAEX_R32_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAEX_R32.png",
+    "admin_region_id": "KAEX_R32_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0505,
+      "width": 0.2781,
+      "x_center": 0.8132,
+      "y_center": 0.1359
+    },
+    "crop_pixels_with_display_padding": [
+      792,
+      194,
+      1133,
+      298
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAGS_R08-Y",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAGS_R08-Y_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAGS_R08-Y.png",
+    "admin_region_id": "KAGS_R08-Y_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.056,
+      "width": 0.3123,
+      "x_center": 0.7961,
+      "y_center": 0.1387
+    },
+    "crop_pixels_with_display_padding": [
+      751,
+      194,
+      1133,
+      308
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAGS_R08-Z",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAGS_R08-Z_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAGS_R08-Z.png",
+    "admin_region_id": "KAGS_R08-Z_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0795,
+      "width": 0.2858,
+      "x_center": 0.8094,
+      "y_center": 0.1505
+    },
+    "crop_pixels_with_display_padding": [
+      783,
+      195,
+      1133,
+      351
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAJG_R04",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAJG_R04_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAJG_R04.png",
+    "admin_region_id": "KAJG_R04_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0657,
+      "width": 0.2316,
+      "x_center": 0.8365,
+      "y_center": 0.1435
+    },
+    "crop_pixels_with_display_padding": [
+      847,
+      194,
+      1133,
+      326
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAJG_R22",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAJG_R22_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAJG_R22.png",
+    "admin_region_id": "KAJG_R22_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0581,
+      "width": 0.3039,
+      "x_center": 0.8003,
+      "y_center": 0.1397
+    },
+    "crop_pixels_with_display_padding": [
+      761,
+      194,
+      1133,
+      312
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAJG_R31",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAJG_R31_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAJG_R31.png",
+    "admin_region_id": "KAJG_R31_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0556,
+      "width": 0.3039,
+      "x_center": 0.8003,
+      "y_center": 0.1385
+    },
+    "crop_pixels_with_display_padding": [
+      761,
+      194,
+      1133,
+      307
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAND_R05",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAND_R05_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAND_R05.png",
+    "admin_region_id": "KAND_R05_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0791,
+      "width": 0.2974,
+      "x_center": 0.8035,
+      "y_center": 0.1503
+    },
+    "crop_pixels_with_display_padding": [
+      769,
+      195,
+      1133,
+      350
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAND_R17",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAND_R17_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAND_R17.png",
+    "admin_region_id": "KAND_R17_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0455,
+      "width": 0.3123,
+      "x_center": 0.7961,
+      "y_center": 0.1334
+    },
+    "crop_pixels_with_display_padding": [
+      751,
+      194,
+      1133,
+      289
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAND_R23",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAND_R23_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAND_R23.png",
+    "admin_region_id": "KAND_R23_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.093,
+      "width": 0.2484,
+      "x_center": 0.8281,
+      "y_center": 0.1572
+    },
+    "crop_pixels_with_display_padding": [
+      827,
+      194,
+      1133,
+      375
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KANE_R09",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KANE_R09_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KANE_R09.png",
+    "admin_region_id": "KANE_R09_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0825,
+      "width": 0.2226,
+      "x_center": 0.841,
+      "y_center": 0.1519
+    },
+    "crop_pixels_with_display_padding": [
+      857,
+      194,
+      1133,
+      356
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KANE_R18",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KANE_R18_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KANE_R18.png",
+    "admin_region_id": "KANE_R18_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0581,
+      "width": 0.3548,
+      "x_center": 0.7748,
+      "y_center": 0.1397
+    },
+    "crop_pixels_with_display_padding": [
+      701,
+      194,
+      1133,
+      312
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KANE_R27",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KANE_R27_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KANE_R27.png",
+    "admin_region_id": "KANE_R27_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0947,
+      "width": 0.2806,
+      "x_center": 0.8119,
+      "y_center": 0.158
+    },
+    "crop_pixels_with_display_padding": [
+      789,
+      194,
+      1133,
+      378
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KANY_R36",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KANY_R36_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KANY_R36.png",
+    "admin_region_id": "KANY_R36_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0657,
+      "width": 0.2265,
+      "x_center": 0.839,
+      "y_center": 0.1435
+    },
+    "crop_pixels_with_display_padding": [
+      853,
+      194,
+      1133,
+      326
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAPA_R17LY",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAPA_R17LY_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAPA_R17LY.png",
+    "admin_region_id": "KAPA_R17LY_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0564,
+      "width": 0.3742,
+      "x_center": 0.7652,
+      "y_center": 0.1389
+    },
+    "crop_pixels_with_display_padding": [
+      678,
+      194,
+      1133,
+      309
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAPA_R28",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAPA_R28_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAPA_R28.png",
+    "admin_region_id": "KAPA_R28_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0627,
+      "width": 0.3026,
+      "x_center": 0.801,
+      "y_center": 0.142
+    },
+    "crop_pixels_with_display_padding": [
+      763,
+      194,
+      1133,
+      320
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAPA_R35R",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAPA_R35R_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAPA_R35R.png",
+    "admin_region_id": "KAPA_R35R_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0589,
+      "width": 0.2961,
+      "x_center": 0.8042,
+      "y_center": 0.1402
+    },
+    "crop_pixels_with_display_padding": [
+      770,
+      195,
+      1133,
+      313
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAPN_R07",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAPN_R07_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAPN_R07.png",
+    "admin_region_id": "KAPN_R07_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0854,
+      "width": 0.2303,
+      "x_center": 0.8371,
+      "y_center": 0.1534
+    },
+    "crop_pixels_with_display_padding": [
+      848,
+      194,
+      1133,
+      361
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KAPN_R19",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KAPN_R19_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KAPN_R19.png",
+    "admin_region_id": "KAPN_R19_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0455,
+      "width": 0.3103,
+      "x_center": 0.7971,
+      "y_center": 0.1334
+    },
+    "crop_pixels_with_display_padding": [
+      754,
+      194,
+      1133,
+      289
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KARR_R09",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KARR_R09_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KARR_R09.png",
+    "admin_region_id": "KARR_R09_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0551,
+      "width": 0.2458,
+      "x_center": 0.8294,
+      "y_center": 0.1383
+    },
+    "crop_pixels_with_display_padding": [
+      830,
+      195,
+      1133,
+      307
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KARR_R15",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KARR_R15_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KARR_R15.png",
+    "admin_region_id": "KARR_R15_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0564,
+      "width": 0.2535,
+      "x_center": 0.8255,
+      "y_center": 0.1389
+    },
+    "crop_pixels_with_display_padding": [
+      821,
+      194,
+      1133,
+      309
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KARR_R27",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KARR_R27_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KARR_R27.png",
+    "admin_region_id": "KARR_R27_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0509,
+      "width": 0.229,
+      "x_center": 0.8377,
+      "y_center": 0.1362
+    },
+    "crop_pixels_with_display_padding": [
+      850,
+      195,
+      1133,
+      299
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KART_R07",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KART_R07_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KART_R07.png",
+    "admin_region_id": "KART_R07_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0682,
+      "width": 0.3135,
+      "x_center": 0.7955,
+      "y_center": 0.1448
+    },
+    "crop_pixels_with_display_padding": [
+      750,
+      194,
+      1133,
+      330
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  },
+  {
+    "chart_id": "KART_R28",
+    "crop_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_ma_text_crops_v2/KART_R28_admin_ma_text_crop_v2.png",
+    "page_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/pdf_pages/KART_R28.png",
+    "admin_region_id": "KART_R28_01_missed_approach_text",
+    "bbox_normalized": {
+      "height": 0.0648,
+      "width": 0.2265,
+      "x_center": 0.839,
+      "y_center": 0.1431
+    },
+    "crop_pixels_with_display_padding": [
+      853,
+      194,
+      1133,
+      324
+    ],
+    "source": "admin_regions_dev50.MISSED_APPROACH_TEXT bbox on current pdf_pages"
+  }
+]

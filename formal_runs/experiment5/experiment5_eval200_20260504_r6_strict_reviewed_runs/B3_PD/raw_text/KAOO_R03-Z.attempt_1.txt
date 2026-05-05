@@ -1,0 +1,1 @@
+{"chart_id":"KAOO_R03-Z","procedure":{"airport":"KAOO","approach_ident":"R03-Z","chart_name":"RNAV (GPS) Z RWY 03"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

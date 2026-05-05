@@ -1,0 +1,1 @@
+{"chart_id":"KAMA_R13-Y","procedure":{"airport":"KAMA","approach_ident":"R13-Y","chart_name":"RNAV (GPS) Y RWY 13"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

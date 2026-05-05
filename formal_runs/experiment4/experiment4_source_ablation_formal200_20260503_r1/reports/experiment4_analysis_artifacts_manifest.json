@@ -1,0 +1,11 @@
+{
+  "created_at_utc": "2026-05-03T01:40:16.448898+00:00",
+  "analysis_markdown": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_result_analysis_zh.md",
+  "charts": {
+    "d1_v2": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_d1_v2_accuracy_by_variant.png",
+    "method_v2": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_method_v2_accuracy_by_variant.png",
+    "coverage": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_dsft_raw_vs_d1_coverage_failure.png"
+  },
+  "submission_package_manifest": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_submission_package_manifest_zh.md",
+  "submission_file_list": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\reports\\experiment4_submission_file_list.json"
+}

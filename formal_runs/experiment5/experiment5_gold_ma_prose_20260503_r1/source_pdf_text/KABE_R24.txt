@@ -1,0 +1,174 @@
+                                   ALLENTOWN, PENNSYLVANIA                                                  AL-15 (FAA)                                                                   25219
+
+                                        WAAS                             Rwy Ldg 7089
+                                   CH 40332
+                                                      APP CRS
+                                                                         TDZE            387                                                  RNAV (GPS) RWY 24
+                                                        243°
+                                        W24A                             Apt Elev        394                                                               LEHIGH VALLEY INTL(ABE)
+                                   RNP APCH - GPS.
+
+                                    T                                                                                                MISSED APPROACH: Climb to 3000 direct SURGE
+                                                   For uncompensated Baro-VNAV systems, LNAV/VNAV
+                                                                                                                                     and on track 266° to ETX VOR/DME and hold.
+                                    A              NA below -8°C or above 54°C.
+
+
+                                           ATIS                    ALLENTOWN APP CON                    ALLENTOWN TOWER                           GND CON                    CLNC DEL
+                                        126.975           119.65              124.45      351.8           120.5 257.95                      121.9 257.95                124.05 257.95
+
+
+
+                                                                                                   4000
+                                                                                                      °                 (IAF)
+                                                                                     BEERS         091
+                                                                                                       )               RIRAE                  3700
+                                                                                                    7
+                                                                                                    (.6
+                                                                                                                                           173° (4.1)
+
+
+                                                                                                                            CICAT
+
+
+
+
+                                                                                                                                     300
+                                                                                                                                      173
+                                                                                                                                       (
+                                                                                                                                       4.
+                                                                                  Procedure NA for arrivals at DUMMR on
+
+
+
+
+                                                                                                                                         0
+                                                                                                                                         1)
+                                                                                                                                          °
+                                                         00                       V162 westbound, V93 southwest bound,
+                                                                                                                                                   (IF)
+                                                       40 2°                      and V276 northwest bound.
+                                                         06 . 6)                                                                                  FONUP
+                                                          (38
+
+                                                                                                                                    00
+                                                                                                                                  24 3°                     30
+                                                                                                                                    245)
+                                                                                                                                                              0
+                                                                                                                                                           31 0
+NE-4, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                  NE-4, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                       (                     4
+                                                                                                                                                          8. °
+                                                                                                                                                          (
+                                                                                                                                                                              (IAF)
+                                                                                                                                                            2)
+                                    DUMMR                                                                                                                                     PIMUE
+                                                                                                                             (FAF)
+                                                                                                                                                                                 40
+                                                                                                                            MUSYK                                                  0
+                                                                                                                                                                                30 0
+                                                                                               540                                                                                7
+                                                                                                                                                                               17 °
+                                                                                                                                                                               (
+                                                                                                                                                                                 .4)
+
+                                                                                                     RW24
+                                                                                                                                                                                      SOLBERG
+                                                                                                                                                                                        SBJ
+                                   4 NM                                       SURGE
+
+                                           °                                °
+                                          9       °                      266                                                                                   Procedure NA for arrivals
+                                         5       9                                                                             42
+                                        0       3                          4
+                                                                           .)                                               RW2  5N                            on SBJ VOR/DME airway
+                                               2                         (9
+                                                                                                                       SA          M
+                                                                                                                                                               radials 217 CW 028.
+                                                                                                                   M
+
+                                                                                                                             3600
+                                     EAST TEXAS
+                                        ETX
+
+                                    ELEV       394        D          TDZE         387
+
+
+
+
+                                                                                  243°
+                                                                                           3000    SURGE                            VGSI and RNAV glidepath not coincident
+                                                                                                                            ETX
+                                                                                                              tr                    (VGSI Angle 3.00/TCH 71).
+                                                                                                             266°                                                           FONUP
+                                                                                    24
+
+
+
+
+                                                                                                                                            MUSYK
+                                                                              P
+
+
+
+
+                                                   TWR                                                                                                                         3000
+                                         13
+
+
+
+
+                                                                                                                                              2400               °
+                                                                     0
+                                                                                                            1.3 NM
+                                                                                                                                                              243
+                                                                   15                                       to RW24
+                                                               X
+                                          58              99
+                                     A5     00          75
+                                              X                                                      RW24
+                                               15
+                                                 0                                                                                                         2400                 GP 3.00°
+                                                                                                                                                                                 TCH 55
+                                          P
+
+
+
+
+                                                                                                          1.3 NM                  4.9 NM                     5 NM
+                                     6
+
+
+
+
+                                                                                           CATEGORY                    A                      B                     C                 D
+                                                                              31
+                                                                          P
+
+
+
+
+                                              A5
+                                                                                             LPV   DA                                      587/40 200 (200-34 )
+                                                                                             LNAV/                                             1
+                                                                                                     DA                                    783-14         396 (400-114 )
+                                                                                             VNAV
+
+                                                                                                                                                                        3
+                                                                                             LNAV MDA              860/55 473 (500-1)                          860-1 8       473 (500-138 )
+
+                                    REIL Rwys 24 and 31                                                                                                      1180-214            1600-3
+                                    HIRL Rwys 6-24 and 13-31                               CIRCLING                    900-1 506 (600-1)
+                                                                                                                                                           786 (800-214 )     1206 (1300-3)
+
+                                   ALLENTOWN, PENNSYLVANIA
+                                                                                                                                                           LEHIGH VALLEY INTL(ABE)
+                                   Amdt 1C 16MAY24
+                                                                                                         40°39'N-75°26'W
+                                                                                                                                              RNAV (GPS) RWY 24
+

@@ -1,0 +1,78 @@
+{
+  "method": "G1_Rules",
+  "input_type": "admin_field_review_oracle_relation",
+  "allowed_support_modes": [
+    "direct_visible",
+    "rule_default_completion"
+  ],
+  "selected_field_review_count": 9,
+  "applied_field_count": 9,
+  "uses_canonical_answer": true,
+  "uses_canonical_leg_index": true,
+  "purpose": "Oracle diagnostic replay of audited direct-visible plus rule-default-completion fields",
+  "applied_fields": [
+    {
+      "field_key": "leg1.Q_terminator",
+      "support_mode": "rule_default_completion",
+      "evidence_region_ids": [
+        "KAEG_R22_01_missed_approach_text"
+      ]
+    },
+    {
+      "field_key": "leg1.Q4_course_or_radial",
+      "support_mode": "rule_default_completion",
+      "evidence_region_ids": [
+        "KAEG_R22_02_plan_view"
+      ]
+    },
+    {
+      "field_key": "leg2.Q_terminator",
+      "support_mode": "rule_default_completion",
+      "evidence_region_ids": [
+        "KAEG_R22_01_missed_approach_text"
+      ]
+    },
+    {
+      "field_key": "leg2.Q1_fix_ident",
+      "support_mode": "direct_visible",
+      "evidence_region_ids": [
+        "KAEG_R22_iconalign_001_fix_text"
+      ]
+    },
+    {
+      "field_key": "leg2.Q2_altitude_constraint",
+      "support_mode": "direct_visible",
+      "evidence_region_ids": [
+        "KAEG_R22_iconalign_002_altitude_text"
+      ]
+    },
+    {
+      "field_key": "leg3.Q_terminator",
+      "support_mode": "rule_default_completion",
+      "evidence_region_ids": [
+        "KAEG_R22_01_missed_approach_text"
+      ]
+    },
+    {
+      "field_key": "leg3.Q1_fix_ident",
+      "support_mode": "rule_default_completion",
+      "evidence_region_ids": [
+        "KAEG_R22_01_missed_approach_text"
+      ]
+    },
+    {
+      "field_key": "leg3.Q2_altitude_constraint",
+      "support_mode": "rule_default_completion",
+      "evidence_region_ids": [
+        "KAEG_R22_01_missed_approach_text"
+      ]
+    },
+    {
+      "field_key": "leg3.Q5_hold_params",
+      "support_mode": "direct_visible",
+      "evidence_region_ids": [
+        "KAEG_R22_02_plan_view"
+      ]
+    }
+  ]
+}

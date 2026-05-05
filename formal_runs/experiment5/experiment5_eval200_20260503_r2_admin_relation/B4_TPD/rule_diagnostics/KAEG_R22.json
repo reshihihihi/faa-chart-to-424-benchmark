@@ -1,0 +1,55 @@
+{
+  "rule_registry": "benchmark_exports/derived/v2/experiment5_diagnostic/rule_registry.yaml",
+  "rule_registry_sha256": "26d9779675a3040d4955f2d134ac9a419a1d70b75b6300ab22666bf2eb82fd18",
+  "runner": "experiment5_b4_region_aware_candidate_rules_v1",
+  "uses_field_candidates": true,
+  "uses_target_or_score": false,
+  "primary_rule_ids": [
+    "R_B4_PRIMARY_MA_TEXT_INSTRUCTION",
+    "R_B4_CLIMB_ALTITUDE_TO_CA",
+    "R_B4_DIRECT_TO_DF",
+    "R_B4_HOLD_TO_HM",
+    "R_B4_COURSE_OR_RADIAL"
+  ],
+  "candidate_counts_by_region": {
+    "MISSED_APPROACH_TEXT": 6,
+    "PLAN_VIEW": 2,
+    "MISSED_APPROACH_DETAIL_AREA": 5
+  },
+  "primary_instruction_candidate_count": 1,
+  "primary_instruction_candidates": [
+    {
+      "value": "on heading 215.2; climb to 8800 to YECUG; hold at YECUG, inbound course 35.1, right turns, 7 NM, maintain 8800.",
+      "field_type": "missed_approach_instruction",
+      "source": "ocr_text",
+      "source_region": "MISSED_APPROACH_TEXT",
+      "source_section": "missed_approach_text",
+      "source_snippet": "MISSED APPROACH: on heading 215.2; climb to 8800 to YECUG; hold at YECUG, inbound course 35.1, right turns, 7 NM, maintain 8800.",
+      "source_start_char": null,
+      "source_end_char": null,
+      "region_local_start_char": null,
+      "region_local_end_char": null,
+      "global_start_char": null,
+      "global_end_char": null,
+      "rule_id": "admin_relation_gold_ma_instruction_textualized_v1",
+      "confidence": 0.98,
+      "notes": "admin_relation_textualized_no_forbidden_keys_in_method_payload"
+    }
+  ],
+  "rule_input_text": "MISSED APPROACH: on heading 215.2; climb to 8800 to YECUG; hold at YECUG, inbound course 35.1, right turns, 7 NM, maintain 8800.",
+  "rule_evidence": [
+    {
+      "leg_index": 1,
+      "rule_id": "R_B4_CLIMB_ALTITUDE_TO_CA",
+      "altitude": 8800,
+      "turn": null
+    },
+    {
+      "leg_index": 2,
+      "rule_id": "R_B4_HOLD_TO_HM",
+      "fix": "YECUG"
+    }
+  ],
+  "abstain_policy": "unknown_or_not_applicable_when_allowed_evidence_is_insufficient",
+  "support_region_policy": "P/D candidates may support only when tied to MA_TEXT; this v1 runner keeps MA_TEXT as primary."
+}

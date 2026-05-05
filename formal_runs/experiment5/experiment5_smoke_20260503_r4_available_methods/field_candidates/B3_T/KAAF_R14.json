@@ -1,0 +1,212 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KAAF_R14",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "T",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [
+      {
+        "value": "ONBOE",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "PROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 92,
+        "source_end_char": 97,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 69,
+        "region_local_end_char": 74,
+        "global_start_char": 92,
+        "global_end_char": 97
+      }
+    ],
+    "altitude_candidates": [
+      {
+        "value": 500,
+        "field_type": "altitude_ft",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, cont",
+        "source_start_char": 49,
+        "source_end_char": 52,
+        "rule_id": "altitude_ft_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 26,
+        "region_local_end_char": 29,
+        "global_start_char": 49,
+        "global_end_char": 52
+      },
+      {
+        "value": 3000,
+        "field_type": "altitude_ft",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 80,
+        "source_end_char": 84,
+        "rule_id": "altitude_ft_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 57,
+        "region_local_end_char": 61,
+        "global_start_char": 80,
+        "global_end_char": 84
+      }
+    ],
+    "turn_candidates": [
+      {
+        "value": "LEFT",
+        "field_type": "turn_direction",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold",
+        "source_start_char": 67,
+        "source_end_char": 71,
+        "rule_id": "turn_direction_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 44,
+        "region_local_end_char": 48,
+        "global_start_char": 67,
+        "global_end_char": 71
+      }
+    ],
+    "course_candidates": [],
+    "hold_candidates": [
+      {
+        "value": "MISSED APPROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "field_type": "hold_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 102,
+        "source_end_char": 106,
+        "rule_id": "hold_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 79,
+        "region_local_end_char": 83,
+        "global_start_char": 102,
+        "global_end_char": 106
+      },
+      {
+        "value": "to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "field_type": "hold_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 126,
+        "source_end_char": 130,
+        "rule_id": "hold_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 103,
+        "region_local_end_char": 107,
+        "global_start_char": 126,
+        "global_end_char": 130
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "value": "Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "field_type": "missed_approach_instruction",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 40,
+        "source_end_char": 139,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "confidence": 0.95,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 17,
+        "region_local_end_char": 116,
+        "global_start_char": 40,
+        "global_end_char": 139
+      }
+    ],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [
+      {
+        "value": "MISSED APPROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "field_type": "direct_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 85,
+        "source_end_char": 91,
+        "rule_id": "direct_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 62,
+        "region_local_end_char": 68,
+        "global_start_char": 85,
+        "global_end_char": 91
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "value": "MISSED APPROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in",
+        "field_type": "climb_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in",
+        "source_start_char": 40,
+        "source_end_char": 45,
+        "rule_id": "climb_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 17,
+        "region_local_end_char": 22,
+        "global_start_char": 40,
+        "global_end_char": 45
+      },
+      {
+        "value": "H: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "field_type": "climb_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "H: Climb to 500 then climbing left turn to 3000 direct ONBOE and hold, continue climb-in-hold to 3000.",
+        "source_start_char": 117,
+        "source_end_char": 122,
+        "rule_id": "climb_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 94,
+        "region_local_end_char": 99,
+        "global_start_char": 117,
+        "global_end_char": 122
+      }
+    ]
+  }
+}

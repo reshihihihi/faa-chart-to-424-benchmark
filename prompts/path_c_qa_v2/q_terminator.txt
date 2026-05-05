@@ -3,25 +3,25 @@ TASK: For missed-approach leg <LEG_INDEX>, identify its ARINC 424 path terminato
 ARINC 424 defines 24 path-terminator codes. The most common in FAA missed-approach
 procedures and their chart signatures:
 
-  CA  Course to Altitude         — climb on a magnetic course until reaching altitude
-  VA  Heading to Altitude        — climb on a magnetic heading until reaching altitude
-  FA  Fix to Altitude            — from a fix, fly a course and climb to altitude
-  DF  Direct to Fix              — fly directly to a named fix; path unspecified
-  CF  Course to Fix              — fly a specified course to a fix
-  TF  Track to Fix               — fly a straight track between two waypoints
-  HM  Hold to Manual termination — standard racetrack, pilot ends hold manually
-  HF  Hold to Fix                — one circuit of the racetrack then proceed
-  HA  Hold to Altitude           — hold until reaching a specified altitude
-  VI  Heading to Intercept       — fly heading until intercepting the next leg
-  RF  Radius to Fix              — constant-radius arc with specified center and radius
+  CA  Course to Altitude         - climb on a magnetic course until reaching altitude
+  VA  Heading to Altitude        - climb on a magnetic heading until reaching altitude
+  FA  Fix to Altitude            - from a fix, fly a course and climb to altitude
+  DF  Direct to Fix              - fly directly to a named fix; path unspecified
+  CF  Course to Fix              - fly a specified course to a fix
+  TF  Track to Fix               - fly a straight track between two waypoints
+  HM  Hold to Manual termination - standard racetrack, pilot ends hold manually
+  HF  Hold to Fix                - one circuit of the racetrack then proceed
+  HA  Hold to Altitude           - hold until reaching a specified altitude
+  VI  Heading to Intercept       - fly heading until intercepting the next leg
+  RF  Radius to Fix              - constant-radius arc with specified center and radius
 
 Chart cues (non-exhaustive):
-- "Climb to N ft" with no fix mentioned → CA or VA
-- "From <fix> climb / fly to N" → FA
-- "Direct <fix>" / "climbing turn direct <fix>" → DF
-- "On <navaid> R-NNN outbound/inbound to <fix>" → CF (or FA if terminator is altitude)
-- "Hold at <fix>" with racetrack symbol → HM (standard), HA (until altitude), HF (one circuit)
-- Arc symbol with specified radius → RF
+- "Climb to N ft" with no fix mentioned -> CA or VA
+- "From <fix> climb / fly to N" -> FA
+- "Direct <fix>" / "climbing turn direct <fix>" -> DF
+- "On <navaid> R-NNN outbound/inbound to <fix>" -> CF (or FA if terminator is altitude)
+- "Hold at <fix>" with racetrack symbol -> HM (standard), HA (until altitude), HF (one circuit)
+- Arc symbol with specified radius -> RF
 
 OUTPUT (single JSON object):
 
@@ -31,8 +31,15 @@ Value domain for a valid code (any one of):
   CA CF CI CR DF FA FM HA HF HM IF RF TF VA VD VI VM VR AF CD FC FD VC PI
 
 Rules:
-- If you can determine the code from chart + standard ARINC semantics → status=present.
+- If you can determine the code from chart + standard ARINC semantics -> status=present.
 - If chart is ambiguous between two codes (e.g., CA vs VA, both mean "climb to altitude"
-  but differ on track-vs-heading semantics that chart may not disambiguate) → return the
-  code you judge most likely + status=present. If truly unable to choose → status=unknown.
+  but differ on track-vs-heading semantics that chart may not disambiguate) -> return the
+  code you judge most likely + status=present. If truly unable to choose -> status=unknown.
 - Do not guess; unknown is a valid answer.
+
+Strict output rules:
+- Return exactly one bare JSON object with keys status and value.
+- Do not output Markdown, code fences, prose, or any text outside JSON.
+- status must be exactly present, not_observable, or unknown.
+- If status is not present, value must be null.
+- If status is present, value must be one listed two-letter code.

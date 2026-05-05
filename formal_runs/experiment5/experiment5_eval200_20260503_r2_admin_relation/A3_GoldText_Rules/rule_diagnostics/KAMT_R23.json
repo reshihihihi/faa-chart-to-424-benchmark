@@ -1,0 +1,38 @@
+{
+  "runner": "experiment5_a3_gold_ma_prose_rules_v1",
+  "method": "A3_GoldText_Rules",
+  "rule_registry": "benchmark_exports/derived/v2/experiment5_diagnostic/rule_registry.yaml",
+  "rule_registry_sha256": "26d9779675a3040d4955f2d134ac9a419a1d70b75b6300ab22666bf2eb82fd18",
+  "rule_registry_status": "candidate_for_smoke_diagnostic_not_formal_reviewed",
+  "allowed_method_input": "adjudicated gold_ma_prose only",
+  "uses_gold_ma_text": true,
+  "uses_field_candidates": false,
+  "uses_target_or_score": false,
+  "uses_cifp_or_arinc_424": false,
+  "normalization": "uppercase_whitespace_dash_punctuation_only",
+  "gold_ma_prose_normalized": "MISSED APPROACH: ON HEADING 229.2; CLIMB TO 2800 TO EDINE; HOLD AT EDINE, INBOUND COURSE 49.1, RIGHT TURNS, 4 NM, MAINTAIN 2800.",
+  "detected": {
+    "altitude": 2800,
+    "turn": null,
+    "direct_fix": null,
+    "radial_to_fix": null,
+    "tracks_to_fix": [],
+    "has_hold": true
+  },
+  "rule_evidence": [
+    {
+      "leg_index": 1,
+      "rule_id": "R_B4_CLIMB_ALTITUDE_TO_CA",
+      "altitude": 2800,
+      "turn": null
+    },
+    {
+      "leg_index": 2,
+      "rule_id": "R_B4_HOLD_TO_HM",
+      "fix": "EDINE"
+    }
+  ],
+  "fallback_legacy_extract_rules_used": false,
+  "fallback_legacy_diagnostics": null,
+  "abstain_policy": "unknown_or_not_applicable_when_allowed_gold_text_is_insufficient"
+}

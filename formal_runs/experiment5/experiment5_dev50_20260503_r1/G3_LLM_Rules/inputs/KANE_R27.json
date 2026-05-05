@@ -1,0 +1,127 @@
+{
+  "chart_id": "KANE_R27",
+  "procedure": {
+    "airport": "KANE",
+    "approach_ident": "R27",
+    "chart_name": "RNAV (GPS) RWY 27"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_observable_dev50_accept_pending.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0947,
+        "width": 0.2806,
+        "x_center": 0.8119,
+        "y_center": 0.158
+      },
+      "chart_id": "KANE_R27",
+      "evidence_region_id": "KANE_R27_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KANE_R27_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.401,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.447
+      },
+      "chart_id": "KANE_R27",
+      "evidence_region_id": "KANE_R27_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KANE_R27_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0537,
+        "width": 0.1184,
+        "x_center": 0.396,
+        "y_center": 0.6746
+      },
+      "chart_id": "KANE_R27",
+      "evidence_region_id": "KANE_R27_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KANE_R27_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3677,
+        "y_center": 0.6563
+      },
+      "chart_id": "KANE_R27",
+      "evidence_region_id": "KANE_R27_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 2700 -> AT_OR_ABOVE 2700 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 2700,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "2700"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0365,
+        "x_center": 0.4261,
+        "y_center": 0.6563
+      },
+      "chart_id": "KANE_R27",
+      "evidence_region_id": "KANE_R27_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: GEP -> GEP",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "GEP",
+        "raw_text": "GEP"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0337,
+        "width": 0.0141,
+        "x_center": 0.3658,
+        "y_center": 0.6826
+      },
+      "chart_id": "KANE_R27",
+      "evidence_region_id": "KANE_R27_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

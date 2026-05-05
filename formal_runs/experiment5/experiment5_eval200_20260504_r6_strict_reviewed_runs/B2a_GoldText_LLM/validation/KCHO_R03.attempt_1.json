@@ -1,0 +1,4 @@
+[
+  "missed_approach.legs.1.answers.Q1_fix_ident.status: 'A5' is not one of ['present', 'not_applicable', 'not_observable', 'unknown']",
+  "missed_approach.legs[1].answers.Q1_fix_ident: value must be null when status is 'A5'"
+]

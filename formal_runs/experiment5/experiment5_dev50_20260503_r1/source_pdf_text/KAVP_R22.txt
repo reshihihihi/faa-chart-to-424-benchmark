@@ -1,0 +1,229 @@
+                                   WILKES-BARRE/SCRANTON, PENNSYLVANIA                                               AL-661 (FAA)                                                                     26022
+
+                                        WAAS               7502             Rwy Ldg
+                                   CH 69213
+                                            APP CRS
+                                                    TDZE    933                                                                                    RNAV (GPS) RWY 22
+                                             224° Apt Elev                                                                                  WILKES-BARRE/SCRANTON INTL (AVP)
+                                     W22A                   962
+                                                             Night landing: Rwy 10, 28 NA. For uncompensated Baro-VNAV systems,                                   MISSED APPROACH: Climb to
+                                    T                        LNAV/VNAV NA below -17°C (2°F) or above 54°C (130°F). When local
+                                                                                                                                                                  1900 then climbing right turn to
+                                    A                        altimeter setting not received, procedure NA. Circling NA for Cats C and
+                                                                                                                                                                  4000 direct LOPEZ and hold.
+                                                             D southeast of Rwy4-22. DME/DME RNP-0.3 NA.
+
+                                                                                WILKES-BARRE APP CON
+                                              ATIS                                                                                     WILKES-BARRE TOWER                                GND CON
+                                                                              120.95 256.7(280°-100°)
+                                             135.75                                                                                        120.1       257.8                               121.9
+                                                                                  126.3 256.7 (101°-279°)
+
+                                                                                                   NM toJI
+                                                                                                         DP
+                                                                                              30           U                                   4 NM
+                                                                                                    4400     (
+
+
+
+
+                                                                                                                      N
+                                                                                                                       oP
+                                                                                                       NM t
+                                                                                                          o
+                                                                                                   8
+
+
+
+
+                                                                                                                         T)
+                                                                                        13
+
+
+
+
+                                                                                                                                                             4°
+                                                                                          4°
+                                                                                                               JI
+
+
+
+
+                                                                                                                                                  4°
+
+
+                                                                                                                                                           22
+                                                                                                                DP
+                                                                                                       4000
+                                                                                                                  U
+
+
+
+
+                                                                                                                                                04
+                                                                                                          JIDPU
+                                                                                                                                    3300
+                                                                                                                                  224° (2.8)
+                                                                                                                 31                                      (IF/IAF)
+                                                                                                                   4°
+                                                                                                                                                           JIDPU
+
+
+
+
+                                                                                                                                       22 00
+                                                      14
+
+
+                                                                                                                                       3. °
+                                                                                                                                                   JODIE
+                                                        0°
+
+                                                                                                                                          4
+                                                                                                                                         29
+
+
+                                                                                                                                         1)
+                                                                LOPEZ
+                                             32
+                                                                                                                                       (
+                                         4 NM 0°
+NE-4, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                              NE-4, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                           (FAF)                    13
+                                                                                                                                        KONAA                         4°
+
+
+
+
+                                                                                                                                                                      10
+                                                                                                                                                                               JIDPU
+                                                                                                                                                                                       4000    31
+                                                                                                                                                                                                 4°
+                                                                                                                                                                           N
+                                                                                                              RW22                                                             M             U
+                                                                                                                                                                                       t
+                                                                                                                                                                                       o JIDP
+
+                                                                                                                                                                     3                 4100
+                                                                                                                                                                      0
+                                                                                                                                                                           NM
+                                                                                                                                                                                       t I
+                                                                                                                                                                                       o JDPU
+
+
+
+
+                                    ELEV     962               D       TDZE 933
+
+
+                                                                           224°
+
+
+                                                                                   22
+                                                                                               1900           4000    LOPEZ        VGSI and RNAV glidepath not coincident
+                                                                                                                                                                                               4 NM
+                                                                              UP
+
+
+
+
+                                                                                    V                                              (VGSI Angle 3.00/TCH 54).
+                                                                             7%
+
+
+
+
+                                                                                                                                                                                           Holding Pattern
+                                                                            0.
+
+
+
+
+                                                                                                                                                                           JIDPU
+                                                                                                                                                        JODIE
+                                                      P
+
+
+
+
+                                                          4300X1                               *LNAV only.
+                                             10
+
+
+
+
+                                                                50
+                                                                                         28
+
+
+
+
+                                                                                                                                     KONAA                                              044°
+                                                      0.
+                                                       3%UP
+                                                                                                              *1.8 NM                                            4°                                  4000
+                                                                                                                                                               2
+                                                                       0
+
+
+
+
+                                                                                                                                      2900                    2                         224°
+                                                                     15
+
+
+
+
+                                                                                                               to RW22
+                                                                   X
+
+
+
+
+                                                                                                                                                            3300
+                                                                02
+
+
+
+
+                                                                                                        RW22
+                                                              75
+
+
+
+
+                                                                           TWR                                                                                                                  GP 3.00°
+                                                                                                                                                   2900
+                                                                                                                                                                                                 TCH 51
+                                                                                                          1.8 NM          4.3 NM               3.1 NM             2.8 NM
+
+                                                                                               CATEGORY                       A                    B                       C                     D
+
+                                        A5                                                     LPV        DA                                1178/40            245 (200-34 )
+                                                  P
+
+                                                                                               LNAV/
+                                                                                                                                           1392-112
+                                                                                                                                                                               1
+                                                                                                     DA                                                        459 (500-12 )
+                                        4                                                      VNAV
+
+                                                                                                                                                                                   3              3
+                                                                                               LNAV MDA                1500/55             567 (600-1)              1500-1 4             567 (600-1 4 )
+                                                                           HIRL Rwy 4-22
+                                                                       MIRL Rwy 10-28                                  1840-114             1980-112                1980-3                    2280-3
+                                                          REIL Rwys 10, 22 and 28              CIRCLING
+                                                                                                                      878 (900-114 ) 1018 (1100-1
+                                                                                                                                                1
+                                                                                                                                                  2 ) 1018 (1100-3)                        1318 (1400-3)
+
+                                   WILKES-BARRE/SCRANTON, PENNSYLVANIA
+                                                                                                                                            WILKES-BARRE/SCRANTON INTL (AVP)
+                                   Amdt 1B        25JUN15
+                                                                                                                41°20'N-75°43'W
+                                                                                                                                                   RNAV (GPS) RWY 22

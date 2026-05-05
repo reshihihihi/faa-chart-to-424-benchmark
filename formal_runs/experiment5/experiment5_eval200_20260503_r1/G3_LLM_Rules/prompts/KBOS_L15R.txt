@@ -1,0 +1,201 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KBOS_L15R",
+  "procedure": {
+    "airport": "KBOS",
+    "approach_ident": "L15R",
+    "chart_name": "ILS OR LOC RWY 15R"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0521,
+        "width": 0.2875,
+        "x_center": 0.8092,
+        "y_center": 0.1367
+      },
+      "chart_id": "KBOS_L15R",
+      "evidence_region_id": "KBOS_L15R_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KBOS_L15R_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.514,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.462
+      },
+      "chart_id": "KBOS_L15R",
+      "evidence_region_id": "KBOS_L15R_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KBOS_L15R_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0588,
+        "width": 0.1654,
+        "x_center": 0.5796,
+        "y_center": 0.7479
+      },
+      "chart_id": "KBOS_L15R",
+      "evidence_region_id": "KBOS_L15R_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KBOS_L15R_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5442,
+        "y_center": 0.7275
+      },
+      "chart_id": "KBOS_L15R",
+      "evidence_region_id": "KBOS_L15R_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0494,
+        "x_center": 0.6246,
+        "y_center": 0.727
+      },
+      "chart_id": "KBOS_L15R",
+      "evidence_region_id": "KBOS_L15R_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: CELTS -> CELTS",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "CELTS",
+        "raw_text": "CELTS"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0365,
+        "x_center": 0.5214,
+        "y_center": 0.7735
+      },
+      "chart_id": "KBOS_L15R",
+      "evidence_region_id": "KBOS_L15R_iconalign_003_navaid_text",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "NAVAID_TEXT: BOS -> type=navaid_radial, navaid=BOS, radial_deg=334.0, direction=inbound",
+      "region_type": "NAVAID_TEXT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "direction": "inbound",
+        "navaid": "BOS",
+        "radial_deg": 334.0,
+        "raw_text": "BOS"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.047,
+        "x_center": 0.5629,
+        "y_center": 0.7735
+      },
+      "chart_id": "KBOS_L15R",
+      "evidence_region_id": "KBOS_L15R_iconalign_004_radial_text",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "RADIAL_TEXT: R-154 -> type=navaid_radial, navaid=BOS, radial_deg=334.0, direction=inbound",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "direction": "inbound",
+        "navaid": "BOS",
+        "radial_deg": 334.0,
+        "raw_text": "R-154"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0323,
+        "width": 0.0099,
+        "x_center": 0.544,
+        "y_center": 0.7569
+      },
+      "chart_id": "KBOS_L15R",
+      "evidence_region_id": "KBOS_L15R_iconalign_008_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0097,
+        "width": 0.0372,
+        "x_center": 0.5192,
+        "y_center": 0.769
+      },
+      "chart_id": "KBOS_L15R",
+      "evidence_region_id": "KBOS_L15R_iconalign_009_path_segment",
+      "fact_type": "path_segment_visible",
+      "label": "detected lower detail: path segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

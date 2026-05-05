@@ -1,25 +1,192 @@
 {
-  "manifest_version": "0.1.0",
-  "status": "pilot_candidate_not_formal_frozen",
-  "models": [
-    {
-      "config_id": "pilot10_anthropic_compatible_claude_sonnet_4_5_20250929_temp0",
-      "provider": "anthropic_compatible",
-      "model": "claude-sonnet-4-5-20250929",
-      "temperature": 0.0,
-      "max_tokens": {
-        "ocr": 4096,
-        "b1": 4096,
-        "c3": 4096
-      },
-      "assistant_prefill_json": true,
-      "assistant_prefill_value": "{",
-      "api_credentials_recorded": false,
-      "formal_freeze_status": "not_frozen_pilot_only"
-    }
-  ],
-  "notes": [
-    "Do not record API tokens or secrets here.",
-    "Each formal model entry must include provider, model name, date/version when available, temperature, max_tokens, image settings, retry policy, and output parser version."
-  ]
+    "manifest_version":  "0.3.0",
+    "status":  "pilot_candidate_not_formal_frozen",
+    "last_updated_utc":  "2026-04-29T02:45:22Z",
+    "decision":  "Experiment Group 1 uses ordinary OCR sources for A/B OCR stages, gpt-5.4 as the candidate text LLM for B1/B1_prime, and claude-sonnet-4-5-20250929 as the candidate VLM/MLLM for C1/C2/C3/C4. Final pre-freeze optimization selects schema-bound tool output where supported; these are still pilot candidates, not a formal freeze.",
+    "models":  [
+                   {
+                       "config_id":  "pilot10_openai_compatible_gpt_5_4_temp0_json_mode",
+                       "provider":  "openai_compatible",
+                       "model":  "gpt-5.4",
+                       "base_url_default":  "http://127.0.0.1:8080/v1",
+                       "base_url_env_candidates":  [
+                                                       "OPENAI_BASE_URL",
+                                                       "OPENAI_COMPAT_BASE_URL",
+                                                       "CODEX_PROXY_BASE_URL"
+                                                   ],
+                       "temperature":  0.0,
+                       "max_tokens":  {
+                                          "b1":  4096,
+                                          "b1_prime":  4096,
+                                          "b1_prime_link":  4096
+                                      },
+                       "json_mode":  true,
+                       "assistant_prefill_json":  false,
+                       "selected_output_control_for_text_llm_pilot":  {
+                                                                          "policy_path":  "configs/output_control_policy.md",
+                                                                          "output_control":  "openai_tool_call",
+                                                                          "tool_name":  "emit_canonical_json",
+                                                                          "tool_parameters_schema":  "schemas/missed_approach_leg.schema.json",
+                                                                          "schema_retry_count":  1,
+                                                                          "schema_retry_uses_target_or_scorer":  false,
+                                                                          "validated_run_id":  "pilot10_group1_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
+                                                                          "validated_result":  {
+                                                                                                   "B1_schema_valid":  "10/10",
+                                                                                                   "B1_prime_schema_valid":  "10/10",
+                                                                                                   "parse_failures":  0,
+                                                                                                   "parser_repair_count":  0
+                                                                                               },
+                                                                          "expanded_validation":  {
+                                                                                                      "run_id":  "pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
+                                                                                                      "sample_role":  "pilot100_external_expanded_feasibility_only_not_formal300",
+                                                                                                      "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
+                                                                                                      "B1":  {
+                                                                                                                 "schema_valid":  "100/100",
+                                                                                                                 "score":  "723/2344",
+                                                                                                                 "accuracy":  0.3084470989761092,
+                                                                                                                 "schema_retry_count_total":  7,
+                                                                                                                 "parser_repair_count":  0
+                                                                                                             },
+                                                                                                      "B1_prime":  {
+                                                                                                                       "schema_valid":  "100/100",
+                                                                                                                       "score":  "674/2344",
+                                                                                                                       "accuracy":  0.28754266211604096,
+                                                                                                                       "schema_retry_count_total":  11,
+                                                                                                                       "parser_repair_count":  0,
+                                                                                                                       "field_candidates_schema_valid":  "100/100"
+                                                                                                                   },
+                                                                                                      "interpretation":  "The tool-call output path is stable on 100 external samples. B1_prime remains candidate because it underperformed B1 on this expanded validation set."
+                                                                                                  },
+                                                                          "b1prime_v4_smoke":  {
+                                                                                                   "run_id":  "pilot100_b1prime_v4_smoke18_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
+                                                                                                   "sample_role":  "pilot100_b1prime_v4_smoke_external_excluded_from_formal_evaluation",
+                                                                                                   "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
+                                                                                                   "schema_valid":  "18/18",
+                                                                                                   "score":  "118/438",
+                                                                                                   "accuracy":  0.2694063926940639,
+                                                                                                   "schema_retry_count_total":  0,
+                                                                                                   "parser_repair_count":  0,
+                                                                                                   "decision":  "B1_prime v4 remains candidate; do not run 30-chart probe yet because empty-leg failures persist."
+                                                                                               },
+                                                                          "b1prime_v7_smoke_probe":  {
+                                                                                                         "smoke_run_id":  "pilot100_b1prime_v7_smoke18_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
+                                                                                                         "probe_run_id":  "pilot100_b1prime_v7_probe30_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
+                                                                                                         "candidate_audit":  "pilot100_b1prime_field_matcher_v7_candidate_audit_20260428_r1",
+                                                                                                         "sample_role":  "pilot100 external smoke/probe excluded from formal evaluation",
+                                                                                                         "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
+                                                                                                         "smoke_schema_valid":  "18/18",
+                                                                                                         "smoke_score":  "159/438",
+                                                                                                         "smoke_accuracy":  0.363013698630137,
+                                                                                                         "probe_schema_valid":  "30/30",
+                                                                                                         "probe_score":  "191/606",
+                                                                                                         "probe_accuracy":  0.31518151815181517,
+                                                                                                         "empty_leg_outputs":  0,
+                                                                                                         "parser_repair_count":  0,
+                                                                                                         "decision":  "B1_prime v7 fixes empty-leg failures but is not formally frozen because probe30 remains below B1 old and complex multi-leg procedures are under-segmented."
+                                                                                                     },
+                                                                          "b1prime_v8_hard4_smoke":  {
+                                                                                                         "run_id":  "pilot100_b1prime_v8_hard4_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
+                                                                                                         "candidate_audit":  "pilot100_b1prime_field_matcher_v8_candidate_audit_20260428_r2",
+                                                                                                         "sample_role":  "pilot100_b1prime_v8_hard4_smoke_external_excluded_from_formal_evaluation",
+                                                                                                         "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
+                                                                                                         "schema_valid":  "4/4",
+                                                                                                         "score":  "27/160",
+                                                                                                         "accuracy":  0.16875,
+                                                                                                         "v7_same_cases":  "13/160",
+                                                                                                         "schema_retry_count_total":  0,
+                                                                                                         "parser_repair_count":  0,
+                                                                                                         "decision":  "B1_prime v8 remains candidate; it improves explicit track-to-fix hard cases but does not solve route-table-only RNAV."
+                                                                                                     },
+                                                                          "b1prime_link_group1_candidate_pilot100":  {
+                                                                                                                          "run_id":  "b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2",
+                                                                                                                          "sample_role":  "pilot100 external feasibility excluded from formal300",
+                                                                                                                          "artifact_root":  "<external-artifact-root>\\B1\u0027_link",
+                                                                                                                          "report_path":  "reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md",
+                                                                                                                          "schema_valid":  "100/100",
+                                                                                                                          "field_to_leg_link_schema_valid":  "100/100",
+                                                                                                                          "score":  "1031/2344",
+                                                                                                                          "accuracy":  0.4398464163822526,
+                                                                                                                          "schema_retry_count_total":  1,
+                                                                                                                          "parser_repair_count":  0,
+                                                                                                                          "decision":  "B1_prime_link is registered as a separate Group 1 candidate after B1_prime; model/provider settings remain not formally frozen."
+                                                                                                     }
+                                                                      },
+                       "api_credentials_recorded":  false,
+                       "formal_freeze_status":  "not_frozen_pilot_only",
+                       "allowed_roles":  [
+                                             "text LLM for B1",
+                                             "text LLM for B1_prime",
+                                             "text LLM for B1_prime_link"
+                                         ],
+                       "forbidden_roles":  [
+                                               "OCR-1",
+                                               "OCR-2",
+                                               "ordinary OCR source",
+                                               "VLM image-input role for C1/C3/C4 under the current local proxy"
+                                           ],
+                       "smoke_test_status":  {
+                                                 "text_json":  "passed",
+                                                 "local_image_input":  "not_supported_by_current_openai_compatible_proxy"
+                                             }
+                   },
+                   {
+                       "config_id":  "pilot10_anthropic_compatible_claude_sonnet_4_5_20250929_temp0_prefill",
+                       "provider":  "anthropic_compatible",
+                       "model":  "claude-sonnet-4-5-20250929",
+                       "base_url_env":  "ANTHROPIC_BASE_URL",
+                       "auth_env":  "ANTHROPIC_AUTH_TOKEN",
+                       "temperature":  0.0,
+                       "max_tokens":  {
+                                          "c1":  4096,
+                                          "c3":  4096,
+                                          "c4":  4096,
+                                          "c2_qa_calls":  2048
+                                      },
+                       "json_mode":  false,
+                       "assistant_prefill_json":  true,
+                       "assistant_prefill_value":  "{",
+                       "api_credentials_recorded":  false,
+                       "formal_freeze_status":  "not_frozen_pilot_only",
+                       "allowed_roles":  [
+                                             "VLM/MLLM image input for C1",
+                                             "VLM/MLLM image input for C3",
+                                             "VLM/MLLM image plus OCR-1 text input for C4",
+                                             "candidate VLM/MLLM image QA calls for C2"
+                                         ],
+                       "forbidden_roles":  [
+                                               "OCR-1",
+                                               "OCR-2",
+                                               "ordinary OCR source for A1/A2/B1/B1_prime/C4 OCR stage"
+                                           ],
+                       "boundary_note":  "Claude may be used as the C-group VLM/MLLM. It must not be used to generate the ordinary OCR text consumed by A1/A2/B1/B1_prime or the OCR text side input consumed by C4.",
+                       "selected_output_control_for_c_group_prefreeze":  {
+                                                                             "policy_path":  "configs/output_control_policy.md",
+                                                                             "output_control":  "anthropic_tool_use",
+                                                                             "schema_retry_count":  1,
+                                                                             "schema_retry_uses_target_or_scorer":  false,
+                                                                             "parser_repair_count":  0,
+                                                                             "applies_to":  [
+                                                                                                "C1",
+                                                                                                "C2",
+                                                                                                "C3",
+                                                                                                "C4"
+                                                                                            ],
+                                                                             "status":  "candidate_prefreeze_final_optimization_not_formal_frozen"
+                                                                         }
+                   }
+               ],
+    "ordinary_ocr_sources":  {
+                                 "manifest_path":  "configs/ocr_source_manifest.json",
+                                 "ocr1_candidate":  "PaddleOCR PP-OCRv5",
+                                 "ocr2_candidate":  "Tesseract 5.x",
+                                 "note":  "A1/B1/B1_prime/B1_prime_link/C4 use OCR-1 where OCR text is allowed. A2 uses OCR-2. C1/C2/C3 do not receive OCR text."
+                             },
+    "historical_demoted_evidence":  {
+                                        "reason":  "Earlier B1/B1_prime/C4 runs used Claude-generated transcription as OCR text. Those runs are invalid for formal B1/B1_prime/C4 evidence and may be kept only as pipeline debugging artifacts."
+                                    },
+    "notes":  [
+                  "Do not record API tokens or secrets here.",
+                  "Model/provider/max_tokens settings are not formally frozen.",
+                  "Formal evaluation still requires final freeze of provider, model name, base URL policy, temperature, max token settings, JSON output controls, retry policy, and image settings."
+              ]
 }

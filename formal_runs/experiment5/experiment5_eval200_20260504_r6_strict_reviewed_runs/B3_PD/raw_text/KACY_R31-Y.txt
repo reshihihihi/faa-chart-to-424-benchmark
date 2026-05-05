@@ -1,0 +1,1 @@
+{"chart_id":"KACY_R31-Y","procedure":{"airport":"KACY","approach_ident":"R31-Y","chart_name":"RNAV (GPS) Y RWY 31"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

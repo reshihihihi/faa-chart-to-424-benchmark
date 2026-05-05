@@ -1,0 +1,211 @@
+                                   ARCATA/EUREKA, CALIFORNIA                                           AL-519 (FAA)                                                                            25275
+
+                                        WAAS                      Rwy Ldg    5601
+                                    CH 62801
+                                                     APP CRS
+                                                                  TDZE        205                                                     RNAV (GPS) RWY 14
+                                                        136°
+                                        W14A                      Apt Elev    222            CALIFORNIA REDWOOD COAST-HUMBOLDT COUNTY (ACV)
+
+                                    T
+                                              For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -2°C (29°F) or                                      MISSED APPROACH:
+                                              above 54°C (130°F). Circling NA northeast of Rwy 14-32. DME/DME RNP-0.3 NA.                                 Climbing right turn to 3000
+                                                                                             3
+                                              Rwy 14 helicopter visibility reduction below    4   SM NA.                                                  direct SEGVE and hold.
+
+
+                                                        ASOS                                      SEATTLE CENTER                                                  UNICOM
+                                                     118.525                                      124.85 306.3                                            123.0(CTAF)L
+
+
+                                               W1425
+                                              R
+                                                          N
+                                         SA
+                                                           M
+                                     M
+
+
+
+
+                                               7100
+                                                                                                       NoPT for arrival at CULDU
+                                                                         4 NM
+                                                                                         13
+
+
+                                                                                                       on V27 southbound.
+                                                                                           6°
+                                                                                      31
+
+
+
+
+                                                                                                       (IF/IAF)
+                                                                                        6°
+
+
+
+
+                                                                                                       CULDU
+                                                                                                    2
+                                                                                                     13 .5)
+
+
+
+
+                                                                                                                                           1
+                                                                                                            10
+
+
+
+
+                                                                                                                                            0
+                                                                                                                                             0
+                                                                                                   (
+
+
+
+                                                                                                              0
+
+
+
+
+                                                                                                                                              0
+                                                                                                   6
+                                                                                                       6°
+SW-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                       SW-2, 16 APR 2026 to 14 MAY 2026
+                                                                                                       (FAF)
+                                                                                                    UYFOR
+
+
+
+
+                                                                                                                                                                                    30
+                                                                                                                                   RW14
+
+
+
+                                                                                                                                                                                      00
+                                        MISSED APCH FIX
+                                                                                                                                                  10
+                                                                                                                                                    00
+                                                3°
+
+
+
+
+                                                         SEGVE
+                                              19
+
+                                                   3°
+
+
+
+
+                                    4 NM                                                                                                   ELEV     222                D           TDZE      205
+                                                 01
+
+
+
+
+                                                                                                                                                    136°
+
+                                                                                                                      3000         SEGVE
+                                                              CULDU                                                                               14
+                                          4 NM
+                                     Holding Pattern                                   UYFOR                                                                P
+                                                                                                                                                                             19
+                                                                                                                                                    0.
+
+
+
+
+                                                     316°                                                                   *LNAV only
+                                                                                                                                                     7%
+
+
+
+
+                                    3000                                                2100
+                                                                                                                                                         UP
+
+
+
+
+                                                     136°                                              *1.8 NM to
+                                                                         136                                RW14
+                                                                            °                                         RW14
+                                                                                                                                                                  0
+
+
+                                                                                                                                                                      60
+                                                                                                                                                                15
+
+
+
+                                                                                                                                                                        46
+
+
+
+
+                                    GP 3.00°                             2100
+                                                                                                                                                              X
+
+
+
+
+                                                                                                                                                                         X
+                                                                                                                                                           01
+
+
+
+
+                                    TCH 50
+                                                                                                                                                                             15
+                                                                                                                                                         45
+
+                                                                                                                                                                UP
+
+
+
+
+                                                                                                                                                                               0
+
+
+
+
+                                                                         6.5 NM                   4.1 NM          1.8 NM                            V
+                                                                                                                                                           5%
+                                                                                                                                                          0.
+
+
+
+
+                                    CATEGORY                  A                   B                     C                      D                    1                         P
+
+
+                                    LPV       DA                             455/45 250 (300-78 )
+                                                                                                                                                                                   A5
+                                                                                                                                            CL Rwy 14 L                                 32
+                                    LNAV/                                        1           1
+                                              DA                             570-14 365 (400-14 )
+                                    VNAV                                                                                                    TDZ/CL Rwy 32 L
+                                                                                                                                            MIRL Rwy 1-19
+                                                                                                        3            3
+                                   LNAV MDA               820/55 615 (600-1)                        820-1 4 615 (600-1 4 )
+                                                                                                                                            HIRL Rwy 14-32 L
+                                                                                                                                            REIL Rwy 14 L
+                                                                                                  840-134                   880-2
+                                   CIRCLING                   820-1 598 (600-1)                                                             REIL Rwy 1
+                                                                                                618 (700-134 )             658 (700-2)
+                                   ARCATA/EUREKA, CALIFORNIA
+                                                                                             CALIFORNIA REDWOOD COAST-HUMBOLDT COUNTY (ACV)
+                                   Amdt 1B 12OCT17
+                                                                                                  40°59'N-124°07'W
+                                                                                                                                      RNAV (GPS) RWY 14

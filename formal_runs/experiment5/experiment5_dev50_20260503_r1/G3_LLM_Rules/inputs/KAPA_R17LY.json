@@ -1,0 +1,182 @@
+{
+  "chart_id": "KAPA_R17LY",
+  "procedure": {
+    "airport": "KAPA",
+    "approach_ident": "R17LY",
+    "chart_name": "RNAV (RNP) Z RWY 17L"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_observable_dev50_accept_pending.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0564,
+        "width": 0.3742,
+        "x_center": 0.7652,
+        "y_center": 0.1389
+      },
+      "chart_id": "KAPA_R17LY",
+      "evidence_region_id": "KAPA_R17LY_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAPA_R17LY_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.506,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.461
+      },
+      "chart_id": "KAPA_R17LY",
+      "evidence_region_id": "KAPA_R17LY_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAPA_R17LY_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0518,
+        "width": 0.2006,
+        "x_center": 0.8519,
+        "y_center": 0.7397
+      },
+      "chart_id": "KAPA_R17LY",
+      "evidence_region_id": "KAPA_R17LY_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAPA_R17LY_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.7801,
+        "y_center": 0.7227
+      },
+      "chart_id": "KAPA_R17LY",
+      "evidence_region_id": "KAPA_R17LY_iconalign_001_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 6300 -> AT_OR_ABOVE 6300 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 6300,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "6300"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0544,
+        "x_center": 0.8396,
+        "y_center": 0.7227
+      },
+      "chart_id": "KAPA_R17LY",
+      "evidence_region_id": "KAPA_R17LY_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 10400 -> AT_OR_ABOVE 10400 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 10400,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "10400"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.064,
+        "x_center": 0.9122,
+        "y_center": 0.7227
+      },
+      "chart_id": "KAPA_R17LY",
+      "evidence_region_id": "KAPA_R17LY_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: HOHUM -> HOHUM",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "HOHUM",
+        "raw_text": "HOHUM"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0269,
+        "width": 0.053,
+        "x_center": 0.8406,
+        "y_center": 0.7399
+      },
+      "chart_id": "KAPA_R17LY",
+      "evidence_region_id": "KAPA_R17LY_iconalign_008_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0303,
+        "width": 0.0257,
+        "x_center": 0.8219,
+        "y_center": 0.7508
+      },
+      "chart_id": "KAPA_R17LY",
+      "evidence_region_id": "KAPA_R17LY_iconalign_006_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0093,
+        "width": 0.0181,
+        "x_center": 0.9123,
+        "y_center": 0.742
+      },
+      "chart_id": "KAPA_R17LY",
+      "evidence_region_id": "KAPA_R17LY_iconalign_007_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

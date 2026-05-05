@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 224.1; climb to 2700 to XIHAM; hold at XIHAM, inbound course 044, right turns, 4 NM, maintain 2700.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2700 -> AT_OR_ABOVE 2700 ft
+- FIX_TEXT: XIHAM -> XIHAM
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

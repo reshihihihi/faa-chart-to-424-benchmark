@@ -1,0 +1,196 @@
+                                   ALBANY, GEORGIA                                                      AL-8 (FAA)                                                                            25219
+                                     WAAS                            Rwy Ldg  6601
+                                   CH 53613
+                                                       APP CRS
+                                                                     TDZE      192                                                    RNAV (GPS) RWY 23
+                                                          227°
+                                     W23A                            Apt Elev  196                                                   SOUTHWEST GEORGIA RGNL (ABY)
+                                   RNP APCH.
+                                    T                                                                                   MISSED APPROACH: Climb to 3000 direct ZITIR and on
+                                        For uncompensated Baro-VNAV systems, LNAV/VNAV NA
+                                                                                                                        track 197° to ELMOE and hold.
+                                    A   below -7°C or above 54°C.
+
+
+                                              ATIS                    JACKSONVILLE CENTER            ALBANY TOWER                      GND CON                             UNICOM
+                                           133.05                      125.75 363.075           120.25 (CTAF)L 336.4                  121.9 348.6                          122.95
+
+
+                                                                                                                                                                           W2325N
+                                                                                                                                                                          R
+                                                                                                                                                                     SA          M
+                                                                                                      (IAF)                                                      M
+                                                                                                    JEVMA                                                                  2600
+
+
+                                                                                                                          2
+                                                                                                                           0
+                                                                                                                        1 00
+                                                                                                                         3
+                                                                                                                          7
+                                                                                                                       (6 °
+                                                                                                                         )
+
+
+                                                                                   00
+                                                                                 20 1°                                                    (IF)
+                                                                                  06 1)                                                WAVKA
+                                                                                    (1
+                                                           PECAN                                                         2 00
+                                                                                                                         .6 °
+                                                                                                                             0
+
+                                                                                                                       (6 7
+                                                                                                                            2
+
+                                                            PZD
+                                                                                                                           2
+                                                                                                                           )
+                                                                                                       (FAF)
+SE-4, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                      SE-4, 16 APR 2026 to 14 MAY 2026
+                                                                                                      UNIKE
+
+                                    Procedure NA for arrival on PZD VOR/DME                     681
+                                    airway radials 359 CW 110.
+                                                                                               425
+                                                                                                              GUKDE
+                                                                                                          2.7 NM to
+                                                                                                              RW23
+
+
+                                                                                                RW23
+
+
+
+
+                                    MISSED APCH FIX
+
+                                                                                ZITIR
+                                                   189°
+
+
+
+
+                                   4 NM
+                                           009°
+
+
+
+
+                                                                           4)
+                                                                            °
+                                                                         197
+                                                                        10.
+
+
+
+
+                                                                                                                                            ELEV    196               D      TDZE        192
+                                                                        (
+
+
+
+
+                                                       ELMOE
+                                                                                                                                                                                       227°
+                                    3000    ZITIR                    ELMOE
+                                                           tr
+                                                                                                                                                                                           3
+                                                                                                                                                                                          2
+
+
+
+
+                                                           197°                                                                                    17
+                                                                                                                                                                                          P
+                                                                                                                                                        V
+                                                                                            UNIKE                      WAVKA
+                                   *LNAV only.                          GUKDE
+                                                                                                                                                                                   0
+
+
+
+
+                                                                      2.7 NM to
+                                                                                                                                                                                  5
+                                                                                                                                                                                 1
+
+
+
+
+                                                                                            2000
+                                                                                                                                                                             X
+
+
+
+
+                                                                        RW23
+                                                                                                                                                       520
+
+
+
+
+                                                                                                                                                                             1
+
+
+
+
+                                                                                                                                                                TWR
+                                                                                                                                                                            0
+                                                                                                                                                                           6
+
+
+
+
+                                                           *1.4 NM to
+                                                                                                                                                                          6
+                                                                                                                                                          0X
+
+
+
+
+                                                                RW23                                      227°             2000
+                                                                                                                                                          150
+
+
+
+
+                                                       RW23
+
+                                                                                                       2000                    GP 3.00°
+                                                                              1100*                                            TCH 52              P
+
+                                                                                                                                             A5
+                                                           1.4 NM    1.3 NM       2.7 NM               6.6 NM
+                                                                                                                                                    5
+                                                                                                                                                                 V
+                                   CATEGORY                      A                      B                 C                      D
+                                                                                                                                                                     35
+                                   LPV        DA                                   531-114      339 (400-1    1
+                                                                                                               4   )
+
+                                   LNAV/
+                                                  DA                               611-112               1
+                                                                                                419 (500-1 2 )
+                                   VNAV
+
+                                                                                                      680-114              680-112                                          HIRL Rwy 5-23 L
+                                   LNAV MDA                     680-1 488 (500-1)                            1
+                                                                                                    488 (500-14 )
+                                                                                                                                  1
+                                                                                                                         488 (500-1 2 )                                   MIRL Rwy 17-35 L
+
+                                                                                                     940-214               940-212                                               REIL Rwy 35 L
+                                   CIRCLING                     680-1 484 (500-1)
+                                                                                                    744 (800-214 )       744 (800-212 )                               REIL Rwys 17 and 23
+
+                                   ALBANY, GEORGIA                                                                                   SOUTHWEST GEORGIA RGNL (ABY)
+                                   Amdt 1C 26MAR20
+                                                                                                     31°32'N-84°12'W
+                                                                                                                                      RNAV (GPS) RWY 23
+

@@ -1,0 +1,88 @@
+{
+  "method": "A3_GoldText_Rules",
+  "samples_total": 20,
+  "schema_valid": 20,
+  "samples_scored": 20,
+  "score_v2": {
+    "correct": 342,
+    "total": 470,
+    "accuracy": 0.7276595744680852
+  },
+  "score_strict": {
+    "correct": 342,
+    "total": 470,
+    "accuracy": 0.7276595744680852
+  },
+  "v2_minus_strict_correct": 0,
+  "v2_minus_strict_accuracy": 0.0,
+  "field_family": [
+    {
+      "field": "Q1_fix_ident",
+      "correct": 73,
+      "total": 75,
+      "accuracy": 0.9733333333333334
+    },
+    {
+      "field": "Q2_altitude_constraint",
+      "correct": 19,
+      "total": 75,
+      "accuracy": 0.25333333333333335
+    },
+    {
+      "field": "Q3_turn",
+      "correct": 68,
+      "total": 75,
+      "accuracy": 0.9066666666666666
+    },
+    {
+      "field": "Q4_course_or_radial",
+      "correct": 38,
+      "total": 75,
+      "accuracy": 0.5066666666666667
+    },
+    {
+      "field": "Q5_hold_params",
+      "correct": 54,
+      "total": 75,
+      "accuracy": 0.72
+    },
+    {
+      "field": "Q_terminator",
+      "correct": 71,
+      "total": 75,
+      "accuracy": 0.9466666666666667
+    },
+    {
+      "field": "leg_count",
+      "correct": 19,
+      "total": 20,
+      "accuracy": 0.95
+    }
+  ],
+  "run_id": "experiment5_gold_text_20260503_r1",
+  "created_at_utc": "2026-05-03T07:24:48.277882+00:00",
+  "chart_ids": [
+    "KABE_R13",
+    "KALN_L29",
+    "KABY_R05",
+    "KAPC_I01L",
+    "KABE_R24",
+    "KABY_R17",
+    "KABY_R23",
+    "KACK_R33",
+    "KACY_R13-Y",
+    "KACY_R31-Y",
+    "KAFW_R34R",
+    "KAGC_R10",
+    "KAGC_R28",
+    "KAKH_R03",
+    "KAAA_R03",
+    "KAAA_R21",
+    "KAAF_R06",
+    "KAAF_R14",
+    "KAAF_R24",
+    "KAAS_R05"
+  ],
+  "failure_count": 0,
+  "failures": []
+}

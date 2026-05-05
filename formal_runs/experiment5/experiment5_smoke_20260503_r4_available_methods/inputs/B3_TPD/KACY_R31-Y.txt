@@ -1,0 +1,60 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: Climb to 2000 direct WEREK
+and on track 259° to KOVEC and hold.
+
+[PLAN_VIEW]
+PANZE
+Procedure NA for arrivals at PANZE on V44 northeast
+bound and T315, V184-229 northeast bound
+2000
+WEREK
+*……
+KOVEC
+(7.9)
+175
+(IAF)
+°
+RODI
+177
+RW31
+YIBKU
+2.8 NM
+8
+6 NM
+1700
+2
+6
+to RW31
+(FAF)
+-308°
+PRSTY
+(6.1)
+(IF)
+STEVV
+O
+25 NM
+(IAF)
+RW31
+JENGA
+W-107C
+MSA
+2100
+ELEV
+75
+D
+TDZE
+63
+2000
+069
+(21.1)
+SEA ISLE
+Procedure NA for arrivals on SIE
+SIE
+VORTAC airway radials 333 CW 131.
+
+[MISSED_APPROACH_DETAIL_AREA]
+2000
+WEREK
+KOVEC
+tr
+259°

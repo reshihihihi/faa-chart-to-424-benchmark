@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 66.3; climb to 2500 to OXAXE; hold at OXAXE, inbound course 246.5, right turns, 4 NM, maintain 2500.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2500 -> AT_OR_ABOVE 2500 ft
+- FIX_TEXT: OXAXE -> OXAXE
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

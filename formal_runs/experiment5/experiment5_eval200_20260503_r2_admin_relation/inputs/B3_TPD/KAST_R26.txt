@@ -1,0 +1,15 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 260.7; to STAZY; to YUXBU; climb to 5000 to KULOA; hold at KULOA, inbound course 349.6, left turns, 5 NM, maintain 5000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 5000 -> AT_OR_ABOVE 5000 ft
+- FIX_TEXT: STAZY -> STAZY
+- FIX_TEXT: YUXBU -> YUXBU
+- FIX_TEXT: KULOA -> KULOA
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: fix symbol

@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_efe261aa-b1f5-4714-9e04-104be7110d0f",
+  "object": "chat.completion",
+  "created": 1777808174,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_4Tlgxww2iphqhqtfKW1K2vs4",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KALB_R10\",\"procedure\":{\"airport\":\"KALB\",\"approach_ident\":\"R10\",\"chart_name\":\"RNAV (GPS) RWY 10\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

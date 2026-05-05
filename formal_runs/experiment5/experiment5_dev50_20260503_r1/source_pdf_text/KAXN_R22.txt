@@ -1,0 +1,282 @@
+                                   ALEXANDRIA, MINNESOTA                                                          AL-14 (FAA)                                                                       25219
+
+                                     WAAS                                Rwy Ldg        4098
+                                   CH 48917
+                                                         APP CRS
+                                                                         TDZE           1424                                                     RNAV (GPS) RWY 22
+                                                           225°          Apt Elev       1425                                        ALEXANDRIA RGNL/CHANDLER FLD (AXN)
+                                     W22A
+                                   RNP APCH.
+
+                                    T   Baro-VNAV NA when using Glenwood altimeter setting. For uncompensated                                               MISSED APPROACH: Climb to 3500
+                                        Baro-VNAV systems, LNAV/VNAV NA below -17°C or above 46°C.                                                          direct MOVSE and right turn on track
+                                    A
+                                        When local altimeter setting not received, use Glenwood altimeter setting and                                       315° to EVDEQ and on track 024°
+                                        increase all DA 37 feet and all MDA 40 feet, increase LNAV/VNAV all Cats and                                        to TILER and hold.
+                                        LNAV Cat D visibility14 mile. Rwy 22 helicopter visibility reduction below34 SM NA.
+
+
+                                                           ASOS                                           MINNEAPOLIS CENTER                                                UNICOM
+                                                         118.375                                               126.1 269.2                                           123.0(CTAF) L
+
+
+                                                                               12                                                                                                30N
+                                                                                 2°                                                                                                 M
+                                                                                                                                                                                          t
+                                                                                                                                                                                          o
+                                                                              30        TILER
+
+
+
+
+                                                                                                                                                                                          K
+                                                                                2°
+
+
+
+
+                                                                                                                                                                                           ILV
+                                                                                                                                                                 13
+                                                             4 NM                                                          (IAF)
+                                                                                                           13
+
+
+
+
+                                                                                                                                                                                              E
+                                                                                                                                                                   5°
+                                                                                                                          HUDRO                       4 NM
+
+
+
+
+                                                                                                                                                                                                  (
+                                                                                                                                                                                  3500
+                                                                                                             5°
+
+
+
+
+                                                                                                                                                                                                  N oP
+                                                                                                                                    35 13 )
+                                                                                                                                                                                KILVE
+
+
+
+
+                                                                                                                                      00 5°
+
+
+
+
+                                                                                                                                                                                                      T)
+                                                                                          30 N M t
+
+
+
+
+                                                                                                        3500
+                                                                                                                                                       5°
+
+
+
+
+                                                                                                                                        N
+                                                                                                                                          oP
+                                                                                                                                                     04       5°
+                                                                                                                                           (5
+
+
+
+                                                                                                                                            T
+                                                                                                              HUDRO
+                                                                                                                                                            22
+
+
+
+
+                                                                                                                                                                                   31
+                                                                                                 oH
+
+
+
+
+                                                                                                                                                               (IF/IAF)
+
+
+
+
+                                                                                                                                                                                     6°
+                                                                4°
+
+
+
+
+                                                                                               UD
+
+
+
+
+                                                                                                                                                               KILVE
+                                                              02
+
+
+
+
+                                                                                                                                                       35 31 )
+NC-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                            NC-1, 16 APR 2026 to 14 MAY 2026
+                                                                                                                    5°               00
+                                                                                                  RO
+
+
+
+
+                                                                                                                                                         00 6°
+                                                                                                                  04               30 5°
+
+
+
+
+                                                                                                                                                           N
+                                                                                                                          (FAF)
+                                                                                                                                     22 .1)
+
+
+                                                                                                                                                             oP
+                                                                                                                                                              (5
+
+
+
+                                                                                                                                                               T
+                                                                                                       WANBI             COXET         6
+                                                                                                                                       (
+                                                                                                      1.6 NM to
+                                         EVDEQ
+                                                                                                       RW22                                                          (IAF)
+                                                                                                                                                                    VEMVY
+                                                                                                       1568
+                                                                                                                    1579
+                                                                                                                                        5°
+                                                                   31
+
+
+
+
+                                                                                                                                                 VEMVY
+                                                                                                              RW22                    04
+                                                                     5°
+
+
+
+
+                                                                                                                                                     3600
+                                                                                                                                                                   31
+                                                                                                                                                                     6°
+
+
+
+
+                                                                                                                                       3
+                                                                                                                                        0
+                                                                                                                                             N
+                                                                                                                                                 Mt
+                                                                                     MOVSE                                                        oVEMVY
+
+
+                                    ELEV 1425                  TDZE 1424
+
+
+
+                                                                               225°
+
+
+                                                                                                                                              TILER VGSI and RNAV glidepath not coincident
+                                        13
+                                                                                         3500 MOVSE                        EVDEQ
+                                             P
+                                                                                                                                      tr                      (VGSI Angle 3.00/TCH 44).
+                                                                                                                     tr
+                                                                                22
+
+
+
+
+                                                                                                                                    024°
+                                                                                                                                                              KILVE
+                                                                                                                   315°
+                                                                                                                                                                                  4 NM
+                                             50
+
+
+
+
+                                                                         75
+                                                                                P
+                                               99
+
+
+
+
+                                                                     X                                                                                                        Holding Pattern
+                                                                98
+                                                     X
+
+
+
+
+                                                              40
+                                                                                         *LNAV only.
+                                                     10
+
+
+
+
+                                                                                                                                   COXET
+                                                       0
+
+
+
+
+                                                                             1474
+                                                                                                               WANBI                                                         045°
+                                                                                                              1.6 NM to            3000
+                                                                                                                                                                                               3500
+                                                                                                                                                      25°                    225°
+                                                                                                               RW22                                  2
+                                                 P
+
+
+
+
+                                                                                                       RW22
+                                             4
+
+
+
+
+                                                                         P
+                                                                                                                                                 3000                                         GP 3.00°
+                                                                                                                   1980*                                                                      TCH 50
+                                                                                31                       1.6 NM           3.2 NM               6.1 NM
+
+                                                                                          CATEGORY                        A                      B                      C                     D
+
+
+                                                                                          LPV           DA                                   1677-1 253 (300-1)
+
+                                                                                          LNAV/
+                                                                                                         DA                                1880-112 456 (500-112 )
+                                                                                          VNAV
+                                    REIL Rwys 4, 13, and 22 L
+                                    MIRL Rwys 4-22 and 13-31 L                            LNAV MDA                   1840-1 416 (500-1)                            1840-114 416 (500-114 )
+
+                                   ALEXANDRIA, MINNESOTA
+                                                                                                                                    ALEXANDRIA RGNL/CHANDLER FLD (AXN)
+                                   Orig-B 18JUL19
+                                                                                                              45°52'N-95°24'W
+                                                                                                                                                 RNAV (GPS) RWY 22

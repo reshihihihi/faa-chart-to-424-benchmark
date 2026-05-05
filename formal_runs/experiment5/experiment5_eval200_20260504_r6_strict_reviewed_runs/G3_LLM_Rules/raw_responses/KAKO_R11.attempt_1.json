@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_95a62a37-36ec-477f-a73f-27e6ad4718e9",
+  "object": "chat.completion",
+  "created": 1777869200,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_GGSoKkSvcaW5tiY46kLbq2db",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAKO_R11\",\"procedure\":{\"airport\":\"KAKO\",\"approach_ident\":\"R11\",\"chart_name\":\"RNAV (GPS) RWY 11\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

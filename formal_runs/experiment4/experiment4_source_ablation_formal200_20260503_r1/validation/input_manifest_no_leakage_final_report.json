@@ -1,0 +1,147 @@
+{
+  "allow_missing_ocr": false,
+  "created_at_utc": "2026-05-01T17:08:17.415292+00:00",
+  "error_count": 0,
+  "errors": [],
+  "manifest_count": 15,
+  "manifests": [
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V1_ma_text_only\\B1_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "c29c43ada0a672e0553acebd39c5db8c7a42ee6677cdbf6d29da0dc21a99b3c3",
+      "variant_counts": {
+        "V1_ma_text_only": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V1_ma_text_only\\C4_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "c29c43ada0a672e0553acebd39c5db8c7a42ee6677cdbf6d29da0dc21a99b3c3",
+      "variant_counts": {
+        "V1_ma_text_only": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V1_ma_text_only\\D_SFT_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "69a35612acf67f00a7f7800a3bc23c8e5079fbb5d7c5a905e7548c6736671026",
+      "variant_counts": {
+        "V1_ma_text_only": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V2_full_minus_ma_prose\\B1_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "0a64526c880c9478df65a44aace1ee176ba7b47583d7f101cd9c0ee591476703",
+      "variant_counts": {
+        "V2_full_minus_ma_prose": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V2_full_minus_ma_prose\\C4_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "0a64526c880c9478df65a44aace1ee176ba7b47583d7f101cd9c0ee591476703",
+      "variant_counts": {
+        "V2_full_minus_ma_prose": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V2_full_minus_ma_prose\\D_SFT_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "e29cf67e4aa2a3910b03b6bf84816eac43a8806f39f977a8ceca2c5776dd56d6",
+      "variant_counts": {
+        "V2_full_minus_ma_prose": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V3_plan_view_only\\B1_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "8a7733b70fa1b086fdd0a9e037227a417f5946d58fa1736df6de446207bd9957",
+      "variant_counts": {
+        "V3_plan_view_only": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V3_plan_view_only\\C4_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "8a7733b70fa1b086fdd0a9e037227a417f5946d58fa1736df6de446207bd9957",
+      "variant_counts": {
+        "V3_plan_view_only": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V3_plan_view_only\\D_SFT_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "1c267145340ec6ad48c11214530fc889d6cce94af16336ca61e48e6a555a45e4",
+      "variant_counts": {
+        "V3_plan_view_only": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V4_icon_detail_only\\B1_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "336a948296d5e27d525afe71a8ffbdd21cbcd00d42e64023d1d785b4f15ca014",
+      "variant_counts": {
+        "V4_icon_detail_only": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V4_icon_detail_only\\C4_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "336a948296d5e27d525afe71a8ffbdd21cbcd00d42e64023d1d785b4f15ca014",
+      "variant_counts": {
+        "V4_icon_detail_only": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V4_icon_detail_only\\D_SFT_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "a2afdb0c3b8a1fd679d0771c8733ddf57d063dcb850f7e3a28c868629e4a8a46",
+      "variant_counts": {
+        "V4_icon_detail_only": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V5_plan_detail_no_ma\\B1_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "d31a732d6dfc0403277e4efec889f12f8e585b1f104b91d450a04b2b64b101e9",
+      "variant_counts": {
+        "V5_plan_detail_no_ma": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V5_plan_detail_no_ma\\C4_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "d31a732d6dfc0403277e4efec889f12f8e585b1f104b91d450a04b2b64b101e9",
+      "variant_counts": {
+        "V5_plan_detail_no_ma": 200
+      }
+    },
+    {
+      "chart_count": 200,
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\run_inputs\\V5_plan_detail_no_ma\\D_SFT_input_manifest.jsonl",
+      "rows": 200,
+      "sha256": "77b4bd8faecec71307a2a266beca0b210348c7bfc024ed63c7fd78c4d7d46d04",
+      "variant_counts": {
+        "V5_plan_detail_no_ma": 200
+      }
+    }
+  ],
+  "root": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1",
+  "status": "passed",
+  "total_rows": 3000
+}

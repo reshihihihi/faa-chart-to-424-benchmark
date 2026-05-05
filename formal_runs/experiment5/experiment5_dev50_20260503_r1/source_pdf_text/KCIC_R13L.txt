@@ -1,0 +1,210 @@
+                                   CHICO, CALIFORNIA                                                                 AL-557 (FAA)                                                                   25331
+
+                                        WAAS                                   Rwy Ldg 6724
+                                    CH65912
+                                                              APP CRS
+                                                                               TDZE            240
+                                                                                                                                                   RNAV (GPS) RWY 13L
+                                                                    131°
+                                        W13A                                   Apt Elev        240                                                                           CHICO RGNL (CIC)
+                                   RNP APCH.
+                                                                                                                                              MALSR
+                                    T        Circling NA east of Rwy 13L-31R. For uncompensated Baro-VNAV                                                      MISSED APPROACH: Climb to 3600
+                                    A        systems, LNAV/VNAV NA below -15°C or above 54°C. For inop                                                         direct UNJED and hold, continue
+                                             ALS, increase LNAV/VNAV all Cats visibility to78 SM, and increase                                 A5              climb-in-hold to 3600.
+                                             LNAV Cats C/D visibility to 1 SM.
+
+                                             ATIS                              OAKLAND CENTER                          CHICO TOWER                             GND CON                 UNICOM
+                                         119.675                                132.2 350.3                        121.0 (CTAF) L 239.3                         121.9                  122.95
+
+                                                                          Procedure NA for arrival on Red Bluff
+                                            (IAF)
+                                                                          VORTAC airway radials 122 CW 185.
+                                        RED BLUFF                                                                                                                00
+                                                                                                                                                               20
+                                            RBL                              30
+
+                                                                                                                   10
+                                                                               0
+                                                                            10 0
+                                                                                                                     00
+                                                                          11 7°
+                                                                          (
+                                                                             .
+                                                                             8)                                                                                                          0
+                                                                                                                                                                                       00
+                                                                                                                                                                                      3
+
+
+
+                                                                                                                      (IF)
+                                                                                                                   ZOTWY
+                                                                                                                   27
+SW-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                            SW-2, 16 APR 2026 to 14 MAY 2026
+                                                                                                                    13 .9)
+                                                                                                                          00
+                                                                                                               (
+                                                                                                               5
+
+                                                                                                                      1°
+
+
+
+
+                                                                                                                                    (FAF)
+
+
+
+
+                                                                                                                                                                                        00
+                                                                                                                                    NORDE
+
+
+
+
+                                                                                                                                                                                      20
+                                                                                                                                                        10
+                                                                                                                                                          00
+
+
+
+
+                                                  W13L25
+                                                 R      N                                                                                    CUBUN
+                                            SA           M
+                                        M                                                                                                   2.5 NM to
+                                                     8300                                                                                    RW13L
+
+                                                                                                                                                   349
+
+
+                                                                                                 MISSED APCH FIX
+                                                                                                                                        RW13L
+
+                                                                                                               UNJED
+                                                                                                                                                                                        00
+                                                                                                       13
+
+
+                                                                                                               31
+
+
+
+
+                                                                                                                                                                                      10
+
+
+
+
+                                    ELEV      240                     D     TDZE         240
+                                                                                                         2°
+
+
+                                                                                                                 2°
+
+
+
+
+                                            131°                                                     4 NM
+
+
+                                                                                                         ZOTWY                                                                         3600        UNJED
+
+                                                                                                                                         NORDE
+                                             A5
+
+                                    13                                                                                                                                CUBUN
+                                                                                                     3000                                   2700                    2.5 NM to            *LNAV only
+                                      L          P
+
+                                                                                                                          131                                         RW13L
+                                                                                                                             °                                                    *1 NM to
+                                         13                                                                                                                                        RW13L
+                                                                          TWR
+                                           R                                                                                                                                            RW13L
+                                                                                                                               2700
+                                                             67
+                                                 30
+
+
+
+
+                                                                                                GP 3.00°
+                                                               24
+                                                   00
+
+
+
+
+                                                                                                                                                                *1080
+                                                                X
+
+
+
+
+                                                                           H                     TCH 52
+                                                     X
+
+
+
+                                                                    15
+                                                        60
+
+
+
+                                                                      0
+
+
+
+
+                                                                                                                               5.9 NM                    5.1 NM              1.5 NM     1 NM
+
+                                                                                                CATEGORY                        A                   B                    C                     D
+                                                              0.
+                                                               4%
+                                                                    UP
+
+
+
+
+                                                                                                 LPV        DA                                  440-12          200 (200-1
+                                                                                                                                                                          2   )
+                                                                       L
+                                                                               0.
+
+
+
+
+                                                                     31
+                                                                                5%
+
+
+
+
+                                                                                                 LNAV/
+                                                                                                              DA                                530-12          290 (300-12 )
+                                                                                    UP
+
+
+
+
+                                                                                                 VNAV
+                                                                                V
+                                                                                       R
+                                                                                     31         LNAV MDA                     600-12             1
+                                                                                                                                        360 (400- 2 )                   600-5 8 360 (400-58 )
+                                    REIL Rwy 31R L                                                                                                                        1
+                                                                                                                          640-1               700-1                   700-12                 800-2
+                                    HIRL Rwy 13L-31R L                                           CIRCLING
+                                                                                                                       400 (400-1)          460 (500-1)           460 (500-112 )        560 (600-2)
+
+                                   CHICO, CALIFORNIA
+                                                                                                                                                                             CHICO RGNL (CIC)
+                                   Amdt 1 21MAY20
+                                                                                                               39°48'N-121°52'W
+                                                                                                                                                   RNAV (GPS) RWY 13L

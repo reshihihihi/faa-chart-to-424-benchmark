@@ -1,0 +1,15 @@
+{
+  "chart_id": "KARR_R15",
+  "procedure": {
+    "airport": "KARR",
+    "approach_ident": "R15",
+    "chart_name": "RNAV (GPS) RWY 15"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

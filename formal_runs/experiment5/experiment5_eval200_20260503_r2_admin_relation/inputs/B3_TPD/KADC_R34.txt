@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 339.3; climb to 3300 to WENVI; hold at WENVI, inbound course 159.2, right turns, 4 NM, maintain 3300.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3300 -> AT_OR_ABOVE 3300 ft
+- FIX_TEXT: WENVI -> WENVI
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

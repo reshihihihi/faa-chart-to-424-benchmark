@@ -1,0 +1,207 @@
+                                   ATLANTIC CITY, NEW JERSEY                                              AL-669 (FAA)                                                                             26078
+
+                                     WAAS                    10001Rwy Ldg
+                                   CH 50113
+                                            APP CRS
+                                                    TDZE        63                                                                  RNAV (GPS) Y RWY 31
+                                             308°                                                                                                  ATLANTIC CITY INTL (ACY)
+                                    W31A            Apt Elev    75
+                                    RNP APCH - GPS.
+                                    T                                                                                            MISSED APPROACH: Climb to 2000 direct WEREK
+                                                 For uncompensated Baro-VNAV systems, LNAV/VNAV NA below
+                                    A                                                                                            and on track 259° to KOVEC and hold.
+                                                 -15°C or above 54°C.
+
+
+                                             ATIS                ATLANTIC CITY APP CON                ATLANTIC CITY TOWER               GND CON                                   CLNC DEL
+                                   125.725 316.15                  124.6     327.125                    120.3      239.0               121.9      284.6                      127.85      353.775
+
+                                                                                                                                                                                       PANZE
+                                                                                                          Procedure NA for arrivals at PANZE on V44 northeast
+                                                                                                          bound and T315, V184-229 northeast bound.
+
+
+
+
+                                                                                                                                                                                            00
+                                                                                                                                                                                           3°
+                                                                                                                                                                                          5)
+                                                                                                                                                                                         20
+
+
+                                                                                                                                                                                          .
+                                                                                                                                                                                        21
+                                                                                                                                                                                       14
+                                                                                                                                                                                       (
+                                                                                   WEREK
+
+
+                                                                   9°
+                                                                 25
+                                        KOVEC                      .9)
+                                                                 (7                                                                                                                   (IAF)
+                                                                                                          175
+                                                                                                                                                                                      RODDI
+                                                                                                                   177
+                                       8°
+
+
+                                               8°
+
+
+
+
+                                                                                                      RW31
+                                     03
+
+
+                                             21
+
+
+
+
+                                                                                                                                                                21 0
+                                                                                                                                                                  8°
+                                                                                                                                                                   0
+                                                                                                             YIBKU
+
+
+
+
+                                                                                                                                                                 20
+
+
+                                                                                                                                                                6)
+                                                                                                           2.8 NM
+
+
+
+
+                                                                                                                                                                (
+NE-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                           NE-2, 16 APR 2026 to 14 MAY 2026
+                                                 6 NM                                                                                   17
+                                                                                                           to RW31
+                                                                                                                         (FAF)         30 00
+                                                                                                                                         8
+                                                                                                                         PRSTY         6. °
+                                                                                                                                       (
+                                                                                                                                         1)
+
+
+                                                                                                                                                                 (IF)
+                                                                                                                                                            STEVV
+                                                                                                                                          03 0
+                                                                                                                                            8°
+                                                                                                                                             0
+                                                                                                                                           20
+
+
+                                                                                                                                          6)
+                                                                                                                                          (
+
+
+
+
+                                                                                                                                             (IAF)
+                                                 RW3125N                                                                                                                              W-107C
+                                                                                                                                             JENGA
+                                            SA          M
+                                        M
+                                                   2100
+
+
+                                                                                                        00                                     ELEV         75                D       TDZE     63
+                                                                                                      20 9°
+                                                                                                       06 .1)
+                                                                                                        21
+                                                                                                        (
+
+                                                                         SEA ISLE                 Procedure NA for arrivals on SIE
+                                                                            SIE                   VORTAC airway radials 333 CW 131.
+                                                                                                                                             13
+
+
+
+
+                                                                                                                                                   A5
+                                    2000         WEREK              KOVEC VGSI and RNAV glidepath not coincident                                                               22
+                                                                                                                                                        P
+
+
+
+
+                                                             tr           (VGSI Angle 3.00/TCH 69).                                                                                       H
+
+                                                            259°                                       STEVV                                                                      V
+
+                                                                                       PRSTY
+                                                                                                                         2000                                                  10
+                                                                                                                                                                         0
+
+
+
+
+                                                                                                                                                                                 00
+                                                                                                                                                                       15
+
+
+
+
+                                                                                           1700                                                                                    1
+                                                                         YIBKU                                                                    TWR                               X
+                                                                                                             °                                                                       15
+                                                                                                                                                                   X
+
+
+
+
+                                                                                                          308                                                                          0
+                                                                                                                                                                  45
+
+
+
+
+                                                           1 NM to       2.8 NM
+                                                                                                                                                                61
+
+
+
+
+                                                            RW31       to RW31                                                                              P
+                                                                                                                                                                                                    31
+                                                                                                                                                                                               P
+
+
+
+
+                                                      RW31
+                                                                                                      1700                                                  4
+                                                                             1000                                            GP 3.00°
+                                                                                                                                 TCH 52                                                        308°
+
+                                                          1 NM     1.8 NM         2.1 NM                6.1 NM
+
+                                    CATEGORY                 A                B                   C               D                E
+
+                                    LPV          DA                                263/40          200 (200-34 )
+                                    LNAV/
+                                                 DA                                 440/55         377 (400-1)
+                                    VNAV
+                                    LNAV MDA                                        440/55         377 (400-1)                                TDZ/CL Rwy 13
+                                                                                                                                              HIRL Rwys 4-22 and 13-31
+                                                           540-1            600-1            620-112             640-2      760-212
+                                    CIRCLING                                             1                         1
+                                                                                                                                              REIL Rwy 31
+                                                        465 (500-1) 525 (600-1) 545 (600-12 ) 565 (600-2) 685 (700-2 2 )
+
+
+                                   ATLANTIC CITY, NEW JERSEY                                                                                       ATLANTIC CITY INTL (ACY)
+                                   Amdt 3C 07AUG25                                                      39°27'N-74°35'W
+
+                                                                                                                                    RNAV (GPS) Y RWY 31
+

@@ -1,0 +1,185 @@
+                                   COEUR D'ALENE, IDAHO                                                 AL-527 (FAA)                                                                                           25275
+
+                                                Rwy Ldg          5400
+                                   APP CRS
+                                                TDZE             2311                                                                                 RNAV (GPS) RWY 2
+                                     354°       Apt Elev         2320                                                         COEUR D'ALENE/PAPPY BOYINGTON FLD (COE)
+                                   RNP APCH-GPS.
+                                                                                                                                            MISSED APPROACH: Climb to 7000 direct ZEXEL
+                                    T        Rwy 2 helicopter visibility reduction below 1 SM NA.
+                                                                                                                                            and hold, continue climb-in-hold to 7000.
+                                    A        Straight-in Rwy 2 NA at night, Circling Rwy 2 NA at night.
+
+
+                                                       AWOS-3PT                                      SPOKANE APP CON                                                         UNICOM
+                                                       135.075                                         132.1 263.0                                                      122.8(CTAF) L
+
+                                        MISSED APCH FIX
+
+                                                1
+                                                 1
+                                                  5
+                                                   °
+                                               2               ZEXEL
+                                    7 NM        9                                                                                                                                                     4
+                                                 5                                                                                                                                                     00
+                                                  °                                                                                                                                                      0
+                                                                                                                                      (MAP)
+                                                                                                                                      EGGID
+                                                                         Final approach course offset 19.35°.
+                                                 D2
+                                               GGI                                                                                                                            00
+                                               E   5N                                                                                                                       30
+                                            SA       M                                                         2445
+                                        M                                                                                             GOREY
+                                               7600                                                                                  2.4 NM to
+                                                                                                                                       EGGID
+
+                                                                                                                                 ZUKVU
+                                                                                                                    °
+
+
+
+
+                                                                                                                                3.4 NM to
+                                                                                                                 354
+
+
+
+
+                                                                                                                                  EGGID
+NW-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                        NW-1, 16 APR 2026 to 14 MAY 2026
+                                                                                                                              (FAF)
+                                                                                                                             CANGE
+                                                                                                    4300
+                                                                                                  336° (1.7)
+                                                                                                                              ZAXIK
+                                                                                                                             4700
+                                                                                                                      336°
+                                                                                                               (
+
+
+
+
+                                                                                        00
+                                                                                                               3.
+
+
+
+
+                                                                         00           30
+                                                                                                                 3)
+
+
+
+
+                                                                       40
+                                                                                                                                                                   00
+                                                                                                                                                                 30
+
+
+
+
+                                                                                                                                    (IF)
+                                                                                                                                JINAP
+                                                                                                                             5300
+                                                                                                                             336°
+                                                                                                                      (
+                                                                                                                      3.6)
+
+
+
+
+                                                                                                                                                        ELEV 2320                  D       TDZE 2311
+
+                                                                                                                                    (IAF)               HIRL Rwy 6-24 L
+                                                                                                                                    HIPRR
+                                                                                                                                                        MIRL Rwy 2-20 L
+                                                                                               00                                                       REIL Rwys 2 and 24 L
+                                                                                             64
+                                    Procedure NA for arrivals at ATOXE                          8°
+                                                                                              04
+                                    on V253 south bound.                                        0)
+                                                                                               3
+                                                                                               (
+                                                                         ATOXE
+                                                                                                                                                                                                               20
+                                                                                                                                                                                                           P
+
+
+
+
+                                                                              VGSI and descent angles not coincident 7000 ZEXEL
+                                                                                                                                                                                                                   24
+
+
+
+
+                                            JINAP
+                                                                                         (VGSI Angle 3.00/TCH 36).                                                                                             P
+                                                                ZAXIK                                                                                                               100
+                                                                                                ZUKVU                                                                             0X
+                                                                                                                                                                                                      75
+
+
+
+
+                                                                                 CANGE                                                                                          40
+                                                                                                                                                                               7
+                                                                                               3.4 NM to
+                                                                                                                                                                                                  X
+
+
+
+
+                                    5300                                                                                                                                        P
+                                                                                                                                                                                                 00
+
+
+
+
+                                                                                                                                                            A5                 U
+                                                    336
+                                                                                                 EGGID                                                                      06
+                                                                                                                                                                             .%
+                                                                                                                                                                                               54
+
+
+
+
+                                                       °                                                    GOREY
+                                                                                                                                                                        P
+                                                                                                                                                        6
+
+
+
+
+                                                                                     3.00°                 2.4 NM to                                                                       P
+
+                                                        4700                          TCH 45                 EGGID
+
+                                                                         4300         354                                            EGGID                                             2
+                                                                                         °
+                                                                                           3600
+                                                                                                       3260
+                                                      3.3 NM            1.7 NM           2.2 NM        1.1 NM                2.4 NM         0.5
+
+                                    CATEGORY                    A                    B                     C                                 D
+
+                                                                                                                         1
+                                    LNAV MDA                   2700-1 389 (400-1)                      2700-1 8 389 (400-118 )                                                         354°
+
+                                                           2740-1                 2880-1              3020-2                           3940-3
+                                     CIRCLING
+                                                         420 (500-1)             560 (600-1)         700 (700-2)                    1620 (1700-3)
+
+                                   COEUR D'ALENE, IDAHO
+                                                                                                                              COEUR D'ALENE/PAPPY BOYINGTON FLD (COE)
+                                   Orig-A 14JUL22
+                                                                                                     47°46'N-116°49'W
+                                                                                                                                                      RNAV (GPS) RWY 2

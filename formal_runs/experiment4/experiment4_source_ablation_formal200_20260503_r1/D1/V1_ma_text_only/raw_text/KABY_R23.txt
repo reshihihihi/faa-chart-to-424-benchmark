@@ -1,0 +1,9 @@
+{  
+  "chart_id":"KELM_I03","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KELM_I03","airport":"KELM","approach_ident":"I03","chart_name":"KELM_I03"},"  
+    "missed_approach":{  
+      "status":"present","  
+      "value":{"leg_count":3,"leg_count":"3"}},  
+      "procedure":{"status":"present","value":{"airport":"KELM","approach_ident":"I03","chart_name":"KELM_I03"}}}

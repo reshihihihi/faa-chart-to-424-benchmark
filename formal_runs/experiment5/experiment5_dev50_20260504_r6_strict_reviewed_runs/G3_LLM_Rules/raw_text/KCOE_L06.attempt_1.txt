@@ -1,0 +1,1 @@
+{"chart_id":"KCOE_L06","procedure":{"airport":"KCOE","approach_ident":"L06","chart_name":"ILS OR LOC RWY 06"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

@@ -1,0 +1,1 @@
+{"chart_id":"KBOS_L15R","procedure":{"airport":"KBOS","approach_ident":"L15R","chart_name":"ILS OR LOC RWY 15R"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

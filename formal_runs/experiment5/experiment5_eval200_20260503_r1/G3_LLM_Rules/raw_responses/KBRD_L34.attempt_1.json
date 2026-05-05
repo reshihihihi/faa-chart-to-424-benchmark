@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_b2656f01-a459-4f73-b7cb-21fdeafd3f68",
+  "object": "chat.completion",
+  "created": 1777808096,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_2WcEej1XnZYHaidAyALMBymC",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KBRD_L34\",\"procedure\":{\"airport\":\"KBRD\",\"approach_ident\":\"L34\",\"chart_name\":\"ILS OR LOC RWY 34\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

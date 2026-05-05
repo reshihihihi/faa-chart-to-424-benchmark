@@ -1,0 +1,11 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: MUDRE -> MUDRE
+- NAVAID_TEXT: STW -> type=navaid_radial, navaid=STW, radial_deg=243.1, direction=inbound
+- 径向文字
+- HEADING_TEXT: hdg 063° -> type=course_deg, course_deg=63.3
+- detected lower detail: climb arrow
+- detected lower detail: path segment

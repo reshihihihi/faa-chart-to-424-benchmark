@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_33857409-f10e-4c5c-8d9e-6b3ea646f8e6",
+  "object": "chat.completion",
+  "created": 1777808176,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_QXlx7lyJCe6B5NBLWTZljbEE",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KALN_R17\",\"procedure\":{\"airport\":\"KALN\",\"approach_ident\":\"R17\",\"chart_name\":\"RNAV (GPS) RWY 17\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

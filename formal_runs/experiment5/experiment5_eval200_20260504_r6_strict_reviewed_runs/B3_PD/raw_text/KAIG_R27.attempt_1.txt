@@ -1,0 +1,1 @@
+{"chart_id":"KAIG_R27","procedure":{"airport":"KAIG","approach_ident":"R27","chart_name":"RNAV (GPS) RWY 27"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

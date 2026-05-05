@@ -1,0 +1,14 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 172; climb to 8500 on FQF R-307 INBOUND to HUNTN; hold at HUNTN, inbound course 307, right turns, 1 minute, maintain 8500.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 8500 -> AT_OR_ABOVE 8500 ft
+- NAVAID_TEXT: FQF -> type=navaid_radial, navaid=FQF, radial_deg=307.0, direction=inbound
+- RADIAL_TEXT: R-127 -> type=navaid_radial, navaid=FQF, radial_deg=307.0, direction=inbound
+- HEADING_TEXT: hdg 172° -> type=course_deg, course_deg=172.0
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: path segment

@@ -1,0 +1,52 @@
+{
+    "run_id":  "group1_scoring_equivalence_v2_20260501_r1",
+    "created_at":  "2026-05-01T18:59:49.4091787+08:00",
+    "artifact_root":  "reports/freeze/group1_scoring_equivalence_v2_20260501_r1",
+    "source_repo":  ".",
+    "purpose":  "Build Group 1 chart-display-aware target/scoring v2 without rerunning model predictions.",
+    "inputs":  [
+                   {
+                       "path":  "benchmark_exports\\derived\\v2\\formal300\\targets\\canonical_proxy_gt_combined.json",
+                       "exists":  true,
+                       "bytes":  1071220,
+                       "sha256":  "9a67277de2d05ee3255eed98c40c9e31060e5d6b6a76ffc576734bf71c3729d4",
+                       "last_write_time":  "2026-04-29T14:06:14.5596966+08:00"
+                   },
+                   {
+                       "path":  "benchmark_exports\\derived\\v2\\formal300\\targets\\field_targets.jsonl",
+                       "exists":  true,
+                       "bytes":  1447800,
+                       "sha256":  "47b5d1dc00e338c1bec0e11c0ea89f65a15cb310377005a68dd4b1160992ee91",
+                       "last_write_time":  "2026-04-30T09:00:18.1446150+08:00"
+                   },
+                   {
+                       "path":  "benchmark_exports\\derived\\v2\\formal300\\targets\\evidence_provenance.jsonl",
+                       "exists":  true,
+                       "bytes":  2961636,
+                       "sha256":  "be27469981e723dd17252a7425134a84671d342eebe4c8426291cfc6097564ca",
+                       "last_write_time":  "2026-04-30T09:00:18.1416255+08:00"
+                   },
+                   {
+                       "path":  "schemas\\missed_approach_leg.schema.json",
+                       "exists":  true,
+                       "bytes":  7660,
+                       "sha256":  "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+                       "last_write_time":  "2026-04-27T16:41:52.5657433+08:00"
+                   },
+                   {
+                       "path":  "scripts\\scorers\\group1_canonical_field_scorer.py",
+                       "exists":  true,
+                       "bytes":  9316,
+                       "sha256":  "be2bf016c557e9ce9f9df7b680370c921cd92fcc3dc34e7e09dff44384b26f45",
+                       "last_write_time":  "2026-04-30T09:00:18.2446399+08:00"
+                   },
+                   {
+                       "path":  "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\combined_summary_table.csv",
+                       "exists":  false
+                   },
+                   {
+                       "path":  "formal_runs\\group1\\group1_formal_eval_50_200_50_seed20260437_20260430_r1\\combined_summary_report.json",
+                       "exists":  false
+                   }
+               ]
+}

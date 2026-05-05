@@ -1,0 +1,1 @@
+{"chart_id":"KALB_R10","procedure":{"airport":"KALB","approach_ident":"R10","chart_name":"RNAV (GPS) RWY 10"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

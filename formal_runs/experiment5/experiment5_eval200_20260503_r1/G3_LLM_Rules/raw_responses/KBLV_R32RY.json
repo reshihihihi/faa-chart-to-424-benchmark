@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_f6603321-9a00-461e-865d-b1174fa7adb6",
+  "object": "chat.completion",
+  "created": 1777808136,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_goHrx6fUCSwNt9Ny1oaQRls0",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KBLV_R32RY\",\"procedure\":{\"airport\":\"KBLV\",\"approach_ident\":\"R32RY\",\"chart_name\":\"RNAV (RNP) Z RWY 14L\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

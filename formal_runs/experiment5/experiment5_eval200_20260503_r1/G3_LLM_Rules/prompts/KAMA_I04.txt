@@ -1,0 +1,256 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KAMA_I04",
+  "procedure": {
+    "airport": "KAMA",
+    "approach_ident": "I04",
+    "chart_name": "ILS OR LOC RWY 04"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0949,
+        "width": 0.2485,
+        "x_center": 0.8287,
+        "y_center": 0.1581
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMA_I04_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.449,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.468
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMA_I04_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0545,
+        "width": 0.2243,
+        "x_center": 0.5508,
+        "y_center": 0.7195
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMA_I04_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5477,
+        "y_center": 0.7016
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 5000 -> AT_OR_ABOVE 5000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 5000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "5000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.4717,
+        "y_center": 0.7019
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_iconalign_001_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 4100 -> AT_OR_ABOVE 4100 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 4100,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "4100"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0613,
+        "x_center": 0.6286,
+        "y_center": 0.7024
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: CAUDE -> CAUDE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "CAUDE",
+        "raw_text": "CAUDE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0375,
+        "x_center": 0.5234,
+        "y_center": 0.7409
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_iconalign_004_navaid_text",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "NAVAID_TEXT: PNH -> type=navaid_radial, navaid=PNH, radial_deg=298.3, direction=inbound",
+      "region_type": "NAVAID_TEXT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "direction": "inbound",
+        "navaid": "PNH",
+        "radial_deg": 298.3,
+        "raw_text": "PNH"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0469,
+        "x_center": 0.5653,
+        "y_center": 0.7409
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_iconalign_005_radial_text",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "RADIAL_TEXT: R-118 -> type=navaid_radial, navaid=PNH, radial_deg=298.3, direction=inbound",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "direction": "inbound",
+        "navaid": "PNH",
+        "radial_deg": 298.3,
+        "raw_text": "R-118"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0274,
+        "width": 0.0421,
+        "x_center": 0.5403,
+        "y_center": 0.7197
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_iconalign_010_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0267,
+        "width": 0.0136,
+        "x_center": 0.469,
+        "y_center": 0.7314
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_iconalign_008_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0097,
+        "width": 0.0186,
+        "x_center": 0.6264,
+        "y_center": 0.7237
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_iconalign_009_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0234,
+        "width": 0.0273,
+        "x_center": 0.5242,
+        "y_center": 0.7347
+      },
+      "chart_id": "KAMA_I04",
+      "evidence_region_id": "KAMA_I04_iconalign_011_path_segment",
+      "fact_type": "path_segment_visible",
+      "label": "detected lower detail: path segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

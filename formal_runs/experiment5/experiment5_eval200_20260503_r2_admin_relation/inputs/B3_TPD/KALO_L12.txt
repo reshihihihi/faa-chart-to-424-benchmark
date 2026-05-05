@@ -1,0 +1,15 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1400 on heading 127.8; climb to 3300 on ALO R-276.5 INBOUND to DEWAR; hold at DEWAR, inbound course 276.5, right turns, 1 minute, maintain 3300.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1400 -> AT_OR_ABOVE 1400 ft
+- ALTITUDE_TEXT: 3300 -> AT_OR_ABOVE 3300 ft
+- FIX_TEXT: DEWAR -> DEWAR
+- NAVAID_TEXT: ALO -> type=navaid_radial, navaid=ALO, radial_deg=276.5, direction=inbound
+- RADIAL_TEXT: R-096 -> type=navaid_radial, navaid=ALO, radial_deg=276.5, direction=inbound
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

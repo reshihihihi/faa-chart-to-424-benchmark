@@ -1,0 +1,19 @@
+{
+  "candidate_count_total": 942,
+  "candidate_input_rows": 150,
+  "candidate_validation_error_rows": 0,
+  "chart_count": 50,
+  "created_at_utc": "2026-05-04T02:56:12.566361+00:00",
+  "cross_region_snippet_count": 0,
+  "manifest_path": "formal_runs/experiment5/experiment5_dev50_20260504_r6_strict_reviewed_runs/manifests/roi_ocr_candidate_input_manifest_dev50_reviewed_strict.jsonl",
+  "missing_ma": [],
+  "missing_ma_count": 0,
+  "missing_pd": [],
+  "missing_pd_count": 0,
+  "no_leakage_status": "PASS",
+  "pd_visible": "formal_runs/experiment5/experiment5_dev50_20260504_r3_strict_no_leak/inputs/pd_visible_candidates_dev50_strict.jsonl",
+  "ready_for_b3_b4_dev50": true,
+  "reviewed_ma_text": "formal_runs/experiment5/experiment5_dev50_20260504_r5_ma_text_ocr_review/inputs/gold_ma_text_dev50_ocr_reviewed.jsonl",
+  "unknown_source_section_count": 0,
+  "validation_report_path": "formal_runs/experiment5/experiment5_dev50_20260504_r6_strict_reviewed_runs/reports/roi_field_candidate_validation_dev50_reviewed_strict.jsonl"
+}

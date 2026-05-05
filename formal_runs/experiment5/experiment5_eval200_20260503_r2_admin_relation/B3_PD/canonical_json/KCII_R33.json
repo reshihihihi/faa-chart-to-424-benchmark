@@ -1,0 +1,49 @@
+{
+  "chart_id": "KCII_R33",
+  "procedure": {
+    "airport": "KCII",
+    "approach_ident": "R33",
+    "chart_name": "RNAV (GPS) RWY 33"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 1
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "AMURE"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 6600,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "not_observable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "unknown",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2200 -> AT_OR_ABOVE 2200 ft
+- ALTITUDE_TEXT: 1000 -> AT_OR_ABOVE 1000 ft
+- FIX_TEXT: TOPAZ -> TOPAZ
+- NAVAID_TEXT: TOY -> type=navaid_radial, navaid=TOY, radial_deg=142.0, direction=inbound
+- RADIAL_TEXT: R-322 -> type=navaid_radial, navaid=TOY, radial_deg=142.0, direction=inbound
+- HEADING_TEXT: 310° -> type=course_deg, course_deg=310.0
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: path segment

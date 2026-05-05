@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_6f85486e-dbd2-4790-b277-c6ead9d02c8d",
+  "object": "chat.completion",
+  "created": 1777868820,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_t5GopMmR70OcsH7KAkp9mMV8",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KCMH_I10R\",\"procedure\":{\"airport\":\"KCMH\",\"approach_ident\":\"I10R\",\"chart_name\":\"ILS OR LOC RWY 10R\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

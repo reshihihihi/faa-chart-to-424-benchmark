@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 47.1; to UNIKE; left turn climb to 2000 to PZD; hold at PZD, inbound course 60.7, right turns, 4 NM, maintain 2000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- FIX_TEXT: UNIKE -> UNIKE
+- FIX_TEXT: PZD -> PZD
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

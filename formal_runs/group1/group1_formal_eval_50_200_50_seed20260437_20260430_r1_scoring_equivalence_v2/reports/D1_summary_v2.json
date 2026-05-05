@@ -1,0 +1,63 @@
+{
+  "method": "D1",
+  "sources": [
+    "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1"
+  ],
+  "prediction_files": 200,
+  "unique_charts": 200,
+  "schema_valid_predictions": 200,
+  "schema_invalid_predictions": 0,
+  "old_strict_score": {
+    "correct": 2972,
+    "total": 4052,
+    "accuracy": 0.7334649555774926
+  },
+  "chart_display_v2_score": {
+    "correct": 3158,
+    "total": 4052,
+    "accuracy": 0.7793682132280355
+  },
+  "delta_correct": 186,
+  "delta_accuracy": 0.04590325765054293,
+  "missing_old_score_count": 0,
+  "missing_old_score": [],
+  "duplicate_charts": [],
+  "invalid_predictions": [],
+  "category_scores": {
+    "strict": {
+      "correct": 1671,
+      "total": 2126,
+      "accuracy": 0.7859830667920978
+    },
+    "fix_navaid": {
+      "correct": 504,
+      "total": 642,
+      "accuracy": 0.7850467289719626
+    },
+    "course_radial": {
+      "correct": 983,
+      "total": 1284,
+      "accuracy": 0.7655763239875389
+    }
+  },
+  "policy_scores": {
+    "exact_status_value": {
+      "correct": 2448,
+      "total": 3030,
+      "accuracy": 0.807920792079208
+    },
+    "normalized_string": {
+      "correct": 504,
+      "total": 642,
+      "accuracy": 0.7850467289719626
+    },
+    "degree_display_rounding": {
+      "correct": 206,
+      "total": 380,
+      "accuracy": 0.5421052631578948
+    }
+  },
+  "changed_rows_count": 186,
+  "d1_policy_id": "d1_output_canonicalization_20260502_r4",
+  "d1_note": "D1 canonicalizes D-SFT raw output to the fixed canonical JSON interface without using targets, scores, 424 raw records, OCR text, field candidates, or other method outputs to repair field answers."
+}

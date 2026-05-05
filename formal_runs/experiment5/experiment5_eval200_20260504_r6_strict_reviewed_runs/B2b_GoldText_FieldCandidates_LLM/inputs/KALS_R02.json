@@ -1,0 +1,169 @@
+{
+  "chart_id": "KALS_R02",
+  "airport": "KALS",
+  "approach_ident": "R02",
+  "chart_name": "RNAV (GPS) RWY 02",
+  "gold_ma_prose": "MISSED APPROACH: Climb to 14600 direct APKOW and on track 317° to ICORY and hold, continue climb-in-hold to 14600.",
+  "field_candidates": {
+    "schema_version": "experiment5_gold_ma_prose_field_candidates_schema_v1",
+    "chart_id": "KALS_R02",
+    "candidate_source": "experiment5_gold_ma_prose_regex_candidates_v1",
+    "source_contract": {
+      "source": "adjudicated_gold_ma_prose",
+      "allows_canonical_target": false,
+      "allows_gold_observable_evidence": false,
+      "allows_field_review_v2": false,
+      "allows_cifp_or_arinc_424": false
+    },
+    "leakage_policy": {
+      "uses_canonical_target": false,
+      "uses_expected_value": false,
+      "uses_gold_field_to_leg_mapping": false,
+      "uses_human_evidence_provenance": false,
+      "uses_gold_observable_evidence": false,
+      "uses_cifp_or_arinc_424": false,
+      "uses_scorer_output": false,
+      "uses_field_review_v2": false
+    },
+    "field_candidates": {
+      "fix_candidates": [
+        {
+          "value": "APKOW",
+          "field_type": "fix_ident",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "DIRECT APKOW",
+          "source_start_char": 39,
+          "source_end_char": 44,
+          "rule_id": "gold_ma_direct_fix_regex_v1",
+          "confidence": 0.95,
+          "notes": "direct_phrase_context"
+        },
+        {
+          "value": "ICORY",
+          "field_type": "fix_ident",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "ON TRACK 317° TO ICORY",
+          "source_start_char": 66,
+          "source_end_char": 71,
+          "rule_id": "gold_ma_track_to_fix_regex_v1",
+          "confidence": 0.9,
+          "notes": "track_to_fix_context"
+        }
+      ],
+      "altitude_candidates": [
+        {
+          "value": 14600,
+          "field_type": "altitude_ft",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "14600",
+          "source_start_char": 26,
+          "source_end_char": 31,
+          "rule_id": "gold_ma_altitude_ft_regex_v1",
+          "confidence": 0.95,
+          "notes": "climb_to_altitude_context"
+        }
+      ],
+      "turn_candidates": [],
+      "course_candidates": [
+        {
+          "value": 317.0,
+          "field_type": "course_deg",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "ON TRACK 317° TO ICORY",
+          "source_start_char": 58,
+          "source_end_char": 61,
+          "rule_id": "gold_ma_track_course_regex_v1",
+          "confidence": 0.9,
+          "notes": "track_to_fix_context"
+        }
+      ],
+      "hold_candidates": [
+        {
+          "value": "MISSED APPROACH: Climb to 14600 direct APKOW and on track 317° to ICORY and hold, continue climb-in-hold to 14600.",
+          "field_type": "hold_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: Climb to 14600 direct APKOW and on track 317° to ICORY and hold, continue climb-in-hold to 14600.",
+          "source_start_char": 76,
+          "source_end_char": 80,
+          "rule_id": "gold_ma_hold_phrase_regex_v1",
+          "confidence": 0.95,
+          "notes": "hold_phrase_context_no_leg_binding"
+        },
+        {
+          "value": "MISSED APPROACH: Climb to 14600 direct APKOW and on track 317° to ICORY and hold, continue climb-in-hold to 14600.",
+          "field_type": "hold_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: Climb to 14600 direct APKOW and on track 317° to ICORY and hold, continue climb-in-hold to 14600.",
+          "source_start_char": 100,
+          "source_end_char": 104,
+          "rule_id": "gold_ma_hold_phrase_regex_v1",
+          "confidence": 0.95,
+          "notes": "hold_phrase_context_no_leg_binding"
+        }
+      ],
+      "instruction_snippets": [
+        {
+          "value": "Climb to 14600 direct APKOW and on track 317° to ICORY and hold, continue climb-in-hold to 14600.",
+          "field_type": "missed_approach_instruction",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: Climb to 14600 direct APKOW and on track 317° to ICORY and hold, continue climb-in-hold to 14600.",
+          "source_start_char": 0,
+          "source_end_char": 114,
+          "rule_id": "gold_ma_instruction_span_regex_v1",
+          "confidence": 0.99,
+          "notes": "automatic_candidate_from_adjudicated_gold_ma_prose_no_target_or_leg_binding"
+        }
+      ],
+      "track_to_fix_snippets": [
+        {
+          "value": "ON TRACK 317° TO ICORY",
+          "field_type": "track_to_fix",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "ON TRACK 317° TO ICORY",
+          "source_start_char": 49,
+          "source_end_char": 71,
+          "rule_id": "gold_ma_track_to_fix_snippet_regex_v1",
+          "confidence": 0.9,
+          "notes": "track_to_fix_context"
+        }
+      ],
+      "route_sequence_snippets": [],
+      "direct_phrase_snippets": [
+        {
+          "value": "DIRECT APKOW",
+          "field_type": "direct_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "DIRECT APKOW",
+          "source_start_char": 32,
+          "source_end_char": 44,
+          "rule_id": "gold_ma_direct_phrase_regex_v1",
+          "confidence": 0.95,
+          "notes": "direct_phrase_context"
+        }
+      ],
+      "climb_phrase_snippets": [
+        {
+          "value": "CLIMB TO 14600 DIRECT APKOW AND ON TRACK 317° TO ICORY AND HOLD, CONTINUE CLIMB-IN-HOLD TO 14600",
+          "field_type": "climb_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CLIMB TO 14600 DIRECT APKOW AND ON TRACK 317° TO ICORY AND HOLD, CONTINUE CLIMB-IN-HOLD TO 14600",
+          "source_start_char": 17,
+          "source_end_char": 113,
+          "rule_id": "gold_ma_climb_phrase_regex_v1",
+          "confidence": 0.9,
+          "notes": "climb_phrase_context"
+        }
+      ]
+    }
+  }
+}

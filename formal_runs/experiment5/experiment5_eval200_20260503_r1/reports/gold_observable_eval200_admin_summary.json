@@ -1,0 +1,57 @@
+{
+  "created_at_utc": "2026-05-03T11:33:50.061724+00:00",
+  "run_id": "experiment5_eval200_20260503_r1",
+  "artifact_label": "eval200",
+  "chart_count": 200,
+  "dev50_chart_count": 200,
+  "admin_region_rows": 1585,
+  "observable_rows": 200,
+  "observable_fact_rows": 1578,
+  "region_type_counts": {
+    "ALTITUDE_TEXT": 242,
+    "CLIMB_ARROW": 299,
+    "FIX_SYMBOL": 164,
+    "FIX_TEXT": 227,
+    "HEADING_TEXT": 7,
+    "MISSED_APPROACH_DETAIL_AREA": 200,
+    "MISSED_APPROACH_TEXT": 200,
+    "NAVAID_TEXT": 10,
+    "PATH_SEGMENT": 15,
+    "PLAN_VIEW": 200,
+    "RADIAL_TEXT": 12,
+    "TRACK_OR_RADIAL_TEXT": 9
+  },
+  "review_action_counts": {
+    "accept": 890,
+    "pending": 695
+  },
+  "fact_type_counts": {
+    "altitude_text_visible": 238,
+    "climb_arrow_visible": 299,
+    "fix_symbol_visible": 164,
+    "fix_text_visible": 227,
+    "heading_text_visible": 7,
+    "ma_detail_region_present": 200,
+    "ma_text_region_present": 200,
+    "navaid_radial_text_visible": 22,
+    "path_segment_visible": 15,
+    "plan_view_region_present": 200,
+    "unparsed_text_annotation_visible": 6
+  },
+  "forbidden_key_scan": {
+    "hit_count": 0,
+    "hits": [],
+    "truncated": false
+  },
+  "hard_leakage_detected": false,
+  "output_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "fact_table_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/reports/gold_observable_eval200_admin_facts.jsonl",
+  "overlay_summary": {
+    "overlay_count": 0,
+    "overlay_dir": "formal_runs/experiment5/experiment5_eval200_20260503_r1/visuals/admin_box_overlays",
+    "contact_sheet": null,
+    "overlays": []
+  },
+  "source_admin_regions_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/admin_artifacts/admin_regions_eval200.jsonl",
+  "source_admin_regions_sha256": "2f8bb752109abcff4de0801355a613106e8ee640c18dc05e27ba768b4e77f62b"
+}

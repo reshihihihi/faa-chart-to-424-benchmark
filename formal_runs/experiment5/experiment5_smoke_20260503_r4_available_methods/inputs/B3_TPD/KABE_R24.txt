@@ -1,0 +1,61 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: Climb to 3000 direct SURGE
+and on track 266° to ETX VOR/DME and hold.
+
+[PLAN_VIEW]
+4000
+BEERS
+-091°
+(IAF)
+2
+(7.6)
+RIRAE
+3700
+-173° (4.1)
+CICAT
+Procedure NA for arrivals at DUMMR on
+V162 westbound, V93 southwest bound,
+(IF)
+4000
+and V276 northwest bound.
+-062°
+FONUP
+(38.6)
+2400
+3000
+243°
+-314
+(8.2)
+(IAF)
+DUMMR
+PIMUE
+(FAF)
+MUSYK
+4000
+540
+-307°
+(17.4)
+RW24
+SOLBERG
+4 NM
+SURGE
+SBJ
+Procedure NA for arrivals
+(9.4)
+on SBJ VOR/DME airway
+radials 217 CW 028.
+EAST TEXAS
+3600
+ETX
+ELEV
+394
+D
+TDZE 387
+243°
+
+[MISSED_APPROACH_DETAIL_AREA]
+3000
+SURGE
+ETX
+tr
+266°

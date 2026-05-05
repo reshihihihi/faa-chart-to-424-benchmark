@@ -1,0 +1,306 @@
+{
+  "created_at_utc": "2026-05-03T11:23:36.847750+00:00",
+  "run_id": "experiment5_dev50_20260503_r1",
+  "dev50_chart_count": 50,
+  "admin_region_rows": 393,
+  "observable_rows": 50,
+  "observable_fact_rows": 396,
+  "region_type_counts": {
+    "ALTITUDE_TEXT": 63,
+    "CLIMB_ARROW": 71,
+    "FIX_SYMBOL": 42,
+    "FIX_TEXT": 55,
+    "HEADING_TEXT": 2,
+    "MISSED_APPROACH_DETAIL_AREA": 50,
+    "MISSED_APPROACH_TEXT": 50,
+    "NAVAID_TEXT": 2,
+    "OUTBOUND_INBOUND_MARK": 2,
+    "PATH_SEGMENT": 3,
+    "PLAN_VIEW": 50,
+    "RADIAL_TEXT": 3
+  },
+  "review_action_counts": {
+    "accept": 220,
+    "pending": 173
+  },
+  "fact_type_counts": {
+    "altitude_text_visible": 62,
+    "climb_arrow_visible": 71,
+    "fix_symbol_visible": 42,
+    "fix_text_visible": 55,
+    "heading_text_visible": 2,
+    "ma_detail_region_present": 50,
+    "ma_text_region_present": 50,
+    "navaid_radial_text_visible": 10,
+    "path_segment_visible": 3,
+    "plan_view_region_present": 50,
+    "unparsed_text_annotation_visible": 1
+  },
+  "forbidden_key_scan": {
+    "hit_count": 0,
+    "hits": [],
+    "truncated": false
+  },
+  "hard_leakage_detected": false,
+  "output_path": "formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_observable_dev50_admin.jsonl",
+  "fact_table_path": "formal_runs/experiment5/experiment5_dev50_20260503_r1/reports/gold_observable_dev50_admin_facts.jsonl",
+  "overlay_summary": {
+    "overlay_count": 50,
+    "overlay_dir": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays",
+    "contact_sheet": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/dev50_admin_box_overlays_contact_sheet.png",
+    "overlays": [
+      {
+        "chart_id": "KACT_R01",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KACT_R01_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KACT_R19",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KACT_R19_admin_boxes.png",
+        "region_count": 10
+      },
+      {
+        "chart_id": "KACT_R32",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KACT_R32_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KACV_R01",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KACV_R01_admin_boxes.png",
+        "region_count": 9
+      },
+      {
+        "chart_id": "KACV_R14",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KACV_R14_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KACV_R32",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KACV_R32_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KAEX_R14",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAEX_R14_admin_boxes.png",
+        "region_count": 9
+      },
+      {
+        "chart_id": "KAEX_R18",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAEX_R18_admin_boxes.png",
+        "region_count": 9
+      },
+      {
+        "chart_id": "KAEX_R32",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAEX_R32_admin_boxes.png",
+        "region_count": 6
+      },
+      {
+        "chart_id": "KAGS_R08-Y",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAGS_R08-Y_admin_boxes.png",
+        "region_count": 8
+      },
+      {
+        "chart_id": "KAGS_R08-Z",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAGS_R08-Z_admin_boxes.png",
+        "region_count": 9
+      },
+      {
+        "chart_id": "KAGS_R26",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAGS_R26_admin_boxes.png",
+        "region_count": 10
+      },
+      {
+        "chart_id": "KAJG_R04",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAJG_R04_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KAJG_R22",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAJG_R22_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KAJG_R31",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAJG_R31_admin_boxes.png",
+        "region_count": 8
+      },
+      {
+        "chart_id": "KAND_R05",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAND_R05_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KAND_R17",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAND_R17_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KAND_R23",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAND_R23_admin_boxes.png",
+        "region_count": 6
+      },
+      {
+        "chart_id": "KANE_R09",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KANE_R09_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KANE_R18",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KANE_R18_admin_boxes.png",
+        "region_count": 8
+      },
+      {
+        "chart_id": "KANE_R27",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KANE_R27_admin_boxes.png",
+        "region_count": 6
+      },
+      {
+        "chart_id": "KANY_R18",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KANY_R18_admin_boxes.png",
+        "region_count": 10
+      },
+      {
+        "chart_id": "KANY_R36",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KANY_R36_admin_boxes.png",
+        "region_count": 6
+      },
+      {
+        "chart_id": "KAPA_R17LY",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAPA_R17LY_admin_boxes.png",
+        "region_count": 9
+      },
+      {
+        "chart_id": "KAPA_R28",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAPA_R28_admin_boxes.png",
+        "region_count": 8
+      },
+      {
+        "chart_id": "KAPA_R35R",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAPA_R35R_admin_boxes.png",
+        "region_count": 9
+      },
+      {
+        "chart_id": "KAPN_R01",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAPN_R01_admin_boxes.png",
+        "region_count": 8
+      },
+      {
+        "chart_id": "KAPN_R07",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAPN_R07_admin_boxes.png",
+        "region_count": 6
+      },
+      {
+        "chart_id": "KAPN_R19",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAPN_R19_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KARR_R09",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KARR_R09_admin_boxes.png",
+        "region_count": 8
+      },
+      {
+        "chart_id": "KARR_R15",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KARR_R15_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KARR_R27",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KARR_R27_admin_boxes.png",
+        "region_count": 8
+      },
+      {
+        "chart_id": "KART_R07",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KART_R07_admin_boxes.png",
+        "region_count": 8
+      },
+      {
+        "chart_id": "KART_R10",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KART_R10_admin_boxes.png",
+        "region_count": 10
+      },
+      {
+        "chart_id": "KART_R28",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KART_R28_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KATW_R21",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KATW_R21_admin_boxes.png",
+        "region_count": 8
+      },
+      {
+        "chart_id": "KAVL_I17",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAVL_I17_admin_boxes.png",
+        "region_count": 6
+      },
+      {
+        "chart_id": "KAVP_L04",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAVP_L04_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KAVP_R22",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAVP_R22_admin_boxes.png",
+        "region_count": 9
+      },
+      {
+        "chart_id": "KAXN_R22",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KAXN_R22_admin_boxes.png",
+        "region_count": 12
+      },
+      {
+        "chart_id": "KBKW_R01",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KBKW_R01_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KBWC_R26",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KBWC_R26_admin_boxes.png",
+        "region_count": 6
+      },
+      {
+        "chart_id": "KBYI_R20",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KBYI_R20_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KBYL_L20",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KBYL_L20_admin_boxes.png",
+        "region_count": 8
+      },
+      {
+        "chart_id": "KCFO_I26",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KCFO_I26_admin_boxes.png",
+        "region_count": 11
+      },
+      {
+        "chart_id": "KCFO_L17",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KCFO_L17_admin_boxes.png",
+        "region_count": 10
+      },
+      {
+        "chart_id": "KCIC_R13L",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KCIC_R13L_admin_boxes.png",
+        "region_count": 5
+      },
+      {
+        "chart_id": "KCLL_R11",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KCLL_R11_admin_boxes.png",
+        "region_count": 7
+      },
+      {
+        "chart_id": "KCOE_L06",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KCOE_L06_admin_boxes.png",
+        "region_count": 11
+      },
+      {
+        "chart_id": "KCOE_R02",
+        "overlay_image": "formal_runs/experiment5/experiment5_dev50_20260503_r1/visuals/admin_box_overlays/KCOE_R02_admin_boxes.png",
+        "region_count": 7
+      }
+    ]
+  },
+  "source_admin_regions_path": "formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/admin_regions_sanitized_dev50.jsonl",
+  "source_admin_regions_sha256": "7880eb8a4e4b858e0b5244b1b4d67c295b9d62c8fb5cf989c2ec417ce49ad1d2"
+}

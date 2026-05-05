@@ -1,0 +1,1102 @@
+[
+  {
+    "chart_id": "KAVL_I17",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAVL_I17.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAVL_I17_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      672,
+      173,
+      1157,
+      304
+    ],
+    "bbox_normalized": {
+      "height": 0.042,
+      "width": 0.36,
+      "x_center": 0.7729,
+      "y_center": 0.1317
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 5400 direct BRA NDB and hold. Continue climb-in-hold to 5400."
+  },
+  {
+    "chart_id": "KCFO_I26",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCFO_I26.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCFO_I26_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      606,
+      173,
+      1157,
+      331
+    ],
+    "bbox_normalized": {
+      "height": 0.0569,
+      "width": 0.4157,
+      "x_center": 0.745,
+      "y_center": 0.1391
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 6100 then climbing left turn to 7200 on heading 080° and on FQF VORTAC R-045 to SKIPI/I-FTG 7 DME and hold."
+  },
+  {
+    "chart_id": "KAVP_L04",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAVP_L04.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAVP_L04_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      764,
+      173,
+      1157,
+      341
+    ],
+    "bbox_normalized": {
+      "height": 0.0622,
+      "width": 0.2819,
+      "x_center": 0.812,
+      "y_center": 0.1418
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:MALSR Climb to 3000 then climbing A5 right turn to 4000 direct LVZ VORTAC and hold."
+  },
+  {
+    "chart_id": "KBYL_L20",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBYL_L20.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBYL_L20_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      821,
+      173,
+      1157,
+      328
+    ],
+    "bbox_normalized": {
+      "height": 0.0553,
+      "width": 0.2342,
+      "x_center": 0.8358,
+      "y_center": 0.1383
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 1800 then climbing left turn to 4000 direct LOZ VOR/DME and hold."
+  },
+  {
+    "chart_id": "KCFO_L17",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCFO_L17.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCFO_L17_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      698,
+      173,
+      1157,
+      304
+    ],
+    "bbox_normalized": {
+      "height": 0.042,
+      "width": 0.3377,
+      "x_center": 0.7841,
+      "y_center": 0.1317
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH: Climb to 8500 on heading 172° and VORTAC R-127 to HUNTN INT/FQF 9.8 DME and hold."
+  },
+  {
+    "chart_id": "KCOE_L06",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCOE_L06.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCOE_L06_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      703,
+      173,
+      1157,
+      347
+    ],
+    "bbox_normalized": {
+      "height": 0.0658,
+      "width": 0.334,
+      "x_center": 0.7859,
+      "y_center": 0.1436
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 2900 then MALSR climbing left turn to 6000 on COE R-350 outbound then climbing left turn to 6500 on COE R-350 inbound to COE VOR/DME and hold."
+  },
+  {
+    "chart_id": "KBWC_R26",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBWC_R26.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBWC_R26_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      727,
+      173,
+      1157,
+      310
+    ],
+    "bbox_normalized": {
+      "height": 0.0456,
+      "width": 0.3135,
+      "x_center": 0.7962,
+      "y_center": 0.1335
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH: Climbing left turn to 3600 direct VORTAC and hold."
+  },
+  {
+    "chart_id": "KCOE_R02",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCOE_R02.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCOE_R02_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      618,
+      173,
+      1157,
+      328
+    ],
+    "bbox_normalized": {
+      "height": 0.0553,
+      "width": 0.4058,
+      "x_center": 0.75,
+      "y_center": 0.1383
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 7000 direct ZEXEL and hold, continue climb-in-hold to 7000."
+  },
+  {
+    "chart_id": "KACT_R32",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACT_R32.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACT_R32_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      727,
+      173,
+      1157,
+      367
+    ],
+    "bbox_normalized": {
+      "height": 0.0771,
+      "width": 0.3135,
+      "x_center": 0.7962,
+      "y_center": 0.1492
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:feet; increase Climb to 4000 direct and Circling EVVIS and hold, LNAV/VNAV continue climb-in-hold."
+  },
+  {
+    "chart_id": "KANY_R18",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANY_R18.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANY_R18_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      694,
+      173,
+      1157,
+      352
+    ],
+    "bbox_normalized": {
+      "height": 0.0687,
+      "width": 0.3414,
+      "x_center": 0.7822,
+      "y_center": 0.145
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 3000 then climbing left turn to 3300 direct UZZUF and hold."
+  },
+  {
+    "chart_id": "KATW_R21",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KATW_R21.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KATW_R21_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      642,
+      173,
+      1157,
+      331
+    ],
+    "bbox_normalized": {
+      "height": 0.0569,
+      "width": 0.3854,
+      "x_center": 0.7602,
+      "y_center": 0.1391
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 2900 direct APIXE and hold."
+  },
+  {
+    "chart_id": "KAVP_R22",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAVP_R22.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAVP_R22_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      798,
+      173,
+      1157,
+      319
+    ],
+    "bbox_normalized": {
+      "height": 0.0505,
+      "width": 0.2534,
+      "x_center": 0.8262,
+      "y_center": 0.1359
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 1900 then climbing right turn to 4000 direct LOPEZ and hold."
+  },
+  {
+    "chart_id": "KAXN_R22",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAXN_R22.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAXN_R22_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      777,
+      173,
+      1157,
+      381
+    ],
+    "bbox_normalized": {
+      "height": 0.0844,
+      "width": 0.2714,
+      "x_center": 0.8172,
+      "y_center": 0.1529
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 3500 direct MOVSE and right turn on track 315° to EVDEQ and on track 024° to TILER and hold."
+  },
+  {
+    "chart_id": "KBKW_R01",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBKW_R01.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBKW_R01_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      704,
+      173,
+      1157,
+      322
+    ],
+    "bbox_normalized": {
+      "height": 0.0521,
+      "width": 0.3327,
+      "x_center": 0.7866,
+      "y_center": 0.1367
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 5900 direct YISUK and hold, continue climb-in-hold to 5900."
+  },
+  {
+    "chart_id": "KBYI_R20",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBYI_R20.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBYI_R20_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      802,
+      173,
+      1157,
+      407
+    ],
+    "bbox_normalized": {
+      "height": 0.0989,
+      "width": 0.2503,
+      "x_center": 0.8278,
+      "y_center": 0.1601
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climbing left turn to 7000 direct IREME and hold, continue climb-in-hold to 7000."
+  },
+  {
+    "chart_id": "KCIC_R13L",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCIC_R13L.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCIC_R13L_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      763,
+      173,
+      1176,
+      360
+    ],
+    "bbox_normalized": {
+      "height": 0.0727,
+      "width": 0.2993,
+      "x_center": 0.8194,
+      "y_center": 0.147
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 3600 direct UNJED and hold, continue climb-in-hold to 3600."
+  },
+  {
+    "chart_id": "KCLL_R11",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCLL_R11.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCLL_R11_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      751,
+      173,
+      1157,
+      337
+    ],
+    "bbox_normalized": {
+      "height": 0.0602,
+      "width": 0.2931,
+      "x_center": 0.8064,
+      "y_center": 0.1408
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to or 3000 direct EDAYA and hold."
+  },
+  {
+    "chart_id": "KACT_R19",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACT_R19.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACT_R19_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      742,
+      173,
+      1157,
+      357
+    ],
+    "bbox_normalized": {
+      "height": 0.0711,
+      "width": 0.3,
+      "x_center": 0.8023,
+      "y_center": 0.1463
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to above 4000 direct YAYUC and on track 171° to BOSEL and hold, A5 continue climb-in-hold."
+  },
+  {
+    "chart_id": "KACV_R01",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACV_R01.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACV_R01_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      771,
+      173,
+      1157,
+      347
+    ],
+    "bbox_normalized": {
+      "height": 0.0657,
+      "width": 0.2755,
+      "x_center": 0.8145,
+      "y_center": 0.1435
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 3200 direct HIPGI and on track 295° to CULDU and hold."
+  },
+  {
+    "chart_id": "KAEX_R14",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAEX_R14.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAEX_R14_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      708,
+      173,
+      1157,
+      359
+    ],
+    "bbox_normalized": {
+      "height": 0.0724,
+      "width": 0.329,
+      "x_center": 0.7877,
+      "y_center": 0.1469
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 4000 direct EHHIR and on track 106° to MUSHE and hold."
+  },
+  {
+    "chart_id": "KAEX_R18",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAEX_R18.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAEX_R18_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      727,
+      173,
+      1157,
+      309
+    ],
+    "bbox_normalized": {
+      "height": 0.0446,
+      "width": 0.3129,
+      "x_center": 0.7958,
+      "y_center": 0.133
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb (119°F). to 4000 direct HIPKU and via 105° track to MUSHE and hold."
+  },
+  {
+    "chart_id": "KAGS_R26",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAGS_R26.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAGS_R26_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      728,
+      173,
+      1157,
+      329
+    ],
+    "bbox_normalized": {
+      "height": 0.056,
+      "width": 0.3123,
+      "x_center": 0.7961,
+      "y_center": 0.1387
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Fld altimeter setting. Climb to 3000 direct increase all MDAs GONRE and on track 201° to HEPIG and hold."
+  },
+  {
+    "chart_id": "KAPN_R01",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPN_R01.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPN_R01_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      728,
+      202,
+      1157,
+      396
+    ],
+    "bbox_normalized": {
+      "height": 0.0766,
+      "width": 0.3123,
+      "x_center": 0.7961,
+      "y_center": 0.165
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:LPV all Cats visibility Climb to 3500 direct DA to 1 to 3 8 1029 SM. feet When and A5 307° HIMVO to and RABBO on track 60 feet. For inop and hold."
+  },
+  {
+    "chart_id": "KART_R10",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KART_R10.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KART_R10_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      800,
+      173,
+      1157,
+      360
+    ],
+    "bbox_normalized": {
+      "height": 0.0728,
+      "width": 0.2516,
+      "x_center": 0.8265,
+      "y_center": 0.1471
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 3600 direct BAMPE and or on track 146° to PATEE and hold."
+  },
+  {
+    "chart_id": "KACT_R01",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACT_R01.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACT_R01_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      728,
+      198,
+      1157,
+      366
+    ],
+    "bbox_normalized": {
+      "height": 0.0627,
+      "width": 0.3123,
+      "x_center": 0.7961,
+      "y_center": 0.1555
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:increase LPV DA to 792 feet Climb to 3000 direct MDAs 40 feet and LNAV CHRUS and hold."
+  },
+  {
+    "chart_id": "KACV_R14",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACV_R14.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACV_R14_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      806,
+      173,
+      1157,
+      336
+    ],
+    "bbox_normalized": {
+      "height": 0.0598,
+      "width": 0.2458,
+      "x_center": 0.8294,
+      "y_center": 0.1406
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:NA. Climbing right turn to 3000 direct SEGVE and hold."
+  },
+  {
+    "chart_id": "KACV_R32",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACV_R32.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACV_R32_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      634,
+      173,
+      1157,
+      312
+    ],
+    "bbox_normalized": {
+      "height": 0.0467,
+      "width": 0.3916,
+      "x_center": 0.7565,
+      "y_center": 0.134
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 3000 direct CULDU and hold."
+  },
+  {
+    "chart_id": "KAEX_R32",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAEX_R32.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAEX_R32_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      768,
+      173,
+      1157,
+      319
+    ],
+    "bbox_normalized": {
+      "height": 0.0505,
+      "width": 0.2781,
+      "x_center": 0.8132,
+      "y_center": 0.1359
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 3000 -15°C. direct EBYAJ WP and hold."
+  },
+  {
+    "chart_id": "KAGS_R08-Y",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAGS_R08-Y.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAGS_R08-Y_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      728,
+      173,
+      1157,
+      329
+    ],
+    "bbox_normalized": {
+      "height": 0.056,
+      "width": 0.3123,
+      "x_center": 0.7961,
+      "y_center": 0.1387
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Fld altimeter setting. Climb to 1200 then climbing increase all MDAs right turn to 2000 direct D visibility 14 SM. GUKVE and hold."
+  },
+  {
+    "chart_id": "KAGS_R08-Z",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAGS_R08-Z.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAGS_R08-Z_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      759,
+      173,
+      1157,
+      372
+    ],
+    "bbox_normalized": {
+      "height": 0.0795,
+      "width": 0.2858,
+      "x_center": 0.8094,
+      "y_center": 0.1505
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 1200 then climbing right turn to 2000 direct HEPIG and hold."
+  },
+  {
+    "chart_id": "KAJG_R04",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAJG_R04.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAJG_R04_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      823,
+      173,
+      1157,
+      347
+    ],
+    "bbox_normalized": {
+      "height": 0.0657,
+      "width": 0.2316,
+      "x_center": 0.8365,
+      "y_center": 0.1435
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 2500 direct RUOFF and hold."
+  },
+  {
+    "chart_id": "KAJG_R22",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAJG_R22.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAJG_R22_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      738,
+      173,
+      1157,
+      333
+    ],
+    "bbox_normalized": {
+      "height": 0.0581,
+      "width": 0.3039,
+      "x_center": 0.8003,
+      "y_center": 0.1397
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 2500 direct SURDY and hold."
+  },
+  {
+    "chart_id": "KAJG_R31",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAJG_R31.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAJG_R31_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      738,
+      173,
+      1157,
+      329
+    ],
+    "bbox_normalized": {
+      "height": 0.0556,
+      "width": 0.3039,
+      "x_center": 0.8003,
+      "y_center": 0.1385
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climbing left turn setting to 2500 direct NIYRI and hold."
+  },
+  {
+    "chart_id": "KAND_R05",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAND_R05.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAND_R05_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      745,
+      173,
+      1157,
+      371
+    ],
+    "bbox_normalized": {
+      "height": 0.0791,
+      "width": 0.2974,
+      "x_center": 0.8035,
+      "y_center": 0.1503
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to C/D A5 3000 direct OXTIC and hold."
+  },
+  {
+    "chart_id": "KAND_R17",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAND_R17.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAND_R17_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      728,
+      173,
+      1157,
+      310
+    ],
+    "bbox_normalized": {
+      "height": 0.0455,
+      "width": 0.3123,
+      "x_center": 0.7961,
+      "y_center": 0.1334
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb helicopter visibility to 2500 direct ZAROM and hold."
+  },
+  {
+    "chart_id": "KAND_R23",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAND_R23.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAND_R23_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      803,
+      173,
+      1157,
+      396
+    ],
+    "bbox_normalized": {
+      "height": 0.093,
+      "width": 0.2484,
+      "x_center": 0.8281,
+      "y_center": 0.1572
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to altimeter 2500 direct OYUNA and hold."
+  },
+  {
+    "chart_id": "KANE_R09",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANE_R09.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANE_R09_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      834,
+      173,
+      1157,
+      377
+    ],
+    "bbox_normalized": {
+      "height": 0.0825,
+      "width": 0.2226,
+      "x_center": 0.841,
+      "y_center": 0.1519
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 3100 direct JUDAL and hold."
+  },
+  {
+    "chart_id": "KANE_R18",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANE_R18.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANE_R18_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      677,
+      173,
+      1157,
+      333
+    ],
+    "bbox_normalized": {
+      "height": 0.0581,
+      "width": 0.3548,
+      "x_center": 0.7748,
+      "y_center": 0.1397
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climbing left turn to 2600 direct RUNRR and hold."
+  },
+  {
+    "chart_id": "KANE_R27",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANE_R27.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANE_R27_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      765,
+      173,
+      1157,
+      399
+    ],
+    "bbox_normalized": {
+      "height": 0.0947,
+      "width": 0.2806,
+      "x_center": 0.8119,
+      "y_center": 0.158
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb increase MALSR to 2700 direct GEP VORTAC SM, and hold, continue D 14 A5 climb-in-hold."
+  },
+  {
+    "chart_id": "KANY_R36",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANY_R36.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANY_R36_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      829,
+      173,
+      1157,
+      347
+    ],
+    "bbox_normalized": {
+      "height": 0.0657,
+      "width": 0.2265,
+      "x_center": 0.839,
+      "y_center": 0.1435
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:NA. Climb to 3300 direct UZZUF and hold."
+  },
+  {
+    "chart_id": "KAPA_R17LY",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPA_R17LY.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPA_R17LY_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      654,
+      173,
+      1157,
+      330
+    ],
+    "bbox_normalized": {
+      "height": 0.0564,
+      "width": 0.3742,
+      "x_center": 0.7652,
+      "y_center": 0.1389
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 6300 then climbing right turn to 10400 direct HOHUM and hold, continue climb-in-hold to 10400."
+  },
+  {
+    "chart_id": "KAPA_R28",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPA_R28.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPA_R28_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      739,
+      173,
+      1157,
+      341
+    ],
+    "bbox_normalized": {
+      "height": 0.0627,
+      "width": 0.3026,
+      "x_center": 0.801,
+      "y_center": 0.142
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 6400 above then climbing right turn to 9000 direct 35L EZBEL and hold."
+  },
+  {
+    "chart_id": "KAPA_R35R",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPA_R35R.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPA_R35R_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      747,
+      173,
+      1157,
+      335
+    ],
+    "bbox_normalized": {
+      "height": 0.0589,
+      "width": 0.2961,
+      "x_center": 0.8042,
+      "y_center": 0.1402
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:(Do not exceed 240K until BPUTN) Climb to 8200 then climbing left turn to 9600 direct A5 BPUTN and hold."
+  },
+  {
+    "chart_id": "KAPN_R07",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPN_R07.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPN_R07_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      825,
+      173,
+      1157,
+      383
+    ],
+    "bbox_normalized": {
+      "height": 0.0854,
+      "width": 0.2303,
+      "x_center": 0.8371,
+      "y_center": 0.1534
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 3000 direct MUNCN and hold, continue climb-in- hold."
+  },
+  {
+    "chart_id": "KAPN_R19",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPN_R19.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPN_R19_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      730,
+      173,
+      1157,
+      310
+    ],
+    "bbox_normalized": {
+      "height": 0.0455,
+      "width": 0.3103,
+      "x_center": 0.7971,
+      "y_center": 0.1334
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 2800 direct JEGOB and hold."
+  },
+  {
+    "chart_id": "KARR_R09",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KARR_R09.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KARR_R09_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      806,
+      173,
+      1157,
+      328
+    ],
+    "bbox_normalized": {
+      "height": 0.0551,
+      "width": 0.2458,
+      "x_center": 0.8294,
+      "y_center": 0.1383
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:54°C. Climb to 2500 direct A5 HOGIE and hold."
+  },
+  {
+    "chart_id": "KARR_R15",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KARR_R15.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KARR_R15_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      797,
+      173,
+      1157,
+      330
+    ],
+    "bbox_normalized": {
+      "height": 0.0564,
+      "width": 0.2535,
+      "x_center": 0.8255,
+      "y_center": 0.1389
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 54°C. 3000 direct UQITY and hold, continue climb-in-hold to 3000."
+  },
+  {
+    "chart_id": "KARR_R27",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KARR_R27.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KARR_R27_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      826,
+      173,
+      1157,
+      320
+    ],
+    "bbox_normalized": {
+      "height": 0.0509,
+      "width": 0.229,
+      "x_center": 0.8377,
+      "y_center": 0.1362
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 2700 direct 54°C. TOBBY and hold."
+  },
+  {
+    "chart_id": "KART_R07",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KART_R07.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KART_R07_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      726,
+      173,
+      1157,
+      351
+    ],
+    "bbox_normalized": {
+      "height": 0.0682,
+      "width": 0.3135,
+      "x_center": 0.7955,
+      "y_center": 0.1448
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to -20°C 900 then climbing left turn to Cats A5 3500 direct NOYAQ and hold."
+  },
+  {
+    "chart_id": "KART_R28",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KART_R28.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KART_R28_ma_text_crop.png",
+    "image_size": [
+      1184,
+      1815
+    ],
+    "crop_pixels": [
+      829,
+      173,
+      1157,
+      345
+    ],
+    "bbox_normalized": {
+      "height": 0.0648,
+      "width": 0.2265,
+      "x_center": 0.839,
+      "y_center": 0.1431
+    },
+    "gold_ma_prose_candidate": "MISSED APPROACH:Climb to 2400 direct A5 TAREE and hold."
+  }
+]

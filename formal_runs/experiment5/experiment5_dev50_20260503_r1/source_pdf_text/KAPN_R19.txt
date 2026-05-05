@@ -1,0 +1,151 @@
+                                   ALPENA, MICHIGAN                                                               AL-718 (FAA)                                                                                  26078
+
+                                       WAAS                                 Rwy Ldg     9001
+                                    CH  53717
+                                                           APP CRS
+                                                                            TDZE         683                                                               RNAV (GPS) RWY 19
+                                                                  187°
+                                       W19A                                 Apt Elev     690                                                                    ALPENA COUNTY RGNL (APN)
+                                   RNP APCH.
+                                         For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -16°C                                                           MISSED APPROACH: Climb to 2800
+                                   T
+                                                                                                                                                                 direct JEGOB and hold.
+                                         or above 54°C.
+
+
+                                              ATIS                           ALPENA APP CON                              ALPENA TOWER                              GND CON                          UNICOM
+
+                                   120.675               327.05              128.425         379.3            121.35 (CTAF) L 318.1                              121.9   275.8                       122.95
+
+                                                                                                  6000
+                                                                                        HOLD
+                                                   W1925N                                         2500
+                                                  R
+                                             SA          M
+                                         M                                                          4 NM
+
+
+
+
+                                                                                                                         187°
+                                                         3500
+
+
+
+                                                                                     (IAF)
+                                                                                                  2500No   007°
+                                                                                                         P
+                                                                                                         T
+                                                                                                    109°
+                                                                                 RNAND                                                 (IF/IAF)
+                                                                                                    (5)
+                                                                                                                                       UFORE
+                                                                                                                         187°
+                                                                                                                                2500
+                                                                                                                  (
+                                                                                                                  6.1)
+EC-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                        EC-1, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                        (FAF)
+                                                                                                                                       LOGOQ
+                                                                     PIKE WEST MOA
+
+
+                                                                                                      NOFHY
+                                                                                                      1.8 NM
+                                                                                                     to RW19                                  2500 to UFORE
+                                                                                                                  823                           006° (12)
+                                                                                                          RW19
+
+                                                                                                                                ALPENA
+                                                                                                                                       APN
+
+
+                                                                                                                                   Procedure NA for arrivals at
+                                       MISSED APCH FIX
+                                                                                                                                   APN VORTAC on V78
+                                                                                                                                   southeast bound.
+                                       JEGOB
+                                                           187°
+
+
+
+
+                                                                                                                                                                ELEV   690            D            TDZE   683
+                                                  007°
+
+
+
+
+                                                                    4 NM                                                                                                                            187°
+
+                                                                                                                                                                                  19
+
+                                    2800      JEGOB                                                                                                                                   P
+                                                                                         LOGOQ                                                     4 NM
+                                                                            NOFHY                                 UFORE
+                                                                                                                                              Holding Pattern
+                                                                            1.8 NM
+                                                                                                                                                                                                           25
+
+
+
+
+                                                                                            2500
+                                                                           to RW19
+                                                                                                                                        007°         6000
+                                                                                                                                                                                                          P
+
+
+
+
+                                   *LNAV only                                                                                                                            TWR                         0
+                                                                  *1.1 NM                                187°                                                                                     X
+                                                                                                                                                                                                   10
+                                                                  to RW19                                                               187°         2500                                     50
+                                                                                                                                                                                                28
+                                                                                                                                                                              P
+
+
+
+
+                                                                                                                                                                                      9001 X 150
+
+
+
+
+                                                         RW19                                        2500
+                                                                                                                                                                          7
+
+
+
+
+                                                                               *1300
+                                   GP 3.00°                                                         VGSI and RNAV glidepath not coincident
+                                    TCH 50                                                                                (VGSI Angle 3.00/TCH 39).
+                                                           1.1 NM 0.7 NM           3.7 NM            6.1 NM
+
+                                    CATEGORY                          A                       B                          C                           D
+                                                                                                                                                                                  P         A5
+                                    LPV DA                                                   933-34 250 (300-34 )
+                                    LNAV/
+                                    VNAV
+                                              DA                                        1020-114 337 (400-114 )                                                                       1
+
+
+                                    LNAV MDA                         1080-1 397 (400-1)                       1080-118                                1
+                                                                                                                                             397 (400-18 )
+                                                                                                                                                                HIRL Rwy 1-19 L
+                                                                                                              1220-112                            1280-2        MIRL Rwy 7-25 L
+                                    CIRCLING                         1140-1 450 (500-1)                                            1
+                                                                                                           530 (600-1               2    )     590 (600-2)      REIL Rwys 7, 19 and 25 L
+
+                                   ALPENA, MICHIGAN
+                                                                                                                                                                ALPENA COUNTY RGNL (APN)
+                                   Orig-A 15AUG19
+                                                                                                           45°05'N - 83°34'W
+                                                                                                                                                           RNAV (GPS) RWY 19

@@ -1,0 +1,160 @@
+{
+  "chart_id": "KAGC_R28",
+  "procedure": {
+    "airport": "KAGC",
+    "approach_ident": "R28",
+    "chart_name": "RNAV (GPS) RWY 28"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0707,
+        "width": 0.2819,
+        "x_center": 0.8113,
+        "y_center": 0.146
+      },
+      "chart_id": "KAGC_R28",
+      "evidence_region_id": "KAGC_R28_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAGC_R28_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.444,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.436
+      },
+      "chart_id": "KAGC_R28",
+      "evidence_region_id": "KAGC_R28_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAGC_R28_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0526,
+        "width": 0.26,
+        "x_center": 0.4668,
+        "y_center": 0.6846
+      },
+      "chart_id": "KAGC_R28",
+      "evidence_region_id": "KAGC_R28_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAGC_R28_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.054,
+        "x_center": 0.434,
+        "y_center": 0.6663
+      },
+      "chart_id": "KAGC_R28",
+      "evidence_region_id": "KAGC_R28_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: MESIE -> MESIE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "MESIE",
+        "raw_text": "MESIE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.041,
+        "x_center": 0.5665,
+        "y_center": 0.6665
+      },
+      "chart_id": "KAGC_R28",
+      "evidence_region_id": "KAGC_R28_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: AGC -> AGC",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "AGC",
+        "raw_text": "AGC"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0093,
+        "width": 0.0052,
+        "x_center": 0.4903,
+        "y_center": 0.6848
+      },
+      "chart_id": "KAGC_R28",
+      "evidence_region_id": "KAGC_R28_iconalign_004_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0219,
+        "width": 0.0374,
+        "x_center": 0.4342,
+        "y_center": 0.6886
+      },
+      "chart_id": "KAGC_R28",
+      "evidence_region_id": "KAGC_R28_iconalign_005_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.016,
+        "width": 0.0297,
+        "x_center": 0.5658,
+        "y_center": 0.689
+      },
+      "chart_id": "KAGC_R28",
+      "evidence_region_id": "KAGC_R28_iconalign_006_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

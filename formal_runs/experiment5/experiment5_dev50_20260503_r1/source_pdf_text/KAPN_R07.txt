@@ -1,0 +1,189 @@
+                                   ALPENA, MICHIGAN                                                           AL-718 (FAA)                                                             26078
+
+                                        WAAS                                 Rwy Ldg     5028
+                                   CH 82746
+                                                          APP CRS
+                                                                             TDZE         690                                                 RNAV (GPS) RWY 7
+                                                           067°
+                                                                             Apt Elev     690                                                  ALPENA COUNTY RGNL (APN)
+                                   RNP APCH - GPS.
+                                                                                                                                                                 MISSED APPROACH:
+                                    T            Baro-VNAV and VDP NA when using PZQ altimeter setting. Rwy 7 helicopter visibility
+                                                                                                                                                                 Climb to 3000 direct
+                                                 reduction below 34SM NA. For uncompensated Baro-VNAV systems, LNAV/VNAV
+                                    A                                                                                                                            MUNCN and hold,
+                                                 NA below -18°C or above 54°C. When local altimeter setting not received, use PZQ
+                                                                                                                                                                 continue climb-in-
+                                                 altimeter setting and increase LPV DA to 1007 feet, increase LNAV/VNAV DA to
+                                                                                                                                                                 hold to 3000.
+                                                 1039 feet; increase all MDAs 60 feet and LNAV visibility Cat C/D14 SM.
+
+                                             ATIS                              ALPENA APP CON                     ALPENA TOWER                    GND CON                      UNICOM
+
+                                    120.675           327.05                   128.425     379.3            121.35 (CTAF) L 318.1               121.9      275.8               122.95
+
+                                                 RW0725N
+                                            SA                                                                                                                      4 NM
+                                                                    M
+                                        M
+
+
+
+
+                                                                                                                                                                                      PIKE
+                                                                                                                                                                                      EAST
+                                                  3500                                                                                                                 7°
+                                                                                                                                                                     06       7°
+                                                                                                                                                                                      MOA
+                                                                                                                                                                            24
+
+
+                                                                                                                                                                    MUNCN
+
+
+
+
+                                                                                                                               823
+                                                                                                                     LEETZ
+                                                                                                                  1.9 NM to
+                                                          (IAF)                                                                         RW07
+EC-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                               EC-1, 16 APR 2026 to 14 MAY 2026
+                                                                                                                     RW07
+                                                                            30 157 )
+
+
+
+
+                                                          STENZ
+                                                                              00 °
+
+
+
+
+                                                                                                         (FAF)
+                                                                                N
+
+
+
+
+                                                                                                       MILSS
+                                                                                (6.
+
+
+                                                                                  oP
+                                                                                   5
+
+
+                                                                                    T
+
+
+
+
+                                                                                                  00
+                                                                                                25   °
+                                                                                                   7
+                                                                              (IF/IAF)           06.1)
+                                                                              GRYDR                6
+                                                                                                   (
+                                                   6000
+                                         HOLD
+                                                   3000
+                                                                                7°
+                                                                              06          7°
+                                                                                        24
+                                                                                               30 337 )
+                                                                                                 00 °
+                                                                                                   N
+                                                                                                   (6.
+
+
+                                                                                                     oP
+
+
+
+
+                                                                             4 NM
+                                                                                                      5
+
+
+                                                                                                       T
+
+
+
+
+                                                                                                             (IAF)
+                                                                                                            TRSKO
+                                   ELEV     690                D            TDZE   690
+
+
+                                                                                                                             VGSI and RNAV glidepath not coincident 3000           MUNCN
+                                                           19                                        4 NM                                (VGSI Angle 3.00/TCH 49).
+                                                                                                                     GRYDR
+                                                               P                                Holding Pattern
+                                                                                                                                          MILSS
+                                                                                                                                                         LEETZ
+                                                                                           6000             247°
+                                                                                   25
+
+
+
+
+                                                                                                                                          2500      1.9 NM to
+                                                                                           3000             067°              06                         RW07 1.1 NM
+                                                                                   P
+
+
+
+
+                                             TWR
+                                                                            10
+                                                                              0                                                 7°
+                                                                           X                                                                                      to RW07
+                                                                         28
+                                                                       50                                                                                                     RW07
+                                                      P
+
+
+
+
+                                                               9001 X 150
+
+
+
+
+                                                                                               GP 3.00°
+                                                  7
+
+
+
+
+                                                                                                TCH 58                         2500               1340
+
+                                                                                                                               6.1 NM           3.6 NM       0.8        1.1
+
+                                                                                               CATEGORY               A                   B                  C                     D
+                                         067°
+
+                                                           P         A5                        LPV     DA                                952-1      262 (300-1)
+
+                                                                                               LNAV/
+                                                               1                                       DA                               984-1       294 (300-1)
+                                                                                               VNAV
+
+
+                                    HIRL Rwy 1-19 L
+                                                                                               LNAV MDA              1080-1       390 (400-1)            1080-118 390 (400-118 )
+                                    MIRL Rwy 7-25 L                                                                                                      1220-112              1300-2
+                                                                                               CIRCLING              1140-1      450 (500-1)
+                                    REIL Rwys 7, 19 and 25 L                                                                                         530 (600-112 )           610 (700-2)
+
+                                   ALPENA, MICHIGAN
+                                                                                                                                               ALPENA COUNTY RGNL (APN)
+                                   Orig 26DEC24
+                                                                                                            45°05'N-83°34'W
+                                                                                                                                              RNAV (GPS) RWY 7

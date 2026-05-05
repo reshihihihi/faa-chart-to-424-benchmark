@@ -1,0 +1,15 @@
+{
+  "chart_id": "KBWI_L15L",
+  "procedure": {
+    "airport": "KBWI",
+    "approach_ident": "L15L",
+    "chart_name": "ILS OR LOC RWY 15L"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

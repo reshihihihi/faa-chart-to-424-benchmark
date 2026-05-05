@@ -1,0 +1,212 @@
+{
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "chart_id": "KAGC_R28",
+  "field_candidates": {
+    "altitude_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "altitude_ft",
+        "global_end_char": 53,
+        "global_start_char": 49,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 30,
+        "region_local_start_char": 26,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 53,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold,",
+        "source_start_char": 49,
+        "value": 3000
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "climb_phrase",
+        "global_end_char": 45,
+        "global_start_char": 40,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 22,
+        "region_local_start_char": 17,
+        "rule_id": "climb_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 45,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue cli",
+        "source_start_char": 40,
+        "value": "MISSED APPROACH: Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue cli"
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "climb_phrase",
+        "global_end_char": 127,
+        "global_start_char": 122,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 104,
+        "region_local_start_char": 99,
+        "rule_id": "climb_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 127,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "imb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold to 3000.",
+        "source_start_char": 122,
+        "value": "imb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold to 3000."
+      }
+    ],
+    "course_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "course_deg",
+        "global_end_char": 77,
+        "global_start_char": 74,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 54,
+        "region_local_start_char": 51,
+        "rule_id": "degree_value_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 77,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold",
+        "source_start_char": 74,
+        "value": 197
+      }
+    ],
+    "direct_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "direct_phrase",
+        "global_end_char": 60,
+        "global_start_char": 54,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 37,
+        "region_local_start_char": 31,
+        "rule_id": "direct_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 60,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold to",
+        "source_start_char": 54,
+        "value": "MISSED APPROACH: Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold to"
+      }
+    ],
+    "fix_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 66,
+        "global_start_char": 61,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 43,
+        "region_local_start_char": 38,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 66,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue clim",
+        "source_start_char": 61,
+        "value": "MESIE"
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 91,
+        "global_start_char": 88,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 68,
+        "region_local_start_char": 65,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 91,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "D APPROACH: Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold to 3000.",
+        "source_start_char": 88,
+        "value": "AGC"
+      }
+    ],
+    "hold_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "hold_phrase",
+        "global_end_char": 111,
+        "global_start_char": 107,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 88,
+        "region_local_start_char": 84,
+        "rule_id": "hold_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 111,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "ED APPROACH: Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold to 3000.",
+        "source_start_char": 107,
+        "value": "ED APPROACH: Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold to 3000."
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "hold_phrase",
+        "global_end_char": 136,
+        "global_start_char": 132,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 113,
+        "region_local_start_char": 109,
+        "rule_id": "hold_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 136,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "0 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold to 3000.",
+        "source_start_char": 132,
+        "value": "0 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold to 3000."
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "confidence": 0.95,
+        "field_type": "missed_approach_instruction",
+        "global_end_char": 145,
+        "global_start_char": 40,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "region_local_end_char": 122,
+        "region_local_start_char": 17,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 145,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold to 3000.",
+        "source_start_char": 40,
+        "value": "Climb to 3000 direct MESIE and on 197° track to AGC VOR/DME A4 and hold, continue climb-in- hold to 3000."
+      }
+    ],
+    "route_sequence_snippets": [],
+    "track_to_fix_snippets": [],
+    "turn_candidates": []
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_gold_observable_evidence": false,
+    "uses_human_evidence_provenance": false,
+    "uses_scorer_output": false
+  },
+  "region_profile": "T",
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "source_contract": {
+    "allows_canonical_target": false,
+    "allows_chart_image_pixels": false,
+    "allows_gold_observable_evidence": false,
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "source": "same_chart_human_confirmed_roi_ocr_text"
+  }
+}

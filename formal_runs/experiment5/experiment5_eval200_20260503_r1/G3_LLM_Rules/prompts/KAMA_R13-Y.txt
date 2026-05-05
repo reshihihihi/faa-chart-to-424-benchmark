@@ -1,0 +1,194 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KAMA_R13-Y",
+  "procedure": {
+    "airport": "KAMA",
+    "approach_ident": "R13-Y",
+    "chart_name": "RNAV (GPS) Y RWY 13"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0661,
+        "width": 0.391,
+        "x_center": 0.7568,
+        "y_center": 0.1437
+      },
+      "chart_id": "KAMA_R13-Y",
+      "evidence_region_id": "KAMA_R13-Y_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMA_R13-Y_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.415,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.425
+      },
+      "chart_id": "KAMA_R13-Y",
+      "evidence_region_id": "KAMA_R13-Y_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMA_R13-Y_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0543,
+        "width": 0.2744,
+        "x_center": 0.8151,
+        "y_center": 0.6601
+      },
+      "chart_id": "KAMA_R13-Y",
+      "evidence_region_id": "KAMA_R13-Y_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMA_R13-Y_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.7109,
+        "y_center": 0.643
+      },
+      "chart_id": "KAMA_R13-Y",
+      "evidence_region_id": "KAMA_R13-Y_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 5400 -> AT_OR_ABOVE 5400 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 5400,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "5400"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0586,
+        "x_center": 0.7823,
+        "y_center": 0.643
+      },
+      "chart_id": "KAMA_R13-Y",
+      "evidence_region_id": "KAMA_R13-Y_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: PAMPE -> PAMPE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "PAMPE",
+        "raw_text": "PAMPE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0613,
+        "x_center": 0.9188,
+        "y_center": 0.643
+      },
+      "chart_id": "KAMA_R13-Y",
+      "evidence_region_id": "KAMA_R13-Y_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: CAUDE -> CAUDE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "CAUDE",
+        "raw_text": "CAUDE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0126,
+        "width": 0.0103,
+        "x_center": 0.7097,
+        "y_center": 0.6578
+      },
+      "chart_id": "KAMA_R13-Y",
+      "evidence_region_id": "KAMA_R13-Y_iconalign_009_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0252,
+        "width": 0.0374,
+        "x_center": 0.7787,
+        "y_center": 0.6684
+      },
+      "chart_id": "KAMA_R13-Y",
+      "evidence_region_id": "KAMA_R13-Y_iconalign_006_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0101,
+        "width": 0.0181,
+        "x_center": 0.9187,
+        "y_center": 0.6658
+      },
+      "chart_id": "KAMA_R13-Y",
+      "evidence_region_id": "KAMA_R13-Y_iconalign_008_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

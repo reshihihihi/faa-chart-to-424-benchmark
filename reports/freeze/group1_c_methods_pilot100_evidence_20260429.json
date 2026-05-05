@@ -1,0 +1,90 @@
+{
+  "status": "pilot100_evidence_available_not_formal_freeze_ready",
+  "created_at_utc": "2026-04-29T04:54:16.497152+00:00",
+  "C1_C3_C4_summary_path": "<external-artifact-root>\\try_B1_B1'\\predictions\\pilot100_group1_c1_c3_c4_claude_tooluse_semantic_audit_ordinary_ocr_20260428_r1\\summary_report.json",
+  "C2_summary_path": "<external-artifact-root>\\try_B1_B1'\\predictions\\pilot100_group1_c2_claude_tooluse_qa_semantic_audit_ordinary_ocr_20260428_r1\\summary_report.json",
+  "methods": {
+    "C1": {
+      "run_id": "pilot100_group1_c1_c3_c4_claude_tooluse_semantic_audit_ordinary_ocr_20260428_r1",
+      "samples_total": 100,
+      "schema_valid": 99,
+      "samples_scored": 99,
+      "correct": 902,
+      "total": 2313,
+      "accuracy": 0.3899697362732382,
+      "schema_retry_count_total": 7,
+      "parser_repair_count_non_strict_json": 0,
+      "failures": [
+        {
+          "sample_id": "pilot100_external_078",
+          "chart_id": "KMCW_I36",
+          "method": "C1",
+          "error": "schema_validation_failed"
+        }
+      ]
+    },
+    "C3": {
+      "run_id": "pilot100_group1_c1_c3_c4_claude_tooluse_semantic_audit_ordinary_ocr_20260428_r1",
+      "samples_total": 100,
+      "schema_valid": 99,
+      "samples_scored": 99,
+      "correct": 874,
+      "total": 2313,
+      "accuracy": 0.3778642455685257,
+      "schema_retry_count_total": 5,
+      "parser_repair_count_non_strict_json": 0,
+      "failures": [
+        {
+          "sample_id": "pilot100_external_078",
+          "chart_id": "KMCW_I36",
+          "method": "C3",
+          "error": "schema_validation_failed"
+        }
+      ]
+    },
+    "C4": {
+      "run_id": "pilot100_group1_c1_c3_c4_claude_tooluse_semantic_audit_ordinary_ocr_20260428_r1",
+      "samples_total": 100,
+      "schema_valid": 100,
+      "samples_scored": 100,
+      "correct": 1265,
+      "total": 2344,
+      "accuracy": 0.5396757679180887,
+      "schema_retry_count_total": 51,
+      "parser_repair_count_non_strict_json": 0,
+      "failures": []
+    },
+    "C2": {
+      "run_id": "pilot100_group1_c2_claude_tooluse_qa_semantic_audit_ordinary_ocr_20260428_r1",
+      "samples_total": 100,
+      "schema_valid": 100,
+      "samples_scored": 100,
+      "correct": 457,
+      "total": 2344,
+      "accuracy": 0.19496587030716722,
+      "qa_calls_total": 2374,
+      "qa_schema_retry_count_total": 9,
+      "parser_repair_count_non_strict_json": 0,
+      "failures": []
+    },
+    "C4_current_output_control_fix": {
+      "run_id": "pilot100_group1_c4_output_control_fix_no_retry_20260429_r1 + api_retry_081",
+      "samples_total": 100,
+      "schema_valid": 100,
+      "samples_scored": 100,
+      "correct": 1248,
+      "total": 2344,
+      "accuracy": 0.5324232081911263,
+      "schema_retry_count_total": 0,
+      "parser_repair_count_non_strict_json": 0,
+      "wrapper_like_final_outputs": 0,
+      "report": "reports/pilot/c4_output_control_fix_pilot100_20260429.md"
+    }
+  },
+  "interpretation": {
+    "C1_C3_failure": "Both C1 and C3 fail on KMCW_I36 because Q4_course_or_radial contains course_deg=360, while the canonical schema currently accepts degree values below 360. This is a schema/output-control boundary issue, not a target/scorer issue.",
+    "C4_retry": "The previous C4 high-retry issue was resolved by the 2026-04-29 output-control fix pilot100 validation: 100/100 schema-valid after API recovery, 0 schema retries, 0 parser repair, 0 wrapper-like final outputs.",
+    "C2": "C2 is 100/100 schema-valid but low accuracy is method performance, not a freeze blocker by itself.",
+    "formal_decision": "C-family has enough evidence for pilot100 feasibility, but not enough for formal freeze until model/tool/retry policy and invalid-output scoring are finalized."
+  }
+}

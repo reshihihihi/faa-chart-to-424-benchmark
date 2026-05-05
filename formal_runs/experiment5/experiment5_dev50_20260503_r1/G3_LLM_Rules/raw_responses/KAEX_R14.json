@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_39c6e6dd-f077-4b2e-8d1e-69e7a8c25d92",
+  "object": "chat.completion",
+  "created": 1777804715,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_ARz7yAERrufm3waEniVT8iWD",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAEX_R14\",\"procedure\":{\"airport\":\"KAEX\",\"approach_ident\":\"R14\",\"chart_name\":\"RNAV (GPS) RWY 14\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

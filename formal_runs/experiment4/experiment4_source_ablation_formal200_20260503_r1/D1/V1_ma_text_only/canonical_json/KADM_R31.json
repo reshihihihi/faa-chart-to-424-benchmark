@@ -1,0 +1,15 @@
+{
+  "chart_id": "KADM_R31",
+  "procedure": {
+    "airport": "KADM",
+    "approach_ident": "R31",
+    "chart_name": "RNAV (GPS) RWY 31"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

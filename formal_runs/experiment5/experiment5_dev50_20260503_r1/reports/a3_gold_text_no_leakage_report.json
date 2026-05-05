@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-05-03T09:02:34.163652+00:00",
+  "method": "A3_GoldText_Rules",
+  "target_used_for_prediction": false,
+  "score_used_for_prediction": false,
+  "cifp_or_arinc_424_used_for_prediction": false,
+  "gold_observable_used_for_prediction": false,
+  "gold_ma_text_used_for_prediction": true,
+  "field_candidates_used_for_prediction": false,
+  "field_review_v2_used_for_prediction": false,
+  "forbidden_key_hits": {},
+  "source_gold_row_forbidden_key_hits": {},
+  "hard_leakage_detected": false,
+  "note": "A3 intentionally uses gold_ma_prose; target and score are loaded only after predictions are written for evaluation."
+}

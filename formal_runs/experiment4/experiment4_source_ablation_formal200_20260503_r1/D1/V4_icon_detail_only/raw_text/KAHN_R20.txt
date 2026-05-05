@@ -1,0 +1,17 @@
+{  
+  "chart_id":"KUMM_I05","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KUMM_I05","approach_ident":"I05","chart_name":"KUMM_I05","approach_ident":"I05"},"  
+  },  
+  "missed_approach":{  
+    "status":"present","  
+    "value":{"leg_count":{"status":"present","value":3},"  
+  },  
+  "procedure":{"status":"present","value":{"airport":"KUMM","approach_ident":"I05","chart_name":"KUMM_I05"},"  
+  },  
+  "missed_approach":{"status":"present","value":{"leg_count":{"status":"present","value":3},"  
+  },  
+  "procedure":{"status":"present","value":{"airport":"KUMM","approach_ident":"I05","chart_name":"KUMM_I05"},"  
+  },  
+}

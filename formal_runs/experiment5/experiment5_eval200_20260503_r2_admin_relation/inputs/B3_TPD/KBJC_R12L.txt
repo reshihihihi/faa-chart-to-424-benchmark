@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 6200 on heading 135.3; left turn climb to 8400 to NSPYR; hold at NSPYR, inbound course 338.3, left turns, 7 NM, maintain 8400.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 6200 -> AT_OR_ABOVE 6200 ft
+- ALTITUDE_TEXT: 8400 -> AT_OR_ABOVE 8400 ft
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

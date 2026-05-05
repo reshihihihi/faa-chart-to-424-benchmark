@@ -1,0 +1,3 @@
+[
+  "missed_approach.legs.2.answers.Q4_course_or_radial.value: {'type': 'navaid_radial', 'navaid': 'CEC', 'radial_deg': 166} is not valid under any of the given schemas"
+]

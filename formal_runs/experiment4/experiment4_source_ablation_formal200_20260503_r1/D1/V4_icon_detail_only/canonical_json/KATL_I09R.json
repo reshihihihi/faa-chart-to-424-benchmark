@@ -1,0 +1,15 @@
+{
+  "chart_id": "KATL_I09R",
+  "procedure": {
+    "airport": "KATL",
+    "approach_ident": "I09R",
+    "chart_name": "ILS OR LOC RWY 09R"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

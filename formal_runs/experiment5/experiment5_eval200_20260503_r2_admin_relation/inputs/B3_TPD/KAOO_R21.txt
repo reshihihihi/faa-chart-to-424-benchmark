@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 206; to YOLUP; climb to 5000 to CRYSS; hold at CRYSS, inbound course 40.9, right turns, 4 NM, maintain 5000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 5000 -> AT_OR_ABOVE 5000 ft
+- FIX_TEXT: YOLUP -> YOLUP
+- FIX_TEXT: CRYSS -> CRYSS
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

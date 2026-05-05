@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "reason": "B2a/B2b were rerun successfully on 2026-05-03 using openai-oauth at http://127.0.0.1:10531/v1.",
+  "base_url": "http://127.0.0.1:10531/v1",
+  "model": "gpt-5.4",
+  "methods": {
+    "B2a_GoldText_LLM": {
+      "schema_valid": 50,
+      "samples_total": 50,
+      "score_v2": {"correct": 606, "total": 1010, "accuracy": 0.6},
+      "failure_count": 0
+    },
+    "B2b_GoldText_FieldCandidates_LLM": {
+      "schema_valid": 50,
+      "samples_total": 50,
+      "score_v2": {"correct": 509, "total": 1010, "accuracy": 0.503960396039604},
+      "failure_count": 0
+    }
+  }
+}

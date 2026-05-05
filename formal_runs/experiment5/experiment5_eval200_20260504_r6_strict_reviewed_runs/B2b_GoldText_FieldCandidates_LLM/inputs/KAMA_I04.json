@@ -1,0 +1,124 @@
+{
+  "chart_id": "KAMA_I04",
+  "airport": "KAMA",
+  "approach_ident": "I04",
+  "chart_name": "ILS OR LOC RWY 04",
+  "gold_ma_prose": "MISSED APPROACH: MALSR Climb to 4100 then climbing right turn to A5 5000 on PNH VORTAC R-118 to CAUDE/PNH 13 DME and hold.",
+  "field_candidates": {
+    "schema_version": "experiment5_gold_ma_prose_field_candidates_schema_v1",
+    "chart_id": "KAMA_I04",
+    "candidate_source": "experiment5_gold_ma_prose_regex_candidates_v1",
+    "source_contract": {
+      "source": "adjudicated_gold_ma_prose",
+      "allows_canonical_target": false,
+      "allows_gold_observable_evidence": false,
+      "allows_field_review_v2": false,
+      "allows_cifp_or_arinc_424": false
+    },
+    "leakage_policy": {
+      "uses_canonical_target": false,
+      "uses_expected_value": false,
+      "uses_gold_field_to_leg_mapping": false,
+      "uses_human_evidence_provenance": false,
+      "uses_gold_observable_evidence": false,
+      "uses_cifp_or_arinc_424": false,
+      "uses_scorer_output": false,
+      "uses_field_review_v2": false
+    },
+    "field_candidates": {
+      "fix_candidates": [],
+      "altitude_candidates": [
+        {
+          "value": 4100,
+          "field_type": "altitude_ft",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "4100",
+          "source_start_char": 32,
+          "source_end_char": 36,
+          "rule_id": "gold_ma_altitude_ft_regex_v1",
+          "confidence": 0.95,
+          "notes": "climb_to_altitude_context"
+        }
+      ],
+      "turn_candidates": [
+        {
+          "value": "RIGHT",
+          "field_type": "turn_direction",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CLIMBING RIGHT TURN",
+          "source_start_char": 42,
+          "source_end_char": 61,
+          "rule_id": "gold_ma_turn_regex_v1",
+          "confidence": 0.95,
+          "notes": "turn_phrase_context"
+        }
+      ],
+      "course_candidates": [
+        {
+          "value": {
+            "type": "navaid_radial",
+            "navaid": "PNH",
+            "radial_deg": 118.0,
+            "direction": "outbound"
+          },
+          "field_type": "navaid_radial",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "PNH VORTAC R-118",
+          "source_start_char": 76,
+          "source_end_char": 92,
+          "rule_id": "gold_ma_navaid_radial_regex_v1",
+          "confidence": 0.9,
+          "notes": "navaid_radial_context"
+        }
+      ],
+      "hold_candidates": [
+        {
+          "value": "MISSED APPROACH: MALSR Climb to 4100 then climbing right turn to A5 5000 on PNH VORTAC R-118 to CAUDE/PNH 13 DME and hold.",
+          "field_type": "hold_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: MALSR Climb to 4100 then climbing right turn to A5 5000 on PNH VORTAC R-118 to CAUDE/PNH 13 DME and hold.",
+          "source_start_char": 117,
+          "source_end_char": 121,
+          "rule_id": "gold_ma_hold_phrase_regex_v1",
+          "confidence": 0.95,
+          "notes": "hold_phrase_context_no_leg_binding"
+        }
+      ],
+      "instruction_snippets": [
+        {
+          "value": "MALSR Climb to 4100 then climbing right turn to A5 5000 on PNH VORTAC R-118 to CAUDE/PNH 13 DME and hold.",
+          "field_type": "missed_approach_instruction",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "MISSED APPROACH: MALSR Climb to 4100 then climbing right turn to A5 5000 on PNH VORTAC R-118 to CAUDE/PNH 13 DME and hold.",
+          "source_start_char": 0,
+          "source_end_char": 122,
+          "rule_id": "gold_ma_instruction_span_regex_v1",
+          "confidence": 0.99,
+          "notes": "automatic_candidate_from_adjudicated_gold_ma_prose_no_target_or_leg_binding"
+        }
+      ],
+      "track_to_fix_snippets": [],
+      "route_sequence_snippets": [],
+      "direct_phrase_snippets": [],
+      "climb_phrase_snippets": [
+        {
+          "value": "CLIMB TO 4100 THEN CLIMBING RIGHT TURN TO A5 5000 ON PNH VORTAC R-118 TO CAUDE/PNH 13 DME AND HOLD",
+          "field_type": "climb_phrase",
+          "source": "gold_ma_prose_text",
+          "source_section": "gold_missed_approach_text",
+          "source_snippet": "CLIMB TO 4100 THEN CLIMBING RIGHT TURN TO A5 5000 ON PNH VORTAC R-118 TO CAUDE/PNH 13 DME AND HOLD",
+          "source_start_char": 23,
+          "source_end_char": 121,
+          "rule_id": "gold_ma_climb_phrase_regex_v1",
+          "confidence": 0.9,
+          "notes": "climb_phrase_context"
+        }
+      ]
+    }
+  }
+}

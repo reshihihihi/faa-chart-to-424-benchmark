@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_02c058fc-8085-48d8-b59c-ff6dd3b222ac",
+  "object": "chat.completion",
+  "created": 1777808237,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_yz9WLp91E1aq0fUOZ4WJaIEu",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAHN_R20\",\"procedure\":{\"airport\":\"KAHN\",\"approach_ident\":\"R20\",\"chart_name\":\"RNAV (GPS) RWY 20\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

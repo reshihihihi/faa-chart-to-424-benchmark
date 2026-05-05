@@ -1,0 +1,144 @@
+{
+  "chart_id": "KBKX_R30",
+  "procedure": {
+    "airport": "KBKX",
+    "approach_ident": "R30",
+    "chart_name": "RNAV (GPS) RWY 30"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0723,
+        "width": 0.4281,
+        "x_center": 0.7388,
+        "y_center": 0.1468
+      },
+      "chart_id": "KBKX_R30",
+      "evidence_region_id": "KBKX_R30_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KBKX_R30_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.423,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.435
+      },
+      "chart_id": "KBKX_R30",
+      "evidence_region_id": "KBKX_R30_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KBKX_R30_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0545,
+        "width": 0.1369,
+        "x_center": 0.4055,
+        "y_center": 0.6743
+      },
+      "chart_id": "KBKX_R30",
+      "evidence_region_id": "KBKX_R30_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KBKX_R30_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3725,
+        "y_center": 0.6572
+      },
+      "chart_id": "KBKX_R30",
+      "evidence_region_id": "KBKX_R30_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3500 -> AT_OR_ABOVE 3500 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3500,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3500"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0651,
+        "x_center": 0.4416,
+        "y_center": 0.6572
+      },
+      "chart_id": "KBKX_R30",
+      "evidence_region_id": "KBKX_R30_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: CYMOL -> CYMOL",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "CYMOL",
+        "raw_text": "CYMOL"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0396,
+        "width": 0.0136,
+        "x_center": 0.3699,
+        "y_center": 0.6805
+      },
+      "chart_id": "KBKX_R30",
+      "evidence_region_id": "KBKX_R30_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0226,
+        "width": 0.0359,
+        "x_center": 0.4393,
+        "y_center": 0.6793
+      },
+      "chart_id": "KBKX_R30",
+      "evidence_region_id": "KBKX_R30_iconalign_006_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

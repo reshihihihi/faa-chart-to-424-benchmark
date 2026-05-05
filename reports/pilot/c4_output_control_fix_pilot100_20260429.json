@@ -1,0 +1,83 @@
+{
+  "created_at_utc": "2026-04-29T06:55:46.699499+00:00",
+  "status": "c4_output_control_fix_pilot100_validated_candidate_not_formal_frozen",
+  "method": "C4",
+  "method_boundary": "full chart image + OCR-1 full-chart text -> Claude VLM/MLLM -> canonical JSON",
+  "code_change": {
+    "script": "scripts/model_clients.py",
+    "sha256": "9bfc36bdb7b7c98d71fc8ee16a574b5c85c8d9015f4f5ec704e69d2ce58327cd",
+    "change_summary": [
+      "$schema/$id stripped from Anthropic input_schema transport copy",
+      "tool description now explicitly forbids parameter/$PARAMETER_NAME/chart/output wrappers",
+      "root wrapper normalization remains disabled"
+    ]
+  },
+  "prompt": {
+    "path": "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+    "sha256": "5a60df7bdeead7c01e38ccb8c8ccc1802af6110a0f41c4658e2f5cdcc313588a"
+  },
+  "schema": {
+    "path": "schemas/missed_approach_leg.schema.json",
+    "sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9"
+  },
+  "old_reference_run": {
+    "run_id": "pilot100_group1_c1_c3_c4_claude_tooluse_semantic_audit_ordinary_ocr_20260428_r1",
+    "schema_valid": "100/100",
+    "schema_retry_count_total": 51,
+    "parser_repair_count": 0,
+    "score": {
+      "correct": 1265,
+      "total": 2344,
+      "accuracy": 0.5396757679180887
+    }
+  },
+  "new_main_run": {
+    "run_id": "pilot100_group1_c4_output_control_fix_no_retry_20260429_r1",
+    "schema_valid": "99/100",
+    "schema_retry_count_total": 0,
+    "parser_repair_count": 0,
+    "api_failures": [
+      {
+        "sample_id": "pilot100_external_081",
+        "chart_id": "KAFO_R16",
+        "method": "C4",
+        "error": "InternalServerError(\"Error code: 524 - {'type': 'error', 'error': {'type': 'network_error', 'message': '网络请求错误 (524)，请检查代理配置或尝试不使用代理'}}\")"
+      }
+    ],
+    "score_over_scored_99": {
+      "correct": 1237,
+      "total": 2325,
+      "accuracy": 0.5320430107526881
+    }
+  },
+  "api_failure_recovery_run": {
+    "run_id": "pilot100_group1_c4_output_control_fix_no_retry_20260429_r1_api_retry_081",
+    "reason": "API transport/network 524 on KAFO_R16 only; not score-based rerun",
+    "schema_valid": "1/1",
+    "schema_retry_count_total": 0,
+    "parser_repair_count": 0,
+    "score": {
+      "correct": 11,
+      "total": 19,
+      "accuracy": 0.5789473684210527
+    }
+  },
+  "combined_after_api_failure_recovery": {
+    "samples_total": 100,
+    "unique_scored_chart_ids": 100,
+    "schema_valid": "100/100 after API-failure recovery; 99/100 in uninterrupted main run due only to one 524 network failure",
+    "schema_retry_count_total": 0,
+    "parser_repair_count": 0,
+    "wrapper_like_final_outputs": 0,
+    "correct": 1248,
+    "total": 2344,
+    "accuracy": 0.5324232081911263
+  },
+  "interpretation": [
+    "The C4 high schema retry issue is resolved in this pilot100 validation: wrapper-like outputs dropped from the prior major cause to 0 observed final outputs.",
+    "No mechanical unwrap policy was enabled or needed for this run.",
+    "The only main-run failure was an API 524 network error and was recovered once with a separate run id.",
+    "This remains pilot100 external feasibility evidence, not formal300 evidence."
+  ],
+  "wrapper_audit_examples": []
+}

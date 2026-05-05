@@ -1,0 +1,194 @@
+                                   ALPENA, MICHIGAN                                                                  AL-718 (FAA)                                                                                 26078
+
+                                        WAAS                                          Rwy Ldg     9001
+                                    CH   50310
+                                                           APP CRS
+                                                                                      TDZE         685                                                                   RNAV (GPS) RWY 1
+                                                               007°
+                                        W01A                                          Apt Elev     690                                                                   ALPENA COUNTY RGNL (APN)
+                                   RNP APCH - GPS.
+                                        For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -16°C or above 54°C. Baro-                                                              MALSR MISSED APPROACH:
+                                    T
+                                        VNAV and VDP NA when using PZQ altimeter setting. For inop ALS, increase LPV all Cats visibility                                                      Climb to 3500 direct
+                                             7                                                                                                                     3
+                                        to    8   SM, LNAV/VNAV all Cats visibility to 1 SM and LNAV Cats C/D visibility to 1 8 SM. When                                                        HIMVO and on track
+                                                                                                                                                                                        A5
+                                        local altimeter setting not received, use PZQ altimeter setting and increase LPV DA to 1029 feet and                                                    307° to RABBO
+                                        all visibilities 18 SM; increase LNAV/VNAV DA to 1084 feet; increase all MDAs 60 feet. For inop                                                         and hold.
+                                        ALS when using PZQ altimeter setting, increase LPV all Cats visibility to 1 SM.
+
+                                                  ATIS                                  ALPENA APP CON                    ALPENA TOWER                                        GND CON                   UNICOM
+
+                                    120.675               327.05                        128.425       379.3        121.35 (CTAF) L 318.1                                 121.9      275.8               122.95
+
+                                                                                RABBO                                                                                                           MISSED APCH FIX
+                                                                                                                           30
+                                                                                                  PIKE WEST MOA          24 7°
+                                                                                                                         (
+                                                                                                                                                    HIMVO
+                                                                                                                            .
+                                                                                                                            1)                                                                         13
+                                                                                                                                                                                                         2°
+                                                                                             30 °
+
+
+
+
+                                                                                                                                                                                                               RABBO
+                                                                                              15 6)
+                                                                                               (
+
+
+                                                                                               00
+                                                                                                32
+
+
+
+
+                                                                                                                                                                                                      31
+                                                                                                 7
+
+
+
+
+                                                                                                                                                                                              4 NM      2°
+                                                                                                  .
+
+
+
+
+                                                                                                                                                    RW01
+                                                          Procedure NA for arrivals at
+                                                          RABBO on V78 northwest bound.
+                                    SPARR                                                                                    890
+EC-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                          EC-1, 16 APR 2026 to 14 MAY 2026
+                                                            310                                                                                       (FAF)             PIKE WEST MOA
+                                                               0
+                                                            11                                                                                      ONSOE
+                                                                                                                                             007°
+
+
+
+                                                              5°
+                                                           (
+                                                           3                                                       2800 NoPT
+                                                                                                                                      2800
+
+
+
+
+                                                            3.
+                                                                                                                                                    (6)
+
+
+
+
+                                                             2)
+                                                                                                                   096° (5)
+                                                           Procedure NA for arrivals at                                                                                6000
+                                                                                                                (IAF)                                       HOLD
+                                                           SPARR on V420 westbound.                                                                                    2800
+                                                                                                                HOLKI
+                                                                                                                                                          187°
+
+
+
+
+                                                                                      W0125N
+                                                                                     R
+                                                                                SA          M
+                                                                                                                                             007°
+
+
+
+
+                                                                            M                                             (IF/IAF)
+                                                                                      3500                                JEGOB
+
+                                                                                                                                                                 4 NM
+                                                                                                                                oPT
+                                                                                                                               °
+                                                                                                                              8)
+                                                                                                                             0N
+                                                                                                                            026
+                                                                                                                          34.
+                                                                                                                         300
+
+
+                                                                                                                          (
+
+
+
+
+                                    ELEV      690                      D         TDZE       685                 (IAF)             Procedure NA for arrivals at
+                                                                                 HIRL Rwy 1-19 L              WHOOP               WHOOP on V45 southbound.
+                                                                                 MIRL Rwy 7-25 L
+                                                                                                                                                                                3500      HIMVO
+                                                                                 REIL Rwys 7, 19                            JEGOB                                  ONSOE                                       RABBO
+                                                                                                            4 NM                                                                                        tr
+                                                                                 and 25 L                                                                                                              307°
+                                                                                                       Holding Pattern
+                                                                                                                                                                   2800
+                                                          19
+                                                               P                                      6000         187°
+                                                                                                                                             007°                                            1.3 NM
+                                                                                                      2800         007°                                                                      to RW01
+                                                                                        25
+
+
+
+
+                                                                                                                                                                                                        RW01
+                                                                                                                                                      2800
+                                                                                        P
+
+
+
+
+                                              TWR                             0                       GP 3.00°
+                                                                            10
+                                                                           X                           TCH 52
+                                                                         28
+                                                                       50
+                                                      P
+
+
+
+
+                                                               9001 X 150
+
+
+
+
+                                                                                                                                                    6 NM                         5 NM             1.3
+                                                  7
+
+
+
+
+                                                                                                      CATEGORY                A                                    B                     C                    D
+
+                                                                                                                                                                     1
+                                                                                                      LPV     DA                                                  974- 2      289 (300-12 )
+
+                                                                                                      LNAV/                                                          5
+                                                                                                              DA                                                 1029- 8      344 (400-5 8 )
+                                                           P         A5                               VNAV
+
+                                                                                                                               1
+                                                                                                      LNAV MDA             1160- 2                  475 (500-12 )                    1160-1 475 (500-1)
+                                                               1
+                                                                                                                                                                                 1220-112                1300-2
+                                                                                 007°                  CIRCLING             1160-1 470 (500-1)
+                                                                                                                                                                                530 (600-112 )          610 (700-2)
+
+                                   ALPENA, MICHIGAN
+                                                                                                                                                                         ALPENA COUNTY RGNL (APN)
+                                   Orig-E 26DEC24
+                                                                                                                   45°05'N-83°34'W
+                                                                                                                                                                         RNAV (GPS) RWY 1

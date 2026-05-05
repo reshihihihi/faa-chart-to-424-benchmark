@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_cadcfa50-cd26-45dd-aabb-24901ada9020",
+  "object": "chat.completion",
+  "created": 1777808118,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_Y4nFUy7AHwc3Otnsom31bHZ8",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAVQ_R12\",\"procedure\":{\"airport\":\"KAVQ\",\"approach_ident\":\"R12\",\"chart_name\":\"RNAV (GPS) RWY 12\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

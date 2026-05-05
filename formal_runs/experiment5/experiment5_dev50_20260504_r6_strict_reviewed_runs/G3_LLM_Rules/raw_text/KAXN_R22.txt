@@ -1,0 +1,1 @@
+{"chart_id":"KAXN_R22","procedure":{"airport":"KAXN","approach_ident":"R22","chart_name":"RNAV (GPS) RWY 22"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_254eea09-4a97-422f-a5c4-3241db12a997",
+  "object": "chat.completion",
+  "created": 1777864937,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_06UTPXdsxXdPPgCfVJt14fNw",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAXN_R22\",\"procedure\":{\"airport\":\"KAXN\",\"approach_ident\":\"R22\",\"chart_name\":\"RNAV (GPS) RWY 22\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

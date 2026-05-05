@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 127.9; to JURAD; climb to 2000 to RODDI; hold at RODDI, inbound course 218.2, right turns, 5 NM, maintain 2000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- FIX_TEXT: RODDI -> RODDI
+- FIX_TEXT: JURAD -> JURAD
+- detected lower detail: fix symbol
+- detected lower detail: fix symbol

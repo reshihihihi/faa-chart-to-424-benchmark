@@ -1,0 +1,15 @@
+{
+  "chart_id": "KCOI_R11",
+  "procedure": {
+    "airport": "KCOI",
+    "approach_ident": "R11",
+    "chart_name": "RNAV (GPS) RWY 11"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

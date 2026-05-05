@@ -1,0 +1,174 @@
+                                   AUGUSTA, GEORGIA                                                 AL-27 (FAA)                                                                             26078
+                                                Rwy Ldg  6001
+                                   APP CRS
+                                                TDZE      137                                                                       RNAV (GPS) Y RWY 8
+                                     082°       Apt Elev  146                                                                       AUGUSTA RGNL AT BUSH FLD (AGS)
+                                    RNP APCH - GPS.
+                                                                                                                                                                  MISSED APPROACH:
+                                                                                     3
+                                    T   Rwy 8 helicopter visibility reduction below 4 SM NA. VDP NA with Daniel Fld altimeter setting.                            Climb to 1200 then climbing
+                                        When local altimeter setting not received, use Daniel Fld altimeter setting and increase all MDAs                         right turn to 2000 direct
+                                    A
+                                        60 feet; increase LNAV Cats C and D visibility18 SM and Circling Cats C and D visibility14 SM.                            GUKVE and hold.
+
+                                         ATIS              AUGUSTA APP CON                         AUGUSTA TOWER                                  GND CON                            UNICOM
+                                        132.75                 126.8 270.3                    118.7 (CTAF)L 239.3                                121.9 348.6                          122.95
+
+                                                                                                                                                                                   W0825N
+                                                                                                                                                                                  R
+                                                                                                                                                                             SA          M
+                                                                                                                                                                         M
+                                                                                                                                                                                   3000
+
+
+
+
+                                                                                             439
+SE-4, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                      SE-4, 16 APR 2026 to 14 MAY 2026
+                                                                    (FAF)
+                                     R-3004 A, B, C                GONRE        082°
+                                                                                                    RW08
+
+                                                                                         DAYTE
+                                                                                     2.8 NM to
+                                                                  0
+                                                                 0                       RW08
+                                                                0    °
+                                                               2    2
+                                                                  5 )
+                                                (IF)             0 6.8
+                                                                   (
+                                             CESGO
+                                                               2
+                                                                0
+                                                                 3 6)
+
+                                                                 0
+                                                                  2
+
+                                                                  0
+                                                                   2
+                                                                    (
+
+                                                                    °
+
+
+
+
+                                                                            1
+                                                                             4
+                                                                              2
+
+
+
+
+                                                                                      4 NM
+                                                                               °
+
+
+
+
+                                                                   (IAF)
+                                                                            3
+
+
+
+
+                                                                GUKVE                                                                            ELEV   146                         TDZE   137
+                                                                             2
+                                                                              2
+                                                                               °
+
+
+
+
+                                                                                                               20
+                                                                                                                 00
+                                                                                                              29                                   17
+                                                                                                                5°
+                                                                                                             (
+                                                                                                             20
+                                                                                                                .
+                                                                                                                1)
+                                                                    Procedure NA for arrivals at                                                  A5
+                                                                    SARDY on V185 southeast bound.
+                                                                                                                                                            P
+                                                                                                                                SARDY
+
+
+                                                                                                             1200       2000    GUKVE
+                                                                                                                                                            8001
+
+
+
+
+                                           CESGO
+                                                                      GONRE
+                                                                                                                                                                 X 15
+
+
+
+
+                                                                                             DAYTE
+                                                                                                                                                                     0
+
+
+
+
+                                                                                                                                                                                                 26
+
+
+
+
+                                                                                            2.8 NM to                                            TWR
+                                        2000       052°                                      RW08
+                                                                                                                                                                                             P
+
+
+
+
+                                                                   2000            08          1.6 NM to                                                                            00
+                                                                                                                                                            P
+
+
+
+
+                                                                                                                                                                              6001X1
+                                                                                     2°
+                                                                                                                                                        8
+
+
+
+
+                                                                                                    RW08
+                                                                                                              RW08
+                                                                                                                                                                    P
+                                                                            3.00°
+                                                                                         1080                                                    082°
+                                                                             TCH 55
+                                                                                                                                                                             A5
+                                                          6.8 NM                   2.9 NM          1.2   1.6 NM
+                                                                                                                                                                         35
+                                   CATEGORY                A                    B                        C                      D
+
+
+                                    LNAV MDA              700-1 563 (600-1)                      700-15 8                       5
+                                                                                                                       563 (600-1 8 )
+                                                                                                                                                                                    MIRL Rwy 8-26
+                                                                                                                                    1
+                                                                                                 780-134                    940-2 2                                                HIRL Rwy 17-35
+                                    CIRCLING              780-1 634 (700-1)
+                                                                                              634 (700-1      3
+                                                                                                               4   )     794 (800-2
+                                                                                                                                        1
+                                                                                                                                         2   )                                REIL Rwys 8 and 26
+
+                                   AUGUSTA, GEORGIA                                                                                 AUGUSTA RGNL AT BUSH FLD (AGS)
+                                   Amdt 1C 29DEC22
+                                                                                                 33°22'N-81°58'W
+                                                                                                                                    RNAV (GPS) Y RWY 8

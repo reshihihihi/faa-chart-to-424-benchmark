@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_fc518ced-907c-4f1a-8a7d-4d33ea6d81d4",
+  "object": "chat.completion",
+  "created": 1777868826,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_9SMcEgfaG9JkjcmUtL306yFx",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KBUR_L08-Z\",\"procedure\":{\"airport\":\"KBUR\",\"approach_ident\":\"L08-Z\",\"chart_name\":\"ILS Z OR LOC Z RWY 08\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

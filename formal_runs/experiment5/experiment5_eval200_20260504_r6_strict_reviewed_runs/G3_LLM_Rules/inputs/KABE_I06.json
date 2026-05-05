@@ -1,0 +1,294 @@
+{
+  "chart_id": "KABE_I06",
+  "procedure": {
+    "airport": "KABE",
+    "approach_ident": "I06",
+    "chart_name": "ILS OR LOC RWY 06"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260504_r6_strict_visible_inputs/inputs/g_visible_observables_eval200_strict.jsonl",
+  "observable_facts": [
+    {
+      "bbox": {
+        "height": 0.0456,
+        "width": 0.316,
+        "x_center": 0.7949,
+        "y_center": 0.1335
+      },
+      "chart_id": "KABE_I06",
+      "observable_type": "ma_text_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KABE_I06_01_missed_approach_text",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KABE_I06_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.4616,
+        "width": 0.9083,
+        "x_center": 0.5012,
+        "y_center": 0.4283
+      },
+      "chart_id": "KABE_I06",
+      "observable_type": "plan_view_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KABE_I06_02_plan_view",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KABE_I06_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "review_action": "pending",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0626,
+        "width": 0.2268,
+        "x_center": 0.5496,
+        "y_center": 0.6904
+      },
+      "chart_id": "KABE_I06",
+      "observable_type": "ma_detail_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KABE_I06_03_lower_detail_area",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KABE_I06_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.4782,
+        "y_center": 0.6671
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "3000",
+          "value": 3000,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KABE_I06",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KABE_I06_iconalign_003_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "3000",
+      "region_id": "KABE_I06_iconalign_003_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 3000"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0643,
+        "x_center": 0.6268,
+        "y_center": 0.6816
+      },
+      "candidates": [
+        {
+          "candidate_type": "fix_ident_literal",
+          "raw_text": "MUDRE",
+          "value": "MUDRE",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KABE_I06",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KABE_I06_iconalign_002_fix_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "MUDRE",
+      "region_id": "KABE_I06_iconalign_002_fix_text",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "FIX_TEXT",
+      "visible_literal": "FIX_TEXT: MUDRE"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0311,
+        "x_center": 0.5491,
+        "y_center": 0.6825
+      },
+      "candidates": [
+        {
+          "candidate_type": "navaid_ident_literal",
+          "raw_text": "STW",
+          "value": "STW",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KABE_I06",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KABE_I06_iconalign_004_navaid_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "STW",
+      "region_id": "KABE_I06_iconalign_004_navaid_text",
+      "region_type": "NAVAID_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "NAVAID_TEXT",
+      "visible_literal": "NAVAID_TEXT: STW"
+    },
+    {
+      "bbox": {
+        "height": 0.013,
+        "width": 0.05,
+        "x_center": 0.553,
+        "y_center": 0.696
+      },
+      "candidates": [],
+      "chart_id": "KABE_I06",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KABE_I06_iconalign_005_radial_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "径向文字",
+      "region_id": "KABE_I06_iconalign_005_radial_text",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "RADIAL_TEXT",
+      "visible_literal": "径向文字"
+    },
+    {
+      "bbox": {
+        "height": 0.0125,
+        "width": 0.0758,
+        "x_center": 0.4793,
+        "y_center": 0.7142
+      },
+      "candidates": [],
+      "chart_id": "KABE_I06",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KABE_I06_iconalign_001_heading_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "hdg 063°",
+      "region_id": "KABE_I06_iconalign_001_heading_text",
+      "region_type": "HEADING_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "HEADING_TEXT",
+      "visible_literal": "HEADING_TEXT: hdg 063°"
+    },
+    {
+      "bbox": {
+        "height": 0.0444,
+        "width": 0.0136,
+        "x_center": 0.4753,
+        "y_center": 0.6975
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KABE_I06",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KABE_I06_iconalign_010_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KABE_I06_iconalign_010_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0113,
+        "width": 0.0372,
+        "x_center": 0.5502,
+        "y_center": 0.6793
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "PATH_SEGMENT",
+          "value": "PATH_SEGMENT",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KABE_I06",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KABE_I06_iconalign_011_path_segment",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KABE_I06_iconalign_011_path_segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "visible_label_prefix": "PATH_SEGMENT",
+      "visible_literal": "detected lower detail: path segment"
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

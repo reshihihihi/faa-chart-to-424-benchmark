@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_8cd6ff24-379b-46dd-ad5f-ca832857163a",
+  "object": "chat.completion",
+  "created": 1777808120,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_6pzqCn0l8hLeDhdjqGQI2V5v",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KBJC_R12L\",\"procedure\":{\"airport\":\"KBJC\",\"approach_ident\":\"R12L\",\"chart_name\":\"RNAV (GPS) RWY 12L\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

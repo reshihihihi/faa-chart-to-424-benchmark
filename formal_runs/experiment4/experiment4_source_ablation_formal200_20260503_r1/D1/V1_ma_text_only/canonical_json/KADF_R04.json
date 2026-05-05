@@ -1,0 +1,15 @@
+{
+  "chart_id": "KADF_R04",
+  "procedure": {
+    "airport": "KADF",
+    "approach_ident": "R04",
+    "chart_name": "RNAV (GPS) RWY 04"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

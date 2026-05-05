@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAEX_R14",
+  "procedure": {
+    "airport": "KAEX",
+    "approach_ident": "R14",
+    "chart_name": "RNAV (GPS) RWY 14"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

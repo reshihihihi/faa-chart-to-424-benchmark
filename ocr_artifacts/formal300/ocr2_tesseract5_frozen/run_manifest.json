@@ -1,0 +1,23 @@
+{
+  "created_at": "2026-04-29T15:39:49.811243+00:00",
+  "sample_manifest": "benchmark_exports/derived/v2/formal300/sample_manifest.jsonl",
+  "sample_role": "formal300_group1_input_frozen_candidate",
+  "config": {
+    "ocr_id": "OCR-2",
+    "engine": "Tesseract OCR",
+    "tesseract_version": "5.5.0.20241111",
+    "lang": "eng",
+    "settings": {
+      "oem": 3,
+      "psm": 6,
+      "line_ordering_rule": "block_par_line_word_order_from_tesseract_tsv"
+    },
+    "ordinary_ocr_source": true,
+    "mlm_or_vlm_transcription": false,
+    "tesseract_cmd_recorded": true,
+    "tesseract_cmd": "<local-tesseract-install>\\tesseract.exe"
+  },
+  "sample_count": 300,
+  "manifest_path": "ocr_artifacts/formal300/ocr2_tesseract5_frozen/manifest.jsonl",
+  "manifest_sha256": "3b53a370909404899d9cd207e2b15f187ac3e65c7040daba3818d29575a85d10"
+}

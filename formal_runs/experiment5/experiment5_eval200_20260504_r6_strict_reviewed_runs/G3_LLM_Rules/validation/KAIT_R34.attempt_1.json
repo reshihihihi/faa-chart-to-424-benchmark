@@ -1,0 +1,4 @@
+[
+  "missed_approach.leg_count: value must be null when status is 'unknown'",
+  "missed_approach.legs[0].answers.Q_terminator: value must be null when status is 'unknown'"
+]

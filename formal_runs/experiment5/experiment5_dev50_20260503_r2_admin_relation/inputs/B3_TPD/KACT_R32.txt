@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 322.3; climb to 4000 to EVVIS; hold at EVVIS, inbound course 142.2, right turns, 4 NM, maintain 4000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- FIX_TEXT: EVVIS -> EVVIS
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

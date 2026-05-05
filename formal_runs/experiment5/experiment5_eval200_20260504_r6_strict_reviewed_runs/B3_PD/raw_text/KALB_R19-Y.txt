@@ -1,0 +1,1 @@
+{"chart_id":"KALB_R19-Y","procedure":{"airport":"KALB","approach_ident":"R19-Y","chart_name":"RNAV (GPS) Y RWY 19"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

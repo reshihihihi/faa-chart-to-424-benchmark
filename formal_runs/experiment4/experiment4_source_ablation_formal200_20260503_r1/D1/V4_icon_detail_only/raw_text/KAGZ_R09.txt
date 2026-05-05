@@ -1,0 +1,12 @@
+{  
+  "chart_id":"KNEB_I3500","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KNEB_I3500","approach_ident":"I3500","chart_name":"KNEB_I3500"},"  
+  },  
+  "missed_approach":{  
+    "status":"present","  
+    "value":{"leg_count":{"status":"present","value":3},"  
+  },  
+  "procedure":{"status":"present","value":{"airport":"KNEB","approach_ident":"I3500","chart_name":"KNEB_I3500"}},"  
+}

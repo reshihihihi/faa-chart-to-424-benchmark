@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1100 on heading 1.5; left turn climb to 3000 to TATME; hold at TATME, inbound course 1.5, right turns, 4 NM, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1100 -> AT_OR_ABOVE 1100 ft
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: TATME -> TATME
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

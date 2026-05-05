@@ -1,0 +1,10 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 5400 direct BRA; hold at BRA, inbound course 346.8, right turns, 1 minute, maintain 5400.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 5400 -> AT_OR_ABOVE 5400 ft
+- FIX_TEXT: BRA -> BRA
+- detected lower detail: climb arrow

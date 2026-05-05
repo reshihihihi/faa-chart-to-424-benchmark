@@ -1,0 +1,17 @@
+{
+  "api_error": 0,
+  "base_url": "http://127.0.0.1:8080/v1",
+  "completed_now": 400,
+  "elapsed_sec": 239.644,
+  "input_jsonl": "benchmark_exports\\derived\\v2\\experiment6_counterfactuals_v8_group1formal200_full200_20260501\\packed_inputs\\v1_text_only_inputs_v9_chartdisplay_e6core.jsonl",
+  "method": "V1_text_only",
+  "model": "gpt-5.4",
+  "out_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V1_text_only\\predictions.jsonl",
+  "parse_fail": 0,
+  "parse_ok": 400,
+  "previously_done": 0,
+  "prompt": "benchmark_exports\\derived\\v2\\experiment6_counterfactuals_v8_group1formal200_full200_20260501\\prompts\\formal_v1_text_only_verifier.md",
+  "prompt_hash": "367c2cdf2f27f98d6568ae7a1b9db5f4ed082452127d4d099ab6ec4b0b7633af",
+  "requested_records": 400,
+  "total_outputs_for_request": 400
+}

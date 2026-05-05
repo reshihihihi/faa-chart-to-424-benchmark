@@ -1,142 +1,269 @@
 {
-  "manifest_version": "0.2.0",
-  "status": "partial_pre_freeze_not_formal_eval_ready",
-  "created_for": "NeurIPS 2026 Evaluations and Datasets paper-v2",
-  "last_updated_utc": "2026-04-27T08:45:00Z",
-  "freeze_scope": {
-    "formal_evaluation_ready": false,
-    "frozen_now": [
-      "canonical_json_schema_contract_v1",
-      "B1_method_boundary_and_allowed_forbidden_inputs",
-      "C3_method_boundary_and_allowed_forbidden_inputs",
-      "strict_raw_json_output_policy_v1",
-      "parser_repair_policy_v1_no_semantic_repair",
-      "assistant_prefill_json_output_control_v1",
-      "pilot10_external_excluded_from_formal_evaluation",
-      "B1_C3_run_artifact_layout"
-    ],
-    "candidate_not_frozen": [
-      "B1_prompt_text_and_hash",
-      "C3_prompt_text_and_hash",
-      "model_provider_and_model_name",
-      "max_tokens_and_other_call_parameters",
-      "OCR_artifact_policy_for_formal_B1"
-    ],
-    "not_frozen": [
-      "formal300_sample_manifest_and_split",
-      "canonical_proxy_targets_for_formal300",
-      "field_targets_jsonl",
-      "evidence_provenance_jsonl",
-      "challenge_tags_jsonl",
-      "formal_scorer_and_validator_implementation",
-      "rerun_policy_final_details",
-      "all_non_B1_C3_method_prompts_and_runners"
-    ]
-  },
-  "schema": {
-    "status": "frozen_canonical_json_contract_v1",
-    "path": "schemas/missed_approach_leg.schema.json",
-    "upstream_reference": "reshihihihi/faa-missed-approach-experiment#28",
-    "upstream_pr_state_at_import": "draft_open",
-    "source_commit": "d2c54172b31184f8c0deb74415f37c239d3e3eca",
-    "sha256": "7ccb2cb9dcc73e67167d7ae5a8874e73dc201f56ad243615009db620494482d9",
-    "freeze_decision": "This schema is frozen as the canonical JSON contract for extraction outputs. Formal targets and scorer still need separate freeze before formal evaluation.",
-    "applies_to_final_outputs": [
-      "A1",
-      "A2",
-      "B1",
-      "B1_prime",
-      "B1_link_diagnostic",
-      "C1",
-      "C2",
-      "C3",
-      "C4",
-      "D_SFT",
-      "A3",
-      "B2a",
-      "B2b",
-      "B3",
-      "B4",
-      "G"
-    ],
-    "formal_evaluation_blockers_remaining": [
-      "target projection/export must be aligned to this schema",
-      "formal scorer/validator implementation must be frozen",
-      "field_targets.jsonl expansion must be derived from schema-compatible canonical targets"
-    ]
-  },
-  "data": {
-    "status": "pending_export_not_frozen",
-    "manifest_path": "benchmark_exports/derived/v2/MANIFEST.json",
-    "sample_manifest_path": "benchmark_exports/derived/v2/sample_manifest.jsonl",
-    "splits_path": "benchmark_exports/derived/v2/splits.json",
-    "checksums_path": "benchmark_exports/derived/v2/checksums.sha256",
-    "formal_evaluation_split_locked": false,
-    "pilot10_external_role": "pilot_only_excluded_from_formal_evaluation"
-  },
-  "methods": {
-    "status": "partially_frozen_B1_C3_only",
-    "registry_path": "docs/method_registry.md",
-    "frozen_method_ids": [
-      "B1",
-      "C3"
-    ],
-    "allowed_method_ids_not_yet_frozen": [],
-    "notes": "Only B1 and C3 boundaries are frozen in this manifest update. Other methods require later registry completion."
-  },
-  "models": {
-    "status": "candidate_not_frozen",
-    "manifest_path": "configs/model_config_manifest.json",
-    "decision": "Do not freeze model/provider/max_tokens yet because call parameters may change before formal evaluation."
-  },
-  "prompts": {
-    "status": "candidate_record_not_formal_prompt_freeze",
-    "manifest_path": "configs/prompt_manifest.json",
-    "decision": "B1 and C3 prompt hashes are recorded as pilot evidence only. Formal prompt freeze is deferred."
-  },
-  "parser_repair": {
-    "status": "frozen_strict_raw_json_v1",
-    "path": "configs/parser_repair_policy.md",
-    "semantic_repair_allowed": false,
-    "code_fence_stripping_allowed": false,
-    "first_json_object_extraction_allowed": false,
-    "assistant_prefill_json": true,
-    "assistant_prefill_value": "{"
-  },
-  "pilot_evidence": {
-    "B1_C3_strict_json_prefill": {
-      "run_id": "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
-      "sample_role": "pilot10_external_excluded_from_formal_evaluation",
-      "B1": {
-        "strict_json": "10/10",
-        "schema_valid": "10/10",
-        "parser_repair_count_non_strict_json": 0,
-        "score": "94/220",
-        "accuracy": 0.42727272727272725
-      },
-      "C3": {
-        "strict_json": "10/10",
-        "schema_valid": "10/10",
-        "parser_repair_count_non_strict_json": 0,
-        "score": "66/220",
-        "accuracy": 0.3
-      },
-      "failures": 0
-    }
-  },
-  "scorer": {
-    "status": "pending_import_or_implementation_not_frozen",
-    "path": "scripts/scorers/",
-    "sha256": null
-  },
-  "rerun_policy": {
-    "status": "draft_policy_not_frozen",
-    "path": "docs/rerun_policy.md"
-  },
-  "output_roots": {
-    "predictions": "predictions/",
-    "reports": "reports/",
-    "raw_outputs": "raw_outputs/",
-    "run_manifests": "run_manifests/"
-  }
+    "manifest_version":  "0.2.0",
+    "status":  "partial_pre_freeze_with_final_optimization_not_formal_eval_ready",
+    "created_for":  "NeurIPS 2026 Evaluations and Datasets paper-v2",
+    "last_updated_utc":  "2026-04-29T02:46:09Z",
+    "freeze_scope":  {
+                         "formal_evaluation_ready":  false,
+                         "frozen_now":  [
+                                            "canonical_json_schema_contract_v1",
+                                            "B1_method_boundary_and_allowed_forbidden_inputs",
+                                            "C3_method_boundary_and_allowed_forbidden_inputs",
+                                            "strict_raw_json_output_policy_v1",
+                                            "parser_repair_policy_v1_no_semantic_repair",
+                                            "strict_json_provider_output_control_v1",
+                                            "openai_tool_call_schema_output_control_v1_for_text_llm_methods",
+                                            "pilot10_external_excluded_from_formal_evaluation",
+                                            "pilot100_external_excluded_from_formal_evaluation",
+                                            "B1_C3_run_artifact_layout",
+                                            "group1_ordinary_ocr_boundary_correction_v1"
+                                        ],
+                         "candidate_not_frozen":  [
+                                                      "B1_prompt_text_and_hash",
+                                                      "B1_prime_prompt_text_and_hash",
+                                                      "B1_prime_link_prompt_text_and_hash",
+                                                      "B1_prime_link_field_to_leg_schema_candidate",
+                                                      "B1_prime_link_method_boundary_candidate",
+                                                      "C1_prompt_text_and_hash",
+                                                      "C3_prompt_text_and_hash",
+                                                      "C4_prompt_text_and_hash",
+                                                      "OCR1_PaddleOCR_PP-OCRv5_candidate_source",
+                                                      "OCR2_Tesseract_5x_candidate_source",
+                                                      "A1_A2_rules_runner_candidate_v1",
+                                                      "C2_PR28_QA_prompt_bundle_and_candidate_aggregator_v1",
+                                                      "C1_C4_method_boundaries_candidate",
+                                                      "gpt_5_4_model_provider_and_model_name",
+                                                      "claude_sonnet_4_5_20250929_VLM_provider_and_model_name",
+                                                      "max_tokens_and_other_call_parameters",
+                                                      "ordinary_OCR_artifact_policy_for_formal_A1_A2_B1_B1_prime_B1_prime_link_C4",
+                                                      "group1_final_prefreeze_optimization_20260429_prompts_and_rules"
+                                                  ],
+                         "not_frozen":  [
+                                            "formal300_sample_manifest_and_split",
+                                            "canonical_proxy_targets_for_formal300",
+                                            "field_targets_jsonl",
+                                            "evidence_provenance_jsonl",
+                                            "challenge_tags_jsonl",
+                                            "formal_scorer_and_validator_implementation",
+                                            "rerun_policy_final_details",
+                                            "formal_group1_all_method_runners"
+                                        ]
+                     },
+    "schema":  {
+                   "status":  "frozen_canonical_json_contract_v1",
+                   "path":  "schemas/missed_approach_leg.schema.json",
+                   "upstream_reference":  "reshihihihi/faa-missed-approach-experiment#28",
+                   "upstream_pr_state_at_import":  "draft_open",
+                   "source_commit":  "d2c54172b31184f8c0deb74415f37c239d3e3eca",
+                   "sha256":  "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+                   "freeze_decision":  "This schema is frozen as the canonical JSON contract for extraction outputs. Formal targets and scorer still need separate freeze before formal evaluation.",
+                   "applies_to_final_outputs":  [
+                                                    "A1",
+                                                    "A2",
+                                                    "B1",
+                                                    "B1_prime",
+                                                    "B1_prime_link",
+                                                    "B1_link_diagnostic",
+                                                    "C1",
+                                                    "C2",
+                                                    "C3",
+                                                    "C4",
+                                                    "D_SFT",
+                                                    "A3",
+                                                    "B2a",
+                                                    "B2b",
+                                                    "B3",
+                                                    "B4",
+                                                    "G"
+                                                ],
+                   "formal_evaluation_blockers_remaining":  [
+                                                                "target projection/export must be aligned to this schema",
+                                                                "formal scorer/validator implementation must be frozen",
+                                                                "field_targets.jsonl expansion must be derived from schema-compatible canonical targets"
+                                                            ]
+               },
+    "data":  {
+                 "status":  "pending_export_not_frozen",
+                 "manifest_path":  "benchmark_exports/derived/v2/MANIFEST.json",
+                 "sample_manifest_path":  "benchmark_exports/derived/v2/sample_manifest.jsonl",
+                 "splits_path":  "benchmark_exports/derived/v2/splits.json",
+                 "checksums_path":  "benchmark_exports/derived/v2/checksums.sha256",
+                 "formal_evaluation_split_locked":  false,
+                 "pilot10_external_role":  "pilot_only_excluded_from_formal_evaluation",
+                 "pilot100_external_role":  "expanded_feasibility_only_excluded_from_formal_evaluation",
+                 "pilot100_external_artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
+                 "pilot100_external_overlap_checks":  {
+                                                          "formal300_chart_id_overlap":  0,
+                                                          "formal300_pdf_overlap":  0,
+                                                          "pilot10_chart_id_overlap":  0,
+                                                          "pilot10_pdf_overlap":  0
+                                                      }
+             },
+    "methods":  {
+                    "status":  "partially_frozen_with_group1_candidates",
+                    "registry_path":  "docs/method_registry.md",
+                    "boundary_audit_path":  "docs/group1_method_boundary_audit_20260428.md",
+                    "frozen_method_ids":  [
+                                              "B1",
+                                              "C3"
+                                          ],
+                    "candidate_method_ids_not_yet_frozen":  [
+                                                                "A1",
+                                                                "A2",
+                                                                "B1_prime",
+                                                                "B1_prime_link",
+                                                                "C1",
+                                                                "C2",
+                                                                "C4"
+                                                            ],
+                    "excluded_group5_or_diagnostic_ids":  [
+                                                              "B1_link",
+                                                              "B2a",
+                                                              "B2b",
+                                                              "B3",
+                                                              "B4"
+                                                          ],
+                    "notes":  "B1 and C3 method input/output boundaries remain frozen. A1/A2, B1_prime, B1_prime_link, C1, C2, and C4 now have candidate boundary definitions reviewed or registered for Group 1. B1_prime_link is a separate automatic non-target-aware linking candidate after B1_prime, not a hidden modification of B1_prime. The earlier B1 pilot score is demoted because its OCR text was Claude/MLLM-generated rather than ordinary OCR. Pilot100 B1/B1_prime expanded validation supports B1/B1_prime output-path stability, but B1_prime remains candidate because it underperformed B1 on 100 external samples."
+                },
+    "models":  {
+                   "status":  "candidate_not_frozen",
+                   "manifest_path":  "configs/model_config_manifest.json",
+                   "decision":  "Do not freeze model/provider/max_tokens yet. Current final pre-freeze candidates use gpt-5.4 for B1/B1_prime/B1_prime_link with OpenAI-compatible forced tool call, and claude-sonnet-4-5-20250929 for C1/C2/C3/C4 with Anthropic-compatible tool use. Neither model is ordinary OCR."
+               },
+    "ocr_sources":  {
+                        "status":  "candidate_not_frozen",
+                        "manifest_path":  "configs/ocr_source_manifest.json",
+                        "decision":  "Experiment Group 1 ordinary OCR sources are reset after the MLLM OCR boundary correction. OCR-1 candidate is PaddleOCR PP-OCRv5. OCR-2 candidate is Tesseract 5.x. A1/B1/B1_prime/B1_prime_link/C4 use OCR-1; A2 uses OCR-2; C1/C2/C3 do not receive OCR text."
+                    },
+    "prompts":  {
+                    "status":  "candidate_record_not_formal_prompt_freeze",
+                    "manifest_path":  "configs/prompt_manifest.json",
+                    "decision":  "B1, B1_prime, C1, C3, and C4 candidate prompts received final pre-freeze output-stability hardening on 2026-04-29. B1_prime_link is separately registered as a Group 1 candidate with its own prompt and field-to-leg schema on 2026-04-29. Formal prompt freeze is still deferred until the freeze package is created."
+                },
+    "parser_repair":  {
+                          "status":  "frozen_strict_raw_json_v1",
+                          "path":  "configs/parser_repair_policy.md",
+                          "output_control_policy_path":  "configs/output_control_policy.md",
+                          "semantic_repair_allowed":  false,
+                          "code_fence_stripping_allowed":  false,
+                          "first_json_object_extraction_allowed":  false,
+                          "openai_compatible_json_mode":  true,
+                          "assistant_prefill_json_for_anthropic_compatible_historical_runs":  true,
+                          "assistant_prefill_value_for_anthropic_compatible_historical_runs":  "{"
+                      },
+    "pilot_evidence":  {
+                           "ordinary_ocr_B1_B1_prime_pilot100_expanded_validation":  {
+                                                                                         "run_id":  "pilot100_b1_b1prime_gpt54_toolcall_schema_retry1_ordinary_ocr_20260428_r1",
+                                                                                         "sample_role":  "pilot100_external_expanded_feasibility_only_not_formal300",
+                                                                                         "artifact_root":  "<external-artifact-root>\\try_B1_B1\u0027",
+                                                                                         "report_path":  "reports/pilot/pilot100_b1_b1prime_expanded_validation_20260428.md",
+                                                                                         "data_integrity":  {
+                                                                                                                "sample_count":  100,
+                                                                                                                "unique_chart_id":  100,
+                                                                                                                "unique_pdf":  100,
+                                                                                                                "formal300_chart_id_overlap":  0,
+                                                                                                                "formal300_pdf_overlap":  0,
+                                                                                                                "pilot10_chart_id_overlap":  0,
+                                                                                                                "pilot10_pdf_overlap":  0,
+                                                                                                                "missing_paths":  0
+                                                                                                            },
+                                                                                         "ocr1":  {
+                                                                                                      "engine":  "PaddleOCR PP-OCRv5",
+                                                                                                      "ordinary_ocr_not_mllm":  true,
+                                                                                                      "full_text_files":  "100/100",
+                                                                                                      "raw_blocks_files":  "100/100",
+                                                                                                      "empty_text_files":  0
+                                                                                                  },
+                                                                                         "B1":  {
+                                                                                                    "schema_valid":  "100/100",
+                                                                                                    "parser_repair_count_non_strict_json":  0,
+                                                                                                    "schema_retry_count_total":  7,
+                                                                                                    "score":  "723/2344",
+                                                                                                    "accuracy":  0.3084470989761092,
+                                                                                                    "formal_use":  "pilot_only_not_formal_frozen"
+                                                                                                },
+                                                                                         "B1_prime":  {
+                                                                                                          "schema_valid":  "100/100",
+                                                                                                          "parser_repair_count_non_strict_json":  0,
+                                                                                                          "schema_retry_count_total":  11,
+                                                                                                          "field_candidates_schema_valid":  "100/100",
+                                                                                                          "score":  "674/2344",
+                                                                                                          "accuracy":  0.28754266211604096,
+                                                                                                          "formal_use":  "candidate_only_not_formal_frozen",
+                                                                                                         "freeze_note":  "Do not formally freeze B1_prime matcher/prompt yet; expanded validation underperformed B1."
+                                                                                                      }
+                                                                                     },
+                           "ordinary_ocr_B1_prime_link_pilot100_group1_candidate_validation":  {
+                                                                                                  "run_id":  "b1prime_link_v2_pilot100_gpt54_toolcall_promptfix_20260428_r2",
+                                                                                                  "sample_role":  "pilot100_external_expanded_feasibility_only_not_formal300",
+                                                                                                  "artifact_root":  "<external-artifact-root>\\B1\u0027_link",
+                                                                                                  "report_path":  "reports/pilot/b1_prime_link_group1_candidate_pilot100_20260429.md",
+                                                                                                  "revalidation_json":  "reports/pilot/b1_prime_link_group1_candidate_pilot100_revalidation_20260429.json",
+                                                                                                  "data_integrity":  {
+                                                                                                                         "sample_count":  100,
+                                                                                                                         "canonical_json_files":  "100/100",
+                                                                                                                         "validation_files":  "100/100",
+                                                                                                                         "score_files":  "100/100",
+                                                                                                                         "field_to_leg_link_files":  "100/100",
+                                                                                                                         "missing_paths":  0
+                                                                                                                     },
+                                                                                                  "ocr1":  {
+                                                                                                               "engine":  "PaddleOCR PP-OCRv5",
+                                                                                                               "ordinary_ocr_not_mllm":  true
+                                                                                                           },
+                                                                                                  "B1_prime_link":  {
+                                                                                                                        "schema_valid":  "100/100",
+                                                                                                                        "field_to_leg_link_schema_valid":  "100/100",
+                                                                                                                        "parser_repair_count_non_strict_json":  0,
+                                                                                                                        "schema_retry_count_total":  1,
+                                                                                                                        "score":  "1031/2344",
+                                                                                                                        "accuracy":  0.4398464163822526,
+                                                                                                                        "formal_use":  "candidate_only_not_formal_frozen",
+                                                                                                                        "freeze_note":  "Added as separate Group 1 candidate after B1_prime. It must not replace or be reported as B1_prime."
+                                                                                                                    }
+                                                                                              },
+                           "MLLM_OCR_B1_debug_and_C3_image_pilot":  {
+                                                                        "run_id":  "pilot10_exp1_b1_c3_strict_json_prefill_20260427_r1",
+                                                                        "sample_role":  "pilot10_external_excluded_from_formal_evaluation",
+                                                                        "correction":  {
+                                                                                           "path":  "docs/group1_ocr_boundary_correction_20260428.md",
+                                                                                           "reason":  "B1 OCR text was generated by claude-sonnet-4-5-20250929, an MLLM/VLM source rather than ordinary OCR.",
+                                                                                           "b1_formal_status":  "invalid_for_formal_B1_pipeline_debug_only",
+                                                                                           "c3_formal_status":  "valid_method_boundary_but_pilot_only_not_formal_frozen"
+                                                                                       },
+                                                                        "B1":  {
+                                                                                   "strict_json":  "10/10",
+                                                                                   "schema_valid":  "10/10",
+                                                                                   "parser_repair_count_non_strict_json":  0,
+                                                                                   "score":  "94/220",
+                                                                                   "accuracy":  0.42727272727272725,
+                                                                                   "formal_use":  "forbidden",
+                                                                                   "new_status":  "pipeline_debug_only_invalid_for_formal_B1"
+                                                                               },
+                                                                        "C3":  {
+                                                                                   "strict_json":  "10/10",
+                                                                                   "schema_valid":  "10/10",
+                                                                                   "parser_repair_count_non_strict_json":  0,
+                                                                                   "score":  "66/220",
+                                                                                   "accuracy":  0.3,
+                                                                                   "formal_use":  "pilot_only_not_formal_frozen"
+                                                                               },
+                                                                        "failures":  0
+                                                                    }
+                       },
+    "scorer":  {
+                   "status":  "pending_import_or_implementation_not_frozen",
+                   "path":  "scripts/scorers/",
+                   "sha256":  null
+               },
+    "rerun_policy":  {
+                         "status":  "draft_policy_not_frozen",
+                         "path":  "docs/rerun_policy.md"
+                     },
+    "output_roots":  {
+                         "predictions":  "predictions/",
+                         "reports":  "reports/",
+                         "raw_outputs":  "raw_outputs/",
+                         "run_manifests":  "run_manifests/"
+                     }
 }

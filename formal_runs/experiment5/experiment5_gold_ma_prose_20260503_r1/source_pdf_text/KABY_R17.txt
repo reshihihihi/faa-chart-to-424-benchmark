@@ -1,0 +1,237 @@
+                                   ALBANY, GEORGIA                                                            AL-8 (FAA)                                                                     25219
+                                      WAAS                           Rwy Ldg  5200
+                                   CH 48815
+                                                          APP CRS
+                                                                     TDZE      196                                                         RNAV (GPS) RWY 17
+                                                           167°      Apt Elev                                                            SOUTHWEST GEORGIA RGNL (ABY)
+                                     W17A                                      196
+                                   RNP APCH.
+                                    T Rwy 17 helicopter visibility reduction below34 SM NA. For uncompensated                           MISSED APPROACH: Climb to 3000 direct TUPGE
+                                                                                                                                        and on track 226° to ELMOE and hold.
+                                    A Baro-VNAV systems, LNAV/VNAV NA below -7°C or above 54°C.
+
+                                                 ATIS                JACKSONVILLE CENTER                  ALBANY TOWER                      GND CON                             UNICOM
+                                          133.05                      125.75 363.075                120.25 (CTAF)L 336.4                  121.9 348.6                           122.95
+
+                                                      (IAF)                                                                                                                        72
+                                                                      2          (IAF)                                                                                          RW1  5N
+                                                   KUTVE               0                      2000 NoPT                         (IAF)
+                                                                         0
+                                                                          0                                                                                                SA          M
+
+
+
+
+                                                                                                            (7 2° PT
+                                                                                BRONN         167° (5.1)                       DESKS                                   M
+                                                                       1    N
+
+
+
+
+                                                                                                              22 N o
+                                                                        3
+                                                                    (1 7 oP
+                                                                      2 °     T                                                                                                  2600
+                                                                       .2
+
+
+
+
+                                                                                                               00
+
+
+
+                                                                                                                )
+                                                                         )
+
+
+
+
+                                                                                                              .6
+                                                                                                            20
+                                                                                            167
+
+
+                                                                          4 NM
+                                                                                               °
+
+
+
+
+                                                                        6000
+                                                                                     347
+
+
+
+
+                                                               HOLD
+                                                                        2000                              (IF/IAF)
+                                                                                        °
+
+
+
+
+                                                                                                          WETVO
+
+
+                                                                             2000
+                                                                                                           200
+                                                                                                    167)
+
+
+
+
+                                                                          018° (4.7)
+                                                                                                   (
+                                                                                                   6.
+
+
+                                                                                                              0
+                                                                                                     6
+                                                                                                       °
+SE-4, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                     SE-4, 16 APR 2026 to 14 MAY 2026
+                                                                               PECAN
+                                                                                PZD                                      747
+
+                                                                                                    (FAF)
+                                                                                                   ZOTIG
+
+
+                                                                                                                             635
+
+                                    Procedure NA for arrival at PZD VOR/DME on
+                                    V159 southeast bound and on V5 southwest bound.
+                                                                                                            RW17
+
+
+
+
+                                                                                                                                                 ELEV    196                D     TDZE       196
+                                    MISSED APCH FIX
+                                                                                                                                   TUPGE
+                                                                                                                                                                     167°
+                                                   189°
+
+
+
+
+                                   4 NM
+                                          009°
+
+
+
+
+                                                                                                                         2 °
+
+
+
+
+                                                                                                                                                                                              3
+                                                                                                                       (1 26
+
+                                                                                                                            )
+
+
+
+
+                                                                                                                                                                                             2
+                                                                                                                          .4
+                                                                                                                          2
+
+
+
+
+                                                                                                                                                         17
+                                                                                                                                                                                             P
+                                                      ELMOE
+                                                                                                                                                              V
+
+
+
+                                                                                                           3000       TUPGE              ELMOE
+                                                                                                                                                                                         0
+                                                                                                                                                                                        5
+
+
+
+
+                                          4 NM                                                                                  tr
+                                                                                                                                                                                       1
+
+
+
+
+                                                              WETVO                      ZOTIG
+                                                                                                                                                                                   X
+                                                                                                                                                             520
+
+
+
+
+                                                                                                                                                                                   1
+
+
+
+
+                                    Holding Pattern                                                                             226°                                  TWR
+                                                                                                                                                                                  0
+                                                                                                                                                                                 6
+                                                                                                                                                                                6
+
+
+
+
+                                                                                            2000
+                                                                                                                                                                0X
+
+
+
+
+                                   6000             347°
+                                                                                                                                                                150
+
+
+
+
+                                                                         167°                                *1.2 NM to         *LNAV only.
+                                   2000                                                                           RW17
+                                                      167°
+                                                                                                                     RW17                                P
+                                    GP 3.00°                                2000
+                                                                                                                                                    A5
+                                    TCH 52                                                                                                                5
+                                                                                                                                                                       V
+                                                                            6.6 NM                       4.2 NM        1.2
+                                                                                                                                                                           35
+                                    CATEGORY                   A                     B                            C                  D
+
+                                   LPV           DA                             534-114                     1
+                                                                                                   338 (400-14 )
+
+                                   LNAV/
+                                                 DA                             603-112                     1
+                                                                                                   407 (500-1 2 )
+                                   VNAV
+                                                                                                          640-114               640-112                                         HIRL Rwy 5-23 L
+                                   LNAV MDA                    640-1 444 (500-1)                                  1
+                                                                                                         444 (500-14 )
+                                                                                                                                       1
+                                                                                                                              444 (500-1 2 )
+                                                                                                                                                                            MIRL Rwy 17-35 L
+                                                                                                                                                                                  REIL Rwy 35 L
+                                                              640-1             660-1                     940-214               940-212
+                                   CIRCLING                                                                                                                                REIL Rwys 17 and 23
+                                                           444 (500-1)         464 (500-1)               744 (800-214 )       744 (800-212 )
+
+                                   ALBANY, GEORGIA
+                                                                                                                                         SOUTHWEST GEORGIA RGNL(ABY)
+                                   Amdt 1C 26MAR20
+                                                                                                          31°32'N-84°12'W
+                                                                                                                                           RNAV (GPS) RWY 17
+

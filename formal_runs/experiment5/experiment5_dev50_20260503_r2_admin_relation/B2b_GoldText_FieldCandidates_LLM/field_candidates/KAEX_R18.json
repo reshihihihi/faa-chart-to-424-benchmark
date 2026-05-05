@@ -1,0 +1,86 @@
+{
+  "schema_version": "experiment5_gold_ma_prose_field_candidates_schema_v1",
+  "chart_id": "KAEX_R18",
+  "candidate_source": "experiment5_gold_ma_prose_regex_candidates_v1",
+  "source_contract": {
+    "source": "adjudicated_gold_ma_prose",
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false,
+    "allows_field_review_v2": false,
+    "allows_cifp_or_arinc_424": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false,
+    "uses_field_review_v2": false
+  },
+  "field_candidates": {
+    "fix_candidates": [],
+    "altitude_candidates": [
+      {
+        "value": 4000,
+        "field_type": "altitude_ft",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "4000",
+        "source_start_char": 52,
+        "source_end_char": 56,
+        "rule_id": "gold_ma_altitude_ft_regex_v1",
+        "confidence": 0.95,
+        "notes": "climb_to_altitude_context"
+      }
+    ],
+    "turn_candidates": [],
+    "course_candidates": [],
+    "hold_candidates": [
+      {
+        "value": "MISSED APPROACH: on heading 186; to HIPKU; climb to 4000 to MUSHE; hold at MUSHE, inbound course 286.3, right turns, 5 NM, maintain 4000.",
+        "field_type": "hold_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "MISSED APPROACH: on heading 186; to HIPKU; climb to 4000 to MUSHE; hold at MUSHE, inbound course 286.3, right turns, 5 NM, maintain 4000.",
+        "source_start_char": 67,
+        "source_end_char": 71,
+        "rule_id": "gold_ma_hold_phrase_regex_v1",
+        "confidence": 0.95,
+        "notes": "hold_phrase_context_no_leg_binding"
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "value": "on heading 186; to HIPKU; climb to 4000 to MUSHE; hold at MUSHE, inbound course 286.3, right turns, 5 NM, maintain 4000.",
+        "field_type": "missed_approach_instruction",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "MISSED APPROACH: on heading 186; to HIPKU; climb to 4000 to MUSHE; hold at MUSHE, inbound course 286.3, right turns, 5 NM, maintain 4000.",
+        "source_start_char": 0,
+        "source_end_char": 137,
+        "rule_id": "gold_ma_instruction_span_regex_v1",
+        "confidence": 0.99,
+        "notes": "automatic_candidate_from_adjudicated_gold_ma_prose_no_target_or_leg_binding"
+      }
+    ],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [],
+    "climb_phrase_snippets": [
+      {
+        "value": "CLIMB TO 4000 TO MUSHE",
+        "field_type": "climb_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "CLIMB TO 4000 TO MUSHE",
+        "source_start_char": 43,
+        "source_end_char": 65,
+        "rule_id": "gold_ma_climb_phrase_regex_v1",
+        "confidence": 0.9,
+        "notes": "climb_phrase_context"
+      }
+    ]
+  }
+}

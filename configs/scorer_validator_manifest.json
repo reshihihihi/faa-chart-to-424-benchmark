@@ -1,0 +1,43 @@
+{
+  "manifest_version": "0.1.0",
+  "status": "frozen_for_group1_formal_evaluation",
+  "created_at_utc": "2026-04-29T04:50:27.921733+00:00",
+  "scorer_path": "scripts/scorers/group1_canonical_field_scorer.py",
+  "scorer_sha256": "be2bf016c557e9ce9f9df7b680370c921cd92fcc3dc34e7e09dff44384b26f45",
+  "schema_path": "schemas/missed_approach_leg.schema.json",
+  "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+  "scoring_rule": "Exact equality over leg_count and per-target-leg questionnaire fields, keyed by target leg_index. Missing predicted leg fields count as incorrect.",
+  "question_fields": [
+    "Q_terminator",
+    "Q1_fix_ident",
+    "Q2_altitude_constraint",
+    "Q3_turn",
+    "Q4_course_or_radial",
+    "Q5_hold_params"
+  ],
+  "semantic_validation_rules": [
+    "present leg_count.value must equal len(missed_approach.legs)",
+    "leg_index must be sequential starting at 1",
+    "non-present status requires value=null",
+    "present status requires non-null value",
+    "present string values must not be status words such as unknown/not_observable/n/a"
+  ],
+  "smoke_test_output": "reports/pilot/scorer_smoke_group1_KAAF_R32_20260429.json",
+  "formal_freeze_blocker": null,
+  "invalid_output_scoring_policy": {
+    "path": "configs/invalid_output_scoring_policy.md",
+    "sha256": "f0e80576c8c56fd3725859791cffa3b4a3a666f183393b2b622a99f82345efc1",
+    "policy": "zero_for_all_target_fields",
+    "applies_to": [
+      "parse_failure",
+      "schema_failure",
+      "api_failure",
+      "missing_prediction"
+    ]
+  },
+  "formal300_target_package": {
+    "path": "benchmark_exports/derived/v2/formal300/targets",
+    "field_targets_path": "benchmark_exports/derived/v2/formal300/targets/field_targets.jsonl",
+    "evidence_provenance_path": "benchmark_exports/derived/v2/formal300/targets/evidence_provenance.jsonl"
+  }
+}

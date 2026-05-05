@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 173.3; climb to 5100 to FUGLE; hold at FUGLE, inbound course 353.3, right turns, 5 NM, maintain 5100.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 5100 -> AT_OR_ABOVE 5100 ft
+- FIX_TEXT: FUGLE -> FUGLE
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

@@ -1,0 +1,1 @@
+{"chart_id":"KBJC_R12L","procedure":{"airport":"KBJC","approach_ident":"R12L","chart_name":"RNAV (GPS) RWY 12L"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

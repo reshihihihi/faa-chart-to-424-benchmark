@@ -1,0 +1,3 @@
+[
+  "missed_approach.legs.3.answers.Q5_hold_params.value: {'inbound_course_deg': 50, 'leg_time_min': None, 'leg_distance_nm': None, 'turn': 'unknown'} is not valid under any of the given schemas"
+]

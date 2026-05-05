@@ -2,18 +2,18 @@ TASK: For missed-approach leg <LEG_INDEX>, identify its altitude constraint (com
 
 Descriptors (exactly one):
 
-  AT           — cross the altitude exactly (rare on climbing legs)
-  AT_OR_ABOVE  — at or above altitude (typical for climb-to-altitude segments)
-  AT_OR_BELOW  — at or below altitude
-  BETWEEN      — between altitude_ft (upper bound) and altitude_2_ft (lower bound)
+  AT           - cross the altitude exactly (rare on climbing legs)
+  AT_OR_ABOVE  - at or above altitude (typical for climb-to-altitude segments)
+  AT_OR_BELOW  - at or below altitude
+  BETWEEN      - between altitude_ft (upper bound) and altitude_2_ft (lower bound)
 
 Chart typography cues:
-- "Climb to N" or "to N" → typically AT_OR_ABOVE N
-- "at N" or explicit single line → AT N
-- "N / M" stacked (upper / lower) → BETWEEN with upper=N, lower=M
-- Number with a crossbar ABOVE → AT_OR_ABOVE
-- Number with a crossbar BELOW → AT_OR_BELOW
-- Number with crossbars both above and below → AT (exact)
+- "Climb to N" or "to N" -> typically AT_OR_ABOVE N
+- "at N" or explicit single line -> AT N
+- "N / M" stacked (upper / lower) -> BETWEEN with upper=N, lower=M
+- Number with a crossbar ABOVE -> AT_OR_ABOVE
+- Number with a crossbar BELOW -> AT_OR_BELOW
+- Number with crossbars both above and below -> AT (exact)
 
 OUTPUT (single JSON object):
 
@@ -27,10 +27,18 @@ OUTPUT (single JSON object):
 }
 
 Scoring note: this is a COMPOSITE field. desc, altitude_ft, and altitude_2_ft are
-all compared as one atom — any one wrong makes the whole answer contradicted.
+all compared as one atom - any one wrong makes the whole answer contradicted.
 
 Rules:
 - altitude_2_ft is non-null ONLY for BETWEEN; null otherwise.
-- Leg has no altitude constraint at all (rare; check carefully) → status=not_applicable, value=null.
-- All visible and readable → status=present.
-- You see a constraint but cannot read a number → status=unknown, value=null.
+- Leg has no altitude constraint at all (rare; check carefully) -> status=not_applicable, value=null.
+- All visible and readable -> status=present.
+- You see a constraint but cannot read a number -> status=unknown, value=null.
+
+Strict output rules:
+- Return exactly one bare JSON object with keys status and value.
+- Do not output Markdown, code fences, prose, or any text outside JSON.
+- status must be exactly present, not_applicable, not_observable, or unknown.
+- If status is not present, value must be null.
+- If status is present, value must contain exactly desc, altitude_ft, and altitude_2_ft.
+- Do not encode the value object as a string. Use "value": {"desc": "...", "altitude_ft": 3000, "altitude_2_ft": null}, not "value": "{\"desc\":...}".

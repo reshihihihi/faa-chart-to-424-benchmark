@@ -1,0 +1,53 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KAGC_R28",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "PD",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [],
+    "altitude_candidates": [],
+    "turn_candidates": [],
+    "course_candidates": [],
+    "hold_candidates": [],
+    "instruction_snippets": [],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [
+      {
+        "value": "HOMEE 1509 MESIE 3000 3000 279° 279° oZ6[ RW28 (6) (4.3) (9p) (FAF) (IF) (IAF) 4000 LENLE MILKE KATKE -299° (9.5) ALLEGHENY MILWO AGC Procedure NA for arrivals 056 at MILWO on V12 eastbound. 4 NM 25 NM 3800 ELEV 1252 TDZE 1251",
+        "field_type": "route_sequence_snippet",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "HOMEE 1509 MESIE 3000 3000 279° 279° oZ6[ RW28 (6) (4.3) (9p) (FAF) (IF) (IAF) 4000 LENLE MILKE KATKE -299° (9.5) ALLEGHENY MILWO AGC Procedure NA for arrivals 056 at MILWO on V12 eastbound. 4 NM 25 NM 3800 ELEV 1252 TDZE 1251",
+        "source_start_char": 12,
+        "source_end_char": 238,
+        "rule_id": "route_sequence_snippet_regex_v8",
+        "confidence": 0.72,
+        "notes": "flat_ocr_route_sequence_snippet_no_leg_binding",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 0,
+        "region_local_end_char": 226,
+        "global_start_char": 12,
+        "global_end_char": 238
+      }
+    ],
+    "direct_phrase_snippets": [],
+    "climb_phrase_snippets": []
+  }
+}

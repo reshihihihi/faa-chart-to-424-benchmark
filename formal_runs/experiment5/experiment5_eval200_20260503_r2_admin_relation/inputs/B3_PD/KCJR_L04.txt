@@ -1,0 +1,13 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 900 -> AT_OR_ABOVE 900 ft
+- ALTITUDE_TEXT: 2600 -> AT_OR_ABOVE 2600 ft
+- FIX_TEXT: NISAE -> NISAE
+- NAVAID_TEXT: GVE -> type=navaid_radial, navaid=GVE, radial_deg=28.0, direction=inbound
+- 径向文字
+- HEADING_TEXT: 180° -> type=course_deg, course_deg=180.0
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: path segment

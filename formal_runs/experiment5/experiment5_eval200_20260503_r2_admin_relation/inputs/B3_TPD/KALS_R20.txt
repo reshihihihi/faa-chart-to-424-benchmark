@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 202.8; climb to 11500 to RODDS; hold at RODDS, inbound course 202.7, left turns, 7 NM, maintain 11500.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 11500 -> AT_OR_ABOVE 11500 ft
+- FIX_TEXT: RODDS -> RODDS
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

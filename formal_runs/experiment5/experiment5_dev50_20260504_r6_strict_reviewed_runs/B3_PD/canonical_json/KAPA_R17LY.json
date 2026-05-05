@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAPA_R17LY",
+  "procedure": {
+    "airport": "KAPA",
+    "approach_ident": "R17LY",
+    "chart_name": "RNAV (RNP) Z RWY 17L"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

@@ -1,0 +1,9 @@
+{  
+  "chart_id":"KALS_I08","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KALS_I08","approach_ident":"I08","chart_name":"KALS_I08","approach_ident":"I08"},"  
+  },  
+  "missed_approach":{  
+    "status":"present","  
+    "value":{"leg_count":3,"leg_count":{"status":"present","value":3},"legs":[{"leg_index":1,"answers":{"status":"present","value":{"Q_terminator.value":"CA","Q1_fix_ident.value":"ALS","Q2_altitude_constraint.value":{"desc":"AT_OR_ABOVE","altitude_ft":8700,"altitude_2_ft":null,"status":"present","value":8700}}},{"answers":{"status":"not_applicable","value":null},"Q3_turn.value":"RIGHT","Q4_course_or_radial.value":{"type":"course_deg","course_deg":11000.0}}},{"leg_index":2,"answers":{"status":"present","value":{"Q_terminator.value":"DF","Q1_fix_ident.value":"ALS","Q2_altitude_constraint.value":{"desc":"AT_OR_ABOVE","altitude_ft":11000,"altitude_2_ft":null,"status":"present","value":11000}}},{"answers":{"status":"not_applicable","value":null},"Q3_turn.value":"RIGHT","Q4_course_or_radial.value":{"type":"course_deg","course_deg":11000.0}}},{"leg_index":3,"answers":{"status":"present","value":{"Q_terminator.value":"HM","Q1_fix_ident.value":"ALS","Q2_altitude_constraint.value":{"desc":"AT_OR_ABOVE","altitude_ft":11000,"altitude_2_ft":null,"status":"present","value":11000}}},{"answers":{"status":"not_applicable","value":null},"Q3_turn.value":"RIGHT","Q4_course_or_radial.value":{"type":"course_deg","course_deg":11000.0}}]}}]

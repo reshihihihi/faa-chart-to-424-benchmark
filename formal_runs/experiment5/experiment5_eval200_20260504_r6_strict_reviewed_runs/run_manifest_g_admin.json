@@ -1,0 +1,19 @@
+{
+  "run_id": "experiment5_eval200_20260504_r6_strict_reviewed_runs",
+  "methods": [
+    "G3_LLM_Rules"
+  ],
+  "created_at_utc": "2026-05-04T04:26:37.332185+00:00",
+  "admin_gold_answer": "formal_runs/experiment5/experiment5_eval200_20260503_r1/admin_artifacts/admin_gold_answer_eval200.jsonl",
+  "admin_gold_answer_sha256": "2889f5d277f7d39dcca6f7db43a3fea87a90686b162aed5144ff1f66e1dbf473",
+  "admin_field_review": "formal_runs/experiment5/experiment5_eval200_20260503_r1/admin_artifacts/admin_field_review_eval200.jsonl",
+  "admin_field_review_sha256": "81c1ca23ddebdd4bf159fbbc36a9669bbd9a8a199188bbb3758d2614728fe2b6",
+  "gold_observable": "formal_runs/experiment5/experiment5_eval200_20260504_r6_strict_visible_inputs/inputs/g_visible_observables_eval200_strict.jsonl",
+  "gold_observable_sha256": "629cd3621785bf9acaffe57027b6c0d3d2036369904765dd2d1aac9520555d9f",
+  "schema": "schemas/missed_approach_leg.schema.json",
+  "policy_v2": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/comparison_policy_v2.jsonl",
+  "model": "gpt-5.4",
+  "base_url": "http://127.0.0.1:10531/v1",
+  "max_workers": 4,
+  "schema_retry_count": 3
+}

@@ -1,0 +1,17 @@
+{
+  "artifact_label": "eval200",
+  "chart_count": 200,
+  "confidence_summary": {
+    "empty_ocr_text": 0,
+    "mean_confidence_max": 96.0,
+    "mean_confidence_min": 76.15,
+    "with_ocr_text": 200
+  },
+  "created_at_utc": "2026-05-04T03:06:34.475962+00:00",
+  "ocr_engine": "tesseract_eng",
+  "queue_path": "formal_runs\\experiment5\\experiment5_eval200_20260504_r5_ma_text_ocr_review\\inputs\\gold_ma_text_eval200_ocr_review_queue.jsonl",
+  "ready_for_formal_input": false,
+  "reason": "Human review is required before these OCR candidates can become formal gold MA text.",
+  "report_path": "formal_runs\\experiment5\\experiment5_eval200_20260504_r5_ma_text_ocr_review\\reports\\ma_text_eval200_ocr_review_sheet_zh.md",
+  "template_path": "formal_runs\\experiment5\\experiment5_eval200_20260504_r5_ma_text_ocr_review\\inputs\\gold_ma_text_eval200_ocr_review_template.jsonl"
+}

@@ -1,0 +1,152 @@
+{
+  "manifest_version": "1.0.0",
+  "status": "group1_model_prompt_rerun_frozen_no_formal300_eval_run",
+  "created_at_utc": "2026-04-29T06:13:52.443529+00:00",
+  "formal300_evaluation_ran": false,
+  "formal300_dataset": {
+    "path": "benchmark_exports/derived/v2/formal300",
+    "sample_manifest_sha256": "7891c333992a3cb7a430d03015aecb123509282b167bba249b64b2e11d745d89",
+    "checksums_sha256": "ee35127ab204c4f47d7a76fd9e52bb4061ed813b01061287dbe3330cf4b143fc",
+    "materialization_report": "benchmark_exports/derived/v2/formal300/reports/formal300_materialization_report.json",
+    "annotation_image_alignment_report": "benchmark_exports/derived/v2/formal300/reports/annotation_image_alignment_report.json",
+    "asset_counts": {
+      "sample_manifest_rows": 300,
+      "pdf_files": 299,
+      "image_files": 300,
+      "canonical_proxy_targets": 300,
+      "field_targets_rows": 6084,
+      "evidence_provenance_rows": 6084,
+      "challenge_tags_rows": 300
+    }
+  },
+  "schema": {
+    "path": "schemas/missed_approach_leg.schema.json",
+    "sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9"
+  },
+  "scorer_validator": {
+    "manifest": "configs/scorer_validator_manifest.json",
+    "sha256": "02d06c70338a25155bec22e24dfe76cdf5ef6b60736ee5ce7b99014476fc7860"
+  },
+  "policies": {
+    "invalid_output_scoring": {
+      "path": "configs/invalid_output_scoring_policy.md",
+      "sha256": "f0e80576c8c56fd3725859791cffa3b4a3a666f183393b2b622a99f82345efc1"
+    },
+    "degree_360": {
+      "path": "configs/degree_360_policy.md",
+      "sha256": "4417d193ccf041fc3f42027a7f2ea7bb9302d6c380c506c8fea5866491e4fce9"
+    },
+    "output_control": {
+      "path": "configs/output_control_policy.md",
+      "sha256": "a7a9f80eeabb82931b1a9c9c8f90f39ae3d589a9de272b4697dacc895c250416"
+    },
+    "parser_repair": {
+      "path": "configs/parser_repair_policy.md",
+      "sha256": "d52cda1d316d51abb72c161f7b5b6670738d18d29abd7fe88e12d33aecebc9c2"
+    },
+    "rerun_policy": {
+      "path": "docs/rerun_policy.md",
+      "sha256": "2dd6d3359b0085e391459c91711d1aea2a4844fa913eb22b31bc2b1713103450"
+    },
+    "no_leakage": {
+      "path": "docs/no_leakage_policy.md",
+      "sha256": "15d977ba384c96f2ad1d495807eede4fce8bcb4efc7c66b989d82c3b4fe8a566"
+    }
+  },
+  "models": {
+    "B1_B1_prime_B1_prime_link": {
+      "provider": "openai_compatible",
+      "model": "gpt-5.4",
+      "temperature": 0.0,
+      "max_tokens": 4096,
+      "output_control": "openai_tool_call emit_canonical_json",
+      "schema_retry_count": 1,
+      "parser_repair": false
+    },
+    "C1_C2_C3_C4": {
+      "provider": "anthropic_compatible",
+      "model": "claude-sonnet-4-5-20250929",
+      "temperature": 0.0,
+      "max_tokens": {
+        "C1": 4096,
+        "C2_QA_call": 2048,
+        "C3": 4096,
+        "C4": 4096
+      },
+      "output_control": "anthropic_tool_use with transport schema hardening; mechanical root unwrap disabled",
+      "schema_retry_count": 1,
+      "parser_repair": false,
+      "c4_output_control_validation": {
+        "report": "reports/pilot/c4_output_control_fix_pilot100_20260429.md",
+        "run_id": "pilot100_group1_c4_output_control_fix_no_retry_20260429_r1 + api_retry_081",
+        "schema_valid": "100/100 after API-failure recovery",
+        "schema_retry_count_total": 0,
+        "parser_repair_count": 0,
+        "wrapper_like_final_outputs": 0,
+        "score": "1248/2344",
+        "accuracy": 0.5324232081911263,
+        "formal300_result": false
+      }
+    },
+    "A1_A2": {
+      "model": "none",
+      "deterministic_rules": "scripts/run_a1_a2_rules_pilot10.py",
+      "A1_OCR": "PaddleOCR PP-OCRv5",
+      "A2_OCR": "Tesseract 5.x"
+    },
+    "D_SFT": {
+      "config": "training/d_sft/configs/d_sft_training_config.frozen_20260428_r1.json",
+      "base_model": "Qwen/Qwen2-VL-2B-Instruct",
+      "adapter": "Qwen2-VL-2B QLoRA r=8 alpha=16"
+    }
+  },
+  "prompts": {
+    "B1": {
+      "path": "prompts/paper_v2/b1_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "sha256": "f9be2fb84a7554897045c27abf787e47758f1687de406312e9afe1ebe15d4f3f"
+    },
+    "B1_prime": {
+      "path": "prompts/paper_v2/b1_prime_ocr_field_candidates_to_canonical_pilot10.zh_v0_candidate.md",
+      "sha256": "08244d80f0ea85c579158d4b8512bfa021a26755bb342742ed2362a80763c707"
+    },
+    "B1_prime_link": {
+      "path": "prompts/paper_v2/b1_prime_link_ocr_candidates_links_to_canonical.zh_v0_candidate.md",
+      "sha256": "2b135d82928e3963a5b37ad5ebcee82e2e079aa94d34c88cf33b1d215c8909c2"
+    },
+    "C1": {
+      "path": "prompts/paper_v2/c1_image_to_canonical_pilot10.zh_v1_candidate.md",
+      "sha256": "aa87bf512359160da4c54503911bfccc38a6e55ee9af619b9eef3c48183ef74c"
+    },
+    "C3": {
+      "path": "prompts/paper_v2/c3_questionnaire_pilot10.zh_v1_candidate.md",
+      "sha256": "858b91b07d778498ddbe484a6d54f8555169c9c674f3189dfb69b06e2c406362"
+    },
+    "C4": {
+      "path": "prompts/paper_v2/c4_image_ocr_to_canonical_pilot10.zh_v1_candidate.md",
+      "sha256": "5a60df7bdeead7c01e38ccb8c8ccc1802af6110a0f41c4658e2f5cdcc313588a"
+    },
+    "C2_QA_bundle": {
+      "path": "prompts/path_c_qa_v2",
+      "sha256": "5bca574776031f1de8819dfdb89daa0d21499ed1e0fefda3e744d56e2d3a4229"
+    },
+    "D_SFT": {
+      "path": "training/d_sft/prompts/d_sft_image_to_canonical.v2.md",
+      "sha256": "8e0f6d36c023e6d23b78655ab1a1910f49880d7bd473db75d4250681ac21445e"
+    }
+  },
+  "formal_runner": {
+    "script": "scripts/prepare_group1_formal_run.py",
+    "sha256": "15207e048ccaefc3265583ed974766be01ce780f4252a575d8429b72b61c9eb5",
+    "prepared_run": "formal_runs/group1/group1_formal_prepared_20260429_no_eval/run_plan.json",
+    "prepared_run_sha256": "7f697201b90c38b10fda3731f1286f568b795db76e3813d6f1e2b82cd9163336",
+    "inference_target_access": false,
+    "scoring_manifest_separate": true
+  },
+  "known_pre_run_requirements": [
+    "Generate and freeze formal300 OCR-1 PaddleOCR artifacts for A1/B1/B1_prime/B1_prime_link/C4.",
+    "Generate and freeze formal300 OCR-2 Tesseract artifacts for A2.",
+    "Review the C4 output-control fix report; no mechanical unwrap is enabled in the current candidate.",
+    "Resolve whether the 299 PDF files for 300 samples are expected duplicate-PDF reuse or a materialization gap, then record the decision.",
+    "Do not run formal300 method evaluation until OCR artifacts, final run ids, and reviewer-approved manifests are in place."
+  ]
+}

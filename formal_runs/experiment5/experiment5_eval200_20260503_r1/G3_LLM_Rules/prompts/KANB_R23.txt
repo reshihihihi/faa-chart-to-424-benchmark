@@ -1,0 +1,140 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KANB_R23",
+  "procedure": {
+    "airport": "KANB",
+    "approach_ident": "R23",
+    "chart_name": "RNAV (GPS) RWY 23"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0816,
+        "width": 0.3123,
+        "x_center": 0.7961,
+        "y_center": 0.1515
+      },
+      "chart_id": "KANB_R23",
+      "evidence_region_id": "KANB_R23_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KANB_R23_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.436,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.444
+      },
+      "chart_id": "KANB_R23",
+      "evidence_region_id": "KANB_R23_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KANB_R23_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0547,
+        "width": 0.1355,
+        "x_center": 0.1148,
+        "y_center": 0.6894
+      },
+      "chart_id": "KANB_R23",
+      "evidence_region_id": "KANB_R23_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KANB_R23_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0461,
+        "x_center": 0.083,
+        "y_center": 0.6713
+      },
+      "chart_id": "KANB_R23",
+      "evidence_region_id": "KANB_R23_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3400 -> AT_OR_ABOVE 3400 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3400,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3400"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0489,
+        "x_center": 0.1524,
+        "y_center": 0.6713
+      },
+      "chart_id": "KANB_R23",
+      "evidence_region_id": "KANB_R23_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: LINTZ -> LINTZ",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "LINTZ",
+        "raw_text": "LINTZ"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0101,
+        "width": 0.0181,
+        "x_center": 0.151,
+        "y_center": 0.6936
+      },
+      "chart_id": "KANB_R23",
+      "evidence_region_id": "KANB_R23_iconalign_005_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

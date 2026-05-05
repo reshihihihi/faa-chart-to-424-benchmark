@@ -1,0 +1,179 @@
+                                   ALEXANDRIA, LOUISIANA                                                                     AL-13 (FAA)
+                                                                                                                                                                                                       25163
+                                      WAAS                                    Rwy Ldg 7001
+                                    CH 61200
+                                                        APP CRS
+                                                                              TDZE                  84                                                   RNAV (GPS) RWY 18
+                                                          186°
+                                        W18A                                  Apt Elev              89                                                                ALEXANDRIA INTL(AEX)
+
+                                              DME/DME RNP-0.3 NA. Radar required when R-3801 A-B in use. For uncompensated                                               MISSED APPROACH: Climb
+                                     T
+                                              Baro-VNAV systems, LNAV/VNAV NA below -15°C (5°F) or above 48°C (119°F).                                                   to 4000 direct HIPKU and via
+                                    A
+                                              Visibility reduction by helicopters NA.                                                                                    105° track to MUSHE and hold.
+
+                                          ASOS                      POLK APP CON                                     ALEXANDRIA TOWER                               GND CON                    CLNC DEL
+                                      123.975                     125.4             254.8                           127.35 (CTAF) 269.2                            121.9 372.0                  121.9
+                                                                                      5 NM
+
+                                                                                                                                                                                        W182
+
+
+                                                                                                           186°
+                                                                                                                                                                                       R    5
+                                                                                                                                                                                             N
+                                                                    (IAF) 1544                                                                                                    SA
+                                                                                             006°
+
+
+
+
+                                                                                                                                                                                                   M
+                                                                                                                                                                              M
+                                                                  XAFQU                                           (IF/IAF)
+                                                                                                                                                                                        2800
+                                                                                                                   LATIW
+                                                 00                    2600No
+                                               30                            PT
+                                               084°                      096°                                     2600No
+                                               1
+                                               (9.3)                     (5                                             PT
+                                                                           )                                        2                  (IAF)
+                                                                                                                     76°
+                                    NUBOY                                                                           (5                 ESJUJ
+                                                                                                                      )
+                                                                                                    186°
+                                                                                             1700
+
+
+                                                                                                           6.
+                                                                                                           ( 1)
+
+
+
+
+                                                                                    (FAF)
+                                                                                    AQEKO                   269
+SC-4, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                               SC-4, 16 APR 2026 to 14 MAY 2026
+                                                                                     216               252
+
+                                                                              116
+                                                                                             RW18
+                                                                                                                      493
+                                                                                                    (
+
+                                                                                                    3000
+                                                                                                    15.
+                                                                                                     355°
+
+
+
+
+                                                                                            236                                649
+                                                                       HIPKU
+                                                                                                       6)
+
+
+
+
+                                                                                                                     688
+                                                                                            ALEXANDRIA
+                                                R-3801 A-B                                                                    10
+                                                                                                    AEX                         5°
+                                                                                                                                                                                  30 5°
+                                                                                                                                                                                   32 9)
+                                                                                                                                                                                    00
+                                                                                                                                                                                    (24
+
+
+
+
+                                    ELEV        89            D       TDZE            84
+                                                                                                                                                                                       .
+
+
+
+
+                                                                                                                          WARRIOR 1                                                                    5 NM
+                                                                                                                                                                                                 10
+                                                                                                                              MOA                                                                  6
+                                                               186°
+                                                                                                                                                                                      MUSHE       286
+                                         14
+                                                                                                       4000              HIPKU                  MUSHE                                         5 NM
+                                                                                                                                       tr                                                Holding Pattern
+                                                   P                   18
+                                                                                                                                     105°                             LATIW
+
+                                              A5
+                                                                            P                                                                                                         006°
+                                                                                                                                                                                                     2600
+                                                                                                    *LNAV only. *                              AQEKO          °                       186°
+                                                                            X 150
+
+
+
+
+                                                                                                                1.2 NM to                                    6
+                                                                                                                                                            8
+                                                       93
+
+
+
+
+                                                                                                                                                           1                                      GP 3.00°
+                                                         52
+
+
+
+
+                                                                                                                             RW18
+                                                                                                                                                                                                   TCH 55
+                                                                       7001
+                                                          X
+                                                              15
+
+
+
+
+                                                                                                                      RW18
+                                                                                                                                                          1700          VGSI and RNAV glidepath not
+                                                                0
+
+
+
+
+                                                                                                                                                                coincident (VGSI Angle 3.00/TCH 79).
+                                                                                     WR
+                                                                                     T                                       1.2      3.6 NM              6.1 NM
+
+                                                                                                       CATEGORY                        A                    B                     C                D
+                                                                  P
+                                                                                                    LPV DA                                                 395-1 311 (400-1)
+                                                                               P
+                                                                  36
+                                                                                     32              LNAV/
+                                                                                                                    DA                                   539-112 455 (500-112 )
+                                                                                                     VNAV
+
+                                                                                                                                                                          520-114               520-112
+                                   TDZL Rwy 14                                                      LNAV MDA                            520-1 436 (500-1)                        1                     1
+                                                                                                                                                                        436 (500-14 )         436 (500-1 2 )
+
+                                    REIL Rwys 18, 32 and 36
+                                                                                                    CIRCLING
+                                                                                                                                     540-1               560-1            700-134              860-212
+                                    HIRL Rwys 18-36 and 14-32                                                                      451 (500-1)         471 (500-1)               3
+                                                                                                                                                                        611 (700-1 4 )        771 (800-212 )
+
+                                   ALEXANDRIA, LOUISIANA
+                                                                                                                                                                      ALEXANDRIA INTL(AEX)
+                                   Amdt 1B 25MAR21
+                                                                                                                       31°20'N-92°33'W
+                                                                                                                                                         RNAV (GPS) RWY 18

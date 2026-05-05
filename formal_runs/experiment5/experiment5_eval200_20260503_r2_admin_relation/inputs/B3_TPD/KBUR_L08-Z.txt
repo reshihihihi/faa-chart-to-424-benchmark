@@ -1,0 +1,15 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1300 on heading 78.9; right turn on heading 210; climb to 4600 on VTU R-086 INBOUND to VTU; hold at VTU, inbound course 130.6, left turns, 1 minute, maintain 4600.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1300 -> AT_OR_ABOVE 1300 ft
+- ALTITUDE_TEXT: 4600 -> AT_OR_ABOVE 4600 ft
+- FIX_TEXT: VTU -> VTU; NAVAID_TEXT: VTU -> type=navaid_radial, navaid=VTU, radial_deg=86.0, direction=inbound
+- RADIAL_TEXT: R-086 -> type=navaid_radial, navaid=VTU, radial_deg=86.0, direction=inbound
+- HEADING_TEXT: 210° -> type=course_deg, course_deg=210.0
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: path segment

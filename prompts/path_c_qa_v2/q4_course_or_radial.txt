@@ -1,12 +1,12 @@
 TASK: For missed-approach leg <LEG_INDEX>, identify the course / heading / radial that
 governs the ground track of this leg.
 
-Two answer variants (discriminated by "type"):
+Three answer variants (discriminated by "type"):
 
-VARIANT A — magnetic course (CA / VA / TF / CF without explicit radial reference):
+VARIANT A - magnetic course (CA / VA / TF / CF without explicit radial reference):
   { "type": "course_deg", "course_deg": <0.0 .. 359.9> }
 
-VARIANT B — navaid radial (FA / CF when text says "on <navaid> R-NNN outbound/inbound"):
+VARIANT B - navaid radial (FA / CF when text says "on <navaid> R-NNN outbound/inbound"):
   {
     "type": "navaid_radial",
     "navaid": "<ident>",
@@ -14,11 +14,14 @@ VARIANT B — navaid radial (FA / CF when text says "on <navaid> R-NNN outbound/
     "direction": "outbound" | "inbound"
   }
 
+VARIANT C - direct (DF legs where no course is specified):
+  { "type": "direct" }
+
 Chart cues:
-- "Climb to N on heading <deg>" → course_deg (record the heading value)
-- "Climb to N, course <deg>" → course_deg
-- "On <navaid> R-NNN outbound/inbound to <fix>" → navaid_radial
-- "Direct <fix>" / DF with no course or radial reference → not_applicable; the direct-to fix is captured by Q_terminator + Q1_fix_ident
+- "Climb to N on heading <deg>" -> course_deg (record the heading value)
+- "Climb to N, course <deg>" -> course_deg
+- "On <navaid> R-NNN outbound/inbound to <fix>" -> navaid_radial
+- "Direct <fix>" -> direct
 - Hold legs do NOT populate Q4; their inbound course lives in Q5_hold_params
 
 OUTPUT (single JSON object):
@@ -31,10 +34,26 @@ OUTPUT (single JSON object):
 Scoring note: COMPOSITE field. All sub-fields for the chosen variant compared as one atom.
 
 Rules:
-- Hold leg (HA/HF/HM) → not_applicable.
-- No course reference (very rare on non-hold legs) → not_applicable.
-- All visible → present, value=variant object.
-- Variant clear but a number unreadable → unknown, value=null.
+- Hold leg (HA/HF/HM) -> not_applicable.
+- No course reference (very rare on non-hold legs) -> not_applicable.
+- All visible -> present, value=variant object.
+- Variant clear but a number unreadable -> unknown, value=null.
 
 Units: all degrees are MAGNETIC by default. The schema does not carry a true-course flag;
 if the chart prints "T" suffix on a bearing, still record the numeric value here.
+
+Degree range rule: course_deg and radial_deg must be 0.0 through 359.9. If the chart displays 360 degrees, encode it as 359.9, never as 360.
+
+Strict output rules:
+- Return exactly one bare JSON object with keys status and value.
+- Do not output Markdown, code fences, prose, or any text outside JSON.
+- status must be exactly present, not_applicable, not_observable, or unknown.
+- If status is not present, value must be null.
+- If status is present, value must be exactly one of the three variant objects.
+- Do not encode the variant object as a string. Use "value": {"type": "course_deg", "course_deg": 175}, not "value": "{\"type\":\"course_deg\",\"course_deg\":175}".
+
+Correct examples:
+{ "status": "present", "value": { "type": "course_deg", "course_deg": 175 } }
+{ "status": "present", "value": { "type": "navaid_radial", "navaid": "DBQ", "radial_deg": 322, "direction": "outbound" } }
+{ "status": "present", "value": { "type": "direct" } }
+{ "status": "not_applicable", "value": null }

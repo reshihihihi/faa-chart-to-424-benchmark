@@ -1,0 +1,34 @@
+{
+  "status": "c4_output_control_fix_validated_not_formal300_run",
+  "created_at_utc": "2026-04-29T06:57:41.718697+00:00",
+  "problem": "Pilot100 C4 previously had 51 schema-only retries; 50 were caused by Anthropic-compatible tool-use transport wrappers such as $PARAMETER_NAME or chart around an otherwise complete canonical JSON object.",
+  "fix": {
+    "script": "scripts/model_clients.py",
+    "sha256": "9bfc36bdb7b7c98d71fc8ee16a574b5c85c8d9015f4f5ec704e69d2ce58327cd",
+    "policy": "configs/output_control_policy.md",
+    "policy_sha256": "a7a9f80eeabb82931b1a9c9c8f90f39ae3d589a9de272b4697dacc895c250416",
+    "transport_hardening": [
+      "strip $schema/$id from provider-facing input_schema copy",
+      "tool description explicitly forbids parameter/$PARAMETER_NAME/chart/output/result/arguments wrappers"
+    ],
+    "mechanical_root_unwrap_enabled": false,
+    "semantic_repair_allowed": false,
+    "target_or_scorer_used": false
+  },
+  "validation": {
+    "smoke10_run_id": "pilot10_group1_c4_output_control_fix_smoke10_20260429_r1",
+    "smoke10_schema_valid": "10/10",
+    "smoke10_schema_retry_count_total": 0,
+    "pilot100_run_id": "pilot100_group1_c4_output_control_fix_no_retry_20260429_r1",
+    "api_failure_recovery_run_id": "pilot100_group1_c4_output_control_fix_no_retry_20260429_r1_api_retry_081",
+    "combined_schema_valid_after_api_recovery": "100/100",
+    "schema_retry_count_total": 0,
+    "parser_repair_count": 0,
+    "wrapper_like_final_outputs": 0,
+    "score": "1248/2344",
+    "accuracy": 0.5324232081911263,
+    "report": "reports/pilot/c4_output_control_fix_pilot100_20260429.md"
+  },
+  "formal300_ran": false,
+  "remaining_requirement": "Freeze final model/tool/OCR artifact policy and formal300 targets before reporting formal300 results."
+}

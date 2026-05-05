@@ -1,0 +1,144 @@
+{
+  "chart_id": "KBFD_R14",
+  "procedure": {
+    "airport": "KBFD",
+    "approach_ident": "R14",
+    "chart_name": "RNAV (GPS) RWY 14"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0796,
+        "width": 0.3135,
+        "x_center": 0.7962,
+        "y_center": 0.1504
+      },
+      "chart_id": "KBFD_R14",
+      "evidence_region_id": "KBFD_R14_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KBFD_R14_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.424,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.443
+      },
+      "chart_id": "KBFD_R14",
+      "evidence_region_id": "KBFD_R14_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KBFD_R14_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0564,
+        "width": 0.1303,
+        "x_center": 0.8878,
+        "y_center": 0.6829
+      },
+      "chart_id": "KBFD_R14",
+      "evidence_region_id": "KBFD_R14_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KBFD_R14_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.85,
+        "y_center": 0.6656
+      },
+      "chart_id": "KBFD_R14",
+      "evidence_region_id": "KBFD_R14_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 4500 -> AT_OR_ABOVE 4500 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 4500,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "4500"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0558,
+        "x_center": 0.9175,
+        "y_center": 0.6652
+      },
+      "chart_id": "KBFD_R14",
+      "evidence_region_id": "KBFD_R14_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: NIMEE -> NIMEE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "NIMEE",
+        "raw_text": "NIMEE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0258,
+        "width": 0.0384,
+        "x_center": 0.9151,
+        "y_center": 0.689
+      },
+      "chart_id": "KBFD_R14",
+      "evidence_region_id": "KBFD_R14_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0275,
+        "width": 0.0137,
+        "x_center": 0.8482,
+        "y_center": 0.6963
+      },
+      "chart_id": "KBFD_R14",
+      "evidence_region_id": "KBFD_R14_iconalign_007_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

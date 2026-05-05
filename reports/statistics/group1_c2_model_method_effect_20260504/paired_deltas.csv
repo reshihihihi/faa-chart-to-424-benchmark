@@ -1,0 +1,4 @@
+method_a,method_b,delta_definition,point_delta,ci_lower,ci_upper,bootstrap_samples
+C2_CLAUDE_batched_leg,C2_CLAUDE_original,method_a - method_b,0.07971372161895363,0.06180904522613062,0.09778910229519981,10000
+C2_GPT54_batched_leg,C2_CLAUDE_batched_leg,method_a - method_b,0.12018756169792694,0.09581635208765063,0.14400656105059015,10000
+C2_GPT54_batched_leg,C2_CLAUDE_original,method_a - method_b,0.19990128331688056,0.18008608896125095,0.2203065115392682,10000

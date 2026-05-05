@@ -1,0 +1,5 @@
+[
+  "missed_approach.legs.0.answers.Q4_course_or_radial.status: 'direct' is not one of ['present', 'not_applicable', 'not_observable', 'unknown']",
+  "missed_approach.legs.1.answers.Q4_course_or_radial.status: 'direct' is not one of ['present', 'not_applicable', 'not_observable', 'unknown']",
+  "missed_approach.legs[1].answers.Q4_course_or_radial: value must be null when status is 'direct'"
+]

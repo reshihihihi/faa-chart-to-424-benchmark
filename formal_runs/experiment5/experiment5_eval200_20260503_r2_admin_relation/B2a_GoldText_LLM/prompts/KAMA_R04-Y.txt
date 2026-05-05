@@ -1,0 +1,101 @@
+# Experiment 5 B2 Gold Text Diagnostic Prompt
+
+## Method Boundary
+
+You are running `B2a_GoldText_LLM` for Experiment 5.
+
+This is a diagnostic method. It tests whether an LLM can recover canonical missed-approach JSON when OCR errors in the missed-approach prose have been removed.
+
+## Allowed Inputs
+
+- chart_id
+- airport
+- approach_ident
+- chart_name
+- adjudicated gold missed-approach prose
+- automatic field_candidates generated from the same gold prose, only for B2b
+- the canonical output contract
+
+## Forbidden Inputs
+
+Do not use or assume access to:
+
+- full chart image pixels
+- ROI OCR outside the gold prose shown below
+- field_review_v2
+- canonical target or answer key
+- score or scorer output
+- canonical_answer
+- canonical_leg_index
+- Q_terminator labels supplied as input
+- leg_type
+- CIFP or ARINC 424 records
+- gold observable evidence
+- historical model outputs for the same chart
+- web search or external aviation databases
+
+Candidate policy: No field_candidates are provided. Use only the gold missed-approach prose.
+
+## Task
+
+Extract the missed approach procedure and emit one canonical JSON object. If a field is ambiguous or not supported by the allowed input, set that answer to unknown/null or not_applicable/null as appropriate. Do not guess only to fill the schema.
+
+Copy metadata exactly:
+
+- chart_id: KAMA_R04-Y
+- airport: KAMA
+- approach_ident: R04-Y
+- chart_name: RNAV (GPS) Y RWY 04
+
+## Output Contract
+
+Top-level object must contain exactly chart_id, procedure, and missed_approach.
+
+procedure must contain exactly airport, approach_ident, and chart_name.
+
+missed_approach must contain leg_count and legs.
+
+Each leg must contain leg_index and answers. leg_index starts at 1 and increases by 1 without gaps. If leg_count.status is present, leg_count.value must equal len(legs).
+
+answers must contain exactly:
+
+- Q_terminator
+- Q1_fix_ident
+- Q2_altitude_constraint
+- Q3_turn
+- Q4_course_or_radial
+- Q5_hold_params
+
+Each answer object must contain exactly status and value. Allowed status values are present, not_applicable, not_observable, unknown. If status is not present, value must be null.
+
+Q_terminator value, when present, must be one of:
+CA, CF, CI, CR, DF, FA, FM, HA, HF, HM, IF, RF, TF, VA, VD, VI, VM, VR, AF, CD, FC, FD, VC, PI
+
+Q1_fix_ident value, when present, must be an ident string with at most 5 characters.
+
+Q2_altitude_constraint value, when present, must look like:
+{"desc":"AT_OR_ABOVE","altitude_ft":3000,"altitude_2_ft":null}
+
+Q3_turn value, when present, must be LEFT or RIGHT.
+
+Q4_course_or_radial value, when present, must be exactly one of:
+{"type":"course_deg","course_deg":70.0}
+{"type":"navaid_radial","navaid":"ABC","radial_deg":123.0,"direction":"outbound"}
+{"type":"direct"}
+
+Q5_hold_params value, when present, must look like:
+{"inbound_course_deg":70.0,"leg_time_min":1.0,"leg_distance_nm":null,"turn":"RIGHT"}
+
+For non-hold legs, Q5_hold_params should be not_applicable. For hold legs, Q3_turn should usually be not_applicable because hold turn belongs in Q5_hold_params.
+
+All degree values must be 0.0 through 359.9. If the chart displays 360, encode it as 359.9.
+
+## Input
+
+GOLD_MISSED_APPROACH_PROSE:
+MISSED APPROACH: on heading 37.9; to CIPLI; climb to 5400 to ZUKTA; hold at ZUKTA, inbound course 233.1, left turns, 5 NM, maintain 5400.
+
+FIELD_CANDIDATES_JSON:
+{}
+
+Return exactly one object through the registered tool/schema. Do not output Markdown or explanation.

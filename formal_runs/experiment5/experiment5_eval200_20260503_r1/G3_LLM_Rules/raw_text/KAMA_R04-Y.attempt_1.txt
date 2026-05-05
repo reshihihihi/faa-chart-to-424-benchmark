@@ -1,0 +1,1 @@
+{"chart_id":"KAMA_R04-Y","procedure":{"airport":"KAMA","approach_ident":"R04-Y","chart_name":"RNAV (GPS) Y RWY 04"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_8d705c4d-816a-43f6-a3bd-6d6a9c04e51c",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_sv9l02NJuxM16snPcKjpTqbB",
+            "function": {
+              "arguments": "{\"chart_id\":\"KCAK_L01\",\"procedure\":{\"airport\":\"KCAK\",\"approach_ident\":\"L01\",\"chart_name\":\"ILS OR LOC RWY 01\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868308,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

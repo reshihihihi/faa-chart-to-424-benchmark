@@ -1,0 +1,161 @@
+{
+  "chart_id": "KCBF_L36",
+  "procedure": {
+    "airport": "KCBF",
+    "approach_ident": "L36",
+    "chart_name": "ILS OR LOC RWY 36"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0582,
+        "width": 0.2348,
+        "x_center": 0.8355,
+        "y_center": 0.1397
+      },
+      "chart_id": "KCBF_L36",
+      "evidence_region_id": "KCBF_L36_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KCBF_L36_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.42,
+        "width": 0.909,
+        "x_center": 0.501,
+        "y_center": 0.419
+      },
+      "chart_id": "KCBF_L36",
+      "evidence_region_id": "KCBF_L36_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KCBF_L36_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0545,
+        "width": 0.1763,
+        "x_center": 0.5739,
+        "y_center": 0.6565
+      },
+      "chart_id": "KCBF_L36",
+      "evidence_region_id": "KCBF_L36_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KCBF_L36_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5152,
+        "y_center": 0.6391
+      },
+      "chart_id": "KCBF_L36",
+      "evidence_region_id": "KCBF_L36_iconalign_001_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0395,
+        "x_center": 0.6341,
+        "y_center": 0.6404
+      },
+      "chart_id": "KCBF_L36",
+      "evidence_region_id": "KCBF_L36_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: OVR -> OVR",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "OVR",
+        "raw_text": "OVR"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0323,
+        "width": 0.0099,
+        "x_center": 0.5155,
+        "y_center": 0.6656
+      },
+      "chart_id": "KCBF_L36",
+      "evidence_region_id": "KCBF_L36_iconalign_006_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0137,
+        "width": 0.0235,
+        "x_center": 0.6351,
+        "y_center": 0.662
+      },
+      "chart_id": "KCBF_L36",
+      "evidence_region_id": "KCBF_L36_iconalign_007_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0259,
+        "width": 0.0384,
+        "x_center": 0.5644,
+        "y_center": 0.6502
+      },
+      "chart_id": "KCBF_L36",
+      "evidence_region_id": "KCBF_L36_iconalign_009_path_segment",
+      "fact_type": "path_segment_visible",
+      "label": "detected lower detail: path segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

@@ -1,0 +1,13 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 5000 -> AT_OR_ABOVE 5000 ft
+- ALTITUDE_TEXT: 4100 -> AT_OR_ABOVE 4100 ft
+- FIX_TEXT: CAUDE -> CAUDE
+- NAVAID_TEXT: PNH -> type=navaid_radial, navaid=PNH, radial_deg=298.3, direction=inbound
+- RADIAL_TEXT: R-118 -> type=navaid_radial, navaid=PNH, radial_deg=298.3, direction=inbound
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: path segment

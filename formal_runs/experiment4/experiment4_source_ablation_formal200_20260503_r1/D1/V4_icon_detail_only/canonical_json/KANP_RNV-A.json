@@ -1,0 +1,15 @@
+{
+  "chart_id": "KANP_RNV-A",
+  "procedure": {
+    "airport": "KANP",
+    "approach_ident": "RNV-A",
+    "chart_name": "RNAV (GPS)-A"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

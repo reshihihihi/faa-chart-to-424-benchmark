@@ -1,0 +1,44 @@
+{
+  "status": "prepared_no_formal300_eval_run",
+  "created_at_utc": "2026-04-30T01:01:05.534988+00:00",
+  "run_id": "group1_formal_eval_50_200_50_seed20260437_20260430_r1",
+  "formal300_dir": "benchmark_exports/derived/v2/formal300",
+  "sample_manifest": {
+    "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/sample_manifest_50_200_50_seed20260437.jsonl",
+    "exists": true,
+    "sha256": "d15f0ab36a223dd60705f2231643254925dbb1783295f686d21146c57a6ee468"
+  },
+  "split_candidate_id": "formal300_50_200_50_seed20260437",
+  "split_policy": {
+    "path": "benchmark_exports/derived/v2/formal300/split_candidates/split_50_200_50_seed20260437/SPLIT_POLICY_50_200_50_seed20260437.md",
+    "exists": true,
+    "sha256": "d1a927e1e76e5be788b5f67b68749bcf89b0b6e977296d73327cbf80346aede7"
+  },
+  "split_filter": "evaluation",
+  "sample_count": 200,
+  "methods": [
+    "A1",
+    "A2",
+    "B1",
+    "B1_prime",
+    "B1_prime_link",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "D_SFT"
+  ],
+  "inference_target_access": false,
+  "scoring_manifest_separate": true,
+  "formal300_evaluation_ran": false,
+  "ocr1_root": "ocr_artifacts/formal300/ocr1_paddleocr_ppocrv5_frozen/full_text",
+  "ocr2_root": "ocr_artifacts/formal300/ocr2_tesseract5_frozen/full_text",
+  "readiness_error_count": 0,
+  "readiness_errors_sample": [],
+  "policies": {
+    "invalid_output_scoring": "configs/invalid_output_scoring_policy.md",
+    "output_control": "configs/output_control_policy.md",
+    "parser_repair": "configs/parser_repair_policy.md",
+    "rerun_policy": "docs/rerun_policy.md"
+  }
+}

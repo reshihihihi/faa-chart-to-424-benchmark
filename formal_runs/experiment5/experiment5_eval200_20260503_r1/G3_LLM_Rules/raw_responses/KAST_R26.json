@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_076e0379-6771-4fe4-9358-22f879716555",
+  "object": "chat.completion",
+  "created": 1777808155,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_nHGp9ehBSgO3L3FVvH8b8izA",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAST_R26\",\"procedure\":{\"airport\":\"KAST\",\"approach_ident\":\"R26\",\"chart_name\":\"RNAV (GPS) RWY 26\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

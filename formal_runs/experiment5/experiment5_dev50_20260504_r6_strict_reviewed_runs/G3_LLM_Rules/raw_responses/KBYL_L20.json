@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_36b2636d-2285-43cc-a0cd-948ce1a973f1",
+  "object": "chat.completion",
+  "created": 1777864895,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_v32Sz6kT81YaWhClakh8Flmc",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KBYL_L20\",\"procedure\":{\"airport\":\"KBYL\",\"approach_ident\":\"L20\",\"chart_name\":\"LOC RWY 20\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

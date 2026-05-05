@@ -1,0 +1,29 @@
+[PLAN_VIEW]
+Procedure NA for arrivals at MCLEN
+on V9-69 northeast bound.
+(IAF)
+4 NM
+MCLEN
+2700 NoPT
+203° (5.7)
+-035°
+-215°
+(IF/IAF)
+PIMKE
+2300
+(FAF)
+ZOPOP
+820
+RW21
+ELEV
+594
+TDZE
+594
+25 NM
+215°
+3100
+EE
+
+[MISSED_APPROACH_DETAIL_AREA]
+2700
+PIMKE
