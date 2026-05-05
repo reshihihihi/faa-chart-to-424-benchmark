@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAVP_L04",
+  "procedure": {
+    "airport": "KAVP",
+    "approach_ident": "L04",
+    "chart_name": "ILS OR LOC RWY 04"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

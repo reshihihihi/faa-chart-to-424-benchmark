@@ -1,0 +1,157 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KAIZ_R22",
+  "procedure": {
+    "airport": "KAIZ",
+    "approach_ident": "R22",
+    "chart_name": "RNAV (GPS) RWY 22"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0829,
+        "width": 0.2445,
+        "x_center": 0.83,
+        "y_center": 0.1521
+      },
+      "chart_id": "KAIZ_R22",
+      "evidence_region_id": "KAIZ_R22_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAIZ_R22_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.409,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.439
+      },
+      "chart_id": "KAIZ_R22",
+      "evidence_region_id": "KAIZ_R22_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAIZ_R22_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0547,
+        "width": 0.129,
+        "x_center": 0.4013,
+        "y_center": 0.6705
+      },
+      "chart_id": "KAIZ_R22",
+      "evidence_region_id": "KAIZ_R22_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAIZ_R22_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3717,
+        "y_center": 0.6528
+      },
+      "chart_id": "KAIZ_R22",
+      "evidence_region_id": "KAIZ_R22_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3100 -> AT_OR_ABOVE 3100 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3100,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3100"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0579,
+        "x_center": 0.4374,
+        "y_center": 0.6528
+      },
+      "chart_id": "KAIZ_R22",
+      "evidence_region_id": "KAIZ_R22_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: GIVMY -> GIVMY",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "GIVMY",
+        "raw_text": "GIVMY"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0345,
+        "width": 0.0141,
+        "x_center": 0.3684,
+        "y_center": 0.6798
+      },
+      "chart_id": "KAIZ_R22",
+      "evidence_region_id": "KAIZ_R22_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0227,
+        "width": 0.0374,
+        "x_center": 0.4355,
+        "y_center": 0.6747
+      },
+      "chart_id": "KAIZ_R22",
+      "evidence_region_id": "KAIZ_R22_iconalign_006_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

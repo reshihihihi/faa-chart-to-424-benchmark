@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_f0ec6159-c854-4043-b866-ef83e14f4c0b",
+  "object": "chat.completion",
+  "created": 1777808117,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_Vvag7lxqNUcKwZ2HqLUM5wjB",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAQW_RNV-B\",\"procedure\":{\"airport\":\"KAQW\",\"approach_ident\":\"RNV-B\",\"chart_name\":\"RNAV (GPS)-B\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":\"unknown\"},\"Q1_fix_ident\":{\"status\":\"not_observable\",\"value\":null},\"Q2_altitude_constraint\":{\"status\":\"not_observable\",\"value\":null},\"Q3_turn\":{\"status\":\"unknown\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}}]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

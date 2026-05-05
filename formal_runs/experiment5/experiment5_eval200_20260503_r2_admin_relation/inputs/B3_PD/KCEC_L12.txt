@@ -1,0 +1,11 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 700 -> AT_OR_ABOVE 700 ft
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: CHIDE -> CHIDE
+- NAVAID_TEXT: CEC -> type=navaid_radial, navaid=CEC, radial_deg=345.8, direction=inbound
+- RADIAL_TEXT: R-166 -> type=navaid_radial, navaid=CEC, radial_deg=345.8, direction=inbound
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

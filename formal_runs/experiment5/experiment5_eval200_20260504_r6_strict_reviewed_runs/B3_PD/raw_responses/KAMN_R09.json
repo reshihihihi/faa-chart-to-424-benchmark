@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_28a1e3df-c6dc-4c51-ae13-b89c6f11d19e",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_FyFY4WH1k4CrysvMovKOT9vD",
+            "function": {
+              "arguments": "{\"chart_id\":\"KAMN_R09\",\"procedure\":{\"airport\":\"KAMN\",\"approach_ident\":\"R09\",\"chart_name\":\"RNAV (GPS) RWY 09\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868227,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

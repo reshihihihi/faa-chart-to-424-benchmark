@@ -1,0 +1,1 @@
+{"chart_id":"KBYL_L20","procedure":{"airport":"KBYL","approach_ident":"L20","chart_name":"LOC RWY 20"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

@@ -1,0 +1,174 @@
+                                   WACO, TEXAS                                                        AL-439 (FAA)                                                                          25163
+
+                                        WAAS                   Rwy Ldg  7005
+                                    CH 65919
+                                                    APP CRS
+                                                               TDZE      511                                                               RNAV (GPS) RWY 1
+                                                      007°               516                                                                                     WACO RGNL(ACT)
+                                        W01A                   Apt Elev
+
+                                   RNP APCH - GPS.
+                                    T    For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -8°C or above 54°C. Baro-VNAV
+                                                                                                                                                   3                     MISSED APPROACH:
+                                         and VDP NA when using PWG altimeter setting. Rwy 1 helicopter visibility reduction below 4 SM NA.
+                                   A                                                                                                                                     Climb to 3000 direct
+                                         When local altimeter setting not received, use PWG altimeter setting and increase LPV DA to 792 feet
+                                   ASR                                                                                                                                   CHRUS and hold.
+                                         and all visibilities 18 SM. Increase LNAV/VNAV DA to 813 feet; increase all MDAs 40 feet and LNAV
+                                         visibility Cat C/D 18 SM, and Circling visibility Cat D
+                                                                                               1
+                                                                                                4 SM.
+
+
+
+                                             ATIS               WACO APP CON                    WACO TOWER                           GND CON                                   UNICOM
+
+                                          123.85                127.65 227.125             119.3 (CTAF)L 257.8                           121.9                                  122.95
+
+                                                                                                                             MISSED APCH FIX
+
+
+                                                                                                                             4 NM
+
+
+
+
+                                                                                                                                               °
+                                                                                                                                            187
+                                                                                                                                       °
+                                                                                                                                    007
+                                                                                                                   663                       CHRUS
+                                                                                               599
+                                                                                                              RW01
+                                                                                      WOXAD
+                                                                                     1.7 NM to
+                                                                                      RW01
+
+
+                                                                                      (FAF)
+SC-3, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                    SC-3, 16 APR 2026 to 14 MAY 2026
+                                                                                     URNER
+                                                                                                                    1049
+
+
+                                                                     (IAF)
+                                                                                                  °
+                                                                                           0
+
+
+
+
+                                                                    NRMAN
+                                                                                               007
+                                                                                                    3)
+                                                                                        200
+
+
+                                                                                                  6.
+
+
+
+
+                                                                    210K
+                                                                                                  (
+
+
+
+
+                                                                             3000
+                                                                             097°                                                (IAF)
+                                                                             (
+                                                                             5 )                                                 XAFLE
+                                                                                                                  3000           210K           Procedure NA for arrivals at SATTY
+                                                                                        (IF)                      277°                          on V15 southeast bound.
+                                                                                       SHAIL                      (
+                                                                                                                  7.8)
+                                                                                                                                                    30
+                                               3600                                                                                                   00
+                                                                                                                                                   284°          SATTY
+                                                                                                                                                   (
+                                                                                                                                                   6.1)
+
+
+
+                                                                                  2541                                                     ELEV              516         D      TDZE        511
+
+
+
+                                                                                                                      3000       CHRUS                                         19
+                                               SHAIL
+                                                                        URNER
+
+                                                                                            WOXAD
+                                         3000                            2000              1.7 NM to                                                                              A5
+                                                       007                                      RW01
+                                                          °                                                                                14
+                                                                                                             0.9 NM
+                                                                                                                                                                        150
+
+
+
+
+                                                                                                             to RW01                               P
+                                                                                                                                                                        7X
+
+
+
+
+                                                                                                                       RW01
+                                                                                                                                                                     710
+
+
+
+
+                                                              2000
+                                                                                                                                                51
+
+
+
+
+                                    GP 3.00°                                          1100
+                                                                                                                                                  03
+
+
+
+
+                                    TCH 55
+                                                                                                                                                       X
+                                                                                                                                                       15
+                                                                                                                                                         0
+
+
+
+
+                                                           6.3 NM                 2.8 NM                 0.8 NM   0.9 NM                                                       TWR
+                                    CATEGORY              A                   B                        C                     D                               P
+
+
+                                                                                                                                                             32
+                                                                                                                                                                     P
+
+                                   LPV       DA                              761-34    250 (300-34 )
+                                                                                                                                                                 1
+
+                                   LNAV/
+                                             DA                              782-78 271 (300-78 )
+                                   VNAV                                                                                                                                       007°
+
+                                   LNAV MDA                                   860-1   349 (400-1)
+                                                                                                                                                                              REIL Rwy 14
+
+                                                        940-1                980-1             1020-112                1160-2                                                 HIRL Rwy 1-19 L
+                                   C CIRCLING                                                       1
+                                                      424 (500-1)       464 (500-1)        504 (600-1 2 )             644 (700-2)                                             MIRL Rwy 14-32
+
+                                   WACO, TEXAS
+                                                                                                                                                                 WACO RGNL(ACT)
+                                   Amdt 2 26DEC24
+                                                                                               31°37'N-97°14'W
+                                                                                                                                           RNAV (GPS) RWY 1

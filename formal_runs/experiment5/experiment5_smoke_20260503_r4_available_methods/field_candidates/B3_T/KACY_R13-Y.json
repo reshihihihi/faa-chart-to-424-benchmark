@@ -1,0 +1,213 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KACY_R13-Y",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "T",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [
+      {
+        "value": "JURAD",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "source_start_char": 61,
+        "source_end_char": 66,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 38,
+        "region_local_end_char": 43,
+        "global_start_char": 61,
+        "global_end_char": 66
+      },
+      {
+        "value": "RODDI",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "D APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "source_start_char": 88,
+        "source_end_char": 93,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 65,
+        "region_local_end_char": 70,
+        "global_start_char": 88,
+        "global_end_char": 93
+      }
+    ],
+    "altitude_candidates": [
+      {
+        "value": 2000,
+        "field_type": "altitude_ft",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "source_start_char": 49,
+        "source_end_char": 53,
+        "rule_id": "altitude_ft_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 26,
+        "region_local_end_char": 30,
+        "global_start_char": 49,
+        "global_end_char": 53
+      }
+    ],
+    "turn_candidates": [],
+    "course_candidates": [
+      {
+        "value": 76,
+        "field_type": "course_deg",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "source_start_char": 80,
+        "source_end_char": 83,
+        "rule_id": "course_heading_radial_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 57,
+        "region_local_end_char": 60,
+        "global_start_char": 80,
+        "global_end_char": 83
+      },
+      {
+        "value": 76,
+        "field_type": "course_deg",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "source_start_char": 80,
+        "source_end_char": 83,
+        "rule_id": "degree_value_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 57,
+        "region_local_end_char": 60,
+        "global_start_char": 80,
+        "global_end_char": 83
+      }
+    ],
+    "hold_candidates": [
+      {
+        "value": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "field_type": "hold_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "source_start_char": 98,
+        "source_end_char": 102,
+        "rule_id": "hold_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 75,
+        "region_local_end_char": 79,
+        "global_start_char": 98,
+        "global_end_char": 102
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "value": "Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "field_type": "missed_approach_instruction",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "source_start_char": 40,
+        "source_end_char": 103,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "confidence": 0.95,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 17,
+        "region_local_end_char": 80,
+        "global_start_char": 40,
+        "global_end_char": 103
+      }
+    ],
+    "track_to_fix_snippets": [
+      {
+        "value": "on track 076° to RODDI",
+        "field_type": "track_to_fix_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "source_start_char": 71,
+        "source_end_char": 93,
+        "rule_id": "track_to_fix_phrase_regex_v8",
+        "confidence": 0.82,
+        "notes": "flat_ocr_track_to_fix_phrase_no_leg_binding",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 48,
+        "region_local_end_char": 70,
+        "global_start_char": 71,
+        "global_end_char": 93
+      }
+    ],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [
+      {
+        "value": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "field_type": "direct_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "source_start_char": 54,
+        "source_end_char": 60,
+        "rule_id": "direct_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 31,
+        "region_local_end_char": 37,
+        "global_start_char": 54,
+        "global_end_char": 60
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "value": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "field_type": "climb_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 2000 direct JURAD and on track 076° to RODDI and hold.",
+        "source_start_char": 40,
+        "source_end_char": 45,
+        "rule_id": "climb_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 17,
+        "region_local_end_char": 22,
+        "global_start_char": 40,
+        "global_end_char": 45
+      }
+    ]
+  }
+}

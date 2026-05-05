@@ -1,0 +1,8 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2800 -> AT_OR_ABOVE 2800 ft
+- FIX_TEXT: FENLA -> FENLA
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

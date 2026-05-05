@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_75db9c52-c14e-4793-b06b-503333399e7c",
+  "object": "chat.completion",
+  "created": 1777808121,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_0FKN2eQI9PRVZJI3vZyiF0yA",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAXH_R27\",\"procedure\":{\"airport\":\"KAXH\",\"approach_ident\":\"R27\",\"chart_name\":\"RNAV (GPS) RWY 27\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

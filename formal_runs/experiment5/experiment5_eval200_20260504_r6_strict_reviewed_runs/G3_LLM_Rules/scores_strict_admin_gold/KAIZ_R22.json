@@ -1,0 +1,219 @@
+{
+  "correct": 1,
+  "total": 19,
+  "accuracy": 0.05263157894736842,
+  "rows": [
+    {
+      "field": "leg_count",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": 1
+      },
+      "target": {
+        "status": "present",
+        "value": 3
+      }
+    },
+    {
+      "field": "leg_1.Q_terminator",
+      "correct": false,
+      "pred": {
+        "status": "unknown",
+        "value": null
+      },
+      "target": {
+        "status": "present",
+        "value": "CA"
+      }
+    },
+    {
+      "field": "leg_1.Q1_fix_ident",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": "GIVMY"
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_1.Q2_altitude_constraint",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": {
+          "desc": "AT",
+          "altitude_ft": 3100,
+          "altitude_2_ft": null
+        }
+      },
+      "target": {
+        "status": "not_observable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_1.Q3_turn",
+      "correct": false,
+      "pred": {
+        "status": "unknown",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_1.Q4_course_or_radial",
+      "correct": false,
+      "pred": {
+        "status": "unknown",
+        "value": null
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "course_deg": 217.1,
+          "type": "course_deg"
+        }
+      }
+    },
+    {
+      "field": "leg_1.Q5_hold_params",
+      "correct": true,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_2.Q_terminator",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": "DF"
+      }
+    },
+    {
+      "field": "leg_2.Q1_fix_ident",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": "GIVMY"
+      }
+    },
+    {
+      "field": "leg_2.Q2_altitude_constraint",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": {
+          "altitude_2_ft": null,
+          "altitude_ft": 3100,
+          "desc": "AT_OR_ABOVE"
+        }
+      }
+    },
+    {
+      "field": "leg_2.Q3_turn",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "unknown",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_2.Q4_course_or_radial",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_2.Q5_hold_params",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_3.Q_terminator",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": "HM"
+      }
+    },
+    {
+      "field": "leg_3.Q1_fix_ident",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": "GIVMY"
+      }
+    },
+    {
+      "field": "leg_3.Q2_altitude_constraint",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": {
+          "altitude_2_ft": null,
+          "altitude_ft": 3100,
+          "desc": "AT_OR_ABOVE"
+        }
+      }
+    },
+    {
+      "field": "leg_3.Q3_turn",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_3.Q4_course_or_radial",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_3.Q5_hold_params",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": {
+          "inbound_course_deg": 37,
+          "leg_distance_nm": 4,
+          "leg_time_min": null,
+          "turn": "RIGHT"
+        }
+      }
+    }
+  ]
+}

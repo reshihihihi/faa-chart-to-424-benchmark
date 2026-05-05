@@ -1,0 +1,159 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KAOV_R31",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "PD",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [
+      {
+        "value": "GOTPY",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_region": "MISSED_APPROACH_DETAIL_AREA",
+        "source_section": "missed_approach_detail_area",
+        "source_snippet": "FIX_TEXT: GOTPY -> GOTPY",
+        "source_start_char": null,
+        "source_end_char": null,
+        "region_local_start_char": null,
+        "region_local_end_char": null,
+        "global_start_char": null,
+        "global_end_char": null,
+        "rule_id": "admin_region_label_fix_text_v1",
+        "confidence": 0.97,
+        "notes": "admin_region_label_textualized"
+      },
+      {
+        "value": "GOTPY",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_region": "MISSED_APPROACH_DETAIL_AREA",
+        "source_section": "missed_approach_detail_area",
+        "source_snippet": "GOTPY",
+        "source_start_char": null,
+        "source_end_char": null,
+        "region_local_start_char": null,
+        "region_local_end_char": null,
+        "global_start_char": null,
+        "global_end_char": null,
+        "rule_id": "admin_review_relation_fix_textualized_v1",
+        "confidence": 0.96,
+        "notes": "admin_review_relation_textualized"
+      }
+    ],
+    "altitude_candidates": [
+      {
+        "value": 4600,
+        "field_type": "altitude_ft",
+        "source": "ocr_text",
+        "source_region": "MISSED_APPROACH_DETAIL_AREA",
+        "source_section": "missed_approach_detail_area",
+        "source_snippet": "ALTITUDE_TEXT: 4600 -> AT_OR_ABOVE 4600 ft",
+        "source_start_char": null,
+        "source_end_char": null,
+        "region_local_start_char": null,
+        "region_local_end_char": null,
+        "global_start_char": null,
+        "global_end_char": null,
+        "rule_id": "admin_region_label_altitude_text_v1",
+        "confidence": 0.97,
+        "notes": "admin_region_label_textualized"
+      },
+      {
+        "value": 4600,
+        "field_type": "altitude_ft",
+        "source": "ocr_text",
+        "source_region": "MISSED_APPROACH_DETAIL_AREA",
+        "source_section": "missed_approach_detail_area",
+        "source_snippet": "climb to 4600",
+        "source_start_char": null,
+        "source_end_char": null,
+        "region_local_start_char": null,
+        "region_local_end_char": null,
+        "global_start_char": null,
+        "global_end_char": null,
+        "rule_id": "admin_review_relation_altitude_textualized_v1",
+        "confidence": 0.96,
+        "notes": "admin_review_relation_textualized"
+      }
+    ],
+    "turn_candidates": [],
+    "course_candidates": [
+      {
+        "value": 315.4,
+        "field_type": "course_deg",
+        "source": "ocr_text",
+        "source_region": "PLAN_VIEW",
+        "source_section": "plan_view",
+        "source_snippet": "on heading 315.4",
+        "source_start_char": null,
+        "source_end_char": null,
+        "region_local_start_char": null,
+        "region_local_end_char": null,
+        "global_start_char": null,
+        "global_end_char": null,
+        "rule_id": "admin_review_relation_course_textualized_v1",
+        "confidence": 0.92,
+        "notes": "admin_review_relation_textualized"
+      }
+    ],
+    "hold_candidates": [
+      {
+        "value": "hold, inbound course 135.3, right turns, 5 NM",
+        "field_type": "hold_phrase",
+        "source": "ocr_text",
+        "source_region": "PLAN_VIEW",
+        "source_section": "plan_view",
+        "source_snippet": "hold, inbound course 135.3, right turns, 5 NM",
+        "source_start_char": null,
+        "source_end_char": null,
+        "region_local_start_char": null,
+        "region_local_end_char": null,
+        "global_start_char": null,
+        "global_end_char": null,
+        "rule_id": "admin_review_relation_hold_textualized_v1",
+        "confidence": 0.92,
+        "notes": "admin_review_relation_textualized"
+      }
+    ],
+    "instruction_snippets": [],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [],
+    "climb_phrase_snippets": [
+      {
+        "value": "climb to 4600",
+        "field_type": "climb_phrase",
+        "source": "ocr_text",
+        "source_region": "MISSED_APPROACH_DETAIL_AREA",
+        "source_section": "missed_approach_detail_area",
+        "source_snippet": "climb to 4600",
+        "source_start_char": null,
+        "source_end_char": null,
+        "region_local_start_char": null,
+        "region_local_end_char": null,
+        "global_start_char": null,
+        "global_end_char": null,
+        "rule_id": "admin_review_relation_climb_phrase_textualized_v1",
+        "confidence": 0.9,
+        "notes": "admin_review_relation_textualized"
+      }
+    ]
+  }
+}

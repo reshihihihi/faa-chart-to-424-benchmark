@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_664c3660-dce4-41e5-9d9a-f6924ee5eb32",
+  "object": "chat.completion",
+  "created": 1777808081,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_dZsdyVdJeILi0RDGvsCJE9Z0",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAPC_I01L\",\"procedure\":{\"airport\":\"KAPC\",\"approach_ident\":\"I01L\",\"chart_name\":\"ILS OR LOC Z RWY 01L\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

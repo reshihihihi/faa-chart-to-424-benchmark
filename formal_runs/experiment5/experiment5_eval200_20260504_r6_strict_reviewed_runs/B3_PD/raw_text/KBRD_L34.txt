@@ -1,0 +1,1 @@
+{"chart_id":"KBRD_L34","procedure":{"airport":"KBRD","approach_ident":"L34","chart_name":"ILS OR LOC RWY 34"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

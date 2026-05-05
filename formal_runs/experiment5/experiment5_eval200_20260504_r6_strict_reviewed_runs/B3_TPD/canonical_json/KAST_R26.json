@@ -1,0 +1,119 @@
+{
+  "chart_id": "KAST_R26",
+  "procedure": {
+    "airport": "KAST",
+    "approach_ident": "R26",
+    "chart_name": "RNAV (GPS) RWY 26"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 3
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "DF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "STAZY"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT",
+              "altitude_ft": 5000,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "direct"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "TF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "YUXBU"
+          },
+          "Q2_altitude_constraint": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q3_turn": {
+            "status": "present",
+            "value": "LEFT"
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 189
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 3,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "HF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "KULOA"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT",
+              "altitude_ft": 5000,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 113
+            }
+          },
+          "Q5_hold_params": {
+            "status": "unknown",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

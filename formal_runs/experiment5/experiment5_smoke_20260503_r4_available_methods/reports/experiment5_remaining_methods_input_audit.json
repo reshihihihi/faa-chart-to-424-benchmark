@@ -1,0 +1,741 @@
+{
+  "created_at_utc": "2026-05-03T05:43:45.955435+00:00",
+  "chart_ids": [
+    "KABE_R13",
+    "KALN_L29",
+    "KABY_R05",
+    "KAPC_I01L",
+    "KABE_R24",
+    "KABY_R17",
+    "KABY_R23",
+    "KACK_R33",
+    "KACY_R13-Y",
+    "KACY_R31-Y",
+    "KAFW_R34R",
+    "KAGC_R10",
+    "KAGC_R28",
+    "KAKH_R03",
+    "KAAA_R03",
+    "KAAA_R21",
+    "KAAF_R06",
+    "KAAF_R14",
+    "KAAF_R24",
+    "KAAS_R05"
+  ],
+  "annotation_export": "external_artifact://E/experiment3\\group2_annotation_status_20260503\\shujuji_annotation_export_2026-05-03T02-07-42-455Z.json",
+  "annotation_export_sha256": "94484d62b40b4bcaf390f9f3b09ca4f5e0c7611a686e49b194aa8eeb18ca0e28",
+  "smoke_manifest": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\benchmark_exports\\derived\\v2\\experiment5_diagnostic\\smoke20_manifest.jsonl",
+  "smoke_manifest_sha256": "75b275b8b35c6693feb5185f7e8eb5cfc5fde98e54a675931e383310d128a2a3",
+  "gold_ma_text_template": {
+    "rows": 20,
+    "review_status_counts": {
+      "todo": 20
+    },
+    "filled_count": 0,
+    "todo_count": 20,
+    "filled_chart_ids": [],
+    "todo_chart_ids": [
+      "KABE_R13",
+      "KALN_L29",
+      "KABY_R05",
+      "KAPC_I01L",
+      "KABE_R24",
+      "KABY_R17",
+      "KABY_R23",
+      "KACK_R33",
+      "KACY_R13-Y",
+      "KACY_R31-Y",
+      "KAFW_R34R",
+      "KAGC_R10",
+      "KAGC_R28",
+      "KAKH_R03",
+      "KAAA_R03",
+      "KAAA_R21",
+      "KAAF_R06",
+      "KAAF_R14",
+      "KAAF_R24",
+      "KAAS_R05"
+    ]
+  },
+  "gold_observable_template": {
+    "rows": 20,
+    "review_status_counts": {
+      "todo": 20
+    },
+    "filled_count": 0,
+    "todo_count": 20,
+    "filled_chart_ids": [],
+    "todo_chart_ids": [
+      "KABE_R13",
+      "KALN_L29",
+      "KABY_R05",
+      "KAPC_I01L",
+      "KABE_R24",
+      "KABY_R17",
+      "KABY_R23",
+      "KACK_R33",
+      "KACY_R13-Y",
+      "KACY_R31-Y",
+      "KAFW_R34R",
+      "KAGC_R10",
+      "KAGC_R28",
+      "KAKH_R03",
+      "KAAA_R03",
+      "KAAA_R21",
+      "KAAF_R06",
+      "KAAF_R14",
+      "KAAF_R24",
+      "KAAS_R05"
+    ]
+  },
+  "annotation_audit": {
+    "latest_submission_chart_count": 20,
+    "missing_latest_submission_chart_ids": [],
+    "coverage_by_chart": {
+      "KABE_R13": {
+        "has_latest_submission": true,
+        "relative_path": "KABE_R13/2026-05-02T16-32-25-201Z__A21.json",
+        "saved_at": "2026-05-02T16:32:25.201Z",
+        "annotator": "A21",
+        "region_count": 9,
+        "field_review_count": 12,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KALN_L29": {
+        "has_latest_submission": true,
+        "relative_path": "KALN_L29/2026-05-02T06-32-06-537Z__A20.json",
+        "saved_at": "2026-05-02T06:32:06.537Z",
+        "annotator": "A20",
+        "region_count": 12,
+        "field_review_count": 14,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KABY_R05": {
+        "has_latest_submission": true,
+        "relative_path": "KABY_R05/2026-05-02T16-34-16-613Z__A21.json",
+        "saved_at": "2026-05-02T16:34:16.613Z",
+        "annotator": "A21",
+        "region_count": 8,
+        "field_review_count": 13,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KAPC_I01L": {
+        "has_latest_submission": true,
+        "relative_path": "KAPC_I01L/2026-05-02T04-00-53-705Z__A20.json",
+        "saved_at": "2026-05-02T04:00:53.705Z",
+        "annotator": "A20",
+        "region_count": 7,
+        "field_review_count": 13,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KABE_R24": {
+        "has_latest_submission": true,
+        "relative_path": "KABE_R24/2026-05-02T16-33-18-255Z__A21.json",
+        "saved_at": "2026-05-02T16:33:18.255Z",
+        "annotator": "A21",
+        "region_count": 8,
+        "field_review_count": 12,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KABY_R17": {
+        "has_latest_submission": true,
+        "relative_path": "KABY_R17/2026-05-02T16-35-09-506Z__A21.json",
+        "saved_at": "2026-05-02T16:35:09.506Z",
+        "annotator": "A21",
+        "region_count": 9,
+        "field_review_count": 12,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KABY_R23": {
+        "has_latest_submission": true,
+        "relative_path": "KABY_R23/2026-05-02T16-36-02-525Z__A21.json",
+        "saved_at": "2026-05-02T16:36:02.525Z",
+        "annotator": "A21",
+        "region_count": 9,
+        "field_review_count": 12,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KACK_R33": {
+        "has_latest_submission": true,
+        "relative_path": "KACK_R33/2026-05-02T16-37-59-206Z__A21.json",
+        "saved_at": "2026-05-02T16:37:59.206Z",
+        "annotator": "A21",
+        "region_count": 9,
+        "field_review_count": 12,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KACY_R13-Y": {
+        "has_latest_submission": true,
+        "relative_path": "KACY_R13-Y/2026-05-02T16-40-52-090Z__A21.json",
+        "saved_at": "2026-05-02T16:40:52.090Z",
+        "annotator": "A21",
+        "region_count": 8,
+        "field_review_count": 12,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KACY_R31-Y": {
+        "has_latest_submission": true,
+        "relative_path": "KACY_R31-Y/2026-05-02T16-41-55-987Z__A21.json",
+        "saved_at": "2026-05-02T16:41:55.987Z",
+        "annotator": "A21",
+        "region_count": 9,
+        "field_review_count": 12,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KAFW_R34R": {
+        "has_latest_submission": true,
+        "relative_path": "KAFW_R34R/2026-05-02T16-45-49-371Z__A21.json",
+        "saved_at": "2026-05-02T16:45:49.371Z",
+        "annotator": "A21",
+        "region_count": 9,
+        "field_review_count": 12,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KAGC_R10": {
+        "has_latest_submission": true,
+        "relative_path": "KAGC_R10/2026-05-02T16-46-49-442Z__A21.json",
+        "saved_at": "2026-05-02T16:46:49.442Z",
+        "annotator": "A21",
+        "region_count": 8,
+        "field_review_count": 12,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KAGC_R28": {
+        "has_latest_submission": true,
+        "relative_path": "KAGC_R28/2026-05-02T16-48-35-686Z__A21.json",
+        "saved_at": "2026-05-02T16:48:35.686Z",
+        "annotator": "A21",
+        "region_count": 8,
+        "field_review_count": 12,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KAKH_R03": {
+        "has_latest_submission": true,
+        "relative_path": "KAKH_R03/2026-05-02T12-35-46-360Z__A20.json",
+        "saved_at": "2026-05-02T12:35:46.360Z",
+        "annotator": "A20",
+        "region_count": 9,
+        "field_review_count": 14,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KAAA_R03": {
+        "has_latest_submission": true,
+        "relative_path": "KAAA_R03/2026-05-02T17-07-00-030Z__A21.json",
+        "saved_at": "2026-05-02T17:07:00.030Z",
+        "annotator": "A21",
+        "region_count": 7,
+        "field_review_count": 10,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KAAA_R21": {
+        "has_latest_submission": true,
+        "relative_path": "KAAA_R21/2026-05-02T17-07-58-914Z__A21.json",
+        "saved_at": "2026-05-02T17:07:58.914Z",
+        "annotator": "A21",
+        "region_count": 8,
+        "field_review_count": 11,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KAAF_R06": {
+        "has_latest_submission": true,
+        "relative_path": "KAAF_R06/2026-05-02T17-08-58-754Z__A21.json",
+        "saved_at": "2026-05-02T17:08:58.754Z",
+        "annotator": "A21",
+        "region_count": 7,
+        "field_review_count": 10,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KAAF_R14": {
+        "has_latest_submission": true,
+        "relative_path": "KAAF_R14/2026-05-02T17-09-51-269Z__A21.json",
+        "saved_at": "2026-05-02T17:09:51.269Z",
+        "annotator": "A21",
+        "region_count": 9,
+        "field_review_count": 11,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KAAF_R24": {
+        "has_latest_submission": true,
+        "relative_path": "KAAF_R24/2026-05-02T17-10-46-746Z__A21.json",
+        "saved_at": "2026-05-02T17:10:46.746Z",
+        "annotator": "A21",
+        "region_count": 9,
+        "field_review_count": 11,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      },
+      "KAAS_R05": {
+        "has_latest_submission": true,
+        "relative_path": "KAAS_R05/2026-05-02T17-13-21-332Z__A21.json",
+        "saved_at": "2026-05-02T17:13:21.332Z",
+        "annotator": "A21",
+        "region_count": 7,
+        "field_review_count": 10,
+        "has_annotation_pr28_json": true,
+        "has_pr28_comparison_summary": true
+      }
+    },
+    "total_field_reviews": 237,
+    "support_mode_counts": {
+      "direct_visible": 64,
+      "insufficient_for_encoding": 17,
+      "rule_default_completion": 139,
+      "visible_joint": 17
+    },
+    "review_status_counts": {
+      "direct_visible": 64,
+      "insufficient_for_encoding": 17,
+      "rule_default_completion": 139,
+      "visible_joint": 17
+    },
+    "evidence_source_counts": {
+      "chart_text": 58,
+      "ma_text": 122,
+      "plan_view": 40
+    },
+    "question_field_counts": {
+      "Q1_fix_ident": 54,
+      "Q2_altitude_constraint": 60,
+      "Q3_turn": 6,
+      "Q4_course_or_radial": 22,
+      "Q5_hold_params": 20,
+      "Q_terminator": 75
+    },
+    "region_type_counts": {
+      "ALTITUDE_TEXT": 23,
+      "CLIMB_ARROW": 26,
+      "FIX_SYMBOL": 22,
+      "FIX_TEXT": 34,
+      "HEADING_TEXT": 1,
+      "MISSED_APPROACH_DETAIL_AREA": 20,
+      "MISSED_APPROACH_TEXT": 20,
+      "NAVAID_TEXT": 1,
+      "PATH_SEGMENT": 1,
+      "PLAN_VIEW": 20,
+      "RADIAL_TEXT": 1
+    },
+    "nonempty_region_ocr_count": 0,
+    "prohibited_payload_hits_if_used_as_method_input": {
+      "candidate_leg_id": 237,
+      "canonical_answer": 237,
+      "canonical_leg_index": 237,
+      "field_key": 237,
+      "leg_type": 237,
+      "support_mode": 237
+    },
+    "field_review_examples": [
+      {
+        "chart_id": "KABE_R13",
+        "field_key": "leg1.Q_terminator",
+        "canonical_leg_index": 1,
+        "leg_type": "CA",
+        "field_name": "Q_terminator",
+        "canonical_answer": {
+          "status": "present",
+          "value": "CA"
+        },
+        "review_status": "rule_default_completion",
+        "support_mode": "rule_default_completion",
+        "evidence_source": [
+          "ma_text"
+        ],
+        "evidence_region_ids": [
+          "KABE_R13_01_missed_approach_text"
+        ]
+      },
+      {
+        "chart_id": "KABE_R13",
+        "field_key": "leg1.Q2_altitude_constraint",
+        "canonical_leg_index": 1,
+        "leg_type": "CA",
+        "field_name": "Q2_altitude_constraint",
+        "canonical_answer": {
+          "status": "present",
+          "value": {
+            "desc": "AT_OR_ABOVE",
+            "altitude_ft": 586,
+            "altitude_2_ft": null
+          }
+        },
+        "review_status": "insufficient_for_encoding",
+        "support_mode": "insufficient_for_encoding",
+        "evidence_source": [],
+        "evidence_region_ids": []
+      },
+      {
+        "chart_id": "KABE_R13",
+        "field_key": "leg1.Q4_course_or_radial",
+        "canonical_leg_index": 1,
+        "leg_type": "CA",
+        "field_name": "Q4_course_or_radial",
+        "canonical_answer": {
+          "status": "present",
+          "value": {
+            "type": "course_deg",
+            "course_deg": 134.9
+          }
+        },
+        "review_status": "rule_default_completion",
+        "support_mode": "rule_default_completion",
+        "evidence_source": [
+          "plan_view"
+        ],
+        "evidence_region_ids": [
+          "KABE_R13_02_plan_view"
+        ]
+      },
+      {
+        "chart_id": "KABE_R13",
+        "field_key": "leg2.Q_terminator",
+        "canonical_leg_index": 2,
+        "leg_type": "DF",
+        "field_name": "Q_terminator",
+        "canonical_answer": {
+          "status": "present",
+          "value": "DF"
+        },
+        "review_status": "rule_default_completion",
+        "support_mode": "rule_default_completion",
+        "evidence_source": [
+          "ma_text"
+        ],
+        "evidence_region_ids": [
+          "KABE_R13_01_missed_approach_text"
+        ]
+      },
+      {
+        "chart_id": "KABE_R13",
+        "field_key": "leg2.Q1_fix_ident",
+        "canonical_leg_index": 2,
+        "leg_type": "DF",
+        "field_name": "Q1_fix_ident",
+        "canonical_answer": {
+          "status": "present",
+          "value": "KOCEC"
+        },
+        "review_status": "direct_visible",
+        "support_mode": "direct_visible",
+        "evidence_source": [
+          "chart_text"
+        ],
+        "evidence_region_ids": [
+          "KABE_R13_iconalign_001_fix_text"
+        ]
+      },
+      {
+        "chart_id": "KABE_R13",
+        "field_key": "leg3.Q_terminator",
+        "canonical_leg_index": 3,
+        "leg_type": "TF",
+        "field_name": "Q_terminator",
+        "canonical_answer": {
+          "status": "present",
+          "value": "TF"
+        },
+        "review_status": "rule_default_completion",
+        "support_mode": "rule_default_completion",
+        "evidence_source": [
+          "ma_text"
+        ],
+        "evidence_region_ids": [
+          "KABE_R13_01_missed_approach_text"
+        ]
+      },
+      {
+        "chart_id": "KABE_R13",
+        "field_key": "leg3.Q1_fix_ident",
+        "canonical_leg_index": 3,
+        "leg_type": "TF",
+        "field_name": "Q1_fix_ident",
+        "canonical_answer": {
+          "status": "present",
+          "value": "LIZZI"
+        },
+        "review_status": "direct_visible",
+        "support_mode": "direct_visible",
+        "evidence_source": [
+          "chart_text"
+        ],
+        "evidence_region_ids": [
+          "KABE_R13_iconalign_002_fix_text"
+        ]
+      },
+      {
+        "chart_id": "KABE_R13",
+        "field_key": "leg3.Q2_altitude_constraint",
+        "canonical_leg_index": 3,
+        "leg_type": "TF",
+        "field_name": "Q2_altitude_constraint",
+        "canonical_answer": {
+          "status": "present",
+          "value": {
+            "desc": "AT_OR_ABOVE",
+            "altitude_ft": 3000,
+            "altitude_2_ft": null
+          }
+        },
+        "review_status": "direct_visible",
+        "support_mode": "direct_visible",
+        "evidence_source": [
+          "chart_text"
+        ],
+        "evidence_region_ids": [
+          "KABE_R13_iconalign_003_altitude_text"
+        ]
+      }
+    ],
+    "region_mapping_examples": [
+      {
+        "chart_id": "KABE_R13",
+        "region_type": "MISSED_APPROACH_TEXT",
+        "region_id": "KABE_R13_01_missed_approach_text",
+        "label": "upper coarse formal annotation: missed-approach text block",
+        "accepted_mapping_keys": [
+          "candidate_leg_id",
+          "canonical_answer",
+          "canonical_leg_index",
+          "evidence_role",
+          "field_name",
+          "final_value",
+          "human_confidence",
+          "leg_type",
+          "notes"
+        ]
+      },
+      {
+        "chart_id": "KABE_R13",
+        "region_type": "PLAN_VIEW",
+        "region_id": "KABE_R13_02_plan_view",
+        "label": "平面图复飞相关区域",
+        "accepted_mapping_keys": [
+          "candidate_leg_id",
+          "canonical_answer",
+          "canonical_leg_index",
+          "evidence_role",
+          "field_name",
+          "final_value",
+          "human_confidence",
+          "leg_type",
+          "notes"
+        ]
+      },
+      {
+        "chart_id": "KABE_R13",
+        "region_type": "ALTITUDE_TEXT",
+        "region_id": "KABE_R13_iconalign_003_altitude_text",
+        "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+        "accepted_mapping_keys": [
+          "candidate_leg_id",
+          "canonical_answer",
+          "canonical_leg_index",
+          "evidence_role",
+          "field_name",
+          "final_value",
+          "human_confidence",
+          "leg_type",
+          "notes"
+        ]
+      },
+      {
+        "chart_id": "KABE_R13",
+        "region_type": "FIX_TEXT",
+        "region_id": "KABE_R13_iconalign_001_fix_text",
+        "label": "FIX_TEXT: KOCEC -> KOCEC",
+        "accepted_mapping_keys": [
+          "candidate_leg_id",
+          "canonical_answer",
+          "canonical_leg_index",
+          "evidence_role",
+          "field_name",
+          "final_value",
+          "human_confidence",
+          "leg_type",
+          "notes"
+        ]
+      },
+      {
+        "chart_id": "KABE_R13",
+        "region_type": "FIX_TEXT",
+        "region_id": "KABE_R13_iconalign_002_fix_text",
+        "label": "FIX_TEXT: LIZZI -> LIZZI",
+        "accepted_mapping_keys": [
+          "candidate_leg_id",
+          "canonical_answer",
+          "canonical_leg_index",
+          "evidence_role",
+          "field_name",
+          "final_value",
+          "human_confidence",
+          "leg_type",
+          "notes"
+        ]
+      },
+      {
+        "chart_id": "KALN_L29",
+        "region_type": "MISSED_APPROACH_TEXT",
+        "region_id": "KALN_L29_01_missed_approach_text",
+        "label": "upper coarse formal annotation: missed-approach text block",
+        "accepted_mapping_keys": [
+          "candidate_leg_id",
+          "canonical_answer",
+          "canonical_leg_index",
+          "evidence_role",
+          "field_name",
+          "final_value",
+          "human_confidence",
+          "leg_type",
+          "notes"
+        ]
+      },
+      {
+        "chart_id": "KALN_L29",
+        "region_type": "PLAN_VIEW",
+        "region_id": "KALN_L29_02_plan_view",
+        "label": "平面图复飞相关区域",
+        "accepted_mapping_keys": [
+          "candidate_leg_id",
+          "canonical_answer",
+          "canonical_leg_index",
+          "evidence_role",
+          "field_name",
+          "final_value",
+          "human_confidence",
+          "leg_type",
+          "notes"
+        ]
+      },
+      {
+        "chart_id": "KALN_L29",
+        "region_type": "ALTITUDE_TEXT",
+        "region_id": "KALN_L29_iconalign_004_altitude_text",
+        "label": "ALTITUDE_TEXT: 2200 -> AT_OR_ABOVE 2200 ft",
+        "accepted_mapping_keys": [
+          "candidate_leg_id",
+          "canonical_answer",
+          "canonical_leg_index",
+          "evidence_role",
+          "field_name",
+          "final_value",
+          "human_confidence",
+          "leg_type",
+          "notes"
+        ]
+      }
+    ]
+  },
+  "method_readiness": {
+    "A3_GoldText_Rules": {
+      "status": "blocked",
+      "required_input": "adjudicated gold_ma_prose only",
+      "reason": "gold_ma_text template is not completed",
+      "must_not_use": [
+        "field_review_v2",
+        "canonical_answer",
+        "Q_terminator",
+        "leg_type",
+        "support_mode",
+        "candidate_mappings"
+      ]
+    },
+    "B2a_GoldText_LLM": {
+      "status": "blocked",
+      "required_input": "adjudicated gold_ma_prose only",
+      "reason": "gold_ma_text template is not completed",
+      "must_not_use": [
+        "field_review_v2",
+        "canonical target",
+        "score",
+        "candidate_mappings"
+      ]
+    },
+    "B2b_GoldText_FieldCandidates_LLM": {
+      "status": "blocked",
+      "required_input": "adjudicated gold_ma_prose + automatic field candidates",
+      "reason": "gold_ma_text template is not completed",
+      "must_not_use": [
+        "field_review_v2",
+        "canonical target",
+        "support_mode",
+        "human decision"
+      ]
+    },
+    "B3_T": {
+      "status": "completed_smoke20_r4",
+      "required_input": "MA_TEXT ROI OCR + automatic candidates"
+    },
+    "B3_TPD": {
+      "status": "completed_smoke20_r4",
+      "required_input": "T/P/D ROI OCR + automatic candidates"
+    },
+    "B3_PD": {
+      "status": "completed_smoke20_r4",
+      "required_input": "P/D ROI OCR + automatic candidates"
+    },
+    "B4_TPD": {
+      "status": "completed_smoke20_r4",
+      "required_input": "T/P/D ROI OCR + automatic candidates + frozen rules"
+    },
+    "G0_Direct": {
+      "status": "blocked",
+      "required_input": "adjudicated gold observable facts, explicit absence, source evidence ids",
+      "reason": "gold_observable template is not completed",
+      "must_not_use": [
+        "canonical_answer",
+        "canonical_leg_index",
+        "Q_terminator",
+        "final canonical JSON"
+      ]
+    },
+    "G1_Rules": {
+      "status": "blocked",
+      "required_input": "adjudicated gold observable facts + frozen rules",
+      "reason": "gold_observable template is not completed",
+      "must_not_use": [
+        "canonical_answer",
+        "canonical_leg_index",
+        "Q_terminator",
+        "score"
+      ]
+    },
+    "G2_LLM": {
+      "status": "optional_blocked",
+      "required_input": "adjudicated gold observable facts",
+      "reason": "optional method; gold_observable template is not completed",
+      "must_not_use": [
+        "scorer",
+        "answer key",
+        "target JSON",
+        "method predictions"
+      ]
+    },
+    "G3_LLM_Rules": {
+      "status": "blocked",
+      "required_input": "adjudicated gold observable facts + frozen rule descriptions",
+      "reason": "gold_observable template is not completed",
+      "must_not_use": [
+        "canonical_answer",
+        "canonical_leg_index",
+        "Q_terminator",
+        "score"
+      ]
+    }
+  }
+}

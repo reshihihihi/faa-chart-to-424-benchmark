@@ -1,0 +1,1 @@
+{"chart_id":"KAFW_R16R","procedure":{"airport":"KAFW","approach_ident":"R16R","chart_name":"RNAV (GPS) RWY 16R"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

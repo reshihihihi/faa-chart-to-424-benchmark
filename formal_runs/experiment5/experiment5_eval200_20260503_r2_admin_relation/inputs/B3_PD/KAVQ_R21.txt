@@ -1,0 +1,9 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 6700 -> AT_OR_ABOVE 6700 ft
+- FIX_TEXT: TUPBO -> TUPBO
+- FIX_TEXT: ALMON -> ALMON
+- detected lower detail: fix symbol
+- detected lower detail: fix symbol

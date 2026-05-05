@@ -1,0 +1,116 @@
+{
+  "schema_version": "experiment5_gold_ma_prose_field_candidates_schema_v1",
+  "chart_id": "KCEC_L12",
+  "candidate_source": "experiment5_gold_ma_prose_regex_candidates_v1",
+  "source_contract": {
+    "source": "adjudicated_gold_ma_prose",
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false,
+    "allows_field_review_v2": false,
+    "allows_cifp_or_arinc_424": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false,
+    "uses_field_review_v2": false
+  },
+  "field_candidates": {
+    "fix_candidates": [],
+    "altitude_candidates": [
+      {
+        "value": 700,
+        "field_type": "altitude_ft",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "700",
+        "source_start_char": 26,
+        "source_end_char": 29,
+        "rule_id": "gold_ma_altitude_ft_regex_v1",
+        "confidence": 0.95,
+        "notes": "climb_to_altitude_context"
+      }
+    ],
+    "turn_candidates": [],
+    "course_candidates": [
+      {
+        "value": {
+          "type": "navaid_radial",
+          "navaid": "CEC",
+          "radial_deg": 345.0,
+          "direction": "outbound"
+        },
+        "field_type": "navaid_radial",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "CEC R-345",
+        "source_start_char": 65,
+        "source_end_char": 74,
+        "rule_id": "gold_ma_navaid_radial_regex_v1",
+        "confidence": 0.9,
+        "notes": "navaid_radial_context"
+      }
+    ],
+    "hold_candidates": [
+      {
+        "value": "MISSED APPROACH: climb to 700 on heading 119.2; climb to 3000 on CEC R-345.8 INBOUND to CHIDE; hold at CHIDE, inbound course 345.8, left turns, 4 NM, maintain 3000.",
+        "field_type": "hold_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "MISSED APPROACH: climb to 700 on heading 119.2; climb to 3000 on CEC R-345.8 INBOUND to CHIDE; hold at CHIDE, inbound course 345.8, left turns, 4 NM, maintain 3000.",
+        "source_start_char": 95,
+        "source_end_char": 99,
+        "rule_id": "gold_ma_hold_phrase_regex_v1",
+        "confidence": 0.95,
+        "notes": "hold_phrase_context_no_leg_binding"
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "value": "climb to 700 on heading 119.2; climb to 3000 on CEC R-345.8 INBOUND to CHIDE; hold at CHIDE, inbound course 345.8, left turns, 4 NM, maintain 3000.",
+        "field_type": "missed_approach_instruction",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "MISSED APPROACH: climb to 700 on heading 119.2; climb to 3000 on CEC R-345.8 INBOUND to CHIDE; hold at CHIDE, inbound course 345.8, left turns, 4 NM, maintain 3000.",
+        "source_start_char": 0,
+        "source_end_char": 164,
+        "rule_id": "gold_ma_instruction_span_regex_v1",
+        "confidence": 0.99,
+        "notes": "automatic_candidate_from_adjudicated_gold_ma_prose_no_target_or_leg_binding"
+      }
+    ],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [],
+    "climb_phrase_snippets": [
+      {
+        "value": "CLIMB TO 700 ON HEADING 119",
+        "field_type": "climb_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "CLIMB TO 700 ON HEADING 119",
+        "source_start_char": 17,
+        "source_end_char": 44,
+        "rule_id": "gold_ma_climb_phrase_regex_v1",
+        "confidence": 0.9,
+        "notes": "climb_phrase_context"
+      },
+      {
+        "value": "CLIMB TO 3000 ON CEC R-345",
+        "field_type": "climb_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "CLIMB TO 3000 ON CEC R-345",
+        "source_start_char": 48,
+        "source_end_char": 74,
+        "rule_id": "gold_ma_climb_phrase_regex_v1",
+        "confidence": 0.9,
+        "notes": "climb_phrase_context"
+      }
+    ]
+  }
+}

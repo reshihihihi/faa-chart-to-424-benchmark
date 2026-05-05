@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 3000 on BOS R-334 INBOUND to CELTS; hold at CELTS, inbound course 334, right turns, 1 minute, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: CELTS -> CELTS
+- NAVAID_TEXT: BOS -> type=navaid_radial, navaid=BOS, radial_deg=334.0, direction=inbound
+- RADIAL_TEXT: R-154 -> type=navaid_radial, navaid=BOS, radial_deg=334.0, direction=inbound
+- detected lower detail: climb arrow
+- detected lower detail: path segment

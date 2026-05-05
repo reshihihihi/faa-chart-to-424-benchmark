@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 144.8; climb to 4500 to NIMEE; hold at NIMEE, inbound course 325, right turns, 5 NM, maintain 4500.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4500 -> AT_OR_ABOVE 4500 ft
+- FIX_TEXT: NIMEE -> NIMEE
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

@@ -1,0 +1,14 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 262.2; to GONRE; climb to 3000 to HEPIG; hold at HEPIG, inbound course 337.2, right turns, 4 NM, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: HEPIG -> HEPIG
+- FIX_TEXT: GONRE -> GONRE
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: fix symbol

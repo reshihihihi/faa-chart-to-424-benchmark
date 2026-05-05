@@ -1,0 +1,229 @@
+{
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "chart_id": "KAPA_R35R",
+  "field_candidates": {
+    "altitude_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "altitude_ft",
+        "global_end_char": 88,
+        "global_start_char": 84,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 65,
+        "region_local_start_char": 61,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 88,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "ISSED APPROACH: (Do not exceed | 240K until BPUTN) Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold.",
+        "source_start_char": 84,
+        "value": 8200
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "altitude_ft",
+        "global_end_char": 120,
+        "global_start_char": 116,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 97,
+        "region_local_start_char": 93,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 120,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "240K until BPUTN) Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold.",
+        "source_start_char": 116,
+        "value": 9600
+      },
+      {
+        "confidence": 0.45,
+        "field_type": "altitude_ft",
+        "global_end_char": 208,
+        "global_start_char": 204,
+        "notes": "other_chart_text_procedure_word_context",
+        "region_local_end_char": 19,
+        "region_local_start_char": 15,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 208,
+        "source_region": "MISSED_APPROACH_DETAIL_AREA",
+        "source_section": "missed_approach_detail_area",
+        "source_snippet": "ALTITUDE_TEXT: 8200 ALTITUDE_TEXT: 9600 FIX_TEXT: BPUTN CLIMB_ARROW CLIMB_ARROW",
+        "source_start_char": 204,
+        "value": 8200
+      },
+      {
+        "confidence": 0.45,
+        "field_type": "altitude_ft",
+        "global_end_char": 228,
+        "global_start_char": 224,
+        "notes": "other_chart_text_procedure_word_context",
+        "region_local_end_char": 39,
+        "region_local_start_char": 35,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 228,
+        "source_region": "MISSED_APPROACH_DETAIL_AREA",
+        "source_section": "missed_approach_detail_area",
+        "source_snippet": "ALTITUDE_TEXT: 8200 ALTITUDE_TEXT: 9600 FIX_TEXT: BPUTN CLIMB_ARROW CLIMB_ARROW FIX_SYMBOL",
+        "source_start_char": 224,
+        "value": 9600
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "climb_phrase",
+        "global_end_char": 80,
+        "global_start_char": 75,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 57,
+        "region_local_start_char": 52,
+        "rule_id": "climb_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 80,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: (Do not exceed | 240K until BPUTN) Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold.",
+        "source_start_char": 75,
+        "value": "MISSED APPROACH: (Do not exceed | 240K until BPUTN) Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold."
+      }
+    ],
+    "course_candidates": [],
+    "direct_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "direct_phrase",
+        "global_end_char": 127,
+        "global_start_char": 121,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 104,
+        "region_local_start_char": 98,
+        "rule_id": "direct_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 127,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Do not exceed | 240K until BPUTN) Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold.",
+        "source_start_char": 121,
+        "value": "Do not exceed | 240K until BPUTN) Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold."
+      }
+    ],
+    "fix_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 133,
+        "global_start_char": 128,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 110,
+        "region_local_start_char": 105,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 133,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "BPUTN) Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold.",
+        "source_start_char": 128,
+        "value": "BPUTN"
+      },
+      {
+        "confidence": 0.45,
+        "field_type": "fix_ident",
+        "global_end_char": 73,
+        "global_start_char": 68,
+        "notes": "other_chart_text_procedure_word_context",
+        "region_local_end_char": 50,
+        "region_local_start_char": 45,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 73,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: (Do not exceed | 240K until BPUTN) Climb to 8200 then climbing left turn to 9600 direct BPUTN",
+        "source_start_char": 68,
+        "value": "BPUTN"
+      }
+    ],
+    "hold_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "hold_phrase",
+        "global_end_char": 142,
+        "global_start_char": 138,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 119,
+        "region_local_start_char": 115,
+        "rule_id": "hold_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 142,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "40K until BPUTN) Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold.",
+        "source_start_char": 138,
+        "value": "40K until BPUTN) Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold."
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "confidence": 0.95,
+        "field_type": "missed_approach_instruction",
+        "global_end_char": 143,
+        "global_start_char": 75,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "region_local_end_char": 120,
+        "region_local_start_char": 52,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 143,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold.",
+        "source_start_char": 75,
+        "value": "Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold."
+      }
+    ],
+    "route_sequence_snippets": [],
+    "track_to_fix_snippets": [],
+    "turn_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "turn_direction",
+        "global_end_char": 107,
+        "global_start_char": 103,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 84,
+        "region_local_start_char": 80,
+        "rule_id": "turn_direction_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 107,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "not exceed | 240K until BPUTN) Climb to 8200 then climbing left turn to 9600 direct BPUTN and hold.",
+        "source_start_char": 103,
+        "value": "LEFT"
+      }
+    ]
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_gold_observable_evidence": false,
+    "uses_human_evidence_provenance": false,
+    "uses_scorer_output": false
+  },
+  "region_profile": "TPD",
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "source_contract": {
+    "allows_canonical_target": false,
+    "allows_chart_image_pixels": false,
+    "allows_gold_observable_evidence": false,
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "source": "same_chart_human_confirmed_roi_ocr_text"
+  }
+}

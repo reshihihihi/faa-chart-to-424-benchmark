@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 329.1; to CEROD; climb to 2500 to CLAMY; hold at CLAMY, inbound course 090, left turns, 4 NM, maintain 2500.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2500 -> AT_OR_ABOVE 2500 ft
+- FIX_TEXT: CEROD -> CEROD
+- FIX_TEXT: CLAMY -> CLAMY
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

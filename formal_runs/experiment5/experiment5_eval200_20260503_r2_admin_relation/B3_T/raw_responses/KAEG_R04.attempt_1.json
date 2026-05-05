@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_93c7b26f-08b6-4ba0-96e1-60c482cd2e80",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_SgBcAXKRHmxUJsx4i89Mawuq",
+            "function": {
+              "arguments": "{\"chart_id\":\"KAEG_R04\",\"procedure\":{\"airport\":\"KAEG\",\"approach_ident\":\"R04\",\"chart_name\":\"RNAV (GPS) RWY 04\"},\"missed_approach\":{\"leg_count\":{\"status\":\"present\",\"value\":3},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"present\",\"value\":\"VA\"},\"Q1_fix_ident\":{\"status\":\"not_applicable\",\"value\":null},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":6300,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"present\",\"value\":{\"type\":\"course_deg\",\"course_deg\":35.1}},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}},{\"leg_index\":2,\"answers\":{\"Q_terminator\":{\"status\":\"present\",\"value\":\"DF\"},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"EYIPE\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":8600,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"present\",\"value\":\"LEFT\"},\"Q4_course_or_radial\":{\"status\":\"not_observable\",\"value\":null},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}},{\"leg_index\":3,\"answers\":{\"Q_terminator\":{\"status\":\"present\",\"value\":\"HM\"},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"EYIPE\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":8600,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"not_applicable\",\"value\":null},\"Q5_hold_params\":{\"status\":\"present\",\"value\":{\"inbound_course_deg\":200.8,\"leg_time_min\":null,\"leg_distance_nm\":7,\"turn\":\"RIGHT\"}}}}]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777822063,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

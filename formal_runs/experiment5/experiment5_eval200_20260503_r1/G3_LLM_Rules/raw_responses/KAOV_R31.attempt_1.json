@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_bf81b003-e46e-4464-bf83-ef357f0a37c1",
+  "object": "chat.completion",
+  "created": 1777808301,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_3ZcdpHU8NHyOMoyD2C1yOmBq",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAOV_R31\",\"procedure\":{\"airport\":\"KAOV\",\"approach_ident\":\"R31\",\"chart_name\":\"RNAV (GPS) RWY 31\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"unknown\",\"value\":\"unknown\"},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"GOTPY\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT_OR_ABOVE\",\"altitude_ft\":4600,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"unknown\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}}]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

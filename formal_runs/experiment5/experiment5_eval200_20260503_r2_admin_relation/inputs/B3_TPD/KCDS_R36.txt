@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 2400 on heading 355.9; right turn climb to 4000 to JAPUX; hold at JAPUX, inbound course 57.7, right turns, 4 NM, maintain 4000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2400 -> AT_OR_ABOVE 2400 ft
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- FIX_TEXT: JAPUX -> JAPUX
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

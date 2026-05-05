@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1600 on heading 60.1; right turn climb to 3000 to LIB; hold at LIB, inbound course 236, right turns, 1 minute, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1600 -> AT_OR_ABOVE 1600 ft
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: LIB -> LIB
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

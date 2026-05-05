@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 308.5; climb to 2100 to UWAGO; hold at UWAGO, inbound course 128.4, right turns, 4 NM, maintain 2100.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2100 -> AT_OR_ABOVE 2100 ft
+- FIX_TEXT: UWAGO -> UWAGO
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

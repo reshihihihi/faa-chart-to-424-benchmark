@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 65.7; left turn climb to 5000 to GRAVE; hold at GRAVE, inbound course 097, left turns, 5 NM, maintain 5000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 5000 -> AT_OR_ABOVE 5000 ft
+- FIX_TEXT: GRAVE -> GRAVE
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

@@ -1,0 +1,316 @@
+                                   ATLANTIC CITY, NEW JERSEY                                                          AL-669 (FAA)                                                                                           25219
+
+                                        WAAS                                    Rwy Ldg 10001
+                                    CH 45513
+                                                                 APP CRS
+                                                                                TDZE           75                                                          RNAV (GPS) Y RWY 13
+                                                                    128°                                                                                                    ATLANTIC CITY INTL (ACY)
+                                        W13A                                    Apt Elev       75
+                                    RNP APCH - GPS.
+                                                                                                                  MALSR                                                MISSED APPROACH: Climb to 2000
+                                               For inoperative MALSR, increase LPV Cat E visibility to RVR 4000,
+                                    T                                           1
+                                               LNAV/VNAV Cat E visibility to 1   2 , and LNAV Cat D visibility to                                                      direct JURAD and on track 076° to
+                                    A                                        1
+                                               RVR 6000, Cat E visibility to 12 . For uncompensated Baro-VNAV     A5                                                   RODDI and hold.
+                                               systems, LNAV/VNAV NA below -15°C (5°F) or above 48°C (118°F).
+
+
+                                                     ATIS                  ATLANTIC CITY APP CON                ATLANTIC CITY TOWER                              GND CON                                   CLNC DEL
+
+                                   125.725 316.15                           124.6       327.125                      120.3        239.0                        121.9    284.6                    127.85           353.775
+
+
+                                                           T)
+                                                         oP
+                                                       N
+                                                       (     2100                                                                       R-5002C                             R-5002A
+                                                                               8°
+                                                  L
+                                                RY
+
+
+
+
+                                                                                                                                                                            and F
+                                                                             21
+
+
+
+
+                                                                      YL
+                                                                    AR                                                                                                                                           R-5002E
+                                                 A
+
+
+
+
+                                                                                                                         8°
+                                                                C
+                                               oC
+
+
+
+
+                                                                                                                                                                                                                 and F
+                                                            o
+
+
+
+
+                                                                                                                       21
+                                                       8 NM t
+                                        30 N M t
+
+
+
+
+                                                                    2000
+                                                                                                (IAF)
+
+
+
+
+                                                                                                                                            30
+                                                                                                                              2100
+                                                                                                                       15
+                                                                                                WAGIR
+
+
+
+
+                                                                                                                                               N
+                                                            CARYL                                                        N
+
+
+
+
+                                                                                                                                              M t
+                                                                                                                                                                 R-5002B                          R-5002B
+                                                                                                                              M
+                                                                                    8° T
+
+
+
+
+                                                                                                                                                o W AG I
+                                                                                                                                                                                                   and F
+                                                                                  21 NoP
+
+
+
+
+                                                                                                                              t
+
+                                                                                                                     WAGIR
+                                                                                                                              o W AGI
+                                                                  8°
+                                                                03
+
+
+
+
+                                                                                   00
+
+
+
+
+                                                                                                                 2000
+                                                                                  6)
+                                                                                 20
+
+
+                                                                                  (
+
+
+
+
+                                                                                                                                                       R
+                                                                                                                                    R
+
+
+
+
+                                                                12                                                       30
+NE-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                                     NE-2, 16 APR 2026 to 14 MAY 2026
+                                                                  8°                (IF/IAF)
+                                                                                                                           8°
+
+                                                                                     CARYL
+                                          6 NM                   30
+                                                                   8°                      16
+                                                                                        12 00
+                                                                                          8
+                                                                   8° T
+
+
+
+
+                                                                                        6. °
+                                                                 03 NoP
+
+
+
+
+                                                                                        (
+                                                                                          1)
+                                                                                                                                                                                                       5 NM
+                                                                  00
+
+                                                                 (6)
+                                                                20
+
+
+
+
+                                                                                                                                                                                                                        8°
+                                                                                                (FAF)
+
+
+
+
+                                                                                                                                                                                                                 8°
+
+                                                                                                                                                                                                                      21
+                                                                                                                                                                                                               03
+                                                                                                MAYBN
+
+                                                                                                                     RW13
+                                                      (IAF)                                     30
+                                                     KOVEC                                        8°                                                                                                             RODDI
+                                                                                       KOVEC
+                                                                                                                                                                                    6°                 Maximum holding
+                                                                                                                                                                                  07
+                                                                                                EC
+
+
+
+
+                                                                                    2000                                                                                                               airspeed 230 KIAS
+                                                                                               V
+                                                                           8°
+
+
+
+
+                                                                                             KO                                                                                                        at RODDI.
+                                                                         03
+
+
+
+
+                                                                                           o
+                                                                                           t
+                                                                                  6NM
+                                                                                                       C
+
+
+
+
+                                                                                 2                                                                                      JURAD
+                                                                                                      E
+
+
+
+
+                                                                                                      V
+                                                                                5500             KO                                                                ELEV        75                      D        TDZE 75
+                                                                                               o
+                                                                                               t
+                                                                                        M
+                                                                                     30N
+
+
+
+
+                                           6 NM                                                                   2000 JURAD                               RODDI            128°
+                                                                       CARYL
+                                   Holding Pattern                                                                                              tr
+                                                                                                                                             076°
+                                                                                                                                                                       13
+
+
+
+
+                                                                                                                                                                             A5
+                                                                                                MAYBN                                                                                                      22
+                                                                 308°
+                                                                                                                                                                                  P
+
+
+
+
+                                                                                                                                                                                                                      H
+                                     2000
+                                                      128°                        12            1600                                             *LNAV only
+                                                                                                                                                                                                           V
+
+                                                                                    8°
+                                    GP 3.00°
+                                                                                                                     *1.2 NM to                                                                            10
+                                                                                                                                                                                                   0
+
+
+
+
+                                                                                                                       RW13                                                                                  00
+                                                                                                                                                                                                 15
+
+
+
+
+                                                                                                                                            RW13                            TWR                                1
+                                                                                                                                                                                                                X
+                                     TCH 58                                                                                                                                                                      15
+                                                                                                                                                                                             X
+
+
+
+
+                                                                                                                                                                                                                   0
+                                                                                                                                                                                            45
+
+
+
+
+                                   VGSI and RNAV
+                                                                                                                                                                                          61
+
+
+
+
+                                   glidepath not coincident                         1600                                                                                              P
+                                                                                                                                                                                                                               31
+                                                                                                                                                                                                                          P
+
+
+
+
+                                   (VGSI Angle 3.00/TCH 71).                                                                                                                          4
+                                                                                    6.1 NM                  3.4 NM                 1.2 NM
+
+                                    CATEGORY                            A                  B                C                     D                        E
+
+                                   LPV                 DA                                      275/18 200 (200-12 )
+                                    LNAV/                                                                                                           475/50
+                                                       DA                              475/40 400 (400-34 )
+                                    VNAV                                                                                                         400 (400-1)
+                                                                                                          520/40
+                                    LNAV MDA                        520/24 445 (500-12 )                                 520/50 445 (500-1)
+                                                                                                      445 (500-34 )                                                TDZ/CL Rwy 13
+                                                                                                                                                                   HIRL Rwys 4-22 and 13-31
+                                                                       540-1           600-1              620-112        640-2                      760-212
+                                    CIRCLING                                                      1                                                                REIL Rwy 31
+                                                                 465 (500-1) 525 (600-1) 545 (600-12 ) 565 (600-2) 685 (700-212 )
+
+                                   ATLANTIC CITY, NEW JERSEY
+                                                                                                                                                                            ATLANTIC CITY INTL (ACY)
+                                                                                                                 39°27'N-74°35'W
+                                   Amdt 4B 09SEP21
+                                                                                                                                                           RNAV (GPS) Y RWY 13
+

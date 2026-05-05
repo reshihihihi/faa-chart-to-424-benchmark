@@ -1,0 +1,49 @@
+{
+  "chart_id": "KANE_R09",
+  "procedure": {
+    "airport": "KANE",
+    "approach_ident": "R09",
+    "chart_name": "RNAV (GPS) RWY 09"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "JUDAL"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3100,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

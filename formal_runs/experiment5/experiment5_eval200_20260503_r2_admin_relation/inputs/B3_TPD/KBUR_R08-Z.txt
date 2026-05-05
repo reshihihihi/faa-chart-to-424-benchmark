@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 78.9; right turn to COTSI; climb to 4600 to VTU; hold at VTU, inbound course 130.6, left turns, 5 NM, maintain 4600.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4600 -> AT_OR_ABOVE 4600 ft
+- FIX_TEXT: COTSI -> COTSI
+- FIX_TEXT: VTU -> VTU
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: path segment

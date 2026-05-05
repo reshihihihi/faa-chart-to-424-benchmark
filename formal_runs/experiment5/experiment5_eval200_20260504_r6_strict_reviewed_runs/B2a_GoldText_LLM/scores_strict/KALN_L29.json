@@ -1,0 +1,338 @@
+{
+  "correct": 10,
+  "total": 25,
+  "accuracy": 0.4,
+  "rows": [
+    {
+      "field": "leg_count",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": 3
+      },
+      "target": {
+        "status": "present",
+        "value": 4
+      }
+    },
+    {
+      "field": "leg_1.Q_terminator",
+      "correct": true,
+      "pred": {
+        "status": "present",
+        "value": "CA"
+      },
+      "target": {
+        "status": "present",
+        "value": "CA"
+      }
+    },
+    {
+      "field": "leg_1.Q1_fix_ident",
+      "correct": true,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_1.Q2_altitude_constraint",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": {
+          "desc": "AT",
+          "altitude_ft": 1000,
+          "altitude_2_ft": null
+        }
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "altitude_2_ft": null,
+          "altitude_ft": 1000,
+          "desc": "AT_OR_ABOVE"
+        }
+      }
+    },
+    {
+      "field": "leg_1.Q3_turn",
+      "correct": true,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_1.Q4_course_or_radial",
+      "correct": false,
+      "pred": {
+        "status": "unknown",
+        "value": null
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "course_deg": 294,
+          "type": "course_deg"
+        }
+      }
+    },
+    {
+      "field": "leg_1.Q5_hold_params",
+      "correct": true,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_2.Q_terminator",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": "VA"
+      },
+      "target": {
+        "status": "present",
+        "value": "VI"
+      }
+    },
+    {
+      "field": "leg_2.Q1_fix_ident",
+      "correct": true,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_2.Q2_altitude_constraint",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": {
+          "desc": "AT",
+          "altitude_ft": 2200,
+          "altitude_2_ft": null
+        }
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_2.Q3_turn",
+      "correct": true,
+      "pred": {
+        "status": "present",
+        "value": "RIGHT"
+      },
+      "target": {
+        "status": "present",
+        "value": "RIGHT"
+      }
+    },
+    {
+      "field": "leg_2.Q4_course_or_radial",
+      "correct": true,
+      "pred": {
+        "status": "present",
+        "value": {
+          "type": "course_deg",
+          "course_deg": 310
+        }
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "course_deg": 310.0,
+          "type": "course_deg"
+        }
+      }
+    },
+    {
+      "field": "leg_2.Q5_hold_params",
+      "correct": true,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_3.Q_terminator",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": "HF"
+      },
+      "target": {
+        "status": "present",
+        "value": "CF"
+      }
+    },
+    {
+      "field": "leg_3.Q1_fix_ident",
+      "correct": true,
+      "pred": {
+        "status": "present",
+        "value": "TOPAZ"
+      },
+      "target": {
+        "status": "present",
+        "value": "TOPAZ"
+      }
+    },
+    {
+      "field": "leg_3.Q2_altitude_constraint",
+      "correct": false,
+      "pred": {
+        "status": "unknown",
+        "value": null
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "altitude_2_ft": null,
+          "altitude_ft": 2200,
+          "desc": "AT_OR_ABOVE"
+        }
+      }
+    },
+    {
+      "field": "leg_3.Q3_turn",
+      "correct": true,
+      "pred": {
+        "status": "not_applicable",
+        "value": null
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_3.Q4_course_or_radial",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": {
+          "type": "navaid_radial",
+          "navaid": "TOY",
+          "radial_deg": 322,
+          "direction": "outbound"
+        }
+      },
+      "target": {
+        "status": "present",
+        "value": {
+          "direction": "inbound",
+          "navaid": "TOY",
+          "radial_deg": 322.0,
+          "type": "navaid_radial"
+        }
+      }
+    },
+    {
+      "field": "leg_3.Q5_hold_params",
+      "correct": false,
+      "pred": {
+        "status": "present",
+        "value": {
+          "inbound_course_deg": null,
+          "leg_time_min": null,
+          "leg_distance_nm": null,
+          "turn": null
+        }
+      },
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_4.Q_terminator",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": "HM"
+      }
+    },
+    {
+      "field": "leg_4.Q1_fix_ident",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": "TOPAZ"
+      }
+    },
+    {
+      "field": "leg_4.Q2_altitude_constraint",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": {
+          "altitude_2_ft": null,
+          "altitude_ft": 2200,
+          "desc": "AT_OR_ABOVE"
+        }
+      }
+    },
+    {
+      "field": "leg_4.Q3_turn",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_4.Q4_course_or_radial",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "not_applicable",
+        "value": null
+      }
+    },
+    {
+      "field": "leg_4.Q5_hold_params",
+      "correct": false,
+      "pred": null,
+      "target": {
+        "status": "present",
+        "value": {
+          "inbound_course_deg": 142.0,
+          "leg_distance_nm": null,
+          "leg_time_min": 1.0,
+          "turn": "LEFT"
+        }
+      }
+    }
+  ]
+}

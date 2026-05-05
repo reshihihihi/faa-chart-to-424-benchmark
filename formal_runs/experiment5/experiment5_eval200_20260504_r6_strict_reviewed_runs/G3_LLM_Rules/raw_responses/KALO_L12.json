@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_f1d72fb5-c124-443c-ac76-47c413be9f19",
+  "object": "chat.completion",
+  "created": 1777868841,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_9IHNoT4mX8yBNVHadbpp0LfN",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KALO_L12\",\"procedure\":{\"airport\":\"KALO\",\"approach_ident\":\"L12\",\"chart_name\":\"ILS OR LOC RWY 12\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

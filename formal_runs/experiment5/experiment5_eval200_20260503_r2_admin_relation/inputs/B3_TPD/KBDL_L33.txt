@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 4000 on heading 328.4; right turn climb to 4000 direct BAF; hold at BAF, inbound course 274.8, left turns, 1 minute, maintain 4000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- FIX_TEXT: BAF -> BAF
+- detected lower detail: climb arrow
+- detected lower detail: path segment

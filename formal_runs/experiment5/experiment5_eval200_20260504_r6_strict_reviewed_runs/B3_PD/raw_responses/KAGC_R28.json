@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_e444ec6f-6629-4cb5-80ce-ab9bb87a10fc",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_rhRLUCVOAk6RkYOq7BLXAc7L",
+            "function": {
+              "arguments": "{\"chart_id\":\"KAGC_R28\",\"procedure\":{\"airport\":\"KAGC\",\"approach_ident\":\"R28\",\"chart_name\":\"RNAV (GPS) RWY 28\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868167,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

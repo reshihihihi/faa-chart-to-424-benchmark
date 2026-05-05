@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_2fc11ebc-5453-46e3-8bcf-f5d132489db9",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_Y0WTuPb9o6xtZqEY8UGaNRhV",
+            "function": {
+              "arguments": "{\"chart_id\":\"KARV_R18\",\"procedure\":{\"airport\":\"KARV\",\"approach_ident\":\"R18\",\"chart_name\":\"RNAV (GPS) RWY 18\"},\"missed_approach\":{\"leg_count\":{\"status\":\"present\",\"value\":3},\"legs\":[{\"leg_index\":1,\"answers\":{\"Q_terminator\":{\"status\":\"present\",\"value\":\"DF\"},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"CEPMU\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":6000,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"not_applicable\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"present\",\"value\":{\"type\":\"direct\"}},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}},{\"leg_index\":2,\"answers\":{\"Q_terminator\":{\"status\":\"present\",\"value\":\"TF\"},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"KRSMS\"},\"Q2_altitude_constraint\":{\"status\":\"unknown\",\"value\":null},\"Q3_turn\":{\"status\":\"present\",\"value\":\"RIGHT\"},\"Q4_course_or_radial\":{\"status\":\"present\",\"value\":{\"type\":\"course_deg\",\"course_deg\":283}},\"Q5_hold_params\":{\"status\":\"not_applicable\",\"value\":null}}},{\"leg_index\":3,\"answers\":{\"Q_terminator\":{\"status\":\"present\",\"value\":\"HM\"},\"Q1_fix_ident\":{\"status\":\"present\",\"value\":\"KRSMS\"},\"Q2_altitude_constraint\":{\"status\":\"present\",\"value\":{\"desc\":\"AT\",\"altitude_ft\":6000,\"altitude_2_ft\":null}},\"Q3_turn\":{\"status\":\"unknown\",\"value\":null},\"Q4_course_or_radial\":{\"status\":\"unknown\",\"value\":null},\"Q5_hold_params\":{\"status\":\"present\",\"value\":{\"inbound_course_deg\":null,\"leg_time_min\":null,\"leg_distance_nm\":null,\"turn\":null}}}}]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868628,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

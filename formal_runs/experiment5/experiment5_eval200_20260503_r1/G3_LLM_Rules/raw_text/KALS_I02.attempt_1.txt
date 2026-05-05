@@ -1,0 +1,1 @@
+{"chart_id":"KALS_I02","procedure":{"airport":"KALS","approach_ident":"I02","chart_name":"ILS OR LOC RWY 02"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

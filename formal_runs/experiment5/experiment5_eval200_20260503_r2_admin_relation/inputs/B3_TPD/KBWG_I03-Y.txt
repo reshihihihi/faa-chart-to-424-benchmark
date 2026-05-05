@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 2000 on heading 33.9; right turn climb to 2400 direct NOORA; hold at NOORA, inbound course 33.9, right turns, 1 minute, maintain 2400.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- ALTITUDE_TEXT: 2400 -> AT_OR_ABOVE 2400 ft
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: path segment

@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAMA_I04",
+  "procedure": {
+    "airport": "KAMA",
+    "approach_ident": "I04",
+    "chart_name": "ILS OR LOC RWY 04"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

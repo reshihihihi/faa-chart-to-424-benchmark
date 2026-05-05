@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1900 on heading 223.8; right turn climb to 4000 to LOPEZ; hold at LOPEZ, inbound course 139.8, right turns, 4 NM, maintain 4000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- ALTITUDE_TEXT: 1900 -> AT_OR_ABOVE 1900 ft
+- FIX_TEXT: LOPEZ -> LOPEZ
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

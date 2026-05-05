@@ -1,0 +1,166 @@
+{
+  "chart_id": "KCOE_L06",
+  "procedure": {
+    "airport": "KCOE",
+    "approach_ident": "L06",
+    "chart_name": "ILS OR LOC RWY 06"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 4
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CA"
+          },
+          "Q1_fix_ident": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 2900,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "course_deg": 51.1,
+              "type": "course_deg"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "unknown",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "FA"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "COE"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 6000,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "direction": "outbound",
+              "navaid": "COE",
+              "radial_deg": 350,
+              "type": "navaid_radial"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "unknown",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 3,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "COE"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 6500,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "present",
+            "value": "LEFT"
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "direction": "inbound",
+              "navaid": "COE",
+              "radial_deg": 350,
+              "type": "navaid_radial"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "unknown",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 4,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "HM"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "COE"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 6500,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 51,
+              "leg_distance_nm": null,
+              "leg_time_min": 1,
+              "turn": "LEFT"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

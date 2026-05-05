@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 331.1; to CELVA; climb to 6000 to DSD; hold at DSD, inbound course 129, left turns, 5 NM, maintain 6000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 6000 -> AT_OR_ABOVE 6000 ft
+- FIX_TEXT: CELVA -> CELVA
+- FIX_TEXT: DSD -> DSD
+- detected lower detail: climb arrow

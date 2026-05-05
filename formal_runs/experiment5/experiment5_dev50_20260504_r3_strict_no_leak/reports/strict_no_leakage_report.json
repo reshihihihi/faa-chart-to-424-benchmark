@@ -1,0 +1,18 @@
+{
+  "forbidden_key_hit_count": 0,
+  "forbidden_key_hits": [],
+  "forbidden_value_hit_count": 0,
+  "forbidden_value_hits": [],
+  "interpreted_arrow_suffix_hit_count": 0,
+  "interpreted_arrow_suffix_hits": [],
+  "scanned_files": [
+    "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260504_r3_strict_no_leak\\inputs\\gold_ma_text_dev50_strict.jsonl",
+    "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260504_r3_strict_no_leak\\inputs\\roi_text_dev50_strict.jsonl",
+    "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260504_r3_strict_no_leak\\inputs\\pd_visible_candidates_dev50_strict.jsonl",
+    "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260504_r3_strict_no_leak\\inputs\\tpd_combined_visible_inputs_dev50_strict.jsonl",
+    "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260504_r3_strict_no_leak\\inputs\\g_visible_observables_dev50_strict.jsonl",
+    "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260504_r3_strict_no_leak\\manifests\\strict_method_input_manifest_dev50.jsonl"
+  ],
+  "scanned_rows": 600,
+  "status": "PASS"
+}

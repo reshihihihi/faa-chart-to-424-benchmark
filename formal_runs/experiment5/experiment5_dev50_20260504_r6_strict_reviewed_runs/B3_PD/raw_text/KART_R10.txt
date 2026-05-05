@@ -1,0 +1,1 @@
+{"chart_id":"KART_R10","procedure":{"airport":"KART","approach_ident":"R10","chart_name":"RNAV (GPS) RWY 10"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

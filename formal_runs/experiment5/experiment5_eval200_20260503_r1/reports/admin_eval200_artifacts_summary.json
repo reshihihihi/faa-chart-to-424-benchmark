@@ -1,0 +1,76 @@
+{
+  "created_at_utc": "2026-05-03T11:33:42.110086+00:00",
+  "run_id": "experiment5_eval200_20260503_r1",
+  "artifact_label": "eval200",
+  "export_meta": {
+    "admin_export_path": "downloads/experiment5_admin/shujuji_annotation_export_2026-05-03T08-34-13-795Z.json",
+    "admin_export_sha256": "52082332ff922132a83bca087d250f08571f77709f716e360439daafee313574",
+    "exported_at": "2026-05-03T08:34:13.795Z",
+    "submission_rows": 439,
+    "unique_chart_submissions": 300,
+    "charts_with_multiple_submissions": 138
+  },
+  "chart_count": 200,
+  "dev50_chart_count": 200,
+  "missing_submission_chart_ids": [],
+  "gold_answer_rows": 200,
+  "gold_answer_schema_error_chart_count": 0,
+  "gold_answer_schema_errors": {},
+  "field_review_rows": 2149,
+  "region_rows": 1585,
+  "evidence_link_rows": 2149,
+  "region_type_counts": {
+    "ALTITUDE_TEXT": 242,
+    "CLIMB_ARROW": 299,
+    "FIX_SYMBOL": 164,
+    "FIX_TEXT": 227,
+    "HEADING_TEXT": 7,
+    "MISSED_APPROACH_DETAIL_AREA": 200,
+    "MISSED_APPROACH_TEXT": 200,
+    "NAVAID_TEXT": 10,
+    "PATH_SEGMENT": 15,
+    "PLAN_VIEW": 200,
+    "RADIAL_TEXT": 12,
+    "TRACK_OR_RADIAL_TEXT": 9
+  },
+  "region_review_action_counts": {
+    "accept": 890,
+    "pending": 695
+  },
+  "field_review_support_mode_counts": {
+    "direct_visible": 721,
+    "insufficient_for_encoding": 151,
+    "rule_default_completion": 1270,
+    "visible_joint": 7
+  },
+  "field_review_field_name_counts": {
+    "Q1_fix_ident": 439,
+    "Q2_altitude_constraint": 594,
+    "Q3_turn": 52,
+    "Q4_course_or_radial": 224,
+    "Q5_hold_params": 198,
+    "Q_terminator": 642
+  },
+  "observable_accept_rows": 200,
+  "observable_accept_fact_rows": 883,
+  "observable_accept_pending_rows": 200,
+  "observable_accept_pending_fact_rows": 1578,
+  "method_safe_accept_scan": {
+    "hit_count": 0,
+    "hits": [],
+    "truncated": false
+  },
+  "method_safe_accept_pending_scan": {
+    "hit_count": 0,
+    "hits": [],
+    "truncated": false
+  },
+  "outputs": {
+    "admin_gold_answer": "formal_runs/experiment5/experiment5_eval200_20260503_r1/admin_artifacts/admin_gold_answer_eval200.jsonl",
+    "admin_field_review": "formal_runs/experiment5/experiment5_eval200_20260503_r1/admin_artifacts/admin_field_review_eval200.jsonl",
+    "admin_regions": "formal_runs/experiment5/experiment5_eval200_20260503_r1/admin_artifacts/admin_regions_eval200.jsonl",
+    "admin_evidence_links": "formal_runs/experiment5/experiment5_eval200_20260503_r1/admin_artifacts/admin_evidence_links_eval200.jsonl",
+    "gold_observable_accept": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_accept.jsonl",
+    "gold_observable_accept_pending": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_accept_pending.jsonl"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_052462c7-ed5f-42a1-a982-a19342d28ebb",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_RQQ9Mep4u7j2uXEXTh47rH8t",
+            "function": {
+              "arguments": "{\"chart_id\":\"KCBF_L36\",\"procedure\":{\"airport\":\"KCBF\",\"approach_ident\":\"L36\",\"chart_name\":\"ILS OR LOC RWY 36\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868316,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

@@ -7,12 +7,14 @@ import json
 import os
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
-import anthropic
 from jsonschema import Draft202012Validator
 
 from c3_questionnaire_to_canonical import QUESTION_FIELDS, questionnaire_to_canonical
+
+if TYPE_CHECKING:
+    import anthropic
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -70,7 +72,9 @@ def fill_prompt(template: str, row: dict[str, Any], *, ocr_text: str | None = No
     return template
 
 
-def get_client() -> anthropic.Anthropic:
+def get_client() -> "anthropic.Anthropic":
+    import anthropic
+
     auth_token = os.environ.get("ANTHROPIC_AUTH_TOKEN")
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     base_url = os.environ.get("ANTHROPIC_BASE_URL")
@@ -101,7 +105,7 @@ def image_block(path: Path) -> dict[str, Any]:
 
 
 def call_model(
-    client: anthropic.Anthropic,
+    client: "anthropic.Anthropic",
     *,
     model: str,
     prompt: str,

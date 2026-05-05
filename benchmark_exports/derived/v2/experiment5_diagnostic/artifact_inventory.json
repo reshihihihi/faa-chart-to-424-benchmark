@@ -1,0 +1,85 @@
+{
+  "created_at_utc": "2026-05-03T02:16:00.194183+00:00",
+  "repo_root": ".",
+  "base_commit": "61e115898b1fc684e5d5727d16eecf542dc3ad43",
+  "paths": {
+    "group1_v2_root": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2",
+      "exists": true,
+      "bytes": null,
+      "sha256": null
+    },
+    "target_v2": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/canonical_proxy_gt_chart_display_v2.json",
+      "exists": true,
+      "bytes": 1030774,
+      "sha256": "514bad37ccf3a39655e71b01d2e533c6d89d8d9b7d863407e408a654cbf98ce5"
+    },
+    "field_targets_v2": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/field_targets_chart_display_v2.jsonl",
+      "exists": true,
+      "bytes": 1446775,
+      "sha256": "bd107e272cff8d50a5f3c789f0bb07294f860cbc7a4efe29e1c5edd52ce0f914"
+    },
+    "comparison_policy_v2": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/comparison_policy_v2.jsonl",
+      "exists": true,
+      "bytes": 3170077,
+      "sha256": "4af3745662429d2f830c49a5d6048e36093ddea9dc646767554164013779124f"
+    },
+    "schema": {
+      "path": "schemas/missed_approach_leg.schema.json",
+      "exists": true,
+      "bytes": 7660,
+      "sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9"
+    },
+    "scorer_v2": {
+      "path": "scripts/scorers/group1_canonical_field_scorer_v2.py",
+      "exists": true,
+      "bytes": 12571,
+      "sha256": "bbcbe08fda2482dd90eee28526f0bbd36bce71c82baf4c5054b3608d46a5d500"
+    },
+    "scorer_strict": {
+      "path": "scripts/scorers/group1_canonical_field_scorer.py",
+      "exists": true,
+      "bytes": 9316,
+      "sha256": "be2bf016c557e9ce9f9df7b680370c921cd92fcc3dc34e7e09dff44384b26f45"
+    },
+    "evidence_provenance": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/evidence_provenance.jsonl",
+      "exists": true,
+      "bytes": 2961636,
+      "sha256": "be27469981e723dd17252a7425134a84671d342eebe4c8426291cfc6097564ca"
+    },
+    "d1_per_sample_v2": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/D1_per_sample_v2.jsonl",
+      "exists": true,
+      "bytes": 61675,
+      "sha256": "5dc3df705c7fcfd52f42926b8314ed512acb9d67fb0180e7fb8cd7cf8f3d2a49"
+    },
+    "old_vs_new_score_delta": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/old_vs_new_score_delta.csv",
+      "exists": true,
+      "bytes": 1243,
+      "sha256": "6c13ac54d8f6df6cd91a9141f87d2a4136c7d7df0b0fa08d169093c704f6529f"
+    },
+    "d1_summary_v2": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/D1_summary_v2.json",
+      "exists": true,
+      "bytes": 1681,
+      "sha256": "c94c6d9921ea26c0792d526a03a5228591d6dd9641a4aa4842f2a5b5ef6d59bb"
+    },
+    "c4_summary_v2": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/C4_summary_v2.json",
+      "exists": true,
+      "bytes": 1395,
+      "sha256": "5f45caf84d19e64b8aded89ae0120d2e6d884f3c81cd353e2ae4180687a23721"
+    },
+    "b1_summary_v2": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/B1_summary_v2.json",
+      "exists": true,
+      "bytes": 1374,
+      "sha256": "4bb6c49e276906c35784622dcf16383683db1a0291e1ec0415afb916dc3dc64b"
+    }
+  }
+}

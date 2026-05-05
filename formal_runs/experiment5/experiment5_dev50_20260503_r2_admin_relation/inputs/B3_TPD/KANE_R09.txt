@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 88.6; climb to 3100 to JUDAL; hold at JUDAL, inbound course 269, right turns, 4 NM, maintain 3100.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3100 -> AT_OR_ABOVE 3100 ft
+- FIX_TEXT: JUDAL -> JUDAL
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

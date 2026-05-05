@@ -1,0 +1,10 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 8200 -> AT_OR_ABOVE 8200 ft
+- ALTITUDE_TEXT: 9600 -> AT_OR_ABOVE 9600 ft
+- FIX_TEXT: BPUTN -> BPUTN
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

@@ -1,0 +1,1 @@
+{"chart_id":"KANB_R23","procedure":{"airport":"KANB","approach_ident":"R23","chart_name":"RNAV (GPS) RWY 23"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

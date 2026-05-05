@@ -1,0 +1,164 @@
+{
+  "chart_id": "KABE_R24",
+  "procedure": {
+    "airport": "KABE",
+    "approach_ident": "R24",
+    "chart_name": "RNAV (GPS) RWY 24"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0581,
+        "width": 0.3994,
+        "x_center": 0.7526,
+        "y_center": 0.1397
+      },
+      "chart_id": "KABE_R24",
+      "evidence_region_id": "KABE_R24_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KABE_R24_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.452,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.436
+      },
+      "chart_id": "KABE_R24",
+      "evidence_region_id": "KABE_R24_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KABE_R24_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0543,
+        "width": 0.2197,
+        "x_center": 0.4466,
+        "y_center": 0.6888
+      },
+      "chart_id": "KABE_R24",
+      "evidence_region_id": "KABE_R24_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KABE_R24_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3645,
+        "y_center": 0.6711
+      },
+      "chart_id": "KABE_R24",
+      "evidence_region_id": "KABE_R24_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0584,
+        "x_center": 0.4228,
+        "y_center": 0.6728
+      },
+      "chart_id": "KABE_R24",
+      "evidence_region_id": "KABE_R24_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: SURGE -> SURGE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "SURGE",
+        "raw_text": "SURGE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0308,
+        "x_center": 0.5352,
+        "y_center": 0.6759
+      },
+      "chart_id": "KABE_R24",
+      "evidence_region_id": "KABE_R24_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: ETX -> ETX",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "ETX",
+        "raw_text": "ETX"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0202,
+        "width": 0.0194,
+        "x_center": 0.4161,
+        "y_center": 0.6919
+      },
+      "chart_id": "KABE_R24",
+      "evidence_region_id": "KABE_R24_iconalign_008_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0227,
+        "width": 0.0361,
+        "x_center": 0.4206,
+        "y_center": 0.6965
+      },
+      "chart_id": "KABE_R24",
+      "evidence_region_id": "KABE_R24_iconalign_006_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

@@ -1,0 +1,83 @@
+{
+  "chart_id": "KCIC_R13L",
+  "procedure": {
+    "airport": "KCIC",
+    "approach_ident": "R13L",
+    "chart_name": "RNAV (GPS) RWY 13L"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 2
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CA"
+          },
+          "Q1_fix_ident": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3600,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "HM"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "UNJED"
+          },
+          "Q2_altitude_constraint": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 311.0,
+              "leg_time_min": null,
+              "leg_distance_nm": 4.0,
+              "turn": "LEFT"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

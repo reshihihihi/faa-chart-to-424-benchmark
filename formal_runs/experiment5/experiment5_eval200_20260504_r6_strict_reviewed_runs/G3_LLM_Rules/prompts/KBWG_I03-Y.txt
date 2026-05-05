@@ -1,0 +1,289 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KBWG_I03-Y",
+  "procedure": {
+    "airport": "KBWG",
+    "approach_ident": "I03-Y",
+    "chart_name": "ILS Y OR LOC Y RWY 03"
+  },
+  "observable_facts": [
+    {
+      "bbox": {
+        "height": 0.061,
+        "width": 0.3135,
+        "x_center": 0.7962,
+        "y_center": 0.1412
+      },
+      "chart_id": "KBWG_I03-Y",
+      "observable_type": "ma_text_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KBWG_I03-Y_01_missed_approach_text",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KBWG_I03-Y_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.416,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.42
+      },
+      "chart_id": "KBWG_I03-Y",
+      "observable_type": "plan_view_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KBWG_I03-Y_02_plan_view",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KBWG_I03-Y_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0545,
+        "width": 0.1726,
+        "x_center": 0.5767,
+        "y_center": 0.6553
+      },
+      "chart_id": "KBWG_I03-Y",
+      "observable_type": "ma_detail_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KBWG_I03-Y_03_lower_detail_area",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KBWG_I03-Y_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.511,
+        "y_center": 0.6382
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "2000",
+          "value": 2000,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KBWG_I03-Y",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KBWG_I03-Y_iconalign_001_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "2000",
+      "region_id": "KBWG_I03-Y_iconalign_001_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 2000"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.567,
+        "y_center": 0.6382
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "2400",
+          "value": 2400,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KBWG_I03-Y",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KBWG_I03-Y_iconalign_002_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "2400",
+      "region_id": "KBWG_I03-Y_iconalign_002_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 2400"
+    },
+    {
+      "bbox": {
+        "height": 0.0178,
+        "width": 0.0161,
+        "x_center": 0.51,
+        "y_center": 0.6527
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KBWG_I03-Y",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KBWG_I03-Y_iconalign_004_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KBWG_I03-Y_iconalign_004_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0307,
+        "width": 0.0347,
+        "x_center": 0.5539,
+        "y_center": 0.6623
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KBWG_I03-Y",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KBWG_I03-Y_iconalign_006_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KBWG_I03-Y_iconalign_006_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0121,
+        "width": 0.0186,
+        "x_center": 0.6413,
+        "y_center": 0.6506
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "FIX_SYMBOL",
+          "value": "FIX_SYMBOL",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KBWG_I03-Y",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KBWG_I03-Y_iconalign_005_fix_symbol",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KBWG_I03-Y_iconalign_005_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "visible_label_prefix": "FIX_SYMBOL",
+      "visible_literal": "detected lower detail: fix symbol"
+    },
+    {
+      "bbox": {
+        "height": 0.0178,
+        "width": 0.0458,
+        "x_center": 0.5719,
+        "y_center": 0.6519
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "PATH_SEGMENT",
+          "value": "PATH_SEGMENT",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KBWG_I03-Y",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KBWG_I03-Y_iconalign_007_path_segment",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KBWG_I03-Y_iconalign_007_path_segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "visible_label_prefix": "PATH_SEGMENT",
+      "visible_literal": "detected lower detail: path segment"
+    }
+  ]
+}

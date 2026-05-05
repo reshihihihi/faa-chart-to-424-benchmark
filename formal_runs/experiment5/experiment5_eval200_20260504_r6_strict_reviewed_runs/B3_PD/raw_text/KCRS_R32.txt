@@ -1,0 +1,1 @@
+{"chart_id":"KCRS_R32","procedure":{"airport":"KCRS","approach_ident":"R32","chart_name":"RNAV (GPS) RWY 32"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

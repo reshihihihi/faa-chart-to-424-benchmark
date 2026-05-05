@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 357; climb to 3000 to FEKVO; hold at FEKVO, inbound course 177, right turns, 4 NM, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: FEKVO -> FEKVO
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

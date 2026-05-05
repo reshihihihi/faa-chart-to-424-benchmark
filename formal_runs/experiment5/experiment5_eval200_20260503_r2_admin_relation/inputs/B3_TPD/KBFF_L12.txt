@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 4500 on heading 125.6; left turn climb to 6900 to BFF; hold at BFF, inbound course 245, right turns, 1 minute, maintain 6900.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4500 -> AT_OR_ABOVE 4500 ft
+- ALTITUDE_TEXT: 6900 -> AT_OR_ABOVE 6900 ft
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

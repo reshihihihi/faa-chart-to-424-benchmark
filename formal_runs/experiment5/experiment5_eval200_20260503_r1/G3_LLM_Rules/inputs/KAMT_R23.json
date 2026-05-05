@@ -1,0 +1,144 @@
+{
+  "chart_id": "KAMT_R23",
+  "procedure": {
+    "airport": "KAMT",
+    "approach_ident": "R23",
+    "chart_name": "RNAV (GPS) RWY 23"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0455,
+        "width": 0.2761,
+        "x_center": 0.8142,
+        "y_center": 0.1334
+      },
+      "chart_id": "KAMT_R23",
+      "evidence_region_id": "KAMT_R23_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMT_R23_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.518,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.447
+      },
+      "chart_id": "KAMT_R23",
+      "evidence_region_id": "KAMT_R23_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMT_R23_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0543,
+        "width": 0.1303,
+        "x_center": 0.1123,
+        "y_center": 0.733
+      },
+      "chart_id": "KAMT_R23",
+      "evidence_region_id": "KAMT_R23_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAMT_R23_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.0772,
+        "y_center": 0.7147
+      },
+      "chart_id": "KAMT_R23",
+      "evidence_region_id": "KAMT_R23_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 2800 -> AT_OR_ABOVE 2800 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 2800,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "2800"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0525,
+        "x_center": 0.1433,
+        "y_center": 0.7148
+      },
+      "chart_id": "KAMT_R23",
+      "evidence_region_id": "KAMT_R23_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: EDINE -> EDINE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "EDINE",
+        "raw_text": "EDINE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0236,
+        "width": 0.0103,
+        "x_center": 0.0735,
+        "y_center": 0.7189
+      },
+      "chart_id": "KAMT_R23",
+      "evidence_region_id": "KAMT_R23_iconalign_007_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0219,
+        "width": 0.04,
+        "x_center": 0.14,
+        "y_center": 0.7365
+      },
+      "chart_id": "KAMT_R23",
+      "evidence_region_id": "KAMT_R23_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

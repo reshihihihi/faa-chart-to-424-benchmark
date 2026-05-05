@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: Climb to 4000 on heading 100° and AHN VOR/DME R-235 to CONNI/AHN 30.2 DME and hold.

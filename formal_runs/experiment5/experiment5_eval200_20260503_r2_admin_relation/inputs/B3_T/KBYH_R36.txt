@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 001; climb to 2500 to CEDVA; hold at CEDVA, inbound course 181, right turns, 6 NM, maintain 2500.

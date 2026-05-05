@@ -1,0 +1,15 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: Climb to 1300 then climbing right turn to 4600 on heading 210° and VTU VOR/DME MALSR R-086 to VTU VOR/DME and hold. # MISSED APPROACH: requires a A5 minimum climb of 340 feet per NM to 2520 (if unable to meet climb gradient, see ILS Y or LOC Y RWY 8).
+
+[PLAN_VIEW]
+
+
+[MISSED_APPROACH_DETAIL_AREA]
+ALTITUDE_TEXT: 1300
+ALTITUDE_TEXT: 4600
+FIX_TEXT: VTU
+RADIAL_TEXT: R-086
+HEADING_TEXT: 210°
+CLIMB_ARROW
+CLIMB_ARROW
+PATH_SEGMENT

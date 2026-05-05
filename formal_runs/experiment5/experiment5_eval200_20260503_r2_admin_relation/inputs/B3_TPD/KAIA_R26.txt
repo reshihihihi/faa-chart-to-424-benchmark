@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 262.4; climb to 6000 to WAKPA; hold at WAKPA, inbound course 82.1, right turns, 5 NM, maintain 6000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 6000 -> AT_OR_ABOVE 6000 ft
+- FIX_TEXT: WAKPA -> WAKPA
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

@@ -1,0 +1,230 @@
+{
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "chart_id": "KBUR_R08-Z",
+  "field_candidates": {
+    "altitude_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "altitude_ft",
+        "global_end_char": 73,
+        "global_start_char": 69,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 50,
+        "region_local_start_char": 46,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 73,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 69,
+        "value": 4600
+      },
+      {
+        "confidence": 0.45,
+        "field_type": "altitude_ft",
+        "global_end_char": 197,
+        "global_start_char": 193,
+        "notes": "other_chart_text_procedure_word_context",
+        "region_local_end_char": 19,
+        "region_local_start_char": 15,
+        "rule_id": "altitude_ft_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 197,
+        "source_region": "MISSED_APPROACH_DETAIL_AREA",
+        "source_section": "missed_approach_detail_area",
+        "source_snippet": "ALTITUDE_TEXT: 4600 FIX_TEXT: COTSI FIX_TEXT: VTU CLIMB_ARROW FIX_SYMBOL PATH_S",
+        "source_start_char": 193,
+        "value": 4600
+      }
+    ],
+    "climb_phrase_snippets": [],
+    "course_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "course_deg",
+        "global_end_char": 106,
+        "global_start_char": 103,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 83,
+        "region_local_start_char": 80,
+        "rule_id": "course_heading_radial_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 106,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "SR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 103,
+        "value": 263
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "course_deg",
+        "global_end_char": 106,
+        "global_start_char": 103,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 83,
+        "region_local_start_char": 80,
+        "rule_id": "degree_value_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 106,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "SR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 103,
+        "value": 263
+      }
+    ],
+    "direct_phrase_snippets": [
+      {
+        "confidence": 0.9,
+        "field_type": "direct_phrase",
+        "global_end_char": 80,
+        "global_start_char": 74,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 57,
+        "region_local_start_char": 51,
+        "rule_id": "direct_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 80,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 74,
+        "value": "MISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold."
+      }
+    ],
+    "fix_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 86,
+        "global_start_char": 81,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 63,
+        "region_local_start_char": 58,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 86,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 81,
+        "value": "COTSI"
+      },
+      {
+        "confidence": 0.9,
+        "field_type": "fix_ident",
+        "global_end_char": 114,
+        "global_start_char": 111,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 91,
+        "region_local_start_char": 88,
+        "rule_id": "fix_ident_token_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 114,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "ing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 111,
+        "value": "VTU"
+      }
+    ],
+    "hold_candidates": [
+      {
+        "confidence": 0.9,
+        "field_type": "hold_phrase",
+        "global_end_char": 131,
+        "global_start_char": 127,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "region_local_end_char": 108,
+        "region_local_start_char": 104,
+        "rule_id": "hold_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 131,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "limbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 127,
+        "value": "limbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold."
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "confidence": 0.95,
+        "field_type": "missed_approach_instruction",
+        "global_end_char": 132,
+        "global_start_char": 61,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "region_local_end_char": 109,
+        "region_local_start_char": 38,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 132,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 61,
+        "value": "turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold."
+      }
+    ],
+    "route_sequence_snippets": [],
+    "track_to_fix_snippets": [
+      {
+        "confidence": 0.82,
+        "field_type": "track_to_fix_phrase",
+        "global_end_char": 114,
+        "global_start_char": 94,
+        "notes": "flat_ocr_track_to_fix_phrase_no_leg_binding",
+        "region_local_end_char": 91,
+        "region_local_start_char": 71,
+        "rule_id": "track_to_fix_phrase_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 114,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "ISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/DME and hold.",
+        "source_start_char": 94,
+        "value": "on track 263° to VTU"
+      }
+    ],
+    "turn_candidates": [
+      {
+        "confidence": 0.45,
+        "field_type": "turn_direction",
+        "global_end_char": 60,
+        "global_start_char": 55,
+        "notes": "other_chart_text_procedure_word_context",
+        "region_local_end_char": 37,
+        "region_local_start_char": 32,
+        "rule_id": "turn_direction_regex_v8",
+        "source": "ocr_text",
+        "source_end_char": 60,
+        "source_region": "MISSED_APPROACH_TEXT",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: MALSR Climbing right turn to 4600 direct COTSI and A5 on track 263° to VTU VOR/D",
+        "source_start_char": 55,
+        "value": "RIGHT"
+      }
+    ]
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_gold_observable_evidence": false,
+    "uses_human_evidence_provenance": false,
+    "uses_scorer_output": false
+  },
+  "region_profile": "TPD",
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "source_contract": {
+    "allows_canonical_target": false,
+    "allows_chart_image_pixels": false,
+    "allows_gold_observable_evidence": false,
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "source": "same_chart_human_confirmed_roi_ocr_text"
+  }
+}

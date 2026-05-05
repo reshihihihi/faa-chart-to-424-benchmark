@@ -1,0 +1,24 @@
+{
+  "status": "completed_after_resume",
+  "reason": "B2a and B2b completed on 2026-05-03 using openai-oauth at http://127.0.0.1:10531/v1. B2b initially stopped after 23/200 samples because of a transient upstream usage-limit error, then completed with --resume-existing.",
+  "base_url": "http://127.0.0.1:10531/v1",
+  "model": "gpt-5.4",
+  "methods": {
+    "B2a_GoldText_LLM": {
+      "status": "completed",
+      "schema_valid": 200,
+      "samples_total": 200,
+      "score_v2": {"correct": 2552, "total": 4052, "accuracy": 0.629812438302073},
+      "failure_count": 0
+    },
+    "B2b_GoldText_FieldCandidates_LLM": {
+      "status": "completed",
+      "schema_valid": 200,
+      "samples_total": 200,
+      "samples_scored": 200,
+      "score_v2": {"correct": 1963, "total": 4052, "accuracy": 0.48445212240868707},
+      "failure_count": 0
+    }
+  },
+  "blocking_error": null
+}

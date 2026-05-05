@@ -1,0 +1,99 @@
+{
+  "schema_version": "experiment5_gold_ma_prose_field_candidates_schema_v1",
+  "chart_id": "KAGS_R08-Y",
+  "candidate_source": "experiment5_gold_ma_prose_regex_candidates_v1",
+  "source_contract": {
+    "source": "adjudicated_gold_ma_prose",
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false,
+    "allows_field_review_v2": false,
+    "allows_cifp_or_arinc_424": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false,
+    "uses_field_review_v2": false
+  },
+  "field_candidates": {
+    "fix_candidates": [],
+    "altitude_candidates": [
+      {
+        "value": 1200,
+        "field_type": "altitude_ft",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "1200",
+        "source_start_char": 48,
+        "source_end_char": 52,
+        "rule_id": "gold_ma_altitude_ft_regex_v1",
+        "confidence": 0.95,
+        "notes": "climb_to_altitude_context"
+      }
+    ],
+    "turn_candidates": [
+      {
+        "value": "RIGHT",
+        "field_type": "turn_direction",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "RIGHT TURN",
+        "source_start_char": 85,
+        "source_end_char": 95,
+        "rule_id": "gold_ma_turn_regex_v1",
+        "confidence": 0.95,
+        "notes": "turn_phrase_context"
+      }
+    ],
+    "course_candidates": [],
+    "hold_candidates": [
+      {
+        "value": "MISSED APPROACH:Fld altimeter setting. Climb to 1200 then climbing increase all MDAs right turn to 2000 direct D visibility 14 SM. GUKVE and hold.",
+        "field_type": "hold_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "MISSED APPROACH:Fld altimeter setting. Climb to 1200 then climbing increase all MDAs right turn to 2000 direct D visibility 14 SM. GUKVE and hold.",
+        "source_start_char": 141,
+        "source_end_char": 145,
+        "rule_id": "gold_ma_hold_phrase_regex_v1",
+        "confidence": 0.95,
+        "notes": "hold_phrase_context_no_leg_binding"
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "value": "Fld altimeter setting. Climb to 1200 then climbing increase all MDAs right turn to 2000 direct D visibility 14 SM. GUKVE and hold.",
+        "field_type": "missed_approach_instruction",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "MISSED APPROACH:Fld altimeter setting. Climb to 1200 then climbing increase all MDAs right turn to 2000 direct D visibility 14 SM. GUKVE and hold.",
+        "source_start_char": 0,
+        "source_end_char": 146,
+        "rule_id": "gold_ma_instruction_span_regex_v1",
+        "confidence": 0.99,
+        "notes": "automatic_candidate_from_adjudicated_gold_ma_prose_no_target_or_leg_binding"
+      }
+    ],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [],
+    "climb_phrase_snippets": [
+      {
+        "value": "CLIMB TO 1200 THEN CLIMBING INCREASE ALL MDAS RIGHT TURN TO 2000 DIRECT D VISIBILITY 14 SM",
+        "field_type": "climb_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "CLIMB TO 1200 THEN CLIMBING INCREASE ALL MDAS RIGHT TURN TO 2000 DIRECT D VISIBILITY 14 SM",
+        "source_start_char": 39,
+        "source_end_char": 129,
+        "rule_id": "gold_ma_climb_phrase_regex_v1",
+        "confidence": 0.9,
+        "notes": "climb_phrase_context"
+      }
+    ]
+  }
+}

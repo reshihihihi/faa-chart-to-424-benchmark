@@ -1,0 +1,156 @@
+                                   ANTHONY, KANSAS                                                    AL-533 (FAA)                                                                              25275
+
+                                        WAAS                        Rwy Ldg 5002
+                                    CH 86927
+                                                        APP CRS
+                                                                    TDZE            1341                                                       RNAV (GPS) RWY 36
+                                                         355°       Apt Elev        1343                                                                     ANTHONY MUNI(ANY)
+                                        W36A
+                                   RNP APCH - GPS.
+                                                                                                                                                                    MISSED APPROACH:
+                                    T            Circling NA to Rwys 10 and 28. Rwy 36 helicopter visibility reduction below 1 SM NA.
+                                                                                                                                                                    Climb to 3300 direct
+                                    A NA         Circling NA east of Rwy 18-36. Use Wichita Dwight D Eisenhower Intl altimeter setting.
+                                                                                                                                                                    UZZUF and hold.
+                                                 Straight-in and Circling Rwy 36 NA at night.
+
+
+                                                 AWOS-3PT                              ICT ASOS                                   WICHITA APP CON                         UNICOM
+                                                  119.575                              125.15                                          126.7 353.5                  122.8 (CTAF) L
+
+                                                                                                                                                                      MISSED APCH FIX
+                                                  W3625N
+                                                 R
+                                            SA          M
+                                        M
+
+
+
+
+                                                                                                                                                                                    175°
+                                                                                                                                                                    4 NM
+                                                  3600
+
+
+
+
+                                                                                                                                                                            355°
+                                                                                                                                                                                           UZZUF
+
+
+
+
+                                                                                                      1407                RW36
+
+
+                                                                                                                                   WILEX
+                                                                                                                                2.1 NM to
+NC-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                        NC-2, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                   RW36
+
+
+                                                                                                                                  (FAF)
+                                                                                                                                HUVSO
+                                                                                                                  355°
+                                                                                                                         2900
+                                                                                                           (
+                                                                                                           6.9)
+
+
+
+
+                                     (IAF)
+                                                                                                  (IF/IAF)
+                                   CARON                      3000NoPT
+                                                                                                  COXAV
+                                                                083°
+                                                                                                                                175°
+
+
+
+
+                                                                                                                                                           3000No
+                                                                  2
+                                                                  (64
+                                                                    .)                                                                                           PT
+                                                                                                                                                             276
+                                                                                                                  355°
+
+
+
+
+                                                                                                                                                                °
+                                                                                                                                                            (
+                                                                                                                                                            31.5)
+                                    ELEV     1343                TDZE          1341
+                                                                                                     4000
+                                                                                              HOLD                                     4 NM                                                     (IAF)
+                                                              18                                     3000                                         A-562B                                    DOREC
+                                                                  P
+
+
+
+
+                                                                                       3300     UZZUF
+                                                                                                                                                            COXAV
+                                                                                                                                                                                   4 NM
+                                                                   5002 X 75
+
+
+
+
+                                                                                                                                 HUVSO                                     Holding Pattern
+
+                                                                                                       WILEX
+                                                                                                     2.1 NM to                                                            175°                 4000
+                                                 10
+
+
+
+
+                                                      0.
+                                                       4                                               RW36                                                                                    3000
+                                                        %U
+                                                           P
+                                                                                                                           3.00°                     °                    355°
+                                                        221                                                                                       355
+                                                           2X
+                                                             6                                RW36                  TCH 46
+                                                                               28
+
+
+
+
+                                                              0
+
+
+                                                                                                                                        2900
+                                                             P                                             2040
+                                                                                                  2.1 NM          2.7 NM                       6.9 NM
+                                                               36                     CATEGORY                     A                          B                 C                          D
+
+                                                                                                                                                            1760-11 8
+                                                                                       LP     MDA            1760-1 419 (500-1)                                     1
+                                                                                                                                                                                           NA
+                                                                                                                                                           419 (500-1 8 )
+
+                                                                                                                                                                     3
+                                                                                                                                                            1800-1 8
+                                                      355°                             LNAV MDA              1800-1 459 (500-1)                                       3
+                                                                                                                                                                                           NA
+                                                                                                                                                           459 (500-1 8 )
+
+                                                                                                                                                             2080-2
+                                   LIRL Rwy 18-36 L                                    CIRCLING              1920-1 577 (600-1)                                                            NA
+                                                                                                                                                            737 (800-2)
+
+                                   ANTHONY, KANSAS
+                                                                                                                                                             ANTHONY MUNI(ANY)
+                                   Orig-C 02DEC21
+                                                                                                   37°10'N-98°05'W
+                                                                                                                                               RNAV (GPS) RWY 36

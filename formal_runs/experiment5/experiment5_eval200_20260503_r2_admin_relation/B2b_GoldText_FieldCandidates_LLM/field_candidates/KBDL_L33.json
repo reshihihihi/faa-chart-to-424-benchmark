@@ -1,0 +1,137 @@
+{
+  "schema_version": "experiment5_gold_ma_prose_field_candidates_schema_v1",
+  "chart_id": "KBDL_L33",
+  "candidate_source": "experiment5_gold_ma_prose_regex_candidates_v1",
+  "source_contract": {
+    "source": "adjudicated_gold_ma_prose",
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false,
+    "allows_field_review_v2": false,
+    "allows_cifp_or_arinc_424": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false,
+    "uses_field_review_v2": false
+  },
+  "field_candidates": {
+    "fix_candidates": [
+      {
+        "value": "BAF",
+        "field_type": "fix_ident",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "DIRECT BAF",
+        "source_start_char": 81,
+        "source_end_char": 84,
+        "rule_id": "gold_ma_direct_fix_regex_v1",
+        "confidence": 0.95,
+        "notes": "direct_phrase_context"
+      }
+    ],
+    "altitude_candidates": [
+      {
+        "value": 4000,
+        "field_type": "altitude_ft",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "4000",
+        "source_start_char": 26,
+        "source_end_char": 30,
+        "rule_id": "gold_ma_altitude_ft_regex_v1",
+        "confidence": 0.95,
+        "notes": "climb_to_altitude_context"
+      }
+    ],
+    "turn_candidates": [
+      {
+        "value": "RIGHT",
+        "field_type": "turn_direction",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "RIGHT TURN",
+        "source_start_char": 49,
+        "source_end_char": 59,
+        "rule_id": "gold_ma_turn_regex_v1",
+        "confidence": 0.95,
+        "notes": "turn_phrase_context"
+      }
+    ],
+    "course_candidates": [],
+    "hold_candidates": [
+      {
+        "value": "MISSED APPROACH: climb to 4000 on heading 328.4; right turn climb to 4000 direct BAF; hold at BAF, inbound course 274.8, left turns, 1 minute, maintain 4000.",
+        "field_type": "hold_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "MISSED APPROACH: climb to 4000 on heading 328.4; right turn climb to 4000 direct BAF; hold at BAF, inbound course 274.8, left turns, 1 minute, maintain 4000.",
+        "source_start_char": 86,
+        "source_end_char": 90,
+        "rule_id": "gold_ma_hold_phrase_regex_v1",
+        "confidence": 0.95,
+        "notes": "hold_phrase_context_no_leg_binding"
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "value": "climb to 4000 on heading 328.4; right turn climb to 4000 direct BAF; hold at BAF, inbound course 274.8, left turns, 1 minute, maintain 4000.",
+        "field_type": "missed_approach_instruction",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "MISSED APPROACH: climb to 4000 on heading 328.4; right turn climb to 4000 direct BAF; hold at BAF, inbound course 274.8, left turns, 1 minute, maintain 4000.",
+        "source_start_char": 0,
+        "source_end_char": 157,
+        "rule_id": "gold_ma_instruction_span_regex_v1",
+        "confidence": 0.99,
+        "notes": "automatic_candidate_from_adjudicated_gold_ma_prose_no_target_or_leg_binding"
+      }
+    ],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [],
+    "direct_phrase_snippets": [
+      {
+        "value": "DIRECT BAF",
+        "field_type": "direct_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "DIRECT BAF",
+        "source_start_char": 74,
+        "source_end_char": 84,
+        "rule_id": "gold_ma_direct_phrase_regex_v1",
+        "confidence": 0.95,
+        "notes": "direct_phrase_context"
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "value": "CLIMB TO 4000 ON HEADING 328",
+        "field_type": "climb_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "CLIMB TO 4000 ON HEADING 328",
+        "source_start_char": 17,
+        "source_end_char": 45,
+        "rule_id": "gold_ma_climb_phrase_regex_v1",
+        "confidence": 0.9,
+        "notes": "climb_phrase_context"
+      },
+      {
+        "value": "CLIMB TO 4000 DIRECT BAF",
+        "field_type": "climb_phrase",
+        "source": "gold_ma_prose_text",
+        "source_section": "gold_missed_approach_text",
+        "source_snippet": "CLIMB TO 4000 DIRECT BAF",
+        "source_start_char": 60,
+        "source_end_char": 84,
+        "rule_id": "gold_ma_climb_phrase_regex_v1",
+        "confidence": 0.9,
+        "notes": "climb_phrase_context"
+      }
+    ]
+  }
+}

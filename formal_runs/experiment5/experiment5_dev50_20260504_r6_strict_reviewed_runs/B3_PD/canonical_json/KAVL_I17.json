@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAVL_I17",
+  "procedure": {
+    "airport": "KAVL",
+    "approach_ident": "I17",
+    "chart_name": "ILS OR LOC RWY 17"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

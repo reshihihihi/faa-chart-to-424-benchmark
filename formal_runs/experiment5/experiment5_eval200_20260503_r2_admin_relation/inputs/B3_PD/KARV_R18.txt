@@ -1,0 +1,12 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 6000 -> AT_OR_ABOVE 6000 ft
+- FIX_TEXT: CEPMU -> CEPMU
+- FIX_TEXT: KRSMS -> KRSMS
+- TRACK_OR_RADIAL_TEXT: 283° -> type=course_deg, course_deg=283.3
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: path segment

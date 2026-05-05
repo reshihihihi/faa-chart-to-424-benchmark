@@ -1,0 +1,211 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KALB_R19-Y",
+  "procedure": {
+    "airport": "KALB",
+    "approach_ident": "R19-Y",
+    "chart_name": "RNAV (GPS) Y RWY 19"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.053,
+        "width": 0.3116,
+        "x_center": 0.7965,
+        "y_center": 0.1372
+      },
+      "chart_id": "KALB_R19-Y",
+      "evidence_region_id": "KALB_R19-Y_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KALB_R19-Y_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.444,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.427
+      },
+      "chart_id": "KALB_R19-Y",
+      "evidence_region_id": "KALB_R19-Y_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KALB_R19-Y_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0623,
+        "width": 0.2903,
+        "x_center": 0.5181,
+        "y_center": 0.6801
+      },
+      "chart_id": "KALB_R19-Y",
+      "evidence_region_id": "KALB_R19-Y_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KALB_R19-Y_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.4093,
+        "y_center": 0.6602
+      },
+      "chart_id": "KALB_R19-Y",
+      "evidence_region_id": "KALB_R19-Y_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0446,
+        "x_center": 0.4819,
+        "y_center": 0.6613
+      },
+      "chart_id": "KALB_R19-Y",
+      "evidence_region_id": "KALB_R19-Y_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: FLEIG -> FLEIG",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "FLEIG",
+        "raw_text": "FLEIG"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.066,
+        "x_center": 0.6264,
+        "y_center": 0.6613
+      },
+      "chart_id": "KALB_R19-Y",
+      "evidence_region_id": "KALB_R19-Y_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: GROUP -> GROUP",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "GROUP",
+        "raw_text": "GROUP"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0093,
+        "width": 0.0052,
+        "x_center": 0.5381,
+        "y_center": 0.6856
+      },
+      "chart_id": "KALB_R19-Y",
+      "evidence_region_id": "KALB_R19-Y_iconalign_006_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0354,
+        "width": 0.0141,
+        "x_center": 0.4058,
+        "y_center": 0.6894
+      },
+      "chart_id": "KALB_R19-Y",
+      "evidence_region_id": "KALB_R19-Y_iconalign_009_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0093,
+        "width": 0.0181,
+        "x_center": 0.6232,
+        "y_center": 0.6814
+      },
+      "chart_id": "KALB_R19-Y",
+      "evidence_region_id": "KALB_R19-Y_iconalign_008_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0219,
+        "width": 0.0361,
+        "x_center": 0.4813,
+        "y_center": 0.6835
+      },
+      "chart_id": "KALB_R19-Y",
+      "evidence_region_id": "KALB_R19-Y_iconalign_007_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

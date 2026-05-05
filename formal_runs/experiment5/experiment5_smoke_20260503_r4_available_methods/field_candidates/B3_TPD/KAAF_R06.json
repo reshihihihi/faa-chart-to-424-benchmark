@@ -1,0 +1,195 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KAAF_R06",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "TPD",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [
+      {
+        "value": "ONBOE",
+        "field_type": "fix_ident",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct ONBOE and hold.",
+        "source_start_char": 61,
+        "source_end_char": 66,
+        "rule_id": "fix_ident_token_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 38,
+        "region_local_end_char": 43,
+        "global_start_char": 61,
+        "global_end_char": 66
+      }
+    ],
+    "altitude_candidates": [
+      {
+        "value": 3000,
+        "field_type": "altitude_ft",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct ONBOE and hold.",
+        "source_start_char": 49,
+        "source_end_char": 53,
+        "rule_id": "altitude_ft_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 26,
+        "region_local_end_char": 30,
+        "global_start_char": 49,
+        "global_end_char": 53
+      }
+    ],
+    "turn_candidates": [],
+    "course_candidates": [],
+    "hold_candidates": [
+      {
+        "value": "MISSED APPROACH: Climb to 3000 direct ONBOE and hold.",
+        "field_type": "hold_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct ONBOE and hold.",
+        "source_start_char": 71,
+        "source_end_char": 75,
+        "rule_id": "hold_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 48,
+        "region_local_end_char": 52,
+        "global_start_char": 71,
+        "global_end_char": 75
+      }
+    ],
+    "instruction_snippets": [
+      {
+        "value": "Climb to 3000 direct ONBOE and hold.",
+        "field_type": "missed_approach_instruction",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "Climb to 3000 direct ONBOE and hold.",
+        "source_start_char": 40,
+        "source_end_char": 76,
+        "rule_id": "missed_approach_instruction_span_regex_v8",
+        "confidence": 0.95,
+        "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 17,
+        "region_local_end_char": 53,
+        "global_start_char": 40,
+        "global_end_char": 76
+      }
+    ],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [
+      {
+        "value": "Procedure NA for arrivals at TERES on T336 southeast bound. 4 NM TYNDALL E MOA ONBOE TERES RW06 2300 to CADIV 252° (49.5) (FAF) DONÉY (IF/IAF) 1600 CADIV 063 (6) TYNDALL G MOA TYNDALL F MOA 153° 4 NM W- 470A -153° 2300 2300 ELEV 20 TDZE 20 CADIV CADIV W-151B 333° H -333° 81 0 X",
+        "field_type": "route_sequence_snippet",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "Procedure NA for arrivals at TERES on T336 southeast bound. 4 NM TYNDALL E MOA ONBOE TERES RW06 2300 to CADIV 252° (49.5) (FAF) DONÉY (IF/IAF) 1600 CADIV 063 (6) TYNDALL G MOA TYNDALL F MOA 153° 4 NM W- 470A -153° 2300 2300 ELEV 20 TDZE 20 CADIV CADIV W-151B 333° H -333° 81 0 X",
+        "source_start_char": 90,
+        "source_end_char": 368,
+        "rule_id": "route_sequence_snippet_regex_v8",
+        "confidence": 0.72,
+        "notes": "flat_ocr_route_sequence_snippet_no_leg_binding",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 0,
+        "region_local_end_char": 278,
+        "global_start_char": 90,
+        "global_end_char": 368
+      },
+      {
+        "value": "bound. 4 NM TYNDALL E MOA ONBOE TERES RW06 2300 to CADIV 252° (49.5) (FAF) DONÉY (IF/IAF) 1600 CADIV 063 (6) TYNDALL G MOA TYNDALL F MOA 153° 4 NM W- 470A -153° 2300 2300 ELEV 20 TDZE 20 CADIV CADIV W-151B 333° H -333° 81 0 X",
+        "field_type": "route_sequence_snippet",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "bound. 4 NM TYNDALL E MOA ONBOE TERES RW06 2300 to CADIV 252° (49.5) (FAF) DONÉY (IF/IAF) 1600 CADIV 063 (6) TYNDALL G MOA TYNDALL F MOA 153° 4 NM W- 470A -153° 2300 2300 ELEV 20 TDZE 20 CADIV CADIV W-151B 333° H -333° 81 0 X",
+        "source_start_char": 143,
+        "source_end_char": 368,
+        "rule_id": "route_sequence_snippet_regex_v8",
+        "confidence": 0.72,
+        "notes": "flat_ocr_route_sequence_snippet_no_leg_binding",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 53,
+        "region_local_end_char": 278,
+        "global_start_char": 143,
+        "global_end_char": 368
+      },
+      {
+        "value": "E MOA ONBOE TERES RW06 2300 to CADIV 252° (49.5) (FAF) DONÉY (IF/IAF) 1600 CADIV 063 (6) TYNDALL G MOA TYNDALL F MOA 153° 4 NM W- 470A -153° 2300 2300 ELEV 20 TDZE 20 CADIV CADIV W-151B 333° H -333° 81 0 X",
+        "field_type": "route_sequence_snippet",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "E MOA ONBOE TERES RW06 2300 to CADIV 252° (49.5) (FAF) DONÉY (IF/IAF) 1600 CADIV 063 (6) TYNDALL G MOA TYNDALL F MOA 153° 4 NM W- 470A -153° 2300 2300 ELEV 20 TDZE 20 CADIV CADIV W-151B 333° H -333° 81 0 X",
+        "source_start_char": 162,
+        "source_end_char": 368,
+        "rule_id": "route_sequence_snippet_regex_v8",
+        "confidence": 0.72,
+        "notes": "flat_ocr_route_sequence_snippet_no_leg_binding",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 72,
+        "region_local_end_char": 278,
+        "global_start_char": 162,
+        "global_end_char": 368
+      }
+    ],
+    "direct_phrase_snippets": [
+      {
+        "value": "MISSED APPROACH: Climb to 3000 direct ONBOE and hold.",
+        "field_type": "direct_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct ONBOE and hold.",
+        "source_start_char": 54,
+        "source_end_char": 60,
+        "rule_id": "direct_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 31,
+        "region_local_end_char": 37,
+        "global_start_char": 54,
+        "global_end_char": 60
+      }
+    ],
+    "climb_phrase_snippets": [
+      {
+        "value": "MISSED APPROACH: Climb to 3000 direct ONBOE and hold.",
+        "field_type": "climb_phrase",
+        "source": "ocr_text",
+        "source_section": "missed_approach_text",
+        "source_snippet": "MISSED APPROACH: Climb to 3000 direct ONBOE and hold.",
+        "source_start_char": 40,
+        "source_end_char": 45,
+        "rule_id": "climb_phrase_regex_v8",
+        "confidence": 0.9,
+        "notes": "high_precision_missed_approach_procedure_context",
+        "source_region": "MISSED_APPROACH_TEXT",
+        "region_local_start_char": 17,
+        "region_local_end_char": 22,
+        "global_start_char": 40,
+        "global_end_char": 45
+      }
+    ]
+  }
+}

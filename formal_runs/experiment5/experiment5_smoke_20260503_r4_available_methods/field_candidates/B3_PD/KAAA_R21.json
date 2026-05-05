@@ -1,0 +1,70 @@
+{
+  "schema_version": "experiment5_roi_field_candidates_schema_v1",
+  "chart_id": "KAAA_R21",
+  "candidate_source": "experiment5_roi_ocr_region_aware_field_matcher_v1_from_b1prime_v8",
+  "region_profile": "PD",
+  "source_contract": {
+    "source": "same_chart_human_confirmed_roi_ocr_text",
+    "allows_human_confirmed_roi": true,
+    "allows_ocr_bbox": false,
+    "allows_chart_image_pixels": false,
+    "allows_canonical_target": false,
+    "allows_gold_observable_evidence": false
+  },
+  "leakage_policy": {
+    "uses_canonical_target": false,
+    "uses_expected_value": false,
+    "uses_gold_field_to_leg_mapping": false,
+    "uses_human_evidence_provenance": false,
+    "uses_gold_observable_evidence": false,
+    "uses_cifp_or_arinc_424": false,
+    "uses_scorer_output": false
+  },
+  "field_candidates": {
+    "fix_candidates": [],
+    "altitude_candidates": [],
+    "turn_candidates": [],
+    "course_candidates": [],
+    "hold_candidates": [],
+    "instruction_snippets": [],
+    "track_to_fix_snippets": [],
+    "route_sequence_snippets": [
+      {
+        "value": "Procedure NA for arrivals at MCLEN on V9-69 northeast bound. (IAF) 4 NM MCLEN 2700 NoPT 203° (5.7) -035° -215° (IF/IAF) PIMKE 2300 (FAF) ZOPOP 820 RW21 ELEV 594 TDZE 594 25 NM 215° 3100 EE",
+        "field_type": "route_sequence_snippet",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "Procedure NA for arrivals at MCLEN on V9-69 northeast bound. (IAF) 4 NM MCLEN 2700 NoPT 203° (5.7) -035° -215° (IF/IAF) PIMKE 2300 (FAF) ZOPOP 820 RW21 ELEV 594 TDZE 594 25 NM 215° 3100 EE",
+        "source_start_char": 12,
+        "source_end_char": 200,
+        "rule_id": "route_sequence_snippet_regex_v8",
+        "confidence": 0.72,
+        "notes": "flat_ocr_route_sequence_snippet_no_leg_binding",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 0,
+        "region_local_end_char": 188,
+        "global_start_char": 12,
+        "global_end_char": 200
+      },
+      {
+        "value": "9-69 northeast bound. (IAF) 4 NM MCLEN 2700 NoPT 203° (5.7) -035° -215° (IF/IAF) PIMKE 2300 (FAF) ZOPOP 820 RW21 ELEV 594 TDZE 594 25 NM 215° 3100 EE",
+        "field_type": "route_sequence_snippet",
+        "source": "ocr_text",
+        "source_section": "plan_view",
+        "source_snippet": "9-69 northeast bound. (IAF) 4 NM MCLEN 2700 NoPT 203° (5.7) -035° -215° (IF/IAF) PIMKE 2300 (FAF) ZOPOP 820 RW21 ELEV 594 TDZE 594 25 NM 215° 3100 EE",
+        "source_start_char": 51,
+        "source_end_char": 200,
+        "rule_id": "route_sequence_snippet_regex_v8",
+        "confidence": 0.72,
+        "notes": "flat_ocr_route_sequence_snippet_no_leg_binding",
+        "source_region": "PLAN_VIEW",
+        "region_local_start_char": 39,
+        "region_local_end_char": 188,
+        "global_start_char": 51,
+        "global_end_char": 200
+      }
+    ],
+    "direct_phrase_snippets": [],
+    "climb_phrase_snippets": []
+  }
+}

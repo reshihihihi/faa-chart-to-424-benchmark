@@ -1,0 +1,212 @@
+                                   CAMPBELLSVILLE, KENTUCKY                                              AL-5210 (FAA)                                                                    26078
+                                        WAAS               5004    Rwy Ldg
+                                   CH 90223
+                                            APP CRS
+                                                    TDZE    904                                                                              RNAV (GPS) RWY 5
+                                             055° Apt Elev  921
+                                    W05A                                                                                                                TAYLOR COUNTY(AAS)
+                                    RNP APCH - GPS.
+                                                                                                                                                                     MISSED APPROACH:
+                                    T
+                                                 Rwy 5 helicopter visibility reduction below34 SM NA. For uncompensated Baro-VNAV                                    Climb to 3000 direct
+                                    A                                                                                                                                DOODA and hold.
+                                                 systems, LNAV/VNAV NA below -16°C or above 54°C.
+
+
+                                                          AWOS-3                                      INDIANAPOLIS CENTER                                       UNICOM
+                                                         121.125                                        124.625             353.65                       122.7(CTAF)L
+
+
+
+                                                                                                                                                                        4 NM
+
+
+                                                                                                                                                                            5°
+                                                                                                                                                                          05             5°
+                                                                                                                                                                                       23
+
+                                                                                                                                                                                       DOODA
+                                                                                   30
+                                                                                     N
+                                                                                      M
+                                                                           3300
+                                                                                              to
+
+
+
+
+                                                                                   15
+                                                                                               KA
+                                                                                      N
+                                                                    1
+
+
+
+
+                                                                            3000
+                                                                     4
+
+
+
+
+                                                                                                  N
+                                                                                          M
+                                                                      5
+
+
+
+
+                                                                                                   OA
+                                                                       °
+
+
+
+
+                                                                              KANOA
+SE-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                    SE-1, 16 APR 2026 to 14 MAY 2026
+                                                  1
+                                                   4
+                                                    5
+                                                     °
+
+
+
+
+                                                                               3
+                                                                                2
+                                                                                 5
+                                                                                  °
+
+
+
+
+                                                                                                                                          RW05
+                                                 KANOA
+                                    30 N
+
+
+
+
+                                                                                                      (FAF)
+                                                                   3
+
+
+
+
+                                                     3000
+                                                                    2
+                                        M
+
+
+
+
+                                                                     5
+
+
+
+
+                                                                                                      LEXKO
+                                                                      °
+                                           t
+                                           o
+                                            K
+
+
+
+
+                                               A
+                                                N
+                                                 O
+                                                     A                                          00
+                                                                                              25 5°
+                                                         (
+                                                         NoP
+                                                           T)
+                                                                           (IF/IAF)             05 .8)
+                                                                                                  (6
+                                                                           KANOA
+
+
+
+
+                                                                             5°         5°
+                                                                           05         23                                                         ELEV   921                   TDZE       904
+                                                            6000
+                                                     HOLD
+                                                            3000
+                                                                              4 NM
+
+
+                                                                                                                             3000     DOODA
+                                                                                                                                                                                               23
+
+
+
+
+                                                4 NM            VGSI and RNAV glidepath not coincident
+                                        Holding Pattern                       (VGSI Angle 3.50/TCH 48).
+                                                                                                                                                                                              P
+
+
+
+
+                                                                  KANOA
+                                                                                                   LEXKO
+                                    6000                 235°
+                                                                                                                                                                                   5
+                                    3000                 055°               055
+                                                                                                   2500            1.1 NM to                                                  X
+                                                                                                                                                                                  7
+                                                                               °                                                                                         0
+                                                                                                                                                                          4
+                                                                                                                           RW05                                        5
+                                                                                                                                                                        0
+                                                                                                                                  RW05
+                                                                                                                                                         P
+
+
+
+
+                                     GP 3.00°
+                                                                                  2500                                                                         U
+                                                                                                                                                                P
+                                        TCH 40                                                                                                           .0
+                                                                                                                                                           %
+                                                                                                                                                        1
+                                                                                                                                                    5
+
+
+
+
+                                                                                  6.8 NM                   3.9 NM            1.1 NM
+
+                                    CATEGORY                  A                       B                       C                       D
+
+
+                                    LPV         DA                           1154-34               250 (300-      3
+                                                                                                                   4   )
+                                                                                                                                                    055°
+                                    LNAV/
+                                                DA                           1408-138              504 (500-138 )
+                                    VNAV
+                                                                                                              1                       1
+                                    LNAV MDA                 1340-1 436 (500-1)                          1340-14             436 (500-14 )
+
+
+                                                            1380-1             1400-1
+                                                                                                             1
+                                                                                                        1480-12                   1660-214                              MIRL Rwy 5-23 L
+                                    CIRCLING
+                                                          459 (500-1)        479 (500-1)                       1
+                                                                                                      559 (600-1 2 )          739 (800-214 )                        REIL Rwys 5 and 23 L
+
+                                   CAMPBELLSVILLE, KENTUCKY                                                                                             TAYLOR COUNTY(AAS)
+                                   Amdt 1A 19MAR26
+                                                                                                        37°21'N-85°19'W
+                                                                                                                                             RNAV (GPS) RWY 5
+

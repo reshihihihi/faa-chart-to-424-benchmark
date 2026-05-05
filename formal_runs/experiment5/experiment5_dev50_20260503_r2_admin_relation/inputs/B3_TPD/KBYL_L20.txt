@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1800 on heading 200; left turn climb to 4000 to LOZ; hold at LOZ, inbound course 199.8, right turns, 1 minute, maintain 4000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- ALTITUDE_TEXT: 1800 -> AT_OR_ABOVE 1800 ft
+- FIX_TEXT: LOZ -> LOZ
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

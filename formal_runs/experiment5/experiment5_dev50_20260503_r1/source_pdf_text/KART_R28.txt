@@ -1,0 +1,200 @@
+                                   WATERTOWN, NEW YORK                                                       AL-666 (FAA)                                                                25219
+
+                                         WAAS                7001          Rwy Ldg
+                                   CH 82322
+                                            APP CRS
+                                                    TDZE      331                                                                             RNAV (GPS) RWY 28
+                                             285°             331                                                                                      WATERTOWN INTL (ART)
+                                    W28A            Apt Elev
+
+                                   RNP APCH - GPS.
+                                                                                                                                                          MALSR      MISSED APPROACH:
+                                       T             Rwy 28 helicopter visibility reduction below34 SM NA. For uncompensated Baro-VNAV
+                                                                                                                                                                     Climb to 2400 direct
+                                       A             systems, LNAV/VNAV NA below -20°C or above 54°C. For inop ALS, increase LNAV                           A5       TAREE and hold.
+                                                     Cats A/B visibility to 1 SM.
+
+
+                                                      ASOS                     KGTB ATIS           WHEELER-SACK APP CON                          CLNC DEL                UNICOM
+
+                                                    132.325                    119.525              124.875              307.125                  120.8             123.0 (CTAF) L
+
+                                                                                                               CIPNA
+                                               ES
+                                               A
+
+
+
+
+                                                                                                                             35 2°
+                                             AT
+                                            AD
+
+
+
+
+                                                                                                                               15 .9
+
+                                                                                                                               00
+                                           ST
+
+
+
+
+                                                                                                                                (1
+                                      N
+
+
+
+
+                                                                                                                                  4
+                                    CA
+
+
+                                                 D
+                                               TE
+
+
+
+
+                                                                                                                                    )
+                                               I
+                                           UN
+
+
+
+
+                                                                                                                            HUPUM
+                                                                                                                           2.9 NM to
+                                                      TAREE                                                                  RW28              (FAF)
+                                                                                                                                                                  (IF/IAF)
+NE-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                 NE-2, 16 APR 2026 to 14 MAY 2026
+                                           1                                                                        RW28                   WONPO                                         6000
+                                            05°                                                                                                         22        MUVRE         HOLD
+                                                                                                                                                          00                             3500
+
+                                                     285
+                                                                                                                                                       285°
+                                                        °
+                                                                                                                             665                        (
+                                                                                                                                                        5.4)
+                                           4NM                                                                                                                                 30
+                                                                                                                                                                                 7°
+                                                                                                                                                                         12
+                                                                                                                                                                           7°
+                                                                                                                                                             3500
+                                                                                                                                                            357° (4)         4 NM
+
+                                                        W2825N
+                                                       R                                                                                                         SUVOY
+                                                    SA        M
+                                                M
+                                                                                                                                                                                 3600 NoPT
+                                                          3600                                                                                                                   357° (5.2)
+
+
+
+
+                                                                                                                                                                                        (IAF)
+                                                                                                                                                                                    PATEE
+
+                                                                                                                                                            00
+                                                                                                                                                          36 °
+                                                                                                                                                              3
+                                       ELEV           331        D     TDZE        331                                                                     07 8)
+                                                                                                                                                               .
+                                                                                                                                                            (15
+                                                                                                                                         LIDLE
+
+                                                                                           2400    TAREE                                               MUVRE                   4 NM
+                                                                                                                             WONPO                                       Holding Pattern
+
+                                                                                                              HUPUM
+                                                                                                             2.9 NM to                                              127°
+                                                                      25
+
+
+
+
+                                                                  0                285°
+                                                                                                                                  2200                                              6000
+                                                                15                                             RW28                                                                 3500
+                                                               X
+                                                                                                                                                   °                307°
+                                                                  P
+
+
+
+
+                                                             99                                                                                   5
+                                           P
+
+
+
+
+                                                0.         49                                       1.7 NM to                                   28
+                                    10
+
+
+
+
+                                                 3%UP                                A5
+                                                                                                       RW28
+                                                          70
+                                                                                     28
+
+
+
+
+                                                            01X150                                                                                                       GP 3.00°
+                                                                               P
+
+
+
+
+                                                      P                                           RW28
+                                           P
+
+
+
+
+                                                     U                                                                                                                   TCH 45
+                                                3%                                                                                        2200
+                                               0.                                                                   1300
+                                   7
+
+
+
+
+                                           A5
+                                                                                                       1.7    1.2        2.8 NM               5.4 NM
+
+                                                                                           CATEGORY                  A                    B                  C                      D
+                                                                                                                                             1         200 (200-12 )
+                                                                                           LPV     DA                                     531- 2
+
+                                                                                           LNAV/
+                                                                                                   DA                                      852-1       521 (600-1)
+                                                                                           VNAV
+
+                                                                                                                       3                                        1
+                                   REIL Rwy 25 L                                           LNAV MDA                 920- 4          589 (600-34 )           920-14
+                                                                                                                                                                                      1
+                                                                                                                                                                             589 (600-14 )
+
+
+                                   HIRL Rwy 7-25 L                                                                                                            3                    1
+                                                                                                                920-1                    960-1            980-14              1080-2 2
+                                   MIRL Rwy 10-28 L                                         CIRCLING                                                            3
+                                                                                                              589 (600-1)            629 (700-1)       649 (700-14 )         749 (800-212 )
+
+                                   WATERTOWN, NEW YORK
+                                                                                                                                                       WATERTOWN INTL (ART)
+                                   Amdt 2 25JAN24
+                                                                                                        44°00'N-76°01'W
+                                                                                                                                              RNAV (GPS) RWY 28

@@ -1,0 +1,60 @@
+{
+  "rule_registry": "benchmark_exports/derived/v2/experiment5_diagnostic/rule_registry.yaml",
+  "rule_registry_sha256": "26d9779675a3040d4955f2d134ac9a419a1d70b75b6300ab22666bf2eb82fd18",
+  "runner": "experiment5_b4_region_aware_candidate_rules_v1",
+  "uses_field_candidates": true,
+  "uses_target_or_score": false,
+  "primary_rule_ids": [
+    "R_B4_PRIMARY_MA_TEXT_INSTRUCTION",
+    "R_B4_CLIMB_ALTITUDE_TO_CA",
+    "R_B4_DIRECT_TO_DF",
+    "R_B4_HOLD_TO_HM",
+    "R_B4_COURSE_OR_RADIAL"
+  ],
+  "candidate_counts_by_region": {
+    "MISSED_APPROACH_TEXT": 6,
+    "PLAN_VIEW": 0,
+    "MISSED_APPROACH_DETAIL_AREA": 1
+  },
+  "primary_instruction_candidate_count": 1,
+  "primary_instruction_candidates": [
+    {
+      "confidence": 0.95,
+      "field_type": "missed_approach_instruction",
+      "global_end_char": 76,
+      "global_start_char": 40,
+      "notes": "continuous_ocr_only_missed_approach_instruction_span_no_target_or_field_to_leg_linking",
+      "region_local_end_char": 53,
+      "region_local_start_char": 17,
+      "rule_id": "missed_approach_instruction_span_regex_v8",
+      "source": "ocr_text",
+      "source_end_char": 76,
+      "source_region": "MISSED_APPROACH_TEXT",
+      "source_section": "missed_approach_text",
+      "source_snippet": "Climb to 2900 direct BOYAY and hold.",
+      "source_start_char": 40,
+      "value": "Climb to 2900 direct BOYAY and hold."
+    }
+  ],
+  "rule_input_text": "MISSED APPROACH: Climb to 2900 direct BOYAY and hold.",
+  "rule_evidence": [
+    {
+      "leg_index": 1,
+      "rule_id": "R_B4_CLIMB_ALTITUDE_TO_CA",
+      "altitude": 2900,
+      "turn": null
+    },
+    {
+      "leg_index": 2,
+      "rule_id": "R_B4_DIRECT_TO_DF",
+      "fix": "BOYAY"
+    },
+    {
+      "leg_index": 3,
+      "rule_id": "R_B4_HOLD_TO_HM",
+      "fix": "BOYAY"
+    }
+  ],
+  "abstain_policy": "unknown_or_not_applicable_when_allowed_evidence_is_insufficient",
+  "support_region_policy": "P/D candidates may support only when tied to MA_TEXT; this v1 runner keeps MA_TEXT as primary."
+}

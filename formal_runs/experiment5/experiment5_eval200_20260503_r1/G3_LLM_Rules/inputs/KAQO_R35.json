@@ -1,0 +1,144 @@
+{
+  "chart_id": "KAQO_R35",
+  "procedure": {
+    "airport": "KAQO",
+    "approach_ident": "R35",
+    "chart_name": "RNAV (GPS) RWY 35"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0459,
+        "width": 0.2265,
+        "x_center": 0.839,
+        "y_center": 0.1336
+      },
+      "chart_id": "KAQO_R35",
+      "evidence_region_id": "KAQO_R35_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAQO_R35_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.472,
+        "width": 0.905,
+        "x_center": 0.5,
+        "y_center": 0.433
+      },
+      "chart_id": "KAQO_R35",
+      "evidence_region_id": "KAQO_R35_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAQO_R35_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0499,
+        "width": 0.1432,
+        "x_center": 0.4084,
+        "y_center": 0.7741
+      },
+      "chart_id": "KAQO_R35",
+      "evidence_region_id": "KAQO_R35_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAQO_R35_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3736,
+        "y_center": 0.7591
+      },
+      "chart_id": "KAQO_R35",
+      "evidence_region_id": "KAQO_R35_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3300 -> AT_OR_ABOVE 3300 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3300,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3300"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0564,
+        "x_center": 0.4454,
+        "y_center": 0.7591
+      },
+      "chart_id": "KAQO_R35",
+      "evidence_region_id": "KAQO_R35_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: AKEKY -> AKEKY",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "AKEKY",
+        "raw_text": "AKEKY"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0185,
+        "width": 0.0116,
+        "x_center": 0.3684,
+        "y_center": 0.7744
+      },
+      "chart_id": "KAQO_R35",
+      "evidence_region_id": "KAQO_R35_iconalign_007_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0269,
+        "width": 0.0413,
+        "x_center": 0.4439,
+        "y_center": 0.782
+      },
+      "chart_id": "KAQO_R35",
+      "evidence_region_id": "KAQO_R35_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

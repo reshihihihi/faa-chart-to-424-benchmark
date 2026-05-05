@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: Climbing left turn to 5000 direct GRAVE and hold, continue climb-in-hold to 5000.

@@ -1,0 +1,49 @@
+[PLAN_VIEW]
+ROCOY
+(IAF)
+TIKLÉ
+3600
+3000
+000
+(∠9)
+(IF)
+LOCID
+2400
+135
+(IAF)
+3000
+(5)
+JAREV
+069
+(6.2)
+(FAF)
+MOOVY
+IZKIP
+536
+LIZZI
+4000
+2.6 NM to
+060°
+(20.9)
+RW13
+RW13
+……
+4 NM
+DUMMR
+(10.3)
+Procedure NA for arrivals at DUMMR on
+KOCEC
+V93 southwest bound, V162 westbound,
+and V276 northwest bound.
+ELEV
+394
+D
+TDZE 386
+
+[MISSED_APPROACH_DETAIL_AREA]
+3000
+KOCEC
+LIZZI
+tr
+084°
+∆

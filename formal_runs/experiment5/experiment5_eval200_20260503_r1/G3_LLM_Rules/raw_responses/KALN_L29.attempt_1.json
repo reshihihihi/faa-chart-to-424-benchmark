@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_fd0caaee-7bf5-4f2c-a4f2-deda29d5675d",
+  "object": "chat.completion",
+  "created": 1777808094,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_KbaiBQ0ROGWGawV0Z4yrpZKX",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KALN_L29\",\"procedure\":{\"airport\":\"KALN\",\"approach_ident\":\"L29\",\"chart_name\":\"ILS OR LOC RWY 29\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

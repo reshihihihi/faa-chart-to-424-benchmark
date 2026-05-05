@@ -1,0 +1,167 @@
+                                   DENVER, COLORADO                                                                            AL-5715 (FAA)                                                                 25219
+
+                                        WAAS                                                 Rwy Ldg         4800
+                                    CH 82107
+                                                                                APP CRS
+                                                                                             TDZE            5813                                            RNAV (GPS) RWY 28
+                                                                                    283°
+                                        W28A                                                 Apt Elev        5885                                                                CENTENNIAL (APA)
+                                    RNP APCH.
+                                                                                                                                                                    MISSED APPROACH: Climb to 6400
+                                    T     For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -26°C or above
+                                                                                                                                                                    then climbing right turn to 9000 direct
+                                          49°C. Rwy 28 helicopter visibility reduction below 34SM NA. Circling Rwy 35L
+                                                                                                                                                                    EZBEL and hold.
+                                          NA at night.
+
+
+                                                            ATIS                             DENVER APP CON              CENTENNIAL TOWER                        GND CON                        CLNC DEL
+
+                                                           120.3                               132.75 269.3                       118.9                           121.8                         128.6
+
+                                                                                                                                                                                                 W2825N
+                                                                                                                                                                                                R
+                                                                                                                                                                                           SA          M
+                                                                                                                                                                                       M
+                                                                                                                                                                                                 12000
+
+
+
+
+                                                                                                         RW28                                                                  7 NM
+                                                                                                               5859
+SW-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                     SW-1, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                                                                 8°
+                                                                                                                                                                               05
+                                                                                                         5919
+                                                                                                                                                                                       8°
+                                                                                                                 FEGIB                 7                                             23
+                                                                                                                                        500                            00
+                                                                                                               3.5 NM to                           76                81 °
+                                                                                                                                                     0                  8       (IAF)
+                                                                                                                               (FAF) (
+                                                                                                                                     3)               0               23
+                                                                                                                 RW28                          28                       5)      EZBEL
+                                                                                                                               NIDLY             3°                     (
+                                                                                                                                       MESME (
+                                                                                                                                             3.2                     8
+                                                                                                                                                )                     100
+                                                                                                                                                                     28
+                                                                                                                                                          (IF)         3°
+                                                                                                                                                                     (
+                                                                                                                                                                     5)
+                                                                                                                                                     DOCKY
+
+                                                                                                                                                                             (IAF)
+                                                                                                                                                                             DILVE
+
+
+
+
+                                    ELEV                   5885                         TDZE      5813
+
+
+                                                                                                              6400    9000       EZBEL
+                                                                                                                                                                                                  DOCKY
+                                                 17L
+                                                                                                                                                                          MESME
+                                                           P
+                                                                                                                                                      NIDLY
+                                                           1.
+
+
+
+
+                                        17R                                                                   *LNAV only.                  FEGIB                                                     8100
+                                                            0% UP
+
+
+
+
+                                                                                                                                        3.5 NM to                                       83°
+                                                                                                                                                        7500                           2
+                                        0.
+
+
+
+
+                                                       P
+                                                                                                                                           RW28
+                                                                                                                      *1.3 NM to
+                                         9% UP
+
+
+
+
+                                                                           TWR
+                                                                                         H                               RW28                                                  7600
+                                                                  10
+
+                                                                                P
+
+
+
+
+                                                                                                                     RW28
+                                                            10001 X 100
+
+
+
+
+                                                                                    4    06                                                                         7500                                 GP 3.00°
+                                                                                     800X . %U                                                6940*
+                                           7001 X 75
+
+
+
+
+                                                                                         75   P                                                                                                          TCH 41
+                                                                                                 28
+                                                                                             P
+
+
+
+
+                                                                                                                         1.3      2.2 NM       1.7 NM             3 NM                 3.2 NM
+
+                                                                                                              CATEGORY                 A                    B                    C                       D
+                                                                                                      283°
+                                                               DOW N
+                                                                          0.
+
+
+
+
+                                                                                                              LPV     DA                                6079-78          266 (200-7
+                                                                                                                                                                                       )
+                                                                           8%
+
+
+
+
+                                                           P                                                                                                                       8
+
+
+                                                 35L
+                                                                                                              LNAV/
+                                                           P
+                                                                                A5                                    DA                                  6119-1 306 (300-1)
+                                                                                                              VNAV
+                                                                      35R
+                                                                                                                                                                                  3            3
+                                                                                                              LNAV MDA                 6260-1 447 (400-1)                    6260-1 8 447 (400-1 8 )
+
+                                   MIRL all Rwys                                                                                  6400-1             6540-1                 6740-212               6900-3
+                                                                                                               CIRCLING
+                                   REIL Rwys 17R, 28, and 35L                                                                   515 (600-1)         655 (700-1)            855 (900-212 )        1015 (1100-3)
+
+                                   DENVER, COLORADO
+                                                                                                                                                                                 CENTENNIAL (APA)
+                                   Amdt 1C 08NOV18
+                                                                                                                          39°34'N-104°51'W
+                                                                                                                                                             RNAV (GPS) RWY 28

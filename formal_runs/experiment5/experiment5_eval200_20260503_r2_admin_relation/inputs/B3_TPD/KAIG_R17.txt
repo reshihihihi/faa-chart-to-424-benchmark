@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 166.1; climb to 3300 to ZABVI; hold at ZABVI, inbound course 346.2, right turns, 4 NM, maintain 3300.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3300 -> AT_OR_ABOVE 3300 ft
+- FIX_TEXT: ZABVI -> ZABVI
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

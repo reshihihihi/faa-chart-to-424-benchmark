@@ -1,0 +1,244 @@
+{
+  "chart_id": "KAPT_R04",
+  "procedure": {
+    "airport": "KAPT",
+    "approach_ident": "R04",
+    "chart_name": "RNAV (GPS) RWY 04"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260504_r6_strict_visible_inputs/inputs/g_visible_observables_eval200_strict.jsonl",
+  "observable_facts": [
+    {
+      "bbox": {
+        "height": 0.0489,
+        "width": 0.298,
+        "x_center": 0.8039,
+        "y_center": 0.1351
+      },
+      "chart_id": "KAPT_R04",
+      "observable_type": "ma_text_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPT_R04_01_missed_approach_text",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAPT_R04_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.5065,
+        "width": 0.9083,
+        "x_center": 0.5012,
+        "y_center": 0.4495
+      },
+      "chart_id": "KAPT_R04",
+      "observable_type": "plan_view_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPT_R04_02_plan_view",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAPT_R04_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0505,
+        "width": 0.2268,
+        "x_center": 0.5496,
+        "y_center": 0.728
+      },
+      "chart_id": "KAPT_R04",
+      "observable_type": "ma_detail_region_present",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPT_R04_03_lower_detail_area",
+        "source_type": "admin_region_presence",
+        "transform": "copy_coarse_region_presence_only"
+      },
+      "region_id": "KAPT_R04_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "value": {
+        "region_present": true
+      }
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.4638,
+        "y_center": 0.7123
+      },
+      "candidates": [
+        {
+          "candidate_type": "altitude_text_literal",
+          "raw_text": "4000",
+          "value": 4000,
+          "value_type": "integer_from_visible_text"
+        }
+      ],
+      "chart_id": "KAPT_R04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPT_R04_iconalign_003_altitude_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "4000",
+      "region_id": "KAPT_R04_iconalign_003_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "ALTITUDE_TEXT",
+      "visible_literal": "ALTITUDE_TEXT: 4000"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0564,
+        "x_center": 0.6331,
+        "y_center": 0.7115
+      },
+      "candidates": [
+        {
+          "candidate_type": "fix_ident_literal",
+          "raw_text": "FARAD",
+          "value": "FARAD",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KAPT_R04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPT_R04_iconalign_002_fix_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "FARAD",
+      "region_id": "KAPT_R04_iconalign_002_fix_text",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "FIX_TEXT",
+      "visible_literal": "FIX_TEXT: FARAD"
+    },
+    {
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0597,
+        "x_center": 0.5199,
+        "y_center": 0.7128
+      },
+      "candidates": [
+        {
+          "candidate_type": "fix_ident_literal",
+          "raw_text": "CUYAS",
+          "value": "CUYAS",
+          "value_type": "string_from_visible_text"
+        }
+      ],
+      "chart_id": "KAPT_R04",
+      "observable_type": "visible_text_literal",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "label_left_of_arrow",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPT_R04_iconalign_001_fix_text",
+        "source_type": "admin_region_visible_label",
+        "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
+      },
+      "raw_visible_text": "CUYAS",
+      "region_id": "KAPT_R04_iconalign_001_fix_text",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "visible_label_prefix": "FIX_TEXT",
+      "visible_literal": "FIX_TEXT: CUYAS"
+    },
+    {
+      "bbox": {
+        "height": 0.0129,
+        "width": 0.0087,
+        "x_center": 0.4616,
+        "y_center": 0.7254
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "CLIMB_ARROW",
+          "value": "CLIMB_ARROW",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KAPT_R04",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPT_R04_iconalign_007_climb_arrow",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KAPT_R04_iconalign_007_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "visible_label_prefix": "CLIMB_ARROW",
+      "visible_literal": "detected lower detail: climb arrow"
+    },
+    {
+      "bbox": {
+        "height": 0.0234,
+        "width": 0.0372,
+        "x_center": 0.632,
+        "y_center": 0.7314
+      },
+      "candidates": [
+        {
+          "candidate_type": "visible_graphic_marker",
+          "raw_text": "FIX_SYMBOL",
+          "value": "FIX_SYMBOL",
+          "value_type": "region_type_from_visible_graphic"
+        }
+      ],
+      "chart_id": "KAPT_R04",
+      "observable_type": "visible_graphic_marker",
+      "provenance": {
+        "derived_from_final_answer": false,
+        "source_field": "region_type/bbox",
+        "source_file": "formal_runs\\experiment5\\experiment5_eval200_20260503_r1\\admin_artifacts\\admin_regions_eval200.jsonl",
+        "source_region_id": "KAPT_R04_iconalign_009_fix_symbol",
+        "source_type": "admin_region_visible_graphic",
+        "transform": "copy_visible_graphic_region_type"
+      },
+      "raw_visible_text": "",
+      "region_id": "KAPT_R04_iconalign_009_fix_symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "visible_label_prefix": "FIX_SYMBOL",
+      "visible_literal": "detected lower detail: fix symbol"
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

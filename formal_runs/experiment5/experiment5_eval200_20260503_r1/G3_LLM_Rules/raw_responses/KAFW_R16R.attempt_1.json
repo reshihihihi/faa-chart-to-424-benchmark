@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_3bfc6dd1-f7bc-4313-9f81-7b6956c69a9e",
+  "object": "chat.completion",
+  "created": 1777808230,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_FF4jL8XBpW87T525A4Njlr19",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAFW_R16R\",\"procedure\":{\"airport\":\"KAFW\",\"approach_ident\":\"R16R\",\"chart_name\":\"RNAV (GPS) RWY 16R\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1300 on heading 78.9; right turn on heading 210; climb to 4600 on VTU R-086 INBOUND to VTU; hold at VTU, inbound course 130.6, left turns, 1 minute, maintain 4600.

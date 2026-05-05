@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 344.5; climb to 3400 to ZAPUB; hold at ZAPUB, inbound course 164.4, left turns, 4 NM, maintain 3400.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3400 -> AT_OR_ABOVE 3400 ft
+- FIX_TEXT: ZAPUB -> ZAPUB
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

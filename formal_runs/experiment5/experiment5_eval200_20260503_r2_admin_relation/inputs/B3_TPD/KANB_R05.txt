@@ -1,0 +1,18 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1600 on heading 52.4; right turn to CAMKU; on heading 209.8 to CANUG; climb to 3500 on heading 299.7 to LINTZ; hold at LINTZ, inbound course 52.3, left turns, 4 NM, maintain 3500.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1600 -> AT_OR_ABOVE 1600 ft
+- ALTITUDE_TEXT: 3500 -> AT_OR_ABOVE 3500 ft
+- FIX_TEXT: CAMKU -> CAMKU
+- FIX_TEXT: CANUG -> CANUG
+- TRACK_OR_RADIAL_TEXT: 300° -> type=course_deg, course_deg=299.7
+- TRACK_OR_RADIAL_TEXT: 210° -> type=course_deg, course_deg=209.8
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol
+- detected lower detail: fix symbol
+- detected lower detail: fix symbol
+- detected lower detail: path segment

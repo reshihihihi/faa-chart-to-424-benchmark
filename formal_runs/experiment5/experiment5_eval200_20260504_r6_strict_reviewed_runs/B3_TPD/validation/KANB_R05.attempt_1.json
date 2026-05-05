@@ -1,0 +1,5 @@
+[
+  "missed_approach.legs.1.answers.Q_terminator.status: 'DF' is not one of ['present', 'not_applicable', 'not_observable', 'unknown']",
+  "missed_approach.legs.2.answers.Q_terminator.status: 'CF' is not one of ['present', 'not_applicable', 'not_observable', 'unknown']",
+  "missed_approach.legs.3.answers.Q_terminator.status: 'HF' is not one of ['present', 'not_applicable', 'not_observable', 'unknown']"
+]

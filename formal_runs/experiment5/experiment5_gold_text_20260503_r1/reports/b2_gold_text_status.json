@@ -1,0 +1,12 @@
+{
+  "status": "completed_smoke20",
+  "methods": [
+    "B2a_GoldText_LLM",
+    "B2b_GoldText_FieldCandidates_LLM"
+  ],
+  "model": "gpt-5.4",
+  "base_url": "http://127.0.0.1:8080/v1",
+  "summary_path": "formal_runs/experiment5/experiment5_gold_text_20260503_r1/reports/b2_gold_text_summary.json",
+  "report_path": "formal_runs/experiment5/experiment5_gold_text_20260503_r1/reports/experiment5_b2_gold_text_execution_report_zh.md",
+  "no_leakage_path": "formal_runs/experiment5/experiment5_gold_text_20260503_r1/reports/b2_gold_text_no_leakage_report.json"
+}

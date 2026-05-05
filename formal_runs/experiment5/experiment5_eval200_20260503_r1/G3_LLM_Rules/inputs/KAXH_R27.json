@@ -1,0 +1,164 @@
+{
+  "chart_id": "KAXH_R27",
+  "procedure": {
+    "airport": "KAXH",
+    "approach_ident": "R27",
+    "chart_name": "RNAV (GPS) RWY 27"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0852,
+        "width": 0.241,
+        "x_center": 0.8324,
+        "y_center": 0.1533
+      },
+      "chart_id": "KAXH_R27",
+      "evidence_region_id": "KAXH_R27_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAXH_R27_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.4397,
+        "width": 0.9083,
+        "x_center": 0.5012,
+        "y_center": 0.4566
+      },
+      "chart_id": "KAXH_R27",
+      "evidence_region_id": "KAXH_R27_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "coarse plan-view context for missed approach",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KAXH_R27_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0509,
+        "width": 0.2398,
+        "x_center": 0.4569,
+        "y_center": 0.7019
+      },
+      "chart_id": "KAXH_R27",
+      "evidence_region_id": "KAXH_R27_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KAXH_R27_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3663,
+        "y_center": 0.6868
+      },
+      "chart_id": "KAXH_R27",
+      "evidence_region_id": "KAXH_R27_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 2700 -> AT_OR_ABOVE 2700 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 2700,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "2700"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0534,
+        "x_center": 0.4291,
+        "y_center": 0.6868
+      },
+      "chart_id": "KAXH_R27",
+      "evidence_region_id": "KAXH_R27_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: RUPRE -> RUPRE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "RUPRE",
+        "raw_text": "RUPRE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0544,
+        "x_center": 0.5486,
+        "y_center": 0.6868
+      },
+      "chart_id": "KAXH_R27",
+      "evidence_region_id": "KAXH_R27_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: KEEDS -> KEEDS",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "KEEDS",
+        "raw_text": "KEEDS"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0226,
+        "width": 0.0372,
+        "x_center": 0.5477,
+        "y_center": 0.7076
+      },
+      "chart_id": "KAXH_R27",
+      "evidence_region_id": "KAXH_R27_iconalign_006_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0234,
+        "width": 0.0384,
+        "x_center": 0.4269,
+        "y_center": 0.7088
+      },
+      "chart_id": "KAXH_R27",
+      "evidence_region_id": "KAXH_R27_iconalign_005_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

@@ -1,0 +1,1 @@
+{"chart_id":"KART_R28","procedure":{"airport":"KART","approach_ident":"R28","chart_name":"RNAV (GPS) RWY 28"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

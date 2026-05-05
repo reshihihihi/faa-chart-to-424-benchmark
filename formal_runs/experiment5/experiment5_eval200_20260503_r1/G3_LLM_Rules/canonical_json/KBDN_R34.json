@@ -1,0 +1,15 @@
+{
+  "chart_id": "KBDN_R34",
+  "procedure": {
+    "airport": "KBDN",
+    "approach_ident": "R34",
+    "chart_name": "RNAV (GPS) RWY 34"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

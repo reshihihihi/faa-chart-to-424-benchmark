@@ -1,0 +1,2 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 217.1; climb to 3100 to GIVMY; hold at GIVMY, inbound course 037, right turns, 4 NM, maintain 3100.

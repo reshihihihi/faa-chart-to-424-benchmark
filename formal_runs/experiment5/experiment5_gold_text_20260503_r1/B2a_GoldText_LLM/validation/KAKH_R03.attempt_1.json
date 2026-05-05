@@ -1,0 +1,3 @@
+[
+  "missed_approach.legs[3].answers.Q_terminator: value must be null when status is 'unknown'"
+]

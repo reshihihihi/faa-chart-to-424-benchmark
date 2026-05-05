@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1800 on heading 51.7; left turn climb to 3500 to HVQ; hold at HVQ, inbound course 081, right turns, 1 minute, maintain 3500.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1800 -> AT_OR_ABOVE 1800 ft
+- ALTITUDE_TEXT: 3500 -> AT_OR_ABOVE 3500 ft
+- FIX_TEXT: HVQ -> HVQ
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

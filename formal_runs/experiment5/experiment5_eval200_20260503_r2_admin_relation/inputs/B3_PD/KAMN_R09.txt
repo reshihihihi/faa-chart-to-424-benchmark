@@ -1,0 +1,8 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2600 -> AT_OR_ABOVE 2600 ft
+- FIX_TEXT: CEGEE -> CEGEE
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

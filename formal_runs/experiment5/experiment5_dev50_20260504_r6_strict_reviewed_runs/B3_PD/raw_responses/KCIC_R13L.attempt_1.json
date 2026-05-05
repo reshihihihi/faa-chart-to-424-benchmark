@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_9ceb662d-9e5a-44e1-9e87-f8c44e240781",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_gWoAzr5oiEx7gHFlStnXck49",
+            "function": {
+              "arguments": "{\"chart_id\":\"KCIC_R13L\",\"procedure\":{\"airport\":\"KCIC\",\"approach_ident\":\"R13L\",\"chart_name\":\"RNAV (GPS) RWY 13L\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777864569,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

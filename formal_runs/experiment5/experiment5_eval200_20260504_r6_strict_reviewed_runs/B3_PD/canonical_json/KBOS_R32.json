@@ -1,0 +1,15 @@
+{
+  "chart_id": "KBOS_R32",
+  "procedure": {
+    "airport": "KBOS",
+    "approach_ident": "R32",
+    "chart_name": "RNAV (GPS) RWY 32"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

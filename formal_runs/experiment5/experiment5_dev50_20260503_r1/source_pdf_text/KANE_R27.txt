@@ -1,0 +1,147 @@
+                                   MINNEAPOLIS, MINNESOTA                                                         AL-5202 (FAA)                                                                   25331
+
+                                        WAAS
+                                                                          Rwy Ldg 5000
+                                   CH 78300
+                                                      APP CRS
+                                                                          TDZE                910
+                                                                                                                                                RNAV (GPS) RWY 27
+                                                       269°                                                                      ANOKA COUNTY/BLAINE (JANES FLD)(ANE)
+                                        W27A                              Apt Elev            912
+                                    RNP APCH - GPS.
+
+                                    T    For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -16°C or above
+                                                                                                                                                                  MISSED APPROACH: Climb
+                                         54°C. When local altimeter setting not received, use Crystal altimeter setting: increase                      MALSR
+                                    A                                                                                                                             to 2700 direct GEP VORTAC
+                                         LPV DA to 1131 feet; increase LNAV/VNAV DA to 1361 feet and all visibilities18 SM,
+                                                                                                                                                                  and hold, continue
+                                         increase all MDA 40 feet and visibility Cat C/D 14 SM, and Circling visibility Cat D14                         A5
+                                                                                                                                                                  climb-in-hold to 2700.
+                                         SM. Baro-VNAV and VDP NA when using Crystal altimeter setting. For inop ALS
+                                                                                                                   3
+                                         when using Crystal altimeter setting, increase LNAV Cat C/D visibility to 1 8 SM.
+
+
+
+                                               ATIS                       MINNEAPOLIS APP CON                          ANOKA TOWER                        GND CON                      UNICOM
+                                         120.625                            126.5 335.65                                132.4(CTAF)L                       121.85                       122.95
+
+                                     MISSED APCH FIX                                                                                                                                     72
+                                                                                                                                                                                      RW2  5N
+                                                                                                                                                                                 SA          M
+                                                 GOPHER                                                                                                                      M
+                                                  GEP                                                                                                                                  3500
+
+                                           085°
+
+                                               265°
+
+                                        4 NM
+
+
+
+
+                                                                                                                                                      6000
+NC-1, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                          NC-1, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                               HOLD
+                                                                                    KOGGE                                                             3100
+                                                                                2.6 NM to                                                                        4 NM
+                                                                                    RW27                                                               089°
+                                                                         RW27                                             2600
+                                                                                                                                                                         3100NoPT (IAF)
+                                                                                                                         269°                                269°          271°
+                                                                           1082                                                                                                   STILS
+                                                                                                                         (
+                                                                                                                         10.
+                                                                                                                           5)
+                                                                                                    (FAF)                                      (IF/IAF)                     (
+                                                                                                                                                                            8)
+                                                                                                BOKYA                                           JUDAL
+
+                                                                                                                                                                Procedure NA for arrivals at
+                                                                                                                                                                STILS on V78 eastbound.
+
+
+
+
+                                    ELEV     912                         TDZE   910
+
+
+                                                        18
+                                                                                                2700        GEP
+                                                                     V
+                                                                                                                                                                   JUDAL
+                                                        4855 X 100
+
+
+
+
+                                                                                                                                                                                        4 NM
+                                                                                                                                                                                  Holding Pattern
+                                                                                                                                     BOKYA
+                                                                                    A5                                  KOGGE
+                                             P
+
+
+
+
+                                                                     5000X100                                          2.6 NM to                                                  089°         6000
+                                         9
+
+
+
+
+                                                                                                                     RW27
+                                                                                P
+
+
+
+
+                                                                                         27
+
+
+
+
+                                                                                                             1.2 NM to
+                                                                                                                                        2600
+                                                                                                                                                         °                        269°         3100
+                                                      TWR
+                                                                                                                                                      269
+                                                                                                               RW27
+                                                                                    269°               RW27
+                                                        V
+                                                                                                                                                   2600
+                                                                                                                                                                                              GP 3.00°
+                                                        36                                                                    1780
+                                                                                                                                                                                               TCH 49
+                                                                                                            1.2 NM   1.4 NM    2.6 NM              10.5 NM
+
+                                                                                                CATEGORY                  A                    B                   C                          D
+
+                                                                                                                                              1                     1
+                                                                                                LPV          DA                           1110- 2         200 (200-  2   )
+
+                                                                                                LNAV/                                         3           3
+                                                                                                             DA                           1340- 4 430 (500- 4 )
+                                                                                                VNAV
+
+                                                                                                                            1
+                                    HIRL Rwy 9-27 L
+                                                                                                LNAV        MDA         1340-           1
+                                                                                                                              2 430 (500- 2 )                    1340-34 430 (500-34 )
+                                    MIRL Rwy 18-36 L                                                                                                               1
+                                                                                                                                                              1420-1 2                   1580-2
+                                    REIL Rwys 9, 18, and 36 L                                       CIRCLING             1400-1 488 (500-1)
+                                                                                                                                                             508 (600-112 )             668 (700-2)
+
+                                   MINNEAPOLIS, MINNESOTA
+                                                                                                                                 ANOKA COUNTY/BLAINE (JANES FLD) (ANE)
+                                   Amdt 1 08SEP22
+                                                                                                               45°09'N-93°13'W
+                                                                                                                                                RNAV (GPS) RWY 27

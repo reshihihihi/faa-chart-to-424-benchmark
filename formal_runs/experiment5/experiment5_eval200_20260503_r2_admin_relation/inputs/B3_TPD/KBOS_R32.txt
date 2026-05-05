@@ -1,0 +1,14 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 330.7; to WINDZ; climb to 3000 to TELLE; hold at TELLE, inbound course 284.1, right turns, 5 NM, maintain 3000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft
+- FIX_TEXT: WINDZ -> WINDZ
+- FIX_TEXT: TELLE -> TELLE
+- 航迹/径向文字
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

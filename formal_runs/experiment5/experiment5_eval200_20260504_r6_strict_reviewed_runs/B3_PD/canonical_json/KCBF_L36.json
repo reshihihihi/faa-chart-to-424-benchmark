@@ -1,0 +1,15 @@
+{
+  "chart_id": "KCBF_L36",
+  "procedure": {
+    "airport": "KCBF",
+    "approach_ident": "L36",
+    "chart_name": "ILS OR LOC RWY 36"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

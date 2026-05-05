@@ -1,0 +1,181 @@
+{
+  "chart_id": "KALB_R28",
+  "procedure": {
+    "airport": "KALB",
+    "approach_ident": "R28",
+    "chart_name": "RNAV (GPS) RWY 28"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0556,
+        "width": 0.2484,
+        "x_center": 0.8281,
+        "y_center": 0.1385
+      },
+      "chart_id": "KALB_R28",
+      "evidence_region_id": "KALB_R28_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KALB_R28_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.455,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.434
+      },
+      "chart_id": "KALB_R28",
+      "evidence_region_id": "KALB_R28_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KALB_R28_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0585,
+        "width": 0.2665,
+        "x_center": 0.47,
+        "y_center": 0.6909
+      },
+      "chart_id": "KALB_R28",
+      "evidence_region_id": "KALB_R28_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KALB_R28_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3667,
+        "y_center": 0.6727
+      },
+      "chart_id": "KALB_R28",
+      "evidence_region_id": "KALB_R28_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3500 -> AT_OR_ABOVE 3500 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3500,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3500"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0556,
+        "x_center": 0.4372,
+        "y_center": 0.6725
+      },
+      "chart_id": "KALB_R28",
+      "evidence_region_id": "KALB_R28_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: ZEJAY -> ZEJAY",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "ZEJAY",
+        "raw_text": "ZEJAY"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0589,
+        "x_center": 0.5721,
+        "y_center": 0.6737
+      },
+      "chart_id": "KALB_R28",
+      "evidence_region_id": "KALB_R28_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: MARIA -> MARIA",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "MARIA",
+        "raw_text": "MARIA"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0354,
+        "width": 0.0142,
+        "x_center": 0.3645,
+        "y_center": 0.6995
+      },
+      "chart_id": "KALB_R28",
+      "evidence_region_id": "KALB_R28_iconalign_009_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0202,
+        "width": 0.0181,
+        "x_center": 0.4297,
+        "y_center": 0.7003
+      },
+      "chart_id": "KALB_R28",
+      "evidence_region_id": "KALB_R28_iconalign_006_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0101,
+        "width": 0.0181,
+        "x_center": 0.5729,
+        "y_center": 0.6928
+      },
+      "chart_id": "KALB_R28",
+      "evidence_region_id": "KALB_R28_iconalign_008_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

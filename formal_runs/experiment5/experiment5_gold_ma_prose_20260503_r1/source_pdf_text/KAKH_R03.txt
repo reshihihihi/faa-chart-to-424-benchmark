@@ -1,0 +1,188 @@
+                                   GASTONIA, NORTH CAROLINA                                       AL-6081 (FAA)                                                                         25107
+
+                                     WAAS                     3769Rwy ldg
+                                    CH 90302
+                                             APP CRS
+                                                     TDZE      798
+                                                                                                                                        RNAV (GPS) RWY 3
+                                              034°                                                                                                 GASTONIA MUNI(AKH)
+                                     W03A            Apt Elev  798
+                                    RNP APCH.                                                                          ODALS
+                                                                                                                                     MISSED APPROACH: Climb to 3200 direct
+                                    T     If local altimeter setting not received, use Charlotte Douglas Intl
+                                                                                                                                     SAVKE and via 289° track to HIVSI and
+                                          altimeter setting and increase all DAs/MDAs 40 feet.
+                                                                                                                                     202° track to GAFFE and hold.
+                                          Inoperative table does not apply.
+
+                                                 ASOS                           CHARLOTTE APP CON                         CLNC DEL                            UNICOM
+                                             135.725                             120.05 257.2                              127.2                         123.0 (CTAF)L
+
+
+                                                    HIVSI
+
+                                                                                                                       2754
+                                                                                            289°
+                                                                                                                                     1484
+                                                        °
+
+
+
+
+                                                                                                                                               SAVKE
+                                                     202
+
+
+
+
+                                                                                            1847
+
+
+                                                                                                                           1090
+SE-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                SE-2, 16 APR 2026 to 14 MAY 2026
+                                                                                          1690               1065
+                                                                                                                                     RW03
+
+                                                                                                                  997
+
+
+
+                                                 4 NM                                        1540
+                                                            Procedure NA for arrivals
+                                                                                                                                                                        W0325
+                                         81°                at GAFFE                                                      (FAF)                                        R     N
+                                        0                                                                                                                         SA          M
+                                                °           via V54 westbound.                                           ACLAC                                M
+                                             261
+                                                                                                                                                                           3800
+                                                                                                            6. 4°
+
+
+
+
+                                                              3
+                                                                                                             03 0
+
+
+
+
+                                                               000
+                                                                                                             0
+                                                                                                           24
+
+
+                                                                                                                   )
+
+
+
+
+                                     (IAF)                    109°
+                                                                                                              1
+
+
+
+
+                                    GAFFE                    (
+                                                             15 .
+                                                                1
+                                                                                                            (
+
+
+
+
+                                                                 )
+
+
+
+                                                                                                             (IF)
+                                                                                                           SIDAR
+
+                                                                                                                                            ELEV   798                     TDZE        798
+                                                                                                  0
+                                                                                                  °
+                                                                                                8)
+                                                                                               300
+                                                                                              020
+
+
+
+
+                                                              Procedure NA for arrivals
+                                                                                              6.
+                                                                                              (
+
+
+
+
+                                                              at LOCKS
+                                                              via V454 southwest bound.
+                                                                                                       (IAF)                                                                      21
+                                                                                                    LOCKS
+                                                                                                                                                                                   P
+                                                                                                                                                                              UP
+
+
+
+
+                                     VGSI and RNAV glidepath not coincident 3200 SAVKE                           HIVSI             GAFFE
+                                                                                                                                                                             4%
+                                                                                                                                                                            0.
+
+
+
+
+                                                    (VGSI Angle 3.00/TCH 29).                          tr                 tr
+                                                                                                    289°                 202°
+                                                            SIDAR
+                                                                                                                                                                       0
+
+
+
+
+                                        Procedure
+                                                                                                                                                                     10
+                                                                                                                                                                  X
+
+
+
+
+                                          Turn                                    ACLAC
+                                                                                                                                                                69
+
+
+
+
+                                          NA        3000
+                                                                                                                                                              37
+
+
+
+
+                                                                    034°                                         RW03
+                                                                                                                                                          P
+                                     GP 3.00°
+                                                                                                                                                     3
+                                     TCH 40                          2400
+                                                                       6.1 NM                 4.8 NM
+                                                                                                                                                         034°
+                                     CATEGORY                 A                    B                   C                       D
+
+
+                                    LPV      DA                    1118-114        320 (400-114 )                           NA
+
+                                                                                                      3
+                                                                                                 1440-1 4
+                                    LNAV MDA                1440-1 642 (700-1)                                              NA                                         MIRL Rwy 3-21 L
+                                                                                             642 (700-134 )
+
+                                   GASTONIA, NORTH CAROLINA
+                                                                                                                                                   GASTONIA MUNI(AKH)
+                                                                                                 35°12'N-81°09'W
+                                   Amdt 1B 15AUG19
+                                                                                                                                       RNAV (GPS) RWY 3
+

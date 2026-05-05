@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 42.7; climb to 2500 to RUOFF; hold at RUOFF, inbound course 222.9, right turns, 4 NM, maintain 2500.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2500 -> AT_OR_ABOVE 2500 ft
+- FIX_TEXT: RUOFF -> RUOFF
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

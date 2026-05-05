@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 500 on heading 5.7; left turn direct SGD; climb to 3200 to BURDE; hold at BURDE, inbound course 230, right turns, 1 minute, maintain 3200.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- 高度文字
+- ALTITUDE_TEXT: 500 -> AT_OR_ABOVE 500 ft
+- FIX_TEXT: SGD -> SGD
+- FIX_TEXT: BURDE -> BURDE

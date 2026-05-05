@@ -1,0 +1,343 @@
+                                   ANDERSON, SOUTH CAROLINA                                                                                 AL-857 (FAA)                                                                     22363
+                                       WAAS               6002                     Rwy Idg
+                                   CH 90540
+                                            APP CRS
+                                                    TDZE   754                                                                                                             RNAV (GPS) RWY 23
+                                             231° Apt Elev 782
+                                    W23A                                                                                                                                                 ANDERSON RGNL(AND)
+
+                                   RNP APCH - GPS.
+
+                                       T       Circling Rwy 17, 35 NA at night. Baro-VNAV and VDP NA when using Clemson altimeter
+                                               setting. Rwy 23 helicopter visibility reduction below34                                          SM NA. For uncompensated                    MISSED APPROACH: Climb to
+                                       A
+                                               Baro-VNAV systems, LNAV/VNAV NA below -7°C or above 54°C. When local altimeter                                                               2500 direct OYUNA and hold.
+                                               setting not received, use Clemson altimeter setting and increase LPV DA to 1149 feet and
+                                                                      1
+                                               all visibilities 8 SM; increase LNAV/VNAV DA to 1267 feet; increase all MDAs 60 feet
+                                                                                                                                            1
+                                               and visibility LNAV Cats C/D and Circling Cats C/D 4 SM.
+
+                                                                     ASOS                                                                 GREER APP CON                                                 CTAF
+                                                             120.675                                                                      118.8     270.275                                        123.6 L
+
+                                                                                                                         (IAF)
+                                                                                                                      CULIG
+                                                                                                                                                                                     HOLD 6000
+                                                                                                                                                   1945                                   3000
+                                                                                                                 1
+
+
+
+
+                                                                                                                                                                         4 NM
+                                                                                                                  4
+                                                                                                                   1
+
+
+
+
+                                                                                                                                                                                                         30N
+                                                                                                                    °
+
+
+
+
+                                                                                                                                                        3
+                                                                                                               7100                                                                                         M
+
+
+                                                                                                                                                         0 14 9)
+                                                                                                                                                                                                                  t
+                                                                                                                                                                                                                  o
+
+                                                                                                                                                          0
+                                                                                              30 N
+
+
+
+
+                                                                                                                      9N
+
+
+
+
+                                                                                                                                                           0 1°
+                                                                                                                                                                            °                                       O
+                                                                                                                                                                                                       6300
+
+                                                                                                                                                            N
+                                                                                                                                                                           1     °
+
+
+
+
+                                                                                                                                                                                                                      X
+                                                                                                                                                              o
+                                                                                                                                                                          5
+                                                                                                                         M t
+
+
+
+
+                                                                                                                                                                                1                                   °
+                                                                                                                                                               (
+
+
+
+
+                                                                                                                                                                                                                       TI
+                                                                                                                                                               PT
+                                                                                                   M t
+
+
+
+
+                                                                                                                              CULIG                                      0
+
+
+
+
+                                                                                                                                                                                        1
+                                                                                                                                                                               3                                   1
+
+
+
+
+                                                                                                                                                                                                                        C
+                                                                                                                                                                                         4
+                                                                                                                                                                                                     M            3
+                                                                                                                                                                              2                    7N
+
+
+
+
+                                                                                                                                                                                          1
+                                                                                                                                                                                                                 2
+
+
+
+
+                                                                                                                                                                                                                         (
+                                                                                                                           oC
+
+
+
+
+                                                                                                                                                                                           °
+
+
+
+
+                                                                                                                                                                                                                         No
+                                                                                                     o CU
+
+
+
+
+                                                                                                                                   3200
+
+
+
+
+                                                                                                                                                                                                                           PT)
+                                                                                                                             UL
+
+
+
+
+                                                                                                                                                                           (IF/IAF)                              3000
+                                                                                                         LI
+
+
+
+
+                                                                                                                               I
+                                                                                                          G
+
+
+
+
+                                                                                                                               G
+
+
+
+
+                                                                                                                                                                            OXTIC                        OXTIC
+                                                                                                                                      °
+SE-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                                                     SE-2, 16 APR 2026 to 14 MAY 2026
+                                                                                                                                     1                     0
+                                                                                                                                    5                     0   °
+                                                                                                                                   0                     5
+                                                                                                                                                        2    1
+                                                                                                                                                            3
+
+                                                                                                                                                                                     3
+                                                                                                                                                          2 (6)
+
+
+
+
+                                                                                                                                                                                                               3
+                                                                                                                                           (FAF)
+
+                                                                                                                                                                                      0 3 9)
+
+
+
+
+                                                                                                                                                                                                                2
+                                                                                                                                                                                       0 2
+
+
+
+
+                                                                                                                                                                                                                 1
+                                                                                                                                          BUFZI
+
+                                                                                                                                                                                        0 1
+
+
+
+
+                                                                                                                                                                                                                  °
+                                                                                                                                                                                         N °
+                                                                                                                                                                                          o
+                                                                                                                          1086
+                                                                                                                                                                                           (
+
+
+                                                                                                                                                                                           PT
+                                                                                                                                                                    1627
+
+                                                                                                                                                      1263
+                                                                                                                    930                                                                                       (IAF)
+                                                                                                                                                                                                         ZOKNU
+                                                                                                                                                                     °    ZOKNU
+                                                                                             1030                                     930                           1
+                                                                                                                                                                   5
+                                                                                                                                                                  0
+                                                                                                                                   RW23
+                                                                                                                                                                                            3
+                                                                                                                                                                                             2
+
+
+
+
+                                       MISSED APCH FIX
+                                                                                                                                                                                              1
+
+
+
+
+                                                                                                                                           1005
+                                                                                                                                                                                               °
+
+
+
+
+                                                     OYUNA                                                                                                                      3000
+                                                                                                                                   1131
+                                                                                                                                                                     30
+                                              °                                                                                                                        NM
+                                             1         °                                                                                                                  t
+                                                                                                                                                                          oZOKNU
+                                            5         1
+                                           0         3
+                                                    2
+                                                    4 NM
+
+                                    ELEV            782                            TDZE      754
+                                                                                                                    2500              OYUNA                                                                           4 NM
+                                                                                                                                                                                                OXTIC           Holding Pattern
+                                                                                             231°
+                                                    17                                                                                                                   BUFZI
+                                                                                                                                                                                                          051°               6000
+                                                                                                                                                                         2500                                                3000
+                                                                                                                                                                                         1°               231°
+                                                                                                                                          1.5 NM to                                    23
+                                                                                                           3
+                                                                                                          2
+
+
+
+
+                                                                                                                                            RW23
+                                                             499
+
+
+
+
+                                                                                                    P
+
+
+
+
+                                                                                                                                   RW23
+                                                                6X
+
+
+
+
+                                                                                                                                                                                     2500                             GP 3.00°
+                                                                149
+
+
+
+
+                                                                                                                                                                                                                        TCH 45
+                                                      H
+                                                                                         9
+                                       808                                             1
+                                                                                        4
+                                                         H                         X                                                  1.5 NM             3.8 NM                      6 NM
+                                                                             2
+                                                                            0                                                                       A
+                                                                          6
+                                                                           0                                     CATEGORY                                                   B                      C                     D
+
+
+                                                                                                                 LPV                DA                                   1102-1        348 (400-1)
+                                                                          0.
+                                                                           9% U
+
+
+
+
+                                                                                                                 LNAV/
+                                           P
+
+
+
+
+                                                                                                                                                                                 3
+                                                                                                                                     DA                              1220-1 8 466 (500-138 )
+                                                                               P
+
+
+
+
+                                                                                                                 VNAV
+                                   5
+
+
+
+
+                                               A5                           5
+                                                                           3
+                                                                                                                 LNAV MDA                          1280-1 526 (500-1)                        1280-112 526 (500-112 )
+
+                                                                                                                                                 1280-1              1320-1                 1440-134              1500-214
+                                                                                                                C CIRCLING
+                                   HIRL Rwy 5-23 L                                                                                              498 (500-1)         538 (600-1)                   3
+                                                                                                                                                                                         658 (700-1 4 )          718 (800-214 )
+
+                                   ANDERSON, SOUTH CAROLINA
+                                                                                                                                                                                         ANDERSON RGNL(AND)
+                                   Amdt 3 29DEC22                                                                                         34°30'N-82°43'W
+                                                                                                                                                                           RNAV (GPS) RWY 23

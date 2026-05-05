@@ -1,0 +1,8 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- FIX_TEXT: ONICE -> ONICE
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

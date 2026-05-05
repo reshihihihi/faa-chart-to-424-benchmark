@@ -1,0 +1,1 @@
+RuntimeError('HTTP 500 from http://127.0.0.1:10531/v1/chat/completions: {"error":{"message":"terminated","type":"server_error"}}')

@@ -1,0 +1,256 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KCJR_L04",
+  "procedure": {
+    "airport": "KCJR",
+    "approach_ident": "L04",
+    "chart_name": "LOC RWY 04"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0618,
+        "width": 0.4021,
+        "x_center": 0.7519,
+        "y_center": 0.1416
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KCJR_L04_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.5004,
+        "width": 0.9083,
+        "x_center": 0.5012,
+        "y_center": 0.4525
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "coarse plan-view context for missed approach",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KCJR_L04_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0539,
+        "width": 0.2586,
+        "x_center": 0.5374,
+        "y_center": 0.7297
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KCJR_L04_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.034,
+        "x_center": 0.4387,
+        "y_center": 0.7111
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_iconalign_001_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 900 -> AT_OR_ABOVE 900 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 900,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "900"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5063,
+        "y_center": 0.7114
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_iconalign_004_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 2600 -> AT_OR_ABOVE 2600 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 2600,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "2600"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0535,
+        "x_center": 0.6355,
+        "y_center": 0.7169
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_iconalign_003_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: NISAE -> NISAE",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "NISAE",
+        "raw_text": "NISAE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0386,
+        "x_center": 0.6355,
+        "y_center": 0.7302
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_iconalign_005_navaid_text",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "NAVAID_TEXT: GVE -> type=navaid_radial, navaid=GVE, radial_deg=28.0, direction=inbound",
+      "region_type": "NAVAID_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "direction": "inbound",
+        "navaid": "GVE",
+        "radial_deg": 28.0,
+        "raw_text": "GVE"
+      }
+    },
+    {
+      "annotation_scope": "detail_element",
+      "bbox": {
+        "height": 0.013,
+        "width": 0.05,
+        "x_center": 0.569,
+        "y_center": 0.736
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_iconalign_006_radial_text",
+      "fact_type": "unparsed_text_annotation_visible",
+      "label": "径向文字",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "accept",
+      "status": "observed_unparsed",
+      "value": {
+        "raw_label": "径向文字"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5019,
+        "y_center": 0.7494
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_iconalign_002_heading_text",
+      "fact_type": "heading_text_visible",
+      "label": "HEADING_TEXT: 180° -> type=course_deg, course_deg=180.0",
+      "region_type": "HEADING_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "course_deg": 180.0,
+        "raw_text": "180°"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0258,
+        "width": 0.0285,
+        "x_center": 0.5136,
+        "y_center": 0.7342
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_iconalign_013_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0323,
+        "width": 0.015,
+        "x_center": 0.4374,
+        "y_center": 0.7367
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_iconalign_010_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0121,
+        "width": 0.0521,
+        "x_center": 0.6319,
+        "y_center": 0.7379
+      },
+      "chart_id": "KCJR_L04",
+      "evidence_region_id": "KCJR_L04_iconalign_014_path_segment",
+      "fact_type": "path_segment_visible",
+      "label": "detected lower detail: path segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

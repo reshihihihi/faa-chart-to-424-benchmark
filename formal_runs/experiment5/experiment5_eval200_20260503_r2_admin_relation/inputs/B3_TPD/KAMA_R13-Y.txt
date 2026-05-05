@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 129.4; to PAMPE; climb to 5400 to CAUDE; hold at CAUDE, inbound course 298.3, right turns, 5 NM, maintain 5400.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 5400 -> AT_OR_ABOVE 5400 ft
+- FIX_TEXT: PAMPE -> PAMPE
+- FIX_TEXT: CAUDE -> CAUDE
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

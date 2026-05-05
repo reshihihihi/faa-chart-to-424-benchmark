@@ -1,0 +1,49 @@
+{
+  "chart_id": "KBXA_R18",
+  "procedure": {
+    "airport": "KBXA",
+    "approach_ident": "R18",
+    "chart_name": "RNAV (GPS) RWY 18"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 1
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "LOCHS"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT",
+              "altitude_ft": 2000,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "unknown",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

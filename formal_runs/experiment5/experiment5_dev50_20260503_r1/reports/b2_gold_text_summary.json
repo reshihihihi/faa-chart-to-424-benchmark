@@ -1,0 +1,191 @@
+{
+  "created_at_utc": "2026-05-03T09:10:09.026473+00:00",
+  "run_id": "experiment5_dev50_20260503_r1",
+  "methods": [
+    "B2a_GoldText_LLM",
+    "B2b_GoldText_FieldCandidates_LLM"
+  ],
+  "chart_ids": [
+    "KAVL_I17",
+    "KCFO_I26",
+    "KAVP_L04",
+    "KBYL_L20",
+    "KCFO_L17",
+    "KCOE_L06",
+    "KBWC_R26",
+    "KCOE_R02",
+    "KACT_R32",
+    "KANY_R18",
+    "KATW_R21",
+    "KAVP_R22",
+    "KAXN_R22",
+    "KBKW_R01",
+    "KBYI_R20",
+    "KCIC_R13L",
+    "KCLL_R11",
+    "KACT_R19",
+    "KACV_R01",
+    "KAEX_R14",
+    "KAEX_R18",
+    "KAGS_R26",
+    "KAPN_R01",
+    "KART_R10",
+    "KACT_R01",
+    "KACV_R14",
+    "KACV_R32",
+    "KAEX_R32",
+    "KAGS_R08-Y",
+    "KAGS_R08-Z",
+    "KAJG_R04",
+    "KAJG_R22",
+    "KAJG_R31",
+    "KAND_R05",
+    "KAND_R17",
+    "KAND_R23",
+    "KANE_R09",
+    "KANE_R18",
+    "KANE_R27",
+    "KANY_R36",
+    "KAPA_R17LY",
+    "KAPA_R28",
+    "KAPA_R35R",
+    "KAPN_R07",
+    "KAPN_R19",
+    "KARR_R09",
+    "KARR_R15",
+    "KARR_R27",
+    "KART_R07",
+    "KART_R28"
+  ],
+  "model": "gpt-5.4",
+  "base_url": "http://127.0.0.1:8080/v1",
+  "max_workers": 4,
+  "summaries": {
+    "B2a_GoldText_LLM": {
+      "samples_total": 50,
+      "schema_valid": 50,
+      "samples_scored": 50,
+      "score_v2": {
+        "correct": 261,
+        "total": 1010,
+        "accuracy": 0.2584158415841584
+      },
+      "score_strict": {
+        "correct": 261,
+        "total": 1010,
+        "accuracy": 0.2584158415841584
+      },
+      "v2_minus_strict_correct": 0,
+      "v2_minus_strict_accuracy": 0.0,
+      "schema_retry_total": 5,
+      "field_family": [
+        {
+          "field": "Q1_fix_ident",
+          "correct": 71,
+          "total": 160,
+          "accuracy": 0.44375
+        },
+        {
+          "field": "Q2_altitude_constraint",
+          "correct": 4,
+          "total": 160,
+          "accuracy": 0.025
+        },
+        {
+          "field": "Q3_turn",
+          "correct": 84,
+          "total": 160,
+          "accuracy": 0.525
+        },
+        {
+          "field": "Q4_course_or_radial",
+          "correct": 13,
+          "total": 160,
+          "accuracy": 0.08125
+        },
+        {
+          "field": "Q5_hold_params",
+          "correct": 66,
+          "total": 160,
+          "accuracy": 0.4125
+        },
+        {
+          "field": "Q_terminator",
+          "correct": 11,
+          "total": 160,
+          "accuracy": 0.06875
+        },
+        {
+          "field": "leg_count",
+          "correct": 12,
+          "total": 50,
+          "accuracy": 0.24
+        }
+      ]
+    },
+    "B2b_GoldText_FieldCandidates_LLM": {
+      "samples_total": 50,
+      "schema_valid": 50,
+      "samples_scored": 50,
+      "score_v2": {
+        "correct": 275,
+        "total": 1010,
+        "accuracy": 0.2722772277227723
+      },
+      "score_strict": {
+        "correct": 275,
+        "total": 1010,
+        "accuracy": 0.2722772277227723
+      },
+      "v2_minus_strict_correct": 0,
+      "v2_minus_strict_accuracy": 0.0,
+      "schema_retry_total": 1,
+      "field_family": [
+        {
+          "field": "Q1_fix_ident",
+          "correct": 75,
+          "total": 160,
+          "accuracy": 0.46875
+        },
+        {
+          "field": "Q2_altitude_constraint",
+          "correct": 0,
+          "total": 160,
+          "accuracy": 0.0
+        },
+        {
+          "field": "Q3_turn",
+          "correct": 81,
+          "total": 160,
+          "accuracy": 0.50625
+        },
+        {
+          "field": "Q4_course_or_radial",
+          "correct": 24,
+          "total": 160,
+          "accuracy": 0.15
+        },
+        {
+          "field": "Q5_hold_params",
+          "correct": 69,
+          "total": 160,
+          "accuracy": 0.43125
+        },
+        {
+          "field": "Q_terminator",
+          "correct": 15,
+          "total": 160,
+          "accuracy": 0.09375
+        },
+        {
+          "field": "leg_count",
+          "correct": 11,
+          "total": 50,
+          "accuracy": 0.22
+        }
+      ]
+    }
+  },
+  "failure_count": 0,
+  "failures": []
+}

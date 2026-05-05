@@ -1,0 +1,146 @@
+                                   COLLEGE STATION, TEXAS                                             AL-928 (FAA)                                                                               25275
+
+                                        WAAS                   Rwy Ldg     5158
+                                   CH 65632
+                                                   APP CRS
+                                                               TDZE         319                                                           RNAV (GPS) RWY 11
+                                                    106°       Apt Elev     321                                                                        EASTERWOOD FLD (CLL)
+                                     W11A
+                                   RNP APCH.
+
+                                    T                                                                                                             MISSED APPROACH: Climb to
+                                           For uncompensated Baro-VNAV systems, LNAV/VNAV NA below -3°C or
+                                    A                                                                                                             3000 direct EDAYA and hold.
+                                           above 54°C. Rwy 11 helicopter visibility reduction below34 SM NA.
+
+
+                                          ATIS                HOUSTON APP CON                      EASTERWOOD TOWER                             GND CON                       UNICOM
+
+                                         126.85                134.3 360.85                        118.5 (CTAF) L 284.7                        128.7 284.7                    122.95
+
+                                                                                                                                                                             12
+                                                                                                                                                                             1
+                                                                                                                                                                          RW   5N
+                                                              (IAF)                                                                                                  SA          M
+                                                                                                                                                                 M
+                                                           HAXUN
+                                                                                                                                                                           3000
+                                                                  0
+                                                                 °
+                                                               200
+
+
+                                                              10)
+                                                              196
+                                                              (
+SC-5, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                         SC-5, 16 APR 2026 to 14 MAY 2026
+                                                 (IF)
+                                               ICESO
+
+                                                                      2000
+                                                                  106°
+                                                                      (
+                                                                      7)
+
+                                                                                 (FAF)                     RW11
+                                                                                 APZIC
+                                               0
+                                              °
+                                            200
+
+
+                                           10)
+                                           016
+
+
+
+
+                                                                                                                                                                                            7 NM
+                                           (
+
+
+
+
+                                                                                                                                                                           106°
+
+                                                                                                                                                                              286
+                                                                                                                                                               EDAYA             °
+
+                                               (IAF)
+                                                                                                                                               ELEV    321           D     TDZE             319
+                                            GOVEY
+
+
+                                                                                                                          3000       EDAYA
+
+                                                 ICESO                                   APZIC                                                                            17
+
+                                                                                                                                                  106°                    V
+                                                                                         2000
+                                                                                                                                 *LNAV only.
+                                                                                                                                                      11
+
+
+
+
+                                                                                                           1.2 NM to
+                                                                                                                                                           V
+
+
+
+
+                                          2000                 106°                                        *                                                                                TWR
+                                                                                                                RW11
+
+                                                                       2000                                                 RW11
+                                                                                                                                                                     5158X
+                                                                                                                                                                          150
+                                                                                                                                                                                                  29
+
+
+
+
+                                     GP 3.00°
+                                                                                                                                                                                             V
+                                                                                                                                                                               7000
+
+
+
+
+                                        TCH 50
+                                                                                                                                                                                    X 146
+
+
+
+
+                                                                  7 NM                            3.9 NM                1.2 NM
+
+                                    CATEGORY              A                  B               C                      D                 E
+
+
+                                    LPV      DA                                   569-34        250 (300-  3
+                                                                                                            4   )
+                                                                                                                                                                                     A5
+                                    LNAV/
+                                    VNAV
+                                             DA                                   641-1 322 (400-1)
+                                                                                                                                                                                             35
+
+                                   LNAV MDA              740-1    421 (500-1)                     740-114                    1
+                                                                                                                    421 (500-14 )
+                                                                                                                                               REIL Rwy 29
+                                                                                                                                               MIRL Rwy 11-29 L
+                                                         860-1           880-1            1000-2           1180-234                1180-3
+                                   CIRCLING
+                                                    539 (600-1)       559 (600-1)        679 (700-2) 859 (900-234 ) 859 (900-3) HIRL Rwy 17-35 L
+
+                                   COLLEGE STATION, TEXAS
+                                                                                                                                                       EASTERWOOD FLD (CLL)
+                                   Amdt 1D 28FEB19
+                                                                                                   30°35'N-96°22'W
+                                                                                                                                          RNAV (GPS) RWY 11

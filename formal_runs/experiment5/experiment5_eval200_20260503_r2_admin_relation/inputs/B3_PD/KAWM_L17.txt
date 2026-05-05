@@ -1,0 +1,11 @@
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1000 -> AT_OR_ABOVE 1000 ft
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- FIX_TEXT: GQE -> GQE; NAVAID_TEXT: GQE -> type=navaid_radial, navaid=GQE, radial_deg=147.0, direction=inbound
+- RADIAL_TEXT: R-147 -> type=navaid_radial, navaid=GQE, radial_deg=147.0, direction=inbound
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: path segment

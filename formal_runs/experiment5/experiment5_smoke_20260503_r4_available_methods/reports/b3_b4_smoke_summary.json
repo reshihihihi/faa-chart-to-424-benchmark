@@ -1,0 +1,111 @@
+{
+  "created_at_utc": "2026-05-03T05:41:33.976855+00:00",
+  "methods": [
+    "B3_T",
+    "B3_TPD",
+    "B3_PD",
+    "B4_TPD"
+  ],
+  "chart_ids": [
+    "KAAA_R03",
+    "KAAA_R21",
+    "KAAF_R06",
+    "KAAF_R14",
+    "KAAF_R24",
+    "KAAS_R05",
+    "KABE_R13",
+    "KABE_R24",
+    "KABY_R05",
+    "KABY_R17",
+    "KABY_R23",
+    "KACK_R33",
+    "KACY_R13-Y",
+    "KACY_R31-Y",
+    "KAFW_R34R",
+    "KAGC_R10",
+    "KAGC_R28",
+    "KAKH_R03",
+    "KALN_L29",
+    "KAPC_I01L"
+  ],
+  "summaries": {
+    "B3_PD": {
+      "samples_total": 20,
+      "schema_valid": 20,
+      "samples_scored": 20,
+      "score_v2": {
+        "correct": 8,
+        "total": 470,
+        "accuracy": 0.01702127659574468
+      },
+      "score_strict": {
+        "correct": 8,
+        "total": 470,
+        "accuracy": 0.01702127659574468
+      },
+      "v2_minus_strict_correct": 0,
+      "v2_minus_strict_accuracy": 0.0,
+      "schema_retry_total": 0,
+      "uses_field_candidates": true
+    },
+    "B3_T": {
+      "samples_total": 20,
+      "schema_valid": 20,
+      "samples_scored": 20,
+      "score_v2": {
+        "correct": 138,
+        "total": 470,
+        "accuracy": 0.2936170212765957
+      },
+      "score_strict": {
+        "correct": 138,
+        "total": 470,
+        "accuracy": 0.2936170212765957
+      },
+      "v2_minus_strict_correct": 0,
+      "v2_minus_strict_accuracy": 0.0,
+      "schema_retry_total": 0,
+      "uses_field_candidates": true
+    },
+    "B3_TPD": {
+      "samples_total": 20,
+      "schema_valid": 20,
+      "samples_scored": 20,
+      "score_v2": {
+        "correct": 126,
+        "total": 470,
+        "accuracy": 0.2680851063829787
+      },
+      "score_strict": {
+        "correct": 126,
+        "total": 470,
+        "accuracy": 0.2680851063829787
+      },
+      "v2_minus_strict_correct": 0,
+      "v2_minus_strict_accuracy": 0.0,
+      "schema_retry_total": 0,
+      "uses_field_candidates": true
+    },
+    "B4_TPD": {
+      "samples_total": 20,
+      "schema_valid": 20,
+      "samples_scored": 20,
+      "score_v2": {
+        "correct": 310,
+        "total": 470,
+        "accuracy": 0.6595744680851063
+      },
+      "score_strict": {
+        "correct": 310,
+        "total": 470,
+        "accuracy": 0.6595744680851063
+      },
+      "v2_minus_strict_correct": 0,
+      "v2_minus_strict_accuracy": 0.0,
+      "schema_retry_total": 0,
+      "uses_field_candidates": true
+    }
+  },
+  "failure_count": 0,
+  "failures": []
+}

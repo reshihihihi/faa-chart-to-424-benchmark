@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 101.1; to SIMAY; climb to 5000 to WARUV; hold at WARUV, inbound course 277, right turns, 5 NM, maintain 5000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 5000 -> AT_OR_ABOVE 5000 ft
+- FIX_TEXT: SIMAY -> SIMAY
+- FIX_TEXT: WARUV -> WARUV
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_4a2146e1-adf0-423f-9d02-786eaa158cfe",
+  "object": "chat.completion",
+  "created": 1777804714,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_heym5gs5N6W8rbnqFBKYTaPB",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KACV_R01\",\"procedure\":{\"airport\":\"KACV\",\"approach_ident\":\"R01\",\"chart_name\":\"RNAV (GPS) RWY 01\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

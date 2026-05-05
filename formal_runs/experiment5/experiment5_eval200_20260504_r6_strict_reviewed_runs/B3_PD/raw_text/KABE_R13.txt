@@ -1,0 +1,1 @@
+{"chart_id":"KABE_R13","procedure":{"airport":"KABE","approach_ident":"R13","chart_name":"RNAV (GPS) RWY 13"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

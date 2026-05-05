@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 98.8; to LENLE; climb to 3100 to NESTO; hold at NESTO, inbound course 318, right turns, 4 NM, maintain 3100.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 3100 -> AT_OR_ABOVE 3100 ft
+- FIX_TEXT: LENLE -> LENLE
+- FIX_TEXT: NESTO -> NESTO
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

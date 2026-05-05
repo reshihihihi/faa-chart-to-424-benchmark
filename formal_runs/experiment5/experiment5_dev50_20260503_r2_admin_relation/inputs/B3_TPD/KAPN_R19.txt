@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 186.8; climb to 2800 to JEGOB; hold at JEGOB, inbound course 6.8, right turns, 4 NM, maintain 2800.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2800 -> AT_OR_ABOVE 2800 ft
+- FIX_TEXT: JEGOB -> JEGOB
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

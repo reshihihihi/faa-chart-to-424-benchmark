@@ -1,0 +1,157 @@
+You convert audited chart-observable facts into the canonical missed-approach JSON schema.
+Use only the facts below and the rules stated in this prompt.
+Do not assume any value that is not supported by the facts; use unknown or not_applicable when uncertain.
+
+Rules:
+- FIX_TEXT facts provide visible fix identifiers.
+- ALTITUDE_TEXT facts provide visible altitude constraints.
+- HEADING_TEXT facts provide visible course_deg values.
+- RADIAL_TEXT/NAVAID_TEXT/OUTBOUND_INBOUND_MARK facts provide navaid_radial values.
+- CLIMB_ARROW and path segment facts indicate visible missed-approach path evidence but do not by themselves give a terminator.
+- A hold should only be emitted when the facts support a holding fix or visible hold-related evidence.
+- If leg ordering or terminator type is not justified, keep the answer unknown rather than inventing it.
+- Every answer object must contain exactly status and value.
+
+Method input JSON:
+{
+  "chart_id": "KCLL_R11",
+  "procedure": {
+    "airport": "KCLL",
+    "approach_ident": "R11",
+    "chart_name": "RNAV (GPS) RWY 11"
+  },
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0602,
+        "width": 0.2931,
+        "x_center": 0.8064,
+        "y_center": 0.1408
+      },
+      "chart_id": "KCLL_R11",
+      "evidence_region_id": "KCLL_R11_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KCLL_R11_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.423,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.423
+      },
+      "chart_id": "KCLL_R11",
+      "evidence_region_id": "KCLL_R11_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KCLL_R11_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0537,
+        "width": 0.1379,
+        "x_center": 0.5925,
+        "y_center": 0.6618
+      },
+      "chart_id": "KCLL_R11",
+      "evidence_region_id": "KCLL_R11_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KCLL_R11_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5583,
+        "y_center": 0.6452
+      },
+      "chart_id": "KCLL_R11",
+      "evidence_region_id": "KCLL_R11_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0571,
+        "x_center": 0.6265,
+        "y_center": 0.6452
+      },
+      "chart_id": "KCLL_R11",
+      "evidence_region_id": "KCLL_R11_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: EDAYA -> EDAYA",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "EDAYA",
+        "raw_text": "EDAYA"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0186,
+        "width": 0.0124,
+        "x_center": 0.5576,
+        "y_center": 0.6587
+      },
+      "chart_id": "KCLL_R11",
+      "evidence_region_id": "KCLL_R11_iconalign_007_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.017,
+        "width": 0.0409,
+        "x_center": 0.6252,
+        "y_center": 0.6725
+      },
+      "chart_id": "KCLL_R11",
+      "evidence_region_id": "KCLL_R11_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ]
+}

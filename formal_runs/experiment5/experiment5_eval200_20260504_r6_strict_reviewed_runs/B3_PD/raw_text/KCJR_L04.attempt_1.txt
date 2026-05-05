@@ -1,0 +1,1 @@
+{"chart_id":"KCJR_L04","procedure":{"airport":"KCJR","approach_ident":"L04","chart_name":"LOC RWY 04"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}

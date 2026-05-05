@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 900 on heading 65.4; left turn climb to 3500 to NOYAQ; hold at NOYAQ, inbound course 65.3, right turns, 4 NM, maintain 3500.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 900 -> AT_OR_ABOVE 900 ft
+- ALTITUDE_TEXT: 3500 -> AT_OR_ABOVE 3500 ft
+- FIX_TEXT: NOYAQ -> NOYAQ
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

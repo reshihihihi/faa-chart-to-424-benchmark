@@ -1,0 +1,11 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 227.3; climb to 2000 to COLER; hold at COLER, inbound course 47.2, right turns, 4 NM, maintain 2000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 2000 -> AT_OR_ABOVE 2000 ft
+- FIX_TEXT: COLER -> COLER
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_7fd6fcb0-e038-4489-9fa8-2c2be7d65315",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_qeMB2VLJbaOiGL3EI0L9RBx4",
+            "function": {
+              "arguments": "{\"chart_id\":\"KALS_R02\",\"procedure\":{\"airport\":\"KALS\",\"approach_ident\":\"R02\",\"chart_name\":\"RNAV (GPS) RWY 02\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868219,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

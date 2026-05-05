@@ -1,0 +1,15 @@
+{
+  "chart_id": "KANE_R09",
+  "procedure": {
+    "airport": "KANE",
+    "approach_ident": "R09",
+    "chart_name": "RNAV (GPS) RWY 09"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

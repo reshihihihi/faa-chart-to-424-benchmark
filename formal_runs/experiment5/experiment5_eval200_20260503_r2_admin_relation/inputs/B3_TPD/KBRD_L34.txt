@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 1700 on heading 339.7; right turn climb to 4000 to BR; hold at BR, inbound course 231.3, right turns, 1 minute, maintain 4000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 1700 -> AT_OR_ABOVE 1700 ft
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

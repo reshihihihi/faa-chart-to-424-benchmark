@@ -1,0 +1,301 @@
+{
+  "chart_id": "KCOE_L06",
+  "procedure": {
+    "airport": "KCOE",
+    "approach_ident": "L06",
+    "chart_name": "ILS OR LOC RWY 06"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_dev50_20260503_r1/inputs/gold_observable_dev50_accept_pending.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0658,
+        "width": 0.334,
+        "x_center": 0.7859,
+        "y_center": 0.1436
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KCOE_L06_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.445,
+        "width": 0.908,
+        "x_center": 0.501,
+        "y_center": 0.435
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KCOE_L06_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0525,
+        "width": 0.3724,
+        "x_center": 0.4768,
+        "y_center": 0.6834
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KCOE_L06_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3162,
+        "y_center": 0.6664
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_iconalign_001_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 2900 -> AT_OR_ABOVE 2900 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 2900,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "2900"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.3712,
+        "y_center": 0.6664
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_iconalign_003_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 6000 -> AT_OR_ABOVE 6000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 6000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "6000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5085,
+        "y_center": 0.6664
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_iconalign_008_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 6500 -> AT_OR_ABOVE 6500 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 6500,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "6500"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0399,
+        "x_center": 0.5714,
+        "y_center": 0.6717
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_iconalign_002_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: COE -> COE; NAVAID_TEXT: COE -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=outbound; NAVAID_TEXT: COE -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=inbound",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "COE",
+        "raw_text": "COE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0399,
+        "x_center": 0.5714,
+        "y_center": 0.6717
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_iconalign_002_fix_text",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "FIX_TEXT: COE -> COE; NAVAID_TEXT: COE -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=outbound; NAVAID_TEXT: COE -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=inbound",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "direction": "outbound",
+        "navaid": "COE",
+        "radial_deg": 350.0,
+        "raw_text": "COE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0399,
+        "x_center": 0.5714,
+        "y_center": 0.6717
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_iconalign_002_fix_text",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "FIX_TEXT: COE -> COE; NAVAID_TEXT: COE -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=outbound; NAVAID_TEXT: COE -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=inbound",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "direction": "inbound",
+        "navaid": "COE",
+        "radial_deg": 350.0,
+        "raw_text": "COE"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0495,
+        "x_center": 0.5711,
+        "y_center": 0.6851
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_iconalign_006_radial_text",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "RADIAL_TEXT: R-350 -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=outbound; RADIAL_TEXT: R-350 -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=inbound",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "direction": "outbound",
+        "navaid": "COE",
+        "radial_deg": 350.0,
+        "raw_text": "R-350"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0495,
+        "x_center": 0.5711,
+        "y_center": 0.6851
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_iconalign_006_radial_text",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "RADIAL_TEXT: R-350 -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=outbound; RADIAL_TEXT: R-350 -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=inbound",
+      "region_type": "RADIAL_TEXT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "direction": "inbound",
+        "navaid": "COE",
+        "radial_deg": 350.0,
+        "raw_text": "R-350"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0464,
+        "x_center": 0.5714,
+        "y_center": 0.6984
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_iconalign_010_outbound_inbound_mark",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "OUTBOUND_INBOUND_MARK: inbnd -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=inbound",
+      "region_type": "OUTBOUND_INBOUND_MARK",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "direction": "inbound",
+        "navaid": "COE",
+        "radial_deg": 350.0,
+        "raw_text": "inbnd"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0556,
+        "x_center": 0.4383,
+        "y_center": 0.6988
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_iconalign_005_outbound_inbound_mark",
+      "fact_type": "navaid_radial_text_visible",
+      "label": "OUTBOUND_INBOUND_MARK: outbnd -> type=navaid_radial, navaid=COE, radial_deg=350.0, direction=outbound",
+      "region_type": "OUTBOUND_INBOUND_MARK",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "direction": "outbound",
+        "navaid": "COE",
+        "radial_deg": 350.0,
+        "raw_text": "outbnd"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0363,
+        "width": 0.0508,
+        "x_center": 0.5074,
+        "y_center": 0.691
+      },
+      "chart_id": "KCOE_L06",
+      "evidence_region_id": "KCOE_L06_iconalign_015_path_segment",
+      "fact_type": "path_segment_visible",
+      "label": "detected lower detail: path segment",
+      "region_type": "PATH_SEGMENT",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

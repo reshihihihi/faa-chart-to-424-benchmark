@@ -1,0 +1,13 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: climb to 6300 on heading 170; right turn climb to 10400 to HOHUM; hold at HOHUM, inbound course 200, left turns, 7 NM, maintain 10400.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 6300 -> AT_OR_ABOVE 6300 ft
+- ALTITUDE_TEXT: 10400 -> AT_OR_ABOVE 10400 ft
+- FIX_TEXT: HOHUM -> HOHUM
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow
+- detected lower detail: fix symbol

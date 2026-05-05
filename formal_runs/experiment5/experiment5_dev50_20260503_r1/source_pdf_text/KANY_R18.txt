@@ -1,0 +1,143 @@
+                                   ANTHONY, KANSAS                                                         AL-533 (FAA)                                                                         25275
+
+                                     WAAS                        Rwy Ldg             5002
+                                   CH 49027
+                                                   APP CRS
+                                                                 TDZE                1343                                                              RNAV (GPS) RWY 18
+                                                    175°                                                                                                              ANTHONY MUNI(ANY)
+                                     W18A                        Apt Elev            1343
+                                   RNP APCH - GPS.
+                                    T                                                                                                                      MISSED APPROACH:
+                                                   Circling NA to Rwys 10 and 28. Circling Rwy 36 NA at night.
+                                    A NA                                                                                                                   Climb to 3000 then climbing left turn
+                                                   Baro-VNAV NA. Circling NA east of Rwy 18-36.
+                                                                                                                                                           to 3300 direct UZZUF and hold.
+                                                   Use Wichita Dwight D Eisenhower Ntl altimeter setting.
+
+
+                                                 AWOS-3PT                                    ICT ASOS                                      WICHITA APP CON                       UNICOM
+                                                 119.575                                     125.15                                          126.7 353.5                     122.8 (CTAF) L
+
+                                                                           (IAF)                                                                                             (IAF)
+                                                                VARNR                                                                                                     MIROR
+                                                                                            3
+                                                                                             3                                       6000
+                                                                                              0                      HOLD                                     T
+                                                                                             1 N
+                                                                                                0
+                                                                                                                                     3300                  oP
+                                                                                              2   o                                                       N
+                                                                                          (
+                                                                                          2 7° PT                                                      00    °
+                                                                                            0                                                               7
+                                                                                             .6     4 NM                                             33 22 .  8)
+                                                                                               )                                                           16
+
+
+
+                                                                                                                            175°
+                                                                                                                                                          (
+                                                                                                              355°
+
+
+
+
+                                                                                                                                      (IF/IAF)
+                                                                                                                                       UZZUF
+NC-2, 16 APR 2026 to 14 MAY 2026
+
+
+
+
+                                                                                                                                                                                                        NC-2, 16 APR 2026 to 14 MAY 2026
+                                                                                                                            175°
+                                                                                                                                   (6.7)
+                                                                                                                     2900
+
+
+
+
+                                                                                                                                      (FAF)
+                                                  W1825N                                                                              WULGI
+                                                 R
+                                            SA          M
+                                        M
+                                                  3600                                                                                     CIGUP
+                                                                                                                                     2.2 NM to
+                                                                                                                                           RW18
+
+
+                                                                                                                                   RW18
+
+
+
+
+                                    ELEV    1343              TDZE                 1343
+
+                                                   175°                                     3000    3300         UZZUF
+
+                                                          18                                                                                                            UZZUF            4 NM
+                                                                                                                                                                                     Holding Pattern
+                                                              P
+
+                                                                                                                                             WULGI
+                                                                                                           CIGUP                                                                 355°        6000
+                                                                                                         2.2 NM to
+                                                                                                                                              2900                               175°        3300
+                                                                                                           RW18
+                                                                                                                                                            75°
+                                                                                                                                                           1
+                                                               5002 X 75
+
+
+
+
+                                                                                               RW18
+
+
+                                                                                                                                                          2900                            GP 3.00°
+                                                                                                                       2080                                                                 TCH 44
+                                            10
+
+
+
+
+                                                 0.
+                                                  4%U
+                                                      P
+                                                                                                     2.2 NM                    2.6 NM                      6.7 NM
+                                                   2212X
+                                                        6
+                                                                             28
+
+
+
+
+                                                         0                                                                   A                        B                  C                  D
+                                                                                             CATEGORY
+
+
+                                                                                            LPV     DA                                      1643-1 300 (300-1)                             NA
+                                                          P
+
+
+                                                                                            LNAV/
+                                                          36
+                                                                                                    DA                                      1714-1 371 (400-1)                             NA
+                                                                                            VNAV
+
+                                                                                                                                                                     1800-138
+                                                                                            LNAV MDA                    1800-1 457 (500-1)                                   3
+                                                                                                                                                                                           NA
+                                                                                                                                                                    457 (500-1 8 )
+
+
+                                                                                                                                                                      2080-2
+                                    LIRL Rwy 18-36 L                                         CIRCLING                   1920-1 577 (600-1)                                                 NA
+                                                                                                                                                                    737 (800-2)
+
+                                   ANTHONY, KANSAS
+                                                                                                                                                                      ANTHONY MUNI(ANY)
+                                   Amdt 2A 23FEB23
+                                                                                                         37°10'N-98°05'W
+                                                                                                                                                       RNAV (GPS) RWY 18

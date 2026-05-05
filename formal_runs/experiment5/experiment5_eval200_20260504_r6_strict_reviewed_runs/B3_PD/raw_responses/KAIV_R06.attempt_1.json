@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_4dbccb01-bc36-451f-b6ba-e746cb6cc4b9",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_1zS7awgw4VNjtSuT4xGAeuqc",
+            "function": {
+              "arguments": "{\"chart_id\":\"KAIV_R06\",\"procedure\":{\"airport\":\"KAIV\",\"approach_ident\":\"R06\",\"chart_name\":\"RNAV (GPS) RWY 06\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868190,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

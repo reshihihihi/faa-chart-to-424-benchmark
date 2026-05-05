@@ -1,0 +1,49 @@
+{
+  "method": "G0_Direct",
+  "input_type": "admin_field_review_oracle_relation",
+  "allowed_support_modes": [
+    "direct_visible"
+  ],
+  "selected_field_review_count": 5,
+  "applied_field_count": 5,
+  "uses_canonical_answer": true,
+  "uses_canonical_leg_index": true,
+  "purpose": "Oracle diagnostic replay of audited direct-visible fields",
+  "applied_fields": [
+    {
+      "field_key": "leg2.Q1_fix_ident",
+      "support_mode": "direct_visible",
+      "evidence_region_ids": [
+        "KANJ_R14_iconalign_001_fix_text"
+      ]
+    },
+    {
+      "field_key": "leg3.Q1_fix_ident",
+      "support_mode": "direct_visible",
+      "evidence_region_ids": [
+        "KANJ_R14_iconalign_002_fix_text"
+      ]
+    },
+    {
+      "field_key": "leg3.Q2_altitude_constraint",
+      "support_mode": "direct_visible",
+      "evidence_region_ids": [
+        "KANJ_R14_iconalign_003_altitude_text"
+      ]
+    },
+    {
+      "field_key": "leg3.Q4_course_or_radial",
+      "support_mode": "direct_visible",
+      "evidence_region_ids": [
+        "KANJ_R14_iconalign_004_track_or_radial_text"
+      ]
+    },
+    {
+      "field_key": "leg4.Q5_hold_params",
+      "support_mode": "direct_visible",
+      "evidence_region_ids": [
+        "KANJ_R14_02_plan_view"
+      ]
+    }
+  ]
+}

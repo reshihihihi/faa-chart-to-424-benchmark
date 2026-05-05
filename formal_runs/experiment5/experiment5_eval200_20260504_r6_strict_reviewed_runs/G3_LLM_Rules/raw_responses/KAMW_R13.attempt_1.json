@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_311429c8-7f3c-4da8-8ae5-da71d11f523b",
+  "object": "chat.completion",
+  "created": 1777869257,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_T5UzqsCDBTps2kFDueCN3CvR",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KAMW_R13\",\"procedure\":{\"airport\":\"KAMW\",\"approach_ident\":\"R13\",\"chart_name\":\"RNAV (GPS) RWY 13\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

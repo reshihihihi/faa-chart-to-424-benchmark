@@ -1,0 +1,31 @@
+{
+  "id": "chatcmpl_db921358-2c64-4bad-9c0b-ae0329cc4633",
+  "object": "chat.completion",
+  "created": 1777808081,
+  "model": "gpt-5.4",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_FfhzQGhlBPmt0b69PTRkiPai",
+            "type": "function",
+            "function": {
+              "name": "emit_canonical_json",
+              "arguments": "{\"chart_id\":\"KBWG_I03-Y\",\"procedure\":{\"airport\":\"KBWG\",\"approach_ident\":\"I03-Y\",\"chart_name\":\"ILS Y OR LOC Y RWY 03\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}"
+            }
+          }
+        ]
+      },
+      "finish_reason": null
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  }
+}

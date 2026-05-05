@@ -1,0 +1,144 @@
+{
+  "chart_id": "KARB_R06",
+  "procedure": {
+    "airport": "KARB",
+    "approach_ident": "R06",
+    "chart_name": "RNAV (GPS) RWY 06"
+  },
+  "observable_path": "formal_runs/experiment5/experiment5_eval200_20260503_r1/inputs/gold_observable_eval200_admin.jsonl",
+  "observable_facts": [
+    {
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "bbox": {
+        "height": 0.0699,
+        "width": 0.2729,
+        "x_center": 0.8158,
+        "y_center": 0.1456
+      },
+      "chart_id": "KARB_R06",
+      "evidence_region_id": "KARB_R06_01_missed_approach_text",
+      "fact_type": "ma_text_region_present",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KARB_R06_01_missed_approach_text"
+      }
+    },
+    {
+      "annotation_scope": "coarse_region",
+      "bbox": {
+        "height": 0.437,
+        "width": 0.91,
+        "x_center": 0.5,
+        "y_center": 0.44
+      },
+      "chart_id": "KARB_R06",
+      "evidence_region_id": "KARB_R06_02_plan_view",
+      "fact_type": "plan_view_region_present",
+      "label": "平面图复飞相关区域",
+      "region_type": "PLAN_VIEW",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "region_id": "KARB_R06_02_plan_view"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_seed",
+      "bbox": {
+        "height": 0.0543,
+        "width": 0.1426,
+        "x_center": 0.5919,
+        "y_center": 0.6854
+      },
+      "chart_id": "KARB_R06",
+      "evidence_region_id": "KARB_R06_03_lower_detail_area",
+      "fact_type": "ma_detail_region_present",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "review_action": "pending",
+      "status": "observed",
+      "value": {
+        "region_id": "KARB_R06_03_lower_detail_area"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0442,
+        "x_center": 0.5561,
+        "y_center": 0.6669
+      },
+      "chart_id": "KARB_R06",
+      "evidence_region_id": "KARB_R06_iconalign_002_altitude_text",
+      "fact_type": "altitude_text_visible",
+      "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+      "region_type": "ALTITUDE_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "altitude_ft": 3000,
+        "constraint": "AT_OR_ABOVE",
+        "raw_text": "3000"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0131,
+        "width": 0.0666,
+        "x_center": 0.6293,
+        "y_center": 0.6674
+      },
+      "chart_id": "KARB_R06",
+      "evidence_region_id": "KARB_R06_iconalign_001_fix_text",
+      "fact_type": "fix_text_visible",
+      "label": "FIX_TEXT: VAQOL -> VAQOL",
+      "region_type": "FIX_TEXT",
+      "review_action": "accept",
+      "status": "observed",
+      "value": {
+        "fix_ident": "VAQOL",
+        "raw_text": "VAQOL"
+      }
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0337,
+        "width": 0.0141,
+        "x_center": 0.5529,
+        "y_center": 0.6927
+      },
+      "chart_id": "KARB_R06",
+      "evidence_region_id": "KARB_R06_iconalign_005_climb_arrow",
+      "fact_type": "climb_arrow_visible",
+      "label": "detected lower detail: climb arrow",
+      "region_type": "CLIMB_ARROW",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    },
+    {
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "bbox": {
+        "height": 0.0227,
+        "width": 0.0374,
+        "x_center": 0.6265,
+        "y_center": 0.6923
+      },
+      "chart_id": "KARB_R06",
+      "evidence_region_id": "KARB_R06_iconalign_006_fix_symbol",
+      "fact_type": "fix_symbol_visible",
+      "label": "detected lower detail: fix symbol",
+      "region_type": "FIX_SYMBOL",
+      "review_action": "pending",
+      "status": "observed",
+      "value": true
+    }
+  ],
+  "rule_prompt": "embedded_in_prompt"
+}

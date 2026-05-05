@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl_2c04c45e-9e84-4bf5-a65b-e776d881fabc",
+  "choices": [
+    {
+      "finish_reason": null,
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "call_nMRkvSmQKF9irx0MsVXjaKEG",
+            "function": {
+              "arguments": "{\"chart_id\":\"KBOS_L15R\",\"procedure\":{\"airport\":\"KBOS\",\"approach_ident\":\"L15R\",\"chart_name\":\"ILS OR LOC RWY 15R\"},\"missed_approach\":{\"leg_count\":{\"status\":\"unknown\",\"value\":null},\"legs\":[]}}",
+              "name": "emit_canonical_json"
+            },
+            "type": "function"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1777868296,
+  "model": "gpt-5.4",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  }
+}

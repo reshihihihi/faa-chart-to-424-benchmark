@@ -1,0 +1,12 @@
+[MISSED_APPROACH_TEXT]
+MISSED APPROACH: on heading 22.1; to COSUV; climb to 4000 to DATES; hold at DATES, inbound course 71.3, right turns, 4 NM, maintain 4000.
+
+[PLAN_VIEW]
+audited plan-view relation boxes present
+
+[MISSED_APPROACH_DETAIL_AREA]
+- ALTITUDE_TEXT: 4000 -> AT_OR_ABOVE 4000 ft
+- FIX_TEXT: DATES -> DATES
+- FIX_TEXT: COSUV -> COSUV
+- detected lower detail: climb arrow
+- detected lower detail: climb arrow

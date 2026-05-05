@@ -1,0 +1,1 @@
+{"chart_id":"KCHO_R03","procedure":{"airport":"KCHO","approach_ident":"R03","chart_name":"RNAV (GPS) RWY 03"},"missed_approach":{"leg_count":{"status":"unknown","value":null},"legs":[]}}
