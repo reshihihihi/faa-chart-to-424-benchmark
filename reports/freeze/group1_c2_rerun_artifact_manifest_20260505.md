@@ -29,6 +29,14 @@ Included GPT-5.4 summary reports:
 - `formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_gpt54_current_oauth_responses_batched_c2/reports/combined_gpt54_current_oauth_batched_c2_summary.md`
 - `formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_gpt54_current_oauth_responses_batched_c2/reports/combined_gpt54_current_oauth_batched_c2_summary.json`
 
+Bootstrap-ready per-chart score tables:
+
+- `reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv`
+- `reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.json`
+- `reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.md`
+
+These tables contain one row per method/chart with explicit `chart_id`, `correct`, `total`, and `accuracy`. They cover `C1_GPT54`, `C2_GPT54_batched_leg`, `C3_GPT54`, and `C4_GPT54`, 200 rows per method, 800 rows total.
+
 ## GPT-5.4 C2 Batched Rerun
 
 C2 uses a shorter directory to avoid Windows nested path length issues:

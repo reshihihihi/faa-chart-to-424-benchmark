@@ -94,6 +94,7 @@ Claude 半改 C2 重跑使用同一 evaluation 200 条样本，分两片执行�
 - Claude 半改 C2 保存的 QA 调用数 = 881，保存的 QA 字段数 = 4286。
 - GPT-5.4 半改 C2 保存的 QA 调用数 = 809，保存的 QA 字段数 = 3854。
 - Bootstrap 所需的逐 chart `scores/*.json` 已补齐：GPT-5.4 的 C1/C2/C3/C4 各 200 个，Claude 半改 C2 合并结果 200 个。
+- 另补充 GPT-5.4 C-family 的 bootstrap-ready 逐 chart 表：`reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv`，包含 `method, chart_id, correct, total, accuracy`，共 800 行。
 
 ## 数据来源
 
@@ -104,6 +105,7 @@ Claude 半改 C2 重跑使用同一 evaluation 200 条样本，分两片执行�
 - Claude C2 半改合并结果：`formal_runs/group1/g1_claude_c2b_combined_20260504/C2_CLAUDE_batched_leg/method_summary.json`
 - Claude C2 半改合并报告：`formal_runs/group1/g1_claude_c2b_combined_20260504/reports/claude_c2_batched_vs_original_and_gpt54_summary.md`
 - PR artifact manifest：`reports/freeze/group1_c2_rerun_artifact_manifest_20260505.md`
+- GPT-5.4 bootstrap-ready 逐 chart CSV：`reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv`
 
 ## 推荐写法
 
