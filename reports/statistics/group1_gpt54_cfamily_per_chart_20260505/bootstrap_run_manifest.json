@@ -1,0 +1,37 @@
+{
+  "analysis_set": "group1_gpt54_cfamily_per_chart_20260505",
+  "bootstrap_iterations": 10000,
+  "confidence_level": 0.95,
+  "config_path": "configs/bootstrap_paired_delta_policy.json",
+  "config_sha256": "2472378cb3376628b94187a52b71a8b1f8e0923aef1c44bb70328a20c6bb0e2a",
+  "created_at_utc": "2026-05-05T02:40:21.220119+00:00",
+  "input_files": [
+    {
+      "path": "reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv",
+      "sha256": "79c09275796beac6348edf6fb3e547dbfa4c2ed5ed2cad1700d6ecb5a12d89b4"
+    }
+  ],
+  "interval_method": "percentile",
+  "methods": [
+    "C1_GPT54",
+    "C2_GPT54_batched_leg",
+    "C3_GPT54",
+    "C4_GPT54"
+  ],
+  "metric_definition": "sum(score_numerator) / sum(score_denominator)",
+  "n_methods": 4,
+  "n_units": 200,
+  "outputs": {
+    "paired_deltas_csv": "reports/statistics/group1_gpt54_cfamily_per_chart_20260505/paired_deltas.csv",
+    "paired_deltas_json": "reports/statistics/group1_gpt54_cfamily_per_chart_20260505/paired_deltas.json",
+    "point_estimates_csv": "reports/statistics/group1_gpt54_cfamily_per_chart_20260505/point_estimates.csv",
+    "point_estimates_json": "reports/statistics/group1_gpt54_cfamily_per_chart_20260505/point_estimates.json"
+  },
+  "paired_delta_definition": "metric(method_a) - metric(method_b)",
+  "policy_document": "docs/bootstrap_paired_delta_policy_zh.md",
+  "resampling_unit": "chart_id",
+  "script_path": "scripts/scorers/compute_bootstrap_paired_delta.py",
+  "script_sha256": "2bd72cff14b57db3099c4c8e11ac30b60e2933d158f8d69841f7dce214d6de1c",
+  "seed": 20260504,
+  "warnings": []
+}

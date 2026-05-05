@@ -101,16 +101,18 @@ D1
 origin/group1-c2-method-effect-20260504
 ```
 
-它包含两类信息：
+它包含三类信息：
 
 1. GPT-5.4 对 C1/C2/C3/C4 的补充 rerun summary。
-2. C2 的桥接对照：Claude 原始 C2、Claude batched C2、GPT-5.4 batched C2。
+2. commit `878856d5` 新增的 GPT-5.4 C1/C2/C3/C4 逐 chart bootstrap score 表。
+3. C2 的桥接对照：Claude 原始 C2、Claude batched C2、GPT-5.4 batched C2。
 
 解释边界：
 
 - 原始实验组1主表中的 C1/C2/C3/C4 仍是冻结 formal run 的 Claude 版本。
-- GPT-5.4 C1/C2/C3/C4 都已经跑过，并且都有 200/200 的 combined summary。combined summary 的 artifact checks 还记录了 C1/C2/C3/C4 均为 `scores=200`，说明运行时产生过 score 工件。当前限制不是“没跑”，而是 C1/C3/C4 的逐 chart score 文件没有在当前 Git tree/PR 文件列表中作为 Git blob 提交；因此可以报告 point estimate 和 artifact status，但不能从 summary-only 文件计算正式 chart-level bootstrap CI。
+- GPT-5.4 C1/C2/C3/C4 都已经跑过，并且都有 200/200 的逐 chart score 行。正式 chart-level bootstrap 输入是 `reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv`，输出是 `reports/statistics/group1_gpt54_cfamily_per_chart_20260505/`。
 - C2 的三个版本可以单独作为 `group1_c2_model_method_effect_20260504` 进行 bootstrap，因为 Claude batched C2 和 GPT-5.4 batched C2 的 `method_summary.json` 含有 200 条逐 chart `results`，原始 Claude C2 也有正式 per-sample score。
+- GPT-5.4 C 系列补充不替代实验组1主榜；它回答的是“同一 C1/C2/C3/C4 方法族换成 GPT-5.4 后，各自结果和成对差异是什么”。
 
 C2 的结论必须拆开说：
 
@@ -134,13 +136,28 @@ C2 的结论必须拆开说：
 
 实验组2不是重新跑模型，也不是独立 leaderboard。它回答的是：实验组1字段正确/错误与人工证据来源有什么关系。
 
-实验组2在第一批统一统计中不作为必跑对象。只有当论文里要声称“某方法在某类证据来源上显著更强”时，才需要按 `chart_id` 聚类做 bootstrap 或 paired-delta。描述性证据分布表本身不需要 paired-delta。
+PR #36 补齐 derived rows 后，实验组2进入诊断 bootstrap，但仍然不是独立 leaderboard。当前注册两个 analysis set：
+
+```text
+group2_positive_present_evidence_20260505
+group2_negative_not_applicable_20260505
+```
+
+前者统计 positive/present evidence-linked 字段正确率；后者统计 negative/not-applicable 字段正确率。两者都按 `chart_id` 聚类重采样，`correct=true` 记 1，`correct=false` 记 0，每个字段行 denominator 为 1。
 
 ### 4.3 实验组3
 
-当前仓库内实验组3主要体现为 formal300 challenge tags / 难度标签。它用于分层解释样本，而不是新的方法结果。
+实验组3用于分层解释样本，而不是新的方法结果。
 
-实验组3不进入第一批主方法 paired-delta。若要报告某标签子集上的方法差异，也必须按 `chart_id` 聚类，并明确这是 subgroup diagnostic，不是新的主 leaderboard。
+PR #37 补齐 formal200 difficulty derived rows 后，实验组3进入诊断 bootstrap。当前注册三个 analysis set：
+
+```text
+group3_formal200_difficulty_all_20260505
+group3_formal200_core_20260505
+group3_formal200_hard_20260505
+```
+
+三者分别对应 200 张全部样本、180 张 core 样本、20 张 hard 样本。它们都按 `chart_id` 聚类重采样，并明确解释为 subgroup diagnostic，不是新的主 leaderboard。
 
 ### 4.4 实验组4
 
@@ -313,12 +330,17 @@ Bootstrap/paired-delta 需要逐 chart score，而不是只有最终 summary。
 ```text
 group1_scoring_equivalence_v2
 group1_c2_model_method_effect_20260504
+group2_positive_present_evidence_20260505
+group2_negative_not_applicable_20260505
+group3_formal200_difficulty_all_20260505
+group3_formal200_core_20260505
+group3_formal200_hard_20260505
 experiment4_source_ablation_formal200_main_6x3
 experiment5_eval200_r6_strict_reviewed
 experiment6_v11_pr25_d1_counterfactual
 ```
 
-实验组2、实验组3暂不放入第一批主流程。后续如果论文需要它们的子组差异声明，再单独添加 analysis set。
+实验组2、实验组3的 analysis set 是诊断统计，不改变主 leaderboard。论文中引用时要说明它们分别回答证据来源和难例分层问题。
 
 ## 8. 输出要求
 

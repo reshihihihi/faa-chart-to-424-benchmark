@@ -1,0 +1,177 @@
+﻿method,field_family,negative_error_type,correct,total,accuracy
+A1,course / radial,missing_prediction_status,0,142,0.0
+A1,course / radial,over_assertion,0,1,0.0
+A1,course / radial,true_negative,73,73,1.0
+A1,course / radial,unknown_on_negative,0,17,0.0
+A1,fix / navaid,over_assertion,0,86,0.0
+A1,fix / navaid,true_negative,67,67,1.0
+A1,fix / navaid,unknown_on_negative,0,50,0.0
+A1,holding,missing_prediction_status,0,48,0.0
+A1,holding,over_assertion,0,203,0.0
+A1,holding,true_negative,193,193,1.0
+A1,转弯,missing_prediction_status,0,167,0.0
+A1,转弯,over_assertion,0,9,0.0
+A1,转弯,true_negative,414,414,1.0
+A1,高度,missing_prediction_status,0,3,0.0
+A1,高度,over_assertion,0,16,0.0
+A1,高度,true_negative,29,29,1.0
+A2,course / radial,missing_prediction_status,0,162,0.0
+A2,course / radial,over_assertion,0,2,0.0
+A2,course / radial,true_negative,64,64,1.0
+A2,course / radial,unknown_on_negative,0,5,0.0
+A2,fix / navaid,missing_prediction_status,0,23,0.0
+A2,fix / navaid,over_assertion,0,74,0.0
+A2,fix / navaid,true_negative,47,47,1.0
+A2,fix / navaid,unknown_on_negative,0,59,0.0
+A2,holding,missing_prediction_status,0,117,0.0
+A2,holding,over_assertion,0,173,0.0
+A2,holding,true_negative,154,154,1.0
+A2,转弯,missing_prediction_status,0,236,0.0
+A2,转弯,over_assertion,0,4,0.0
+A2,转弯,true_negative,350,350,1.0
+A2,高度,missing_prediction_status,0,18,0.0
+A2,高度,over_assertion,0,9,0.0
+A2,高度,true_negative,21,21,1.0
+B1,course / radial,missing_prediction_status,0,179,0.0
+B1,course / radial,other_negative_error,0,20,0.0
+B1,course / radial,over_assertion,0,14,0.0
+B1,course / radial,true_negative,2,2,1.0
+B1,course / radial,unknown_on_negative,0,18,0.0
+B1,fix / navaid,over_assertion,0,138,0.0
+B1,fix / navaid,true_negative,48,48,1.0
+B1,fix / navaid,unknown_on_negative,0,17,0.0
+B1,holding,missing_prediction_status,0,12,0.0
+B1,holding,other_negative_error,0,2,0.0
+B1,holding,over_assertion,0,147,0.0
+B1,holding,true_negative,261,261,1.0
+B1,holding,unknown_on_negative,0,22,0.0
+B1,转弯,missing_prediction_status,0,181,0.0
+B1,转弯,other_negative_error,0,26,0.0
+B1,转弯,over_assertion,0,23,0.0
+B1,转弯,true_negative,357,357,1.0
+B1,转弯,unknown_on_negative,0,3,0.0
+B1,高度,other_negative_error,0,28,0.0
+B1,高度,over_assertion,0,13,0.0
+B1,高度,true_negative,6,6,1.0
+B1,高度,unknown_on_negative,0,1,0.0
+B1_prime,course / radial,missing_prediction_status,0,176,0.0
+B1_prime,course / radial,other_negative_error,0,1,0.0
+B1_prime,course / radial,over_assertion,0,32,0.0
+B1_prime,course / radial,unknown_on_negative,0,24,0.0
+B1_prime,fix / navaid,over_assertion,0,65,0.0
+B1_prime,fix / navaid,true_negative,73,73,1.0
+B1_prime,fix / navaid,unknown_on_negative,0,65,0.0
+B1_prime,holding,missing_prediction_status,0,11,0.0
+B1_prime,holding,other_negative_error,0,1,0.0
+B1_prime,holding,over_assertion,0,95,0.0
+B1_prime,holding,true_negative,264,264,1.0
+B1_prime,holding,unknown_on_negative,0,73,0.0
+B1_prime,转弯,missing_prediction_status,0,181,0.0
+B1_prime,转弯,over_assertion,0,16,0.0
+B1_prime,转弯,true_negative,356,356,1.0
+B1_prime,转弯,unknown_on_negative,0,37,0.0
+B1_prime,高度,other_negative_error,0,2,0.0
+B1_prime,高度,over_assertion,0,16,0.0
+B1_prime,高度,true_negative,6,6,1.0
+B1_prime,高度,unknown_on_negative,0,24,0.0
+B1_prime_link,course / radial,missing_prediction_status,0,183,0.0
+B1_prime_link,course / radial,other_negative_error,0,23,0.0
+B1_prime_link,course / radial,true_negative,5,5,1.0
+B1_prime_link,course / radial,unknown_on_negative,0,22,0.0
+B1_prime_link,fix / navaid,missing_prediction_status,0,15,0.0
+B1_prime_link,fix / navaid,other_negative_error,0,16,0.0
+B1_prime_link,fix / navaid,over_assertion,0,87,0.0
+B1_prime_link,fix / navaid,true_negative,68,68,1.0
+B1_prime_link,fix / navaid,unknown_on_negative,0,17,0.0
+B1_prime_link,holding,missing_prediction_status,0,48,0.0
+B1_prime_link,holding,other_negative_error,0,31,0.0
+B1_prime_link,holding,over_assertion,0,21,0.0
+B1_prime_link,holding,true_negative,245,245,1.0
+B1_prime_link,holding,unknown_on_negative,0,99,0.0
+B1_prime_link,转弯,missing_prediction_status,0,213,0.0
+B1_prime_link,转弯,other_negative_error,0,84,0.0
+B1_prime_link,转弯,over_assertion,0,19,0.0
+B1_prime_link,转弯,true_negative,86,86,1.0
+B1_prime_link,转弯,unknown_on_negative,0,188,0.0
+B1_prime_link,高度,missing_prediction_status,0,15,0.0
+B1_prime_link,高度,other_negative_error,0,9,0.0
+B1_prime_link,高度,over_assertion,0,11,0.0
+B1_prime_link,高度,true_negative,7,7,1.0
+B1_prime_link,高度,unknown_on_negative,0,6,0.0
+C1,course / radial,missing_prediction_status,0,27,0.0
+C1,course / radial,other_negative_error,0,1,0.0
+C1,course / radial,over_assertion,0,126,0.0
+C1,course / radial,true_negative,76,76,1.0
+C1,course / radial,unknown_on_negative,0,3,0.0
+C1,fix / navaid,other_negative_error,0,83,0.0
+C1,fix / navaid,over_assertion,0,108,0.0
+C1,fix / navaid,true_negative,12,12,1.0
+C1,holding,missing_prediction_status,0,1,0.0
+C1,holding,over_assertion,0,58,0.0
+C1,holding,true_negative,385,385,1.0
+C1,转弯,missing_prediction_status,0,27,0.0
+C1,转弯,other_negative_error,0,5,0.0
+C1,转弯,over_assertion,0,84,0.0
+C1,转弯,true_negative,471,471,1.0
+C1,转弯,unknown_on_negative,0,3,0.0
+C1,高度,other_negative_error,0,34,0.0
+C1,高度,over_assertion,0,13,0.0
+C1,高度,true_negative,1,1,1.0
+C2,course / radial,missing_prediction_status,0,28,0.0
+C2,course / radial,over_assertion,0,203,0.0
+C2,course / radial,unknown_on_negative,0,2,0.0
+C2,fix / navaid,over_assertion,0,203,0.0
+C2,holding,over_assertion,0,424,0.0
+C2,holding,true_negative,18,18,1.0
+C2,holding,unknown_on_negative,0,2,0.0
+C2,转弯,missing_prediction_status,0,28,0.0
+C2,转弯,over_assertion,0,515,0.0
+C2,转弯,true_negative,44,44,1.0
+C2,转弯,unknown_on_negative,0,3,0.0
+C2,高度,over_assertion,0,48,0.0
+C3,course / radial,missing_prediction_status,0,47,0.0
+C3,course / radial,over_assertion,0,135,0.0
+C3,course / radial,true_negative,51,51,1.0
+C3,fix / navaid,missing_prediction_status,0,4,0.0
+C3,fix / navaid,other_negative_error,0,108,0.0
+C3,fix / navaid,over_assertion,0,91,0.0
+C3,holding,missing_prediction_status,0,9,0.0
+C3,holding,over_assertion,0,71,0.0
+C3,holding,true_negative,364,364,1.0
+C3,转弯,missing_prediction_status,0,56,0.0
+C3,转弯,other_negative_error,0,1,0.0
+C3,转弯,over_assertion,0,55,0.0
+C3,转弯,true_negative,478,478,1.0
+C3,高度,other_negative_error,0,34,0.0
+C3,高度,over_assertion,0,14,0.0
+C4,course / radial,missing_prediction_status,0,132,0.0
+C4,course / radial,over_assertion,0,27,0.0
+C4,course / radial,true_negative,74,74,1.0
+C4,fix / navaid,over_assertion,0,112,0.0
+C4,fix / navaid,true_negative,91,91,1.0
+C4,holding,missing_prediction_status,0,2,0.0
+C4,holding,other_negative_error,0,1,0.0
+C4,holding,over_assertion,0,129,0.0
+C4,holding,true_negative,311,311,1.0
+C4,holding,unknown_on_negative,0,1,0.0
+C4,转弯,missing_prediction_status,0,132,0.0
+C4,转弯,over_assertion,0,19,0.0
+C4,转弯,true_negative,439,439,1.0
+C4,高度,other_negative_error,0,5,0.0
+C4,高度,over_assertion,0,11,0.0
+C4,高度,true_negative,32,32,1.0
+D1,course / radial,missing_prediction_status,0,59,0.0
+D1,course / radial,over_assertion,0,1,0.0
+D1,course / radial,true_negative,173,173,1.0
+D1,fix / navaid,missing_prediction_status,0,16,0.0
+D1,fix / navaid,over_assertion,0,4,0.0
+D1,fix / navaid,true_negative,183,183,1.0
+D1,holding,missing_prediction_status,0,39,0.0
+D1,holding,over_assertion,0,38,0.0
+D1,holding,true_negative,367,367,1.0
+D1,转弯,missing_prediction_status,0,91,0.0
+D1,转弯,over_assertion,0,20,0.0
+D1,转弯,true_negative,479,479,1.0
+D1,高度,missing_prediction_status,0,4,0.0
+D1,高度,over_assertion,0,43,0.0
+D1,高度,true_negative,1,1,1.0

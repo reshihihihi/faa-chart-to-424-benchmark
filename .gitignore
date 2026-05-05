@@ -20,7 +20,30 @@ cache/
 tmp/
 downloads/
 *.log
+*.zip
+
+# External dataset/release packages are distributed outside Git.
+NIPS-AIP-Dataset*/
+training/d_sft/datasets/
+benchmark_exports/derived/v2/experiment5_diagnostic/
+formal_runs/experiment4/experiment4_source_ablation_*/
+formal_runs/experiment5/experiment5_*_strict*/
+formal_runs/group1_sft/dbase_vs_d1_eval_first50_*/
+reports/freeze/experiment4_source_ablation_*/
 
 # Do not commit ad hoc local runs unless explicitly registered.
 local_runs/
 
+# Group 1 SFT local machine material
+training/group1_sft/configs/local_paths.local.json
+training/group1_sft/runs/
+training/group1_sft/checkpoints/
+training/group1_sft/raw_outputs/
+training/group1_sft/parsed_predictions/
+training/group1_sft/train_jsonl/
+training/group1_sft/datasets/
+
+# Large local formal300 assets used by SFT runs.
+benchmark_exports/derived/v2/formal300/images/
+benchmark_exports/derived/v2/formal300/pdfs/
+benchmark_exports/derived/v2/formal300/reports/group1_sft_image_materialization_report_*.json

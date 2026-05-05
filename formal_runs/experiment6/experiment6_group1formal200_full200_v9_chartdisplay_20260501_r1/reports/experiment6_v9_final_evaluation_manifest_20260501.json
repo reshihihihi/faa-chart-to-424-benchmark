@@ -1,0 +1,75 @@
+{
+  "artifact_id": "experiment6_v9_final_evaluation_package_20260501",
+  "case_file": {
+    "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/E6_core/cases/e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+    "sha256": "1dcd42b76254bde525ff59fad97cbf2a8b47897e0ffae4d4ac6be294abf5c180"
+  },
+  "generated_controls": {
+    "control_all_accept": {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/controls/control_all_accept/predictions.jsonl",
+      "sha256": "d033bb4f5cdc9a3714e3f6c636f08b49b3239ef2309ae3d561fe2ff03a786a48"
+    },
+    "control_all_reject": {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/controls/control_all_reject/predictions.jsonl",
+      "sha256": "71833d89e01e1724d2047c80763793b2165f6a262ab675bf7f45c7d7cbb76d96"
+    },
+    "control_oracle_label": {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/controls/control_oracle_label/predictions.jsonl",
+      "sha256": "ec25e3cb077f362afbe64b1ad17fedfaacb7f085cc1b011c48202d628fe88084"
+    },
+    "control_v0_candidate_integrity": {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/controls/control_v0_candidate_integrity/predictions.jsonl",
+      "sha256": "db073a905f3dec5d8b56369439782503998accc3a7fba24e062d2f7afe1c9c00"
+    }
+  },
+  "method_predictions": {
+    "V1_OCR_text_chartdisplay_v2": {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/V1_text_only/predictions.jsonl",
+      "sha256": "9dffc1d1fdbea35fc29f2c8cfa3ac195b263235977ab349fbcc3e0c0214721c6"
+    },
+    "V2_direct_image_policyv3_chartdisplay_v2": {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/V2_direct_image_policyv3/predictions.normalized_error_fields.jsonl",
+      "sha256": "9488000e784a2b2590f7fa9f80ec85eac2c7abe3a15c13ab86d85fc94f6ac2cc"
+    },
+    "V3_C4_group1v2_neutralized": {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/V3_C4_group1v2_neutralized/predictions.jsonl",
+      "sha256": "ae3a20ef33f6fc83cc2733275eb35bc0e2d35083ac5c2757d76b777582ec89ed"
+    },
+    "V3_D_SFT_group1v2_neutralized": {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/V3_D_SFT_group1v2_neutralized/predictions.jsonl",
+      "sha256": "ed3f360d3d13c8c77d49daf52aff1b237a8f67f13cfde7c5de3d04a2d7caf5f9"
+    },
+    "V4_C4_tolerant_chartdisplay_v2": {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/V4_C4_tolerant/predictions.jsonl",
+      "sha256": "73910045b47b8ae302e7ecabd9e4789c9557fe52cff4d0514a23fe4ab8137dfa"
+    },
+    "V4_D_SFT_tolerant_chartdisplay_v2": {
+      "path": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/V4_D_SFT_tolerant/predictions.jsonl",
+      "sha256": "5fc987c7c41021406301af3f9b07e818f035a8fe158af084fe51cdc6ad4aa19d"
+    }
+  },
+  "packed_inputs": {
+    "V1_text_only": {
+      "path": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/packed_inputs/v1_text_only_inputs_v9_chartdisplay_e6core.jsonl",
+      "sha256": "7d919e070859255dd9bf84a91bb28efc544c677a0d9d53c9a617a58c6ca7b2d8"
+    },
+    "V2_direct_image": {
+      "path": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/packed_inputs/v2_direct_vlm_inputs_v9_chartdisplay_e6core.jsonl",
+      "sha256": "f3fbd3716486ad0d27b29f041b6d0ebd4038fd96cd715774e8799d0484a38e32"
+    },
+    "V3_extract_then_compare": {
+      "path": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/packed_inputs/v3_extract_then_compare_inputs_v9_chartdisplay_e6core.jsonl",
+      "sha256": "c8275c3d7a085370e0a8ca9d907612de1a23fda731d02b126949e0dfd4880261"
+    }
+  },
+  "reports": {
+    "audit_json": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/reports/experiment6_v9_integrity_retry_no_leakage_audit_20260501.json",
+    "final_metrics_csv": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/reports/experiment6_v9_final_metrics_table_20260501.csv",
+    "final_report_zh": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/reports/experiment6_v9_final_evaluation_package_zh_20260501.md"
+  },
+  "sample_manifest": {
+    "path": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/selection/sample_manifest_group1formal200_full200_v8.jsonl",
+    "sha256": "d2a1f68ddf2ba4a2edfd9dfb335a2eba2c49a99dc9792f47147f4ef8bdb252c6"
+  },
+  "status": "complete_not_formal_freeze_until_pr25_merged"
+}

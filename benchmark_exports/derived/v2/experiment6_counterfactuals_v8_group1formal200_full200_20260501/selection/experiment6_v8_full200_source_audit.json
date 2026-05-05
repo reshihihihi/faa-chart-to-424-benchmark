@@ -1,0 +1,32 @@
+{
+  "artifact_id": "experiment6_v8_group1formal200_full200_source_audit_20260501",
+  "distribution": {
+    "dataset_split": {
+      "development": 131,
+      "evaluation": 51,
+      "probe": 18
+    },
+    "procedure_type": {
+      "ILS": 9,
+      "LOC": 17,
+      "RNAV": 174
+    },
+    "sample_type": {
+      "holding": 141,
+      "multi_leg": 41,
+      "simple": 18
+    }
+  },
+  "extra_chart_ids": [],
+  "formal300_sample_manifest": "benchmark_exports/derived/v2/formal300/sample_manifest.jsonl",
+  "group1_formal200_manifest": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/C4/input_manifest.jsonl",
+  "missing_chart_ids": [],
+  "selected_chart_count": 200,
+  "selection_policy": "all Group1 formal200 charts, score-blind; chart ids from Group1 C4 input manifest joined to formal300 sample_manifest metadata",
+  "sha256": {
+    "group1_input_manifest": "369099b391ec7f20be77f632ee7585bea7b3536ed6c8345a95069e83d5cbb5e5",
+    "selection_manifest": "d2a1f68ddf2ba4a2edfd9dfb335a2eba2c49a99dc9792f47147f4ef8bdb252c6",
+    "source_manifest": "7891c333992a3cb7a430d03015aecb123509282b167bba249b64b2e11d745d89"
+  },
+  "status": "pass"
+}

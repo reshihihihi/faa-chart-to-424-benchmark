@@ -208,6 +208,24 @@ def to_float(value: Any, *, path: Path | str, key: str) -> float:
     return number
 
 
+def score_value(row: dict[str, Any], discovery: dict[str, Any], role: str, source: Path | str) -> float:
+    constant_name = f"{role}_constant"
+    bool_key_name = f"{role}_bool_key"
+    key_name = f"{role}_key"
+    if constant_name in discovery:
+        return to_float(discovery[constant_name], path=source, key=constant_name)
+    if bool_key_name in discovery:
+        key = discovery[bool_key_name]
+        value = get_value(row, key)
+        if not isinstance(value, bool):
+            raise ValueError(f"{source}: key {key!r} is not boolean: {value!r}")
+        return 1.0 if value else 0.0
+    if key_name not in discovery:
+        raise KeyError(key_name)
+    key = discovery[key_name]
+    return to_float(get_value(row, key), path=source, key=key)
+
+
 def metric(numerators: list[float], denominators: list[float], indices: list[int]) -> float | None:
     num = sum(numerators[i] for i in indices)
     den = sum(denominators[i] for i in indices)
@@ -275,26 +293,54 @@ def load_jsonl_score_rows(repo_root: Path, discovery: dict[str, Any], warnings: 
         return {}
 
     unit_key = discovery["unit_key"]
-    numerator_key = discovery["numerator_key"]
-    denominator_key = discovery["denominator_key"]
-    regex = discovery["method_name_regex"]
+    method_key = discovery.get("method_key")
+    regex = discovery.get("method_name_regex")
+    row_method_regex = discovery.get("row_method_regex")
     template = discovery.get("method_name_template")
+    row_filter = discovery.get("row_filter")
     out: dict[str, MethodScores] = {}
 
     for path in files:
-        method = derive_method(path, regex, template)
-        method_scores = out.setdefault(method, MethodScores(method=method))
-        method_scores.source_files.add(source_id(source_ref, path))
+        file_method_scores: MethodScores | None = None
+        if not method_key:
+            if not regex:
+                raise ValueError("jsonl_score_rows discovery requires method_name_regex unless method_key is set")
+            method = derive_method(path, regex, template)
+            file_method_scores = out.setdefault(method, MethodScores(method=method))
+            file_method_scores.source_files.add(source_id(source_ref, path))
         rows = (
             read_jsonl_text(git_text(source_ref, str(path)), source_id(source_ref, path))
             if source_ref
             else read_jsonl(path)  # type: ignore[arg-type]
         )
         for row in rows:
+            if not row_matches_filter(row, row_filter):
+                continue
+            if method_key:
+                raw_method = str(get_value(row, method_key))
+                if row_method_regex:
+                    match = re.search(row_method_regex, raw_method)
+                    if not match:
+                        raise ValueError(
+                            f"Could not derive row method from {raw_method!r} with regex {row_method_regex!r}"
+                        )
+                    method = match.group("method") if "method" in match.groupdict() else match.group(1)
+                else:
+                    method = raw_method
+                if template:
+                    values = dict(row)
+                    values["method"] = method
+                    values["raw_method"] = raw_method
+                    method = template.format(**values)
+                method_scores = out.setdefault(method, MethodScores(method=method))
+                method_scores.source_files.add(source_id(source_ref, path))
+            else:
+                assert file_method_scores is not None
+                method_scores = file_method_scores
             try:
                 unit_id = str(get_value(row, unit_key))
-                numerator = to_float(get_value(row, numerator_key), path=source_id(source_ref, path), key=numerator_key)
-                denominator = to_float(get_value(row, denominator_key), path=source_id(source_ref, path), key=denominator_key)
+                numerator = score_value(row, discovery, "numerator", source_id(source_ref, path))
+                denominator = score_value(row, discovery, "denominator", source_id(source_ref, path))
             except KeyError as exc:
                 raise KeyError(f"{path}: missing key {exc.args[0]!r}") from exc
             add_unit_score(method_scores, unit_id, numerator, denominator)
@@ -314,16 +360,21 @@ def load_csv_score_rows(repo_root: Path, discovery: dict[str, Any], warnings: li
         return {}
 
     unit_key = discovery["unit_key"]
-    numerator_key = discovery["numerator_key"]
-    denominator_key = discovery["denominator_key"]
-    regex = discovery["method_name_regex"]
+    method_key = discovery.get("method_key")
+    regex = discovery.get("method_name_regex")
+    row_method_regex = discovery.get("row_method_regex")
     template = discovery.get("method_name_template")
+    row_filter = discovery.get("row_filter")
     out: dict[str, MethodScores] = {}
 
     for path in files:
-        method = derive_method(path, regex, template)
-        method_scores = out.setdefault(method, MethodScores(method=method))
-        method_scores.source_files.add(source_id(source_ref, path))
+        file_method_scores: MethodScores | None = None
+        if not method_key:
+            if not regex:
+                raise ValueError("csv_score_rows discovery requires method_name_regex unless method_key is set")
+            method = derive_method(path, regex, template)
+            file_method_scores = out.setdefault(method, MethodScores(method=method))
+            file_method_scores.source_files.add(source_id(source_ref, path))
         if source_ref:
             handle = io.StringIO(git_text(source_ref, str(path)))
         else:
@@ -331,9 +382,34 @@ def load_csv_score_rows(repo_root: Path, discovery: dict[str, Any], warnings: li
         with handle:
             reader = csv.DictReader(handle)
             for row in reader:
+                if not row_matches_filter(row, row_filter):
+                    continue
+                if method_key:
+                    if method_key not in row:
+                        raise KeyError(f"{path}: missing method_key {method_key!r}")
+                    raw_method = str(row[method_key])
+                    if row_method_regex:
+                        match = re.search(row_method_regex, raw_method)
+                        if not match:
+                            raise ValueError(
+                                f"Could not derive row method from {raw_method!r} with regex {row_method_regex!r}"
+                            )
+                        method = match.group("method") if "method" in match.groupdict() else match.group(1)
+                    else:
+                        method = raw_method
+                    if template:
+                        values = dict(row)
+                        values["method"] = method
+                        values["raw_method"] = raw_method
+                        method = template.format(**values)
+                    method_scores = out.setdefault(method, MethodScores(method=method))
+                    method_scores.source_files.add(source_id(source_ref, path))
+                else:
+                    assert file_method_scores is not None
+                    method_scores = file_method_scores
                 unit_id = str(row[unit_key])
-                numerator = to_float(row[numerator_key], path=source_id(source_ref, path), key=numerator_key)
-                denominator = to_float(row[denominator_key], path=source_id(source_ref, path), key=denominator_key)
+                numerator = score_value(row, discovery, "numerator", source_id(source_ref, path))
+                denominator = score_value(row, discovery, "denominator", source_id(source_ref, path))
                 add_unit_score(method_scores, unit_id, numerator, denominator)
     return out
 
@@ -628,14 +704,12 @@ def load_unit_totals(repo_root: Path, source: dict[str, Any] | None, warnings: l
     else:
         rows = read_jsonl(path)
     unit_key = source["unit_key"]
-    denominator_key = source["denominator_key"]
+    row_filter = source.get("row_filter")
     for row in rows:
+        if not row_matches_filter(row, row_filter):
+            continue
         unit_id = str(get_value(row, unit_key))
-        denominator = to_float(
-            get_value(row, denominator_key),
-            path=source_id(source_ref, source["path"]) if source_ref else path,
-            key=denominator_key,
-        )
+        denominator = score_value(row, source, "denominator", source_id(source_ref, source["path"]) if source_ref else path)
         if unit_id in totals and totals[unit_id] != denominator:
             warnings.append(f"unit_total_source duplicate unit {unit_id} has differing denominators")
         totals[unit_id] = denominator

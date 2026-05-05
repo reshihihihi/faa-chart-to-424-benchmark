@@ -1,0 +1,30 @@
+{
+  "schema": "group1_sft_method_set_v3",
+  "current_scope": "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL_only",
+  "methods": [
+    {
+      "method_id": "D1_CHART_TO_EVIDENCE_BOXES_AND_CANONICAL",
+      "name_zh": "在旧 D1 基础上继续训练，增加图上证据来源能力",
+      "input": "完整航图图片",
+      "raw_diagnostic_output": "证据框列表、字段和证据框关系、以及旧 D1 形状的最终标准答案",
+      "formal_prediction_file": "旧 D1 形状的 missed approach canonical JSON",
+      "formal_score_target": "与 424/CIFP 派生的 scoring_equivalence_v2 目标 JSON 比较",
+      "allowed_inputs": ["chart_image"],
+      "forbidden_inputs": ["target_json", "raw_424_record", "raw_cifp_record", "score_file", "other_method_prediction"],
+      "purpose": "不改变最终评分 JSON，只在旧 D1 checkpoint 的基础上增加找证据来源和字段证据绑定能力，看这种额外监督是否改善最终 canonical JSON。"
+    }
+  ],
+  "checkpoint_dependency": {
+    "uses_existing_d1_checkpoint": true,
+    "path_config_key": "d1_lora_or_checkpoint_dir",
+    "note_zh": "旧 D1 只作为继续训练起点，不是本轮要重新跑的新增方法。"
+  },
+  "not_in_current_scope": [
+    "D_BASE_SAME_BACKBONE",
+    "D1 rerun",
+    "D1_DEV50_ONLY",
+    "CHART_TO_EVIDENCE_SFT",
+    "EVIDENCE_TO_SEMANTICS_SFT",
+    "TWO_STAGE_AUTO_SFT"
+  ]
+}

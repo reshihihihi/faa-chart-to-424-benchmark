@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/training/group1_sft/manifests/evidence_questionnaire.schema.json",
+  "title": "Group 1 SFT evidence-to-semantics questionnaire",
+  "type": "object",
+  "required": ["leg_count", "legs"],
+  "additionalProperties": false,
+  "properties": {
+    "leg_count": {
+      "type": ["integer", "null"],
+      "minimum": 0
+    },
+    "legs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "leg_index",
+          "Q_terminator",
+          "Q1_fix_ident",
+          "Q2_altitude_constraint",
+          "Q3_turn",
+          "Q4_course_or_radial",
+          "Q5_hold_params"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "leg_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "Q_terminator": { "$ref": "#/$defs/answer" },
+          "Q1_fix_ident": { "$ref": "#/$defs/answer" },
+          "Q2_altitude_constraint": { "$ref": "#/$defs/answer" },
+          "Q3_turn": { "$ref": "#/$defs/answer" },
+          "Q4_course_or_radial": { "$ref": "#/$defs/answer" },
+          "Q5_hold_params": { "$ref": "#/$defs/answer" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "answer": {
+      "type": "object",
+      "required": ["status", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["present", "not_applicable", "not_observable", "unknown"]
+        },
+        "value": {
+          "type": ["string", "number", "integer", "boolean", "object", "array", "null"]
+        }
+      }
+    }
+  }
+}
