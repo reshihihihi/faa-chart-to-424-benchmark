@@ -1,0 +1,35 @@
+{
+  "artifact_kind": "formal200_group3_bootstrap_derived_rows",
+  "run_id": "group3_formal200_bootstrap_v1_20260505",
+  "candidate_pool": "group1_actual_formal200_from_A1_scores",
+  "formal200_chart_count": 200,
+  "hard_case_count": 20,
+  "method_score_file_counts": {
+    "A1": 200,
+    "A2": 200,
+    "B1": 200,
+    "B1_prime": 200,
+    "B1_prime_link": 200,
+    "C1": 200,
+    "C2": 200,
+    "C3": 200,
+    "C4": 200,
+    "D_SFT": 200
+  },
+  "row_counts": {
+    "group3_joined_chart_scores": 2000,
+    "group3_joined_field_scores": 40520
+  },
+  "challenge_source": "group3 formal200_v1_curated_quota derived challenge tags; no images copied",
+  "annotation_export_sha256": "52082332ff922132a83bca087d250f08571f77709f716e360439daafee313574",
+  "excludes": [
+    "png",
+    "checkpoint",
+    "model_output_payloads",
+    "local_paths",
+    "backend_token",
+    "source_encoding_records",
+    "target_json_values"
+  ],
+  "privacy_note": "Rows contain target status and scoring correctness only; target values and prediction values are not included."
+}
