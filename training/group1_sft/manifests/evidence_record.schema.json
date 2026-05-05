@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/training/group1_sft/manifests/evidence_record.schema.json",
+  "title": "Group 1 SFT visible evidence record",
+  "type": "object",
+  "required": ["chart_id", "evidence_items"],
+  "additionalProperties": false,
+  "properties": {
+    "chart_id": {
+      "type": ["string", "null"]
+    },
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_region", "item_type"],
+        "additionalProperties": false,
+        "properties": {
+          "source_region": {
+            "type": "string",
+            "enum": [
+              "MISSED_APPROACH_TEXT",
+              "PLAN_VIEW",
+              "PROFILE_VIEW",
+              "MISSED_APPROACH_DETAIL_AREA",
+              "CHART_TEXT",
+              "OTHER"
+            ]
+          },
+          "item_type": {
+            "type": "string"
+          },
+          "text": {
+            "type": ["string", "null"]
+          },
+          "value": {
+            "type": ["string", "number", "integer", "boolean", "object", "array", "null"]
+          },
+          "bbox": {
+            "anyOf": [
+              {
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 4,
+                "items": { "type": "number" }
+              },
+              { "type": "null" }
+            ]
+          },
+          "confidence": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "notes": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    }
+  }
+}

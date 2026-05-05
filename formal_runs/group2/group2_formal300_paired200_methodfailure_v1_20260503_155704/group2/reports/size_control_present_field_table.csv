@@ -1,0 +1,11 @@
+﻿method,score_field,correct,total,accuracy
+A1,leg_count,48,200,0.24
+A2,leg_count,54,200,0.27
+B1,leg_count,31,200,0.155
+B1_prime,leg_count,26,200,0.13
+B1_prime_link,leg_count,33,200,0.165
+C1,leg_count,63,200,0.315
+C2,leg_count,114,200,0.57
+C3,leg_count,68,200,0.34
+C4,leg_count,62,200,0.31
+D1,leg_count,145,200,0.725

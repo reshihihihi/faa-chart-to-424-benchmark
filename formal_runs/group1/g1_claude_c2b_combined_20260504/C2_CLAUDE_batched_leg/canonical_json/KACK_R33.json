@@ -1,0 +1,124 @@
+{
+  "chart_id": "KACK_R33",
+  "procedure": {
+    "airport": "KACK",
+    "approach_ident": "R33",
+    "chart_name": "RNAV (GPS) RWY 33"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 3
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "CEROD"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 2500,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "course_deg": 258,
+              "type": "course_deg"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "CEROD"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 2500,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "course_deg": 258,
+              "type": "course_deg"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 3,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "HIKSO"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 1800,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "course_deg": 329,
+              "type": "course_deg"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

@@ -24,3 +24,7 @@
 - `formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_final_metrics_table.csv`
 - `formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_freeze_manifest.json`
 - `formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_submission_package_manifest_zh.md`
+- `formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/reports/experiment4_bootstrap_run_instructions_zh.md`
+- `formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/<variant>/<method>/per_sample_scores.csv`
+- `configs/bootstrap_paired_delta_policy.json`
+- `scripts/scorers/compute_bootstrap_paired_delta.py`

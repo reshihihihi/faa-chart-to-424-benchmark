@@ -1,0 +1,56 @@
+[
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.19251955241733984,
+    "ci_upper": -0.14468490905265388,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C1_GPT54",
+    "method_b": "C2_GPT54_batched_leg",
+    "point_delta": -0.16855873642645608
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.019912772416889022,
+    "ci_upper": 0.01161655788935711,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C1_GPT54",
+    "method_b": "C3_GPT54",
+    "point_delta": -0.0041954590325765095
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.15801204389413043,
+    "ci_upper": -0.1163594352349208,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C1_GPT54",
+    "method_b": "C4_GPT54",
+    "point_delta": -0.1372161895360316
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.14073019647027668,
+    "ci_upper": 0.18775272944151716,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C2_GPT54_batched_leg",
+    "method_b": "C3_GPT54",
+    "point_delta": 0.16436327739387957
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.001682946413560004,
+    "ci_upper": 0.06062124248496992,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C2_GPT54_batched_leg",
+    "method_b": "C4_GPT54",
+    "point_delta": 0.03134254689042448
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.15411004911966059,
+    "ci_upper": -0.11196215171865012,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C3_GPT54",
+    "method_b": "C4_GPT54",
+    "point_delta": -0.1330207305034551
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "builder_version": "experiment6_counterfactual_builder_v8_group1formal200_aligned_20260501",
+  "case_count": 2055,
+  "input_chart_count": 200,
+  "produced_by_type": {
+    "424_derived_trap": 200,
+    "altitude_perturbation": 194,
+    "ca_omission": 196,
+    "ca_to_df_sequence_error": 192,
+    "course_radial_error": 200,
+    "fix_substitution": 200,
+    "holding_parameter_error": 198,
+    "implicit_hold_time_omission": 23,
+    "path_terminator_substitution": 200,
+    "positive": 200,
+    "text_only_trap": 200,
+    "turn_direction_flip": 52
+  },
+  "repo_root": ".",
+  "sample_manifest": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/selection/sample_manifest_group1formal200_full200_v8.jsonl",
+  "skipped_by_type": {
+    "424_derived_trap": 0,
+    "altitude_perturbation": 6,
+    "ca_omission": 4,
+    "ca_to_df_sequence_error": 8,
+    "course_radial_error": 0,
+    "fix_substitution": 0,
+    "holding_parameter_error": 2,
+    "implicit_hold_time_omission": 177,
+    "path_terminator_substitution": 0,
+    "text_only_trap": 0,
+    "turn_direction_flip": 148
+  },
+  "splits": [
+    "development",
+    "evaluation",
+    "probe"
+  ],
+  "status": "prefreeze_cases_with_labels_not_model_inputs"
+}

@@ -1,0 +1,121 @@
+{
+  "chart_id": "KCRS_R32",
+  "procedure": {
+    "airport": "KCRS",
+    "approach_ident": "R32",
+    "chart_name": "RNAV (GPS) RWY 32"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 3
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CA"
+          },
+          "Q1_fix_ident": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 900,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "TOYAN"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 2500,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "course_deg": 319,
+              "type": "course_deg"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 3,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "XEWHY"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 2500,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "course_deg": 319,
+              "type": "course_deg"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

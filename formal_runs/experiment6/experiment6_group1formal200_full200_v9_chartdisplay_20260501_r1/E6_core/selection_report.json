@@ -1,0 +1,29 @@
+{
+  "case_ids_sha256": "a3e46f64066177d920cb43c502de5bc0518f585c781eec5dcf3ed1e1f5c8f9bc",
+  "comparison_policy": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/comparison_policy_v2.jsonl",
+  "negative_cases": 200,
+  "negative_selected_by_type": {
+    "424_derived_trap": 19,
+    "altitude_perturbation": 18,
+    "ca_omission": 18,
+    "ca_to_df_sequence_error": 18,
+    "course_radial_error": 19,
+    "fix_substitution": 18,
+    "holding_parameter_error": 18,
+    "implicit_hold_time_omission": 18,
+    "path_terminator_substitution": 18,
+    "text_only_trap": 18,
+    "turn_direction_flip": 18
+  },
+  "out_cases": "formal_runs/experiment6/experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1/E6_core/cases/e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+  "positive_cases": 200,
+  "seed": "20260501",
+  "selection_name": "E6-core balanced 200 positive + 200 stratified negative, rebuilt with Group1 chart-display v2 candidates",
+  "source_new_full_cases": "benchmark_exports/derived/v2/experiment6_counterfactuals_v8_group1formal200_full200_20260501/cases/verification_counterfactuals_v9_chartdisplay_group1formal200_full200.jsonl",
+  "source_old_core": "formal_runs/experiment6/experiment6_group1formal200_full200_v8_20260501_r1/E6_core/cases/e6_core_200pos_200neg_seed20260501.jsonl",
+  "status": "pass",
+  "target_mode": "chart_display_v2",
+  "total_cases": 400,
+  "unique_negative_charts": 136,
+  "unique_positive_charts": 200
+}

@@ -27,7 +27,7 @@
     "checkpoint",
     "model_output_payloads",
     "local_paths",
-    "backend_token",
+    "backend auth token",
     "source_encoding_records",
     "target_json_values"
   ],

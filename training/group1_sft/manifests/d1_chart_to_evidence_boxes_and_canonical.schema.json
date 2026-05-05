@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/training/group1_sft/manifests/d1_chart_to_evidence_boxes_and_canonical.schema.json",
+  "title": "D1 Fine Evidence Boxes Diagnostic Wrapper With Canonical Prediction",
+  "type": "object",
+  "required": ["evidence_boxes", "answer_grounding", "canonical_prediction"],
+  "additionalProperties": false,
+  "properties": {
+    "evidence_boxes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": { "$ref": "#/$defs/evidence_box" }
+    },
+    "canonical_prediction": {
+      "type": "object"
+    },
+    "answer_grounding": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/answer_grounding" }
+    }
+  },
+  "$defs": {
+    "bbox": {
+      "type": "array",
+      "prefixItems": [
+        { "type": "number", "minimum": 0, "maximum": 1 },
+        { "type": "number", "minimum": 0, "maximum": 1 },
+        { "type": "number", "minimum": 0, "maximum": 1 },
+        { "type": "number", "minimum": 0, "maximum": 1 }
+      ],
+      "items": false,
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "region_type": {
+      "type": "string",
+      "enum": [
+        "MISSED_APPROACH_TEXT",
+        "PLAN_VIEW",
+        "MISSED_APPROACH_DETAIL_AREA",
+        "ALTITUDE_TEXT",
+        "FIX_TEXT",
+        "FIX_SYMBOL",
+        "CLIMB_ARROW",
+        "PATH_SEGMENT",
+        "RADIAL_TEXT",
+        "TRACK_OR_RADIAL_TEXT",
+        "NAVAID_TEXT",
+        "HEADING_TEXT",
+        "OUTBOUND_INBOUND_MARK",
+        "HOLD_SYMBOL",
+        "HOLD_INBOUND_COURSE_TEXT",
+        "HOLD_DISTANCE_TEXT",
+        "HOLD_TIME_TEXT",
+        "HOLD_TURN_DIRECTION_TEXT"
+      ]
+    },
+    "question_field": {
+      "type": "string",
+      "enum": [
+        "Q_terminator",
+        "Q1_fix_ident",
+        "Q2_altitude_constraint",
+        "Q3_turn",
+        "Q4_course_or_radial",
+        "Q5_hold_params"
+      ]
+    },
+    "support_mode": {
+      "type": "string",
+      "enum": [
+        "direct_visible_text",
+        "direct_visible_symbol",
+        "direct_visible_region",
+        "inferred_from_visible_evidence",
+        "rule_default_not_directly_visible",
+        "insufficient_for_encoding",
+        "not_grounded"
+      ]
+    },
+    "evidence_box": {
+      "type": "object",
+      "required": ["box_id", "bbox", "region_type", "visible_text", "field_names", "evidence_role"],
+      "additionalProperties": false,
+      "properties": {
+        "box_id": {
+          "type": "string",
+          "pattern": "^box_[0-9]{3}$"
+        },
+        "bbox": { "$ref": "#/$defs/bbox" },
+        "region_type": { "$ref": "#/$defs/region_type" },
+        "visible_text": {
+          "type": ["string", "null"]
+        },
+        "field_names": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/question_field" },
+          "uniqueItems": true
+        },
+        "evidence_role": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "answer_grounding": {
+      "type": "object",
+      "required": [
+        "leg_index",
+        "field_name",
+        "answer_path",
+        "support_mode",
+        "evidence_box_ids",
+        "evidence_summary"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "leg_index": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "field_name": { "$ref": "#/$defs/question_field" },
+        "answer_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "support_mode": { "$ref": "#/$defs/support_mode" },
+        "evidence_box_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^box_[0-9]{3}$"
+          },
+          "uniqueItems": true
+        },
+        "evidence_summary": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

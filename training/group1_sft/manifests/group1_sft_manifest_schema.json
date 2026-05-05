@@ -1,0 +1,28 @@
+{
+  "schema": "group1_sft_manifest_schema_v1",
+  "required_fields": [
+    "sample_id",
+    "chart_id",
+    "split",
+    "method_id",
+    "input_kind",
+    "input_path",
+    "target_kind",
+    "target_path",
+    "source_hashes"
+  ],
+  "fields": {
+    "sample_id": "样本唯一编号",
+    "chart_id": "航图编号",
+    "split": "train/dev/eval/smoke",
+    "method_id": "方法编号",
+    "input_kind": "chart_image 或 evidence_record",
+    "input_path": "输入文件路径",
+    "target_kind": "canonical_json、questionnaire 或 evidence_record",
+    "target_path": "训练标签或评估目标路径",
+    "source_hashes": "输入和目标文件哈希",
+    "forbidden_overlap_keys": "用于检查训练/评估泄漏的键",
+    "notes": "说明"
+  }
+}
+

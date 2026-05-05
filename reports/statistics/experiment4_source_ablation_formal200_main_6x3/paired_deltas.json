@@ -1,0 +1,1379 @@
+[
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.15612878853018824,
+    "ci_upper": -0.10575816459648511,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V0_full_chart__C4",
+    "point_delta": -0.1303060217176703
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.5405348790073429,
+    "ci_upper": -0.4692044554971344,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V0_full_chart__D1",
+    "point_delta": -0.5054294175715696
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.033366057360352495,
+    "ci_upper": 0.006170711730620075,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V1_ma_text_only__B1",
+    "point_delta": -0.01382033563672258
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.2359186187822002,
+    "ci_upper": -0.17785566846578998,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V1_ma_text_only__C4",
+    "point_delta": -0.20681145113524185
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.22778771237463447,
+    "ci_upper": 0.27995197765121926,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V1_ma_text_only__D1",
+    "point_delta": 0.25444225074037513
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.05242528172464478,
+    "ci_upper": 0.10582678777784502,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V2_full_minus_ma_prose__B1",
+    "point_delta": 0.07897334649555776
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.15148516057158568,
+    "ci_upper": -0.07631990404024841,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V2_full_minus_ma_prose__C4",
+    "point_delta": -0.11451135241855875
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.4818511757470748,
+    "ci_upper": -0.40477274754393794,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V2_full_minus_ma_prose__D1",
+    "point_delta": -0.4437314906219151
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.2171534504552326,
+    "ci_upper": 0.2647345348270823,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V3_plan_view_only__B1",
+    "point_delta": 0.24086870681145114
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.09301195215700905,
+    "ci_upper": -0.02128633952124825,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V3_plan_view_only__C4",
+    "point_delta": -0.05700888450148073
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.3251382908818138,
+    "ci_upper": -0.2558881256133464,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V3_plan_view_only__D1",
+    "point_delta": -0.2909674234945706
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.2535519200072189,
+    "ci_upper": 0.29503354182367364,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.27393879565646595
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.24457051390827977,
+    "ci_upper": 0.2865031120156503,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.2653010858835143
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.15635794031954187,
+    "ci_upper": 0.22485217003956492,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": 0.19126357354392892
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.1783391695847924,
+    "ci_upper": 0.2282340681258648,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": 0.2031095755182626
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.05462195212730759,
+    "ci_upper": 0.021290137502923443,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": -0.01702862783810466
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.3971828072958872,
+    "ci_upper": -0.32923090281186806,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__B1",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.3635241855873642
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.41843836096856235,
+    "ci_upper": -0.33217451376386264,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V0_full_chart__D1",
+    "point_delta": -0.37512339585389926
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.0894527900716,
+    "ci_upper": 0.1448227110342121,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V1_ma_text_only__B1",
+    "point_delta": 0.11648568608094773
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.10768994808641137,
+    "ci_upper": -0.044896485076234484,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V1_ma_text_only__C4",
+    "point_delta": -0.07650542941757155
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.3508052204642514,
+    "ci_upper": 0.41833868641043687,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V1_ma_text_only__D1",
+    "point_delta": 0.38474827245804544
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.1740208230044621,
+    "ci_upper": 0.2442268904335343,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V2_full_minus_ma_prose__B1",
+    "point_delta": 0.20927936821322807
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.028052217986828772,
+    "ci_upper": 0.06151641092981889,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V2_full_minus_ma_prose__C4",
+    "point_delta": 0.015794669299111552
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.359123430752715,
+    "ci_upper": -0.2684824902723736,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V2_full_minus_ma_prose__D1",
+    "point_delta": -0.3134254689042448
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.33889442231075695,
+    "ci_upper": 0.40332275448602845,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V3_plan_view_only__B1",
+    "point_delta": 0.3711747285291215
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.030737085768474177,
+    "ci_upper": 0.11563110772364145,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V3_plan_view_only__C4",
+    "point_delta": 0.07329713721618958
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.20139260370567094,
+    "ci_upper": -0.11884679448001463,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V3_plan_view_only__D1",
+    "point_delta": -0.1606614017769003
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.37537456957144144,
+    "ci_upper": 0.4339531478011109,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.40424481737413626
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.36673270696428484,
+    "ci_upper": 0.4249379841488798,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.3956071076011846
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.2833654339244975,
+    "ci_upper": 0.3595478092710745,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": 0.32156959526159923
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.300547607167014,
+    "ci_upper": 0.36638779527559057,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": 0.3334155972359329
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.06924593395761458,
+    "ci_upper": 0.15698818897637795,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": 0.11327739387956565
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.27399345985692547,
+    "ci_upper": -0.19243386216592998,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__C4",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.2332181638696939
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.4553993343838935,
+    "ci_upper": 0.5275181249146429,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V1_ma_text_only__B1",
+    "point_delta": 0.491609081934847
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.25121942322292873,
+    "ci_upper": 0.3466743406826343,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V1_ma_text_only__C4",
+    "point_delta": 0.2986179664363277
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.7279980657640233,
+    "ci_upper": 0.7915203430210224,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V1_ma_text_only__D1",
+    "point_delta": 0.7598716683119446
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.5566680525803426,
+    "ci_upper": 0.6123935222371041,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V2_full_minus_ma_prose__B1",
+    "point_delta": 0.5844027640671273
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.3532863445122935,
+    "ci_upper": 0.4281804150204779,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V2_full_minus_ma_prose__C4",
+    "point_delta": 0.3909180651530108
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.04509575297530082,
+    "ci_upper": 0.0800303532348212,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V2_full_minus_ma_prose__D1",
+    "point_delta": 0.06169792694965448
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.7169485754797863,
+    "ci_upper": 0.7753008791898011,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V3_plan_view_only__B1",
+    "point_delta": 0.7462981243830207
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.4152154117363188,
+    "ci_upper": 0.48165891337877503,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V3_plan_view_only__C4",
+    "point_delta": 0.44842053307008883
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.1919655521512866,
+    "ci_upper": 0.23892738254071108,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V3_plan_view_only__D1",
+    "point_delta": 0.21446199407699895
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.7506106051149187,
+    "ci_upper": 0.807286432160804,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.7793682132280355
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.7387072857049245,
+    "ci_upper": 0.8016032064128257,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.7707305034550839
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.6547380104572564,
+    "ci_upper": 0.7381190658524409,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": 0.6966929911154985
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.6789703739679457,
+    "ci_upper": 0.7380128835308118,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": 0.7085389930898321
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.4487995697574718,
+    "ci_upper": 0.5269326683291771,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": 0.4884007897334649
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.12292652409105054,
+    "ci_upper": 0.1628380159444516,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V0_full_chart__D1",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": 0.14190523198420535
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.21917874652883892,
+    "ci_upper": -0.16683168316831687,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V1_ma_text_only__C4",
+    "point_delta": -0.19299111549851927
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.24189526184538654,
+    "ci_upper": 0.2928366468809855,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V1_ma_text_only__D1",
+    "point_delta": 0.2682625863770977
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.06678336996204157,
+    "ci_upper": 0.11934062765517998,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V2_full_minus_ma_prose__B1",
+    "point_delta": 0.09279368213228034
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.1362279375610227,
+    "ci_upper": -0.0642993707930648,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V2_full_minus_ma_prose__C4",
+    "point_delta": -0.10069101678183617
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.46733668341708545,
+    "ci_upper": -0.39105058365758755,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V2_full_minus_ma_prose__D1",
+    "point_delta": -0.4299111549851925
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.23386295928500495,
+    "ci_upper": 0.2759980285855101,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V3_plan_view_only__B1",
+    "point_delta": 0.2546890424481737
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.07770730379469697,
+    "ci_upper": -0.0073816177039602695,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V3_plan_view_only__C4",
+    "point_delta": -0.04318854886475815
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.311407343322534,
+    "ci_upper": -0.24182978051684903,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V3_plan_view_only__D1",
+    "point_delta": -0.27714708785784803
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.26894643267562673,
+    "ci_upper": 0.30746879769538327,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.28775913129318853
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.259048091224591,
+    "ci_upper": 0.2989241653428302,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.2791214215202369
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.17278888688273,
+    "ci_upper": 0.2364495275982098,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": 0.2050839091806515
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.1938522558254834,
+    "ci_upper": 0.24007025081852773,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": 0.21692991115498517
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.04066482959242377,
+    "ci_upper": 0.03480956998003813,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": -0.003208292201382079
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.3835925740090316,
+    "ci_upper": -0.31557271628340333,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__B1",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.34970384995064163
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.42334669338677355,
+    "ci_upper": 0.496550278940619,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V1_ma_text_only__D1",
+    "point_delta": 0.461253701875617
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.24851429175580877,
+    "ci_upper": 0.3228354183891881,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V2_full_minus_ma_prose__B1",
+    "point_delta": 0.2857847976307996
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.04731386798788091,
+    "ci_upper": 0.13723320935312908,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V2_full_minus_ma_prose__C4",
+    "point_delta": 0.0923000987166831
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.2868951864793535,
+    "ci_upper": -0.18728614502644894,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V2_full_minus_ma_prose__D1",
+    "point_delta": -0.23692003948667323
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.41372429505549907,
+    "ci_upper": 0.48037398827499933,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V3_plan_view_only__B1",
+    "point_delta": 0.447680157946693
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.1057047925765607,
+    "ci_upper": 0.19316239537153443,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V3_plan_view_only__C4",
+    "point_delta": 0.14980256663376113
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.13094371752708028,
+    "ci_upper": -0.0377260220434276,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V3_plan_view_only__D1",
+    "point_delta": -0.08415597235932876
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.44979663700559697,
+    "ci_upper": 0.5112395168525742,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.4807502467917078
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.4406611511105505,
+    "ci_upper": 0.502460812100178,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.47211253701875616
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.3573564988359585,
+    "ci_upper": 0.4381468703794973,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": 0.3980750246791708
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.37388282025819264,
+    "ci_upper": 0.444880009027534,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": 0.40992102665350444
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.1454816285998014,
+    "ci_upper": 0.2335124332636264,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": 0.1897828232971372
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.20225062344139652,
+    "ci_upper": -0.11105698977106682,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__C4",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.15671273445212236
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.19855171786567424,
+    "ci_upper": -0.1509751610444532,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V2_full_minus_ma_prose__B1",
+    "point_delta": -0.17546890424481737
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.4010442565887618,
+    "ci_upper": -0.33586087179609564,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V2_full_minus_ma_prose__C4",
+    "point_delta": -0.3689536031589339
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.7330205454829172,
+    "ci_upper": -0.6614855897369076,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V2_full_minus_ma_prose__D1",
+    "point_delta": -0.6981737413622902
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.029906710707142636,
+    "ci_upper": 0.004921259842519683,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V3_plan_view_only__B1",
+    "point_delta": -0.013573543928923987
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.34167177810010535,
+    "ci_upper": -0.28063968151651436,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V3_plan_view_only__C4",
+    "point_delta": -0.31145113524185586
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.5764240925906763,
+    "ci_upper": -0.5142911770979289,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V3_plan_view_only__D1",
+    "point_delta": -0.5454096742349457
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.005994005994005994,
+    "ci_upper": 0.03617178746891578,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.01949654491609082
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.0037081973760605827,
+    "ci_upper": 0.028051181102362203,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.01085883514313919
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.09921144551523264,
+    "ci_upper": -0.028465194716233155,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": -0.0631786771964462
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.06984205330700889,
+    "ci_upper": -0.03134176208313453,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": -0.05133267522211253
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.30312814400659294,
+    "ci_upper": -0.2394953773092403,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": -0.2714708785784798
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.6487706974410437,
+    "ci_upper": -0.5867018973002361,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V1_ma_text_only__D1",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.6179664363277393
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.22490217346683447,
+    "ci_upper": -0.1604143782825249,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__B1",
+    "method_b": "V2_full_minus_ma_prose__C4",
+    "point_delta": -0.19348469891411652
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.5537064311618763,
+    "ci_upper": -0.4908113963157869,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__B1",
+    "method_b": "V2_full_minus_ma_prose__D1",
+    "point_delta": -0.5227048371174728
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.1432726789441214,
+    "ci_upper": 0.18137067737451573,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__B1",
+    "method_b": "V3_plan_view_only__B1",
+    "point_delta": 0.16189536031589338
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.1638700032258769,
+    "ci_upper": -0.10778861086930717,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__B1",
+    "method_b": "V3_plan_view_only__C4",
+    "point_delta": -0.1359822309970385
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.3983948585915597,
+    "ci_upper": -0.3417439343986438,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__B1",
+    "method_b": "V3_plan_view_only__D1",
+    "point_delta": -0.36994076999012837
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.17716535433070865,
+    "ci_upper": 0.21343579573624194,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__B1",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.1949654491609082
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.16707736285959882,
+    "ci_upper": 0.20582282229747462,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__B1",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.18632773938795655
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.07720666231274487,
+    "ci_upper": 0.14666359762562653,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__B1",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": 0.11229022704837117
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.10493135550440857,
+    "ci_upper": 0.14368415095098167,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__B1",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": 0.12413622902270484
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.12744799004216809,
+    "ci_upper": -0.06384527611987642,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__B1",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": -0.09600197433366242
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.472487205855403,
+    "ci_upper": -0.41331570556232444,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__B1",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.442497532082922
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.3694041273256245,
+    "ci_upper": -0.2888767290717457,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__C4",
+    "method_b": "V2_full_minus_ma_prose__D1",
+    "point_delta": -0.3292201382033563
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.32503665690041295,
+    "ci_upper": 0.384406344843027,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__C4",
+    "method_b": "V3_plan_view_only__B1",
+    "point_delta": 0.3553800592300099
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.02131786553531772,
+    "ci_upper": 0.09268738017373328,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__C4",
+    "method_b": "V3_plan_view_only__C4",
+    "point_delta": 0.057502467917078026
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.21514023232800086,
+    "ci_upper": -0.13825651960998855,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__C4",
+    "method_b": "V3_plan_view_only__D1",
+    "point_delta": -0.17645607107601186
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.3587433024841695,
+    "ci_upper": 0.4170804678505442,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__C4",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.3884501480750247
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.34815089369229496,
+    "ci_upper": 0.40995561381473516,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__C4",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.37981243830207306
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.2592655457618933,
+    "ci_upper": 0.34970384995064163,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__C4",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": 0.3057749259624877
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.2872912205501946,
+    "ci_upper": 0.34676273290329523,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__C4",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": 0.31762092793682134
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.06271611098358915,
+    "ci_upper": 0.13155479075065055,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__C4",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": 0.0974827245804541
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.2881657385635288,
+    "ci_upper": -0.2108603233694315,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__C4",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.24901283316880546
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.6512420847540186,
+    "ci_upper": 0.7162381942760695,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__D1",
+    "method_b": "V3_plan_view_only__B1",
+    "point_delta": 0.6846001974333662
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.34978256970497246,
+    "ci_upper": 0.4221784332058962,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__D1",
+    "method_b": "V3_plan_view_only__C4",
+    "point_delta": 0.38672260612043435
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.12542871141597256,
+    "ci_upper": 0.18044605690737645,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__D1",
+    "method_b": "V3_plan_view_only__D1",
+    "point_delta": 0.15276406712734447
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.6858536585365854,
+    "ci_upper": 0.7484879032258065,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__D1",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.717670286278381
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.6739338133481031,
+    "ci_upper": 0.7422344689378757,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__D1",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.7090325765054294
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.5908201982223233,
+    "ci_upper": 0.6791275779916746,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__D1",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": 0.6349950641658441
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.6137351979881697,
+    "ci_upper": 0.6790343271552195,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__D1",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": 0.6468410661401777
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.3824828263002944,
+    "ci_upper": 0.46823500681922514,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__D1",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": 0.4267028627838104
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.0547028749058396,
+    "ci_upper": 0.10629921259842523,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V2_full_minus_ma_prose__D1",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": 0.08020730503455087
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.32493800556635494,
+    "ci_upper": -0.2709740794343741,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__B1",
+    "method_b": "V3_plan_view_only__C4",
+    "point_delta": -0.2978775913129319
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.5603299559720445,
+    "ci_upper": -0.5024208709722482,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__B1",
+    "method_b": "V3_plan_view_only__D1",
+    "point_delta": -0.5318361303060217
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.024606299212598427,
+    "ci_upper": 0.04226891124406315,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__B1",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.033070088845014806
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.011463183849965992,
+    "ci_upper": 0.036718125057824104,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__B1",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.02443237907206318
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.0834194240637845,
+    "ci_upper": -0.01815505397448479,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__B1",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": -0.04960513326752221
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.04870149638476477,
+    "ci_upper": -0.027118351697003624,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__B1",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": -0.037759131293188544
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.2875563837250302,
+    "ci_upper": -0.22771553823672674,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__B1",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": -0.2578973346495558
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.6334651753834883,
+    "ci_upper": -0.5756091892988401,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__B1",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.6043928923988153
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.2688364241406049,
+    "ci_upper": -0.198467021278642,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__C4",
+    "method_b": "V3_plan_view_only__D1",
+    "point_delta": -0.23395853899308988
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.3038593063019052,
+    "ci_upper": 0.3575973729394455,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__C4",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.3309476801579467
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.29341437983487495,
+    "ci_upper": 0.35050360416781023,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__C4",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.32230997038499504
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.20500693914692691,
+    "ci_upper": 0.2907865475714031,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__C4",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": 0.24827245804540965
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.2330215955958994,
+    "ci_upper": 0.28674352949883886,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__C4",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": 0.2601184600197433
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.008778205003996443,
+    "ci_upper": 0.07174776564051638,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__C4",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": 0.03998025666337607
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.3419634355990479,
+    "ci_upper": -0.27133780058800655,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__C4",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.3065153010858835
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.5367713326703855,
+    "ci_upper": 0.5923578972829153,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__D1",
+    "method_b": "V4_icon_detail_only__B1",
+    "point_delta": 0.5649062191510366
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.5254389764636412,
+    "ci_upper": 0.5864511977082595,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__D1",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": 0.5562685093780849
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.44071533561979426,
+    "ci_upper": 0.5226938301646188,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__D1",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": 0.48223099703849953
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.4645247350521422,
+    "ci_upper": 0.5222949834969891,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__D1",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": 0.4940769990128332
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.23371442977392107,
+    "ci_upper": 0.3138371856376443,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__D1",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": 0.27393879565646595
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.09614434008897677,
+    "ci_upper": -0.04931262007767905,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V3_plan_view_only__D1",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.0725567620927936
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.017586712261846604,
+    "ci_upper": -0.0017274780976920545,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__B1",
+    "method_b": "V4_icon_detail_only__C4",
+    "point_delta": -0.008637709772951628
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.11571158788615825,
+    "ci_upper": -0.052848586976225784,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__B1",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": -0.08267522211253701
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.08304326205867728,
+    "ci_upper": -0.05911766382960474,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__B1",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": -0.07082922013820335
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.32135868131965817,
+    "ci_upper": -0.26033423576823533,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__B1",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": -0.2909674234945706
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.6653427490512531,
+    "ci_upper": -0.6101611066579158,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__B1",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.6374629812438302
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.1067922868254273,
+    "ci_upper": -0.043928590976772035,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__C4",
+    "method_b": "V4_icon_detail_only__D1",
+    "point_delta": -0.07403751233958539
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.0762669342699448,
+    "ci_upper": -0.047701412353821464,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__C4",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": -0.06219151036525172
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.3125007678132678,
+    "ci_upper": -0.25183706615454776,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__C4",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": -0.28232971372161897
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.6593666412977123,
+    "ci_upper": -0.5978204246146579,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__C4",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.6288252714708785
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.021376710349397345,
+    "ci_upper": 0.04780669588038425,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__D1",
+    "method_b": "V5_plan_detail_no_ma__B1",
+    "point_delta": 0.011846001974333664
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.24975184682829946,
+    "ci_upper": -0.1658378295930983,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__D1",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": -0.20829220138203358
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.5944148523195675,
+    "ci_upper": -0.5133050918468103,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V4_icon_detail_only__D1",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.5547877591312932
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.24939045313379588,
+    "ci_upper": -0.1907361540907479,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V5_plan_detail_no_ma__B1",
+    "method_b": "V5_plan_detail_no_ma__C4",
+    "point_delta": -0.22013820335636725
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.5966685964606248,
+    "ci_upper": -0.5370453296363085,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V5_plan_detail_no_ma__B1",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.5666337611056268
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": -0.38640911783173226,
+    "ci_upper": -0.30589180321861487,
+    "delta_definition": "method_a - method_b",
+    "method_a": "V5_plan_detail_no_ma__C4",
+    "method_b": "V5_plan_detail_no_ma__D1",
+    "point_delta": -0.34649555774925955
+  }
+]

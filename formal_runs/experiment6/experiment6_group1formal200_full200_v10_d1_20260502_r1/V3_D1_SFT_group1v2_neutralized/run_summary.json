@@ -1,0 +1,13 @@
+{
+  "api_error": 0,
+  "cases_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\E6_core\\cases\\e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+  "compare_policy": "group1_scoring_equivalence_v2_neutralized_after_D1",
+  "elapsed_sec": 3.103,
+  "extraction_dir": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1/canonical_json",
+  "method": "V3_D1_SFT_group1v2_neutralized",
+  "out_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v10_d1_20260502_r1\\V3_D1_SFT_group1v2_neutralized\\predictions.jsonl",
+  "parse_fail": 0,
+  "parse_ok": 400,
+  "requested_records": 400,
+  "validation_dir": null
+}

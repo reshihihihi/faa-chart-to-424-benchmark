@@ -1,0 +1,11 @@
+group_name,group_value,method,total,valid,invalid_or_missing,binary_accuracy,balanced_accuracy,positive_accept,false_alarm,negative_reject,miss_rate,error_field_exact_norm,error_field_overlap_norm,invalid_rate
+overall,all,control_all_accept,400,400,0,0.5,0.5,1.0,0.0,0.0,1.0,0.0,0.0,0.0
+overall,all,control_all_reject,400,400,0,0.5,0.5,0.0,1.0,1.0,0.0,0.18,0.18,0.0
+overall,all,control_oracle_label,400,400,0,1.0,1.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0
+overall,all,control_v0_candidate_integrity,400,400,0,0.5,0.5,1.0,0.0,0.0,1.0,0.0,0.0,0.0
+overall,all,V1_OCR_text_chartdisplay_v2,400,400,0,0.49,0.49,0.695,0.305,0.285,0.715,0.09,0.165,0.0
+overall,all,V2_direct_image_policyv3_chartdisplay_v2,400,400,0,0.5675,0.5675,0.405,0.595,0.73,0.27,0.235,0.25,0.0
+overall,all,V3_C4_group1v2_neutralized,400,400,0,0.5,0.5,0.0,1.0,1.0,0.0,0.0,0.415,0.0
+overall,all,V3_D_SFT_group1v2_neutralized,400,370,30,0.4825,0.5190217391304348,0.03804347826086957,0.9619565217391305,1.0,0.0,0.04838709677419355,0.8118279569892473,0.075
+overall,all,V4_C4_tolerant_chartdisplay_v2,400,400,0,0.505,0.505,0.615,0.385,0.395,0.605,0.0,0.2,0.0
+overall,all,V4_D_SFT_tolerant_chartdisplay_v2,400,370,30,0.52,0.5622370266479664,0.5760869565217391,0.42391304347826086,0.5483870967741935,0.45161290322580644,0.005376344086021506,0.4838709677419355,0.075

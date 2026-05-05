@@ -1,0 +1,11 @@
+method,rows,attempt_distribution,retry_rows,max_attempts,api_error_rows,parse_fail_rows
+V1_OCR_text_chartdisplay_v2,400,{1: 400},0,1,0,0
+V2_direct_image_policyv3_chartdisplay_v2,400,{1: 400},0,1,0,0
+V3_C4_group1v2_neutralized,400,{0: 400},0,0,0,0
+V3_D_SFT_group1v2_neutralized,400,{0: 400},0,0,0,30
+V4_C4_tolerant_chartdisplay_v2,400,{0: 400},0,0,0,0
+V4_D_SFT_tolerant_chartdisplay_v2,400,{0: 400},0,0,0,30
+control_all_accept,400,{0: 400},0,0,0,0
+control_all_reject,400,{0: 400},0,0,0,0
+control_oracle_label,400,{0: 400},0,0,0,0
+control_v0_candidate_integrity,400,{0: 400},0,0,0,0

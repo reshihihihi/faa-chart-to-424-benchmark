@@ -1,0 +1,87 @@
+{
+  "chart_id": "KAIA_R08",
+  "procedure": {
+    "airport": "KAIA",
+    "approach_ident": "R08",
+    "chart_name": "RNAV (GPS) RWY 08"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 2
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "DF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "JEKTI"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 5700,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "direct"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "WAKPA"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 6000,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "course_deg": 262,
+              "type": "course_deg"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

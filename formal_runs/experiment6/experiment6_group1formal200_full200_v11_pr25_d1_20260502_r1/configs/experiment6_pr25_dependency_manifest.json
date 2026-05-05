@@ -1,0 +1,57 @@
+{
+  "artifact_id": "experiment6_v11_pr25_dependency_manifest_20260502",
+  "created_at": "2026-05-02T05:36:13.807137+00:00",
+  "depends_on": {
+    "github_pr": "reshihihihi/faa-chart-to-424-benchmark#25",
+    "pr_head_sha": "36e978348b4966a1a6f789acedb78e18381d13dd",
+    "pr_title": "Add Group 1 scoring-equivalence v2 and D1 formal200 result",
+    "required_before_experiment6_pr": "merge PR #25 first, or stack Experiment 6 PR on PR #25 head"
+  },
+  "important_boundary": {
+    "experiment6_v3_uses_pr25_narrow_display_neutralization": true,
+    "experiment6_v4_tolerant_compare_is_diagnostic_not_pr25_scoring_equivalence": true,
+    "not_in_pr25_scoring_equivalence_v2": [
+      "altitude tolerance",
+      "turn semantic relaxation",
+      "holding default time",
+      "DME/distance tolerance",
+      "reciprocal radial/course equivalence",
+      "Q_terminator relaxation",
+      "leg alignment changes"
+    ]
+  },
+  "status": "complete_dependency_recorded",
+  "used_pr25_artifacts": {
+    "d1_canonical_json": {
+      "directory_manifest_sha256": "5bd5d7dc8177a126e3eb1d7bc750b040e131a2b30b65edadd0dbf9299f2bc7c2",
+      "file_count": 200,
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1/canonical_json"
+    },
+    "d1_canonicalizer_script": {
+      "path": "scripts/run_d1_output_canonicalizer.py",
+      "sha256": "b2db22be0134d9e657b03d5385c9740fcf3cf30a04fdd486453a63b2c60cb1fe"
+    },
+    "d1_method_card": {
+      "path": "docs/d1_method_card_zh.md",
+      "sha256": "e83c00d900a1519c177be5a7cbe108ac33c7db26acf60adb1e04b54cd116dc30"
+    },
+    "d1_policy": {
+      "path": "docs/d1_output_canonicalization_policy_zh.md",
+      "sha256": "a945453556735424513818539690e70e0c413040b6ff7bcacd717d4cc4b30bed"
+    },
+    "d1_summary": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1/reports/D1_summary.json",
+      "sha256": "692840a493a392d9878f2472db196156900535625c792537557f7d16ebb08d2b"
+    },
+    "d1_validation": {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/D1/validation"
+    },
+    "group1_scoring_equivalence_v2_scorer": {
+      "path": "scripts/scorers/group1_canonical_field_scorer_v2.py",
+      "sha256": "bbcbe08fda2482dd90eee28526f0bbd36bce71c82baf4c5054b3608d46a5d500"
+    },
+    "group1_scoring_equivalence_v2_targets": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2"
+    }
+  }
+}
