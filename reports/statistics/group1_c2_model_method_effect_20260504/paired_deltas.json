@@ -1,0 +1,29 @@
+[
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.06180904522613062,
+    "ci_upper": 0.09778910229519981,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C2_CLAUDE_batched_leg",
+    "method_b": "C2_CLAUDE_original",
+    "point_delta": 0.07971372161895363
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.09581635208765063,
+    "ci_upper": 0.14400656105059015,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C2_GPT54_batched_leg",
+    "method_b": "C2_CLAUDE_batched_leg",
+    "point_delta": 0.12018756169792694
+  },
+  {
+    "bootstrap_samples": 10000,
+    "ci_lower": 0.18008608896125095,
+    "ci_upper": 0.2203065115392682,
+    "delta_definition": "method_a - method_b",
+    "method_a": "C2_GPT54_batched_leg",
+    "method_b": "C2_CLAUDE_original",
+    "point_delta": 0.19990128331688056
+  }
+]

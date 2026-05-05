@@ -1,0 +1,119 @@
+{
+  "analysis_set": "experiment4_source_ablation_formal200_main_6x3",
+  "bootstrap_iterations": 10000,
+  "confidence_level": 0.95,
+  "config_path": "configs/bootstrap_paired_delta_policy.json",
+  "config_sha256": "4b38e3739e8ece410cc462e3ca784e81efaf2e7e64ccaefe30a38d700709306d",
+  "created_at_utc": "2026-05-05T02:13:23.928809+00:00",
+  "input_files": [
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V1_ma_text_only/B1/per_sample_scores.csv",
+      "sha256": "e8cbad89624021bf09c520819fdc15a3f0d175a8b71d0fcc73fd1db4ff68f89c"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V1_ma_text_only/C4/per_sample_scores.csv",
+      "sha256": "fa2e1a0cf365c6a6a4ff76f056c3ece4a1ed0902a12c2012982db4088ec81e99"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V1_ma_text_only/D1/per_sample_scores.csv",
+      "sha256": "96bd654d2be67d8593a0724a033e48847af71877ec454d586a1f93564634d285"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V2_full_minus_ma_prose/B1/per_sample_scores.csv",
+      "sha256": "8d62e2e6638e3549ba9c0464a66c4d0c22d947e166c73b58078f7c1b1a159d8a"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V2_full_minus_ma_prose/C4/per_sample_scores.csv",
+      "sha256": "fec7465d502e8ced84867eefd3f1b4991ff56f220136819a24adb9e36eb59520"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V2_full_minus_ma_prose/D1/per_sample_scores.csv",
+      "sha256": "30c5fc044ba6754357916b50a58b442639eea8a192668e88b8a6a5edc70354d8"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V3_plan_view_only/B1/per_sample_scores.csv",
+      "sha256": "ecf3d91791c704dd0a8e6a60f9b59931ab264aac6c7af00e4a7435ba20e3f058"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V3_plan_view_only/C4/per_sample_scores.csv",
+      "sha256": "2936a51243a4fabfaa5abc5e9bd889f5b4c3baab941b049693225c9f36312c7d"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V3_plan_view_only/D1/per_sample_scores.csv",
+      "sha256": "f269f2514308079cebabcef6ca9dcfb3739cd3f2ac8c84ce128e7ad1ad6f2da6"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V4_icon_detail_only/B1/per_sample_scores.csv",
+      "sha256": "150e8bcfc5d7fd28fadaa6ee4b525a9f0900c4381ef15a9ef7af83d3596fdfcb"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V4_icon_detail_only/C4/per_sample_scores.csv",
+      "sha256": "e7c507d4d7f872308160227f8443fa12ba22ae875043edab617b37f3474f3bab"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V4_icon_detail_only/D1/per_sample_scores.csv",
+      "sha256": "b6e52ba8dad63a6c35412b8546a7b2855a6ee18295950797da3721fa458634e2"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V5_plan_detail_no_ma/B1/per_sample_scores.csv",
+      "sha256": "3f313b25ec460bf198953a9a42dfc05893bbf33a0b4d5ca43da4103c1574c259"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V5_plan_detail_no_ma/C4/per_sample_scores.csv",
+      "sha256": "076f627d951de7222e51fb60eb17cf0ccaf721b09e97834a08b95b93bcba6977"
+    },
+    {
+      "path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/V5_plan_detail_no_ma/D1/per_sample_scores.csv",
+      "sha256": "ed9c412562620e7de4fcf9db5bcfd22ece9b9fbfb4875b2811e1ff841e7019d2"
+    },
+    {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/B1_per_sample_v2.jsonl",
+      "sha256": "099d0b7a78d5a93dc6cfc21e4b2ef411c0dace3e2abf896379bbb61c087a5e5f"
+    },
+    {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/C4_per_sample_v2.jsonl",
+      "sha256": "aca99cb9c1bb872103fe7f7f1a11a0bfe56b7653d7e51c2ed8f198b5e72a128f"
+    },
+    {
+      "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_scoring_equivalence_v2/reports/D1_per_sample_v2.jsonl",
+      "sha256": "5dc3df705c7fcfd52f42926b8314ed512acb9d67fb0180e7fb8cd7cf8f3d2a49"
+    }
+  ],
+  "interval_method": "percentile",
+  "methods": [
+    "V0_full_chart__B1",
+    "V0_full_chart__C4",
+    "V0_full_chart__D1",
+    "V1_ma_text_only__B1",
+    "V1_ma_text_only__C4",
+    "V1_ma_text_only__D1",
+    "V2_full_minus_ma_prose__B1",
+    "V2_full_minus_ma_prose__C4",
+    "V2_full_minus_ma_prose__D1",
+    "V3_plan_view_only__B1",
+    "V3_plan_view_only__C4",
+    "V3_plan_view_only__D1",
+    "V4_icon_detail_only__B1",
+    "V4_icon_detail_only__C4",
+    "V4_icon_detail_only__D1",
+    "V5_plan_detail_no_ma__B1",
+    "V5_plan_detail_no_ma__C4",
+    "V5_plan_detail_no_ma__D1"
+  ],
+  "metric_definition": "sum(score_numerator) / sum(score_denominator)",
+  "n_methods": 18,
+  "n_units": 200,
+  "outputs": {
+    "paired_deltas_csv": "reports/statistics/experiment4_source_ablation_formal200_main_6x3/paired_deltas.csv",
+    "paired_deltas_json": "reports/statistics/experiment4_source_ablation_formal200_main_6x3/paired_deltas.json",
+    "point_estimates_csv": "reports/statistics/experiment4_source_ablation_formal200_main_6x3/point_estimates.csv",
+    "point_estimates_json": "reports/statistics/experiment4_source_ablation_formal200_main_6x3/point_estimates.json"
+  },
+  "paired_delta_definition": "metric(method_a) - metric(method_b)",
+  "policy_document": "docs/bootstrap_paired_delta_policy_zh.md",
+  "resampling_unit": "chart_id",
+  "script_path": "scripts/scorers/compute_bootstrap_paired_delta.py",
+  "script_sha256": "a9f70c5f76e1ad176d65075431edc6ad67bd0f7d61c6949ebac4d00376de7bb7",
+  "seed": 20260504,
+  "warnings": []
+}
