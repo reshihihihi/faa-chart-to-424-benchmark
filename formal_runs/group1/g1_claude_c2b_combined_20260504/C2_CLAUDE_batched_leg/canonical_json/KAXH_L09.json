@@ -1,0 +1,87 @@
+{
+  "chart_id": "KAXH_L09",
+  "procedure": {
+    "airport": "KAXH",
+    "approach_ident": "L09",
+    "chart_name": "LOC RWY 09"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 2
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "DF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "KEEDS"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 2500,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "present",
+            "value": "RIGHT"
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "direct"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "DUCKS"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "altitude_2_ft": null,
+              "altitude_ft": 3100,
+              "desc": "AT_OR_ABOVE"
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "course_deg": 269,
+              "type": "course_deg"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      }
+    ]
+  }
+}

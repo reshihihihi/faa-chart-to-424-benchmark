@@ -93,6 +93,7 @@ Claude 半改 C2 重跑使用同一 evaluation 200 条样本，分两片执行�
 - Claude 半改 C2 的 QA schema retry = 0。
 - Claude 半改 C2 保存的 QA 调用数 = 881，保存的 QA 字段数 = 4286。
 - GPT-5.4 半改 C2 保存的 QA 调用数 = 809，保存的 QA 字段数 = 3854。
+- Bootstrap 所需的逐 chart `scores/*.json` 已补齐：GPT-5.4 的 C1/C2/C3/C4 各 200 个，Claude 半改 C2 合并结果 200 个。
 
 ## 数据来源
 
@@ -102,6 +103,7 @@ Claude 半改 C2 重跑使用同一 evaluation 200 条样本，分两片执行�
 - GPT-5.4 C2 半改：`formal_runs/group1/g1_gpt54_oauth_c2b_20260504/C2_GPT54_batched_leg/method_summary.json`
 - Claude C2 半改合并结果：`formal_runs/group1/g1_claude_c2b_combined_20260504/C2_CLAUDE_batched_leg/method_summary.json`
 - Claude C2 半改合并报告：`formal_runs/group1/g1_claude_c2b_combined_20260504/reports/claude_c2_batched_vs_original_and_gpt54_summary.md`
+- PR artifact manifest：`reports/freeze/group1_c2_rerun_artifact_manifest_20260505.md`
 
 ## 推荐写法
 

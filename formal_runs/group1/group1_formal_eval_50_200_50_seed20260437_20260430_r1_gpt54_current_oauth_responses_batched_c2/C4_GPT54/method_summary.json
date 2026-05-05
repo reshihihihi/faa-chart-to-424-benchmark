@@ -1,0 +1,3217 @@
+{
+  "samples_total": 200,
+  "schema_valid": 200,
+  "samples_scored": 200,
+  "json_extraction_policy_counts": {
+    "openai_tool_call_arguments": 200
+  },
+  "parser_repair_count_non_strict_json": 0,
+  "schema_retry_count_total": 0,
+  "score": {
+    "correct": 1757,
+    "total": 4052,
+    "accuracy": 0.43361303060217177
+  },
+  "results": [
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_001",
+      "chart_id": "KABE_I06",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_002",
+      "chart_id": "KALS_I02",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 17,
+        "total": 19,
+        "accuracy": 0.8947368421052632
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_003",
+      "chart_id": "KAMA_I04",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 13,
+        "total": 19,
+        "accuracy": 0.6842105263157895
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_004",
+      "chart_id": "KAPC_I01L",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 12,
+        "total": 25,
+        "accuracy": 0.48
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_005",
+      "chart_id": "KATL_I09R",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 12,
+        "total": 19,
+        "accuracy": 0.631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_006",
+      "chart_id": "KAUS_I18L",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 16,
+        "total": 25,
+        "accuracy": 0.64
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_010",
+      "chart_id": "KBUY_I06-Z",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_011",
+      "chart_id": "KBWG_I03-Y",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_013",
+      "chart_id": "KCMH_I10R",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_015",
+      "chart_id": "KAXH_L09",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 7,
+        "total": 13,
+        "accuracy": 0.5384615384615384
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_016",
+      "chart_id": "KBDL_L33",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 8,
+        "total": 19,
+        "accuracy": 0.42105263157894735
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_018",
+      "chart_id": "KBFF_L12",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 17,
+        "total": 19,
+        "accuracy": 0.8947368421052632
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_019",
+      "chart_id": "KBOS_L15R",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 13,
+        "accuracy": 0.38461538461538464
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_020",
+      "chart_id": "KBUR_L08-Z",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 9,
+        "total": 25,
+        "accuracy": 0.36
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_022",
+      "chart_id": "KCEC_L12",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 19,
+        "accuracy": 0.5789473684210527
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_026",
+      "chart_id": "KCRW_L05",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_027",
+      "chart_id": "KALN_L29",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 10,
+        "total": 25,
+        "accuracy": 0.4
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_028",
+      "chart_id": "KALO_L12",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 12,
+        "total": 19,
+        "accuracy": 0.631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_029",
+      "chart_id": "KAWM_L17",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 13,
+        "total": 19,
+        "accuracy": 0.6842105263157895
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_031",
+      "chart_id": "KBRD_L34",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_032",
+      "chart_id": "KBTL_L23R",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_033",
+      "chart_id": "KBTP_L08",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_034",
+      "chart_id": "KBWI_L15L",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_035",
+      "chart_id": "KCAK_L01",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_036",
+      "chart_id": "KCBF_L36",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 13,
+        "total": 19,
+        "accuracy": 0.6842105263157895
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_038",
+      "chart_id": "KCJR_L04",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 10,
+        "total": 25,
+        "accuracy": 0.4
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_039",
+      "chart_id": "KAFN_RNV-B",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_040",
+      "chart_id": "KAFN_RNV-C",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_042",
+      "chart_id": "KANP_RNV-A",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_043",
+      "chart_id": "KAPT_R04",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_045",
+      "chart_id": "KAQW_RNV-A",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 19,
+        "accuracy": 0.5789473684210527
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_046",
+      "chart_id": "KAQW_RNV-B",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_047",
+      "chart_id": "KAVQ_R12",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_048",
+      "chart_id": "KAVQ_R21",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 10,
+        "total": 25,
+        "accuracy": 0.4
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_049",
+      "chart_id": "KAXH_R27",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_051",
+      "chart_id": "KBDN_R34",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 12,
+        "total": 25,
+        "accuracy": 0.48
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_052",
+      "chart_id": "KBJC_R12L",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_053",
+      "chart_id": "KBLF_R05",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 2,
+        "total": 19,
+        "accuracy": 0.10526315789473684
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_054",
+      "chart_id": "KBMQ_R01",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_055",
+      "chart_id": "KBOS_R32",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_057",
+      "chart_id": "KBUR_R08-Z",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 9,
+        "total": 25,
+        "accuracy": 0.36
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_061",
+      "chart_id": "KCEA_RNV-D",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 19,
+        "accuracy": 0.5789473684210527
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_062",
+      "chart_id": "KCII_R33",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_065",
+      "chart_id": "KADF_R22",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_066",
+      "chart_id": "KAKH_R03",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 16,
+        "total": 31,
+        "accuracy": 0.5161290322580645
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_068",
+      "chart_id": "KAOO_R03-Z",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 8,
+        "total": 25,
+        "accuracy": 0.32
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_069",
+      "chart_id": "KAOO_R21",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 17,
+        "total": 25,
+        "accuracy": 0.68
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_070",
+      "chart_id": "KARG_R04",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_073",
+      "chart_id": "KAWG_R36",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_075",
+      "chart_id": "KAXV_R26",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_077",
+      "chart_id": "KBFD_R14",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_080",
+      "chart_id": "KBKX_R30",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_081",
+      "chart_id": "KBLV_R32RY",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 10,
+        "total": 19,
+        "accuracy": 0.5263157894736842
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_082",
+      "chart_id": "KBTR_R04L",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_083",
+      "chart_id": "KBUM_R18",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_085",
+      "chart_id": "KBXA_R18",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_086",
+      "chart_id": "KBYH_R36",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_088",
+      "chart_id": "KCAO_R02",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_089",
+      "chart_id": "KCBF_R36",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_090",
+      "chart_id": "KCDI_R04",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_092",
+      "chart_id": "KCDS_R36",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_093",
+      "chart_id": "KCGI_R10",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_094",
+      "chart_id": "KCHO_R03",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_098",
+      "chart_id": "KCNC_R10",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_099",
+      "chart_id": "KCOI_R11",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_100",
+      "chart_id": "KCRS_R32",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_101",
+      "chart_id": "KANB_R05",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 17,
+        "total": 31,
+        "accuracy": 0.5483870967741935
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_102",
+      "chart_id": "KAST_R26",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 13,
+        "total": 31,
+        "accuracy": 0.41935483870967744
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_103",
+      "chart_id": "KABE_R13",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 12,
+        "total": 25,
+        "accuracy": 0.48
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_104",
+      "chart_id": "KABE_R24",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_105",
+      "chart_id": "KABY_R05",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 9,
+        "total": 25,
+        "accuracy": 0.36
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_106",
+      "chart_id": "KABY_R17",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_107",
+      "chart_id": "KABY_R23",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_109",
+      "chart_id": "KACK_R33",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_112",
+      "chart_id": "KACY_R13-Y",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_113",
+      "chart_id": "KACY_R31-Y",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_117",
+      "chart_id": "KAFW_R34R",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_118",
+      "chart_id": "KAGC_R10",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_119",
+      "chart_id": "KAGC_R28",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_123",
+      "chart_id": "KAKH_R21",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 10,
+        "total": 25,
+        "accuracy": 0.4
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_124",
+      "chart_id": "KALB_R10",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_125",
+      "chart_id": "KALB_R19-Y",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_126",
+      "chart_id": "KALB_R28",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 12,
+        "total": 25,
+        "accuracy": 0.48
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_127",
+      "chart_id": "KALN_R17",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_128",
+      "chart_id": "KALS_R02",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 17,
+        "total": 25,
+        "accuracy": 0.68
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_129",
+      "chart_id": "KALW_R02",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_130",
+      "chart_id": "KAMA_R04-Y",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 10,
+        "total": 25,
+        "accuracy": 0.4
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_131",
+      "chart_id": "KAMA_R13-Y",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 16,
+        "total": 25,
+        "accuracy": 0.64
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_132",
+      "chart_id": "KANJ_R14",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_133",
+      "chart_id": "KAPC_R01LY",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 2,
+        "total": 25,
+        "accuracy": 0.08
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_134",
+      "chart_id": "KAPC_R01LZ",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 2,
+        "total": 25,
+        "accuracy": 0.08
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_137",
+      "chart_id": "KARV_R18",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 19,
+        "total": 25,
+        "accuracy": 0.76
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_138",
+      "chart_id": "KARV_R28",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_140",
+      "chart_id": "KAAA_R03",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_141",
+      "chart_id": "KAAA_R21",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_142",
+      "chart_id": "KAAF_R06",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_143",
+      "chart_id": "KAAF_R14",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_144",
+      "chart_id": "KAAF_R24",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_147",
+      "chart_id": "KAAS_R05",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_148",
+      "chart_id": "KAAS_R23",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_150",
+      "chart_id": "KABI_R17L",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_151",
+      "chart_id": "KABI_R35R",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_154",
+      "chart_id": "KABR_R13",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_155",
+      "chart_id": "KABR_R17",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_156",
+      "chart_id": "KABR_R31",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 3,
+        "total": 19,
+        "accuracy": 0.15789473684210525
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_157",
+      "chart_id": "KACJ_R05",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_158",
+      "chart_id": "KACJ_R23",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_159",
+      "chart_id": "KACK_R06",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_160",
+      "chart_id": "KACK_R15",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 13,
+        "total": 19,
+        "accuracy": 0.6842105263157895
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_161",
+      "chart_id": "KACP_R18",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 7,
+        "total": 19,
+        "accuracy": 0.3684210526315789
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_162",
+      "chart_id": "KACP_R36",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 7,
+        "total": 19,
+        "accuracy": 0.3684210526315789
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_163",
+      "chart_id": "KACQ_R15",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_164",
+      "chart_id": "KACQ_R33",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_168",
+      "chart_id": "KACY_R04",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_171",
+      "chart_id": "KADC_R16",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_172",
+      "chart_id": "KADC_R34",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_173",
+      "chart_id": "KADF_R04",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_176",
+      "chart_id": "KADH_R18",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_177",
+      "chart_id": "KADH_R36",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 7,
+        "total": 19,
+        "accuracy": 0.3684210526315789
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_178",
+      "chart_id": "KADM_R13",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_179",
+      "chart_id": "KADM_R31",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_183",
+      "chart_id": "KAEG_R04",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_184",
+      "chart_id": "KAEG_R22",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_185",
+      "chart_id": "KAEL_R17",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_186",
+      "chart_id": "KAEL_R35",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 12,
+        "total": 19,
+        "accuracy": 0.631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_188",
+      "chart_id": "KAFJ_R09",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_189",
+      "chart_id": "KAFJ_R27",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_193",
+      "chart_id": "KAFP_R16",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 8,
+        "total": 19,
+        "accuracy": 0.42105263157894735
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_194",
+      "chart_id": "KAFP_R34",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 7,
+        "total": 19,
+        "accuracy": 0.3684210526315789
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_195",
+      "chart_id": "KAFW_R16L",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_196",
+      "chart_id": "KAFW_R16R",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_197",
+      "chart_id": "KAGO_R18",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_198",
+      "chart_id": "KAGO_R36",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_201",
+      "chart_id": "KAGZ_R09",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_202",
+      "chart_id": "KAGZ_R27",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_205",
+      "chart_id": "KAHN_R02",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_206",
+      "chart_id": "KAHN_R09",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_207",
+      "chart_id": "KAHN_R20",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_208",
+      "chart_id": "KAIA_R08",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_209",
+      "chart_id": "KAIA_R12",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_210",
+      "chart_id": "KAIA_R26",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_213",
+      "chart_id": "KAIG_R09",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_214",
+      "chart_id": "KAIG_R17",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_215",
+      "chart_id": "KAIG_R27",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_216",
+      "chart_id": "KAIK_R07",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_217",
+      "chart_id": "KAIK_R25",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_218",
+      "chart_id": "KAIO_R02",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 13,
+        "total": 19,
+        "accuracy": 0.6842105263157895
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_219",
+      "chart_id": "KAIO_R20",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_220",
+      "chart_id": "KAIT_R16",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_221",
+      "chart_id": "KAIT_R34",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 12,
+        "total": 19,
+        "accuracy": 0.631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_222",
+      "chart_id": "KAIV_R06",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_223",
+      "chart_id": "KAIV_R24",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_224",
+      "chart_id": "KAIZ_R04",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_225",
+      "chart_id": "KAIZ_R22",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_229",
+      "chart_id": "KAJR_R06",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_230",
+      "chart_id": "KAJR_R24",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_231",
+      "chart_id": "KAKO_R11",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_232",
+      "chart_id": "KAKO_R29",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_235",
+      "chart_id": "KALI_R13",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_236",
+      "chart_id": "KALI_R31",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_237",
+      "chart_id": "KALM_R04",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_238",
+      "chart_id": "KALN_R11",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_239",
+      "chart_id": "KALO_R12",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_240",
+      "chart_id": "KALO_R18",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_241",
+      "chart_id": "KALS_R20",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 7,
+        "total": 19,
+        "accuracy": 0.3684210526315789
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_242",
+      "chart_id": "KALW_R20",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_243",
+      "chart_id": "KALX_R18",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_244",
+      "chart_id": "KALX_R36",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_245",
+      "chart_id": "KAMG_R16",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_246",
+      "chart_id": "KAMG_R34",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_247",
+      "chart_id": "KAMN_R09",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_248",
+      "chart_id": "KAMN_R18",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 3,
+        "total": 19,
+        "accuracy": 0.15789473684210525
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_249",
+      "chart_id": "KAMN_R27",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_250",
+      "chart_id": "KAMT_R05",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 7,
+        "total": 19,
+        "accuracy": 0.3684210526315789
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_251",
+      "chart_id": "KAMT_R23",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 13,
+        "total": 19,
+        "accuracy": 0.6842105263157895
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_252",
+      "chart_id": "KAMW_R01",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_253",
+      "chart_id": "KAMW_R13",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_254",
+      "chart_id": "KAMW_R19",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_255",
+      "chart_id": "KANB_R23",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_262",
+      "chart_id": "KANJ_R32",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_263",
+      "chart_id": "KANQ_R05",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 11,
+        "total": 19,
+        "accuracy": 0.5789473684210527
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_264",
+      "chart_id": "KANQ_R23",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_265",
+      "chart_id": "KANW_R13",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_266",
+      "chart_id": "KANW_R17",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_267",
+      "chart_id": "KANW_R31",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_271",
+      "chart_id": "KAOV_R13",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_272",
+      "chart_id": "KAOV_R31",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_276",
+      "chart_id": "KAPF_R05-Y",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_277",
+      "chart_id": "KAPF_R14",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_278",
+      "chart_id": "KAPF_R23-Y",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_283",
+      "chart_id": "KAQO_R17",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_284",
+      "chart_id": "KAQO_R35",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_286",
+      "chart_id": "KAQX_R17",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_287",
+      "chart_id": "KAQX_R35",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_288",
+      "chart_id": "KARA_R17",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 13,
+        "total": 19,
+        "accuracy": 0.6842105263157895
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_289",
+      "chart_id": "KARA_R35",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_290",
+      "chart_id": "KARB_R06",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 5,
+        "total": 19,
+        "accuracy": 0.2631578947368421
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_291",
+      "chart_id": "KARB_R24",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_292",
+      "chart_id": "KARG_R18",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 6,
+        "total": 19,
+        "accuracy": 0.3157894736842105
+      }
+    },
+    {
+      "method": "C4_GPT54",
+      "source_method": "C4",
+      "sample_id": "formal300_293",
+      "chart_id": "KARG_R22",
+      "json_extraction_policy": "openai_tool_call_arguments",
+      "validation_error_count": 0,
+      "validation_errors": [],
+      "attempt_count": 1,
+      "schema_retry_count": 0,
+      "score": {
+        "correct": 4,
+        "total": 19,
+        "accuracy": 0.21052631578947367
+      }
+    }
+  ]
+}
