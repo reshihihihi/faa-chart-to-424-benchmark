@@ -1,6 +1,6 @@
 # Bootstrap / paired-delta 执行记录
 
-执行日期：2026-05-04
+执行日期：2026-05-04；实验组4补充 bootstrap：2026-05-05
 
 配置文件：
 
@@ -28,7 +28,7 @@ scripts/scorers/compute_bootstrap_paired_delta.py
 |---|---|---|---|---|
 | `group1_scoring_equivalence_v2` | 通过 | 已完成 | `reports/statistics/group1_scoring_equivalence_v2/` | 有缺失样本按预注册规则补 0，详见下方 |
 | `group1_c2_model_method_effect_20260504` | 通过 | 已完成 | `reports/statistics/group1_c2_model_method_effect_20260504/` | 无 warning |
-| `experiment4_source_ablation_formal200_main_6x3` | 未通过 | 未跑 formal | 无正式输出 | 缺 B1/C4 在 V1-V5 的逐 chart score Git 工件 |
+| `experiment4_source_ablation_formal200_main_6x3` | 通过 | 已完成 | `reports/statistics/experiment4_source_ablation_formal200_main_6x3/` | V1-V5 逐 chart CSV 已补齐，warning 为空 |
 | `experiment5_eval200_r6_strict_reviewed` | 通过 | 已完成 | `reports/statistics/experiment5_eval200_r6_strict_reviewed/` | 已把 G3 的真实逐样本来源接入配置 |
 | `experiment6_v11_pr25_d1_counterfactual` | 通过 | 已完成 | `reports/statistics/experiment6_v11_pr25_d1_counterfactual/` | 无 warning |
 
@@ -87,28 +87,41 @@ paired delta：
 
 ## 4. 实验组4
 
-实验组4 smoke 未通过。
-
-原因不是 6×3 汇总结果不存在。仓库中有完整的 `experiment4_final_metrics_table.csv` 和 `experiment4_v2_scoring_summary.csv`，其中 B1/C4/D1 在 V1-V5 上都有汇总结果。
-
-真正的问题是：当前 Git tree 中没有提交 B1/C4 在 V1-V5 上的逐 chart score 文件。
-
-缺失 required methods：
+输出：
 
 ```text
-V1_ma_text_only__B1
-V1_ma_text_only__C4
-V2_full_minus_ma_prose__B1
-V2_full_minus_ma_prose__C4
-V3_plan_view_only__B1
-V3_plan_view_only__C4
-V4_icon_detail_only__B1
-V4_icon_detail_only__C4
-V5_plan_detail_no_ma__B1
-V5_plan_detail_no_ma__C4
+reports/statistics/experiment4_source_ablation_formal200_main_6x3/
 ```
 
-因此实验组4不能从汇总表硬算 CI。下一步需要找回或提交这些逐 chart score，再跑正式 6×3 bootstrap。
+本次修正：
+
+- 已补齐实验组4 V1-V5 的逐 chart CSV：`formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/<variant>/<method>/per_sample_scores.csv`。
+- 已把实验组4 bootstrap 配置改为读取这些逐 chart CSV，而不是旧的 `runs/formal_eval200/*/<method>/scores_v2/*.json` 路径。
+- smoke 通过，正式 10000 次 bootstrap 已完成。
+- `bootstrap_run_manifest.json` 中 `warnings=[]`，`n_units=200`，方法数为 18，paired delta 行数为 153。
+
+point estimate：
+
+| 方法 | Correct/Total | Accuracy | 95% CI |
+|---|---:|---:|---:|
+| `V0_full_chart__B1` | 1110/4052 | 27.39% | 25.36% - 29.50% |
+| `V0_full_chart__C4` | 1638/4052 | 40.42% | 37.54% - 43.40% |
+| `V0_full_chart__D1` | 3158/4052 | 77.94% | 75.06% - 80.73% |
+| `V1_ma_text_only__B1` | 1166/4052 | 28.78% | 26.89% - 30.75% |
+| `V1_ma_text_only__C4` | 1948/4052 | 48.08% | 44.98% - 51.12% |
+| `V1_ma_text_only__D1` | 79/4052 | 1.95% | 0.60% - 3.62% |
+| `V2_full_minus_ma_prose__B1` | 790/4052 | 19.50% | 17.72% - 21.34% |
+| `V2_full_minus_ma_prose__C4` | 1574/4052 | 38.85% | 35.87% - 41.71% |
+| `V2_full_minus_ma_prose__D1` | 2908/4052 | 71.77% | 68.59% - 74.85% |
+| `V3_plan_view_only__B1` | 134/4052 | 3.31% | 2.46% - 4.23% |
+| `V3_plan_view_only__C4` | 1341/4052 | 33.09% | 30.39% - 35.76% |
+| `V3_plan_view_only__D1` | 2289/4052 | 56.49% | 53.68% - 59.24% |
+| `V4_icon_detail_only__B1` | 0/4052 | 0.00% | 0.00% - 0.00% |
+| `V4_icon_detail_only__C4` | 35/4052 | 0.86% | 0.17% - 1.76% |
+| `V4_icon_detail_only__D1` | 335/4052 | 8.27% | 5.28% - 11.57% |
+| `V5_plan_detail_no_ma__B1` | 287/4052 | 7.08% | 5.91% - 8.30% |
+| `V5_plan_detail_no_ma__C4` | 1179/4052 | 29.10% | 26.03% - 32.14% |
+| `V5_plan_detail_no_ma__D1` | 2583/4052 | 63.75% | 61.02% - 66.53% |
 
 ## 5. 实验组5
 
@@ -178,6 +191,5 @@ selected paired delta：
 
 ## 7. 下一步
 
-1. 补齐实验组4 B1/C4 在 V1-V5 上的逐 chart score 工件。
-2. 如果需要给 GPT-5.4 `C1_GPT54/C3_GPT54/C4_GPT54` 做 CI，也要补齐它们的逐 chart score 工件。
-3. 补齐后重新运行对应 smoke，再跑正式 10000 次。
+1. 如果需要给 GPT-5.4 `C1_GPT54/C3_GPT54/C4_GPT54` 做 CI，还要补齐它们的逐 chart score 工件。
+2. 论文写作时区分主 leaderboard、source-view ablation、diagnostic/oracle-style、counterfactual verification，避免把不同实验组的可比性边界混在一起。

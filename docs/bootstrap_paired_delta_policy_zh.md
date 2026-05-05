@@ -177,6 +177,7 @@ D1
 - `D1` 是正式 SFT 比较口径。
 - `D_SFT` raw output 只能作诊断或附录，因为它在若干 source-view 下存在严重 coverage/schema failure。不能把 D_SFT raw 的 valid-only 高分当作实验组4主结论。
 - 实验组4正式统计必须覆盖 6×3 主矩阵。只跑 D1 或只跑 V0 都不完整。
+- V1-V5 的 B1/C4/D1 必须使用已提交的逐航图 CSV：`formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/<variant>/<method>/per_sample_scores.csv`。不能只用最终 summary 表反推 bootstrap。
 
 实验组4需要 bootstrap 和 paired-delta。主要比较包括：
 

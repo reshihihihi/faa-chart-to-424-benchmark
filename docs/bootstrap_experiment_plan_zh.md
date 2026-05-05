@@ -227,11 +227,19 @@ bootstrap 目标：
 - `V2_full_minus_ma_prose` 测删除复飞文字后，仅凭图形/其他区域还能保留多少能力。
 - `V3/V4/V5` 分别测 plan view、icon/detail、组合视图的贡献。
 
-当前注意事项：
+当前执行状态：
+
+- V1-V5 的 B1/C4/D1 逐 chart score 已补齐，输入为 `formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1/scores/v2/<variant>/<method>/per_sample_scores.csv`。
+- V0_full_chart 复用实验组1整图 baseline 的逐 chart score。
+- 已完成 `experiment4_source_ablation_formal200_main_6x3` 的正式 10000 次 bootstrap。
+- 输出在 `reports/statistics/experiment4_source_ablation_formal200_main_6x3/`。
+- `bootstrap_run_manifest.json` 中 `warnings=[]`，`n_units=200`，point estimate 方法数为 18，paired delta 行数为 153。
+
+注意事项：
 
 - 不能只对 D1 做 bootstrap，否则会把实验组4错误简化成 D1-only。
-- 必须找齐 B1/C4/D1 在 6 个 variant 上的逐样本 score。
-- 如果某些 variant 只有最终汇总表，没有逐 chart score，要先补工件，再做正式 bootstrap。
+- 实验组4正式解释必须围绕 6 个 source-view variant × 3 个主方法，也就是 B1、C4、D1 的 18 个结果。
+- `D_SFT` raw output 只能作为诊断或附录，不进入实验组4主 6×3 结论。
 
 ## 7. 实验组5 bootstrap 方案
 
@@ -389,16 +397,18 @@ reports/statistics/<analysis_set_name>/
 1. 新增 bootstrap/paired-delta 中文政策文档。
 2. 新增 bootstrap 配置文件。
 3. 新增统一 bootstrap 脚本。
-4. `group1_c2_model_method_effect_20260504` 已经跑过正式 10000 次 bootstrap。
-5. 已确认 GPT-5.4 C1/C2/C3/C4 都有 summary 结果。
+4. `group1_scoring_equivalence_v2` 已经跑过正式 10000 次 bootstrap。
+5. `group1_c2_model_method_effect_20260504` 已经跑过正式 10000 次 bootstrap。
+6. `experiment4_source_ablation_formal200_main_6x3` 已经跑过正式 10000 次 bootstrap。
+7. `experiment5_eval200_r6_strict_reviewed` 已经跑过正式 10000 次 bootstrap。
+8. `experiment6_v11_pr25_d1_counterfactual` 已经跑过正式 10000 次 bootstrap。
+9. 已确认 GPT-5.4 C1/C2/C3/C4 都有 summary 结果。
 
 当前还需要做：
 
-1. 跑实验组1主表的正式 10000 次 bootstrap。
-2. 找齐实验组4 6×3 的逐样本 score，再跑 bootstrap。
-3. 找清实验组5 r6 strict reviewed 的 `G3` score 路径，补齐后跑 bootstrap。
-4. 跑实验组6 v11 PR25+D1 的正式 10000 次 bootstrap。
-5. 尝试找回 `C1_GPT54/C3_GPT54/C4_GPT54` 的逐 chart score；如果找不到，就只把它们作为 GPT-5.4 C 系列 point estimate 结果报告。
+1. 尝试找回 `C1_GPT54/C3_GPT54/C4_GPT54` 的逐 chart score；如果找不到，就只把它们作为 GPT-5.4 C 系列 point estimate 结果报告。
+2. 在论文写作中明确实验组5是 diagnostic/oracle-style，不并入实验组1公平主 leaderboard。
+3. 在论文写作中明确实验组6是 counterfactual verification，不和 canonical JSON 生成主榜直接混排。
 
 ## 11. 最终论文中应该怎么写
 
