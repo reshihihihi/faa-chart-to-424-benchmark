@@ -1,0 +1,61 @@
+method,primary_type,primary_type_label_zh,correct,total,row_count,accuracy
+A1,visual_non_text_evidence,图形/非文本证据,42,118,4,0.3559322033898305
+A1,implicit_rule,隐式规则,44,100,4,0.44
+A1,424_derived_semantics,424 派生语义,17,100,4,0.17
+A1,cross_modal_evidence,多证据融合/跨区域整合,20,75,3,0.26666666666666666
+A1,leg_structure_complexity,航段结构复杂,24,75,3,0.32
+A1,ocr_display_quality,OCR/显示质量,22,50,2,0.44
+A2,visual_non_text_evidence,图形/非文本证据,25,118,4,0.211864406779661
+A2,implicit_rule,隐式规则,25,100,4,0.25
+A2,424_derived_semantics,424 派生语义,24,100,4,0.24
+A2,cross_modal_evidence,多证据融合/跨区域整合,4,75,3,0.05333333333333334
+A2,leg_structure_complexity,航段结构复杂,15,75,3,0.2
+A2,ocr_display_quality,OCR/显示质量,21,50,2,0.42
+B1,visual_non_text_evidence,图形/非文本证据,40,118,4,0.3389830508474576
+B1,implicit_rule,隐式规则,21,100,4,0.21
+B1,424_derived_semantics,424 派生语义,20,100,4,0.2
+B1,cross_modal_evidence,多证据融合/跨区域整合,16,75,3,0.21333333333333335
+B1,leg_structure_complexity,航段结构复杂,18,75,3,0.24
+B1,ocr_display_quality,OCR/显示质量,17,50,2,0.34
+B1_prime,visual_non_text_evidence,图形/非文本证据,46,118,4,0.3898305084745763
+B1_prime,implicit_rule,隐式规则,33,100,4,0.33
+B1_prime,424_derived_semantics,424 派生语义,30,100,4,0.3
+B1_prime,cross_modal_evidence,多证据融合/跨区域整合,24,75,3,0.32
+B1_prime,leg_structure_complexity,航段结构复杂,27,75,3,0.36
+B1_prime,ocr_display_quality,OCR/显示质量,10,50,2,0.2
+B1_prime_link,visual_non_text_evidence,图形/非文本证据,25,87,3,0.28735632183908044
+B1_prime_link,implicit_rule,隐式规则,22,100,4,0.22
+B1_prime_link,424_derived_semantics,424 派生语义,10,75,3,0.13333333333333333
+B1_prime_link,cross_modal_evidence,多证据融合/跨区域整合,7,25,1,0.28
+B1_prime_link,leg_structure_complexity,航段结构复杂,5,25,1,0.2
+B1_prime_link,ocr_display_quality,OCR/显示质量,15,50,2,0.3
+C1,visual_non_text_evidence,图形/非文本证据,46,118,4,0.3898305084745763
+C1,implicit_rule,隐式规则,41,100,4,0.41
+C1,424_derived_semantics,424 派生语义,28,100,4,0.28
+C1,cross_modal_evidence,多证据融合/跨区域整合,21,75,3,0.28
+C1,leg_structure_complexity,航段结构复杂,28,75,3,0.37333333333333335
+C1,ocr_display_quality,OCR/显示质量,22,50,2,0.44
+C2,visual_non_text_evidence,图形/非文本证据,29,118,4,0.2457627118644068
+C2,implicit_rule,隐式规则,30,100,4,0.3
+C2,424_derived_semantics,424 派生语义,14,100,4,0.14
+C2,cross_modal_evidence,多证据融合/跨区域整合,15,75,3,0.2
+C2,leg_structure_complexity,航段结构复杂,18,75,3,0.24
+C2,ocr_display_quality,OCR/显示质量,12,50,2,0.24
+C3,visual_non_text_evidence,图形/非文本证据,51,118,4,0.4322033898305085
+C3,implicit_rule,隐式规则,42,100,4,0.42
+C3,424_derived_semantics,424 派生语义,32,100,4,0.32
+C3,cross_modal_evidence,多证据融合/跨区域整合,24,75,3,0.32
+C3,leg_structure_complexity,航段结构复杂,28,75,3,0.37333333333333335
+C3,ocr_display_quality,OCR/显示质量,20,50,2,0.4
+C4,visual_non_text_evidence,图形/非文本证据,58,118,4,0.4915254237288136
+C4,implicit_rule,隐式规则,46,100,4,0.46
+C4,424_derived_semantics,424 派生语义,37,100,4,0.37
+C4,cross_modal_evidence,多证据融合/跨区域整合,49,75,3,0.6533333333333333
+C4,leg_structure_complexity,航段结构复杂,27,75,3,0.36
+C4,ocr_display_quality,OCR/显示质量,32,50,2,0.64
+D_SFT,visual_non_text_evidence,图形/非文本证据,48,118,4,0.4067796610169492
+D_SFT,implicit_rule,隐式规则,46,100,4,0.46
+D_SFT,424_derived_semantics,424 派生语义,35,75,3,0.4666666666666667
+D_SFT,cross_modal_evidence,多证据融合/跨区域整合,25,50,2,0.5
+D_SFT,leg_structure_complexity,航段结构复杂,40,75,3,0.5333333333333333
+D_SFT,ocr_display_quality,OCR/显示质量,19,50,2,0.38

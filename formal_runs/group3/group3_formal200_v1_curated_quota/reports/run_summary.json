@@ -1,0 +1,21 @@
+{
+  "chart_count": 200,
+  "chart_method_rows": 2000,
+  "constraints": [
+    "derived chart-level scored rows only",
+    "no png/checkpoint/raw output/local image path/backend token/raw 424/CIFP/target JSON included",
+    "correct/total are normalized from v2_correct/v2_total"
+  ],
+  "difficulty_level_counts": {
+    "core": 1800,
+    "hard": 200
+  },
+  "files": {
+    "difficulty_summary": "group3/reports/bootstrap_difficulty_level_table.csv",
+    "joined_chart_scores": "group3/group3_joined_chart_scores_formal200_bootstrap.jsonl",
+    "method_summary": "group3/reports/bootstrap_method_summary_table.csv"
+  },
+  "method_count": 10,
+  "run_id": "group3_formal200_v1_curated_quota_bootstrap_derived_20260505",
+  "source_run_id": "group3_formal200_v1_curated_quota_20260503"
+}

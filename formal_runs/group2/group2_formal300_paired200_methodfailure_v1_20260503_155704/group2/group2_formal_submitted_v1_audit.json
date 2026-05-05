@@ -1,0 +1,80 @@
+{
+  "run_id": "formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704",
+  "created_at": "2026-05-05T11:19:04",
+  "submitted_annotation_count": 300,
+  "expected_submitted_count": 300,
+  "analysis_chart_count": 200,
+  "expected_analysis_count": 200,
+  "min_analysis_count": 200,
+  "skipped_missing_group1_score_chart_count": 100,
+  "excluded_annotation_count": 0,
+  "original_evidence_rows": 2149,
+  "fixed_evidence_rows": 2334,
+  "added_direct_q4_evidence_rows": 185,
+  "added_direct_q4_rule_counts": {
+    "同一航段的直接飞向区域映射补成字段证据": 2,
+    "同一航段的直接飞向航段类型推出航向/航迹/径向为直接飞向": 183
+  },
+  "field_score_rows": 40520,
+  "chart_score_rows": 2000,
+  "missing_score_as_failure_chart_method_count": 0,
+  "missing_score_as_failure_field_rows": 0,
+  "joined_rows": 40520,
+  "unmatched_score_rows": 17180,
+  "unmatched_evidence_rows": 0,
+  "positive_present_strict_evidence_rows": 23340,
+  "positive_question_fallback_rows": 0,
+  "size_control_present_rows": 2000,
+  "negative_not_applicable_rows": 15180,
+  "diagnostic_rows": 0,
+  "unmatched_present_rows": 0,
+  "unmatched_not_applicable_rows": 15180,
+  "evidence_on_not_applicable_rows": 0,
+  "missing_group1_method_chart_counts": {},
+  "skipped_missing_group1_method_chart_counts": {
+    "A1": 100,
+    "A2": 100,
+    "B1": 100,
+    "B1_prime": 100,
+    "B1_prime_link": 100,
+    "C1": 100,
+    "C2": 100,
+    "C3": 100,
+    "C4": 100,
+    "D1": 100
+  },
+  "positive_evidence_bucket_counts": {
+    "规则或默认补全": 14550,
+    "图上证据不足": 1510,
+    "下方细节区或图中文字证据": 4850,
+    "平面图直接证据": 1650,
+    "文本直接证据": 710,
+    "多证据共同支持": 70
+  },
+  "negative_error_type_counts": {
+    "true_negative": 7246,
+    "over_assertion": 3826,
+    "missing_prediction_status": 2832,
+    "unknown_on_negative": 761,
+    "other_negative_error": 515
+  },
+  "output_root": "formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704",
+  "annotation_change_audit": {
+    "current_snapshot_paths": {
+      "charts": "formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704/inputs/annotation_chart_snapshot.jsonl",
+      "fields": "formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704/inputs/annotation_field_snapshot.jsonl",
+      "regions": "formal_runs/group2/group2_formal300_paired200_methodfailure_v1_20260503_155704/inputs/annotation_region_snapshot.jsonl"
+    },
+    "previous_run_root": null,
+    "has_previous_snapshot": false,
+    "changed_chart_count": 0,
+    "changed_field_count": 0,
+    "changed_region_count": 0,
+    "changed_chart_ids": []
+  },
+  "warnings": [
+    "some submitted charts were excluded because they are outside the Group 1 scored chart set"
+  ],
+  "hard_blockers": [],
+  "ready_for_group2_main_claim": true
+}
