@@ -1,0 +1,116 @@
+{
+  "artifact_kind": "experiment_group3_formal200_hard_case_freeze",
+  "freeze_id": "group3_formal200_v1_frozen_20260505",
+  "freeze_status": "accepted_frozen_no_bootstrap",
+  "accepted_at": "2026-05-05",
+  "accepted_by_user": true,
+  "scope": {
+    "candidate_pool": "group1_actual_formal200_200_charts",
+    "hard_case_count": 20,
+    "hard_case_ratio": 0.1,
+    "selected_type_counts": {
+      "visual_non_text_evidence": 4,
+      "implicit_rule": 4,
+      "424_derived_semantics": 4,
+      "cross_modal_evidence": 3,
+      "leg_structure_complexity": 3,
+      "ocr_display_quality": 2
+    },
+    "selected_dominant_tag_counts": {
+      "text_missing_visual_present": 4,
+      "rule_default_completion_case": 4,
+      "ca_df_sequence": 4,
+      "cross_modal_multi_leg": 3,
+      "wrong_leg_risk": 3,
+      "display_equivalence_sensitive": 2
+    },
+    "formal300_split_counts_in_hard_set": {
+      "probe": 6,
+      "development": 9,
+      "evaluation": 5
+    },
+    "selected_chart_ids": [
+      "KAKH_R03",
+      "KANB_R05",
+      "KAST_R26",
+      "KAPC_I01L",
+      "KAUS_I18L",
+      "KANJ_R14",
+      "KARV_R18",
+      "KARV_R28",
+      "KAPT_R04",
+      "KAVQ_R21",
+      "KBDN_R34",
+      "KBOS_R32",
+      "KBUR_R08-Z",
+      "KAOO_R03-Z",
+      "KAOO_R21",
+      "KCOI_R11",
+      "KABE_R13",
+      "KABE_R24",
+      "KBUR_L08-Z",
+      "KCJR_L04"
+    ]
+  },
+  "frozen_quota": {
+    "visual_non_text_evidence": 4,
+    "implicit_rule": 4,
+    "424_derived_semantics": 4,
+    "cross_modal_evidence": 3,
+    "leg_structure_complexity": 3,
+    "ocr_display_quality": 2
+  },
+  "selection_policy": {
+    "does_not_use_model_error_for_selection": true,
+    "allowed_signals": [
+      "target_structure_tags",
+      "comparison_policy_tags",
+      "annotation_evidence_tags",
+      "diversity_quota"
+    ],
+    "disallowed_signals": [
+      "model_prediction_payloads",
+      "model_error_rate_for_selection",
+      "source_encoding_records",
+      "answer_payloads"
+    ],
+    "score_join_timing": "after_hard_cases_are_selected_only_for_analysis"
+  },
+  "files": {
+    "frozen_selection": "final_hard_case_selection_frozen_v1.jsonl",
+    "freeze_report_zh": "group3_formal200_v1_freeze_report_zh.md",
+    "pre_freeze_audit_report_zh": "group3_formal200_freeze_pre_audit_zh.md"
+  },
+  "related_derived_score_rows": {
+    "bootstrap_chart_scores": "../formal200_bootstrap_v1/group3/group3_joined_chart_scores_formal200_v1.jsonl",
+    "bootstrap_field_scores": "../formal200_bootstrap_v1/group3/group3_joined_field_scores_formal200_v1.jsonl"
+  },
+  "row_counts": {
+    "frozen_selection_rows": 20
+  },
+  "sha256": {
+    "frozen_selection": "b87c50e4153c465d7bc80b51e6caae827b0ade2ebbd2bc92d24cf5b44d474bba",
+    "freeze_report_zh": "80288c7e16ddf648940e4e02e7e1e48541dacd65fdb7abdaa49fcee7fd672943",
+    "pre_freeze_audit_report_zh": "1f7c0403328a3fea1811fcd6c98a03102c5d836ea77165a8b138e6ea94f0c508"
+  },
+  "artifact_policy": {
+    "included": [
+      "hard-case freeze metadata",
+      "sanitized hard-case row list",
+      "Chinese freeze/audit reports"
+    ],
+    "excluded": [
+      "image files",
+      "checkpoint files",
+      "model output payloads",
+      "local filesystem paths",
+      "backend tokens",
+      "source encoding records",
+      "answer payloads"
+    ]
+  },
+  "bootstrap": {
+    "status": "not_run_here",
+    "responsibility": "handled_separately"
+  }
+}
