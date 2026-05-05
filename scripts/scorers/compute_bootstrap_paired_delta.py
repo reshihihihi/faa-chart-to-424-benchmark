@@ -316,14 +316,20 @@ def load_csv_score_rows(repo_root: Path, discovery: dict[str, Any], warnings: li
     unit_key = discovery["unit_key"]
     numerator_key = discovery["numerator_key"]
     denominator_key = discovery["denominator_key"]
-    regex = discovery["method_name_regex"]
+    method_key = discovery.get("method_key")
+    regex = discovery.get("method_name_regex")
+    row_method_regex = discovery.get("row_method_regex")
     template = discovery.get("method_name_template")
     out: dict[str, MethodScores] = {}
 
     for path in files:
-        method = derive_method(path, regex, template)
-        method_scores = out.setdefault(method, MethodScores(method=method))
-        method_scores.source_files.add(source_id(source_ref, path))
+        file_method_scores: MethodScores | None = None
+        if not method_key:
+            if not regex:
+                raise ValueError("csv_score_rows discovery requires method_name_regex unless method_key is set")
+            method = derive_method(path, regex, template)
+            file_method_scores = out.setdefault(method, MethodScores(method=method))
+            file_method_scores.source_files.add(source_id(source_ref, path))
         if source_ref:
             handle = io.StringIO(git_text(source_ref, str(path)))
         else:
@@ -331,6 +337,29 @@ def load_csv_score_rows(repo_root: Path, discovery: dict[str, Any], warnings: li
         with handle:
             reader = csv.DictReader(handle)
             for row in reader:
+                if method_key:
+                    if method_key not in row:
+                        raise KeyError(f"{path}: missing method_key {method_key!r}")
+                    raw_method = str(row[method_key])
+                    if row_method_regex:
+                        match = re.search(row_method_regex, raw_method)
+                        if not match:
+                            raise ValueError(
+                                f"Could not derive row method from {raw_method!r} with regex {row_method_regex!r}"
+                            )
+                        method = match.group("method") if "method" in match.groupdict() else match.group(1)
+                    else:
+                        method = raw_method
+                    if template:
+                        values = dict(row)
+                        values["method"] = method
+                        values["raw_method"] = raw_method
+                        method = template.format(**values)
+                    method_scores = out.setdefault(method, MethodScores(method=method))
+                    method_scores.source_files.add(source_id(source_ref, path))
+                else:
+                    assert file_method_scores is not None
+                    method_scores = file_method_scores
                 unit_id = str(row[unit_key])
                 numerator = to_float(row[numerator_key], path=source_id(source_ref, path), key=numerator_key)
                 denominator = to_float(row[denominator_key], path=source_id(source_ref, path), key=denominator_key)

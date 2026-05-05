@@ -1,6 +1,6 @@
 # Bootstrap / paired-delta 执行记录
 
-执行日期：2026-05-04；实验组4补充 bootstrap：2026-05-05
+执行日期：2026-05-04；实验组4补充 bootstrap：2026-05-05；GPT-5.4 C 系列逐 chart bootstrap：2026-05-05
 
 配置文件：
 
@@ -28,6 +28,7 @@ scripts/scorers/compute_bootstrap_paired_delta.py
 |---|---|---|---|---|
 | `group1_scoring_equivalence_v2` | 通过 | 已完成 | `reports/statistics/group1_scoring_equivalence_v2/` | 有缺失样本按预注册规则补 0，详见下方 |
 | `group1_c2_model_method_effect_20260504` | 通过 | 已完成 | `reports/statistics/group1_c2_model_method_effect_20260504/` | 无 warning |
+| `group1_gpt54_cfamily_per_chart_20260505` | 通过 | 已完成 | `reports/statistics/group1_gpt54_cfamily_per_chart_20260505/` | 878856d5 补齐逐 chart score 表后新增，warning 为空 |
 | `experiment4_source_ablation_formal200_main_6x3` | 通过 | 已完成 | `reports/statistics/experiment4_source_ablation_formal200_main_6x3/` | V1-V5 逐 chart CSV 已补齐，warning 为空 |
 | `experiment5_eval200_r6_strict_reviewed` | 通过 | 已完成 | `reports/statistics/experiment5_eval200_r6_strict_reviewed/` | 已把 G3 的真实逐样本来源接入配置 |
 | `experiment6_v11_pr25_d1_counterfactual` | 通过 | 已完成 | `reports/statistics/experiment6_v11_pr25_d1_counterfactual/` | 无 warning |
@@ -84,6 +85,43 @@ paired delta：
 | `C2_CLAUDE_batched_leg - C2_CLAUDE_original` | +7.97 pp | +6.18 pp - +9.78 pp | 固定 Claude，测 batched-leg 结构效应 |
 | `C2_GPT54_batched_leg - C2_CLAUDE_batched_leg` | +12.02 pp | +9.58 pp - +14.40 pp | 固定 batched-leg，测 GPT-5.4 模型效应 |
 | `C2_GPT54_batched_leg - C2_CLAUDE_original` | +19.99 pp | +18.01 pp - +22.03 pp | 结构变化 + 模型变化的混合差异 |
+
+## 3.5 实验组1 GPT-5.4 C 系列逐 chart bootstrap
+
+输入：
+
+```text
+reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv
+```
+
+输出：
+
+```text
+reports/statistics/group1_gpt54_cfamily_per_chart_20260505/
+```
+
+运行状态：
+
+- 100 次 smoke：通过。
+- 10000 次正式 bootstrap：已完成。
+- `bootstrap_run_manifest.json` 中 `warnings=[]`，`n_units=200`，`n_methods=4`。
+
+point estimate：
+
+| 方法 | Correct/Total | Accuracy | 95% CI |
+|---|---:|---:|---:|
+| `C1_GPT54` | 1201/4052 | 29.64% | 27.30% - 32.10% |
+| `C2_GPT54_batched_leg` | 1884/4052 | 46.50% | 44.61% - 48.37% |
+| `C3_GPT54` | 1218/4052 | 30.06% | 27.71% - 32.49% |
+| `C4_GPT54` | 1757/4052 | 43.36% | 40.59% - 46.09% |
+
+selected paired delta：
+
+| 比较 | delta | 95% CI |
+|---|---:|---:|
+| `C2_GPT54_batched_leg - C4_GPT54` | +3.13 pp | +0.17 pp - +6.06 pp |
+| `C4_GPT54 - C1_GPT54` | +13.72 pp | +11.64 pp - +15.80 pp |
+| `C4_GPT54 - C3_GPT54` | +13.30 pp | +11.20 pp - +15.41 pp |
 
 ## 4. 实验组4
 
@@ -191,5 +229,5 @@ selected paired delta：
 
 ## 7. 下一步
 
-1. 如果需要给 GPT-5.4 `C1_GPT54/C3_GPT54/C4_GPT54` 做 CI，还要补齐它们的逐 chart score 工件。
-2. 论文写作时区分主 leaderboard、source-view ablation、diagnostic/oracle-style、counterfactual verification，避免把不同实验组的可比性边界混在一起。
+1. 论文写作时区分主 leaderboard、GPT-5.4 C 系列补充、source-view ablation、diagnostic/oracle-style、counterfactual verification，避免把不同实验组的可比性边界混在一起。
+2. GPT-5.4 C 系列补充可以报告 10000 次 chart-level bootstrap CI，但不能替代实验组1主榜中的冻结 Claude C1/C2/C3/C4。

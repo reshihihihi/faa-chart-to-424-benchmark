@@ -152,16 +152,28 @@ reports/statistics/group1_scoring_equivalence_v2/
 formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1_gpt54_current_oauth_responses_batched_c2/reports/combined_gpt54_current_oauth_batched_c2_summary.json
 ```
 
-四个结果：
+878856d5 已补齐 GPT-5.4 C1/C2/C3/C4 的逐 chart bootstrap score 表：
 
-| 方法 | Correct/Total | Accuracy | 当前统计状态 |
-|---|---:|---:|---|
-| `C1_GPT54` | 1201/4052 | 29.64% | 已跑完；summary 记录 scores=200，但逐 chart score 文件未在当前 Git tree 中提交 |
-| `C2_GPT54_batched_leg` | 1884/4052 | 46.50% | 有逐 chart `method_summary.results`，可以 bootstrap |
-| `C3_GPT54` | 1218/4052 | 30.06% | 已跑完；summary 记录 scores=200，但逐 chart score 文件未在当前 Git tree 中提交 |
-| `C4_GPT54` | 1757/4052 | 43.36% | 已跑完；summary 记录 scores=200，但逐 chart score 文件未在当前 Git tree 中提交 |
+```text
+reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv
+```
 
-因此，当前可正式 bootstrap 的 GPT-5.4 补充分析是 C2 桥接对照：
+四个 GPT-5.4 C 系列结果现在都可以做 chart-level bootstrap：
+
+| 方法 | Correct/Total | Accuracy | 95% CI | 当前统计状态 |
+|---|---:|---:|---:|---|
+| `C1_GPT54` | 1201/4052 | 29.64% | 27.30% - 32.10% | 已完成 10000 次 bootstrap |
+| `C2_GPT54_batched_leg` | 1884/4052 | 46.50% | 44.61% - 48.37% | 已完成 10000 次 bootstrap |
+| `C3_GPT54` | 1218/4052 | 30.06% | 27.71% - 32.49% | 已完成 10000 次 bootstrap |
+| `C4_GPT54` | 1757/4052 | 43.36% | 40.59% - 46.09% | 已完成 10000 次 bootstrap |
+
+输出位置：
+
+```text
+reports/statistics/group1_gpt54_cfamily_per_chart_20260505/
+```
+
+另外，C2 桥接对照仍然单独保留：
 
 ```text
 C2_CLAUDE_original
@@ -182,8 +194,6 @@ C2_GPT54_batched_leg
 ```text
 reports/statistics/group1_c2_model_method_effect_20260504/
 ```
-
-如果要给 `C1_GPT54/C3_GPT54/C4_GPT54` 也做 CI，必须先补齐它们的逐 chart score 文件，不能从 combined summary 反推。
 
 ## 6. 实验组4 bootstrap 方案
 
@@ -402,11 +412,12 @@ reports/statistics/<analysis_set_name>/
 6. `experiment4_source_ablation_formal200_main_6x3` 已经跑过正式 10000 次 bootstrap。
 7. `experiment5_eval200_r6_strict_reviewed` 已经跑过正式 10000 次 bootstrap。
 8. `experiment6_v11_pr25_d1_counterfactual` 已经跑过正式 10000 次 bootstrap。
-9. 已确认 GPT-5.4 C1/C2/C3/C4 都有 summary 结果。
+9. 已导入 `878856d5` 新增的 GPT-5.4 C1/C2/C3/C4 逐 chart score 表。
+10. `group1_gpt54_cfamily_per_chart_20260505` 已经跑过正式 10000 次 bootstrap。
 
 当前还需要做：
 
-1. 尝试找回 `C1_GPT54/C3_GPT54/C4_GPT54` 的逐 chart score；如果找不到，就只把它们作为 GPT-5.4 C 系列 point estimate 结果报告。
+1. 在论文写作中明确 GPT-5.4 C 系列补充不替代实验组1主榜的冻结 Claude C1/C2/C3/C4。
 2. 在论文写作中明确实验组5是 diagnostic/oracle-style，不并入实验组1公平主 leaderboard。
 3. 在论文写作中明确实验组6是 counterfactual verification，不和 canonical JSON 生成主榜直接混排。
 
@@ -417,7 +428,7 @@ reports/statistics/<analysis_set_name>/
 建议分成四类：
 
 1. 实验组1主 leaderboard：正式方法主结果，带 CI 和 paired delta。
-2. 实验组1 GPT-5.4 C 系列补充：C1/C2/C3/C4 点估计；C2 桥接对照带 CI。
+2. 实验组1 GPT-5.4 C 系列补充：C1/C2/C3/C4 点估计、95% CI、paired delta；C2 桥接对照单独解释结构效应和模型效应。
 3. 实验组4 source-view ablation：6×3 ablation 表，带 CI 和 variant delta。
 4. 实验组5 diagnostic/oracle-style：诊断表，带 CI，但明确不是端到端公平排名。
 5. 实验组6 verification：counterfactual verification 表，按 chart_id 聚类 bootstrap。

@@ -101,16 +101,18 @@ D1
 origin/group1-c2-method-effect-20260504
 ```
 
-它包含两类信息：
+它包含三类信息：
 
 1. GPT-5.4 对 C1/C2/C3/C4 的补充 rerun summary。
-2. C2 的桥接对照：Claude 原始 C2、Claude batched C2、GPT-5.4 batched C2。
+2. commit `878856d5` 新增的 GPT-5.4 C1/C2/C3/C4 逐 chart bootstrap score 表。
+3. C2 的桥接对照：Claude 原始 C2、Claude batched C2、GPT-5.4 batched C2。
 
 解释边界：
 
 - 原始实验组1主表中的 C1/C2/C3/C4 仍是冻结 formal run 的 Claude 版本。
-- GPT-5.4 C1/C2/C3/C4 都已经跑过，并且都有 200/200 的 combined summary。combined summary 的 artifact checks 还记录了 C1/C2/C3/C4 均为 `scores=200`，说明运行时产生过 score 工件。当前限制不是“没跑”，而是 C1/C3/C4 的逐 chart score 文件没有在当前 Git tree/PR 文件列表中作为 Git blob 提交；因此可以报告 point estimate 和 artifact status，但不能从 summary-only 文件计算正式 chart-level bootstrap CI。
+- GPT-5.4 C1/C2/C3/C4 都已经跑过，并且都有 200/200 的逐 chart score 行。正式 chart-level bootstrap 输入是 `reports/freeze/group1_gpt54_cfamily_per_chart_scores_for_bootstrap_20260505.csv`，输出是 `reports/statistics/group1_gpt54_cfamily_per_chart_20260505/`。
 - C2 的三个版本可以单独作为 `group1_c2_model_method_effect_20260504` 进行 bootstrap，因为 Claude batched C2 和 GPT-5.4 batched C2 的 `method_summary.json` 含有 200 条逐 chart `results`，原始 Claude C2 也有正式 per-sample score。
+- GPT-5.4 C 系列补充不替代实验组1主榜；它回答的是“同一 C1/C2/C3/C4 方法族换成 GPT-5.4 后，各自结果和成对差异是什么”。
 
 C2 的结论必须拆开说：
 
