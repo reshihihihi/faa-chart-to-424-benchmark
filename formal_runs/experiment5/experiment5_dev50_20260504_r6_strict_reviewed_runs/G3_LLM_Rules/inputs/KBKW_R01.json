@@ -19,7 +19,7 @@
       "provenance": {
         "derived_from_final_answer": false,
         "source_field": "region_type/bbox",
-        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_file": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
         "source_region_id": "KBKW_R01_01_missed_approach_text",
         "source_type": "admin_region_presence",
         "transform": "copy_coarse_region_presence_only"
@@ -43,7 +43,7 @@
       "provenance": {
         "derived_from_final_answer": false,
         "source_field": "region_type/bbox",
-        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_file": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
         "source_region_id": "KBKW_R01_02_plan_view",
         "source_type": "admin_region_presence",
         "transform": "copy_coarse_region_presence_only"
@@ -67,7 +67,7 @@
       "provenance": {
         "derived_from_final_answer": false,
         "source_field": "region_type/bbox",
-        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_file": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
         "source_region_id": "KBKW_R01_03_lower_detail_area",
         "source_type": "admin_region_presence",
         "transform": "copy_coarse_region_presence_only"
@@ -99,7 +99,7 @@
       "provenance": {
         "derived_from_final_answer": false,
         "source_field": "label_left_of_arrow",
-        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_file": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
         "source_region_id": "KBKW_R01_iconalign_002_altitude_text",
         "source_type": "admin_region_visible_label",
         "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
@@ -131,7 +131,7 @@
       "provenance": {
         "derived_from_final_answer": false,
         "source_field": "label_left_of_arrow",
-        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_file": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
         "source_region_id": "KBKW_R01_iconalign_001_fix_text",
         "source_type": "admin_region_visible_label",
         "transform": "strip_label_interpreted_suffix_after_arrow_then_parse_visible_text"
@@ -163,7 +163,7 @@
       "provenance": {
         "derived_from_final_answer": false,
         "source_field": "region_type/bbox",
-        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_file": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
         "source_region_id": "KBKW_R01_iconalign_005_climb_arrow",
         "source_type": "admin_region_visible_graphic",
         "transform": "copy_visible_graphic_region_type"
@@ -195,7 +195,7 @@
       "provenance": {
         "derived_from_final_answer": false,
         "source_field": "region_type/bbox",
-        "source_file": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
+        "source_file": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl",
         "source_region_id": "KBKW_R01_iconalign_006_fix_symbol",
         "source_type": "admin_region_visible_graphic",
         "transform": "copy_visible_graphic_region_type"

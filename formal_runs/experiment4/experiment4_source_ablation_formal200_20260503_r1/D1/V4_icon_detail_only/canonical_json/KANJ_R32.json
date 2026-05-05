@@ -1,0 +1,15 @@
+{
+  "chart_id": "KANJ_R32",
+  "procedure": {
+    "airport": "KANJ",
+    "approach_ident": "R32",
+    "chart_name": "RNAV (GPS) RWY 32"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

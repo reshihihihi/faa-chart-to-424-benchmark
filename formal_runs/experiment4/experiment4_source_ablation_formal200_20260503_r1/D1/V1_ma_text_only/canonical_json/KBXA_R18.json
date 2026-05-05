@@ -1,0 +1,15 @@
+{
+  "chart_id": "KBXA_R18",
+  "procedure": {
+    "airport": "KBXA",
+    "approach_ident": "R18",
+    "chart_name": "RNAV (GPS) RWY 18"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

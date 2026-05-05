@@ -23,21 +23,21 @@ RUN_DIR = REPO_ROOT / "formal_runs" / "experiment5" / "experiment5_smoke_2026050
 SMOKE_MANIFEST = EXPERIMENT5_DIR / "smoke20_manifest.jsonl"
 ROI_FIELD_SCHEMA = REPO_ROOT / "schemas" / "experiment5_roi_field_candidates.schema.v1.json"
 
-SOURCE_VIEW_MANIFEST = Path(r"E:\experiment3\zu4\source_views\manifests\source_view_manifest.jsonl")
-SOURCE_VIEW_SUMMARY_ORIGINAL = Path(r"E:\experiment3\zu4\source_views\reports\source_view_summary.json")
+SOURCE_VIEW_MANIFEST = Path(r"<experiment4-source-view-artifact-root>\source_views\manifests\source_view_manifest.jsonl")
+SOURCE_VIEW_SUMMARY_ORIGINAL = Path(r"<experiment4-source-view-artifact-root>\source_views\reports\source_view_summary.json")
 SOURCE_VIEW_SUMMARY_SNAPSHOT = EXPERIMENT5_DIR / "source_view_summary_for_experiment5_current.json"
 OCR_ARTIFACTS = {
     "MISSED_APPROACH_TEXT": Path(
-        r"E:\experiment3\zu4\ocr_artifacts\V1_ma_text_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1"
+        r"<experiment4-source-view-artifact-root>\ocr_artifacts\V1_ma_text_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1"
     ),
     "PLAN_VIEW": Path(
-        r"E:\experiment3\zu4\ocr_artifacts\V3_plan_view_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1"
+        r"<experiment4-source-view-artifact-root>\ocr_artifacts\V3_plan_view_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1"
     ),
     "MISSED_APPROACH_DETAIL_AREA": Path(
-        r"E:\experiment3\zu4\ocr_artifacts\V4_icon_detail_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1"
+        r"<experiment4-source-view-artifact-root>\ocr_artifacts\V4_icon_detail_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1"
     ),
     "PLAN_DETAIL_NO_MA": Path(
-        r"E:\experiment3\zu4\ocr_artifacts\V5_plan_detail_no_ma\ocr1_paddleocr_ppocrv5_source_view_20260501_r1"
+        r"<experiment4-source-view-artifact-root>\ocr_artifacts\V5_plan_detail_no_ma\ocr1_paddleocr_ppocrv5_source_view_20260501_r1"
     ),
 }
 SOURCE_VIEW_VARIANTS = {

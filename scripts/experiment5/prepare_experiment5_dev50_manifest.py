@@ -29,19 +29,19 @@ DEFAULT_ADMIN_EXPORT = (
     / "shujuji_annotation_export_2026-05-03T08-34-13-795Z.json"
 )
 
-SOURCE_VIEW_MANIFEST = Path(r"E:\experiment3\zu4\source_views\manifests\source_view_manifest.jsonl")
+SOURCE_VIEW_MANIFEST = Path(r"<experiment4-source-view-artifact-root>\source_views\manifests\source_view_manifest.jsonl")
 OCR_ARTIFACT_MANIFESTS = {
     "MISSED_APPROACH_TEXT": Path(
-        r"E:\experiment3\zu4\ocr_artifacts\V1_ma_text_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\manifest.jsonl"
+        r"<experiment4-source-view-artifact-root>\ocr_artifacts\V1_ma_text_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\manifest.jsonl"
     ),
     "PLAN_VIEW": Path(
-        r"E:\experiment3\zu4\ocr_artifacts\V3_plan_view_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\manifest.jsonl"
+        r"<experiment4-source-view-artifact-root>\ocr_artifacts\V3_plan_view_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\manifest.jsonl"
     ),
     "MISSED_APPROACH_DETAIL_AREA": Path(
-        r"E:\experiment3\zu4\ocr_artifacts\V4_icon_detail_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\manifest.jsonl"
+        r"<experiment4-source-view-artifact-root>\ocr_artifacts\V4_icon_detail_only\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\manifest.jsonl"
     ),
     "PLAN_DETAIL_NO_MA": Path(
-        r"E:\experiment3\zu4\ocr_artifacts\V5_plan_detail_no_ma\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\manifest.jsonl"
+        r"<experiment4-source-view-artifact-root>\ocr_artifacts\V5_plan_detail_no_ma\ocr1_paddleocr_ppocrv5_source_view_20260501_r1\manifest.jsonl"
     ),
 }
 

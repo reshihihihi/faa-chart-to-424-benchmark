@@ -7,10 +7,10 @@
     "leg_type"
   ],
   "artifact_paths": {
-    "admin_evidence_links": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_evidence_links_dev50.jsonl",
-    "admin_field_review": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_field_review_dev50.jsonl",
-    "admin_gold_answer": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_gold_answer_dev50.jsonl",
-    "admin_regions": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl"
+    "admin_evidence_links": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_evidence_links_dev50.jsonl",
+    "admin_field_review": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_field_review_dev50.jsonl",
+    "admin_gold_answer": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_gold_answer_dev50.jsonl",
+    "admin_regions": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\admin_artifacts\\admin_regions_dev50.jsonl"
   },
   "artifact_summaries": {
     "admin_evidence_links": {
@@ -251,7 +251,7 @@
       }
     }
   },
-  "dev_run_dir": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1",
+  "dev_run_dir": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1",
   "forbidden_keys": [
     "Q_terminator",
     "annotation_pr28_json",

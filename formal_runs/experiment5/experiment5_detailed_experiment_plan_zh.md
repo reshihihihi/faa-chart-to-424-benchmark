@@ -13,7 +13,7 @@ HEAD: c69c184
 本地工作目录：
 
 ```text
-C:\Users\admin\Documents\New project\faa-chart-to-424-benchmark-c69c184
+external_artifact://C/Users\admin\Documents\New project\faa-chart-to-424-benchmark-c69c184
 ```
 
 ## 1. 实验组5定位

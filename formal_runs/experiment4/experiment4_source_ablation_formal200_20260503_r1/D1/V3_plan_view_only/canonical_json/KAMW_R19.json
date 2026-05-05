@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAMW_R19",
+  "procedure": {
+    "airport": "KAMW",
+    "approach_ident": "R19",
+    "chart_name": "RNAV (GPS) RWY 19"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

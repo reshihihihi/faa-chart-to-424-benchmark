@@ -1,0 +1,15 @@
+{
+  "chart_id": "KALO_R12",
+  "procedure": {
+    "airport": "KALO",
+    "approach_ident": "R12",
+    "chart_name": "RNAV (GPS) RWY 12"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

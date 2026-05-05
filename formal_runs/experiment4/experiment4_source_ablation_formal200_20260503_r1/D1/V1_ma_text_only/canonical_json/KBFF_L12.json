@@ -1,0 +1,15 @@
+{
+  "chart_id": "KBFF_L12",
+  "procedure": {
+    "airport": "KBFF",
+    "approach_ident": "L12",
+    "chart_name": "ILS OR LOC/DME RWY 12"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

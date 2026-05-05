@@ -1,0 +1,10 @@
+{  
+  "chart_id":"KGRA_V05",
+  "procedure":{
+    "chart_name":"V05",
+    "airport":"KGRA"
+  },
+  "missed_approach":{
+    "leg_count":{"status":"present","value":3},
+    "legs":[{"leg_index":1,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"CA"}}},{"leg_index":2,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"GRAVE"}}},{"leg_index":3,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"GRAVE"}}},{"leg_index":3,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"GRAVE"}}}}]},{"leg_count":{"status":"present","value":3},{"leg_index":4,"answers":{"status":"not_applicable","value":null}}]}}
+}

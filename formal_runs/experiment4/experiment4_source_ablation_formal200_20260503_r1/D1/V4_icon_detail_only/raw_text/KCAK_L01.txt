@@ -1,0 +1,9 @@
+{  
+  "chart_id":"KACO_L19",
+  "procedure":{
+    "chart_name":"L19",
+    "airport":"KACO"
+  },
+  "missed_approach":{
+    "leg_count":{"status":"present","value":3},
+    "legs":[{"leg_index":1,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"CA"}}},{"leg_index":2,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"ACO"}}},{"leg_index":3,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"ACO"}}}}]},{"leg_count":{"status":"present","value":3},{"leg_index":4,"answers":{"status":"not_applicable","value":null}}]}}

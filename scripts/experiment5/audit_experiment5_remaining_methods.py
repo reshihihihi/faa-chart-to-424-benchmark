@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -14,7 +15,10 @@ SMOKE_MANIFEST = EXPERIMENT5_DIR / "smoke20_manifest.jsonl"
 GOLD_MA_TEMPLATE = EXPERIMENT5_DIR / "gold_ma_text_smoke20_template.jsonl"
 GOLD_OBSERVABLE_TEMPLATE = EXPERIMENT5_DIR / "gold_observable_smoke20_template.jsonl"
 DEFAULT_ANNOTATION_EXPORT = Path(
-    r"E:\experiment3\group2_annotation_status_20260503\shujuji_annotation_export_2026-05-03T02-07-42-455Z.json"
+    os.environ.get(
+        "SHUJUJI_ANNOTATION_EXPORT",
+        str(REPO_ROOT / "downloads" / "experiment5_admin" / "latest_formal300_export.json"),
+    )
 )
 
 

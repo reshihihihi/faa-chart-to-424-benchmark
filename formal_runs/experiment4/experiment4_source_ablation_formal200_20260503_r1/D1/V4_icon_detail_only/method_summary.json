@@ -1,0 +1,2419 @@
+{
+  "created_at": "2026-05-02T11:51:49.958539+00:00",
+  "method_id": "D1",
+  "sample_manifest": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\scoring_manifest.jsonl",
+  "canonical_json_dir": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json",
+  "samples_total": 200,
+  "schema_valid": 200,
+  "samples_scored": 200,
+  "parse_or_schema_failures": 0,
+  "score": {
+    "correct": 335,
+    "total": 4052,
+    "accuracy": 0.08267522211253701
+  },
+  "results": [
+    {
+      "method": "D1",
+      "chart_id": "KABE_I06",
+      "sample_id": "formal300_001",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KABE_I06.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALS_I02",
+      "sample_id": "formal300_002",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALS_I02.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMA_I04",
+      "sample_id": "formal300_003",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMA_I04.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAPC_I01L",
+      "sample_id": "formal300_004",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAPC_I01L.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KATL_I09R",
+      "sample_id": "formal300_005",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KATL_I09R.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAUS_I18L",
+      "sample_id": "formal300_006",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAUS_I18L.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 8,
+        "total": 25,
+        "accuracy": 0.32
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBUY_I06-Z",
+      "sample_id": "formal300_010",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBUY_I06-Z.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBWG_I03-Y",
+      "sample_id": "formal300_011",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBWG_I03-Y.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCMH_I10R",
+      "sample_id": "formal300_013",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCMH_I10R.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 17,
+        "total": 19,
+        "accuracy": 0.8947368421052632
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAXH_L09",
+      "sample_id": "formal300_015",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAXH_L09.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 10,
+        "total": 13,
+        "accuracy": 0.7692307692307693
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBDL_L33",
+      "sample_id": "formal300_016",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBDL_L33.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBFF_L12",
+      "sample_id": "formal300_018",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBFF_L12.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBOS_L15R",
+      "sample_id": "formal300_019",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBOS_L15R.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 13,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBUR_L08-Z",
+      "sample_id": "formal300_020",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBUR_L08-Z.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 10,
+        "total": 25,
+        "accuracy": 0.4
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCEC_L12",
+      "sample_id": "formal300_022",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCEC_L12.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCRW_L05",
+      "sample_id": "formal300_026",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCRW_L05.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALN_L29",
+      "sample_id": "formal300_027",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALN_L29.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALO_L12",
+      "sample_id": "formal300_028",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALO_L12.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAWM_L17",
+      "sample_id": "formal300_029",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAWM_L17.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBRD_L34",
+      "sample_id": "formal300_031",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBRD_L34.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBTL_L23R",
+      "sample_id": "formal300_032",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBTL_L23R.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 14,
+        "total": 19,
+        "accuracy": 0.7368421052631579
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBTP_L08",
+      "sample_id": "formal300_033",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBTP_L08.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBWI_L15L",
+      "sample_id": "formal300_034",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBWI_L15L.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCAK_L01",
+      "sample_id": "formal300_035",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCAK_L01.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCBF_L36",
+      "sample_id": "formal300_036",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCBF_L36.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCJR_L04",
+      "sample_id": "formal300_038",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCJR_L04.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAFN_RNV-B",
+      "sample_id": "formal300_039",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAFN_RNV-B.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAFN_RNV-C",
+      "sample_id": "formal300_040",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAFN_RNV-C.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KANP_RNV-A",
+      "sample_id": "formal300_042",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KANP_RNV-A.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAPT_R04",
+      "sample_id": "formal300_043",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAPT_R04.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAQW_RNV-A",
+      "sample_id": "formal300_045",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAQW_RNV-A.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAQW_RNV-B",
+      "sample_id": "formal300_046",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAQW_RNV-B.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAVQ_R12",
+      "sample_id": "formal300_047",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAVQ_R12.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAVQ_R21",
+      "sample_id": "formal300_048",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAVQ_R21.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAXH_R27",
+      "sample_id": "formal300_049",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAXH_R27.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBDN_R34",
+      "sample_id": "formal300_051",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBDN_R34.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBJC_R12L",
+      "sample_id": "formal300_052",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBJC_R12L.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBLF_R05",
+      "sample_id": "formal300_053",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBLF_R05.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBMQ_R01",
+      "sample_id": "formal300_054",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBMQ_R01.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBOS_R32",
+      "sample_id": "formal300_055",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBOS_R32.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBUR_R08-Z",
+      "sample_id": "formal300_057",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBUR_R08-Z.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCEA_RNV-D",
+      "sample_id": "formal300_061",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCEA_RNV-D.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCII_R33",
+      "sample_id": "formal300_062",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCII_R33.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KADF_R22",
+      "sample_id": "formal300_065",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KADF_R22.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAKH_R03",
+      "sample_id": "formal300_066",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAKH_R03.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 10,
+        "total": 31,
+        "accuracy": 0.3225806451612903
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAOO_R03-Z",
+      "sample_id": "formal300_068",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAOO_R03-Z.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAOO_R21",
+      "sample_id": "formal300_069",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAOO_R21.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KARG_R04",
+      "sample_id": "formal300_070",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KARG_R04.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAWG_R36",
+      "sample_id": "formal300_073",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAWG_R36.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAXV_R26",
+      "sample_id": "formal300_075",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAXV_R26.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBFD_R14",
+      "sample_id": "formal300_077",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBFD_R14.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBKX_R30",
+      "sample_id": "formal300_080",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBKX_R30.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBLV_R32RY",
+      "sample_id": "formal300_081",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBLV_R32RY.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBTR_R04L",
+      "sample_id": "formal300_082",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBTR_R04L.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBUM_R18",
+      "sample_id": "formal300_083",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBUM_R18.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBXA_R18",
+      "sample_id": "formal300_085",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBXA_R18.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KBYH_R36",
+      "sample_id": "formal300_086",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KBYH_R36.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCAO_R02",
+      "sample_id": "formal300_088",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCAO_R02.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCBF_R36",
+      "sample_id": "formal300_089",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCBF_R36.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCDI_R04",
+      "sample_id": "formal300_090",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCDI_R04.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCDS_R36",
+      "sample_id": "formal300_092",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCDS_R36.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCGI_R10",
+      "sample_id": "formal300_093",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCGI_R10.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCHO_R03",
+      "sample_id": "formal300_094",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCHO_R03.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCNC_R10",
+      "sample_id": "formal300_098",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCNC_R10.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCOI_R11",
+      "sample_id": "formal300_099",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCOI_R11.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KCRS_R32",
+      "sample_id": "formal300_100",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KCRS_R32.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KANB_R05",
+      "sample_id": "formal300_101",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KANB_R05.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 11,
+        "total": 31,
+        "accuracy": 0.3548387096774194
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAST_R26",
+      "sample_id": "formal300_102",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAST_R26.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 31,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KABE_R13",
+      "sample_id": "formal300_103",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KABE_R13.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KABE_R24",
+      "sample_id": "formal300_104",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KABE_R24.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KABY_R05",
+      "sample_id": "formal300_105",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KABY_R05.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KABY_R17",
+      "sample_id": "formal300_106",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KABY_R17.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KABY_R23",
+      "sample_id": "formal300_107",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KABY_R23.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACK_R33",
+      "sample_id": "formal300_109",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACK_R33.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACY_R13-Y",
+      "sample_id": "formal300_112",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACY_R13-Y.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACY_R31-Y",
+      "sample_id": "formal300_113",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACY_R31-Y.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAFW_R34R",
+      "sample_id": "formal300_117",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAFW_R34R.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAGC_R10",
+      "sample_id": "formal300_118",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAGC_R10.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAGC_R28",
+      "sample_id": "formal300_119",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAGC_R28.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAKH_R21",
+      "sample_id": "formal300_123",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAKH_R21.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALB_R10",
+      "sample_id": "formal300_124",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALB_R10.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALB_R19-Y",
+      "sample_id": "formal300_125",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALB_R19-Y.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALB_R28",
+      "sample_id": "formal300_126",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALB_R28.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALN_R17",
+      "sample_id": "formal300_127",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALN_R17.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALS_R02",
+      "sample_id": "formal300_128",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALS_R02.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 11,
+        "total": 25,
+        "accuracy": 0.44
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALW_R02",
+      "sample_id": "formal300_129",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALW_R02.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 12,
+        "total": 25,
+        "accuracy": 0.48
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMA_R04-Y",
+      "sample_id": "formal300_130",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMA_R04-Y.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMA_R13-Y",
+      "sample_id": "formal300_131",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMA_R13-Y.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KANJ_R14",
+      "sample_id": "formal300_132",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KANJ_R14.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAPC_R01LY",
+      "sample_id": "formal300_133",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAPC_R01LY.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAPC_R01LZ",
+      "sample_id": "formal300_134",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAPC_R01LZ.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KARV_R18",
+      "sample_id": "formal300_137",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KARV_R18.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KARV_R28",
+      "sample_id": "formal300_138",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KARV_R28.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 25,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAAA_R03",
+      "sample_id": "formal300_140",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAAA_R03.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAAA_R21",
+      "sample_id": "formal300_141",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAAA_R21.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAAF_R06",
+      "sample_id": "formal300_142",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAAF_R06.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAAF_R14",
+      "sample_id": "formal300_143",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAAF_R14.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAAF_R24",
+      "sample_id": "formal300_144",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAAF_R24.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 17,
+        "total": 19,
+        "accuracy": 0.8947368421052632
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAAS_R05",
+      "sample_id": "formal300_147",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAAS_R05.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAAS_R23",
+      "sample_id": "formal300_148",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAAS_R23.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KABI_R17L",
+      "sample_id": "formal300_150",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KABI_R17L.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KABI_R35R",
+      "sample_id": "formal300_151",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KABI_R35R.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KABR_R13",
+      "sample_id": "formal300_154",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KABR_R13.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KABR_R17",
+      "sample_id": "formal300_155",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KABR_R17.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KABR_R31",
+      "sample_id": "formal300_156",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KABR_R31.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACJ_R05",
+      "sample_id": "formal300_157",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACJ_R05.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACJ_R23",
+      "sample_id": "formal300_158",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACJ_R23.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACK_R06",
+      "sample_id": "formal300_159",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACK_R06.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACK_R15",
+      "sample_id": "formal300_160",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACK_R15.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACP_R18",
+      "sample_id": "formal300_161",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACP_R18.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACP_R36",
+      "sample_id": "formal300_162",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACP_R36.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACQ_R15",
+      "sample_id": "formal300_163",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACQ_R15.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACQ_R33",
+      "sample_id": "formal300_164",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACQ_R33.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KACY_R04",
+      "sample_id": "formal300_168",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KACY_R04.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KADC_R16",
+      "sample_id": "formal300_171",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KADC_R16.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KADC_R34",
+      "sample_id": "formal300_172",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KADC_R34.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KADF_R04",
+      "sample_id": "formal300_173",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KADF_R04.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KADH_R18",
+      "sample_id": "formal300_176",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KADH_R18.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KADH_R36",
+      "sample_id": "formal300_177",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KADH_R36.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KADM_R13",
+      "sample_id": "formal300_178",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KADM_R13.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KADM_R31",
+      "sample_id": "formal300_179",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KADM_R31.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAEG_R04",
+      "sample_id": "formal300_183",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAEG_R04.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAEG_R22",
+      "sample_id": "formal300_184",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAEG_R22.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAEL_R17",
+      "sample_id": "formal300_185",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAEL_R17.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAEL_R35",
+      "sample_id": "formal300_186",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAEL_R35.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAFJ_R09",
+      "sample_id": "formal300_188",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAFJ_R09.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAFJ_R27",
+      "sample_id": "formal300_189",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAFJ_R27.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAFP_R16",
+      "sample_id": "formal300_193",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAFP_R16.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAFP_R34",
+      "sample_id": "formal300_194",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAFP_R34.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAFW_R16L",
+      "sample_id": "formal300_195",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAFW_R16L.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAFW_R16R",
+      "sample_id": "formal300_196",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAFW_R16R.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 17,
+        "total": 19,
+        "accuracy": 0.8947368421052632
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAGO_R18",
+      "sample_id": "formal300_197",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAGO_R18.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAGO_R36",
+      "sample_id": "formal300_198",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAGO_R36.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAGZ_R09",
+      "sample_id": "formal300_201",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAGZ_R09.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAGZ_R27",
+      "sample_id": "formal300_202",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAGZ_R27.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAHN_R02",
+      "sample_id": "formal300_205",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAHN_R02.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAHN_R09",
+      "sample_id": "formal300_206",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAHN_R09.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAHN_R20",
+      "sample_id": "formal300_207",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAHN_R20.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIA_R08",
+      "sample_id": "formal300_208",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIA_R08.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 13,
+        "total": 19,
+        "accuracy": 0.6842105263157895
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIA_R12",
+      "sample_id": "formal300_209",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIA_R12.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIA_R26",
+      "sample_id": "formal300_210",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIA_R26.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIG_R09",
+      "sample_id": "formal300_213",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIG_R09.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIG_R17",
+      "sample_id": "formal300_214",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIG_R17.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIG_R27",
+      "sample_id": "formal300_215",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIG_R27.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIK_R07",
+      "sample_id": "formal300_216",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIK_R07.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIK_R25",
+      "sample_id": "formal300_217",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIK_R25.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIO_R02",
+      "sample_id": "formal300_218",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIO_R02.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIO_R20",
+      "sample_id": "formal300_219",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIO_R20.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIT_R16",
+      "sample_id": "formal300_220",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIT_R16.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIT_R34",
+      "sample_id": "formal300_221",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIT_R34.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIV_R06",
+      "sample_id": "formal300_222",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIV_R06.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIV_R24",
+      "sample_id": "formal300_223",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIV_R24.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIZ_R04",
+      "sample_id": "formal300_224",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIZ_R04.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAIZ_R22",
+      "sample_id": "formal300_225",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAIZ_R22.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAJR_R06",
+      "sample_id": "formal300_229",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAJR_R06.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAJR_R24",
+      "sample_id": "formal300_230",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAJR_R24.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAKO_R11",
+      "sample_id": "formal300_231",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAKO_R11.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAKO_R29",
+      "sample_id": "formal300_232",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAKO_R29.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALI_R13",
+      "sample_id": "formal300_235",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALI_R13.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALI_R31",
+      "sample_id": "formal300_236",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALI_R31.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALM_R04",
+      "sample_id": "formal300_237",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALM_R04.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALN_R11",
+      "sample_id": "formal300_238",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALN_R11.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALO_R12",
+      "sample_id": "formal300_239",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALO_R12.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 13,
+        "total": 19,
+        "accuracy": 0.6842105263157895
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALO_R18",
+      "sample_id": "formal300_240",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALO_R18.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 15,
+        "total": 19,
+        "accuracy": 0.7894736842105263
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALS_R20",
+      "sample_id": "formal300_241",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALS_R20.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALW_R20",
+      "sample_id": "formal300_242",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALW_R20.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALX_R18",
+      "sample_id": "formal300_243",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALX_R18.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KALX_R36",
+      "sample_id": "formal300_244",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KALX_R36.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMG_R16",
+      "sample_id": "formal300_245",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMG_R16.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMG_R34",
+      "sample_id": "formal300_246",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMG_R34.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMN_R09",
+      "sample_id": "formal300_247",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMN_R09.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMN_R18",
+      "sample_id": "formal300_248",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMN_R18.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMN_R27",
+      "sample_id": "formal300_249",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMN_R27.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMT_R05",
+      "sample_id": "formal300_250",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMT_R05.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMT_R23",
+      "sample_id": "formal300_251",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMT_R23.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMW_R01",
+      "sample_id": "formal300_252",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMW_R01.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMW_R13",
+      "sample_id": "formal300_253",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMW_R13.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAMW_R19",
+      "sample_id": "formal300_254",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAMW_R19.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KANB_R23",
+      "sample_id": "formal300_255",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KANB_R23.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KANJ_R32",
+      "sample_id": "formal300_262",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KANJ_R32.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KANQ_R05",
+      "sample_id": "formal300_263",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KANQ_R05.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KANQ_R23",
+      "sample_id": "formal300_264",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KANQ_R23.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KANW_R13",
+      "sample_id": "formal300_265",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KANW_R13.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KANW_R17",
+      "sample_id": "formal300_266",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KANW_R17.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KANW_R31",
+      "sample_id": "formal300_267",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KANW_R31.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAOV_R13",
+      "sample_id": "formal300_271",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAOV_R13.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAOV_R31",
+      "sample_id": "formal300_272",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAOV_R31.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAPF_R05-Y",
+      "sample_id": "formal300_276",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAPF_R05-Y.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAPF_R14",
+      "sample_id": "formal300_277",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAPF_R14.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAPF_R23-Y",
+      "sample_id": "formal300_278",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAPF_R23-Y.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAQO_R17",
+      "sample_id": "formal300_283",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAQO_R17.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAQO_R35",
+      "sample_id": "formal300_284",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAQO_R35.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAQX_R17",
+      "sample_id": "formal300_286",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAQX_R17.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 17,
+        "total": 19,
+        "accuracy": 0.8947368421052632
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KAQX_R35",
+      "sample_id": "formal300_287",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KAQX_R35.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KARA_R17",
+      "sample_id": "formal300_288",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KARA_R17.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 16,
+        "total": 19,
+        "accuracy": 0.8421052631578947
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KARA_R35",
+      "sample_id": "formal300_289",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KARA_R35.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KARB_R06",
+      "sample_id": "formal300_290",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KARB_R06.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KARB_R24",
+      "sample_id": "formal300_291",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KARB_R24.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KARG_R18",
+      "sample_id": "formal300_292",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KARG_R18.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    },
+    {
+      "method": "D1",
+      "chart_id": "KARG_R22",
+      "sample_id": "formal300_293",
+      "prediction_path": "formal_runs/experiment4/experiment4_source_ablation_formal200_20260503_r1\\runs\\formal_eval200\\V4_icon_detail_only\\D1\\canonical_json\\KARG_R22.json",
+      "schema_valid": true,
+      "score": {
+        "correct": 0,
+        "total": 19,
+        "accuracy": 0.0
+      }
+    }
+  ],
+  "failures": [],
+  "note": "D1 strict scoring uses D1 canonical JSON outputs and the original strict Group 1 canonical scorer."
+}

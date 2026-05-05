@@ -1,0 +1,15 @@
+{
+  "chart_id": "KBDL_L33",
+  "procedure": {
+    "airport": "KBDL",
+    "approach_ident": "L33",
+    "chart_name": "ILS OR LOC RWY 33"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

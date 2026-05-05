@@ -1,8 +1,8 @@
 [
   {
     "chart_id": "KAVL_I17",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAVL_I17.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAVL_I17_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAVL_I17.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAVL_I17_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -23,8 +23,8 @@
   },
   {
     "chart_id": "KCFO_I26",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCFO_I26.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCFO_I26_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCFO_I26.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCFO_I26_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -45,8 +45,8 @@
   },
   {
     "chart_id": "KAVP_L04",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAVP_L04.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAVP_L04_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAVP_L04.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAVP_L04_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -67,8 +67,8 @@
   },
   {
     "chart_id": "KBYL_L20",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBYL_L20.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBYL_L20_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBYL_L20.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBYL_L20_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -89,8 +89,8 @@
   },
   {
     "chart_id": "KCFO_L17",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCFO_L17.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCFO_L17_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCFO_L17.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCFO_L17_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -111,8 +111,8 @@
   },
   {
     "chart_id": "KCOE_L06",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCOE_L06.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCOE_L06_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCOE_L06.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCOE_L06_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -133,8 +133,8 @@
   },
   {
     "chart_id": "KBWC_R26",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBWC_R26.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBWC_R26_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBWC_R26.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBWC_R26_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -155,8 +155,8 @@
   },
   {
     "chart_id": "KCOE_R02",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCOE_R02.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCOE_R02_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCOE_R02.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCOE_R02_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -177,8 +177,8 @@
   },
   {
     "chart_id": "KACT_R32",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACT_R32.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACT_R32_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACT_R32.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACT_R32_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -199,8 +199,8 @@
   },
   {
     "chart_id": "KANY_R18",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANY_R18.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANY_R18_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANY_R18.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANY_R18_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -221,8 +221,8 @@
   },
   {
     "chart_id": "KATW_R21",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KATW_R21.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KATW_R21_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KATW_R21.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KATW_R21_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -243,8 +243,8 @@
   },
   {
     "chart_id": "KAVP_R22",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAVP_R22.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAVP_R22_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAVP_R22.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAVP_R22_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -265,8 +265,8 @@
   },
   {
     "chart_id": "KAXN_R22",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAXN_R22.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAXN_R22_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAXN_R22.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAXN_R22_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -287,8 +287,8 @@
   },
   {
     "chart_id": "KBKW_R01",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBKW_R01.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBKW_R01_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBKW_R01.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBKW_R01_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -309,8 +309,8 @@
   },
   {
     "chart_id": "KBYI_R20",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBYI_R20.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBYI_R20_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KBYI_R20.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KBYI_R20_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -331,8 +331,8 @@
   },
   {
     "chart_id": "KCIC_R13L",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCIC_R13L.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCIC_R13L_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCIC_R13L.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCIC_R13L_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -353,8 +353,8 @@
   },
   {
     "chart_id": "KCLL_R11",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCLL_R11.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCLL_R11_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KCLL_R11.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KCLL_R11_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -375,8 +375,8 @@
   },
   {
     "chart_id": "KACT_R19",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACT_R19.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACT_R19_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACT_R19.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACT_R19_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -397,8 +397,8 @@
   },
   {
     "chart_id": "KACV_R01",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACV_R01.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACV_R01_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACV_R01.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACV_R01_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -419,8 +419,8 @@
   },
   {
     "chart_id": "KAEX_R14",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAEX_R14.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAEX_R14_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAEX_R14.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAEX_R14_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -441,8 +441,8 @@
   },
   {
     "chart_id": "KAEX_R18",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAEX_R18.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAEX_R18_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAEX_R18.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAEX_R18_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -463,8 +463,8 @@
   },
   {
     "chart_id": "KAGS_R26",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAGS_R26.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAGS_R26_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAGS_R26.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAGS_R26_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -485,8 +485,8 @@
   },
   {
     "chart_id": "KAPN_R01",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPN_R01.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPN_R01_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPN_R01.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPN_R01_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -507,8 +507,8 @@
   },
   {
     "chart_id": "KART_R10",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KART_R10.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KART_R10_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KART_R10.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KART_R10_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -529,8 +529,8 @@
   },
   {
     "chart_id": "KACT_R01",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACT_R01.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACT_R01_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACT_R01.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACT_R01_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -551,8 +551,8 @@
   },
   {
     "chart_id": "KACV_R14",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACV_R14.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACV_R14_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACV_R14.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACV_R14_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -573,8 +573,8 @@
   },
   {
     "chart_id": "KACV_R32",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACV_R32.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACV_R32_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KACV_R32.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KACV_R32_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -595,8 +595,8 @@
   },
   {
     "chart_id": "KAEX_R32",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAEX_R32.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAEX_R32_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAEX_R32.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAEX_R32_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -617,8 +617,8 @@
   },
   {
     "chart_id": "KAGS_R08-Y",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAGS_R08-Y.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAGS_R08-Y_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAGS_R08-Y.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAGS_R08-Y_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -639,8 +639,8 @@
   },
   {
     "chart_id": "KAGS_R08-Z",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAGS_R08-Z.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAGS_R08-Z_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAGS_R08-Z.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAGS_R08-Z_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -661,8 +661,8 @@
   },
   {
     "chart_id": "KAJG_R04",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAJG_R04.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAJG_R04_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAJG_R04.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAJG_R04_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -683,8 +683,8 @@
   },
   {
     "chart_id": "KAJG_R22",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAJG_R22.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAJG_R22_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAJG_R22.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAJG_R22_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -705,8 +705,8 @@
   },
   {
     "chart_id": "KAJG_R31",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAJG_R31.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAJG_R31_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAJG_R31.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAJG_R31_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -727,8 +727,8 @@
   },
   {
     "chart_id": "KAND_R05",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAND_R05.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAND_R05_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAND_R05.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAND_R05_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -749,8 +749,8 @@
   },
   {
     "chart_id": "KAND_R17",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAND_R17.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAND_R17_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAND_R17.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAND_R17_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -771,8 +771,8 @@
   },
   {
     "chart_id": "KAND_R23",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAND_R23.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAND_R23_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAND_R23.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAND_R23_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -793,8 +793,8 @@
   },
   {
     "chart_id": "KANE_R09",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANE_R09.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANE_R09_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANE_R09.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANE_R09_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -815,8 +815,8 @@
   },
   {
     "chart_id": "KANE_R18",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANE_R18.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANE_R18_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANE_R18.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANE_R18_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -837,8 +837,8 @@
   },
   {
     "chart_id": "KANE_R27",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANE_R27.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANE_R27_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANE_R27.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANE_R27_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -859,8 +859,8 @@
   },
   {
     "chart_id": "KANY_R36",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANY_R36.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANY_R36_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KANY_R36.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KANY_R36_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -881,8 +881,8 @@
   },
   {
     "chart_id": "KAPA_R17LY",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPA_R17LY.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPA_R17LY_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPA_R17LY.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPA_R17LY_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -903,8 +903,8 @@
   },
   {
     "chart_id": "KAPA_R28",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPA_R28.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPA_R28_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPA_R28.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPA_R28_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -925,8 +925,8 @@
   },
   {
     "chart_id": "KAPA_R35R",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPA_R35R.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPA_R35R_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPA_R35R.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPA_R35R_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -947,8 +947,8 @@
   },
   {
     "chart_id": "KAPN_R07",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPN_R07.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPN_R07_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPN_R07.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPN_R07_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -969,8 +969,8 @@
   },
   {
     "chart_id": "KAPN_R19",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPN_R19.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPN_R19_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KAPN_R19.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KAPN_R19_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -991,8 +991,8 @@
   },
   {
     "chart_id": "KARR_R09",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KARR_R09.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KARR_R09_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KARR_R09.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KARR_R09_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -1013,8 +1013,8 @@
   },
   {
     "chart_id": "KARR_R15",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KARR_R15.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KARR_R15_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KARR_R15.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KARR_R15_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -1035,8 +1035,8 @@
   },
   {
     "chart_id": "KARR_R27",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KARR_R27.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KARR_R27_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KARR_R27.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KARR_R27_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -1057,8 +1057,8 @@
   },
   {
     "chart_id": "KART_R07",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KART_R07.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KART_R07_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KART_R07.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KART_R07_ma_text_crop.png",
     "image_size": [
       1184,
       1815
@@ -1079,8 +1079,8 @@
   },
   {
     "chart_id": "KART_R28",
-    "page_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KART_R28.png",
-    "crop_image": "C:\\Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KART_R28_ma_text_crop.png",
+    "page_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\pdf_pages\\KART_R28.png",
+    "crop_image": "external_artifact://C/Users\\admin\\Documents\\New project\\faa-chart-to-424-benchmark-c69c184\\formal_runs\\experiment5\\experiment5_dev50_20260503_r1\\visuals\\ma_text_crops\\KART_R28_ma_text_crop.png",
     "image_size": [
       1184,
       1815

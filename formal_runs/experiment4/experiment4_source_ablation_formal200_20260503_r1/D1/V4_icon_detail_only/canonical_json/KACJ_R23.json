@@ -1,0 +1,15 @@
+{
+  "chart_id": "KACJ_R23",
+  "procedure": {
+    "airport": "KACJ",
+    "approach_ident": "R23",
+    "chart_name": "RNAV (GPS) RWY 23"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

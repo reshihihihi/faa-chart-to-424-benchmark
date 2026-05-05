@@ -4,7 +4,7 @@
 - 生成时间 UTC: `2026-05-03T05:34:10.251156+00:00`
 - smoke20 样本数: 20
 - source-view hash 是否闭合: True
-- candidate schema: `E:\experiment3\github_work\faa-chart-to-424-benchmark-experiment5\schemas\experiment5_roi_field_candidates.schema.v1.json`
+- candidate schema: `external_artifact://E/experiment3\github_work\faa-chart-to-424-benchmark-experiment5\schemas\experiment5_roi_field_candidates.schema.v1.json`
 - candidate validation error rows: 0
 - unknown source_section 数量: 0
 - cross-region snippet 数量: 0

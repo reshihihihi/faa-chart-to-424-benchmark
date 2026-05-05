@@ -2,7 +2,7 @@
 
 - 生成时间 UTC: `2026-05-03T07:27:06.885796+00:00`
 - smoke20 样本数: 20
-- 标注导出: `E:\experiment3\group2_annotation_status_20260503\shujuji_annotation_export_2026-05-03T02-07-42-455Z.json`
+- 标注导出: `external_artifact://E/experiment3\group2_annotation_status_20260503\shujuji_annotation_export_2026-05-03T02-07-42-455Z.json`
 
 ## 结论
 

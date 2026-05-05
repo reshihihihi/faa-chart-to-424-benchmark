@@ -1,0 +1,165 @@
+{
+  "chart_id": "KBDL_L33",
+  "procedure": {
+    "airport": "KBDL",
+    "approach_ident": "L33",
+    "chart_name": "ILS OR LOC RWY 33"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 4
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "DF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "BAF"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 4000,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "present",
+            "value": "RIGHT"
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "direct"
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "HM"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "BAF"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "BETWEEN",
+              "altitude_ft": 7000,
+              "altitude_2_ft": 2500
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 148,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "RIGHT"
+            }
+          }
+        }
+      },
+      {
+        "leg_index": 3,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "HM"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "BAF"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "BETWEEN",
+              "altitude_ft": 7000,
+              "altitude_2_ft": 2500
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 328,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "RIGHT"
+            }
+          }
+        }
+      },
+      {
+        "leg_index": 4,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "HM"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "BAF"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "BETWEEN",
+              "altitude_ft": 7000,
+              "altitude_2_ft": 2500
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 328,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "RIGHT"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

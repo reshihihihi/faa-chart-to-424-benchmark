@@ -1,7 +1,7 @@
 # 实验组5新窗口接力说明
 
 生成日期：2026-05-03  
-当前仓库：`E:\experiment3\github_work\faa-chart-to-424-benchmark-experiment5`  
+当前仓库：`external_artifact://E/experiment3\github_work\faa-chart-to-424-benchmark-experiment5`  
 当前主要运行目录：`formal_runs/experiment5/experiment5_smoke_20260503_r4_available_methods`  
 用途：在新窗口继续实验组5时，作为完整接力说明，避免重复摸索、避免方法边界串组、避免把 target 或人工答案泄漏进方法输入。
 
@@ -489,7 +489,7 @@ r4 中 B3/B4 层没有把 target、score、CIFP/424、gold text、gold observabl
 标注导出路径：
 
 ```text
-E:\experiment3\group2_annotation_status_20260503\shujuji_annotation_export_2026-05-03T02-07-42-455Z.json
+external_artifact://E/experiment3\group2_annotation_status_20260503\shujuji_annotation_export_2026-05-03T02-07-42-455Z.json
 ```
 
 审计结果：
@@ -673,7 +673,7 @@ B4/G1/G3 是否共用同一冻结规则定义。
 进入仓库：
 
 ```powershell
-Set-Location E:\experiment3\github_work\faa-chart-to-424-benchmark-experiment5
+Set-Location external_artifact://E/experiment3\github_work\faa-chart-to-424-benchmark-experiment5
 ```
 
 查看 r4 报告：

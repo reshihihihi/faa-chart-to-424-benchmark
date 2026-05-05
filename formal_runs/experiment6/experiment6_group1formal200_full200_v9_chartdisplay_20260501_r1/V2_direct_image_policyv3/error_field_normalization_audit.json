@@ -1,0 +1,511 @@
+{
+  "cases_jsonl": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\E6_core\\cases\\e6_core_200pos_200neg_seed20260501_chartdisplay_v2.jsonl",
+  "change_examples": [
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.inbound_course_deg",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_005__vcase_0044"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.inbound_course_deg",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_005__vcase_0050"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.inbound_course_deg",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_005__vcase_0051"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_013__vcase_0087"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.inbound_course_deg",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_013__vcase_0095"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.turn",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_016__vcase_0114"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.turn",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_016__vcase_0109"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[2].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[2].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_019__vcase_0136"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_020__vcase_0140"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[2].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[2].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_022__vcase_0159"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_026__vcase_0166"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_027__vcase_0173"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_027__vcase_0179"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_029__vcase_0201"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[2].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[2].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_029__vcase_0206"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_036__vcase_0265"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.inbound_course_deg",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_036__vcase_0269"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_048__vcase_0357"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_051__vcase_0376"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_051__vcase_0382"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_052__vcase_0386"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_055__vcase_0420"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_057__vcase_0428"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_057__vcase_0431"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_057__vcase_0433"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_057__vcase_0438"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_057__vcase_0434"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[2].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[2].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_062__vcase_0459"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[2].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[2].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_081__vcase_0559"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.turn",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_083__vcase_0571"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_085__vcase_0586"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[2].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[2].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_088__vcase_0609"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_094__vcase_0651"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_094__vcase_0656"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_099__vcase_0681"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[2].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[2].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_100__vcase_0692"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_103__vcase_0714"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_distance_nm",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_104__vcase_0724"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_106__vcase_0745"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_107__vcase_0755"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_106__vcase_0752"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_113__vcase_0785"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_112__vcase_0777"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_113__vcase_0789"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[3].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[3].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_113__vcase_0793"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_117__vcase_0795"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_117__vcase_0801"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_118__vcase_0805"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_118__vcase_0811"
+    },
+    {
+      "changes": [
+        {
+          "input": "missed_approach.legs[4].hold_params.value.leg_time_min",
+          "output": "missed_approach.legs[4].hold_params",
+          "status": "normalized"
+        }
+      ],
+      "verification_case_id": "formal300_125__vcase_0845"
+    }
+  ],
+  "changed_rows": 106,
+  "input_predictions": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V2_direct_image_policyv3\\predictions.jsonl",
+  "output_predictions": "formal_runs\\experiment6\\experiment6_group1formal200_full200_v9_chartdisplay_20260501_r1\\V2_direct_image_policyv3\\predictions.normalized_error_fields.jsonl",
+  "rows": 400,
+  "still_not_allowed_count": 0,
+  "still_not_allowed_examples": []
+}

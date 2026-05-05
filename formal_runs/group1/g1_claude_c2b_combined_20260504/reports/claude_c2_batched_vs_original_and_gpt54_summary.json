@@ -1,0 +1,146 @@
+{
+  "created_at_utc": "2026-05-04T06:28:13.375323+00:00",
+  "run_family": "group1_claude_c2_batched_leg_50_200_50_seed20260437",
+  "split": "formal300_50_200_50_seed20260437/evaluation",
+  "sample_count": 200,
+  "method": "C2_CLAUDE_batched_leg",
+  "model": "claude-sonnet-4-5-20250929",
+  "provider_transport": "Anthropic-compatible API using ANTHROPIC_BASE_URL / ANTHROPIC_AUTH_TOKEN environment variables; token value not recorded",
+  "shards": {
+    "front_0_99": {
+      "run_dir": "formal_runs/group1/g1_claude_c2b_20260504",
+      "source": "original prepared eval C2 input_manifest first 100 rows via --limit 100 resume",
+      "summary_path": "formal_runs/group1/g1_claude_c2b_20260504/C2_CLAUDE_batched_leg/method_summary.json",
+      "score": {
+        "correct": 760,
+        "total": 2152,
+        "accuracy": 0.35315985130111527
+      },
+      "note": "One extra sample artifact was produced before stopping the unlimited worker; it is excluded from the combined 200-row summary.",
+      "diagnostics": {
+        "diagnostic_files": 100,
+        "missing_diagnostic_files": [],
+        "qa_calls_total": 461,
+        "qa_calls_saved": 461,
+        "qa_fields_saved": 2266,
+        "qa_schema_retry_count_total": 0
+      }
+    },
+    "back_100_199": {
+      "run_dir": "formal_runs/group1/g1_claude_c2b_100_199_20260504",
+      "source": "temporary source_c2_eval100_199_20260504 with rows 100-199",
+      "summary_path": "formal_runs/group1/g1_claude_c2b_100_199_20260504/C2_CLAUDE_batched_leg/method_summary.json",
+      "score": {
+        "correct": 637,
+        "total": 1900,
+        "accuracy": 0.3352631578947368
+      },
+      "diagnostics": {
+        "diagnostic_files": 100,
+        "missing_diagnostic_files": [],
+        "qa_calls_total": 420,
+        "qa_calls_saved": 420,
+        "qa_fields_saved": 2020,
+        "qa_schema_retry_count_total": 0
+      }
+    }
+  },
+  "combined_method_summary_path": "formal_runs/group1/g1_claude_c2b_combined_20260504/C2_CLAUDE_batched_leg/method_summary.json",
+  "combined": {
+    "samples_total": 200,
+    "schema_valid": 200,
+    "samples_scored": 200,
+    "score": {
+      "correct": 1397,
+      "total": 4052,
+      "accuracy": 0.3447680157946693
+    },
+    "qa_calls_total": 881,
+    "qa_calls_saved": 881,
+    "qa_fields_saved": 4286,
+    "qa_schema_retry_count_total": 0,
+    "results": "200 result records omitted here; see method_summary.json"
+  },
+  "integrity_checks": {
+    "unique_chart_ids": 200,
+    "duplicate_chart_ids": [],
+    "unique_sample_ids": 200,
+    "duplicate_sample_ids": [],
+    "expected_total_fields": 4052,
+    "total_matches_expected": true,
+    "front_back_overlap_chart_ids": [],
+    "missing_front_diagnostics": [],
+    "missing_back_diagnostics": []
+  },
+  "comparison_rows": [
+    {
+      "label": "Claude original C2",
+      "run": "group1_formal_eval_50_200_50_seed20260437_20260430_r1",
+      "model": "Claude Sonnet 4.5",
+      "method_variant": "original C2: q0 plus six QA fields separately per leg",
+      "samples_total": 200,
+      "schema_valid": 200,
+      "samples_scored": 200,
+      "correct": 970,
+      "total": 4052,
+      "accuracy": 0.23938795656465942,
+      "qa_calls_saved": null,
+      "qa_fields_saved": null,
+      "qa_schema_retry_count_total": 18
+    },
+    {
+      "label": "Claude batched C2",
+      "run": "g1_claude_c2b_combined_20260504",
+      "model": "Claude Sonnet 4.5 via Anthropic-compatible API",
+      "method_variant": "half-changed C2: q0 plus one batched 6-field tool call per leg",
+      "samples_total": 200,
+      "schema_valid": 200,
+      "samples_scored": 200,
+      "correct": 1397,
+      "total": 4052,
+      "accuracy": 0.3447680157946693,
+      "qa_calls_saved": 881,
+      "qa_fields_saved": 4286,
+      "qa_schema_retry_count_total": 0
+    },
+    {
+      "label": "GPT-5.4 batched C2",
+      "run": "g1_gpt54_oauth_c2b_20260504",
+      "model": "gpt-5.4 via current OAuth Responses API",
+      "method_variant": "half-changed C2: q0 plus one batched 6-field tool call per leg",
+      "samples_total": 200,
+      "schema_valid": 200,
+      "samples_scored": 200,
+      "correct": 1884,
+      "total": 4052,
+      "accuracy": 0.46495557749259625,
+      "qa_calls_saved": 809,
+      "qa_fields_saved": 3854,
+      "qa_schema_retry_count_total": 0
+    }
+  ],
+  "comparisons": {
+    "method_effect_same_model_claude_batched_minus_claude_original_c2": {
+      "accuracy_point_delta": 0.1053800592300099,
+      "percentage_point_delta": 10.53800592300099,
+      "correct_delta": 427,
+      "total_same": true
+    },
+    "model_effect_same_batched_method_gpt54_minus_claude": {
+      "accuracy_point_delta": 0.12018756169792694,
+      "percentage_point_delta": 12.018756169792693,
+      "correct_delta": 487,
+      "total_same": true
+    },
+    "gpt54_batched_minus_claude_original_c2_not_isolated": {
+      "accuracy_point_delta": 0.22556762092793683,
+      "percentage_point_delta": 22.556762092793683,
+      "correct_delta": 914,
+      "total_same": true
+    }
+  },
+  "source_reports": {
+    "old_claude_original_audit": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/reports/final_completion_audit_20260430_115514.json",
+    "gpt54_batched_method_summary": "formal_runs/group1/g1_gpt54_oauth_c2b_20260504/C2_GPT54_batched_leg/method_summary.json"
+  }
+}

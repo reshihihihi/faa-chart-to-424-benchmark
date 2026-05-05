@@ -1,0 +1,15 @@
+{
+  "chart_id": "KABI_R35R",
+  "procedure": {
+    "airport": "KABI",
+    "approach_ident": "R35R",
+    "chart_name": "RNAV (GPS) RWY 35R"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

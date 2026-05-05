@@ -47,5 +47,5 @@ No-leakage 审查：
 1. 先基于 `gold_observable_dev50_admin.jsonl` 写 G0/G1/G3 runner，跑 dev50。
 2. 对 admin 框中 `review_action=pending` 的细节框做 policy：是否允许进入 G 方法输入，还是只允许 `accept` 框。
 3. 如仍需要 A3/B2 的 gold prose 条件，应从 admin MA_TEXT 框对应的人类文本/OCR字段补齐；不要再依赖 PDF text-layer 自动抽取作为正式 gold。
-4. 若要 dev50 覆盖 B3/B4，先恢复 `E:\experiment3\zu4\source_views` 和对应 ROI OCR artifacts；否则不要重建 ROI 输入。
+4. 若要 dev50 覆盖 B3/B4，先恢复 `external_artifact://E/experiment3\zu4\source_views` 和对应 ROI OCR artifacts；否则不要重建 ROI 输入。
 5. dev50 全方法跑通并修正输入问题后，再冻结配置，最后只对 `dataset_split=evaluation` 的正式 200 样本跑 full experiment。

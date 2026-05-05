@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAEL_R35",
+  "procedure": {
+    "airport": "KAEL",
+    "approach_ident": "R35",
+    "chart_name": "RNAV (GPS) RWY 35"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

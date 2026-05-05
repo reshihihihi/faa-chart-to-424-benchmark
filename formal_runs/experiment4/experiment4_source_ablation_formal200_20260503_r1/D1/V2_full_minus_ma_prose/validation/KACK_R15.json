@@ -1,0 +1,14 @@
+{
+  "expected_chart_id": "KACK_R15",
+  "raw_output_chart_id": "KACK_R15",
+  "output_chart_id": "KACK_R15",
+  "schema_valid": true,
+  "final_chart_id_matches_expected": true,
+  "validation_errors": [],
+  "actions": [
+    "strip_outer_whitespace",
+    "parse_entire_raw_as_json_object",
+    "drop_extra_top_level_fields:approach,chart_name",
+    "selected_candidate_index:0"
+  ]
+}

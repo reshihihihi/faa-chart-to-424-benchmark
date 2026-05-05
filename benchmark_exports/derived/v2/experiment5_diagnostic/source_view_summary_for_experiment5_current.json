@@ -1,9 +1,9 @@
 {
   "created_at_utc": "2026-05-03T05:34:09.401145+00:00",
   "summary_type": "experiment5_current_source_view_manifest_snapshot",
-  "manifest_path": "E:\\experiment3\\zu4\\source_views\\manifests\\source_view_manifest.jsonl",
+  "manifest_path": "external_artifact://E/experiment3\\zu4\\source_views\\manifests\\source_view_manifest.jsonl",
   "manifest_sha256": "e193f28bb21e7b78a9db311b1c9f3de739623d849027480e8ece4749b165775f",
-  "original_summary_path": "E:\\experiment3\\zu4\\source_views\\reports\\source_view_summary.json",
+  "original_summary_path": "external_artifact://E/experiment3\\zu4\\source_views\\reports\\source_view_summary.json",
   "original_summary_sha256": "f608027006853d13d626e1febeb96cc967a6f7466cc6370e52003eae84337d4d",
   "chart_count": 300,
   "row_count": 1800,

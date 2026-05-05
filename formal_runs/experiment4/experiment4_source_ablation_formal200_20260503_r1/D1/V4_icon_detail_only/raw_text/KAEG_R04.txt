@@ -1,0 +1,11 @@
+{  
+  "chart_id":"KETYPE_L06",
+  "procedure":{
+    "chart_name":"KETYPE_L06",
+    "airport":"KETYPE"
+  },
+  "missed_approach":{
+    "leg_count":{"status":"present","value":3},
+    "legs":[{"leg_index":1,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"CA"}}},{"leg_index":2,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"KETYPE"}}},{"leg_index":3,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"KETYPE"}}]}}]  
+  }
+}

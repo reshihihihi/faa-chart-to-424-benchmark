@@ -7,7 +7,7 @@
 - repo: `https://github.com/reshihihihi/faa-chart-to-424-benchmark.git`
 - branch: `experiment5-diagnostic-20260503`
 - HEAD: `c69c184`
-- 本地目录：`C:\Users\admin\Documents\New project\faa-chart-to-424-benchmark-c69c184`
+- 本地目录：`external_artifact://C/Users\admin\Documents\New project\faa-chart-to-424-benchmark-c69c184`
 
 ## r4 输入工件核对
 

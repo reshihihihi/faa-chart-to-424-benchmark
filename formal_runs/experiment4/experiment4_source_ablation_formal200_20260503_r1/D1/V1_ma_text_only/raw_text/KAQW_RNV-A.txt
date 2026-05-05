@@ -1,0 +1,10 @@
+{  
+  "chart_id":"K5000_M05","  
+  "procedure":{  
+    "airport":"K5000","  
+    "approach_ident":"M05","  
+    "chart_name":"MISSED APPROACH","  
+    "leg_count":{"status":"present","value":3},"  
+    "legs":[{"leg_index":1,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"CA"}},"},"},{"leg_index":2,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"DF"}},"},"},{"leg_index":3,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"HM"}},"}}]  
+  },  
+  "missed_approach":{""status":"present","value":{"leg_count":{"status":"present","value":3},"legs":[{"leg_index":1,"answers":{"status":"not_applicable","value":null},"},{"leg_index":2,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"DF"}},"},"},{"leg_index":3,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"HM"}},"}}]}}

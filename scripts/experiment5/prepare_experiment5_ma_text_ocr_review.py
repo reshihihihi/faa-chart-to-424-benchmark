@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,7 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 DEFAULT_RUN_DIR = REPO_ROOT / "formal_runs" / "experiment5" / "experiment5_dev50_20260503_r1"
 DEFAULT_OUT_DIR = REPO_ROOT / "formal_runs" / "experiment5" / "experiment5_dev50_20260504_r5_ma_text_ocr_review"
-DEFAULT_TESSERACT_CMD = Path(r"C:\Program Files\Tesseract-OCR\tesseract.exe")
+DEFAULT_TESSERACT_CMD = Path(os.environ.get("TESSERACT_CMD", "tesseract"))
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:

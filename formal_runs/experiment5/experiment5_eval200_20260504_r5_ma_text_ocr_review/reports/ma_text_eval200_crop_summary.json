@@ -4,11 +4,11 @@
   "crop_rows": 200,
   "failure_count": 0,
   "failures": [],
-  "out_dir": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_eval200_20260504_r5_ma_text_ocr_review",
+  "out_dir": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_eval200_20260504_r5_ma_text_ocr_review",
   "pad_fraction": 0.0,
-  "pdf_dir": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\downloads\\experiment5_eval200_pdfs_20260504",
+  "pdf_dir": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\downloads\\experiment5_eval200_pdfs_20260504",
   "pdf_text_layer_candidate_rows": 200,
   "requested_charts": 200,
-  "run_dir": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_eval200_20260503_r1",
+  "run_dir": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\formal_runs\\experiment5\\experiment5_eval200_20260503_r1",
   "zoom": 3.0
 }

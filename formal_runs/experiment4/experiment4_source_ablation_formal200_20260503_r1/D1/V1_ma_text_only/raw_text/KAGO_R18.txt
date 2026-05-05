@@ -1,0 +1,6 @@
+{  
+  "chart_id":"KREAE_M05","  
+  "procedure":{  
+    "chart_name":"M05","  
+    "leg_count":{"status":"present","value":3},"  
+    "legs":[{"leg_index":1,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"CA"}}},{"answers":{"status":"not_applicable","value":null},"leg_index":2,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"DF"}}},{"answers":{"status":"not_applicable","value":null},"leg_index":3,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"HM"}}},{"answers":{"status":"not_applicable","value":null}}]}}]

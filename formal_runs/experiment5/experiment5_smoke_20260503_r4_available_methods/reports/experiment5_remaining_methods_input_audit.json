@@ -22,9 +22,9 @@
     "KAAF_R24",
     "KAAS_R05"
   ],
-  "annotation_export": "E:\\experiment3\\group2_annotation_status_20260503\\shujuji_annotation_export_2026-05-03T02-07-42-455Z.json",
+  "annotation_export": "external_artifact://E/experiment3\\group2_annotation_status_20260503\\shujuji_annotation_export_2026-05-03T02-07-42-455Z.json",
   "annotation_export_sha256": "94484d62b40b4bcaf390f9f3b09ca4f5e0c7611a686e49b194aa8eeb18ca0e28",
-  "smoke_manifest": "E:\\experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\benchmark_exports\\derived\\v2\\experiment5_diagnostic\\smoke20_manifest.jsonl",
+  "smoke_manifest": "external_artifact://E/experiment3\\github_work\\faa-chart-to-424-benchmark-experiment5\\benchmark_exports\\derived\\v2\\experiment5_diagnostic\\smoke20_manifest.jsonl",
   "smoke_manifest_sha256": "75b275b8b35c6693feb5185f7e8eb5cfc5fde98e54a675931e383310d128a2a3",
   "gold_ma_text_template": {
     "rows": 20,

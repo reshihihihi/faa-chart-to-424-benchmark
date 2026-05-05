@@ -1,0 +1,15 @@
+{
+  "chart_id": "KBUR_L08-Z",
+  "procedure": {
+    "airport": "KBUR",
+    "approach_ident": "L08-Z",
+    "chart_name": "ILS Z OR LOC Z RWY 08"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

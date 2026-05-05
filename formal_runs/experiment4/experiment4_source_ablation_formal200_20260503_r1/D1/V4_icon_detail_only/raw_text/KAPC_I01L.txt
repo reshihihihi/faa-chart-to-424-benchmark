@@ -1,0 +1,9 @@
+{  
+  "chart_id":"KBUR_KINT","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KINT_I03"},"  
+    "missed_approach":{  
+      "status":"present","  
+      "value":{"leg_count":3,"legs":[{"leg_index":1,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"CA"}}},{"leg_index":2,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"BURDE"},"},{"leg_index":3,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"INT"},"},{"leg_index":3,"answers":{"status":"not_applicable","value":null}}]}}},{"leg_count":4,"legs":[{"leg_index":4,"answers":{"status":"present","value":{"Q_terminator":{"status":"present","value":"DF"}}},{"leg_index":5,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"BURDE"},"},{"leg_index":5,"answers":{"status":"not_applicable","value":null}}},{"leg_index":6,"answers":{"status":"present","value":{"Q1_fix_ident":{"status":"present","value":"INT"},"},{"leg_index":6,"answers":{"status":"not_applicable","value":null}}]}}]}}]  
+  }

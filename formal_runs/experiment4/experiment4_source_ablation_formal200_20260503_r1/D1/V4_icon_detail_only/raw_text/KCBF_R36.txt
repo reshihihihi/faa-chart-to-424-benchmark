@@ -1,0 +1,12 @@
+{  
+  "chart_id":"KIPR_I3000","  
+  "procedure":{  
+    "status":"present","  
+    "value":{"chart_name":"KIPR_I3000","approach_ident":"I3000","chart_name":"KIPR_I3000"},"  
+  },  
+  "missed_approach":{  
+    "status":"present","  
+    "value":{"leg_count":{"status":"present","value":3},"  
+  },  
+  "procedure":{"status":"present","value":{"airport":"KIPR","approach_ident":"I3000","chart_name":"KIPR_I3000"}},"  
+}
