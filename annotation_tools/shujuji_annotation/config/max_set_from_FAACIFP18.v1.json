@@ -1,0 +1,201 @@
+{
+  "max_set_version": "from_FAACIFP18_v1",
+  "generated_at": "2026-04-24",
+  "definition_level": "experiment_max_set",
+  "purpose": "Upper-bound target space for missed-approach extraction, annotation, prelabeling, and later leg/field evidence mapping.",
+  "source_of_truth": {
+    "raw_cifp_file": "../../data/v2604_100/cifp/FAACIFP18",
+    "current_extraction_artifacts": [
+      "../../data/preparation/probe2604/cifp_400.json",
+      "../../data/preparation/probe2604/matched_260.json",
+      "../../data/preparation/probe2604/matched_stats.json"
+    ],
+    "note": "This max-set definition is grounded in FAACIFP18 through the current extraction pipeline artifacts, and is broader than the fixed formal 100-sample experiment."
+  },
+  "scope_summary": {
+    "candidate_procedures_observed": 400,
+    "matched_chart_candidates_observed": 260,
+    "procedure_kind_distribution_from_current_400": {
+      "RNAV": 277,
+      "ILS": 61,
+      "LOC": 62
+    }
+  },
+  "max_set_structure": {
+    "container": "procedure -> missed_approach_legs",
+    "procedure_level_fields": [
+      "procedure_id",
+      "airport",
+      "proc_ident",
+      "kind",
+      "chart_name",
+      "holding_required",
+      "ma_leg_count"
+    ],
+    "canonical_leg_fields": [
+      "leg_index",
+      "leg_id",
+      "leg_type",
+      "fix",
+      "altitude",
+      "altitude2",
+      "alt_desc",
+      "speed_limit",
+      "turn_dir",
+      "terminator",
+      "trans_ident"
+    ],
+    "legacy_flat_fields_to_keep_visible_during_transition": [
+      "raw_instruction",
+      "climb_altitude",
+      "waypoints",
+      "turn_direction",
+      "holding_required",
+      "holding_fix",
+      "initial_track",
+      "turn_trigger",
+      "holding_details"
+    ]
+  },
+  "observed_leg_type_space": {
+    "leg_types": [
+      "AF",
+      "CA",
+      "CF",
+      "DF",
+      "FC",
+      "HF",
+      "HM",
+      "IF",
+      "PI",
+      "TF",
+      "VI"
+    ],
+    "leg_type_counts_from_current_400": {
+      "AF": 24,
+      "CA": 384,
+      "CF": 417,
+      "DF": 332,
+      "FC": 27,
+      "HF": 305,
+      "HM": 400,
+      "IF": 1042,
+      "PI": 35,
+      "TF": 1596,
+      "VI": 61
+    },
+    "notes": [
+      "Blank rt_type records exist in current extraction artifacts and should be treated as parsing/normalization artifacts rather than valid canonical leg types.",
+      "HM is observed in all 400 current candidate procedures; HF is also common."
+    ]
+  },
+  "observed_constraint_space": {
+    "alt_desc_values": [
+      "",
+      "+",
+      "B",
+      "H",
+      "I",
+      "J",
+      "V"
+    ],
+    "alt_desc_counts_from_current_400": [
+      {
+        "alt_desc": "blank",
+        "raw_value": "",
+        "count": 1421
+      },
+      {
+        "alt_desc": "+",
+        "raw_value": "+",
+        "count": 3177
+      },
+      {
+        "alt_desc": "B",
+        "raw_value": "B",
+        "count": 2
+      },
+      {
+        "alt_desc": "H",
+        "raw_value": "H",
+        "count": 61
+      },
+      {
+        "alt_desc": "I",
+        "raw_value": "I",
+        "count": 1
+      },
+      {
+        "alt_desc": "J",
+        "raw_value": "J",
+        "count": 60
+      },
+      {
+        "alt_desc": "V",
+        "raw_value": "V",
+        "count": 166
+      }
+    ],
+    "notes": [
+      "This file records observed alt_desc symbols from the current FAACIFP18-derived extraction artifacts.",
+      "The final semantic mapping of these symbols to human-readable altitude constraint categories still belongs to schema/validator work."
+    ]
+  },
+  "field_status_space": [
+    "present",
+    "not_applicable",
+    "not_observable",
+    "unknown"
+  ],
+  "evidence_target_space": {
+    "core_region_types": [
+      "MISSED_APPROACH_TEXT",
+      "PLAN_VIEW"
+    ],
+    "optional_context_region_types": [
+      "PROFILE_VIEW",
+      "MISSED_APPROACH_DETAIL_AREA"
+    ],
+    "fine_grained_candidate_types": [
+      "ALTITUDE_TEXT",
+      "CLIMB_ARROW",
+      "FIX_SYMBOL",
+      "FIX_TEXT",
+      "HEADING_TEXT",
+      "HOLDING_ARC",
+      "MISSED_APPROACH_ICON",
+      "MISSED_APPROACH_STEP_BOX",
+      "NAVAID_TEXT",
+      "PATH_SEGMENT",
+      "RADIAL_TEXT",
+      "TRACK_OR_RADIAL_TEXT",
+      "TURN_PHRASE",
+      "HOLDING_PATTERN",
+      "OUTBOUND_INBOUND_MARK",
+      "HOLDING_TIME_TEXT",
+      "DME_DISTANCE_TEXT"
+    ],
+    "notes": [
+      "Automatic prelabeling should always attempt the two coarse region types: MISSED_APPROACH_TEXT and PLAN_VIEW.",
+      "PROFILE_VIEW is kept as optional context, but the current pilot annotation requirement prefers detailed field-level boxes in the lower/profile area rather than one broad PROFILE_VIEW box.",
+      "Fine-grained candidates should be generated conservatively and verified by humans."
+    ]
+  },
+  "annotation_and_prelabeling_policy": {
+    "pilot_should_reference_this_max_set": true,
+    "automatic_prelabeling_role": "candidate region generation only",
+    "automatic_prelabeling_must_not_directly_finalize": [
+      "leg_id",
+      "field_name",
+      "status",
+      "final evidence mapping"
+    ],
+    "human_role": [
+      "review",
+      "correct",
+      "supplement",
+      "flag anomalies",
+      "later bind to leg/field once schema/proxy stabilize"
+    ]
+  }
+}

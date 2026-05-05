@@ -1,0 +1,25 @@
+{
+  "dataset": "formal300",
+  "created_at": "2026-04-24T20:01:05.558884+00:00",
+  "count": 300,
+  "source_kind": "formal",
+  "warnings": [],
+  "counts_by_split": {
+    "development": 200,
+    "evaluation": 75,
+    "probe": 25
+  },
+  "counts_by_kind": {
+    "ILS": 13,
+    "LOC": 25,
+    "RNAV": 262
+  },
+  "counts_by_source": {
+    "issue19_rnav_expansion_200": 200,
+    "v2604_existing_100": 100
+  },
+  "counts_by_holding": {
+    "False": 38,
+    "True": 262
+  }
+}

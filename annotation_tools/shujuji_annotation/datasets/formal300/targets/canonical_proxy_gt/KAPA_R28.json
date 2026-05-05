@@ -1,0 +1,123 @@
+{
+  "chart_id": "KAPA_R28",
+  "procedure": {
+    "airport": "KAPA",
+    "approach_ident": "R28",
+    "chart_name": "RNAV (GPS) RWY 28"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "present",
+      "value": 3
+    },
+    "legs": [
+      {
+        "leg_index": 1,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "CA"
+          },
+          "Q1_fix_ident": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 6400,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 283
+            }
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 2,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "DF"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "EZBEL"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 9000,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "present",
+            "value": "RIGHT"
+          },
+          "Q4_course_or_radial": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "not_applicable",
+            "value": null
+          }
+        }
+      },
+      {
+        "leg_index": 3,
+        "answers": {
+          "Q_terminator": {
+            "status": "present",
+            "value": "HM"
+          },
+          "Q1_fix_ident": {
+            "status": "present",
+            "value": "EZBEL"
+          },
+          "Q2_altitude_constraint": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 9000,
+              "altitude_2_ft": null
+            }
+          },
+          "Q3_turn": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q4_course_or_radial": {
+            "status": "not_applicable",
+            "value": null
+          },
+          "Q5_hold_params": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 238,
+              "leg_time_min": null,
+              "leg_distance_nm": 7,
+              "turn": "RIGHT"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

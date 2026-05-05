@@ -1,0 +1,770 @@
+{
+  "chart_id": "KBUY_I06-Z",
+  "image_path": "datasets/formal300/images/010__KBUY_I06-Z__05694IZLZ6_p0.png",
+  "image_dimensions": {
+    "width": 807,
+    "height": 1238
+  },
+  "prelabel_version": "v0.30-formal300-ca-hm-visible-vs-derived",
+  "generated_at": "2026-05-02T15:33:27.903469+00:00",
+  "generation_policy": {
+    "final_ground_truth": false,
+    "human_calibration_required": true,
+    "upper_coarse_boxes_are_formal_annotations": true,
+    "lower_detail_box_is_seed_only": true,
+    "candidate_mappings_are_cifp424_targets_not_independent_predictions": true,
+    "formal300_small_box_prelabels_added": true,
+    "small_box_source": "score lower missed-approach detail candidates with PR28 text anchors, boxed-cell structure, CV icon components, and compound leg evidence; only detected evidence is drawn",
+    "small_box_final_ground_truth": false,
+    "small_box_human_calibration_required": true,
+    "missed_approach_icon_or_detail_area_first": true,
+    "low_confidence_blank_fallback_boxes_enabled": false,
+    "boxed_cell_structure_weighted": true,
+    "compound_q4_and_q_terminator_candidate_mappings": true,
+    "field_mapping_region_type_sanitizer": true,
+    "source_pdfs_available": true,
+    "field_mapping_visible_text_sanitizer": true,
+    "fine_q_terminator_mappings_removed": true,
+    "hm_inherited_fix_alt_fine_mappings_removed": true,
+    "generic_path_hold_graphics_removed_from_q5_params": true,
+    "nested_duplicate_box_merge_enabled": true,
+    "text_overlapping_symbol_false_positive_filter": true,
+    "practice10_pilot_copy_enabled": false,
+    "unmapped_fine_regions_removed": true,
+    "all_present_fields_linked_to_coarse_ma_text_and_plan_view": true,
+    "coarse_region_table_line_snap_enabled": true,
+    "lower_detail_plan_overlap_guard_enabled": true,
+    "lower_detail_runway_inset_clip_enabled": true,
+    "plan_view_long_line_snap_enabled": true,
+    "lower_detail_edges_locked_to_detected_lines": true,
+    "lower_detail_closed_cell_corner_required": true,
+    "lower_detail_vertical_edge_cell_fallback_enabled": true,
+    "lower_detail_connected_corner_required": true,
+    "lower_detail_adjacent_cell_probe_enabled": true,
+    "upper_text_excludes_hm_hold_params_and_ca_course": true,
+    "q5_generic_hough_graphics_disabled": true,
+    "reciprocal_inbound_radial_tokens_enabled": true,
+    "hold_params_radial_text_tokens_enabled": true,
+    "curved_climb_arrow_segments_enabled": true,
+    "same_leg_turn_climb_arrow_merge_enabled": true
+  },
+  "review_priority": "high",
+  "target_summary": {
+    "candidate_missed_approach_leg_count": 3,
+    "candidate_leg_ids": [
+      "KBUY_I06-Z__ma1",
+      "KBUY_I06-Z__ma2",
+      "KBUY_I06-Z__ma3"
+    ]
+  },
+  "regions": [
+    {
+      "region_id": "KBUY_I06-Z_01_missed_approach_text",
+      "region_type": "MISSED_APPROACH_TEXT",
+      "bbox": {
+        "x_center": 0.7962,
+        "y_center": 0.1363,
+        "width": 0.3135,
+        "height": 0.0513
+      },
+      "ocr_text": "",
+      "label": "upper coarse formal annotation: missed-approach text block",
+      "confidence": 0.58,
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 1600 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 1600,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "LIB",
+          "expected_answer": {
+            "status": "present",
+            "value": "LIB"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q3_turn",
+          "expected_value": "RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": "RIGHT"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "LIB",
+          "expected_answer": {
+            "status": "present",
+            "value": "LIB"
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "generic candidate from CIFP424 target; human must verify chart evidence or replace with fine-grained box",
+          "confidence": 0.35,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q_terminator",
+          "expected_value": "CA",
+          "expected_answer": {
+            "status": "present",
+            "value": "CA"
+          },
+          "match_basis": "same-leg chart evidence preselected for joint Q_terminator support",
+          "confidence": 0.4,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q_terminator",
+          "expected_value": "DF",
+          "expected_answer": {
+            "status": "present",
+            "value": "DF"
+          },
+          "match_basis": "same-leg chart evidence preselected for joint Q_terminator support",
+          "confidence": 0.4,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q_terminator",
+          "expected_value": "HM",
+          "expected_answer": {
+            "status": "present",
+            "value": "HM"
+          },
+          "match_basis": "same-leg chart evidence preselected for joint Q_terminator support",
+          "confidence": 0.4,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        }
+      ],
+      "human_review": {
+        "review_action": "pending",
+        "notes": ""
+      },
+      "source_layer": "aip_table_line_snap"
+    },
+    {
+      "region_id": "KBUY_I06-Z_02_plan_view",
+      "region_type": "PLAN_VIEW",
+      "bbox": {
+        "x_center": 0.5012,
+        "y_center": 0.4354,
+        "width": 0.9083,
+        "height": 0.4765
+      },
+      "ocr_text": "",
+      "label": "coarse plan-view context for missed approach",
+      "confidence": 0.5,
+      "annotation_scope": "upper_coarse_formal_annotation",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 1600 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 1600,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
+          "confidence": 0.32,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q4_course_or_radial",
+          "expected_value": "type=course_deg, course_deg=60.1",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "type": "course_deg",
+              "course_deg": 60.1
+            }
+          },
+          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
+          "confidence": 0.32,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q_terminator",
+          "expected_value": "CA",
+          "expected_answer": {
+            "status": "present",
+            "value": "CA"
+          },
+          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
+          "confidence": 0.32,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "LIB",
+          "expected_answer": {
+            "status": "present",
+            "value": "LIB"
+          },
+          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
+          "confidence": 0.32,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
+          "confidence": 0.32,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q3_turn",
+          "expected_value": "RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": "RIGHT"
+          },
+          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
+          "confidence": 0.32,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q_terminator",
+          "expected_value": "DF",
+          "expected_answer": {
+            "status": "present",
+            "value": "DF"
+          },
+          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
+          "confidence": 0.32,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "LIB",
+          "expected_answer": {
+            "status": "present",
+            "value": "LIB"
+          },
+          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
+          "confidence": 0.32,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
+          "confidence": 0.32,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q5_hold_params",
+          "expected_value": "inbound_course_deg=236.0, leg_time_min=1.0, leg_distance_nm=None, turn=RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "inbound_course_deg": 236,
+              "leg_time_min": 1,
+              "leg_distance_nm": null,
+              "turn": "RIGHT"
+            }
+          },
+          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
+          "confidence": 0.32,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma3",
+          "canonical_leg_index": 3,
+          "leg_type": "HM",
+          "field_name": "Q_terminator",
+          "expected_value": "HM",
+          "expected_answer": {
+            "status": "present",
+            "value": "HM"
+          },
+          "match_basis": "coarse PLAN_VIEW evidence region; human must verify whether this plan-view area supports the field",
+          "confidence": 0.32,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "060",
+          "source_trans_ident": "I"
+        }
+      ],
+      "human_review": {
+        "review_action": "pending",
+        "notes": ""
+      },
+      "source_layer": "aip_long_line_plan_view_snap+clamped_above_lower_detail"
+    },
+    {
+      "region_id": "KBUY_I06-Z_03_lower_detail_area",
+      "region_type": "MISSED_APPROACH_DETAIL_AREA",
+      "bbox": {
+        "x_center": 0.5548,
+        "y_center": 0.7019,
+        "width": 0.2162,
+        "height": 0.0565
+      },
+      "ocr_text": "",
+      "label": "lower/profile missed-approach detail area snapped to AIP table lines",
+      "confidence": 0.5,
+      "annotation_scope": "lower_detail_seed",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [],
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Generic seed only; add fine-grained boxes as needed."
+      },
+      "source_layer": "pdf_text_cluster_icon_area_detector+lower_strip_line_refine"
+    },
+    {
+      "region_id": "KBUY_I06-Z_iconalign_001_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "bbox": {
+        "x_center": 0.4826,
+        "y_center": 0.6822,
+        "width": 0.0461,
+        "height": 0.0131
+      },
+      "ocr_text": "",
+      "label": "ALTITUDE_TEXT: 1600 -> AT_OR_ABOVE 1600 ft",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 1600 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 1600,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "PDF text token '1600' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      },
+      "source_candidate_leg_id": "KBUY_I06-Z__ma1",
+      "source_leg_type": "CA",
+      "source_field_name": "Q2_altitude_constraint"
+    },
+    {
+      "region_id": "KBUY_I06-Z_iconalign_003_altitude_text",
+      "region_type": "ALTITUDE_TEXT",
+      "bbox": {
+        "x_center": 0.5565,
+        "y_center": 0.6822,
+        "width": 0.0461,
+        "height": 0.0131
+      },
+      "ocr_text": "",
+      "label": "ALTITUDE_TEXT: 3000 -> AT_OR_ABOVE 3000 ft",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "PDF text token '3000' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      },
+      "source_candidate_leg_id": "KBUY_I06-Z__ma2",
+      "source_leg_type": "DF",
+      "source_field_name": "Q2_altitude_constraint"
+    },
+    {
+      "region_id": "KBUY_I06-Z_iconalign_002_fix_text",
+      "region_type": "FIX_TEXT",
+      "bbox": {
+        "x_center": 0.627,
+        "y_center": 0.6822,
+        "width": 0.0256,
+        "height": 0.0131
+      },
+      "ocr_text": "",
+      "label": "FIX_TEXT: LIB -> LIB",
+      "confidence": 0.62,
+      "source_layer": "pdf_text_inside_detected_icon_area",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q1_fix_ident",
+          "expected_value": "LIB",
+          "expected_answer": {
+            "status": "present",
+            "value": "LIB"
+          },
+          "match_basis": "PDF text token 'LIB' inside detected lower missed-approach/icon area",
+          "confidence": 0.62,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      },
+      "source_candidate_leg_id": "KBUY_I06-Z__ma2",
+      "source_leg_type": "DF",
+      "source_field_name": "Q1_fix_ident"
+    },
+    {
+      "region_id": "KBUY_I06-Z_iconalign_008_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "bbox": {
+        "x_center": 0.5533,
+        "y_center": 0.7056,
+        "width": 0.0582,
+        "height": 0.0347
+      },
+      "ocr_text": "",
+      "label": "detected lower detail: climb arrow",
+      "confidence": 0.52,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 3000 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 3000,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "detected climb/missed-approach arrow graphic near altitude text",
+          "confidence": 0.52,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        },
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma2",
+          "canonical_leg_index": 2,
+          "leg_type": "DF",
+          "field_name": "Q3_turn",
+          "expected_value": "RIGHT",
+          "expected_answer": {
+            "status": "present",
+            "value": "RIGHT"
+          },
+          "match_basis": "same visual turn/climb arrow supports this turn field",
+          "confidence": 0.46,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "050",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      }
+    },
+    {
+      "region_id": "KBUY_I06-Z_iconalign_006_climb_arrow",
+      "region_type": "CLIMB_ARROW",
+      "bbox": {
+        "x_center": 0.4821,
+        "y_center": 0.7108,
+        "width": 0.0148,
+        "height": 0.0322
+      },
+      "ocr_text": "",
+      "label": "detected lower detail: climb arrow",
+      "confidence": 0.52,
+      "source_layer": "cv_icon_component",
+      "annotation_scope": "lower_detail_icon_aligned_prelabel_candidate",
+      "is_formal_annotation_candidate": true,
+      "candidate_mappings": [
+        {
+          "candidate_leg_id": "KBUY_I06-Z__ma1",
+          "canonical_leg_index": 1,
+          "leg_type": "CA",
+          "field_name": "Q2_altitude_constraint",
+          "expected_value": "AT_OR_ABOVE 1600 ft",
+          "expected_answer": {
+            "status": "present",
+            "value": {
+              "desc": "AT_OR_ABOVE",
+              "altitude_ft": 1600,
+              "altitude_2_ft": null
+            }
+          },
+          "match_basis": "detected climb/missed-approach arrow graphic near altitude text",
+          "confidence": 0.52,
+          "human_decision": "pending",
+          "human_notes": "",
+          "canonical_proxy_gt_file": "datasets/formal300/targets/canonical_proxy_gt/KBUY_I06-Z.json",
+          "source_seq_no": "040",
+          "source_trans_ident": "I"
+        }
+      ],
+      "needs_human_decision": true,
+      "human_review": {
+        "review_action": "pending",
+        "notes": "Icon/text-aligned auto prelabel. Human must verify/adjust before acceptance."
+      },
+      "source_candidate_leg_id": "KBUY_I06-Z__ma1",
+      "source_leg_type": "CA",
+      "source_field_name": "Q2_altitude_constraint"
+    }
+  ]
+}

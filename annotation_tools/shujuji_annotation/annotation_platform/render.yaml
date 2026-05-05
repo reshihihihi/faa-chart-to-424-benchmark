@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: shujuji-annotation-platform
+    env: node
+    plan: starter
+    rootDir: tools/shujuji_annotation/annotation_platform
+    buildCommand: ""
+    startCommand: node server.js
+    healthCheckPath: /healthz
+    disk:
+      name: shujuji-annotation-data
+      mountPath: /data/shujuji_annotation
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SHUJUJI_DATA_ROOT
+        value: /data/shujuji_annotation
+      - key: SHUJUJI_ACCESS_TOKEN
+        generateValue: true

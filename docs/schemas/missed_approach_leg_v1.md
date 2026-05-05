@@ -137,12 +137,12 @@ Discriminated union on `type`:
 { "type": "navaid_radial", "navaid": "COE", "radial_deg": 350, "direction": "outbound" }
 // direction ∈ { "outbound", "inbound" }
 
-// Variant C — direct (DF legs; terminator fix fully determines geometry)
-{ "type": "direct" }
 ```
 
 `course_deg` is float, 1 decimal, range `[0.0, 359.9]`. Magnetic by default; a true-course
 flag is recorded in extraction-schema but not in canonical output.
+DF/direct-to-fix legs do not populate Q4; the direct-to fix is represented by
+`Q_terminator = DF` plus `Q1_fix_ident`, so Q4 is `not_applicable`.
 
 Hold legs: `not_applicable`; hold's inbound course lives in Q5_hold_params.
 

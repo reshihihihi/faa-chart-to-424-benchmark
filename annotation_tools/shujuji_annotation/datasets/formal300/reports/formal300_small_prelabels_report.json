@@ -1,0 +1,2709 @@
+{
+  "generated_at": "2026-04-25T01:47:21.130119+00:00",
+  "dataset": "formal300",
+  "method": "copy reviewed pilot10 small boxes when possible, then add PR28/CIFP424 layout-template small boxes for uncovered present fields",
+  "final_ground_truth": false,
+  "human_calibration_required": true,
+  "charts": [
+    {
+      "chart_id": "KABE_I06",
+      "region_count": 15,
+      "coarse_count": 3,
+      "fine_count": 12,
+      "copied_from_pilot10": true,
+      "present_field_count": 7,
+      "covered_field_count": 7
+    },
+    {
+      "chart_id": "KALS_I02",
+      "region_count": 15,
+      "coarse_count": 3,
+      "fine_count": 12,
+      "copied_from_pilot10": true,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAMA_I04",
+      "region_count": 21,
+      "coarse_count": 3,
+      "fine_count": 18,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAPC_I01L",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": true,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KATL_I09R",
+      "region_count": 13,
+      "coarse_count": 3,
+      "fine_count": 10,
+      "copied_from_pilot10": true,
+      "present_field_count": 7,
+      "covered_field_count": 7
+    },
+    {
+      "chart_id": "KAUS_I18L",
+      "region_count": 24,
+      "coarse_count": 3,
+      "fine_count": 21,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KAVL_I17",
+      "region_count": 15,
+      "coarse_count": 3,
+      "fine_count": 12,
+      "copied_from_pilot10": false,
+      "present_field_count": 6,
+      "covered_field_count": 6
+    },
+    {
+      "chart_id": "KAYS_I19-Z",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBMI_I29",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBUY_I06-Z",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBWG_I03-Y",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCFO_I26",
+      "region_count": 24,
+      "coarse_count": 3,
+      "fine_count": 21,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KCMH_I10R",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAVP_L04",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAXH_L09",
+      "region_count": 12,
+      "coarse_count": 3,
+      "fine_count": 9,
+      "copied_from_pilot10": false,
+      "present_field_count": 6,
+      "covered_field_count": 6
+    },
+    {
+      "chart_id": "KBDL_L33",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBDR_L06",
+      "region_count": 25,
+      "coarse_count": 3,
+      "fine_count": 22,
+      "copied_from_pilot10": false,
+      "present_field_count": 11,
+      "covered_field_count": 11
+    },
+    {
+      "chart_id": "KBFF_L12",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBOS_L15R",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": true,
+      "present_field_count": 6,
+      "covered_field_count": 6
+    },
+    {
+      "chart_id": "KBUR_L08-Z",
+      "region_count": 24,
+      "coarse_count": 3,
+      "fine_count": 21,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KBYL_L20",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCEC_L12",
+      "region_count": 21,
+      "coarse_count": 3,
+      "fine_count": 18,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCFO_L17",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 7,
+      "covered_field_count": 7
+    },
+    {
+      "chart_id": "KCOE_L06",
+      "region_count": 22,
+      "coarse_count": 3,
+      "fine_count": 19,
+      "copied_from_pilot10": true,
+      "present_field_count": 12,
+      "covered_field_count": 12
+    },
+    {
+      "chart_id": "KCRP_L36",
+      "region_count": 23,
+      "coarse_count": 3,
+      "fine_count": 20,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCRW_L05",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KALN_L29",
+      "region_count": 24,
+      "coarse_count": 3,
+      "fine_count": 21,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KALO_L12",
+      "region_count": 21,
+      "coarse_count": 3,
+      "fine_count": 18,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAWM_L17",
+      "region_count": 22,
+      "coarse_count": 3,
+      "fine_count": 19,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBPT_L12",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBRD_L34",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBTL_L23R",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBTP_L08",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBWI_L15L",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 7,
+      "covered_field_count": 7
+    },
+    {
+      "chart_id": "KCAK_L01",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCBF_L36",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCHA_L20",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCJR_L04",
+      "region_count": 24,
+      "coarse_count": 3,
+      "fine_count": 21,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KAFN_RNV-B",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAFN_RNV-C",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIB_RNV-A",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KANP_RNV-A",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAPT_R04",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAPV_R18",
+      "region_count": 24,
+      "coarse_count": 3,
+      "fine_count": 21,
+      "copied_from_pilot10": false,
+      "present_field_count": 12,
+      "covered_field_count": 12
+    },
+    {
+      "chart_id": "KAQW_RNV-A",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAQW_RNV-B",
+      "region_count": 15,
+      "coarse_count": 3,
+      "fine_count": 12,
+      "copied_from_pilot10": true,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAVQ_R12",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAVQ_R21",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAXH_R27",
+      "region_count": 14,
+      "coarse_count": 3,
+      "fine_count": 11,
+      "copied_from_pilot10": false,
+      "present_field_count": 7,
+      "covered_field_count": 7
+    },
+    {
+      "chart_id": "KBDH_R31",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBDN_R34",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBJC_R12L",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBLF_R05",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBMQ_R01",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBOS_R32",
+      "region_count": 17,
+      "coarse_count": 3,
+      "fine_count": 14,
+      "copied_from_pilot10": true,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBTV_R33-Y",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBUR_R08-Z",
+      "region_count": 21,
+      "coarse_count": 3,
+      "fine_count": 18,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KBWC_R26",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCAG_R07",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCBE_R05",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCEA_RNV-D",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCII_R33",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCOE_R02",
+      "region_count": 13,
+      "coarse_count": 3,
+      "fine_count": 10,
+      "copied_from_pilot10": true,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACT_R32",
+      "region_count": 13,
+      "coarse_count": 3,
+      "fine_count": 10,
+      "copied_from_pilot10": true,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KADF_R22",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAKH_R03",
+      "region_count": 22,
+      "coarse_count": 3,
+      "fine_count": 19,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KANY_R18",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAOO_R03-Z",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAOO_R21",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KARG_R04",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KATW_R21",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAVP_R22",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAWG_R36",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAXN_R22",
+      "region_count": 22,
+      "coarse_count": 3,
+      "fine_count": 19,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KAXV_R26",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAZC_R29",
+      "region_count": 22,
+      "coarse_count": 3,
+      "fine_count": 19,
+      "copied_from_pilot10": false,
+      "present_field_count": 11,
+      "covered_field_count": 11
+    },
+    {
+      "chart_id": "KBFD_R14",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBJI_R31",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBKW_R01",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBKX_R30",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBLV_R32RY",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBTR_R04L",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBUM_R18",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBVY_R34",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KBXA_R18",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBYH_R36",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KBYI_R20",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCAO_R02",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCBF_R36",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCDI_R04",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCDR_R03",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCDS_R36",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCGI_R10",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCHO_R03",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCHQ_R36",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCIC_R13L",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCLL_R11",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCNC_R10",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KCOI_R11",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KCRS_R32",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KANB_R05",
+      "region_count": 25,
+      "coarse_count": 3,
+      "fine_count": 22,
+      "copied_from_pilot10": false,
+      "present_field_count": 13,
+      "covered_field_count": 13
+    },
+    {
+      "chart_id": "KAST_R26",
+      "region_count": 22,
+      "coarse_count": 3,
+      "fine_count": 19,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KABE_R13",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KABE_R24",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KABY_R05",
+      "region_count": 21,
+      "coarse_count": 3,
+      "fine_count": 18,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KABY_R17",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KABY_R23",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KACB_R02",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KACK_R33",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KACT_R19",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KACV_R01",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KACY_R13-Y",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KACY_R31-Y",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KADS_R16",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAEX_R14",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAEX_R18",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAFW_R34R",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAGC_R10",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAGC_R28",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAGS_R26",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAHQ_R20",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAJZ_R03",
+      "region_count": 22,
+      "coarse_count": 3,
+      "fine_count": 19,
+      "copied_from_pilot10": false,
+      "present_field_count": 11,
+      "covered_field_count": 11
+    },
+    {
+      "chart_id": "KAKH_R21",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KALB_R10",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KALB_R19-Y",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KALB_R28",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KALN_R17",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KALS_R02",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KALW_R02",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAMA_R04-Y",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAMA_R13-Y",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KANJ_R14",
+      "region_count": 21,
+      "coarse_count": 3,
+      "fine_count": 18,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KAPC_R01LY",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAPC_R01LZ",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAPN_R01",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KART_R10",
+      "region_count": 20,
+      "coarse_count": 3,
+      "fine_count": 17,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KARV_R18",
+      "region_count": 22,
+      "coarse_count": 3,
+      "fine_count": 19,
+      "copied_from_pilot10": false,
+      "present_field_count": 11,
+      "covered_field_count": 11
+    },
+    {
+      "chart_id": "KARV_R28",
+      "region_count": 21,
+      "coarse_count": 3,
+      "fine_count": 18,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KATA_R05",
+      "region_count": 21,
+      "coarse_count": 3,
+      "fine_count": 18,
+      "copied_from_pilot10": false,
+      "present_field_count": 10,
+      "covered_field_count": 10
+    },
+    {
+      "chart_id": "KAAA_R03",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAAA_R21",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAAF_R06",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAAF_R14",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAAF_R24",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAAO_R18",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAAO_R36",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAAS_R05",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAAS_R23",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAAT_R31",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KABI_R17L",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KABI_R35R",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KABQ_R03-Y",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KABQ_R08-Y",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KABR_R13",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KABR_R17",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KABR_R31",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACJ_R05",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACJ_R23",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACK_R06",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACK_R15",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACP_R18",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACP_R36",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACQ_R15",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACQ_R33",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACT_R01",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACV_R14",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KACV_R32",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACY_R04",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KACZ_R09",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KACZ_R27",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KADC_R16",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KADC_R34",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KADF_R04",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KADG_R05",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KADG_R23",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KADH_R18",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KADH_R36",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KADM_R13",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KADM_R31",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KADS_R34",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KADT_R17",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KADU_R32",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAEG_R04",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAEG_R22",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAEL_R17",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAEL_R35",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAEX_R32",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAFJ_R09",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAFJ_R27",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAFK_R15",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAFK_R33",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAFO_R34",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAFP_R16",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAFP_R34",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAFW_R16L",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAFW_R16R",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAGO_R18",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAGO_R36",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAGS_R08-Y",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAGS_R08-Z",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAGZ_R09",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAGZ_R27",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAHH_R18",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAHH_R36",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAHN_R02",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAHN_R09",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAHN_R20",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAIA_R08",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIA_R12",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIA_R26",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAID_R12",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAID_R30",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIG_R09",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIG_R17",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIG_R27",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIK_R07",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIK_R25",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIO_R02",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIO_R20",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIT_R16",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIT_R34",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIV_R06",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIV_R24",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIZ_R04",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAIZ_R22",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAJG_R04",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAJG_R22",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAJG_R31",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAJR_R06",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAJR_R24",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAKO_R11",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAKO_R29",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAKQ_R21",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAKR_R25",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KALI_R13",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KALI_R31",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KALM_R04",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KALN_R11",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KALO_R12",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KALO_R18",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KALS_R20",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KALW_R20",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KALX_R18",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KALX_R36",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAMG_R16",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAMG_R34",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAMN_R09",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAMN_R18",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAMN_R27",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAMT_R05",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAMT_R23",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAMW_R01",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAMW_R13",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAMW_R19",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KANB_R23",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAND_R05",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAND_R17",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAND_R23",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KANE_R09",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KANE_R18",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KANE_R27",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KANJ_R32",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KANQ_R05",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KANQ_R23",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KANW_R13",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KANW_R17",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KANW_R31",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KANY_R36",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAOH_R10",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAOH_R28",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAOV_R13",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAOV_R31",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAPA_R17LY",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAPA_R28",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAPA_R35R",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAPF_R05-Y",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAPF_R14",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAPF_R23-Y",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAPN_R07",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAPN_R19",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAPS_R17",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAPS_R35",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAQO_R17",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAQO_R35",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAQP_R13",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KAQX_R17",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KAQX_R35",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KARA_R17",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KARA_R35",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KARB_R06",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KARB_R24",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KARG_R18",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KARG_R22",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KARM_R14",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KARM_R32",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KARR_R09",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KARR_R15",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KARR_R27",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    },
+    {
+      "chart_id": "KART_R07",
+      "region_count": 19,
+      "coarse_count": 3,
+      "fine_count": 16,
+      "copied_from_pilot10": false,
+      "present_field_count": 9,
+      "covered_field_count": 9
+    },
+    {
+      "chart_id": "KART_R28",
+      "region_count": 18,
+      "coarse_count": 3,
+      "fine_count": 15,
+      "copied_from_pilot10": false,
+      "present_field_count": 8,
+      "covered_field_count": 8
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+# Runtime annotation state. These files are produced by the web app and should
+# live under SHUJUJI_DATA_ROOT for real collection runs.
+datasets/*/annotations/
+exports/
+
+# Local server logs and ad hoc test data.
+*.log
+local-annotation-runtime*/

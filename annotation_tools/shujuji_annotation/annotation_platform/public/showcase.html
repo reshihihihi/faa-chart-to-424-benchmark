@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>航图标注结果展示</title>
+    <link rel="stylesheet" href="/showcase.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <strong>航图标注结果展示</strong>
+        <span id="chartMeta">加载中</span>
+      </div>
+      <div class="controls">
+        <select id="chartSelect" title="选择航图"></select>
+        <input id="chartInput" type="text" spellcheck="false" placeholder="chart_id">
+        <button id="loadChartBtn" type="button">载入</button>
+        <button id="difficultCaseBtn" class="difficult-toggle" type="button">标注为难例</button>
+        <a id="editAnnotationLink" class="edit-link" href="/formal/" target="_blank" rel="noopener">去标注页修改</a>
+        <button id="returnExpertBtn" class="admin-action" type="button">送专家复核</button>
+        <button id="returnOrdinaryBtn" class="admin-action danger" type="button">退回普通标注</button>
+      </div>
+    </header>
+
+    <main id="viewerShell" class="viewer-shell">
+      <section class="record-dock" aria-label="424 编码">
+        <div id="recordPanel" class="record-panel"></div>
+      </section>
+      <section id="chartPane" class="chart-pane">
+        <div class="chart-tools" aria-label="航图缩放">
+          <button id="chartZoomOut" type="button" aria-label="缩小航图">−</button>
+          <strong id="chartZoomValue">100%</strong>
+          <button id="chartZoomIn" type="button" aria-label="放大航图">＋</button>
+          <button id="chartZoomFit" type="button">适配</button>
+          <button id="chartZoomActual" type="button">100%</button>
+        </div>
+        <div id="chartFrame" class="chart-frame">
+          <img id="chartImage" alt="航图">
+          <svg id="boxOverlay" class="box-overlay" aria-label="证据框"></svg>
+        </div>
+      </section>
+      <div id="showcaseResizeHandle" class="resize-handle" role="separator" aria-label="调节航图和右侧说明宽度" title="拖动调节两栏宽度"></div>
+      <aside class="field-pane">
+        <div class="field-head">
+        <div>
+          <span class="eyebrow">当前展示</span>
+          <h1 id="panelTitle">航段证据</h1>
+        </div>
+        <div id="resultSource" class="source-pill">结果来源</div>
+      </div>
+      <div id="fieldList" class="field-list"></div>
+    </aside>
+      <svg id="leaderOverlay" class="leader-overlay" aria-hidden="true"></svg>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="/showcase.js"></script>
+  </body>
+</html>
