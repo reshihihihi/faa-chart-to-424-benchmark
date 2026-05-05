@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 
 DEFAULT_OPENAI_BASE_URL = "http://127.0.0.1:8080/v1"
@@ -26,6 +27,23 @@ def _image_data_url(path: Path) -> str:
         media_type = "image/jpeg"
     data = base64.b64encode(path.read_bytes()).decode("ascii")
     return f"data:{media_type};base64,{data}"
+
+
+def _image_http_url(path: Path) -> str | None:
+    root = os.environ.get("OPENAI_IMAGE_URL_ROOT")
+    if not root:
+        return None
+    root_dir = Path(os.environ.get("OPENAI_IMAGE_URL_ROOT_DIR", os.getcwd())).resolve()
+    resolved = path.resolve()
+    try:
+        rel = resolved.relative_to(root_dir)
+    except ValueError:
+        return None
+    return root.rstrip("/") + "/" + quote(rel.as_posix(), safe="/")
+
+
+def _use_openai_responses_api() -> bool:
+    return os.environ.get("OPENAI_USE_RESPONSES_API", "").lower() in {"1", "true", "yes"}
 
 
 def create_model_client(
@@ -88,6 +106,7 @@ def model_api_manifest(
             "json_mode": json_mode,
             "assistant_prefill_json": assistant_prefill_json,
             "assistant_prefill_value": "{" if assistant_prefill_json else None,
+            "openai_responses_api_enabled": _use_openai_responses_api(),
         }
     return {
         "provider": provider,
@@ -140,6 +159,38 @@ def anthropic_input_schema(schema: dict[str, Any]) -> dict[str, Any]:
         return value
 
     return strip_metadata(schema)
+
+
+def openai_responses_input_schema(schema: dict[str, Any]) -> dict[str, Any]:
+    """Return a Responses API tool schema compatible with its stricter subset."""
+
+    def convert(value: Any) -> Any:
+        if isinstance(value, dict):
+            converted = {}
+            for key, child in value.items():
+                if key in {"$schema", "$id"}:
+                    continue
+                converted["anyOf" if key == "oneOf" else key] = convert(child)
+            if "const" in converted:
+                const_value = converted.pop("const")
+                converted.setdefault("enum", [const_value])
+                if "type" not in converted:
+                    if isinstance(const_value, str):
+                        converted["type"] = "string"
+                    elif isinstance(const_value, bool):
+                        converted["type"] = "boolean"
+                    elif isinstance(const_value, int):
+                        converted["type"] = "integer"
+                    elif isinstance(const_value, float):
+                        converted["type"] = "number"
+                    elif const_value is None:
+                        converted["type"] = "null"
+            return converted
+        if isinstance(value, list):
+            return [convert(item) for item in value]
+        return value
+
+    return convert(schema)
 
 
 def call_model_json(
@@ -229,7 +280,8 @@ def call_model_json(
     if provider == "openai_compatible":
         content: list[dict[str, Any]] = []
         if image_path is not None:
-            content.append({"type": "image_url", "image_url": {"url": _image_data_url(image_path)}})
+            image_url = _image_http_url(image_path) or _image_data_url(image_path)
+            content.append({"type": "image_url", "image_url": {"url": image_url}})
         content.append({"type": "text", "text": prompt})
         kwargs: dict[str, Any] = {
             "model": model,
@@ -238,6 +290,40 @@ def call_model_json(
             "max_tokens": max_tokens,
         }
         if output_control == "openai_tool_call":
+            if _use_openai_responses_api():
+                responses_content: list[dict[str, Any]] = []
+                if image_path is not None:
+                    responses_content.append({"type": "input_image", "image_url": _image_data_url(image_path)})
+                responses_content.append({"type": "input_text", "text": prompt})
+                response_kwargs: dict[str, Any] = {
+                    "model": model,
+                    "input": [{"role": "user", "content": responses_content}],
+                    "tools": [
+                        {
+                            "type": "function",
+                            "name": tool_name,
+                            "description": "Emit one extraction output object that follows the registered schema.",
+                            "parameters": openai_responses_input_schema(tool_schema),
+                            "strict": True,
+                        }
+                    ],
+                    "tool_choice": {"type": "function", "name": tool_name},
+                    "max_output_tokens": max_tokens,
+                }
+                argument_chunks: list[str] = []
+                completed_arguments = ""
+                with client.responses.stream(**response_kwargs) as stream:
+                    for event in stream:
+                        event_type = getattr(event, "type", "")
+                        if event_type == "response.function_call_arguments.delta":
+                            argument_chunks.append(getattr(event, "delta", ""))
+                        elif event_type == "response.function_call_arguments.done":
+                            completed_arguments = getattr(event, "arguments", "") or ""
+                    response = stream.get_final_response()
+                text = completed_arguments or "".join(argument_chunks)
+                if not text:
+                    raise RuntimeError("Expected streamed function call arguments from OpenAI Responses API, got none.")
+                return text.strip(), response
             kwargs["tools"] = [
                 {
                     "type": "function",

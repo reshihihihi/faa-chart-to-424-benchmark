@@ -1,0 +1,13 @@
+comparison_group,method_variant,model,samples_total,schema_valid,samples_scored,correct,total,accuracy,accuracy_percent,qa_calls_saved,qa_fields_saved,qa_schema_retry_count_total,interpretation
+claude_same_model,C1 original,Claude Sonnet 4.5,200,200,200,1503,4052,0.3709279368213228,37.09,,,,original image to canonical baseline
+claude_same_model,C2 original,Claude Sonnet 4.5,200,200,200,970,4052,0.23938795656465942,23.94,,,18,original C2 per-field QA
+claude_same_model,C2 batched leg,Claude Sonnet 4.5,200,200,200,1397,4052,0.3447680157946693,34.48,881,4286,0,half-changed C2 method
+claude_same_model,C3 original,Claude Sonnet 4.5,200,196,196,1522,3976,0.3827967806841046,38.28,,,,questionnaire-style extraction
+claude_same_model,C4 original,Claude Sonnet 4.5,200,200,200,1624,4052,0.40078973346495556,40.08,,,,image plus OCR direct extraction
+gpt54_same_model,C1_GPT54,GPT-5.4,200,200,200,1201,4052,0.29639684106614017,29.64,,,,image to canonical with GPT-5.4
+gpt54_same_model,C2_GPT54_batched_leg,GPT-5.4,200,200,200,1884,4052,0.46495557749259625,46.50,809,3854,0,half-changed C2 method with GPT-5.4
+gpt54_same_model,C3_GPT54,GPT-5.4,200,200,200,1218,4052,0.3005923000987167,30.06,,,,questionnaire-style GPT-5.4
+gpt54_same_model,C4_GPT54,GPT-5.4,200,200,200,1757,4052,0.43361303060217177,43.36,,,,image plus OCR GPT-5.4
+effect_decomposition,C2 batched minus C2 original,Claude fixed,200,200,200,427,4052,0.1053800592300099,10.54,,,,method effect
+effect_decomposition,GPT-5.4 batched minus Claude batched,method fixed,200,200,200,487,4052,0.12018756169792693,12.02,,,,model effect
+effect_decomposition,GPT-5.4 batched minus Claude original,mixed model and method,200,200,200,914,4052,0.22556762092793692,22.56,,,,not isolated; do not use as primary method claim
