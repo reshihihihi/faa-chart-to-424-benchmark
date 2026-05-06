@@ -1,0 +1,111 @@
+{
+  "id": "resp_0ac69237c1bcfb510169f81eeff918819aa0b8cef2a63fa4a9",
+  "created_at": 1777868527.0,
+  "error": null,
+  "incomplete_details": null,
+  "instructions": null,
+  "metadata": {},
+  "model": "gpt-5.4",
+  "object": "response",
+  "output": [],
+  "parallel_tool_calls": true,
+  "temperature": 1.0,
+  "tool_choice": {
+    "name": "emit_qa_answer",
+    "type": "function"
+  },
+  "tools": [
+    {
+      "name": "emit_qa_answer",
+      "parameters": {
+        "type": "object",
+        "required": [
+          "status",
+          "value"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "present",
+              "not_observable",
+              "unknown"
+            ]
+          },
+          "value": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "title": "C2 QA answer schema for q0_leg_count"
+      },
+      "strict": true,
+      "type": "function",
+      "defer_loading": null,
+      "description": "Emit one extraction output object that follows the registered schema."
+    }
+  ],
+  "top_p": 0.98,
+  "background": false,
+  "completed_at": 1777868530.0,
+  "conversation": null,
+  "max_output_tokens": null,
+  "max_tool_calls": null,
+  "previous_response_id": null,
+  "prompt": null,
+  "prompt_cache_key": "3ced0024-1550-4986-86df-3d1373a626f0",
+  "prompt_cache_retention": "24h",
+  "reasoning": {
+    "effort": "none",
+    "generate_summary": null,
+    "summary": null
+  },
+  "safety_identifier": "user-qLIBa2HPhyrElfsM5TlmZOeK",
+  "service_tier": "default",
+  "status": "completed",
+  "text": {
+    "format": {
+      "type": "text"
+    },
+    "verbosity": "medium"
+  },
+  "top_logprobs": 0,
+  "truncation": "disabled",
+  "usage": {
+    "input_tokens": 1857,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 24,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 1881
+  },
+  "user": null,
+  "frequency_penalty": 0.0,
+  "moderation": null,
+  "presence_penalty": 0.0,
+  "store": false,
+  "tool_usage": {
+    "image_gen": {
+      "input_tokens": 0,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "output_tokens": 0,
+      "output_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 0
+      },
+      "total_tokens": 0
+    },
+    "web_search": {
+      "num_requests": 0
+    }
+  }
+}

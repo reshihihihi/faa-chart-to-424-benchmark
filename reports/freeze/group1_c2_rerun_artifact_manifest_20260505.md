@@ -6,7 +6,9 @@
 
 ## Included Artifact Policy
 
-The PR includes final summary reports plus per-chart score evidence for the rerun methods. Raw model responses, logs, and retry attempt text are intentionally excluded because they are not needed for bootstrap scoring and would make the PR noisy.
+The original score/bootstrap PR includes final summary reports plus per-chart score evidence for the rerun methods. Raw model responses, logs, and retry attempt text were intentionally excluded from that PR because they are not needed for bootstrap scoring and would make the score-focused review noisy.
+
+Raw API response envelopes were later added as a separate traceability supplement. See `reports/freeze/group1_raw_api_responses_artifact_manifest_20260506.md` for the committed `raw_responses/` directories, file counts, provider formats, and Claude shard notes.
 
 For bootstrap and formal verification, the required unit is one score JSON per chart. These files contain each scored field row with prediction, target, and correctness, so they are sufficient to resample chart-level outcomes.
 
@@ -76,9 +78,9 @@ Included:
 - `reports/freeze/group1_c2_method_effect_table_20260504.csv`
 - `reports/freeze/group1_c2_rerun_artifact_manifest_20260505.md`
 
-## Excluded By Design
+## Excluded From The Score PR
 
-The following are not included in the PR:
+The following were not included in the original score/bootstrap PR:
 
 - `raw_responses/`
 - `raw_text/`
@@ -87,4 +89,4 @@ The following are not included in the PR:
 - `qa_validation/`
 - `logs/`
 
-These files are useful for low-level debugging but are not required for formal bootstrap or for reproducing the reported field-level scores from the score JSON files.
+As of the raw-response supplement, the `raw_responses/` directories are now tracked separately for API-level audit. The remaining extracted text, parser intermediates, diagnostics, and logs are still excluded because they are not required for formal bootstrap or for reproducing the reported field-level scores from the score JSON files.
