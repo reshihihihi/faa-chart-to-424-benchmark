@@ -1,12 +1,16 @@
-# 实验组1 D 系列 final-v2：4090 执行方案
+# 实验组1 D 系列 final-v2：4090 从零执行方案
 
 日期：2026-05-06
 
-关联 PR：`#40 Group 1 D final-v2 D1-50 preparation and smoke diagnostic`
+关联 PR：`#40 Group 1 D final-v2 execution plan`
 
-## 1. 现在要跑的三个方法
+## 1. 正式口径
 
-本轮只处理 D 系列 final-v2 三个方法：
+正式记录中，`D_BASE_SAME_BACKBONE_FINAL_V2`、`D1-50_FINAL_V2`、`D1-500_FINAL_V2` 都按“尚未正式运行”处理。后续在 4090 机器上从统一数据、统一 prompt、统一推理脚本和统一评分口径重新开始。
+
+本文件不引用任何本机临时训练、临时 smoke 或非正式诊断结果。4090 上产生的新 run id、summary、score 才作为本轮 D 系列 final-v2 的正式运行记录。
+
+## 2. 三个方法分别是什么
 
 | 方法 | 是否训练 | 训练样本 | 输入 | 输出 | 目的 |
 | --- | --- | ---: | --- | --- | --- |
@@ -14,35 +18,47 @@
 | `D1-50_FINAL_V2` | 是 | 50 | 完整航图 PNG + final-v2 D prompt | final-v2 canonical JSON | 小数据 SFT 对照 |
 | `D1-500_FINAL_V2` | 是 | 500 | 完整航图 PNG + final-v2 D prompt | final-v2 canonical JSON | D 系列主 SFT 结果 |
 
-三者必须共用同一个 final-v2 prompt、formal200 split、推理 parser policy、评分脚本和 comparison policy。允许不同的只有是否加载 LoRA checkpoint、训练 JSONL 和 run id。
-
-## 2. 已经完成的状态
-
-D1-50 final-v2 已在本机训练完成，但 smoke 没有通过：
+三者必须共用：
 
 ```text
-formal200 smoke5: parse_ok=1/5, final_v2_valid=1/5
-train-seen5 diagnostic: parse_ok=2/5, final_v2_valid=2/5
+base model
+final-v2 D prompt
+formal200 image-only manifest
+formal200 smoke5 image-only manifest
+parser policy
+comparison_policy_v2
+scoring script
 ```
 
-结论是：`50 samples / 1 epoch / 7 optimizer steps` 没有让模型稳定学会输出 final-v2 JSON。这个结果应保留为 D1-50 r1 的 smoke 失败证据，不建议直接跑 formal200，也不建议通过补括号、去尾逗号、模板填充等方式把它改成可评分结果。
+允许不同：
 
-## 3. 4090 上的优先级
+```text
+D-base: 不加载 LoRA checkpoint，不训练
+D1-50: 使用固定 seed 的 train50 JSONL
+D1-500: 使用 train500 JSONL
+run id / checkpoint / output directory
+```
 
-4090 空闲后，优先顺序应为：
+## 3. 推荐执行顺序
 
-1. 先跑 `D1-500_FINAL_V2` 训练。
-2. D1-500 训练完成后，立刻跑 formal200 smoke5。
-3. 如果 smoke5 是路径、依赖、脚本错误，先修工程问题后重跑完整 smoke5。
-4. 如果 smoke5 能稳定产生可解析 final-v2 JSON，再跑 formal200。
-5. 同一台 4090 在 D1-500 结束后跑 `D_BASE_SAME_BACKBONE_FINAL_V2` smoke5 和 formal200。
-6. `D1-50_FINAL_V2` 不再直接 formal200；除非单独冻结一个新变体，例如 `D1-50_MORE_EPOCHS_FINAL_V2`，否则不改变已记录的 r1 结论。
+如果只有一张空闲 4090，推荐顺序如下：
 
-这样安排的原因是：D1-500 是当前最重要、也最可能通过 smoke 的主结果；D-base 不训练，排在后面也不会影响训练窗口；D1-50 已有明确 smoke 失败证据，继续 formal200 只会消耗 GPU 并产生大量不可解析失败。
+1. 拉取 PR #40 最新分支。
+2. 准备并审计 final-v2 train500、train50、dev100、formal200 image-only manifest、formal200 smoke5 manifest。
+3. 先跑 `D_BASE_SAME_BACKBONE_FINAL_V2` smoke5，确认图片路径、prompt、模型加载、推理 runner 都能工作。
+4. 跑 `D1-50_FINAL_V2` 训练，然后 smoke5。
+5. 跑 `D1-500_FINAL_V2` 训练，然后 smoke5。
+6. 三个方法的工程 blocker 清零后，分别跑 formal200。
+7. 所有预测完成后再统一评分。
+8. 汇总 D-base、D1-50、D1-500 的 score、parse failure、schema failure、unknown 输出数量和 run manifest。
 
-## 4. 4090 机器接手前必须拿到的内容
+smoke5 的作用是工程闸门：检查路径、依赖、显存、prompt、parser、输出目录和 run id 是否正确。不能在推理阶段读取 target、score、raw 424/CIFP、其他方法预测或 comparison policy。
 
-4090 机器需要从 PR #40 拉取代码：
+如果 smoke5 出现路径、依赖、脚本、配置错误，应修工程问题并完整重跑 smoke5。如果是模型自然输出导致 parse/schema failure，记录在 summary 中，不要用 target 或 scorer 修输出，也不要删除失败样本。
+
+## 4. 拉取代码
+
+4090 机器执行：
 
 ```powershell
 git fetch origin
@@ -54,14 +70,16 @@ git rev-parse --short HEAD
 确认 commit 至少包含：
 
 ```text
-a4a006496 Document D1-50 final-v2 smoke diagnostic
+74e98b070 Add 4090 execution plan for group1 D final-v2
 ```
 
-本地不要提交以下内容：
+## 5. 本地文件边界
+
+不要提交：
 
 ```text
 local_paths.local.json
-训练配置里的本机绝对路径
+本机绝对路径配置
 模型权重
 LoRA checkpoint
 PNG
@@ -70,77 +88,47 @@ prediction 大结果
 score 大结果
 ```
 
-## 5. D1-500 应该怎么跑
-
-D1-500 使用和 D1-50 同一套构造脚本、prompt、训练脚本、推理脚本。区别只有训练 JSONL：
+可以提交：
 
 ```text
-D1-50:  d_sft_train500_dev100.final_v2.train50_seed260506.jsonl
-D1-500: d_sft_train500_dev100.final_v2.train500.jsonl
-dev:    d_sft_train500_dev100.final_v2.dev100.jsonl
+脚本
+prompt
+schema/policy 小文件
+中文方案文档
+不含本机路径和大结果的摘要报告
 ```
 
-4090 机器应新建自己的本地 config，例如：
+## 6. 统一数据准备
+
+只构造一次 final-v2 SFT 数据，然后三种方法共用。
+
+目标文件：
 
 ```text
-d1_500_final_v2_qwen2vl_lora_20260506_r1.local.json
+d_sft_train500_dev100.final_v2.train500.jsonl
+d_sft_train500_dev100.final_v2.train50_seed260506.jsonl
+d_sft_train500_dev100.final_v2.dev100.jsonl
+d1_final_v2_train500_dev100_and_subset_manifest.json
+formal200_evaluation_image_only_manifest.jsonl
+formal200_evaluation_image_only_smoke5_manifest.jsonl
 ```
 
-关键字段：
+训练标签规则：
 
 ```text
-method_id = D1-500_FINAL_V2
-train_jsonl = corrected final-v2 train500 JSONL
-dev_jsonl = corrected final-v2 dev100 JSONL
-prompt_path = training/d_sft/prompts/d_sft_image_to_canonical.final_v2.md
-base_model_id = 本机 Qwen2-VL-2B-Instruct 路径或缓存名
-epochs = 1
-gradient_accumulation_steps = 8
-learning_rate = 0.0002
-assistant_prefill = "{"
-parser_repair = false
+输入 = 完整航图 PNG + final-v2 D prompt
+输出 = final-v2 canonical JSON
+unknown = 不允许作为正式 status
+DF direct-to-fix = 用 Q_terminator=DF + Q1_fix_ident 表达
+DF 的 Q4_course_or_radial direct = 改为 not_applicable/null
+CF/DF 未限制左右转 = Q3_turn present BOTH
 ```
 
-训练命令模板：
+D1-50 必须从 D1-500 train500 中固定 seed 抽 50 条，不能单独随机抽样，也不能使用 formal300 的第一个 50。
 
-```powershell
-python scripts\d_sft_train_qwen2vl_lora.py `
-  --config <本机路径>\d1_500_final_v2_qwen2vl_lora_20260506_r1.local.json `
-  --output-root <本机输出根目录> `
-  --run-id d1_500_final_v2_qwen2vl_lora_20260506_r1
-```
+## 7. D-base 命令模板
 
-## 6. D1-500 推理怎么跑
-
-训练后先跑 smoke5，不能直接跑 formal200：
-
-```powershell
-python scripts\d_sft\run_d_sft_final_v2_inference.py `
-  --config <本机路径>\d1_500_final_v2_qwen2vl_lora_20260506_r1.local.json `
-  --checkpoint <本机输出根目录>\checkpoints\d1_500_final_v2_qwen2vl_lora_20260506_r1\checkpoint-final `
-  --method-id D1-500_FINAL_V2 `
-  --manifest <本机路径>\formal200_evaluation_image_only_smoke5_manifest.jsonl `
-  --output-root <本机输出根目录> `
-  --run-id d1_500_final_v2_smoke5_20260506_r1 `
-  --sample-role formal200_evaluation_smoke5_image_only
-```
-
-smoke5 通过后，再把 manifest 换成 formal200 image-only manifest：
-
-```powershell
-python scripts\d_sft\run_d_sft_final_v2_inference.py `
-  --config <本机路径>\d1_500_final_v2_qwen2vl_lora_20260506_r1.local.json `
-  --checkpoint <本机输出根目录>\checkpoints\d1_500_final_v2_qwen2vl_lora_20260506_r1\checkpoint-final `
-  --method-id D1-500_FINAL_V2 `
-  --manifest <本机路径>\formal200_evaluation_image_only_manifest.jsonl `
-  --output-root <本机输出根目录> `
-  --run-id d1_500_final_v2_formal200_20260506_r1 `
-  --sample-role formal200_evaluation_image_only
-```
-
-## 7. D-base 怎么跑
-
-D-base 不加载 LoRA checkpoint。PR #40 中的 final-v2 推理 runner 已支持 `--checkpoint` 为空，因此 D-base 可以和 D1-500 使用同一个 prompt、同一个 parser policy 和同一个 image-only manifest。
+D-base 不训练，不传 `--checkpoint`。
 
 smoke5：
 
@@ -166,9 +154,87 @@ python scripts\d_sft\run_d_sft_final_v2_inference.py `
   --sample-role formal200_evaluation_image_only
 ```
 
-## 8. 评分
+## 8. D1-50 命令模板
 
-推理阶段禁止读取 target JSON、score、raw 424/CIFP、人类答案、其他方法预测或 comparison policy。只有预测全部完成后，才使用 scoring manifest 和 `comparison_policy_v2.jsonl` 评分。
+D1-50 使用 train50，dev100 与 D1-500 相同。
+
+训练：
+
+```powershell
+python scripts\d_sft_train_qwen2vl_lora.py `
+  --config <本机路径>\d1_50_final_v2_qwen2vl_lora_20260506_r1.local.json `
+  --output-root <本机输出根目录> `
+  --run-id d1_50_final_v2_qwen2vl_lora_20260506_r1
+```
+
+smoke5：
+
+```powershell
+python scripts\d_sft\run_d_sft_final_v2_inference.py `
+  --config <本机路径>\d1_50_final_v2_qwen2vl_lora_20260506_r1.local.json `
+  --checkpoint <本机输出根目录>\checkpoints\d1_50_final_v2_qwen2vl_lora_20260506_r1\checkpoint-final `
+  --method-id D1-50_FINAL_V2 `
+  --manifest <本机路径>\formal200_evaluation_image_only_smoke5_manifest.jsonl `
+  --output-root <本机输出根目录> `
+  --run-id d1_50_final_v2_smoke5_20260506_r1 `
+  --sample-role formal200_evaluation_smoke5_image_only
+```
+
+formal200：
+
+```powershell
+python scripts\d_sft\run_d_sft_final_v2_inference.py `
+  --config <本机路径>\d1_50_final_v2_qwen2vl_lora_20260506_r1.local.json `
+  --checkpoint <本机输出根目录>\checkpoints\d1_50_final_v2_qwen2vl_lora_20260506_r1\checkpoint-final `
+  --method-id D1-50_FINAL_V2 `
+  --manifest <本机路径>\formal200_evaluation_image_only_manifest.jsonl `
+  --output-root <本机输出根目录> `
+  --run-id d1_50_final_v2_formal200_20260506_r1 `
+  --sample-role formal200_evaluation_image_only
+```
+
+## 9. D1-500 命令模板
+
+D1-500 使用 train500，dev100 与 D1-50 相同。
+
+训练：
+
+```powershell
+python scripts\d_sft_train_qwen2vl_lora.py `
+  --config <本机路径>\d1_500_final_v2_qwen2vl_lora_20260506_r1.local.json `
+  --output-root <本机输出根目录> `
+  --run-id d1_500_final_v2_qwen2vl_lora_20260506_r1
+```
+
+smoke5：
+
+```powershell
+python scripts\d_sft\run_d_sft_final_v2_inference.py `
+  --config <本机路径>\d1_500_final_v2_qwen2vl_lora_20260506_r1.local.json `
+  --checkpoint <本机输出根目录>\checkpoints\d1_500_final_v2_qwen2vl_lora_20260506_r1\checkpoint-final `
+  --method-id D1-500_FINAL_V2 `
+  --manifest <本机路径>\formal200_evaluation_image_only_smoke5_manifest.jsonl `
+  --output-root <本机输出根目录> `
+  --run-id d1_500_final_v2_smoke5_20260506_r1 `
+  --sample-role formal200_evaluation_smoke5_image_only
+```
+
+formal200：
+
+```powershell
+python scripts\d_sft\run_d_sft_final_v2_inference.py `
+  --config <本机路径>\d1_500_final_v2_qwen2vl_lora_20260506_r1.local.json `
+  --checkpoint <本机输出根目录>\checkpoints\d1_500_final_v2_qwen2vl_lora_20260506_r1\checkpoint-final `
+  --method-id D1-500_FINAL_V2 `
+  --manifest <本机路径>\formal200_evaluation_image_only_manifest.jsonl `
+  --output-root <本机输出根目录> `
+  --run-id d1_500_final_v2_formal200_20260506_r1 `
+  --sample-role formal200_evaluation_image_only
+```
+
+## 10. 评分
+
+推理阶段禁止读取 scoring manifest 和 comparison policy。只有预测全部完成后，才使用它们评分。
 
 评分命令模板：
 
@@ -180,13 +246,13 @@ python scripts\score_final_v2_sft_outputs.py `
   --output-dir <本机输出根目录>\scores\<run_id>
 ```
 
-最终每个方法至少汇报：
+每个方法最终汇报：
 
 ```text
 git commit hash
 run id
 prompt hash
-train/dev JSONL hash，D-base 无训练则写 no training
+train/dev JSONL hash，D-base 写 no training
 checkpoint path/hash，D-base 写 no checkpoint
 smoke5 summary_report.json
 formal200 summary_report.json
@@ -194,24 +260,42 @@ score summary path
 score
 parse failure 数量
 final-v2 validation failure 数量
-是否输出 unknown
+unknown 输出数量
 是否有代码改动
 ```
 
-## 9. 给 4090 机器 Codex 的指令
+## 11. 给 4090 机器 Codex 的指令
 
 ```text
-请在 4090 机器上继续实验组1 D 系列 final-v2 SFT。只使用 PR #40 分支 codex/group1-d-final-v2-d1-50-20260506。
+请在 4090 机器上从零执行实验组1 D 系列 final-v2 三个方法：D_BASE_SAME_BACKBONE_FINAL_V2、D1-50_FINAL_V2、D1-500_FINAL_V2。
 
-优先跑 D1-500_FINAL_V2，不要重新抽样，不要改实验定义。D1-500 使用 corrected final-v2 train500/dev100，prompt 使用 training/d_sft/prompts/d_sft_image_to_canonical.final_v2.md，训练脚本使用 scripts/d_sft_train_qwen2vl_lora.py，推理脚本使用 scripts/d_sft/run_d_sft_final_v2_inference.py。
+仓库：
+https://github.com/reshihihihi/faa-chart-to-424-benchmark
 
-训练 D1-500 后先跑 formal200 smoke5。smoke5 如果只是路径/依赖/脚本问题，可以修工程问题并完整重跑 smoke5；如果是模型自然 parse/schema failure，记录失败，不要用 target 或 scorer 修输出。smoke5 通过后跑 formal200，再用 scripts/score_final_v2_sft_outputs.py 和 comparison_policy_v2.jsonl 评分。
+分支：
+codex/group1-d-final-v2-d1-50-20260506
 
-D-base 使用同一个 final-v2 推理脚本，但不传 --checkpoint，只传 --method-id D_BASE_SAME_BACKBONE_FINAL_V2。D-base 也先 smoke5，再 formal200，再评分。
+先执行：
+git fetch origin
+git checkout codex/group1-d-final-v2-d1-50-20260506
+git pull
+git rev-parse --short HEAD
 
-D1-50 r1 已在另一台机器训练完成但 smoke 未通过，formal200 不要继续跑。除非明确新增并冻结 D1-50_MORE_EPOCHS_FINAL_V2，否则不要改变 D1-50 r1 的训练 epoch 或 parser policy。
+正式口径中三个方法都按尚未运行处理。请不要引用任何其他机器上的临时 smoke、临时 checkpoint 或非正式诊断结果。
 
-推理阶段禁止读取 target JSON、score、raw 424/CIFP、人类答案、其他方法预测或 comparison_policy。scoring_manifest 和 comparison_policy 只能在预测完成后用于评分。不要提交 local_paths.local.json、模型、checkpoint、PNG、raw outputs 或大结果。
+先准备 final-v2 train500、train50、dev100、formal200 image-only manifest、formal200 smoke5 manifest。D1-50 必须是 train500 的固定 seed 子集，不能重新随机抽样，不能用 formal300 的第一个 50。
 
-最后汇报 commit hash、三个方法的运行状态、每个 run 的 summary_report.json 路径、score、parse/schema failure 数量、unknown 输出数量、checkpoint hash 和是否有代码改动。
+三个方法必须使用同一个 final-v2 D prompt、同一个 formal200 split、同一个 parser policy、同一个 scoring script 和同一个 comparison_policy_v2。
+
+D-base 不训练，不传 --checkpoint。
+D1-50 用 train50 训练。
+D1-500 用 train500 训练。
+
+每个方法都先跑 smoke5，再跑 formal200。smoke5 如果发现路径、依赖、脚本或配置错误，可以修工程问题并完整重跑 smoke5；如果是模型自然 parse/schema failure，记录失败，不要读取 target 或 scorer 修输出，不要删除失败样本。
+
+推理阶段禁止读取 target JSON、score、raw 424/CIFP、人类答案、其他方法预测、scoring_manifest 或 comparison_policy。scoring_manifest 和 comparison_policy 只能在预测完成后用于评分。
+
+不要提交 local_paths.local.json、模型、checkpoint、PNG、raw outputs、prediction 大结果或 score 大结果。
+
+最后汇报 commit hash、三个方法的 run id、summary_report.json 路径、score、parse/schema failure 数量、unknown 输出数量、checkpoint hash 和是否有代码改动。
 ```
