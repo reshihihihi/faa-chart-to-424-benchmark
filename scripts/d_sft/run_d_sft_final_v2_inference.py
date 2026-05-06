@@ -46,7 +46,7 @@ def write_text(path: Path, value: str) -> None:
 
 def read_jsonl(path: Path, limit: int | None = None) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    with path.open("r", encoding="utf-8") as handle:
+    with path.open("r", encoding="utf-8-sig") as handle:
         for line in handle:
             line = line.strip()
             if not line:
@@ -167,7 +167,7 @@ def validate_final_v2_semantics(obj: dict[str, Any]) -> list[str]:
     return messages
 
 
-def load_model(config: dict[str, Any], checkpoint: Path) -> tuple[Any, Any]:
+def load_model(config: dict[str, Any], checkpoint: Path | None) -> tuple[Any, Any]:
     model_cfg = config["model"]
     train_cfg = config["training"]
     image_cfg = config["image"]
@@ -178,7 +178,11 @@ def load_model(config: dict[str, Any], checkpoint: Path) -> tuple[Any, Any]:
         bnb_4bit_compute_dtype=dtype,
         bnb_4bit_use_double_quant=model_cfg.get("bnb_4bit_use_double_quant", True),
     )
-    processor_source = checkpoint if (checkpoint / "preprocessor_config.json").exists() else model_cfg["base_model_id"]
+    processor_source = (
+        checkpoint
+        if checkpoint is not None and (checkpoint / "preprocessor_config.json").exists()
+        else model_cfg["base_model_id"]
+    )
     processor = AutoProcessor.from_pretrained(
         processor_source,
         local_files_only=model_cfg.get("local_files_only", True),
@@ -191,7 +195,7 @@ def load_model(config: dict[str, Any], checkpoint: Path) -> tuple[Any, Any]:
         quantization_config=quant_cfg,
         device_map=model_cfg.get("device_map", "auto"),
     )
-    model = PeftModel.from_pretrained(base_model, checkpoint)
+    model = PeftModel.from_pretrained(base_model, checkpoint) if checkpoint is not None else base_model
     model.eval()
     return model, processor
 
@@ -247,6 +251,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         raise RuntimeError(f"Prediction run directory already exists: {run_dir}")
     run_dir.mkdir(parents=True)
     model, processor = load_model(config, args.checkpoint)
+    method_id = args.method_id or config.get("method_id") or (
+        "D1_FINAL_V2" if args.checkpoint is not None else "D_BASE_SAME_BACKBONE_FINAL_V2"
+    )
 
     results: list[dict[str, Any]] = []
     failures: list[dict[str, Any]] = []
@@ -295,8 +302,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
     summary = {
         "created_at": datetime.now(timezone.utc).isoformat(),
         "run_id": args.run_id,
-        "method_id": "D1-50_FINAL_V2",
-        "checkpoint": str(args.checkpoint.resolve()),
+        "method_id": method_id,
+        "checkpoint": str(args.checkpoint.resolve()) if args.checkpoint is not None else None,
         "manifest": str(args.manifest.resolve()),
         "sample_role": args.sample_role,
         "input_boundary": {
@@ -313,7 +320,9 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
         },
         "prompt": {"path": str(prompt_path.resolve()), "sha256": sha256_file(prompt_path)},
         "config": {"path": str(args.config.resolve()), "sha256": sha256_file(args.config)},
-        "checkpoint_adapter_sha256": sha256_file(args.checkpoint / "adapter_model.safetensors"),
+        "checkpoint_adapter_sha256": (
+            sha256_file(args.checkpoint / "adapter_model.safetensors") if args.checkpoint is not None else None
+        ),
         "parser_policy": {
             "extract_first_complete_json_object": True,
             "semantic_repair_allowed": False,
@@ -335,7 +344,8 @@ def run(args: argparse.Namespace) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run pure final-v2 D-SFT inference without reading targets or scores.")
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
-    parser.add_argument("--checkpoint", type=Path, required=True)
+    parser.add_argument("--checkpoint", type=Path, default=None)
+    parser.add_argument("--method-id", default=None)
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     parser.add_argument("--run-id", required=True)
