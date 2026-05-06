@@ -1,0 +1,15 @@
+{
+  "chart_id": "KCMH_I10R",
+  "procedure": {
+    "airport": "KCMH",
+    "approach_ident": "I10R",
+    "chart_name": "ILS OR LOC RWY 10R"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

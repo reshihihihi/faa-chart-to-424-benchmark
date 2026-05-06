@@ -1,0 +1,890 @@
+{
+  "schema": "group1_sft_qwen2vl_inference_summary_v1",
+  "created_at": "2026-05-04T06:33:14.000618+00:00",
+  "run_id": "group1_sft_dbase50_20260504_r1_D_BASE_SAME_BACKBONE_raw",
+  "method_id": "D_BASE_SAME_BACKBONE",
+  "input_manifest": "formal_runs/group1/group1_sft_dbase50_20260504_r1\\D_BASE_SAME_BACKBONE\\input_manifest.jsonl",
+  "model_dir": "<base_vlm_model_dir>",
+  "adapter_checkpoint": null,
+  "prompt": "training\\d_sft\\prompts\\d_sft_image_to_canonical.v2.md",
+  "json_schema": "schemas\\missed_approach_leg.schema.json",
+  "canonical_json_schema": null,
+  "scoring_manifest": "formal_runs/group1/group1_sft_dbase50_20260504_r1\\scoring_manifest.jsonl",
+  "comparison_policy": "<repo_root>\\benchmark_exports\\derived\\v2\\formal300\\targets\\scoring_equivalence_v2\\comparison_policy_v2.jsonl",
+  "parser_policy": {
+    "strict_json_only": true,
+    "strict_json_attempted_first": true,
+    "code_fence_stripping_allowed": false,
+    "single_missing_final_object_brace_closure_allowed": false,
+    "single_missing_final_object_brace_closure_scope": null,
+    "semantic_repair_allowed": false,
+    "assistant_prefill": "{",
+    "joint_output_canonical_extraction": false,
+    "repetition_penalty": 1.0
+  },
+  "input_boundary": {
+    "target_used_for_prompt_or_parsing": false,
+    "scoring_manifest_used_after_prediction_only": true,
+    "forbidden_inference_inputs": [
+      "target_json",
+      "raw_424_record",
+      "score_file",
+      "other_method_prediction",
+      "human_answer"
+    ]
+  },
+  "samples_total": 50,
+  "samples_scored": 0,
+  "parser_event_counts": {
+    "strict_json_parse_ok": 8,
+    "single_missing_final_object_brace_applied": 0,
+    "semantic_repair_applied": 0
+  },
+  "failures": [
+    {
+      "sample_id": "formal300_001",
+      "chart_id": "KABE_I06",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 5274 (char 5273)')"
+    },
+    {
+      "sample_id": "formal300_002",
+      "chart_id": "KALS_I02",
+      "stage": "schema_validation",
+      "error": "$: 'chart_id' is a required property"
+    },
+    {
+      "sample_id": "formal300_003",
+      "chart_id": "KAMA_I04",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 252 (char 251)')"
+    },
+    {
+      "sample_id": "formal300_004",
+      "chart_id": "KAPC_I01L",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 7388 (char 7387)')"
+    },
+    {
+      "sample_id": "formal300_005",
+      "chart_id": "KATL_I09R",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 3950 (char 3949)')"
+    },
+    {
+      "sample_id": "formal300_006",
+      "chart_id": "KAUS_I18L",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 6455 (char 6454)')"
+    },
+    {
+      "sample_id": "formal300_010",
+      "chart_id": "KBUY_I06-Z",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 2342 (char 2341)\")"
+    },
+    {
+      "sample_id": "formal300_011",
+      "chart_id": "KBWG_I03-Y",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 2460 (char 2459)')"
+    },
+    {
+      "sample_id": "formal300_013",
+      "chart_id": "KCMH_I10R",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 827 (char 826)')"
+    },
+    {
+      "sample_id": "formal300_015",
+      "chart_id": "KAXH_L09",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 3458 (char 3457)')"
+    },
+    {
+      "sample_id": "formal300_016",
+      "chart_id": "KBDL_L33",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 5458 (char 5457)')"
+    },
+    {
+      "sample_id": "formal300_018",
+      "chart_id": "KBFF_L12",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 919 (char 918)\")"
+    },
+    {
+      "sample_id": "formal300_019",
+      "chart_id": "KBOS_L15R",
+      "stage": "schema_validation",
+      "error": "$: 'chart_id' is a required property"
+    },
+    {
+      "sample_id": "formal300_020",
+      "chart_id": "KBUR_L08-Z",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 5447 (char 5446)')"
+    },
+    {
+      "sample_id": "formal300_022",
+      "chart_id": "KCEC_L12",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 5184 (char 5183)\")"
+    },
+    {
+      "sample_id": "formal300_026",
+      "chart_id": "KCRW_L05",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 4853 (char 4852)')"
+    },
+    {
+      "sample_id": "formal300_027",
+      "chart_id": "KALN_L29",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1058 (char 1057)\")"
+    },
+    {
+      "sample_id": "formal300_028",
+      "chart_id": "KALO_L12",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1211 (char 1210)\")"
+    },
+    {
+      "sample_id": "formal300_029",
+      "chart_id": "KAWM_L17",
+      "stage": "schema_validation",
+      "error": "$: 'chart_id' is a required property"
+    },
+    {
+      "sample_id": "formal300_031",
+      "chart_id": "KBRD_L34",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 4539 (char 4538)')"
+    },
+    {
+      "sample_id": "formal300_032",
+      "chart_id": "KBTL_L23R",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 5576 (char 5575)')"
+    },
+    {
+      "sample_id": "formal300_033",
+      "chart_id": "KBTP_L08",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 3525 (char 3524)')"
+    },
+    {
+      "sample_id": "formal300_034",
+      "chart_id": "KBWI_L15L",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 213 (char 212)')"
+    },
+    {
+      "sample_id": "formal300_035",
+      "chart_id": "KCAK_L01",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Expecting value: line 1 column 7425 (char 7424)')"
+    },
+    {
+      "sample_id": "formal300_036",
+      "chart_id": "KCBF_L36",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 149 (char 148)')"
+    },
+    {
+      "sample_id": "formal300_038",
+      "chart_id": "KCJR_L04",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 3667 (char 3666)')"
+    },
+    {
+      "sample_id": "formal300_039",
+      "chart_id": "KAFN_RNV-B",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 5777 (char 5776)')"
+    },
+    {
+      "sample_id": "formal300_040",
+      "chart_id": "KAFN_RNV-C",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1005 (char 1004)\")"
+    },
+    {
+      "sample_id": "formal300_042",
+      "chart_id": "KANP_RNV-A",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 931 (char 930)\")"
+    },
+    {
+      "sample_id": "formal300_043",
+      "chart_id": "KAPT_R04",
+      "stage": "schema_validation",
+      "error": "chart_id: 'RNAV (GPS) RWY 4' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'"
+    },
+    {
+      "sample_id": "formal300_045",
+      "chart_id": "KAQW_RNV-A",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 7747 (char 7746)')"
+    },
+    {
+      "sample_id": "formal300_046",
+      "chart_id": "KAQW_RNV-B",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Expecting value: line 1 column 5740 (char 5739)')"
+    },
+    {
+      "sample_id": "formal300_047",
+      "chart_id": "KAVQ_R12",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1881 (char 1880)\")"
+    },
+    {
+      "sample_id": "formal300_048",
+      "chart_id": "KAVQ_R21",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1462 (char 1461)\")"
+    },
+    {
+      "sample_id": "formal300_049",
+      "chart_id": "KAXH_R27",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 3647 (char 3646)')"
+    },
+    {
+      "sample_id": "formal300_051",
+      "chart_id": "KBDN_R34",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 866 (char 865)\")"
+    },
+    {
+      "sample_id": "formal300_052",
+      "chart_id": "KBJC_R12L",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 125 (char 124)\")"
+    },
+    {
+      "sample_id": "formal300_053",
+      "chart_id": "KBLF_R05",
+      "stage": "schema_validation",
+      "error": "$: 'chart_id' is a required property"
+    },
+    {
+      "sample_id": "formal300_054",
+      "chart_id": "KBMQ_R01",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1531 (char 1530)\")"
+    },
+    {
+      "sample_id": "formal300_055",
+      "chart_id": "KBOS_R32",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1360 (char 1359)\")"
+    },
+    {
+      "sample_id": "formal300_057",
+      "chart_id": "KBUR_R08-Z",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 1676 (char 1675)')"
+    },
+    {
+      "sample_id": "formal300_061",
+      "chart_id": "KCEA_RNV-D",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 6369 (char 6368)')"
+    },
+    {
+      "sample_id": "formal300_062",
+      "chart_id": "KCII_R33",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 3845 (char 3844)')"
+    },
+    {
+      "sample_id": "formal300_065",
+      "chart_id": "KADF_R22",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 1349 (char 1348)')"
+    },
+    {
+      "sample_id": "formal300_066",
+      "chart_id": "KAKH_R03",
+      "stage": "schema_validation",
+      "error": "$: 'chart_id' is a required property"
+    },
+    {
+      "sample_id": "formal300_068",
+      "chart_id": "KAOO_R03-Z",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 118 column 5 (char 4420)')"
+    },
+    {
+      "sample_id": "formal300_069",
+      "chart_id": "KAOO_R21",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 5405 (char 5404)')"
+    },
+    {
+      "sample_id": "formal300_070",
+      "chart_id": "KARG_R04",
+      "stage": "schema_validation",
+      "error": "$: 'chart_id' is a required property"
+    },
+    {
+      "sample_id": "formal300_073",
+      "chart_id": "KAWG_R36",
+      "stage": "schema_validation",
+      "error": "$: 'chart_id' is a required property"
+    },
+    {
+      "sample_id": "formal300_075",
+      "chart_id": "KAXV_R26",
+      "stage": "inference_or_parse",
+      "error": "JSONDecodeError('Unterminated string starting at: line 1 column 3408 (char 3407)')"
+    }
+  ],
+  "failure_count": 50,
+  "score": {
+    "correct": 0,
+    "total": 0,
+    "accuracy": null
+  },
+  "results": [
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_001",
+      "chart_id": "KABE_I06",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\001__KABE_I06__00015IL6_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 5274 (char 5273)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_002",
+      "chart_id": "KALS_I02",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\002__KALS_I02__00018IL2_p0.png",
+      "score": null,
+      "validation_error_count": 4,
+      "parser": {
+        "strict_json_parse_ok": true,
+        "single_missing_final_object_brace_applied": false
+      },
+      "validation_errors": [
+        "$: 'chart_id' is a required property",
+        "$: 'procedure' is a required property",
+        "$: 'missed_approach' is a required property",
+        "$: Additional properties are not allowed ('airport', 'approach_ident', 'chart_name' were unexpected)"
+      ]
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_003",
+      "chart_id": "KAMA_I04",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\003__KAMA_I04__00019IL4_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 252 (char 251)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_004",
+      "chart_id": "KAPC_I01L",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\004__KAPC_I01L__00281ILZ1L_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 7388 (char 7387)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_005",
+      "chart_id": "KATL_I09R",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\005__KATL_I09R__00026IL9R_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 3950 (char 3949)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_006",
+      "chart_id": "KAUS_I18L",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\006__KAUS_I18L__00556IL18L_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 6455 (char 6454)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_010",
+      "chart_id": "KBUY_I06-Z",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\010__KBUY_I06-Z__05694IZLZ6_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 2342 (char 2341)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_011",
+      "chart_id": "KBWG_I03-Y",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\011__KBWG_I03-Y__00605IYLY3_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 2460 (char 2459)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_013",
+      "chart_id": "KCMH_I10R",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\013__KCMH_I10R__00094IL10R_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 827 (char 826)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_015",
+      "chart_id": "KAXH_L09",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\015__KAXH_L09__06575L9_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 3458 (char 3457)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_016",
+      "chart_id": "KBDL_L33",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\016__KBDL_L33__00460IL33_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 5458 (char 5457)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_018",
+      "chart_id": "KBFF_L12",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\018__KBFF_L12__00383ILD12_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 919 (char 918)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_019",
+      "chart_id": "KBOS_L15R",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\019__KBOS_L15R__00058IL15R_p0.png",
+      "score": null,
+      "validation_error_count": 5,
+      "parser": {
+        "strict_json_parse_ok": true,
+        "single_missing_final_object_brace_applied": false
+      },
+      "validation_errors": [
+        "$: 'chart_id' is a required property",
+        "$: 'missed_approach' is a required property",
+        "$: Additional properties are not allowed ('airport', 'approach_ident', 'chart_name' were unexpected)",
+        "procedure: Additional properties are not allowed ('missed_approach' was unexpected)",
+        "procedure.airport: 'BOSTON, MASSACHUSETTS' does not match '^[A-Z]{4}$'"
+      ]
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_020",
+      "chart_id": "KBUR_L08-Z",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\020__KBUR_L08-Z__00067IZLZ8_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 5447 (char 5446)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_022",
+      "chart_id": "KCEC_L12",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\022__KCEC_L12__00034IL12_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 5184 (char 5183)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_026",
+      "chart_id": "KCRW_L05",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\026__KCRW_L05__00852IL5_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 4853 (char 4852)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_027",
+      "chart_id": "KALN_L29",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\027__KALN_L29__05178IL29_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1058 (char 1057)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_028",
+      "chart_id": "KALO_L12",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\028__KALO_L12__00945IL12_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1211 (char 1210)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_029",
+      "chart_id": "KAWM_L17",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\029__KAWM_L17__05386IL17_p0.png",
+      "score": null,
+      "validation_error_count": 4,
+      "parser": {
+        "strict_json_parse_ok": true,
+        "single_missing_final_object_brace_applied": false
+      },
+      "validation_errors": [
+        "$: 'chart_id' is a required property",
+        "$: 'procedure' is a required property",
+        "$: 'missed_approach' is a required property",
+        "$: Additional properties are not allowed ('airport', 'approach_ident', 'chart_name' were unexpected)"
+      ]
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_031",
+      "chart_id": "KBRD_L34",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\031__KBRD_L34__05182IL34_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 4539 (char 4538)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_032",
+      "chart_id": "KBTL_L23R",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\032__KBTL_L23R__00041IL23R_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 5576 (char 5575)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_033",
+      "chart_id": "KBTP_L08",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\033__KBTP_L08__00899IL8_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 3525 (char 3524)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_034",
+      "chart_id": "KBWI_L15L",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\034__KBWI_L15L__00804IL15L_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 213 (char 212)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_035",
+      "chart_id": "KCAK_L01",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\035__KCAK_L01__00638IL1_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Expecting value: line 1 column 7425 (char 7424)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_036",
+      "chart_id": "KCBF_L36",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\036__KCBF_L36__05540IL36_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 149 (char 148)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_038",
+      "chart_id": "KCJR_L04",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\038__KCJR_L04__05877L4_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 3667 (char 3666)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_039",
+      "chart_id": "KAFN_RNV-B",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\039__KAFN_RNV-B__05335RB_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 5777 (char 5776)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_040",
+      "chart_id": "KAFN_RNV-C",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\040__KAFN_RNV-C__05335RC_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1005 (char 1004)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_042",
+      "chart_id": "KANP_RNV-A",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\042__KANP_RNV-A__09806RA_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 931 (char 930)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_043",
+      "chart_id": "KAPT_R04",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\043__KAPT_R04__05783R4_p0.png",
+      "score": null,
+      "validation_error_count": 6,
+      "parser": {
+        "strict_json_parse_ok": true,
+        "single_missing_final_object_brace_applied": false
+      },
+      "validation_errors": [
+        "chart_id: 'RNAV (GPS) RWY 4' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+        "missed_approach: 'legs' is a required property",
+        "missed_approach.leg_count: 'status' is a required property",
+        "missed_approach.leg_count: 'value' is a required property",
+        "missed_approach.leg_count: Additional properties are not allowed ('Q1_fix_ident', 'Q2_altitude_constraint', 'Q3_turn', 'Q4_course_or_radial', 'Q5_hold_params', 'Q_terminator' were unexpected)",
+        "procedure.airport: 'JASPER, TENNESSEE' does not match '^[A-Z]{4}$'"
+      ]
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_045",
+      "chart_id": "KAQW_RNV-A",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\045__KAQW_RNV-A__10089RA_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 7747 (char 7746)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_046",
+      "chart_id": "KAQW_RNV-B",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\046__KAQW_RNV-B__10089RB_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Expecting value: line 1 column 5740 (char 5739)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_047",
+      "chart_id": "KAVQ_R12",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\047__KAVQ_R12__10213R12_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1881 (char 1880)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_048",
+      "chart_id": "KAVQ_R21",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\048__KAVQ_R21__10213R21_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1462 (char 1461)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_049",
+      "chart_id": "KAXH_R27",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\049__KAXH_R27__06575R27_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 3647 (char 3646)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_051",
+      "chart_id": "KBDN_R34",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\051__KBDN_R34__05579R34_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 866 (char 865)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_052",
+      "chart_id": "KBJC_R12L",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\052__KBJC_R12L__05612R12L_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 125 (char 124)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_053",
+      "chart_id": "KBLF_R05",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\053__KBLF_R05__00787R5_p0.png",
+      "score": null,
+      "validation_error_count": 5,
+      "parser": {
+        "strict_json_parse_ok": true,
+        "single_missing_final_object_brace_applied": false
+      },
+      "validation_errors": [
+        "$: 'chart_id' is a required property",
+        "$: 'missed_approach' is a required property",
+        "$: Additional properties are not allowed ('airport', 'approach_ident', 'chart_name' were unexpected)",
+        "procedure: Additional properties are not allowed ('missed_approach' was unexpected)",
+        "procedure.airport: 'RNAV (GPS) RWY 5' does not match '^[A-Z]{4}$'"
+      ]
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_054",
+      "chart_id": "KBMQ_R01",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\054__KBMQ_R01__05772R1_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1531 (char 1530)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_055",
+      "chart_id": "KBOS_R32",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\055__KBOS_R32__00058R32_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError(\"Expecting ',' delimiter: line 1 column 1360 (char 1359)\")"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_057",
+      "chart_id": "KBUR_R08-Z",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\057__KBUR_R08-Z__00067RZ8_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 1676 (char 1675)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_061",
+      "chart_id": "KCEA_RNV-D",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\061__KCEA_RNV-D__05142RD_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 6369 (char 6368)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_062",
+      "chart_id": "KCII_R33",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\062__KCII_R33__06814R33_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 3845 (char 3844)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_065",
+      "chart_id": "KADF_R22",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\065__KADF_R22__05756R22_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 1349 (char 1348)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_066",
+      "chart_id": "KAKH_R03",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\066__KAKH_R03__06081R3_p0.png",
+      "score": null,
+      "validation_error_count": 5,
+      "parser": {
+        "strict_json_parse_ok": true,
+        "single_missing_final_object_brace_applied": false
+      },
+      "validation_errors": [
+        "$: 'chart_id' is a required property",
+        "$: 'missed_approach' is a required property",
+        "$: Additional properties are not allowed ('airport', 'approach_ident', 'chart_name' were unexpected)",
+        "procedure: Additional properties are not allowed ('missed_approach' was unexpected)",
+        "procedure.airport: 'GASTONIA, NORTH CAROLINA' does not match '^[A-Z]{4}$'"
+      ]
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_068",
+      "chart_id": "KAOO_R03-Z",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\068__KAOO_R03-Z__00100RZ3_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 118 column 5 (char 4420)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_069",
+      "chart_id": "KAOO_R21",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\069__KAOO_R21__00100R21_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 5405 (char 5404)')"
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_070",
+      "chart_id": "KARG_R04",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\070__KARG_R04__00441R4_p0.png",
+      "score": null,
+      "validation_error_count": 4,
+      "parser": {
+        "strict_json_parse_ok": true,
+        "single_missing_final_object_brace_applied": false
+      },
+      "validation_errors": [
+        "$: 'chart_id' is a required property",
+        "$: 'procedure' is a required property",
+        "$: 'missed_approach' is a required property",
+        "$: Additional properties are not allowed ('airport', 'approach_ident', 'chart_name' were unexpected)"
+      ]
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_073",
+      "chart_id": "KAWG_R36",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\073__KAWG_R36__06289R36_p0.png",
+      "score": null,
+      "validation_error_count": 5,
+      "parser": {
+        "strict_json_parse_ok": true,
+        "single_missing_final_object_brace_applied": false
+      },
+      "validation_errors": [
+        "$: 'chart_id' is a required property",
+        "$: 'missed_approach' is a required property",
+        "$: Additional properties are not allowed ('airport', 'airport_code', 'approach_id', 'approach_ident', 'chart_name' were unexpected)",
+        "procedure: Additional properties are not allowed ('leg_count', 'legs' were unexpected)",
+        "procedure.airport: 'WASHINGTON MUNI (AWG)' does not match '^[A-Z]{4}$'"
+      ]
+    },
+    {
+      "method": "D_BASE_SAME_BACKBONE",
+      "sample_id": "formal300_075",
+      "chart_id": "KAXV_R26",
+      "image_path": "benchmark_exports\\derived\\v2\\formal300\\images\\075__KAXV_R26__06065R26_p0.png",
+      "score": null,
+      "validation_error_count": null,
+      "failure": "JSONDecodeError('Unterminated string starting at: line 1 column 3408 (char 3407)')"
+    }
+  ],
+  "dependency_versions": {
+    "python": "3.13.11 (tags/v3.13.11:6278944, Dec  5 2025, 16:26:58) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.6.0+cu124",
+    "transformers": "5.3.0",
+    "peft": "0.19.1",
+    "bitsandbytes": "0.49.2",
+    "Pillow": "12.1.0",
+    "jsonschema": "4.26.0"
+  }
+}

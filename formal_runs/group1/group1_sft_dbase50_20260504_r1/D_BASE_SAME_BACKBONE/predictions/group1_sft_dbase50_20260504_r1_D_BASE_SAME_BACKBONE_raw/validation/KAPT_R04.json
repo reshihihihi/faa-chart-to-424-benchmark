@@ -1,0 +1,8 @@
+[
+  "chart_id: 'RNAV (GPS) RWY 4' does not match '^[A-Z]{4}_[A-Z0-9\\\\-]+$'",
+  "missed_approach: 'legs' is a required property",
+  "missed_approach.leg_count: 'status' is a required property",
+  "missed_approach.leg_count: 'value' is a required property",
+  "missed_approach.leg_count: Additional properties are not allowed ('Q1_fix_ident', 'Q2_altitude_constraint', 'Q3_turn', 'Q4_course_or_radial', 'Q5_hold_params', 'Q_terminator' were unexpected)",
+  "procedure.airport: 'JASPER, TENNESSEE' does not match '^[A-Z]{4}$'"
+]

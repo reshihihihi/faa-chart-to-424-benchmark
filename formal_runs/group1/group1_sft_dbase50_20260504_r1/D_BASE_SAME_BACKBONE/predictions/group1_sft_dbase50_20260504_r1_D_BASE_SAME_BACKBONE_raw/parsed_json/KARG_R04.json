@@ -1,0 +1,14 @@
+{
+  "airport": {
+    "code": "WAL",
+    "name": "WALNUT RIDGE",
+    "state": "ARKANSAS",
+    "country": "USA"
+  },
+  "approach_ident": {
+    "code": "RNAV",
+    "name": "RNAV (GPS) RWY 4",
+    "type": "RNAV"
+  },
+  "chart_name": "WALNUT RIDGE RNAV (GPS) RWY 4"
+}

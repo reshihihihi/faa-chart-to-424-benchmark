@@ -1,0 +1,15 @@
+{
+  "chart_id": "KCEC_L12",
+  "procedure": {
+    "airport": "KCEC",
+    "approach_ident": "L12",
+    "chart_name": "ILS OR LOC RWY 12"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

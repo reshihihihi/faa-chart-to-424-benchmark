@@ -1,0 +1,18 @@
+{
+  "expected_chart_id": "KBLF_R05",
+  "raw_output_chart_id": null,
+  "output_chart_id": "KBLF_R05",
+  "schema_valid": true,
+  "final_chart_id_matches_expected": true,
+  "validation_errors": [],
+  "actions": [
+    "strip_outer_whitespace",
+    "parse_entire_raw_as_json_object",
+    "raw_object_not_convertible_to_canonical_shape",
+    "set_manifest_chart_id_envelope",
+    "drop_extra_top_level_fields_after_envelope:airport,approach_ident,chart_name",
+    "fallback_missing_missed_approach",
+    "fallback_missing_legs",
+    "selected_candidate_index:0"
+  ]
+}
