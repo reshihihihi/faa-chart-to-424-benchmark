@@ -1,0 +1,18 @@
+{
+  "description": "Template for locating external artifacts needed to reproduce the original Group 1 D1 / D-SFT LoRA run. Copy to a local untracked file and fill with machine-specific paths. Do not commit the filled local file.",
+  "repo_root": "<repo-root>",
+  "external_artifact_root": "<external-artifact-root>",
+  "huggingface_cache_root": "<huggingface-cache>",
+  "base_model_snapshot_dir": "<huggingface-cache>/hub/models--Qwen--Qwen2-VL-2B-Instruct/snapshots/895c3a49bc3fa70a340399125c650a463535e71c",
+  "lora_checkpoint_final_dir": "<external-artifact-root>/d_sft/checkpoints/d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1/checkpoint-final",
+  "train_jsonl": "<external-artifact-root>/d_sft/training_jsonl/d_sft_train500_dev100.prompt_v2.train.jsonl",
+  "dev_jsonl": "<external-artifact-root>/d_sft/training_jsonl/d_sft_train500_dev100.prompt_v2.dev.jsonl",
+  "combined_manifest": "<external-artifact-root>/d_sft/data/d_sft_train500_dev100/combined_manifest.jsonl",
+  "pilot100_manifest": "<external-artifact-root>/pilot100_external/pilot100_external_manifest.jsonl",
+  "d_sft_output_root": "<external-artifact-root>/d_sft",
+  "notes": [
+    "This template intentionally contains no local absolute paths.",
+    "The filled local file must remain untracked.",
+    "Verify files against training/d_sft/manifests/d1_lora_artifact_manifest_20260506.json before rerunning inference."
+  ]
+}

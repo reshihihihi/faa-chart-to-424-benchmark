@@ -1,0 +1,316 @@
+{
+  "manifest_id": "d1_lora_artifact_manifest_20260506",
+  "purpose": "Record reproducible metadata for the original Group 1 D1 / D-SFT LoRA run without committing model weights, checkpoints, local paths, images, raw outputs, or large result directories.",
+  "method": {
+    "experiment_group": "group1",
+    "method_id": "D1",
+    "training_method_id": "D_SFT",
+    "run_id": "d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1",
+    "description": "Full chart image plus D-SFT prompt v2 to missed approach canonical JSON, using a LoRA adapter trained on Qwen/Qwen2-VL-2B-Instruct."
+  },
+  "artifact_boundary": {
+    "committed_to_git": [
+      "public source URLs",
+      "run ids",
+      "file names",
+      "file sizes",
+      "sha256 hashes",
+      "configuration values",
+      "command templates",
+      "reproducibility notes"
+    ],
+    "not_committed_to_git": [
+      "local absolute paths",
+      "base model weight binaries",
+      "LoRA checkpoint binaries",
+      "PNG chart images",
+      "raw model outputs",
+      "large result directories",
+      "shell history containing machine-specific paths"
+    ]
+  },
+  "base_model": {
+    "model_id": "Qwen/Qwen2-VL-2B-Instruct",
+    "huggingface_url": "https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct",
+    "official_code_url": "https://github.com/QwenLM/Qwen2-VL",
+    "observed_huggingface_cache_revision": "895c3a49bc3fa70a340399125c650a463535e71c",
+    "local_files_only": true,
+    "main_files": [
+      {
+        "path": "model-00001-of-00002.safetensors",
+        "size_bytes": 3988609112,
+        "sha256": "994ac2b03f97de8bc647d0fe5eba2e4b632b3e28dc03574c29bdfc36cf47e1b9"
+      },
+      {
+        "path": "model-00002-of-00002.safetensors",
+        "size_bytes": 429441656,
+        "sha256": "92540d8353c8d226a589a3b179bdb33851c970ee2cc2ac7ba035f79425e7b833"
+      },
+      {
+        "path": "model.safetensors.index.json",
+        "size_bytes": 56411,
+        "sha256": "260ab9fa1418d6d6ab79daa1d9da2c47264f3b72edb4630fc799077ac67d27c6"
+      },
+      {
+        "path": "config.json",
+        "size_bytes": 1196,
+        "sha256": "422adefa19e62dd175961cec85bc0400344fe5bf9b22bd1182e05aaae78556e0"
+      },
+      {
+        "path": "generation_config.json",
+        "size_bytes": 272,
+        "sha256": "d2864bf1edea5863d331edfff48106b586a366f5a2c41aa77731fadc53aa25d2"
+      },
+      {
+        "path": "preprocessor_config.json",
+        "size_bytes": 347,
+        "sha256": "b5eaad0c2815f07631535dcc58f3c462b0d73693638ad21d19f3c50820eae1cc"
+      },
+      {
+        "path": "tokenizer.json",
+        "size_bytes": 7029741,
+        "sha256": "cb63a0a23eef3d5b01063a9880a1925a65aaf4d1591d519910ee3527852950a0"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "size_bytes": 4190,
+        "sha256": "ff5c4fd898fe8c39591eb70e5d39d2782802d4204d6ae9ba1223252f354842a0"
+      },
+      {
+        "path": "vocab.json",
+        "size_bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      {
+        "path": "merges.txt",
+        "size_bytes": 1671839,
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      }
+    ],
+    "config_summary": {
+      "architectures": [
+        "Qwen2VLForConditionalGeneration"
+      ],
+      "model_type": "qwen2_vl",
+      "hidden_size": 1536,
+      "intermediate_size": 8960,
+      "num_hidden_layers": 28,
+      "num_attention_heads": 12,
+      "num_key_value_heads": 2,
+      "max_position_embeddings": 32768,
+      "torch_dtype": "bfloat16",
+      "vision_config_depth": 32,
+      "vision_config_hidden_size": 1536
+    }
+  },
+  "lora_checkpoint": {
+    "checkpoint_dir_template": "<external-artifact-root>/d_sft/checkpoints/d_sft_formal_qwen2vl_lora_promptv2_prefill_20260428_r1/checkpoint-final",
+    "core_weight_file": "adapter_model.safetensors",
+    "core_weight_size_bytes": 36986952,
+    "core_weight_sha256": "df5e5eb5e97ffb5b86368fb966705cddffe09e4dfaa622959859d2da9fc412e0",
+    "files": [
+      {
+        "path": "adapter_config.json",
+        "sha256": "827975de5af39553fa7da2405ffa9c85cadee6ed34618bd809b01d5894b79ff8"
+      },
+      {
+        "path": "adapter_model.safetensors",
+        "sha256": "df5e5eb5e97ffb5b86368fb966705cddffe09e4dfaa622959859d2da9fc412e0"
+      },
+      {
+        "path": "chat_template.jinja",
+        "sha256": "6edff8eae4ef69923f937be5b1fcf91462227e7c827a0a936a98197f19642388"
+      },
+      {
+        "path": "processor_config.json",
+        "sha256": "c244ec5dd62d122710dd7e8cee226cfd90cda85d19f23ce0bb018f5d300afa1c"
+      },
+      {
+        "path": "README.md",
+        "sha256": "f84870e9c330a9a17f01ec27d85bd995fcc22addb5e7f1dd55259f3d1cda6adc"
+      },
+      {
+        "path": "tokenizer.json",
+        "sha256": "312c03cb421e18f41c20c3e35f3302479a3a8f8b1f06779fd900326a0d32c22f"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "sha256": "b7e922bac4f0585865ed00ad398b25ad14cddf1bef8bb0c7ab2aeaf421e75736"
+      }
+    ]
+  },
+  "peft_lora_config": {
+    "base_model_name_or_path": "Qwen/Qwen2-VL-2B-Instruct",
+    "revision": null,
+    "peft_type": "LORA",
+    "task_type": "CAUSAL_LM",
+    "peft_version": "0.19.1",
+    "inference_mode": true,
+    "r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "bias": "none",
+    "lora_bias": false,
+    "init_lora_weights": true,
+    "fan_in_fan_out": false,
+    "use_dora": false,
+    "use_rslora": false,
+    "use_qalora": false,
+    "qalora_group_size": 16,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "training_data": {
+    "dataset_name": "d_sft_train500_dev100",
+    "train_samples": 500,
+    "dev_samples": 100,
+    "train_jsonl_template": "<external-artifact-root>/d_sft/training_jsonl/d_sft_train500_dev100.prompt_v2.train.jsonl",
+    "dev_jsonl_template": "<external-artifact-root>/d_sft/training_jsonl/d_sft_train500_dev100.prompt_v2.dev.jsonl",
+    "combined_manifest_template": "<external-artifact-root>/d_sft/data/d_sft_train500_dev100/combined_manifest.jsonl",
+    "train_jsonl_sha256": "8d9434e499c5f0151711ad7a5d93466f1c1707f537e2066416247425d309a7cb",
+    "dev_jsonl_sha256": "d21000873c2be3bee7963d25f92d2f1dcd0242778f5c98c43b2291ed340b9cfa",
+    "label_source": "CIFP_260416_FAACIFP18_to_current_canonical_proxy_projection",
+    "input_contract": "full chart PNG plus frozen D-SFT prompt to missed approach canonical JSON",
+    "forbidden_in_training_inputs": [
+      "formal300 samples",
+      "pilot10 samples",
+      "pilot100 external samples",
+      "OCR",
+      "field candidates",
+      "scorer output",
+      "other method predictions"
+    ],
+    "observed_overlap_counts": {
+      "formal300": 0,
+      "pilot10": 0,
+      "pilot100_external": 0
+    }
+  },
+  "frozen_files": {
+    "prompt_path": "training/d_sft/prompts/d_sft_image_to_canonical.v2.md",
+    "prompt_sha256": "8e0f6d36c023e6d23b78655ab1a1910f49880d7bd473db75d4250681ac21445e",
+    "schema_path": "schemas/missed_approach_leg.schema.json",
+    "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+    "frozen_training_config_path": "training/d_sft/configs/d_sft_training_config.frozen_20260428_r1.json",
+    "current_config_sha256": "378df37d39eda9cd58e8c8cee24dada471d504fa8f242fbc9d892b813f857deb",
+    "train_script_path": "scripts/d_sft_train_qwen2vl_lora.py",
+    "train_script_sha256": "f87d67987d4f1a14b78756e77100d58b365ca09162fc73b5aa37f62722c8a74f",
+    "infer_script_path": "scripts/d_sft_infer_qwen2vl_lora.py",
+    "infer_script_sha256": "abd8778aa98fbb11623e1782387c10c8df489e08d781178244daf7aeb39add03",
+    "prepare_script_path": "scripts/prepare_d_sft_dataset.py",
+    "prepare_script_sha256": "79461f9f439a59e53896667a1d99d03603d5d9fb5e28da43a21a11cab1af7f2e"
+  },
+  "training_parameters": {
+    "seed": 260428,
+    "epochs": 1,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "gradient_checkpointing": true,
+    "max_seq_len": 4096,
+    "checkpoint_selection": "lowest dev loss on 100-sample dev split",
+    "assistant_prefill": "{",
+    "parser_repair_during_training": false,
+    "global_steps": 500,
+    "optimizer_steps": 63,
+    "observed_truncation_count": 0,
+    "observed_max_seq_len": 1931,
+    "best_dev_loss": 0.04459553452208638
+  },
+  "model_loading": {
+    "load_in_4bit": true,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "device_map": "auto",
+    "compute_dtype": "float16",
+    "load_sequence": [
+      "AutoProcessor.from_pretrained",
+      "BitsAndBytesConfig",
+      "Qwen2VLForConditionalGeneration.from_pretrained",
+      "PeftModel.from_pretrained"
+    ]
+  },
+  "inference_parameters": {
+    "prompt": "training/d_sft/prompts/d_sft_image_to_canonical.v2.md",
+    "image_input": "full chart image only",
+    "min_pixels": 3136,
+    "max_pixels": 501760,
+    "max_new_tokens": 1536,
+    "do_sample": false,
+    "json_policy": "strict JSON only; no code-fence stripping; no semantic repair; no selective retry",
+    "forbidden_during_prediction": [
+      "target JSON",
+      "score",
+      "raw 424/CIFP",
+      "OCR",
+      "field candidates",
+      "evidence boxes",
+      "other method predictions"
+    ]
+  },
+  "environment": {
+    "training_report_environment": {
+      "python": "3.11.15 Anaconda",
+      "torch": "2.6.0+cu124",
+      "transformers": "5.5.4",
+      "peft": "0.19.1",
+      "bitsandbytes": "0.49.2",
+      "Pillow": "11.1.0",
+      "jsonschema": "4.26.0",
+      "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "peak_memory_gb": 7.1405
+    },
+    "posthoc_current_machine_observation": {
+      "nvidia_smi": "566.24",
+      "driver": "566.24",
+      "cuda_shown_by_nvidia_smi": "12.7",
+      "gpu_total_memory_mib": 8188,
+      "python": "3.13.11",
+      "transformers": "5.3.0"
+    }
+  },
+  "results": {
+    "pilot100": {
+      "run_id": "d_sft_pilot100_promptv2_prefill_20260428_r1",
+      "samples": 100,
+      "schema_valid": 94,
+      "scored": 94,
+      "failures": 6,
+      "field_score_numerator": 1014,
+      "field_score_denominator": 2200,
+      "field_score": 0.46090909090909093
+    },
+    "formal200_d1": {
+      "run_id": "group1_formal200_D1_20260502_r4",
+      "canonical_json_written": 200,
+      "schema_valid": 200,
+      "scored": 200,
+      "failures": 0,
+      "strict_score_numerator": 2972,
+      "strict_score_denominator": 4052,
+      "strict_score": 0.7335,
+      "v2_score_numerator": 3158,
+      "v2_score_denominator": 4052,
+      "v2_score": 0.7793682132280355,
+      "raw_chart_id_mismatch_count": 54,
+      "final_chart_id_mismatch_count": 0
+    }
+  },
+  "unrecovered_records": [
+    "exact training conda env export",
+    "exact training pip freeze",
+    "actual training shell history",
+    "actual inference shell history",
+    "training wall-clock start and end time",
+    "exact formal200 raw inference command text"
+  ]
+}

@@ -42,6 +42,18 @@ raw outputs
 
 这些内容用文件清单、SHA256、大小、run_id、公开来源、目录模板和复现命令替代记录。这样另一台机器可以按 hash 和目录模板核对 artifact 是否一致，同时不会把大文件、私有路径或隐藏环境假设提交进仓库。
 
+本次 PR 中与 D1 / D-SFT LoRA 复现直接相关的提交文件包括：
+
+```text
+training/d_sft/reports/d1_lora_full_environment_training_inference_details_zh_20260506.md
+training/d_sft/manifests/d1_lora_artifact_manifest_20260506.json
+training/d_sft/configs/d1_lora_artifact_paths.template.json
+training/d_sft/reports/d1_lora_reproduction_commands_zh_20260506.md
+training/d_sft/reports/d1_lora_environment_and_gap_record_zh_20260506.md
+```
+
+其中 Markdown 报告用于人工阅读，JSON manifest 用于逐项核对 artifact、hash、参数和结果，template 用于另一台机器填写本机路径，复现命令文档用于照着跑，环境缺口文档用于区分已恢复事实和仍无法从现有记录恢复的内容。
+
 ## 1. D1 和 LoRA 的关系
 
 ```text
