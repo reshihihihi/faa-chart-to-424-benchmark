@@ -1,0 +1,71 @@
+{
+  "id": "msg_018ifMsiY56RrGo7RxwBuDdz",
+  "container": null,
+  "content": [
+    {
+      "id": "toolu_01QcAXDQumkVLvsFRNT3TFrk",
+      "caller": {
+        "type": "direct"
+      },
+      "input": {
+        "Q1_fix_ident": {
+          "status": "present",
+          "value": "CEGEE"
+        },
+        "Q2_altitude_constraint": {
+          "status": "present",
+          "value": {
+            "altitude_2_ft": 2600,
+            "altitude_ft": 6000,
+            "desc": "BETWEEN"
+          }
+        },
+        "Q3_turn": {
+          "status": "not_applicable",
+          "value": null
+        },
+        "Q4_course_or_radial": {
+          "status": "not_applicable",
+          "value": null
+        },
+        "Q5_hold_params": {
+          "status": "present",
+          "value": {
+            "inbound_course_deg": 275,
+            "leg_distance_nm": 4,
+            "leg_time_min": null,
+            "turn": "RIGHT"
+          }
+        },
+        "Q_terminator": {
+          "status": "present",
+          "value": "HA"
+        }
+      },
+      "name": "emit_batched_leg_qa",
+      "type": "tool_use"
+    }
+  ],
+  "model": "claude-sonnet-4-5-20250929",
+  "role": "assistant",
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "not_available",
+    "input_tokens": 7816,
+    "output_tokens": 279,
+    "server_tool_use": null,
+    "service_tier": "standard"
+  },
+  "stop_details": null,
+  "context_management": {
+    "applied_edits": []
+  }
+}
