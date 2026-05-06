@@ -1,0 +1,37 @@
+{  "airport": "GASTONIA, NORTH CAROLINA",  "approach_ident": "RNAV (GPS) RWY 3",  "chart_name": "GASTONIA MUNI (AKH)",  "procedure": {
+    "airport": "GASTONIA, NORTH CAROLINA",
+    "approach_ident": "RNAV (GPS) RWY 3",
+    "chart_name": "GASTONIA MUNI (AKH)",
+    "missed_approach": {
+        "leg_count": {
+            "Q_terminator": {
+                "value": "CA"
+            },
+            "Q1_fix_ident": {
+                "value": "IAF"
+            },
+            "Q2_altitude_constraint": {
+                "value": {
+                    "desc": "289*",
+                    "altitude_ft": null,
+                    "altitude_2_ft": null
+                }
+            },
+            "Q3_turn": {
+                "value": "LEFT"
+            },
+            "Q4_course_or_radial": {
+                "value": "2754"
+            },
+            "Q5_hold_params": {
+                "value": {
+                    "inbound_course_deg": null,
+                    "leg_time_min": null,
+                    "leg_distance_nm": null,
+                    "turn": null
+                }
+            }
+        }
+    }
+  }
+}

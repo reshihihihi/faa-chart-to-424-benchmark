@@ -1,0 +1,6 @@
+[
+  "$: 'chart_id' is a required property",
+  "$: 'procedure' is a required property",
+  "$: 'missed_approach' is a required property",
+  "$: Additional properties are not allowed ('airport', 'approach_ident', 'chart_name' were unexpected)"
+]

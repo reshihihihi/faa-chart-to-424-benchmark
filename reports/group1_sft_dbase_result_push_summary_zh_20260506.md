@@ -60,6 +60,12 @@ D-base raw 输出常见问题包括：
 - `reports/group1_sft_dbase50_execution_report_zh_20260504.md`
 - `reports/group1_sft_dbase_vs_d1_eval_first50_comparison_zh_20260504.md`
 - `reports/group1_sft_dbase_result_push_summary_zh_20260506.md`
+- `formal_runs/group1/group1_sft_dbase50_20260504_r1/README_zh.md`
+- `formal_runs/group1/group1_sft_dbase50_20260504_r1/D_BASE_SAME_BACKBONE/summary_report.json`
+- `formal_runs/group1/group1_sft_dbase50_20260504_r1/D_BASE_SAME_BACKBONE/predictions/`
+- `formal_runs/group1/group1_sft_dbase50_20260504_r1/D_BASE_SAME_BACKBONE_CANONICALIZED/canonical_json/`
+- `formal_runs/group1/group1_sft_dbase50_20260504_r1/D_BASE_SAME_BACKBONE_CANONICALIZED/reports/`
+- `formal_runs/group1/group1_sft_dbase50_20260504_r1/D_BASE_SAME_BACKBONE_CANONICALIZED/scores/`
 
 ## 未提交内容
 
@@ -69,9 +75,9 @@ D-base raw 输出常见问题包括：
 - 模型权重和 Hugging Face cache
 - LoRA/checkpoint
 - PNG 航图图片
-- raw model outputs
-- 每样本大体积 score 输出
 - 本机绝对路径配置
+
+说明：为保证 50 样本结果可复核，本次已补交小体积 raw text、canonicalized JSON、逐样本 score 摘要和逐样本 field-level scoring 明细；这些文件中的本机绝对路径已脱敏为仓库相对路径或占位符。
 
 ## 结论
 

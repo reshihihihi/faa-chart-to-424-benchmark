@@ -1,0 +1,115 @@
+{
+  "schema": "group1_sft_run_package_v1",
+  "created_at": "2026-05-04T05:27:46.647146+00:00",
+  "run_id": "group1_sft_dbase50_20260504_r1",
+  "run_dir": "formal_runs/group1/group1_sft_dbase50_20260504_r1",
+  "split_subset": "evaluation",
+  "paths_file": "training\\group1_sft\\configs\\local_paths.local.json",
+  "repo_root": "<repo_root>",
+  "formal_manifest": {
+    "path": "benchmark_exports/derived/v2/formal300/manifest.json",
+    "exists": true,
+    "bytes": 497582,
+    "sha256": "f635c467854eb904388f570aa3ba557395ea8d934091c6535c05bfc8c1234ad7"
+  },
+  "scoring_manifest": {
+    "path": "formal_runs/group1/group1_formal_eval_50_200_50_seed20260437_20260430_r1/scoring_manifest.jsonl",
+    "exists": true,
+    "bytes": 74512,
+    "sha256": "4eb885e60ae2188360fecc05ce3e018599a01e201ff8616e9e750746042a9ce1"
+  },
+  "scoring_manifest_copy": {
+    "path": "formal_runs/group1/group1_sft_dbase50_20260504_r1\\scoring_manifest.jsonl",
+    "exists": true,
+    "bytes": 36760,
+    "sha256": "f6d856ed662c471e9270635349defed1741d4136208867a4d7378ecba2341ce5"
+  },
+  "canonical_targets_dir": {
+    "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2",
+    "exists": true
+  },
+  "scoring_target_source": {
+    "source": "scoring_equivalence_v2",
+    "combined_target": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/canonical_proxy_gt_chart_display_v2.json",
+      "exists": true,
+      "bytes": 1030774,
+      "sha256": "514bad37ccf3a39655e71b01d2e533c6d89d8d9b7d863407e408a654cbf98ce5"
+    },
+    "comparison_policy": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/comparison_policy_v2.jsonl",
+      "exists": true,
+      "bytes": 3170077,
+      "sha256": "4af3745662429d2f830c49a5d6048e36093ddea9dc646767554164013779124f"
+    },
+    "field_targets": {
+      "path": "benchmark_exports/derived/v2/formal300/targets/scoring_equivalence_v2/field_targets_chart_display_v2.jsonl",
+      "exists": true,
+      "bytes": 1446775,
+      "sha256": "bd107e272cff8d50a5f3c789f0bb07294f860cbc7a4efe29e1c5edd52ce0f914"
+    },
+    "missing_chart_ids": []
+  },
+  "method_set": {
+    "path": "training/group1_sft/configs/group1_sft_method_set.json",
+    "exists": true,
+    "bytes": 1938,
+    "sha256": "c86d75637cd42d31cdddf4bf2535909331826bbfe0cce0fed8b5867a9127db7a"
+  },
+  "methods": {
+    "D_BASE_SAME_BACKBONE": {
+      "input_manifest": "formal_runs/group1/group1_sft_dbase50_20260504_r1\\D_BASE_SAME_BACKBONE\\input_manifest.jsonl",
+      "rows": 50,
+      "missing_images": 0,
+      "sha256_mismatches": 0,
+      "prompt": {
+        "path": "training/d_sft/prompts/d_sft_image_to_canonical.v2.md",
+        "exists": true,
+        "bytes": 2091,
+        "sha256": "8e0f6d36c023e6d23b78655ab1a1910f49880d7bd473db75d4250681ac21445e"
+      },
+      "output_schema": {
+        "path": "schemas/missed_approach_leg.schema.json",
+        "exists": true,
+        "bytes": 7660,
+        "sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9"
+      }
+    }
+  },
+  "model_paths": {
+    "base_vlm_model_dir": {
+      "path": "<base_vlm_model_dir>",
+      "exists": true
+    },
+    "d1_lora_or_checkpoint_dir": {
+      "path": "<d1_lora_or_checkpoint_dir>",
+      "exists": true
+    },
+    "chart_to_evidence_lora_or_checkpoint_dir": {
+      "path": "<chart_to_evidence_lora_or_checkpoint_dir>",
+      "exists": true
+    },
+    "evidence_to_semantics_lora_or_checkpoint_dir": {
+      "path": "<evidence_to_semantics_lora_or_checkpoint_dir>",
+      "exists": true
+    },
+    "d1_evidence_boxes_lora_or_checkpoint_dir": {
+      "path": "<d1_evidence_boxes_lora_or_checkpoint_dir>",
+      "exists": true
+    }
+  },
+  "policy": {
+    "input_manifests_exclude_targets": true,
+    "scoring_manifest_for_post_prediction_only": true,
+    "development_split_results_are_internal_validation_only": false,
+    "forbidden_inference_inputs": [
+      "target_json",
+      "raw_424_record",
+      "score_file",
+      "other_method_prediction",
+      "human_answer_except_declared_oracle_evidence_method"
+    ]
+  },
+  "blockers": [],
+  "ready_for_remote_execution": true
+}

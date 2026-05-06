@@ -1,0 +1,64 @@
+{
+  "airport": "ILS or LOC RWY 15R",
+  "approach_ident": "ILS or LOC RWY 15R",
+  "chart_name": "GENERAL EDWARD LAWRENCE LOGAN INTR (BOS)",
+  "procedure": {
+    "airport": "BOSTON, MASSACHUSETTS",
+    "approach_ident": "ILS or LOC RWY 15R",
+    "chart_name": "GENERAL EDWARD LAWRENCE LOGAN INTR (BOS)",
+    "missed_approach": {
+      "leg_count": {
+        "leg_1": {
+          "Q_terminator": {
+            "value": "CA"
+          }
+        },
+        "Q1_fix_ident": {
+          "value": "MISSED APCH FIX"
+        },
+        "Q2_altitude_constraint": {
+          "desc": "R-15.4",
+          "altitude_ft": "14.0",
+          "altitude_2_ft": "14.0"
+        },
+        "Q3_turn": {
+          "value": "LEFT"
+        },
+        "Q4_course_or_radial": {
+          "type": "course_deg"
+        },
+        "Q5_hold_params": {
+          "inbound_course_deg": "180",
+          "leg_time_min": "1.0",
+          "leg_distance_nm": "1.0",
+          "turn": "180"
+        }
+      },
+      "leg_2": {
+        "Q_terminator": {
+          "value": "DF"
+        }
+      },
+      "leg_3": {
+        "Q_terminator": {
+          "value": "TF"
+        }
+      },
+      "leg_4": {
+        "Q_terminator": {
+          "value": "HA"
+        }
+      },
+      "leg_5": {
+        "Q_terminator": {
+          "value": "HF"
+        }
+      },
+      "leg_6": {
+        "Q_terminator": {
+          "value": "HM"
+        }
+      }
+    }
+  }
+}

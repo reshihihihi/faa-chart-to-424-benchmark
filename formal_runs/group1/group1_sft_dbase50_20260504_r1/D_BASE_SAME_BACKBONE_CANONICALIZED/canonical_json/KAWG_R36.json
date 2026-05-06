@@ -1,0 +1,15 @@
+{
+  "procedure": {
+    "airport": "KAWG",
+    "approach_ident": "R36",
+    "chart_name": "RNAV (GPS) RWY 36"
+  },
+  "chart_id": "KAWG_R36",
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

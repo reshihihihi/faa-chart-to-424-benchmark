@@ -1,0 +1,15 @@
+{
+  "chart_id": "KAUS_I18L",
+  "procedure": {
+    "airport": "KAUS",
+    "approach_ident": "I18L",
+    "chart_name": "ILS OR LOC RWY 18L"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

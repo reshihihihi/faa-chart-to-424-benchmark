@@ -1,0 +1,15 @@
+{
+  "chart_id": "KCRW_L05",
+  "procedure": {
+    "airport": "KCRW",
+    "approach_ident": "L05",
+    "chart_name": "ILS OR LOC RWY 05"
+  },
+  "missed_approach": {
+    "leg_count": {
+      "status": "unknown",
+      "value": null
+    },
+    "legs": []
+  }
+}

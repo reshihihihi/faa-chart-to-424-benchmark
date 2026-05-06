@@ -1,0 +1,33 @@
+{  "airport": "RNAV (GPS) RWY 5",  "approach_ident": "RNAV (GPS) RWY 5",  "chart_name": "RNAV (GPS) RWY 5",  "procedure": {
+    "airport": "RNAV (GPS) RWY 5",
+    "approach_ident": "RNAV (GPS) RWY 5",
+    "chart_name": "RNAV (GPS) RWY 5",
+    "missed_approach": {
+        "leg_count": {
+            "Q_terminator": {
+                "value": "CA"
+            },
+            "Q1_fix_ident": {
+                "value": "OTONE"
+            },
+            "Q2_altitude_constraint": {
+                "desc": "3195",
+                "altitude_ft": "0",
+                "altitude_2_ft": "0"
+            },
+            "Q3_turn": {
+                "value": "LEFT"
+            },
+            "Q4_course_or_radial": {
+                "type": "course_deg"
+            },
+            "Q5_hold_params": {
+                "inbound_course_deg": "0",
+                "leg_time_min": "0",
+                "leg_distance_nm": "0",
+                "turn": "0"
+            }
+        }
+    }
+  }
+}
