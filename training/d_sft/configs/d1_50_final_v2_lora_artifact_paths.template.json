@@ -1,0 +1,52 @@
+{
+  "status": "template_for_d1_50_final_v2_lora_artifacts",
+  "method_id": "D1-50_FINAL_V2",
+  "run_id": "d1_50_final_v2_qwen2vl_lora_20260506_r1",
+  "artifact_root": "<external-artifact-root>/d_sft",
+  "local_files_only": true,
+  "base_model": {
+    "model_id": "Qwen/Qwen2-VL-2B-Instruct",
+    "huggingface_url": "https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct",
+    "official_code_url": "https://github.com/QwenLM/Qwen2-VL",
+    "observed_huggingface_cache_revision": "895c3a49bc3fa70a340399125c650a463535e71c",
+    "cache_snapshot_template": "<huggingface-cache>/hub/models--Qwen--Qwen2-VL-2B-Instruct/snapshots/895c3a49bc3fa70a340399125c650a463535e71c"
+  },
+  "training_inputs": {
+    "train50_jsonl": "<external-artifact-root>/d_sft/final_v2_training_jsonl/d1_final_v2_20260506/d_sft_train500_dev100.final_v2.train50_seed260506.jsonl",
+    "dev100_jsonl": "<external-artifact-root>/d_sft/final_v2_training_jsonl/d1_final_v2_20260506/d_sft_train500_dev100.final_v2.dev100.jsonl",
+    "final_v2_subset_manifest": "<external-artifact-root>/d_sft/final_v2_training_jsonl/d1_final_v2_20260506/d1_final_v2_train500_dev100_and_subset_manifest.json",
+    "source_combined_manifest": "<external-artifact-root>/d_sft/data/d_sft_train500_dev100/combined_manifest.jsonl"
+  },
+  "training_outputs": {
+    "checkpoint_epoch01": "<external-artifact-root>/d_sft/checkpoints/d1_50_final_v2_qwen2vl_lora_20260506_r1/checkpoint-epoch01",
+    "checkpoint_final": "<external-artifact-root>/d_sft/checkpoints/d1_50_final_v2_qwen2vl_lora_20260506_r1/checkpoint-final",
+    "checkpoint_final_release_page": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/releases/tag/d1-50-final-v2-lora-20260506-r1",
+    "checkpoint_final_zip_url": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/releases/download/d1-50-final-v2-lora-20260506-r1/d1_50_final_v2_qwen2vl_lora_20260506_r1_checkpoint-final.zip",
+    "checkpoint_final_zip_sha256": "04502e74276a4d4a0df51a82842e2071fa4a1501f131da223077f6c0672d074a",
+    "checkpoint_final_zip_size_bytes": 36035954,
+    "training_report": "<external-artifact-root>/d_sft/reports/d1_50_final_v2_qwen2vl_lora_20260506_r1/training_report.json",
+    "training_losses": "<external-artifact-root>/d_sft/logs/d1_50_final_v2_qwen2vl_lora_20260506_r1/training_losses.json"
+  },
+  "diagnostic_inference_outputs": {
+    "formal_smoke5_summary": "<external-artifact-root>/d_sft/reports/d1_50_final_v2_smoke5_20260506_r1_summary_report.json",
+    "train_seen5_summary": "<external-artifact-root>/d_sft/reports/d1_50_final_v2_train_seen5_diag_20260506_r1_summary_report.json"
+  },
+  "git_boundary": {
+    "do_commit": [
+      "this template",
+      "sanitized run reports",
+      "sanitized artifact manifest",
+      "prompt/script/config hashes",
+      "small Chinese documentation"
+    ],
+    "do_not_commit": [
+      "local absolute path config",
+      "adapter_model.safetensors",
+      "full base model weights",
+      "PNG/PDF chart assets",
+      "raw_text model outputs",
+      "canonical_json prediction directories",
+      "large score/result directories"
+    ]
+  }
+}

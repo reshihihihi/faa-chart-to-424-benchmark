@@ -1,0 +1,412 @@
+{
+  "manifest_id": "d1_50_final_v2_lora_artifact_manifest_20260507",
+  "purpose": "Record the afternoon 50-sample D1-50_FINAL_V2 LoRA run details without committing model weights, LoRA checkpoint binaries, local path configs, PNG/PDF assets, raw model outputs, or large result directories.",
+  "method": {
+    "experiment_group": "group1",
+    "method_id": "D1-50_FINAL_V2",
+    "training_run_id": "d1_50_final_v2_qwen2vl_lora_20260506_r1",
+    "formal_smoke5_run_id": "d1_50_final_v2_smoke5_20260506_r1",
+    "train_seen5_diagnostic_run_id": "d1_50_final_v2_train_seen5_diag_20260506_r1",
+    "description": "Full FAA chart image plus final-v2 D prompt to final-v2 canonical missed-approach JSON, using a QLoRA adapter trained on 50 selected samples."
+  },
+  "artifact_boundary": {
+    "committed_to_git": [
+      "public model source URLs",
+      "run ids",
+      "prompt/script/config hashes",
+      "training and inference parameters",
+      "checkpoint file names, file sizes, and SHA256 hashes",
+      "sanitized summary results",
+      "reproduction command templates"
+    ],
+    "not_committed_to_git": [
+      "local absolute path config",
+      "base model weight binaries",
+      "LoRA checkpoint binaries",
+      "PNG/PDF chart assets",
+      "raw model text",
+      "canonical prediction directories",
+      "large score/result directories"
+    ]
+  },
+  "base_model": {
+    "model_id": "Qwen/Qwen2-VL-2B-Instruct",
+    "huggingface_url": "https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct",
+    "official_code_url": "https://github.com/QwenLM/Qwen2-VL",
+    "observed_huggingface_cache_revision": "895c3a49bc3fa70a340399125c650a463535e71c",
+    "local_files_only": true,
+    "main_file_hashes_observed_on_machine": [
+      {
+        "path": "model-00001-of-00002.safetensors",
+        "size_bytes": 3988609112,
+        "sha256": "994ac2b03f97de8bc647d0fe5eba2e4b632b3e28dc03574c29bdfc36cf47e1b9"
+      },
+      {
+        "path": "model-00002-of-00002.safetensors",
+        "size_bytes": 429441656,
+        "sha256": "92540d8353c8d226a589a3b179bdb33851c970ee2cc2ac7ba035f79425e7b833"
+      },
+      {
+        "path": "model.safetensors.index.json",
+        "size_bytes": 56411,
+        "sha256": "260ab9fa1418d6d6ab79daa1d9da2c47264f3b72edb4630fc799077ac67d27c6"
+      },
+      {
+        "path": "config.json",
+        "size_bytes": 1196,
+        "sha256": "422adefa19e62dd175961cec85bc0400344fe5bf9b22bd1182e05aaae78556e0"
+      },
+      {
+        "path": "tokenizer.json",
+        "size_bytes": 7029741,
+        "sha256": "cb63a0a23eef3d5b01063a9880a1925a65aaf4d1591d519910ee3527852950a0"
+      }
+    ]
+  },
+  "final_v2_data": {
+    "contract": "final_v2_field_legality_no_open_unknown",
+    "source_train_sha256": "8d9434e499c5f0151711ad7a5d93466f1c1707f537e2066416247425d309a7cb",
+    "source_dev_sha256": "d21000873c2be3bee7963d25f92d2f1dcd0242778f5c98c43b2291ed340b9cfa",
+    "train500_sha256": "836dcf2390b1a151068be59f9d99c4f37f32d6bc8759f940555131c8fc455baf",
+    "dev100_sha256": "2c457bb90d53fa783b619eb76ca035f9c8bdd8f1b6a4720ac4df2dffd78a8ef0",
+    "train50_sha256": "fd9106f5850dd91aaeedd142e4b7e8ddd90df17cc771fb5597186838e55cfd62",
+    "subset_seed": 260506,
+    "subset_size": 50,
+    "transform_counts": {
+      "df_q4_direct_to_not_applicable": 426,
+      "df_cf_q3_not_applicable_to_both": 417,
+      "input_validation_error_rows": 0,
+      "output_validation_error_rows": 0
+    },
+    "validation": {
+      "status_unknown_allowed": false,
+      "output_validation_error_rows": 0
+    },
+    "subset_sample_ids": [
+      "d_sft_train_0003",
+      "d_sft_train_0008",
+      "d_sft_train_0031",
+      "d_sft_train_0039",
+      "d_sft_train_0067",
+      "d_sft_train_0079",
+      "d_sft_train_0085",
+      "d_sft_train_0091",
+      "d_sft_train_0092",
+      "d_sft_train_0094",
+      "d_sft_train_0105",
+      "d_sft_train_0107",
+      "d_sft_train_0111",
+      "d_sft_train_0118",
+      "d_sft_train_0131",
+      "d_sft_train_0134",
+      "d_sft_train_0137",
+      "d_sft_train_0143",
+      "d_sft_train_0165",
+      "d_sft_train_0168",
+      "d_sft_train_0196",
+      "d_sft_train_0200",
+      "d_sft_train_0211",
+      "d_sft_train_0212",
+      "d_sft_train_0215",
+      "d_sft_train_0227",
+      "d_sft_train_0237",
+      "d_sft_train_0257",
+      "d_sft_train_0274",
+      "d_sft_train_0287",
+      "d_sft_train_0319",
+      "d_sft_train_0332",
+      "d_sft_train_0347",
+      "d_sft_train_0357",
+      "d_sft_train_0370",
+      "d_sft_train_0371",
+      "d_sft_train_0396",
+      "d_sft_train_0411",
+      "d_sft_train_0414",
+      "d_sft_train_0417",
+      "d_sft_train_0425",
+      "d_sft_train_0429",
+      "d_sft_train_0448",
+      "d_sft_train_0453",
+      "d_sft_train_0455",
+      "d_sft_train_0472",
+      "d_sft_train_0474",
+      "d_sft_train_0477",
+      "d_sft_train_0479",
+      "d_sft_train_0500"
+    ],
+    "subset_chart_ids": [
+      "KATL_R09R",
+      "KEMV_L34",
+      "KCQX_RNV-B",
+      "KBAM_R22",
+      "KCPP_L25",
+      "KHRJ_L05",
+      "KARR_I09",
+      "KHJO_RNV-B",
+      "KSEA_I34L",
+      "KAGS_I17",
+      "KAGS_I35",
+      "KCWF_I15",
+      "KMGY_L20",
+      "KEDN_R05",
+      "KMIA_L26R",
+      "KALB_I01",
+      "KDFW_I35C",
+      "KAND_R35",
+      "KFAR_I36",
+      "KFYJ_L10",
+      "KGIC_R26",
+      "KARR_R33",
+      "KBLF_R23",
+      "KAUS_I18R",
+      "KGAI_RNV-A",
+      "KARW_R25",
+      "KBOS_R15R",
+      "KHQM_I24",
+      "KBFD_I32",
+      "KMKE_L25L",
+      "KMGJ_R26",
+      "KCCR_R19R",
+      "KBGM_I34",
+      "KBMI_I02",
+      "KASX_R13",
+      "KBHM_I06",
+      "KCIU_R10",
+      "KBKW_I19",
+      "KMCO_I17R",
+      "KPDX_L21",
+      "KPHF_L20",
+      "KBWI_I33L",
+      "KOLS_RNV-A",
+      "KCIC_I13L",
+      "KRBW_R17",
+      "KPHH_RNV-A",
+      "KATY_R12",
+      "KCLE_I24L",
+      "KSAD_R30",
+      "KCPS_R12R"
+    ]
+  },
+  "frozen_files": {
+    "prompt_path": "training/d_sft/prompts/d_sft_image_to_canonical.final_v2.md",
+    "prompt_sha256": "df513ba5391b96c126b86f61abb7a2b1a10fbfdac9a79ff7f242f9fe506eafb6",
+    "schema_path": "schemas/missed_approach_leg.schema.json",
+    "schema_sha256": "cd62edf995344d73ae45fcfad4e9bff3412f58a42f9fb591f9ca08e399e26be9",
+    "data_builder_path": "scripts/d_sft/build_d1_final_v2_training_jsonl.py",
+    "data_builder_sha256": "b609397067d294e82cc31bd57db29bed8ba729451118ae03cffae2363f1b0d35",
+    "train_script_path": "scripts/d_sft_train_qwen2vl_lora.py",
+    "train_script_sha256": "f87d67987d4f1a14b78756e77100d58b365ca09162fc73b5aa37f62722c8a74f",
+    "inference_script_path": "scripts/d_sft/run_d_sft_final_v2_inference.py",
+    "inference_script_sha256": "a36c975f974a27d3cc4bcfdb5e2198fbccbbfcefb0bad14ca02d0ff156ac26e0",
+    "scoring_script_path": "scripts/score_final_v2_sft_outputs.py",
+    "scoring_script_sha256": "e0cf3f1ce70ad20b0e264af9fdfc018e8bd2b235b56016776e060fa60d98bde6"
+  },
+  "model_loading_and_lora": {
+    "load_in_4bit": true,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "device_map": "auto",
+    "compute_dtype": "float16",
+    "lora_mode": "qlora_adapter",
+    "peft_type": "LORA",
+    "task_type": "CAUSAL_LM",
+    "peft_version": "0.19.1",
+    "r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "bias": "none",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "training_parameters": {
+    "seed": 260428,
+    "epochs": 1,
+    "train_samples": 50,
+    "dev_samples": 100,
+    "per_device_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "gradient_checkpointing": true,
+    "max_seq_length": 4096,
+    "global_steps": 50,
+    "optimizer_steps": 7,
+    "truncated_train_samples": 0,
+    "max_train_seq_length_seen": 2041,
+    "best_dev_loss": 0.19552553363144398,
+    "checkpoint_selection_policy": "lowest dev loss among epoch checkpoints; dev split only",
+    "checkpoint_selection_dev_samples": 100,
+    "assistant_prefill": "{"
+  },
+  "training_loss_summary": {
+    "count": 50,
+    "first_loss": 0.5000839829444885,
+    "last_loss": 0.24027012288570404,
+    "min_loss": 0.18895679712295532,
+    "max_loss": 0.6174681782722473,
+    "mean_loss": 0.3509966394305229,
+    "min_seq_length": 1650,
+    "max_seq_length": 2041,
+    "mean_seq_length": 1839.62,
+    "truncated_count": 0
+  },
+  "checkpoint_final": {
+    "checkpoint_dir_template": "<external-artifact-root>/d_sft/checkpoints/d1_50_final_v2_qwen2vl_lora_20260506_r1/checkpoint-final",
+    "release_page_url": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/releases/tag/d1-50-final-v2-lora-20260506-r1",
+    "download_url": "https://github.com/reshihihihi/faa-chart-to-424-benchmark/releases/download/d1-50-final-v2-lora-20260506-r1/d1_50_final_v2_qwen2vl_lora_20260506_r1_checkpoint-final.zip",
+    "zip_file": "d1_50_final_v2_qwen2vl_lora_20260506_r1_checkpoint-final.zip",
+    "zip_size_bytes": 36035954,
+    "zip_sha256": "04502e74276a4d4a0df51a82842e2071fa4a1501f131da223077f6c0672d074a",
+    "artifact_delivery": "GitHub Release asset; not committed to Git history.",
+    "files": [
+      {
+        "path": "adapter_config.json",
+        "size_bytes": 1150,
+        "sha256": "cfac22dc2e571284b9347d1f1402bc5c3eacbbbb4272913843911df4c4be7f05"
+      },
+      {
+        "path": "adapter_model.safetensors",
+        "size_bytes": 36986952,
+        "sha256": "439d0962ea650071bef1a6bd74d2a6852e60156155ec36eb3c395549fcaf3a96"
+      },
+      {
+        "path": "chat_template.jinja",
+        "size_bytes": 1023,
+        "sha256": "6edff8eae4ef69923f937be5b1fcf91462227e7c827a0a936a98197f19642388"
+      },
+      {
+        "path": "processor_config.json",
+        "size_bytes": 1534,
+        "sha256": "c2debefbf9071c2389a08126e86b1bb18f666a24c09a0967c8a8779911d8b9a6"
+      },
+      {
+        "path": "README.md",
+        "size_bytes": 5204,
+        "sha256": "f84870e9c330a9a17f01ec27d85bd995fcc22addb5e7f1dd55259f3d1cda6adc"
+      },
+      {
+        "path": "tokenizer.json",
+        "size_bytes": 11420534,
+        "sha256": "312c03cb421e18f41c20c3e35f3302479a3a8f8b1f06779fd900326a0d32c22f"
+      },
+      {
+        "path": "tokenizer_config.json",
+        "size_bytes": 810,
+        "sha256": "b7e922bac4f0585865ed00ad398b25ad14cddf1bef8bb0c7ab2aeaf421e75736"
+      }
+    ]
+  },
+  "inference_parameters": {
+    "input": [
+      "full_chart_image",
+      "final_v2_d_prompt"
+    ],
+    "forbidden_inference_inputs": [
+      "target_JSON",
+      "score_file",
+      "raw_CIFP",
+      "human_answer",
+      "other_method_prediction",
+      "comparison_policy"
+    ],
+    "prompt_policy": "same prompt file as SFT training user message",
+    "max_new_tokens": 1536,
+    "decoding": "greedy_do_sample_false",
+    "assistant_prefill": "{",
+    "parser_policy": "strict_json_only_no_code_fence_no_semantic_repair",
+    "rerun_policy": "no selective rerun; engineering failure may rerun complete failed run with new run_id"
+  },
+  "diagnostic_results": {
+    "formal200_smoke5": {
+      "samples_total": 5,
+      "parse_ok": 1,
+      "final_v2_valid": 1,
+      "parse_or_final_v2_failures": 4,
+      "chart_ids": [
+        "KABE_I06",
+        "KALS_I02",
+        "KAMA_I04",
+        "KAPC_I01L",
+        "KATL_I09R"
+      ],
+      "failures": [
+        {
+          "chart_id": "KABE_I06",
+          "stage": "inference_or_parse",
+          "error": "JSONDecodeError('No complete JSON object found: line 1 column 1 (char 0)')"
+        },
+        {
+          "chart_id": "KAMA_I04",
+          "stage": "inference_or_parse",
+          "error": "JSONDecodeError('No complete JSON object found: line 1 column 1 (char 0)')"
+        },
+        {
+          "chart_id": "KAPC_I01L",
+          "stage": "inference_or_parse",
+          "error": "JSONDecodeError('Illegal trailing comma before end of object: line 1 column 616 (char 615)')"
+        },
+        {
+          "chart_id": "KATL_I09R",
+          "stage": "inference_or_parse",
+          "error": "JSONDecodeError('No complete JSON object found: line 1 column 1 (char 0)')"
+        }
+      ]
+    },
+    "train_seen5": {
+      "samples_total": 5,
+      "parse_ok": 2,
+      "final_v2_valid": 2,
+      "parse_or_final_v2_failures": 3,
+      "chart_ids": [
+        "KATL_R09R",
+        "KEMV_L34",
+        "KCQX_RNV-B",
+        "KBAM_R22",
+        "KCPP_L25"
+      ],
+      "failures": [
+        {
+          "chart_id": "KATL_R09R",
+          "stage": "inference_or_parse",
+          "error": "JSONDecodeError('No complete JSON object found: line 1 column 1 (char 0)')"
+        },
+        {
+          "chart_id": "KEMV_L34",
+          "stage": "inference_or_parse",
+          "error": "JSONDecodeError('Illegal trailing comma before end of object: line 1 column 587 (char 586)')"
+        },
+        {
+          "chart_id": "KCPP_L25",
+          "stage": "inference_or_parse",
+          "error": "JSONDecodeError('No complete JSON object found: line 1 column 1 (char 0)')"
+        }
+      ]
+    },
+    "formal200_status": "not_run_from_this_checkpoint_after_smoke_failure",
+    "score_status": "no_formal_score; smoke was diagnostic and did not read target or scoring policy during inference"
+  },
+  "environment": {
+    "training_created_at_utc": "2026-05-06T06:34:59.322182+00:00",
+    "training_created_at_asia_shanghai": "2026-05-06 14:34:59",
+    "formal_smoke5_created_at_utc": "2026-05-06T06:45:45.867897+00:00",
+    "train_seen5_created_at_utc": "2026-05-06T06:53:44.485410+00:00",
+    "python": "3.13.11",
+    "torch": "2.6.0+cu124",
+    "transformers": "5.3.0",
+    "peft": "0.19.1",
+    "bitsandbytes": "0.49.2",
+    "Pillow": "12.1.0",
+    "jsonschema": "4.26.0",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "max_memory_allocated_gb": 7.4217
+  }
+}
