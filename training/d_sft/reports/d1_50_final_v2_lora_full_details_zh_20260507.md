@@ -323,6 +323,18 @@ max_memory_allocated_gb = 7.4217
 
 `checkpoint-final` 文件：
 
+可下载 artifact：
+
+```text
+release_page = https://github.com/reshihihihi/faa-chart-to-424-benchmark/releases/tag/d1-50-final-v2-lora-20260506-r1
+download_url = https://github.com/reshihihihi/faa-chart-to-424-benchmark/releases/download/d1-50-final-v2-lora-20260506-r1/d1_50_final_v2_qwen2vl_lora_20260506_r1_checkpoint-final.zip
+zip_file = d1_50_final_v2_qwen2vl_lora_20260506_r1_checkpoint-final.zip
+zip_size_bytes = 36035954
+zip_sha256 = 04502e74276a4d4a0df51a82842e2071fa4a1501f131da223077f6c0672d074a
+```
+
+这个 zip 包含 `checkpoint-final/` 内的 LoRA adapter 文件，包括 `adapter_model.safetensors`。它作为 GitHub Release asset 上传，没有进入 Git commit 历史。
+
 | 文件 | 大小 | SHA256 |
 | --- | ---: | --- |
 | `adapter_config.json` | 1150 | `cfac22dc2e571284b9347d1f1402bc5c3eacbbbb4272913843911df4c4be7f05` |

@@ -43,6 +43,18 @@ checkpoint 每个文件 SHA256
 
 真正的二进制 artifact 应放在外部 artifact root、GitHub Release、Dataverse、对象存储或受控模型仓库，再用本 PR 中的 hash 校验。不能把 `adapter_model.safetensors` 直接混进代码 PR。
 
+本次已经把 `checkpoint-final/` 打成 zip 并上传为 GitHub Release asset：
+
+```text
+release_page = https://github.com/reshihihihi/faa-chart-to-424-benchmark/releases/tag/d1-50-final-v2-lora-20260506-r1
+download_url = https://github.com/reshihihihi/faa-chart-to-424-benchmark/releases/download/d1-50-final-v2-lora-20260506-r1/d1_50_final_v2_qwen2vl_lora_20260506_r1_checkpoint-final.zip
+zip_file = d1_50_final_v2_qwen2vl_lora_20260506_r1_checkpoint-final.zip
+zip_size_bytes = 36035954
+zip_sha256 = 04502e74276a4d4a0df51a82842e2071fa4a1501f131da223077f6c0672d074a
+```
+
+因此，PR 中没有把 binary 写入 Git 历史，但已经提供了可直接下载、可用 SHA256 校验的 LoRA checkpoint artifact。
+
 ## 2. 底座模型完整来源
 
 ```text
@@ -231,6 +243,12 @@ tokenizer.json
 ```
 
 ## 5. checkpoint-final 文件清单
+
+checkpoint-final zip 下载：
+
+```text
+https://github.com/reshihihihi/faa-chart-to-424-benchmark/releases/download/d1-50-final-v2-lora-20260506-r1/d1_50_final_v2_qwen2vl_lora_20260506_r1_checkpoint-final.zip
+```
 
 ```text
 adapter_config.json
